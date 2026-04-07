@@ -1,1235 +1,1134 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MCV4U — Calculus and Vectors | MindView</title>
 <link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 <style>
 
-.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 8px; overflow: hidden; }
-.video-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; cursor: pointer; transition: background 0.2s; }
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; opacity: 0.7; }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
 .video-header:hover { background: #f8fafc; }
-.vid-toggle { font-size: 16px; color: #94a3b8; margin-left: auto; transition: transform 0.3s; }
-.vid-toggle.open { transform: rotate(90deg); color: var(--primary, #2563eb); }
-.video-player { padding: 0 16px 16px; }
-.video-player video { border-radius: 8px; background: #000; max-height: 480px; }
-.yt-fallback { display: block; text-align: center; font-size: 12px; color: #94a3b8; margin-top: 8px; text-decoration: none; }
-.yt-fallback:hover { color: #2563eb; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #2563eb; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
 
 </style>
-</head>
-<body>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
+<div class="nav-links"><a href="../">Home</a><a href="../#courses">Courses</a></div></div></nav>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="../" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
-        <div class="nav-links">
-            <a href="../">Home</a>
-            <a href="../#courses">Courses</a>
-        </div>
-    </div>
-</nav>
-
-<div class="chapter-hero" style="background:linear-gradient(135deg, #7c3aeddd 0%, #7c3aed 100%);">
-    <div class="container">
-        <div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
-        <h1>∫ MCV4U: Calculus and Vectors</h1>
-        <p>Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes</p>
-        <p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours · 72 video lessons · Prerequisite: MHF4U Advanced Functions (concurrent)</p>
-    </div>
-</div>
+<div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<div class="container">
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>∫ MCV4U: Calculus and Vectors</h1>
+<p>Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes</p>
+<p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours · 72 video lessons · 9 units · Prerequisite: MHF4U Advanced Functions (concurrent)</p>
+</div></div>
 
 <div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+<a href="#unit1" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #2563eb;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 1: Introduction to Calcul</a>
+<a href="#unit2" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #7c3aed;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 2: Derivatives</a>
+<a href="#unit3" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #dc2626;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 3: Derivative Application</a>
+<a href="#unit4" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #d97706;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 4: Curve Sketching</a>
+<a href="#unit5" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #059669;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 5: Exp. & Trig. Derivativ</a>
+<a href="#unit6" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #0891b2;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 6: Introduction to Vector</a>
+<a href="#unit7" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #e11d48;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 7: Vector Applications</a>
+<a href="#unit8" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #6366f1;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 8: Lines and Planes</a>
+<a href="#unit9" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #16a34a;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 9: Intersections</a>
+</div>
 
-    <div class="expectations-box">
-        <h3>📋 Curriculum Strands</h3>
-        <ul><li>A. Rate of Change</li><li>B. Derivatives & Applications</li><li>C. Geometry & Algebra of Vectors</li></ul>
+
+    <div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+            <h2>Unit 1: Introduction to Calculus</h2>
+            <p>Limits, slopes of tangents, rates of change, continuity</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Rate of Change</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v1')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.1 Rationalizing denominators of radical expressions</span>
+                        <span class="vid-duration">9:00</span>
+                        <span class="vid-toggle" id="toggle-v1">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v1">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/001_Calculus_1.1_Rationalizing_denominators_of_radical_expressions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Yh-5B9VIHOY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v2')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.2 The slope of a tangent to a curve</span>
+                        <span class="vid-duration">22:42</span>
+                        <span class="vid-toggle" id="toggle-v2">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v2">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/002_Calculus_1.2_The_slope_of_a_tangent_to_a_curve.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=DKwvbPXc6Cs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v3')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.3 Rates of Change</span>
+                        <span class="vid-duration">12:39</span>
+                        <span class="vid-toggle" id="toggle-v3">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v3">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/003_Calculus_1.3_Rates_of_Change.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=6yp6eRcXoeQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v4')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.4 The Limit of a Function</span>
+                        <span class="vid-duration">17:10</span>
+                        <span class="vid-toggle" id="toggle-v4">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v4">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/004_Calculus_1.4_The_Limit_of_a_Function.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_Y5hmCZUWT0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v5')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.5 Properties of Limits and 0/0 including u substitution</span>
+                        <span class="vid-duration">24:37</span>
+                        <span class="vid-toggle" id="toggle-v5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v5">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/005_Calculus_1.5_Properties_of_Limits_and_0_0_including_u_substitution.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=VIuewVMPuGE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 1.6 Continuity</span>
+                        <span class="vid-duration">13:47</span>
+                        <span class="vid-toggle" id="toggle-v6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v6">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/006_Calculus_1.6_Continuity.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=882GLDws6ME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
     </div>
 
-    <h2 style="margin-top:32px;">📹 Video Lessons (72)</h2>
-    <p style="color:#64748b;font-size:14px;margin-bottom:16px;">Click any lesson to expand and watch. Videos are hosted and stream directly in your browser.</p>
-    
-    <div class="video-list-embedded">
-        
-            <div class="video-card" id="vid-1">
-                <div class="video-header" onclick="toggleVideo(1)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 1.1 Rationalizing denominators of radical expressions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">9:00</span>
-                    <span class="vid-toggle" id="toggle-1">▶</span>
-                </div>
-                <div class="video-player" id="player-1" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/001_Calculus_1.1_Rationalizing_denominators_of_radical_expressions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=Yh-5B9VIHOY" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=Yh-5B9VIHOY" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-2">
-                <div class="video-header" onclick="toggleVideo(2)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 1.2 The slope of a tangent to a curve</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">22:42</span>
-                    <span class="vid-toggle" id="toggle-2">▶</span>
-                </div>
-                <div class="video-player" id="player-2" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/002_Calculus_1.2_The_slope_of_a_tangent_to_a_curve.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=DKwvbPXc6Cs" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=DKwvbPXc6Cs" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-3">
-                <div class="video-header" onclick="toggleVideo(3)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 1.3 Rates of Change</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">12:39</span>
-                    <span class="vid-toggle" id="toggle-3">▶</span>
-                </div>
-                <div class="video-player" id="player-3" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/003_Calculus_1.3_Rates_of_Change.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=6yp6eRcXoeQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=6yp6eRcXoeQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-4">
-                <div class="video-header" onclick="toggleVideo(4)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 1.4 The Limit of a Function</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">17:10</span>
-                    <span class="vid-toggle" id="toggle-4">▶</span>
-                </div>
-                <div class="video-player" id="player-4" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/004_Calculus_1.4_The_Limit_of_a_Function.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=_Y5hmCZUWT0" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=_Y5hmCZUWT0" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-5">
-                <div class="video-header" onclick="toggleVideo(5)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 1.5 Properties of Limits and 0/0 including u substitution</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:37</span>
-                    <span class="vid-toggle" id="toggle-5">▶</span>
-                </div>
-                <div class="video-player" id="player-5" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/005_Calculus_1.5_Properties_of_Limits_and_0_0_including_u_substitution.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=VIuewVMPuGE" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=VIuewVMPuGE" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-6">
-                <div class="video-header" onclick="toggleVideo(6)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 1.6 Continuity</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">13:47</span>
-                    <span class="vid-toggle" id="toggle-6">▶</span>
-                </div>
-                <div class="video-player" id="player-6" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/006_Calculus_1.6_Continuity.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=882GLDws6ME" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=882GLDws6ME" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-7">
-                <div class="video-header" onclick="toggleVideo(7)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 2.1 Sketching Derivative Functions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">12:35</span>
-                    <span class="vid-toggle" id="toggle-7">▶</span>
-                </div>
-                <div class="video-player" id="player-7" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/007_Calculus_2.1_Sketching_Derivative_Functions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=cW8FviXyP9I" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=cW8FviXyP9I" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-8">
-                <div class="video-header" onclick="toggleVideo(8)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 2.1 The Derivative Function - Derivatives from First Principles</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">12:34</span>
-                    <span class="vid-toggle" id="toggle-8">▶</span>
-                </div>
-                <div class="video-player" id="player-8" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/008_Calculus_2.1_The_Derivative_Function_-_Derivatives_from_First_Principles.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=5DPVkcEOd3s" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=5DPVkcEOd3s" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-9">
-                <div class="video-header" onclick="toggleVideo(9)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 2.2 Derivatives of Polynomials</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:21</span>
-                    <span class="vid-toggle" id="toggle-9">▶</span>
-                </div>
-                <div class="video-player" id="player-9" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/009_Calculus_2.2_Derivatives_of_Polynomials.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=0aZxSwwzN-o" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=0aZxSwwzN-o" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-10">
-                <div class="video-header" onclick="toggleVideo(10)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 2.3 The product rule</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">16:02</span>
-                    <span class="vid-toggle" id="toggle-10">▶</span>
-                </div>
-                <div class="video-player" id="player-10" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/010_Calculus_2.3_The_product_rule.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=DbwcyVvHVcQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=DbwcyVvHVcQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-11">
-                <div class="video-header" onclick="toggleVideo(11)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus and Vectors 2.4 The Quotient Rule (THE EASIEST WAY TO REMEMBER IT!)</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">13:49</span>
-                    <span class="vid-toggle" id="toggle-11">▶</span>
-                </div>
-                <div class="video-player" id="player-11" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/011_Calculus_and_Vectors_2.4_The_Quotient_Rule__THE_EASIEST_WAY_TO_REMEMBER_IT__.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=_HRT0AouBZw" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=_HRT0AouBZw" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-12">
-                <div class="video-header" onclick="toggleVideo(12)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus and Vectors 2.5 The Derivatives of Composite Functions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">16:40</span>
-                    <span class="vid-toggle" id="toggle-12">▶</span>
-                </div>
-                <div class="video-player" id="player-12" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/012_Calculus_and_Vectors_2.5_The_Derivatives_of_Composite_Functions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=cqPV1668eYg" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=cqPV1668eYg" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-13">
-                <div class="video-header" onclick="toggleVideo(13)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.1 Velocity and Acceleration Part 1</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">17:53</span>
-                    <span class="vid-toggle" id="toggle-13">▶</span>
-                </div>
-                <div class="video-player" id="player-13" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/013_Calculus_3.1_Velocity_and_Acceleration_Part_1.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=OCTYcY7-dpE" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=OCTYcY7-dpE" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-14">
-                <div class="video-header" onclick="toggleVideo(14)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.1 Velocity and Acceleration Part 2</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">10:26</span>
-                    <span class="vid-toggle" id="toggle-14">▶</span>
-                </div>
-                <div class="video-player" id="player-14" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/014_Calculus_3.1_Velocity_and_Acceleration_Part_2.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=CCW5kwya4ys" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=CCW5kwya4ys" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-15">
-                <div class="video-header" onclick="toggleVideo(15)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.2 Maximum and Minimum on an Interval</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">8:00</span>
-                    <span class="vid-toggle" id="toggle-15">▶</span>
-                </div>
-                <div class="video-player" id="player-15" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/015_Calculus_3.2_Maximum_and_Minimum_on_an_Interval.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=zn_ZBGv8YBQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=zn_ZBGv8YBQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-16">
-                <div class="video-header" onclick="toggleVideo(16)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.3 Optimization Problems Part 1</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">25:28</span>
-                    <span class="vid-toggle" id="toggle-16">▶</span>
-                </div>
-                <div class="video-player" id="player-16" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/016_Calculus_3.3_Optimization_Problems_Part_1.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=h7uNcUuzFCQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=h7uNcUuzFCQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-17">
-                <div class="video-header" onclick="toggleVideo(17)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.3 Optimization Problems Part 2</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:58</span>
-                    <span class="vid-toggle" id="toggle-17">▶</span>
-                </div>
-                <div class="video-player" id="player-17" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/017_Calculus_3.3_Optimization_Problems_Part_2.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=MPXIPwdIcDI" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=MPXIPwdIcDI" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-18">
-                <div class="video-header" onclick="toggleVideo(18)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.3 Optimization Part 3</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:33</span>
-                    <span class="vid-toggle" id="toggle-18">▶</span>
-                </div>
-                <div class="video-player" id="player-18" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/018_Calculus_3.3_Optimization_Part_3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=-ZaCMzyW-AM" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=-ZaCMzyW-AM" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-19">
-                <div class="video-header" onclick="toggleVideo(19)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 3.3 Optimization problem 13 page 146</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">12:57</span>
-                    <span class="vid-toggle" id="toggle-19">▶</span>
-                </div>
-                <div class="video-player" id="player-19" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/019_Calculus_3.3_Optimization_problem_13_page_146.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=nfZMNXrQXE4" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=nfZMNXrQXE4" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-20">
-                <div class="video-header" onclick="toggleVideo(20)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus and Vectors 3.4 Economics and Science Optimization Problems</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">28:15</span>
-                    <span class="vid-toggle" id="toggle-20">▶</span>
-                </div>
-                <div class="video-player" id="player-20" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/020_Calculus_and_Vectors_3.4_Economics_and_Science_Optimization_Problems.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=Mras1283EyE" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=Mras1283EyE" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-21">
-                <div class="video-header" onclick="toggleVideo(21)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Calculus Chapter 3 Optimization practice test Part 1</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">18:20</span>
-                    <span class="vid-toggle" id="toggle-21">▶</span>
-                </div>
-                <div class="video-player" id="player-21" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/021_Calculus_Chapter_3_Optimization_practice_test_Part_1.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=FBcgFQxNHeg" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=FBcgFQxNHeg" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-22">
-                <div class="video-header" onclick="toggleVideo(22)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Calculus Chapter 3 Optimization Practice Test Part 3</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">11:58</span>
-                    <span class="vid-toggle" id="toggle-22">▶</span>
-                </div>
-                <div class="video-player" id="player-22" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/022_Calculus_Chapter_3_Optimization_Practice_Test_Part_3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=PJ4H_4kdFRc" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=PJ4H_4kdFRc" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-23">
-                <div class="video-header" onclick="toggleVideo(23)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 4.1 Increasing and Decreasing Functions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">28:49</span>
-                    <span class="vid-toggle" id="toggle-23">▶</span>
-                </div>
-                <div class="video-player" id="player-23" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/023_Calculus_4.1_Increasing_and_Decreasing_Functions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=LggLn5ZfS60" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=LggLn5ZfS60" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-24">
-                <div class="video-header" onclick="toggleVideo(24)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 4.1 Continued</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">16:36</span>
-                    <span class="vid-toggle" id="toggle-24">▶</span>
-                </div>
-                <div class="video-player" id="player-24" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/024_Calculus_4.1_Continued.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=xD9HNQzj3WE" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=xD9HNQzj3WE" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-25">
-                <div class="video-header" onclick="toggleVideo(25)">
-                    <span class="vid-icon">📝</span>
-                    <span class="vid-title">Calculus 4.1 Homework questions p 171 # 10 and # 12</span>
-                    <span class="vid-type homework">Homework Solutions</span>
-                    <span class="vid-duration">9:51</span>
-                    <span class="vid-toggle" id="toggle-25">▶</span>
-                </div>
-                <div class="video-player" id="player-25" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/025_Calculus_4.1_Homework_questions_p_171___10_and___12.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=irWUBXfnyOk" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=irWUBXfnyOk" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-26">
-                <div class="video-header" onclick="toggleVideo(26)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Calculus 4.2 Critical Points, First Derivative Test</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">34:00</span>
-                    <span class="vid-toggle" id="toggle-26">▶</span>
-                </div>
-                <div class="video-player" id="player-26" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/026_Calculus_4.2_Critical_Points__First_Derivative_Test.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=CPMllZfuuSQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=CPMllZfuuSQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-27">
-                <div class="video-header" onclick="toggleVideo(27)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus  4.3 Vertical and Horizontal Asymptotes (Obliques too!)</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">27:55</span>
-                    <span class="vid-toggle" id="toggle-27">▶</span>
-                </div>
-                <div class="video-player" id="player-27" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/027_Calculus__4.3_Vertical_and_Horizontal_Asymptotes__Obliques_too__.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=hEgOEsM7SI0" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=hEgOEsM7SI0" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-28">
-                <div class="video-header" onclick="toggleVideo(28)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 4.3 Sketching a Rational Function with an Oblique or Slant Asymptote</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">18:38</span>
-                    <span class="vid-toggle" id="toggle-28">▶</span>
-                </div>
-                <div class="video-player" id="player-28" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/028_Calculus_4.3_Sketching_a_Rational_Function_with_an_Oblique_or_Slant_Asymptote.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=Cl7cL4Z_R3E" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=Cl7cL4Z_R3E" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-29">
-                <div class="video-header" onclick="toggleVideo(29)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Calculus 4.4 Concavity, Points of Inflection and the 2nd Derivative Test</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">36:42</span>
-                    <span class="vid-toggle" id="toggle-29">▶</span>
-                </div>
-                <div class="video-player" id="player-29" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/029_Calculus_4.4_Concavity__Points_of_Inflection_and_the_2nd_Derivative_Test.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=v1tiIcFAYM4" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=v1tiIcFAYM4" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-30">
-                <div class="video-header" onclick="toggleVideo(30)">
-                    <span class="vid-icon">📝</span>
-                    <span class="vid-title">Calculus 4.4 Concavity and Points of Inflection homework questions</span>
-                    <span class="vid-type homework">Homework Solutions</span>
-                    <span class="vid-duration">35:07</span>
-                    <span class="vid-toggle" id="toggle-30">▶</span>
-                </div>
-                <div class="video-player" id="player-30" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/030_Calculus_4.4_Concavity_and_Points_of_Inflection_homework_questions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=Gp5dzXalyVA" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=Gp5dzXalyVA" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-31">
-                <div class="video-header" onclick="toggleVideo(31)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 4.5 An Algorithm for Curve Sketching</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">18:57</span>
-                    <span class="vid-toggle" id="toggle-31">▶</span>
-                </div>
-                <div class="video-player" id="player-31" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/031_Calculus_4.5_An_Algorithm_for_Curve_Sketching.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=QdlypsJsAs0" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=QdlypsJsAs0" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-32">
-                <div class="video-header" onclick="toggleVideo(32)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Calculus Chapter 4 Practice Test</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">41:52</span>
-                    <span class="vid-toggle" id="toggle-32">▶</span>
-                </div>
-                <div class="video-player" id="player-32" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/032_Calculus_Chapter_4_Practice_Test.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=5b7O8e_GfBY" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=5b7O8e_GfBY" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-33">
-                <div class="video-header" onclick="toggleVideo(33)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 5.1 Derivatives of Exponential Functions y = e^x</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">25:59</span>
-                    <span class="vid-toggle" id="toggle-33">▶</span>
-                </div>
-                <div class="video-player" id="player-33" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/033_Calculus_5.1_Derivatives_of_Exponential_Functions_y___e_x.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=ZHW-2EqcrP8" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=ZHW-2EqcrP8" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-34">
-                <div class="video-header" onclick="toggleVideo(34)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 5.2 The Derivative of y = b^x</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">20:27</span>
-                    <span class="vid-toggle" id="toggle-34">▶</span>
-                </div>
-                <div class="video-player" id="player-34" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/034_Calculus_5.2_The_Derivative_of_y___b_x.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=R9G1LvokSYw" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=R9G1LvokSYw" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-35">
-                <div class="video-header" onclick="toggleVideo(35)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 5.3 Optimization Problems using exponential functions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">32:58</span>
-                    <span class="vid-toggle" id="toggle-35">▶</span>
-                </div>
-                <div class="video-player" id="player-35" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/035_Calculus_5.3_Optimization_Problems_using_exponential_functions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=U5yInkijKxY" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=U5yInkijKxY" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-36">
-                <div class="video-header" onclick="toggleVideo(36)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 5.4 Derivatives of Sine and Cosine Functions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:00</span>
-                    <span class="vid-toggle" id="toggle-36">▶</span>
-                </div>
-                <div class="video-player" id="player-36" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/036_Calculus_5.4_Derivatives_of_Sine_and_Cosine_Functions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=J9j7jQCiSpo" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=J9j7jQCiSpo" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-37">
-                <div class="video-header" onclick="toggleVideo(37)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 5.4 Extreme Values on an Interval  P 257 # 6 a, b, c</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">19:20</span>
-                    <span class="vid-toggle" id="toggle-37">▶</span>
-                </div>
-                <div class="video-player" id="player-37" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/037_Calculus_5.4_Extreme_Values_on_an_Interval__P_257___6_a__b__c.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=AKRIBnKcamw" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=AKRIBnKcamw" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-38">
-                <div class="video-header" onclick="toggleVideo(38)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Calculus 5.5 Derivatives of Tangent and Cotangent Functions</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">12:50</span>
-                    <span class="vid-toggle" id="toggle-38">▶</span>
-                </div>
-                <div class="video-player" id="player-38" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/038_Calculus_5.5_Derivatives_of_Tangent_and_Cotangent_Functions.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=xrEleU8Dscc" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=xrEleU8Dscc" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-39">
-                <div class="video-header" onclick="toggleVideo(39)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Calculus chapter 5 Practice Test</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">41:38</span>
-                    <span class="vid-toggle" id="toggle-39">▶</span>
-                </div>
-                <div class="video-player" id="player-39" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/039_Calculus_chapter_5_Practice_Test.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=B7iXl_C8rwk" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=B7iXl_C8rwk" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-40">
-                <div class="video-header" onclick="toggleVideo(40)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.1 Introduction to Vectors</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">14:15</span>
-                    <span class="vid-toggle" id="toggle-40">▶</span>
-                </div>
-                <div class="video-player" id="player-40" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/040_Vectors_6.1_Introduction_to_Vectors.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=WkZCiaq6W_I" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=WkZCiaq6W_I" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-41">
-                <div class="video-header" onclick="toggleVideo(41)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.2 Adding and Subtracting Vectors</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">36:13</span>
-                    <span class="vid-toggle" id="toggle-41">▶</span>
-                </div>
-                <div class="video-player" id="player-41" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/041_Vectors_6.2_Adding_and_Subtracting_Vectors.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=jeDS3JwGqrs" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=jeDS3JwGqrs" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-42">
-                <div class="video-header" onclick="toggleVideo(42)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.3 Multiplication of a vector by a scalar</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">23:28</span>
-                    <span class="vid-toggle" id="toggle-42">▶</span>
-                </div>
-                <div class="video-player" id="player-42" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/042_Vectors_6.3_Multiplication_of_a_vector_by_a_scalar.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=Mhj12YBWl70" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=Mhj12YBWl70" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-43">
-                <div class="video-header" onclick="toggleVideo(43)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.4 Properties of Vectors</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">10:00</span>
-                    <span class="vid-toggle" id="toggle-43">▶</span>
-                </div>
-                <div class="video-player" id="player-43" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/043_Vectors_6.4_Properties_of_Vectors.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=9F1cZUwQg9A" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=9F1cZUwQg9A" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-44">
-                <div class="video-header" onclick="toggleVideo(44)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.5 Vectors in R3</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">21:00</span>
-                    <span class="vid-toggle" id="toggle-44">▶</span>
-                </div>
-                <div class="video-player" id="player-44" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/044_Vectors_6.5_Vectors_in_R3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=gDWHZH99-w0" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=gDWHZH99-w0" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-45">
-                <div class="video-header" onclick="toggleVideo(45)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.6 Cartesian Vectors in R2</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">15:04</span>
-                    <span class="vid-toggle" id="toggle-45">▶</span>
-                </div>
-                <div class="video-player" id="player-45" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/045_Vectors_6.6_Cartesian_Vectors_in_R2.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=2b2HZ5M2K2s" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=2b2HZ5M2K2s" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-46">
-                <div class="video-header" onclick="toggleVideo(46)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.7 Operations with vectors in R3</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">20:54</span>
-                    <span class="vid-toggle" id="toggle-46">▶</span>
-                </div>
-                <div class="video-player" id="player-46" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/046_Vectors_6.7_Operations_with_vectors_in_R3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=L2vPGVTdaeA" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=L2vPGVTdaeA" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-47">
-                <div class="video-header" onclick="toggleVideo(47)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 6.8 Linear Combinations and Spanning Sets</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">26:01</span>
-                    <span class="vid-toggle" id="toggle-47">▶</span>
-                </div>
-                <div class="video-player" id="player-47" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/047_Vectors_6.8_Linear_Combinations_and_Spanning_Sets.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=SEEp2q1HTs8" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=SEEp2q1HTs8" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-48">
-                <div class="video-header" onclick="toggleVideo(48)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Vectors Chapter 6 & 7 Unit test on vectors in R3</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">24:52</span>
-                    <span class="vid-toggle" id="toggle-48">▶</span>
-                </div>
-                <div class="video-player" id="player-48" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/048_Vectors_Chapter_6___7_Unit_test_on_vectors_in_R3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=s1ilPn8OxSY" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=s1ilPn8OxSY" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-49">
-                <div class="video-header" onclick="toggleVideo(49)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.1 Vectors as Forces</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">22:12</span>
-                    <span class="vid-toggle" id="toggle-49">▶</span>
-                </div>
-                <div class="video-player" id="player-49" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/049_Vectors_7.1_Vectors_as_Forces.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=cQXJhF8-Ytg" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=cQXJhF8-Ytg" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-50">
-                <div class="video-header" onclick="toggleVideo(50)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.1 7.2 Rope tension and velocity</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">20:40</span>
-                    <span class="vid-toggle" id="toggle-50">▶</span>
-                </div>
-                <div class="video-player" id="player-50" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/050_Vectors_7.1_7.2_Rope_tension_and_velocity.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=JjAv9X-x2NA" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=JjAv9X-x2NA" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-51">
-                <div class="video-header" onclick="toggleVideo(51)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.2 Take me to the River</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">13:22</span>
-                    <span class="vid-toggle" id="toggle-51">▶</span>
-                </div>
-                <div class="video-player" id="player-51" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/051_Vectors_7.2_Take_me_to_the_River.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=trONC30i7mo" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=trONC30i7mo" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-52">
-                <div class="video-header" onclick="toggleVideo(52)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.3/7.4  The Dot Product (R2)</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:19</span>
-                    <span class="vid-toggle" id="toggle-52">▶</span>
-                </div>
-                <div class="video-player" id="player-52" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/052_Vectors_7.3_7.4__The_Dot_Product__R2_.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=uf5wrtyqL-s" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=uf5wrtyqL-s" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-53">
-                <div class="video-header" onclick="toggleVideo(53)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.4 Dot Product in R3</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">20:44</span>
-                    <span class="vid-toggle" id="toggle-53">▶</span>
-                </div>
-                <div class="video-player" id="player-53" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/053_Vectors_7.4_Dot_Product_in_R3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=vhLHrA0Z_QE" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=vhLHrA0Z_QE" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-54">
-                <div class="video-header" onclick="toggleVideo(54)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.5 Scalar and Vector Projections</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">20:17</span>
-                    <span class="vid-toggle" id="toggle-54">▶</span>
-                </div>
-                <div class="video-player" id="player-54" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/054_Vectors_7.5_Scalar_and_Vector_Projections.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=HD8ErvT5tnU" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=HD8ErvT5tnU" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-55">
-                <div class="video-header" onclick="toggleVideo(55)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 7.7 Applications of Cross Product and The Triple Scalar Product</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">26:22</span>
-                    <span class="vid-toggle" id="toggle-55">▶</span>
-                </div>
-                <div class="video-player" id="player-55" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/055_Vectors_7.7_Applications_of_Cross_Product_and_The_Triple_Scalar_Product.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=zOE1dJUa_4s" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=zOE1dJUa_4s" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-56">
-                <div class="video-header" onclick="toggleVideo(56)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Vectors Chapter6/7 Test Vectors in R2</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">28:44</span>
-                    <span class="vid-toggle" id="toggle-56">▶</span>
-                </div>
-                <div class="video-player" id="player-56" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/056_Vectors_Chapter6_7_Test_Vectors_in_R2.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=oyAV7oMDbeo" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=oyAV7oMDbeo" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-57">
-                <div class="video-header" onclick="toggleVideo(57)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 8.1 Equations of lines in 2 space</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">18:44</span>
-                    <span class="vid-toggle" id="toggle-57">▶</span>
-                </div>
-                <div class="video-player" id="player-57" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/057_Vectors_8.1_Equations_of_lines_in_2_space.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=PmTt5zuaIEo" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=PmTt5zuaIEo" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-58">
-                <div class="video-header" onclick="toggleVideo(58)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 8.2 Cartesian Equation of a line (R2)</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">24:17</span>
-                    <span class="vid-toggle" id="toggle-58">▶</span>
-                </div>
-                <div class="video-player" id="player-58" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/058_Vectors_8.2_Cartesian_Equation_of_a_line__R2_.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=8sHk7A-KMt0" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=8sHk7A-KMt0" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-59">
-                <div class="video-header" onclick="toggleVideo(59)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 8.1/8.2  Necessary skills with equations of lines</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">16:20</span>
-                    <span class="vid-toggle" id="toggle-59">▶</span>
-                </div>
-                <div class="video-player" id="player-59" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/059_Vectors_8.1_8.2__Necessary_skills_with_equations_of_lines.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=592WL7t1eZM" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=592WL7t1eZM" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-60">
-                <div class="video-header" onclick="toggleVideo(60)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 8.3 Vector, Parametric and Symmetric equations of lines in R3</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">26:03</span>
-                    <span class="vid-toggle" id="toggle-60">▶</span>
-                </div>
-                <div class="video-player" id="player-60" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/060_Vectors_8.3_Vector__Parametric_and_Symmetric_equations_of_lines_in_R3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=te0rNvGiP6s" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=te0rNvGiP6s" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-61">
-                <div class="video-header" onclick="toggleVideo(61)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 8.4 Vector Equation of a Plane</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">21:12</span>
-                    <span class="vid-toggle" id="toggle-61">▶</span>
-                </div>
-                <div class="video-player" id="player-61" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/061_Vectors_8.4_Vector_Equation_of_a_Plane.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=vX2RXK9I4vU" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=vX2RXK9I4vU" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-62">
-                <div class="video-header" onclick="toggleVideo(62)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 8.5 The Cartesian Equation of a Plane</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">14:13</span>
-                    <span class="vid-toggle" id="toggle-62">▶</span>
-                </div>
-                <div class="video-player" id="player-62" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/062_Vectors_8.5_The_Cartesian_Equation_of_a_Plane.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=A0t6nxDm0ic" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=A0t6nxDm0ic" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-63">
-                <div class="video-header" onclick="toggleVideo(63)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Vectors Chapter 8 Practice Test Equations of Lines and Planes</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">28:39</span>
-                    <span class="vid-toggle" id="toggle-63">▶</span>
-                </div>
-                <div class="video-player" id="player-63" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/063_Vectors_Chapter_8_Practice_Test_Equations_of_Lines_and_Planes.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=zqBo8uZBCi8" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=zqBo8uZBCi8" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-64">
-                <div class="video-header" onclick="toggleVideo(64)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.1  Intersection of lines with planes</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">14:32</span>
-                    <span class="vid-toggle" id="toggle-64">▶</span>
-                </div>
-                <div class="video-player" id="player-64" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/064_Vectors_9.1__Intersection_of_lines_with_planes.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=nicsEkfZHTI" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=nicsEkfZHTI" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-65">
-                <div class="video-header" onclick="toggleVideo(65)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.1 Intersection of lines in R2 and R3 Part 2</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">23:44</span>
-                    <span class="vid-toggle" id="toggle-65">▶</span>
-                </div>
-                <div class="video-player" id="player-65" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/065_Vectors_9.1_Intersection_of_lines_in_R2_and_R3_Part_2.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=7RE0LpjST6M" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=7RE0LpjST6M" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-66">
-                <div class="video-header" onclick="toggleVideo(66)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.2 Systems of Equations - Matrices</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">23:45</span>
-                    <span class="vid-toggle" id="toggle-66">▶</span>
-                </div>
-                <div class="video-player" id="player-66" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/066_Vectors_9.2_Systems_of_Equations_-_Matrices.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=qGx1ZFPJeoQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=qGx1ZFPJeoQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-67">
-                <div class="video-header" onclick="toggleVideo(67)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.3 Intersection of 2 planes</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">25:24</span>
-                    <span class="vid-toggle" id="toggle-67">▶</span>
-                </div>
-                <div class="video-player" id="player-67" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/067_Vectors_9.3_Intersection_of_2_planes.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=R1MEfS9gH9o" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=R1MEfS9gH9o" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-68">
-                <div class="video-header" onclick="toggleVideo(68)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.4 Intersection of 3 Planes (Part 1)</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">28:28</span>
-                    <span class="vid-toggle" id="toggle-68">▶</span>
-                </div>
-                <div class="video-player" id="player-68" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/068_Vectors_9.4_Intersection_of_3_Planes__Part_1_.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=JYzcpuabn2U" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=JYzcpuabn2U" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-69">
-                <div class="video-header" onclick="toggleVideo(69)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.4 Intersection of 3 planes part 2</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">16:20</span>
-                    <span class="vid-toggle" id="toggle-69">▶</span>
-                </div>
-                <div class="video-player" id="player-69" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/069_Vectors_9.4_Intersection_of_3_planes_part_2.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=SMJ3cgDD7KI" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=SMJ3cgDD7KI" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-70">
-                <div class="video-header" onclick="toggleVideo(70)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.5 Distance between a point and a line in R2 and R3</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">20:32</span>
-                    <span class="vid-toggle" id="toggle-70">▶</span>
-                </div>
-                <div class="video-player" id="player-70" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/070_Vectors_9.5_Distance_between_a_point_and_a_line_in_R2_and_R3.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=0xlWhT6zlp8" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=0xlWhT6zlp8" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-71">
-                <div class="video-header" onclick="toggleVideo(71)">
-                    <span class="vid-icon">📖</span>
-                    <span class="vid-title">Vectors 9.6 The Distance from a point to a Plane</span>
-                    <span class="vid-type lecture">Lecture</span>
-                    <span class="vid-duration">9:35</span>
-                    <span class="vid-toggle" id="toggle-71">▶</span>
-                </div>
-                <div class="video-player" id="player-71" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/071_Vectors_9.6_The_Distance_from_a_point_to_a_Plane.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=NdTZ8HHXmhQ" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=NdTZ8HHXmhQ" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
-            <div class="video-card" id="vid-72">
-                <div class="video-header" onclick="toggleVideo(72)">
-                    <span class="vid-icon">📋</span>
-                    <span class="vid-title">Vectors Chapter 9 Practice Test Intersections of Lines and Planes</span>
-                    <span class="vid-type review">Review</span>
-                    <span class="vid-duration">37:00</span>
-                    <span class="vid-toggle" id="toggle-72">▶</span>
-                </div>
-                <div class="video-player" id="player-72" style="display:none;">
-                    <video controls width="100%" preload="none" poster="">
-                        <source src="https://storage.googleapis.com/dondelete_vi/MCV4U/072_Vectors_Chapter_9_Practice_Test_Intersections_of_Lines_and_Planes.mp4" type="video/mp4">
-                        Your browser doesn't support video. <a href="https://youtube.com/watch?v=wnaCx_0o4DE" target="_blank">Watch on YouTube</a>
-                    </video>
-                    <a href="https://youtube.com/watch?v=wnaCx_0o4DE" target="_blank" class="yt-fallback">📺 Watch on YouTube instead</a>
-                </div>
-            </div>
+    <div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+            <h2>Unit 2: Derivatives</h2>
+            <p>Derivative rules: power, product, quotient, chain rule</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Rate of Change</span>
+                <span>📹 6 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v7')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 2.1 Sketching Derivative Functions</span>
+                        <span class="vid-duration">12:35</span>
+                        <span class="vid-toggle" id="toggle-v7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v7">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/007_Calculus_2.1_Sketching_Derivative_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=cW8FviXyP9I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 2.1 The Derivative Function - Derivatives from First Principles</span>
+                        <span class="vid-duration">12:34</span>
+                        <span class="vid-toggle" id="toggle-v8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v8">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/008_Calculus_2.1_The_Derivative_Function_-_Derivatives_from_First_Principles.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=5DPVkcEOd3s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v9')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 2.2 Derivatives of Polynomials</span>
+                        <span class="vid-duration">24:21</span>
+                        <span class="vid-toggle" id="toggle-v9">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v9">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/009_Calculus_2.2_Derivatives_of_Polynomials.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=0aZxSwwzN-o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v10')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 2.3 The product rule</span>
+                        <span class="vid-duration">16:02</span>
+                        <span class="vid-toggle" id="toggle-v10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v10">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/010_Calculus_2.3_The_product_rule.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=DbwcyVvHVcQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v11')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus and Vectors 2.4 The Quotient Rule (THE EASIEST WAY TO REMEMBER IT!)</span>
+                        <span class="vid-duration">13:49</span>
+                        <span class="vid-toggle" id="toggle-v11">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v11">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/011_Calculus_and_Vectors_2.4_The_Quotient_Rule__THE_EASIEST_WAY_TO_REMEMBER_IT__.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=_HRT0AouBZw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v12')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus and Vectors 2.5 The Derivatives of Composite Functions</span>
+                        <span class="vid-duration">16:40</span>
+                        <span class="vid-toggle" id="toggle-v12">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v12">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/012_Calculus_and_Vectors_2.5_The_Derivatives_of_Composite_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=cqPV1668eYg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+            <h2>Unit 3: Derivative Applications</h2>
+            <p>Velocity, acceleration, optimization problems</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Derivatives & Applications</span>
+                <span>📹 10 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v13')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.1 Velocity and Acceleration Part 1</span>
+                        <span class="vid-duration">17:53</span>
+                        <span class="vid-toggle" id="toggle-v13">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v13">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/013_Calculus_3.1_Velocity_and_Acceleration_Part_1.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=OCTYcY7-dpE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v14')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.1 Velocity and Acceleration Part 2</span>
+                        <span class="vid-duration">10:26</span>
+                        <span class="vid-toggle" id="toggle-v14">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v14">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/014_Calculus_3.1_Velocity_and_Acceleration_Part_2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=CCW5kwya4ys" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v15')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.2 Maximum and Minimum on an Interval</span>
+                        <span class="vid-duration">8:00</span>
+                        <span class="vid-toggle" id="toggle-v15">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v15">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/015_Calculus_3.2_Maximum_and_Minimum_on_an_Interval.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=zn_ZBGv8YBQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v16')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization Problems Part 1</span>
+                        <span class="vid-duration">25:28</span>
+                        <span class="vid-toggle" id="toggle-v16">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v16">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/016_Calculus_3.3_Optimization_Problems_Part_1.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=h7uNcUuzFCQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v17')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization Problems Part 2</span>
+                        <span class="vid-duration">24:58</span>
+                        <span class="vid-toggle" id="toggle-v17">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v17">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/017_Calculus_3.3_Optimization_Problems_Part_2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=MPXIPwdIcDI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v18')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization Part 3</span>
+                        <span class="vid-duration">24:33</span>
+                        <span class="vid-toggle" id="toggle-v18">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v18">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/018_Calculus_3.3_Optimization_Part_3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=-ZaCMzyW-AM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v19')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 3.3 Optimization problem 13 page 146</span>
+                        <span class="vid-duration">12:57</span>
+                        <span class="vid-toggle" id="toggle-v19">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v19">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/019_Calculus_3.3_Optimization_problem_13_page_146.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=nfZMNXrQXE4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v20')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus and Vectors 3.4 Economics and Science Optimization Problems</span>
+                        <span class="vid-duration">28:15</span>
+                        <span class="vid-toggle" id="toggle-v20">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v20">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/020_Calculus_and_Vectors_3.4_Economics_and_Science_Optimization_Problems.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Mras1283EyE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v21')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus Chapter 3 Optimization practice test Part 1</span>
+                        <span class="vid-duration">18:20</span>
+                        <span class="vid-toggle" id="toggle-v21">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v21">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/021_Calculus_Chapter_3_Optimization_practice_test_Part_1.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=FBcgFQxNHeg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v22')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus Chapter 3 Optimization Practice Test Part 3</span>
+                        <span class="vid-duration">11:58</span>
+                        <span class="vid-toggle" id="toggle-v22">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v22">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/022_Calculus_Chapter_3_Optimization_Practice_Test_Part_3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=PJ4H_4kdFRc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
+            <h2>Unit 4: Curve Sketching</h2>
+            <p>Increasing/decreasing, critical points, concavity, asymptotes</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Derivatives & Applications</span>
+                <span>📹 10 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v23')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.1 Increasing and Decreasing Functions</span>
+                        <span class="vid-duration">28:49</span>
+                        <span class="vid-toggle" id="toggle-v23">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v23">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/023_Calculus_4.1_Increasing_and_Decreasing_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=LggLn5ZfS60" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v24')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.1 Continued</span>
+                        <span class="vid-duration">16:36</span>
+                        <span class="vid-toggle" id="toggle-v24">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v24">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/024_Calculus_4.1_Continued.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=xD9HNQzj3WE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v25')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">Calculus 4.1 Homework questions p 171 # 10 and # 12</span>
+                        <span class="vid-duration">9:51</span>
+                        <span class="vid-toggle" id="toggle-v25">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v25">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/025_Calculus_4.1_Homework_questions_p_171___10_and___12.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=irWUBXfnyOk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v26')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus 4.2 Critical Points, First Derivative Test</span>
+                        <span class="vid-duration">34:00</span>
+                        <span class="vid-toggle" id="toggle-v26">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v26">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/026_Calculus_4.2_Critical_Points__First_Derivative_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=CPMllZfuuSQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v27')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus  4.3 Vertical and Horizontal Asymptotes (Obliques too!)</span>
+                        <span class="vid-duration">27:55</span>
+                        <span class="vid-toggle" id="toggle-v27">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v27">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/027_Calculus__4.3_Vertical_and_Horizontal_Asymptotes__Obliques_too__.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=hEgOEsM7SI0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v28')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.3 Sketching a Rational Function with an Oblique or Slant Asymptote</span>
+                        <span class="vid-duration">18:38</span>
+                        <span class="vid-toggle" id="toggle-v28">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v28">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/028_Calculus_4.3_Sketching_a_Rational_Function_with_an_Oblique_or_Slant_Asymptote.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Cl7cL4Z_R3E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v29')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus 4.4 Concavity, Points of Inflection and the 2nd Derivative Test</span>
+                        <span class="vid-duration">36:42</span>
+                        <span class="vid-toggle" id="toggle-v29">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v29">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/029_Calculus_4.4_Concavity__Points_of_Inflection_and_the_2nd_Derivative_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=v1tiIcFAYM4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v30')">
+                        <span class="vid-icon">📝</span>
+                        <span class="vid-title">Calculus 4.4 Concavity and Points of Inflection homework questions</span>
+                        <span class="vid-duration">35:07</span>
+                        <span class="vid-toggle" id="toggle-v30">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v30">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/030_Calculus_4.4_Concavity_and_Points_of_Inflection_homework_questions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Gp5dzXalyVA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v31')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 4.5 An Algorithm for Curve Sketching</span>
+                        <span class="vid-duration">18:57</span>
+                        <span class="vid-toggle" id="toggle-v31">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v31">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/031_Calculus_4.5_An_Algorithm_for_Curve_Sketching.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=QdlypsJsAs0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v32')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus Chapter 4 Practice Test</span>
+                        <span class="vid-duration">41:52</span>
+                        <span class="vid-toggle" id="toggle-v32">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v32">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/032_Calculus_Chapter_4_Practice_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=5b7O8e_GfBY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+            <h2>Unit 5: Exp. & Trig. Derivatives</h2>
+            <p>Derivatives of exponential, sine, cosine, tangent functions</p>
+            <div class="unit-meta">
+                <span>📚 Strand A: Rate of Change</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v33')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.1 Derivatives of Exponential Functions y = e^x</span>
+                        <span class="vid-duration">25:59</span>
+                        <span class="vid-toggle" id="toggle-v33">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v33">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/033_Calculus_5.1_Derivatives_of_Exponential_Functions_y___e_x.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=ZHW-2EqcrP8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v34')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.2 The Derivative of y = b^x</span>
+                        <span class="vid-duration">20:27</span>
+                        <span class="vid-toggle" id="toggle-v34">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v34">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/034_Calculus_5.2_The_Derivative_of_y___b_x.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=R9G1LvokSYw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v35')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.3 Optimization Problems using exponential functions</span>
+                        <span class="vid-duration">32:58</span>
+                        <span class="vid-toggle" id="toggle-v35">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v35">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/035_Calculus_5.3_Optimization_Problems_using_exponential_functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=U5yInkijKxY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v36')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.4 Derivatives of Sine and Cosine Functions</span>
+                        <span class="vid-duration">24:00</span>
+                        <span class="vid-toggle" id="toggle-v36">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v36">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/036_Calculus_5.4_Derivatives_of_Sine_and_Cosine_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=J9j7jQCiSpo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v37')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.4 Extreme Values on an Interval  P 257 # 6 a, b, c</span>
+                        <span class="vid-duration">19:20</span>
+                        <span class="vid-toggle" id="toggle-v37">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v37">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/037_Calculus_5.4_Extreme_Values_on_an_Interval__P_257___6_a__b__c.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=AKRIBnKcamw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v38')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Calculus 5.5 Derivatives of Tangent and Cotangent Functions</span>
+                        <span class="vid-duration">12:50</span>
+                        <span class="vid-toggle" id="toggle-v38">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v38">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/038_Calculus_5.5_Derivatives_of_Tangent_and_Cotangent_Functions.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=xrEleU8Dscc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v39')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Calculus chapter 5 Practice Test</span>
+                        <span class="vid-duration">41:38</span>
+                        <span class="vid-toggle" id="toggle-v39">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v39">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/039_Calculus_chapter_5_Practice_Test.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=B7iXl_C8rwk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit6">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+            <h2>Unit 6: Introduction to Vectors</h2>
+            <p>Vector representation, operations, R2 and R3, spanning sets</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Vectors</span>
+                <span>📹 9 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v40')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.1 Introduction to Vectors</span>
+                        <span class="vid-duration">14:15</span>
+                        <span class="vid-toggle" id="toggle-v40">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v40">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/040_Vectors_6.1_Introduction_to_Vectors.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=WkZCiaq6W_I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v41')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.2 Adding and Subtracting Vectors</span>
+                        <span class="vid-duration">36:13</span>
+                        <span class="vid-toggle" id="toggle-v41">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v41">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/041_Vectors_6.2_Adding_and_Subtracting_Vectors.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=jeDS3JwGqrs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v42')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.3 Multiplication of a vector by a scalar</span>
+                        <span class="vid-duration">23:28</span>
+                        <span class="vid-toggle" id="toggle-v42">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v42">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/042_Vectors_6.3_Multiplication_of_a_vector_by_a_scalar.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=Mhj12YBWl70" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v43')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.4 Properties of Vectors</span>
+                        <span class="vid-duration">10:00</span>
+                        <span class="vid-toggle" id="toggle-v43">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v43">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/043_Vectors_6.4_Properties_of_Vectors.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=9F1cZUwQg9A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v44')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.5 Vectors in R3</span>
+                        <span class="vid-duration">21:00</span>
+                        <span class="vid-toggle" id="toggle-v44">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v44">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/044_Vectors_6.5_Vectors_in_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=gDWHZH99-w0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v45')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.6 Cartesian Vectors in R2</span>
+                        <span class="vid-duration">15:04</span>
+                        <span class="vid-toggle" id="toggle-v45">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v45">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/045_Vectors_6.6_Cartesian_Vectors_in_R2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=2b2HZ5M2K2s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v46')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.7 Operations with vectors in R3</span>
+                        <span class="vid-duration">20:54</span>
+                        <span class="vid-toggle" id="toggle-v46">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v46">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/046_Vectors_6.7_Operations_with_vectors_in_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=L2vPGVTdaeA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v47')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 6.8 Linear Combinations and Spanning Sets</span>
+                        <span class="vid-duration">26:01</span>
+                        <span class="vid-toggle" id="toggle-v47">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v47">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/047_Vectors_6.8_Linear_Combinations_and_Spanning_Sets.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=SEEp2q1HTs8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v48')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Vectors Chapter 6 & 7 Unit test on vectors in R3</span>
+                        <span class="vid-duration">24:52</span>
+                        <span class="vid-toggle" id="toggle-v48">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v48">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/048_Vectors_Chapter_6___7_Unit_test_on_vectors_in_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=s1ilPn8OxSY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit7">
+        <div class="unit-header" style="background:linear-gradient(135deg,#e11d48dd,#e11d48);">
+            <h2>Unit 7: Vector Applications</h2>
+            <p>Forces, dot product, cross product, projections</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Vectors</span>
+                <span>📹 8 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v49')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.1 Vectors as Forces</span>
+                        <span class="vid-duration">22:12</span>
+                        <span class="vid-toggle" id="toggle-v49">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v49">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/049_Vectors_7.1_Vectors_as_Forces.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=cQXJhF8-Ytg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v50')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.1 7.2 Rope tension and velocity</span>
+                        <span class="vid-duration">20:40</span>
+                        <span class="vid-toggle" id="toggle-v50">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v50">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/050_Vectors_7.1_7.2_Rope_tension_and_velocity.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=JjAv9X-x2NA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v51')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.2 Take me to the River</span>
+                        <span class="vid-duration">13:22</span>
+                        <span class="vid-toggle" id="toggle-v51">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v51">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/051_Vectors_7.2_Take_me_to_the_River.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=trONC30i7mo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v52')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.3/7.4  The Dot Product (R2)</span>
+                        <span class="vid-duration">24:19</span>
+                        <span class="vid-toggle" id="toggle-v52">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v52">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/052_Vectors_7.3_7.4__The_Dot_Product__R2_.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=uf5wrtyqL-s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v53')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.4 Dot Product in R3</span>
+                        <span class="vid-duration">20:44</span>
+                        <span class="vid-toggle" id="toggle-v53">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v53">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/053_Vectors_7.4_Dot_Product_in_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=vhLHrA0Z_QE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v54')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.5 Scalar and Vector Projections</span>
+                        <span class="vid-duration">20:17</span>
+                        <span class="vid-toggle" id="toggle-v54">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v54">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/054_Vectors_7.5_Scalar_and_Vector_Projections.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=HD8ErvT5tnU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v55')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 7.7 Applications of Cross Product and The Triple Scalar Product</span>
+                        <span class="vid-duration">26:22</span>
+                        <span class="vid-toggle" id="toggle-v55">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v55">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/055_Vectors_7.7_Applications_of_Cross_Product_and_The_Triple_Scalar_Product.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=zOE1dJUa_4s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v56')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Vectors Chapter6/7 Test Vectors in R2</span>
+                        <span class="vid-duration">28:44</span>
+                        <span class="vid-toggle" id="toggle-v56">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v56">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/056_Vectors_Chapter6_7_Test_Vectors_in_R2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=oyAV7oMDbeo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit8">
+        <div class="unit-header" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+            <h2>Unit 8: Lines and Planes</h2>
+            <p>Equations of lines in 2D/3D, equations of planes</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Vectors</span>
+                <span>📹 7 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v57')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.1 Equations of lines in 2 space</span>
+                        <span class="vid-duration">18:44</span>
+                        <span class="vid-toggle" id="toggle-v57">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v57">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/057_Vectors_8.1_Equations_of_lines_in_2_space.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=PmTt5zuaIEo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v58')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.2 Cartesian Equation of a line (R2)</span>
+                        <span class="vid-duration">24:17</span>
+                        <span class="vid-toggle" id="toggle-v58">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v58">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/058_Vectors_8.2_Cartesian_Equation_of_a_line__R2_.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=8sHk7A-KMt0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v59')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.1/8.2  Necessary skills with equations of lines</span>
+                        <span class="vid-duration">16:20</span>
+                        <span class="vid-toggle" id="toggle-v59">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v59">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/059_Vectors_8.1_8.2__Necessary_skills_with_equations_of_lines.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=592WL7t1eZM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v60')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.3 Vector, Parametric and Symmetric equations of lines in R3</span>
+                        <span class="vid-duration">26:03</span>
+                        <span class="vid-toggle" id="toggle-v60">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v60">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/060_Vectors_8.3_Vector__Parametric_and_Symmetric_equations_of_lines_in_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=te0rNvGiP6s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v61')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.4 Vector Equation of a Plane</span>
+                        <span class="vid-duration">21:12</span>
+                        <span class="vid-toggle" id="toggle-v61">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v61">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/061_Vectors_8.4_Vector_Equation_of_a_Plane.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=vX2RXK9I4vU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v62')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 8.5 The Cartesian Equation of a Plane</span>
+                        <span class="vid-duration">14:13</span>
+                        <span class="vid-toggle" id="toggle-v62">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v62">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/062_Vectors_8.5_The_Cartesian_Equation_of_a_Plane.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=A0t6nxDm0ic" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v63')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Vectors Chapter 8 Practice Test Equations of Lines and Planes</span>
+                        <span class="vid-duration">28:39</span>
+                        <span class="vid-toggle" id="toggle-v63">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v63">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/063_Vectors_Chapter_8_Practice_Test_Equations_of_Lines_and_Planes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=zqBo8uZBCi8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="unit-section" id="unit9">
+        <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+            <h2>Unit 9: Intersections</h2>
+            <p>Intersection of lines, planes, distances, matrices</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Vectors</span>
+                <span>📹 9 lessons</span>
+            </div>
+        </div>
+        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v64')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.1  Intersection of lines with planes</span>
+                        <span class="vid-duration">14:32</span>
+                        <span class="vid-toggle" id="toggle-v64">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v64">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/064_Vectors_9.1__Intersection_of_lines_with_planes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=nicsEkfZHTI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v65')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.1 Intersection of lines in R2 and R3 Part 2</span>
+                        <span class="vid-duration">23:44</span>
+                        <span class="vid-toggle" id="toggle-v65">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v65">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/065_Vectors_9.1_Intersection_of_lines_in_R2_and_R3_Part_2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=7RE0LpjST6M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v66')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.2 Systems of Equations - Matrices</span>
+                        <span class="vid-duration">23:45</span>
+                        <span class="vid-toggle" id="toggle-v66">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v66">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/066_Vectors_9.2_Systems_of_Equations_-_Matrices.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=qGx1ZFPJeoQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v67')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.3 Intersection of 2 planes</span>
+                        <span class="vid-duration">25:24</span>
+                        <span class="vid-toggle" id="toggle-v67">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v67">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/067_Vectors_9.3_Intersection_of_2_planes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=R1MEfS9gH9o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v68')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.4 Intersection of 3 Planes (Part 1)</span>
+                        <span class="vid-duration">28:28</span>
+                        <span class="vid-toggle" id="toggle-v68">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v68">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/068_Vectors_9.4_Intersection_of_3_Planes__Part_1_.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=JYzcpuabn2U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v69')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.4 Intersection of 3 planes part 2</span>
+                        <span class="vid-duration">16:20</span>
+                        <span class="vid-toggle" id="toggle-v69">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v69">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/069_Vectors_9.4_Intersection_of_3_planes_part_2.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=SMJ3cgDD7KI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v70')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.5 Distance between a point and a line in R2 and R3</span>
+                        <span class="vid-duration">20:32</span>
+                        <span class="vid-toggle" id="toggle-v70">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v70">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/070_Vectors_9.5_Distance_between_a_point_and_a_line_in_R2_and_R3.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=0xlWhT6zlp8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v71')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Vectors 9.6 The Distance from a point to a Plane</span>
+                        <span class="vid-duration">9:35</span>
+                        <span class="vid-toggle" id="toggle-v71">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v71">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/071_Vectors_9.6_The_Distance_from_a_point_to_a_Plane.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=NdTZ8HHXmhQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('v72')">
+                        <span class="vid-icon">📋</span>
+                        <span class="vid-title">Vectors Chapter 9 Practice Test Intersections of Lines and Planes</span>
+                        <span class="vid-duration">37:00</span>
+                        <span class="vid-toggle" id="toggle-v72">▶</span>
+                    </div>
+                    <div class="video-player" id="player-v72">
+                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/072_Vectors_Chapter_9_Practice_Test_Intersections_of_Lines_and_Planes.mp4" type="video/mp4"></video>
+                        <a href="https://youtube.com/watch?v=wnaCx_0o4DE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+        </div>
     </div>
 
 </div>
 
-<footer class="site-footer">
-    <div class="container">
-        <p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
-    </div>
-</footer>
-
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCV4U Calculus and Vectors · Ontario Curriculum</p>
+</div></footer>
 
 <script>
-function toggleVideo(idx) {
-    const player = document.getElementById('player-' + idx);
-    const toggle = document.getElementById('toggle-' + idx);
-    if (player.style.display === 'none') {
-        player.style.display = 'block';
-        toggle.classList.add('open');
-    } else {
-        player.style.display = 'none';
-        toggle.classList.remove('open');
-        // Pause video if playing
-        const vid = player.querySelector('video');
-        if (vid) vid.pause();
-    }
-}
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
 </script>
-
 </body></html>

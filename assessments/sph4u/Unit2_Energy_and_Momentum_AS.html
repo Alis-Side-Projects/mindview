@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Energy & Momentum — Practice Quiz</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#059669;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
+.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
+.fb-box h4{color:#92400e;margin-bottom:8px}
+.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="ctr">
+
+<header><h1>⚡ Unit 2: Energy & Momentum — Practice Quiz</h1>
+<div class="sub">Assessment AS Learning</div><div class="badge">🔄 Not Graded</div></header>
+<div class="info"><strong>Purpose:</strong> Self-check on work, energy, momentum, and collisions.</div>
+<div class="formula-ref"><h3>📋 Formulae</h3>
+\( W = Fd\cos\theta \) | \( E_k = \tfrac{1}{2}mv^2 \) | \( E_p = mgh \) | \( W_{net} = \Delta E_k \)<br>
+\( p = mv \) | \( J = F\Delta t = \Delta p \) | \( E_{spring} = \tfrac{1}{2}kx^2 \) | \( P = W/t \)
+</div>
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 8 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1"><div class="qn">Q1</div>
+<div class="qt">A \(50\text{ N}\) force pushes a box \(8.0\text{ m}\) along a floor at \(30°\) to horizontal. How much work is done?</div>
+<div>Answer: <input type="text" id="q1-in" style="width:120px;display:inline-block" placeholder="J"> J</div>
+<button class="btn btn-p" onclick="chkNum('q1',346.4,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>\( W = Fd\cos\theta = 50(8.0)\cos30° = 400(0.866) = 346.4 \text{ J} \)</div></div>
+
+<div class="qc" id="q2"><div class="qn">Q2</div>
+<div class="qt">A \(2.0\text{ kg}\) ball moving at \(6.0\text{ m/s}\) hits a wall and bounces back at \(4.0\text{ m/s}\). What is the impulse?</div>
+<div>Answer: <input type="text" id="q2-in" style="width:120px;display:inline-block" placeholder="N·s"> N·s</div>
+<button class="btn btn-p" onclick="chkNum('q2',-20,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>Taking initial direction as +:<br>\( J = \Delta p = m(v_f - v_i) = 2.0(-4.0 - 6.0) = 2.0(-10) = -20 \text{ N·s} \)<br>The negative sign means impulse is in the opposite direction (toward the wall).</div></div>
+
+<div class="qc" id="q3"><div class="qn">Q3</div>
+<div class="qt">A \(0.50\text{ kg}\) ball is dropped from \(12\text{ m}\). Using conservation of energy, what is its speed just before hitting the ground?</div>
+<div>Answer: <input type="text" id="q3-in" style="width:120px;display:inline-block" placeholder="m/s"> m/s</div>
+<button class="btn btn-p" onclick="chkNum('q3',15.3,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>\( mgh = \tfrac{1}{2}mv^2 \) (mass cancels)<br>\( v = \sqrt{2gh} = \sqrt{2(9.8)(12)} = \sqrt{235.2} = 15.3 \text{ m/s} \)</div></div>
+
+<div class="qc" id="q4"><div class="qn">Q4</div>
+<div class="qt">In a perfectly inelastic collision, which quantity is conserved?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Kinetic energy only</label></li>
+<li><label><input type="radio" name="q4" value="b"> Momentum only</label></li>
+<li><label><input type="radio" name="q4" value="c"> Both kinetic energy and momentum</label></li>
+<li><label><input type="radio" name="q4" value="d"> Neither</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button><button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>In ALL collisions, momentum is conserved. In a perfectly inelastic collision (objects stick together), kinetic energy is NOT conserved — maximum KE is lost to heat, sound, and deformation.</div></div>
+
+<div class="qc" id="q5"><div class="qn">Q5</div>
+<div class="qt">A \(70\text{ kg}\) skater moving at \(5.0\text{ m/s}\) catches a \(50\text{ kg}\) stationary skater. What is their combined velocity?</div>
+<div>Answer: <input type="text" id="q5-in" style="width:120px;display:inline-block" placeholder="m/s"> m/s</div>
+<button class="btn btn-p" onclick="chkNum('q5',2.92,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>\( m_1v_1 = (m_1+m_2)v_f \)<br>\( 70(5.0) = (70+50)v_f \)<br>\( v_f = 350/120 = 2.92 \text{ m/s} \)</div></div>
+
+<div class="qc" id="q6"><div class="qn">Q6</div>
+<div class="qt">A spring with \(k = 200\text{ N/m}\) is compressed \(0.15\text{ m}\). How much elastic potential energy is stored?</div>
+<div>Answer: <input type="text" id="q6-in" style="width:120px;display:inline-block" placeholder="J"> J</div>
+<button class="btn btn-p" onclick="chkNum('q6',2.25,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>\( E_s = \tfrac{1}{2}kx^2 = \tfrac{1}{2}(200)(0.15)^2 = 100(0.0225) = 2.25 \text{ J} \)</div></div>
+
+<div class="qc" id="q7"><div class="qn">Q7</div>
+<div class="qt">A \(1000\text{ kg}\) car brakes from \(20\text{ m/s}\) to rest. How much work does friction do?</div>
+<div>Answer: <input type="text" id="q7-in" style="width:120px;display:inline-block" placeholder="J"> J (enter negative)</div>
+<button class="btn btn-p" onclick="chkNum('q7',-200000,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>\( W = \Delta E_k = \tfrac{1}{2}mv_f^2 - \tfrac{1}{2}mv_i^2 = 0 - \tfrac{1}{2}(1000)(20)^2 = -200{,}000 \text{ J} \)<br>Negative because friction removes energy from the system.</div></div>
+
+<div class="qc" id="q8"><div class="qn">Q8</div>
+<div class="qt">A crane lifts a \(500\text{ kg}\) beam \(30\text{ m}\) in \(2.0\text{ minutes}\). What power does the crane develop?</div>
+<div>Answer: <input type="text" id="q8-in" style="width:120px;display:inline-block" placeholder="W"> W</div>
+<button class="btn btn-p" onclick="chkNum('q8',1225,0.05)">Check</button><button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>\( W = mgh = 500(9.8)(30) = 147{,}000 \text{ J} \)<br>\( P = W/t = 147{,}000/120 = 1225 \text{ W} \approx 1.2 \text{ kW} \)</div></div>
+
+<footer>SPH4U — Physics, Grade 12 | Unit 2: Energy & Momentum | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=8;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector(`input[name="${q}"]:checked`);
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function chkNum(q,c,tol){
+const v=parseFloat(document.getElementById(q+'-in').value.trim());
+if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body></html>

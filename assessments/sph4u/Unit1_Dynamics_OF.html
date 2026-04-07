@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Dynamics — Unit Test</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
+.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
+.fb-box h4{color:#92400e;margin-bottom:8px}
+.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="ctr">
+
+<header>
+<h1>📝 Unit 1: Dynamics — Unit Test</h1>
+<div class="sub">Assessment OF Learning — Summative</div>
+<div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work including free body diagrams where required. Answers without work receive partial credit at best.
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="formula-ref">
+<h3>📋 Formulae Provided</h3>
+\( v = v_0 + at \) &nbsp;|&nbsp; \( d = v_0 t + \tfrac{1}{2}at^2 \) &nbsp;|&nbsp; \( v^2 = v_0^2 + 2ad \) &nbsp;|&nbsp; \( \Sigma F = ma \)<br>
+\( f = \mu N \) &nbsp;|&nbsp; \( F_c = \frac{mv^2}{r} \) &nbsp;|&nbsp; \( a_c = \frac{v^2}{r} \) &nbsp;|&nbsp; \( T = \frac{2\pi r}{v} \) &nbsp;|&nbsp; \( g = 9.8 \text{ m/s}^2 \)
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
+
+<div class="qc" id="of1">
+<div class="qn">1. <span class="qm">[2 marks]</span></div>
+<div class="qt">A car accelerates from \( 15 \text{ m/s} \) to \( 35 \text{ m/s} \) in \( 8.0 \text{ s} \). Calculate the acceleration and the distance traveled.</div>
+<textarea placeholder="Show all work..."></textarea>
+</div>
+
+<div class="qc" id="of2">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">A \( 4.0 \text{ kg} \) block is on a horizontal surface with \( \mu_k = 0.25 \). A horizontal force of \( 20 \text{ N} \) is applied.</div>
+<p>a) Draw a complete free body diagram.</p>
+<div class="draw"></div>
+<p>b) Calculate the normal force, friction force, and net force.</p>
+<textarea placeholder="Show all calculations..."></textarea>
+<p>c) Calculate the acceleration.</p>
+<textarea placeholder="..."></textarea>
+</div>
+
+<div class="qc" id="of3">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">State Newton's Third Law and give a specific example from everyday life. Identify the action-reaction force pair in your example.</div>
+<textarea placeholder="State the law precisely, then give example with both forces identified..."></textarea>
+</div>
+
+<div class="qc" id="of4">
+<div class="qn">4. <span class="qm">[3 marks]</span></div>
+<div class="qt">A ball is thrown horizontally at \( 12 \text{ m/s} \) from a height of \( 20 \text{ m} \).</div>
+<p>a) How long does it take to hit the ground?</p>
+<textarea placeholder="Use vertical motion..."></textarea>
+<p>b) How far does it travel horizontally?</p>
+<textarea placeholder="Use horizontal motion..."></textarea>
+</div>
+
+<div class="qc" id="of5">
+<div class="qn">5. <span class="qm">[2 marks]</span></div>
+<div class="qt">A \( 2.0 \text{ kg} \) object moves in a circle of radius \( 0.80 \text{ m} \) with a period of \( 1.5 \text{ s} \). Calculate the centripetal acceleration.</div>
+<textarea placeholder="Find v from T, then ac..."></textarea>
+</div>
+
+<div class="qc" id="of6">
+<div class="qn">6. <span class="qm">[3 marks]</span></div>
+<div class="qt">A \( 6.0 \text{ kg} \) block on a \( 35° \) incline has \( \mu_k = 0.20 \). It is released from rest.</div>
+<p>a) Draw a free body diagram with all forces labeled and resolved into components.</p>
+<div class="draw"></div>
+<p>b) Calculate the acceleration down the incline.</p>
+<textarea placeholder="Resolve forces along and perpendicular to incline..."></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Two blocks are connected by a string over a frictionless pulley. Block A (\( 8.0 \text{ kg} \)) is on a frictionless table. Block B (\( 5.0 \text{ kg} \)) hangs vertically.</div>
+<p>a) Draw free body diagrams for both blocks.</p>
+<div class="draw"></div>
+<p>b) Write Newton's 2nd law equations for each block.</p>
+<textarea placeholder="For A: ... For B: ..."></textarea>
+<p>c) Solve for the acceleration of the system and the tension in the string.</p>
+<textarea placeholder="Solve the simultaneous equations..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">A car rounds a banked curve (radius \( 120 \text{ m} \), bank angle \( 18° \)). There is no friction.</div>
+<p>a) Draw a free body diagram for the car on the banked surface.</p>
+<div class="draw"></div>
+<p>b) Show that the speed for no-friction banking is \( v = \sqrt{rg\tan\theta} \).</p>
+<textarea placeholder="Derive from Fc = N sinθ and N cosθ = mg..."></textarea>
+<p>c) Calculate this speed.</p>
+<textarea placeholder="..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">A \( 0.20 \text{ kg} \) ball on a string moves in a vertical circle of radius \( 0.80 \text{ m} \).</div>
+<p>a) At the top of the circle, what is the minimum speed to maintain the circular path? (Hint: at minimum speed, \( N = 0 \))</p>
+<textarea placeholder="At top: mg = Fc ..."></textarea>
+<p>b) If the ball moves at \( 5.0 \text{ m/s} \) at the bottom of the circle, what is the tension in the string?</p>
+<textarea placeholder="At bottom: T - mg = Fc ..."></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Explain the difference between inertial and non-inertial reference frames. Include:</p>
+<ul><li>Definition of each</li><li>An example of each</li><li>How Newton's laws apply differently in each</li><li>The concept of fictitious forces</li></ul>
+<textarea placeholder="Write a thorough explanation using proper physics terminology..." style="min-height:150px;"></textarea>
+<div class="wc">0 words</div>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">A student says: "An object moving in a circle at constant speed has no acceleration because the speed isn't changing." Write a clear response correcting this misconception. Include a diagram.</div>
+<div class="draw"></div>
+<textarea placeholder="Explain why the student is wrong, what acceleration is, and why circular motion requires acceleration..." style="min-height:120px;"></textarea>
+<div class="wc">0 words</div>
+</div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Describe, step by step, how to solve a Newton's 2nd Law problem involving an object on an inclined plane with friction. Your guide should be usable by another student. Include: identifying forces, choosing axes, resolving components, and solving.</div>
+<textarea placeholder="Write a clear step-by-step method..." style="min-height:150px;"></textarea>
+<div class="wc">0 words</div>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">A ski jumper (\( 65 \text{ kg} \)) launches off a ramp at \( 25 \text{ m/s} \) at an angle of \( 35° \) above the horizontal. The landing area is \( 10 \text{ m} \) below the launch point.</div>
+<p>a) How long is the jumper in the air?</p>
+<textarea placeholder="Set up vertical equation with Δy = -10m..."></textarea>
+<p>b) How far (horizontally) does the jumper travel?</p>
+<textarea placeholder="Use horizontal distance = vx × t..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">An amusement park ride spins riders in a vertical circle of radius \( 8.0 \text{ m} \). The ride completes one revolution every \( 4.0 \text{ s} \). A rider has mass \( 60 \text{ kg} \).</div>
+<p>a) What is the rider's speed?</p>
+<textarea placeholder="v = 2πr/T..."></textarea>
+<p>b) What is the normal force on the rider at the top of the loop?</p>
+<textarea placeholder="At top: N + mg = mv²/r, so N = ..."></textarea>
+<p>c) What is the normal force at the bottom of the loop?</p>
+<textarea placeholder="At bottom: N - mg = mv²/r, so N = ..."></textarea>
+<p>d) Where does the rider feel heaviest? Lightest? Explain.</p>
+<textarea placeholder="Compare N values and relate to apparent weight..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">15. <span class="qm">[5 marks]</span></div>
+<div class="qt">A car (\( 1200 \text{ kg} \)) drives over a hill with radius of curvature \( 40 \text{ m} \).</div>
+<p>a) At what speed would the car become airborne at the top of the hill? (Hint: this happens when \( N = 0 \))</p>
+<textarea placeholder="Set mg = mv²/r and solve for v..."></textarea>
+<p>b) If the car drives at \( 15 \text{ m/s} \), what is the normal force at the top?</p>
+<textarea placeholder="N = mg - mv²/r..."></textarea>
+<p>c) Explain why road engineers design hills with large radii of curvature.</p>
+<textarea placeholder="Connect to safety and the physics of normal force reduction..."></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80-100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70-79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50-59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>SPH4U — Physics, Grade 12 | Unit 1: Dynamics — OF Learning | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=0;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector(`input[name="${q}"]:checked`);
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function chkNum(q,c,tol){
+const v=parseFloat(document.getElementById(q+'-in').value.trim());
+if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body></html>

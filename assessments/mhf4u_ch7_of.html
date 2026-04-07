@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 7: Solving Exp. & Log. Equations — Unit Test</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; min-height: 100px; resize: vertical; }
+textarea:focus { border-color: var(--primary); outline: none; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.desmos-link { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #1e293b; color: #fff; border-radius: 6px; text-decoration: none; font-size: 13px; }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 7: Solving Exp. & Log. Equations</h1>
+    <div class="sub">Assessment OF Learning — Unit Test</div>
+    <div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+    Show all work. Use proper mathematical notation and terminology.
+</div>
+
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+<div class="section-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
+<div class="qcard">
+<div class="qnum">Question 1 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Solve exactly: a) 2³ˣ⁻¹ = 16 b) 9ˣ = 27 c) (1/4)ˣ = 8</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Solve to 3 decimal places: a) 5ˣ = 12 b) 3²ˣ⁺¹ = 50</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Solve: a) log₄(x) = 3/2 b) log(2x+5) = 1 c) ln(x²) = 4</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Solve and check: log₂(x+3) + log₂(x-1) = 3</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Solve: 2ˣ·4ˣ⁺¹ = 8³ (hint: express all in base 2)</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking <span>[15 marks]</span></div>
+<div class="qcard">
+<div class="qnum">Question 6 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Solve: 3ˣ⁺¹ - 3ˣ = 162. Hint: factor out 3ˣ.</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Find all solutions: (log x)² - log(x²) = 3. Careful — this is a quadratic in disguise.</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 8 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">How many solutions does 2ˣ = x² have? Justify your answer graphically and explain why algebraic methods alone are insufficient.</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Open Desmos</a><br>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A student solved log₃(x-2) = log₃(5) + log₃(x) and got x = -2/4. Identify the error and solve correctly.</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication <span>[15 marks]</span></div>
+<div class="qcard">
+<div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Write a complete step-by-step solution guide for solving exponential equations of the form aˣ = b, including when you can match bases vs when you must use logarithms.</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain the concept of extraneous solutions in logarithmic equations. Why do they occur? How do you identify them? Use a specific example.</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 12 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Compare solving 2ˣ = 8 vs 2ˣ = 7. How are the strategies different? Which requires logarithms and why?</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Create a decision flowchart for a student facing an equation with exponents or logs. The flowchart should help them decide which strategy to use.</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application <span>[15 marks]</span></div>
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A bacteria population doubles every 3 hours. Starting with 100 bacteria: a) Write an exponential model. b) When will there be 1 million bacteria? c) What is the hourly growth rate?</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Carbon-14 has a half-life of 5730 years. A fossil has 15% of its original C-14. How old is the fossil?</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 16 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">An investment of $5000 earns 4.5% compounded monthly: A = 5000(1 + 0.045/12)¹²ᵗ. When will it reach $8000?</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 17 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Two towns have populations P₁(t) = 25000·(1.03)ᵗ and P₂(t) = 40000·(1.01)ᵗ. When will their populations be equal?</div>
+<div style="margin-top:12px;"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80-100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70-79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50-59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>
+    MHF4U — Advanced Functions, Grade 12 | A. Exponential and Logarithmic Functions | Assessment OF Learning — Graded
+</footer>
+</div>
+<script>
+document.querySelectorAll('textarea').forEach(t=>{
+    t.addEventListener('input',()=>{
+        const p=t.closest('.qcard');
+        const wc=p?.querySelector('.word-count');
+        if(wc) wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';
+    });
+});
+</script>
+</body>
+</html>

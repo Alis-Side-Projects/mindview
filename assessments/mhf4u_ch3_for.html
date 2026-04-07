@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Rational Functions — Diagnostic</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; min-height: 80px; resize: vertical; }
+textarea:focus { border-color: var(--primary); outline: none; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.feedback-box { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-top: 24px; }
+.feedback-box h4 { color: #92400e; margin-bottom: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>🔍 Chapter 3: Rational Functions</h1>
+    <div class="sub">Assessment FOR Learning — Mid-Unit Diagnostic</div>
+    <div class="badge">📋 Not Graded — Teacher Feedback Only</div>
+</header>
+<div class="info">
+    <strong>Purpose:</strong> Identify gaps before the unit test. Your teacher will provide descriptive feedback.
+    <strong>Duration:</strong> 20 minutes.
+</div>
+<div class="qcard">
+<div class="qnum">Question 1</div>
+<div class="qtxt">Graph f(x) = (3x-6)/(x²-4). Identify the hole, vertical asymptote, and horizontal asymptote.</div>
+<textarea placeholder="Write your answer here..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 2</div>
+<div class="qtxt">Create a rational function that has: VA at x=2, HA at y=-1, hole at x=-3, and x-intercept at x=5.</div>
+<textarea placeholder="Write your answer here..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 3</div>
+<div class="qtxt">In what ways are reciprocal functions similar to and different from the original functions they come from?<br><br>---<br><br>## Teacher Feedback Template<br><br>**Strengths:** "You demonstrated solid understanding of [specific concept]."<br><br>**Next Steps:** "To prepare for the unit test, focus on [specific topic]. Review [specific video]."</div>
+<textarea placeholder="Write your answer here..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+
+<div class="feedback-box">
+    <h4>📝 Teacher Feedback</h4>
+    <p><strong>Strengths:</strong></p>
+    <textarea placeholder="(Teacher fills this in)"></textarea>
+    <p style="margin-top:12px;"><strong>Next Steps:</strong></p>
+    <textarea placeholder="(Teacher fills this in)"></textarea>
+</div>
+
+<footer>
+    MHF4U — Advanced Functions | C. Polynomial and Rational Functions | Assessment FOR Learning — Not Graded
+</footer>
+</div>
+<script>
+document.querySelectorAll('textarea').forEach(t=>{
+    t.addEventListener('input',()=>{
+        const p=t.closest('.qcard');
+        const wc=p?.querySelector('.word-count');
+        if(wc) wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';
+    });
+});
+</script>
+</body>
+</html>

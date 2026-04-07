@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SBI4U — Strand B: Metabolic Processes — Notes & Worksheet</title>
+<style>
+body { font-family: 'Segoe UI', system-ui, sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; line-height: 1.7; color: #1e293b; }
+h1 { color: #2563eb; border-bottom: 3px solid #2563eb; padding-bottom: 8px; }
+h2 { color: #1e40af; margin-top: 32px; }
+h3 { color: #1d4ed8; margin-top: 20px; }
+.diagram { text-align: center; margin: 24px 0; padding: 16px; background: #eff6ff; border: 1px solid #93c5fd; border-radius: 12px; }
+.key-concept { background: #eff6ff; border-left: 4px solid #2563eb; padding: 12px 16px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+.question-box { background: #fff; border: 2px solid #bfdbfe; border-radius: 8px; padding: 16px; margin: 12px 0; }
+.question-box .q-num { font-weight: 700; color: #2563eb; }
+.answer-line { border-bottom: 1px solid #d1d5db; min-height: 24px; margin: 8px 0; }
+table { border-collapse: collapse; width: 100%; margin: 16px 0; }
+th, td { border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; }
+th { background: #eff6ff; }
+.vocab { font-weight: 700; color: #2563eb; }
+.equation { background: #f8fafc; padding: 12px; border-radius: 8px; text-align: center; font-size: 17px; margin: 12px 0; font-family: 'Georgia', serif; }
+</style>
+</head>
+<body>
+
+<h1>⚡ Strand B: Metabolic Processes</h1>
+<p><strong>Course:</strong> SBI4U — Biology, Grade 12<br>
+<strong>Focus:</strong> Cellular respiration and photosynthesis — how cells transform energy</p>
+
+<h2>1. Cellular Respiration Overview</h2>
+
+<div class="equation">
+C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ~36-38 ATP
+</div>
+
+<div class="key-concept">
+<strong>Cellular respiration</strong> is the process by which cells break down glucose to release energy stored in ATP. It occurs in three main stages: <strong>glycolysis</strong>, the <strong>Krebs cycle</strong>, and the <strong>electron transport chain</strong>.
+</div>
+
+<div class="diagram">
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .stg { font: bold 14px sans-serif; fill: white; }
+    .det { font: 11px sans-serif; fill: #1e293b; }
+    .atp { font: bold 12px sans-serif; fill: #dc2626; }
+    .arrow { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs><marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/></marker></defs>
+  <!-- Glycolysis -->
+  <rect x="20" y="20" width="200" height="180" rx="12" fill="#3b82f6" opacity="0.9"/>
+  <text class="stg" x="120" y="50" text-anchor="middle">GLYCOLYSIS</text>
+  <text class="det" x="120" y="75" text-anchor="middle" fill="white">Location: Cytoplasm</text>
+  <text class="det" x="120" y="100" text-anchor="middle" fill="white">Input: 1 Glucose</text>
+  <text class="det" x="120" y="120" text-anchor="middle" fill="white">Output: 2 Pyruvate</text>
+  <text class="det" x="120" y="140" text-anchor="middle" fill="white">2 NADH</text>
+  <text class="atp" x="120" y="170" text-anchor="middle" fill="#fef08a">NET: 2 ATP</text>
+  <text class="det" x="120" y="190" text-anchor="middle" fill="white">(No O₂ required)</text>
+  <!-- Arrow -->
+  <path class="arrow" d="M 230 110 L 280 110"/>
+  <!-- Krebs -->
+  <rect x="290" y="20" width="200" height="180" rx="12" fill="#059669" opacity="0.9"/>
+  <text class="stg" x="390" y="50" text-anchor="middle">KREBS CYCLE</text>
+  <text class="det" x="390" y="75" text-anchor="middle" fill="white">Location: Mitochondrial</text>
+  <text class="det" x="390" y="92" text-anchor="middle" fill="white">Matrix</text>
+  <text class="det" x="390" y="115" text-anchor="middle" fill="white">Input: 2 Acetyl-CoA</text>
+  <text class="det" x="390" y="135" text-anchor="middle" fill="white">Output: 6 NADH, 2 FADH₂</text>
+  <text class="det" x="390" y="155" text-anchor="middle" fill="white">4 CO₂</text>
+  <text class="atp" x="390" y="180" text-anchor="middle" fill="#fef08a">2 ATP</text>
+  <!-- Arrow -->
+  <path class="arrow" d="M 500 110 L 550 110"/>
+  <!-- ETC -->
+  <rect x="560" y="20" width="220" height="180" rx="12" fill="#dc2626" opacity="0.9"/>
+  <text class="stg" x="670" y="50" text-anchor="middle">ELECTRON TRANSPORT</text>
+  <text class="stg" x="670" y="70" text-anchor="middle">CHAIN</text>
+  <text class="det" x="670" y="95" text-anchor="middle" fill="white">Location: Inner</text>
+  <text class="det" x="670" y="112" text-anchor="middle" fill="white">Mitochondrial Membrane</text>
+  <text class="det" x="670" y="135" text-anchor="middle" fill="white">Uses: NADH + FADH₂</text>
+  <text class="det" x="670" y="155" text-anchor="middle" fill="white">Produces: H₂O</text>
+  <text class="atp" x="670" y="185" text-anchor="middle" fill="#fef08a">32-34 ATP</text>
+  <!-- Total -->
+  <rect x="250" y="230" width="300" height="60" rx="10" fill="#f59e0b"/>
+  <text x="400" y="260" text-anchor="middle" font-size="18" font-weight="bold" fill="white">TOTAL: ~36-38 ATP per glucose</text>
+  <text x="400" y="280" text-anchor="middle" font-size="12" fill="white">Efficiency: ~34% (rest = heat)</text>
+</svg>
+</div>
+
+<h2>2. Photosynthesis Overview</h2>
+
+<div class="equation">
+6CO₂ + 6H₂O + Light Energy → C₆H₁₂O₆ + 6O₂
+</div>
+
+<div class="key-concept">
+<strong>Photosynthesis</strong> occurs in chloroplasts and has two stages: <strong>light-dependent reactions</strong> (thylakoid membrane) and the <strong>Calvin cycle</strong> (stroma). It converts light energy into chemical energy stored in glucose.
+</div>
+
+<h3>Comparison: Respiration vs Photosynthesis</h3>
+<table>
+<tr><th>Feature</th><th>Cellular Respiration</th><th>Photosynthesis</th></tr>
+<tr><td>Location</td><td>Mitochondria</td><td>Chloroplasts</td></tr>
+<tr><td>Reactants</td><td>Glucose + O₂</td><td>CO₂ + H₂O + Light</td></tr>
+<tr><td>Products</td><td>CO₂ + H₂O + ATP</td><td>Glucose + O₂</td></tr>
+<tr><td>Energy</td><td>Releases (exergonic)</td><td>Absorbs (endergonic)</td></tr>
+<tr><td>Organisms</td><td>All living cells</td><td>Plants, algae, some bacteria</td></tr>
+<tr><td>Time</td><td>Continuous</td><td>Only in light</td></tr>
+</table>
+
+<h2>📝 Worksheet — Strand B: Metabolic Processes</h2>
+
+<div class="question-box">
+<p><span class="q-num">1. [K/U — 3 marks]</span> Fill in the blanks for the three stages of cellular respiration:</p>
+<table>
+<tr><th>Stage</th><th>Location</th><th>Input</th><th>ATP Produced</th></tr>
+<tr><td>Glycolysis</td><td><div class="answer-line"></div></td><td>1 Glucose</td><td><div class="answer-line"></div></td></tr>
+<tr><td>Krebs Cycle</td><td><div class="answer-line"></div></td><td><div class="answer-line"></div></td><td>2</td></tr>
+<tr><td>ETC</td><td><div class="answer-line"></div></td><td>NADH + FADH₂</td><td><div class="answer-line"></div></td></tr>
+</table>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">2. [Thinking — 4 marks]</span> During intense exercise, muscle cells switch from aerobic to anaerobic respiration.</p>
+<p>a) Why does this switch happen?</p>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<p>b) What is the product of anaerobic respiration in muscle cells?</p>
+<div class="answer-line"></div>
+<p>c) Why is anaerobic respiration less efficient? Compare ATP yield.</p>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">3. [Communication — 3 marks]</span> Explain why cellular respiration and photosynthesis are considered complementary processes. Use a diagram or cycle to support your explanation.</p>
+<div style="height:150px; border:1px solid #d1d5db; border-radius:8px; margin:8px 0;"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">4. [Application — 4 marks]</span> Cyanide is a poison that blocks Complex IV in the electron transport chain.</p>
+<p>a) Explain which stage of cellular respiration would be directly affected.</p>
+<div class="answer-line"></div>
+<p>b) Would glycolysis still function? Explain why or why not.</p>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+<p>c) Predict the overall effect on ATP production and explain why cyanide is lethal.</p>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">5. [Thinking — 3 marks]</span> A plant is placed in a sealed container with a CO₂ sensor. Predict and sketch what happens to CO₂ levels over a 24-hour period (12h light, 12h dark). Explain your graph.</p>
+<div style="height:150px; border:1px solid #d1d5db; border-radius:8px; margin:8px 0;"></div>
+<div class="answer-line"></div>
+<div class="answer-line"></div>
+</div>
+
+<p style="margin-top:32px;text-align:center;color:#64748b;font-size:13px;">
+SBI4U — Biology, Grade 12 | Strand B: Metabolic Processes | Ontario Curriculum 2008
+</p>
+</body>
+</html>

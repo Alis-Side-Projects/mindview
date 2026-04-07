@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindView — Virtual Classroom</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; margin-top: 32px; }
+.course-card { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; transition: all 0.2s; color: #1e293b; text-decoration: none; }
+.course-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.course-icon { font-size: 36px; padding: 20px 20px 0; }
+.course-body { padding: 0 20px 20px; }
+.course-code { font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+.course-body h3 { font-size: 18px; margin-bottom: 8px; }
+.course-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.course-stats { display: flex; gap: 16px; font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
+.course-strands { display: flex; flex-wrap: wrap; gap: 4px; }
+.strand-tag { font-size: 11px; padding: 2px 8px; background: #f1f5f9; border-radius: 10px; color: #64748b; }
+.subject-group { margin-bottom: 40px; }
+.subject-label { font-size: 14px; font-weight: 700; color: #64748b; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
+        <div class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#resources">Resources</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Ontario Curriculum — Grade 12 University Preparation</div>
+        <h1>MindView</h1>
+        <h2>Virtual Classroom</h2>
+        <p class="hero-sub">5 Courses · 22 Strands · Free & Open</p>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Courses</span></div>
+            <div class="stat"><span class="stat-num">296</span><span class="stat-label">Video Lessons</span></div>
+            <div class="stat"><span class="stat-num">667</span><span class="stat-label">Resources</span></div>
+        </div>
+        <a href="#courses" class="hero-cta">Explore Courses →</a>
+    </div>
+</header>
+
+<section id="courses" style="padding: 64px 0;">
+    <div class="container">
+        <h2>Courses</h2>
+        <p class="section-sub">Grade 12 University Preparation courses aligned with Ontario curriculum.</p>
+        
+        <div class="subject-group">
+            <div class="subject-label">📐 Mathematics</div>
+            <div class="courses-grid">
+                <a href="courses/mhf4u.html" class="course-card" style="border-top:4px solid #2563eb"><div class="course-icon" style="color:#2563eb">📐</div><div class="course-body"><div class="course-code" style="color:#2563eb">MHF4U</div><h3>Advanced Functions</h3><p class="course-desc">Polynomial, rational, logarithmic, and trigonometric functions; rates of change</p></div></a><a href="courses/mcv4u.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">∫</div><div class="course-body"><div class="course-code" style="color:#7c3aed">MCV4U</div><h3>Calculus and Vectors</h3><p class="course-desc">Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes</p></div></a>
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <div class="subject-label">🔬 Science</div>
+            <div class="courses-grid">
+                <a href="courses/sph4u.html" class="course-card" style="border-top:4px solid #dc2626"><div class="course-icon" style="color:#dc2626">⚡</div><div class="course-body"><div class="course-code" style="color:#dc2626">SPH4U</div><h3>Physics</h3><p class="course-desc">Dynamics, energy & momentum, fields, wave nature of light, modern physics</p></div></a><a href="courses/sch4u.html" class="course-card" style="border-top:4px solid #059669"><div class="course-icon" style="color:#059669">🧪</div><div class="course-body"><div class="course-code" style="color:#059669">SCH4U</div><h3>Chemistry</h3><p class="course-desc">Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry</p></div></a><a href="courses/sbi4u.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">🧬</div><div class="course-body"><div class="course-code" style="color:#16a34a">SBI4U</div><h3>Biology</h3><p class="course-desc">Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics</p></div></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tools-section" id="resources">
+    <div class="container">
+        <h2>Tools & Resources</h2>
+        <div class="tools-grid">
+            <a href="https://www.desmos.com/calculator" target="_blank" class="tool-card">
+                <div class="tool-icon">📊</div><h3>Desmos</h3><p>Graphing calculator</p>
+            </a>
+            <a href="https://www.wolframalpha.com" target="_blank" class="tool-card">
+                <div class="tool-icon">🔢</div><h3>Wolfram Alpha</h3><p>Computation engine</p>
+            </a>
+            <a href="https://www.geogebra.org" target="_blank" class="tool-card">
+                <div class="tool-icon">📐</div><h3>GeoGebra</h3><p>Interactive geometry</p>
+            </a>
+            <a href="https://phet.colorado.edu" target="_blank" class="tool-card">
+                <div class="tool-icon">⚗️</div><h3>PhET Simulations</h3><p>Science simulations</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong></p>
+        <p>Ontario Curriculum, Grades 11 and 12 (2007/2008 Revised)</p>
+        <p style="margin-top:8px;font-size:12px;opacity:0.6;">Built with ⚡ by MindView</p>
+    </div>
+</footer>
+
+</body></html>

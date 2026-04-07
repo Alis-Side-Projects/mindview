@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 6: Exponential & Logarithmic Functions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #059669; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 820px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-hdr { font-size: 18px; font-weight: 700; color: var(--primary); margin: 28px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 6px; font-size: 15px; }
+.qcat { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-left: 8px; font-weight: 600; }
+.qcat.ku { background: #dbeafe; color: #1e40af; }
+.qcat.t { background: #fef3c7; color: #92400e; }
+.qcat.c { background: #d1fae5; color: #065f46; }
+.qcat.a { background: #ede9fe; color: #5b21b6; }
+.qtxt { margin-bottom: 12px; }
+.parts { margin-left: 20px; margin-bottom: 12px; }
+.parts li { margin-bottom: 6px; }
+.ans-area { margin-top: 12px; }
+.ans-area input[type="text"], .ans-area textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+.ans-area textarea { min-height: 80px; resize: vertical; }
+.ans-area input:focus, .ans-area textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { opacity: 0.9; }
+.btn-show { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.score-bar { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.score-bar .score { font-size: 28px; font-weight: 800; color: var(--primary); }
+.pbar { flex: 1; background: #e2e8f0; border-radius: 20px; height: 8px; overflow: hidden; }
+.pfill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.section-hdr { font-size: 20px; font-weight: 700; color: var(--text); margin: 32px 0 8px; padding: 12px 16px; background: #f1f5f9; border-radius: 8px; }
+.section-hdr .marks { float: right; font-size: 14px; color: var(--muted); }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 6: Exponential & Logarithmic Functions</h1>
+    <div class="sub">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+<div class="info">
+    <strong>Purpose:</strong> Self-check your understanding. This quiz is <strong>not graded</strong>.
+    Click "Check Answer" for instant feedback and "Show Solution" for detailed explanations with rendered formulas.
+</div>
+<div class="score-bar">
+    Score: <span class="score" id="sc">0</span> / 5
+    <div class="pbar"><div class="pfill" id="pf"></div></div>
+</div>
+<div class="topic-hdr">6.2 — Introduction to Logarithms</div>
+<div class="qcard" id="q1">
+<div class="qnum">Question 1</div>
+<div class="qtxt">Evaluate: \( \log_2(64) \)</div>
+<div class="ans-area"><input type="text" id="q1-in" placeholder="Enter your answer..."></div>
+<button class="btn btn-check" onclick="chkNum('q1',6)">Check Answer</button>
+<button class="btn btn-show" onclick="showSol('q1')">Show Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-label">Solution:</div>\( 2^? = 64 \). Since \( 2^6 = 64 \), \( \log_2(64) = 6 \).</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2</div>
+<div class="qtxt">Evaluate: \( \log_5\left(\frac{1}{25}\right) \)</div>
+<div class="ans-area"><input type="text" id="q2-in" placeholder="Enter your answer..."></div>
+<button class="btn btn-check" onclick="chkNum('q2',-2)">Check Answer</button>
+<button class="btn btn-show" onclick="showSol('q2')">Show Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-label">Solution:</div>\( 5^? = \frac{1}{25} = 5^{-2} \). So \( \log_5\left(\frac{1}{25}\right) = -2 \).</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3</div>
+<div class="qtxt">\( \log_3(81) = \)</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> 4</label></li>
+<li><label><input type="radio" name="q3" value="b"> 3</label></li>
+<li><label><input type="radio" name="q3" value="c"> 27</label></li>
+<li><label><input type="radio" name="q3" value="d"> 9</label></li>
+</ul>
+<button class="btn btn-check" onclick="chkMC('q3','a')">Check Answer</button>
+<button class="btn btn-show" onclick="showSol('q3')">Show Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-label">Solution:</div>\( 3^4 = 81 \), so \( \log_3(81) = 4 \).</div>
+</div>
+
+<div class="topic-hdr">6.4–6.5 — Log Laws</div>
+<div class="qcard" id="q4">
+<div class="qnum">Question 4</div>
+<div class="qtxt">\( \log_2(8) + \log_2(4) = \)</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> 5</label></li>
+<li><label><input type="radio" name="q4" value="b"> 12</label></li>
+<li><label><input type="radio" name="q4" value="c"> 32</label></li>
+<li><label><input type="radio" name="q4" value="d"> 7</label></li>
+</ul>
+<button class="btn btn-check" onclick="chkMC('q4','a')">Check Answer</button>
+<button class="btn btn-show" onclick="showSol('q4')">Show Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-label">Solution:</div>By the product law: \( \log_2(8) + \log_2(4) = \log_2(8 \times 4) = \log_2(32) = 5 \).<br>Or directly: \( 3 + 2 = 5 \).</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5</div>
+<div class="qtxt">Which expression equals \( \log\left(\frac{x^3}{y^2}\right) \)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> \( 3\log(x) - 2\log(y) \)</label></li>
+<li><label><input type="radio" name="q5" value="b"> \( \log(3x) - \log(2y) \)</label></li>
+<li><label><input type="radio" name="q5" value="c"> \( 3\log(x) + 2\log(y) \)</label></li>
+<li><label><input type="radio" name="q5" value="d"> \( \frac{3}{2}\log(xy) \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="chkMC('q5','a')">Check Answer</button>
+<button class="btn btn-show" onclick="showSol('q5')">Show Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-label">Solution:</div>By log laws: \( \log\left(\frac{x^3}{y^2}\right) = \log(x^3) - \log(y^2) = 3\log(x) - 2\log(y) \).</div>
+</div>
+
+
+<footer>
+    MHF4U — Advanced Functions, Grade 12 | Ontario Curriculum 2007 (Revised)<br>
+    A. Exponential and Logarithmic Functions<br>
+    Assessment AS Learning — Self-Directed, Not Graded
+</footer>
+</div>
+
+<script>
+let score=0, answered=0, total=5;
+function up(){ document.getElementById('sc').textContent=score; document.getElementById('pf').style.width=(answered/total*100)+'%'; }
+function chkMC(q,c){
+    const s=document.querySelector(`input[name="${q}"]:checked`);
+    if(!s)return; const cd=document.getElementById(q), fb=document.getElementById(q+'-fb'), sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    answered++;
+    if(s.value===c){ score++; cd.classList.add('correct'); fb.className='fb show correct'; fb.textContent='✅ Correct!'; }
+    else{ cd.classList.add('wrong'); fb.className='fb show wrong'; fb.textContent='❌ Not quite. See solution below.'; }
+    sl.classList.add('show'); up();
+}
+function chkNum(q,c){
+    const v=parseFloat(document.getElementById(q+'-in').value.trim());
+    if(isNaN(v))return; const cd=document.getElementById(q), fb=document.getElementById(q+'-fb'), sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    answered++;
+    if(Math.abs(v-c)<0.01){ score++; cd.classList.add('correct'); fb.className='fb show correct'; fb.textContent='✅ Correct!'; }
+    else{ cd.classList.add('wrong'); fb.className='fb show wrong'; fb.textContent='❌ The answer is '+c+'. See solution below.'; }
+    sl.classList.add('show'); up();
+}
+function showSol(q){ document.getElementById(q+'-sl').classList.toggle('show'); }
+</script>
+
+</body>
+</html>

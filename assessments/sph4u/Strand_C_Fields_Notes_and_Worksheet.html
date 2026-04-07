@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Strand C: Fields</title>
+<style>
+body{font-family:'Segoe UI',system-ui,sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.7;color:#1e293b}
+h1{color:#7c3aed;border-bottom:3px solid #7c3aed;padding-bottom:8px}
+h2{color:#5b21b6;margin-top:32px}h3{color:#5b21b6;margin-top:20px}
+.diagram{text-align:center;margin:24px 0;padding:16px;background:#f5f3ff;border:1px solid #c4b5fd;border-radius:12px}
+.key-concept{background:#f5f3ff;border-left:4px solid #7c3aed;padding:12px 16px;margin:16px 0;border-radius:0 8px 8px 0}
+.equation{background:#f8fafc;padding:12px 16px;border-radius:8px;text-align:center;font-size:18px;margin:12px 0;font-family:Georgia,serif;border:1px solid #e2e8f0}
+.question-box{background:#fff;border:2px solid #c4b5fd;border-radius:8px;padding:16px;margin:12px 0}
+.question-box .q-num{font-weight:700;color:#7c3aed}
+.answer-line{border-bottom:1px solid #d1d5db;min-height:24px;margin:8px 0}
+table{border-collapse:collapse;width:100%;margin:16px 0}
+th,td{border:1px solid #d1d5db;padding:8px 12px;text-align:left}
+th{background:#f5f3ff}
+.vocab{font-weight:700;color:#7c3aed}
+.draw-box{height:180px;border:1px solid #d1d5db;border-radius:8px;margin:8px 0}
+@media print{.question-box{page-break-inside:avoid}}
+</style>
+</head><body>
+
+<h1>🧲 Strand C: Gravitational, Electric, and Magnetic Fields</h1>
+<p><strong>Course:</strong> SPH4U — Physics, Grade 12<br>
+<strong>Focus:</strong> Field theory, Coulomb's law, electric circuits, magnetism</p>
+
+<h2>1. Gravitational Fields</h2>
+<div class="equation">F_g = Gm₁m₂/r² &nbsp;&nbsp;|&nbsp;&nbsp; g = GM/r² &nbsp;&nbsp;|&nbsp;&nbsp; G = 6.67 × 10⁻¹¹ N·m²/kg²</div>
+
+<h2>2. Electric Fields</h2>
+<div class="equation">F_e = kq₁q₂/r² &nbsp;&nbsp;|&nbsp;&nbsp; E = F/q = kQ/r² &nbsp;&nbsp;|&nbsp;&nbsp; k = 8.99 × 10⁹ N·m²/C²</div>
+<div class="equation">V = kQ/r &nbsp;&nbsp;|&nbsp;&nbsp; ΔV = W/q &nbsp;&nbsp;|&nbsp;&nbsp; E = -ΔV/Δd (uniform field)</div>
+
+<div class="diagram">
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg">
+<text x="175" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#5b21b6">Electric Field Lines</text>
+<text x="525" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#5b21b6">Parallel Plates</text>
+<!-- Positive charge -->
+<circle cx="175" cy="110" r="20" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+<text x="175" y="115" text-anchor="middle" font-size="16" font-weight="bold" fill="#dc2626">+</text>
+<!-- Field lines radiating out -->
+<line x1="195" y1="110" x2="260" y2="110" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="175" y1="90" x2="175" y2="35" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="175" y1="130" x2="175" y2="185" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="155" y1="110" x2="90" y2="110" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="189" y1="96" x2="230" y2="55" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="189" y1="124" x2="230" y2="165" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="161" y1="96" x2="120" y2="55" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<line x1="161" y1="124" x2="120" y2="165" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#ar2)"/>
+<text x="175" y="195" text-anchor="middle" font-size="11" fill="#64748b">Lines point AWAY from +</text>
+<!-- Parallel plates -->
+<rect x="420" y="40" width="10" height="140" fill="#dc2626" rx="2"/>
+<text x="415" y="115" text-anchor="end" font-size="18" fill="#dc2626" font-weight="bold">+</text>
+<rect x="620" y="40" width="10" height="140" fill="#3b82f6" rx="2"/>
+<text x="645" y="115" font-size="18" fill="#3b82f6" font-weight="bold">−</text>
+<!-- Uniform field lines -->
+<line x1="435" y1="60" x2="615" y2="60" stroke="#7c3aed" stroke-width="1" marker-end="url(#ar2)"/>
+<line x1="435" y1="85" x2="615" y2="85" stroke="#7c3aed" stroke-width="1" marker-end="url(#ar2)"/>
+<line x1="435" y1="110" x2="615" y2="110" stroke="#7c3aed" stroke-width="1" marker-end="url(#ar2)"/>
+<line x1="435" y1="135" x2="615" y2="135" stroke="#7c3aed" stroke-width="1" marker-end="url(#ar2)"/>
+<line x1="435" y1="160" x2="615" y2="160" stroke="#7c3aed" stroke-width="1" marker-end="url(#ar2)"/>
+<text x="525" y="195" text-anchor="middle" font-size="11" fill="#64748b">Uniform E field (parallel, evenly spaced)</text>
+<defs><marker id="ar2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker></defs>
+</svg>
+</div>
+
+<h2>3. Magnetic Fields</h2>
+<div class="equation">F = qvB sinθ &nbsp;&nbsp;|&nbsp;&nbsp; F = BIL sinθ &nbsp;&nbsp;|&nbsp;&nbsp; B = μ₀I/(2πr)</div>
+
+<div class="key-concept">
+<strong>Right-hand rules:</strong><br>
+• For a straight wire: thumb = current direction, fingers curl = B field direction<br>
+• For force on a charge: fingers = v direction, curl toward B, thumb = F direction (positive charge)<br>
+• For a solenoid: curl fingers = current direction, thumb = N pole
+</div>
+
+<h2>📝 Worksheet — Strand C: Fields</h2>
+
+<div class="question-box">
+<p><span class="q-num">1. [K/U — 3 marks]</span> Two charges, q₁ = +3.0 μC and q₂ = -5.0 μC, are separated by 0.20 m.</p>
+<p>a) Calculate the electric force between them.</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+<p>b) Is the force attractive or repulsive?</p>
+<div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">2. [K/U — 3 marks]</span> Calculate the gravitational field strength at a distance of 2 Earth radii from Earth's center (r = 2R_E). Compare to g at the surface.</p>
+<div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">3. [Thinking — 4 marks]</span> An electron enters a uniform electric field between parallel plates (E = 5000 N/C, plate separation 0.02 m) with horizontal velocity 3.0 × 10⁶ m/s.</p>
+<p>a) Calculate the electric force on the electron.</p>
+<div class="answer-line"></div>
+<p>b) Calculate the vertical acceleration.</p>
+<div class="answer-line"></div>
+<p>c) If the plates are 0.10 m long, how much is the electron deflected vertically?</p>
+<div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">4. [Communication — 3 marks]</span> Compare and contrast gravitational and electric fields. Include: direction of field lines, whether force is always attractive, formula similarities, and relative strength. Present in a table or paragraph.</p>
+<div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">5. [Application — 4 marks]</span> A proton moving at 5.0 × 10⁶ m/s enters a magnetic field of 0.50 T perpendicular to its velocity.</p>
+<p>a) Calculate the magnetic force on the proton.</p>
+<div class="answer-line"></div>
+<p>b) What shape is the proton's path? Why?</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+<p>c) Calculate the radius of the circular path.</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<p style="margin-top:32px;text-align:center;color:#64748b;font-size:13px;">
+SPH4U — Physics, Grade 12 | Strand C: Fields | Ontario Curriculum 2008</p>
+</body></html>

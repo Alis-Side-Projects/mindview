@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Polynomial Functions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.q-parts { margin-left: 20px; margin-bottom: 12px; }
+.q-parts li { margin-bottom: 4px; }
+.answer-area { margin-top: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #1d4ed8; }
+.btn-reveal { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+.btn-reveal:hover { background: #e2e8f0; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.reflect-item label { flex: 1; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 1: Polynomial Functions</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check your understanding after each topic. This quiz is <strong>not graded</strong>.
+    Use results to identify areas needing review before the unit test. For any question you get wrong, 
+    review the corresponding lecture video and try again.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ==================== TOPIC 1.1 ==================== -->
+<div class="topic-section">
+<div class="topic-header">Topic 1.1 — Power Functions</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">Which of the following is a power function?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q1" value="a"> \( f(x) = 3x^4 \)</label></li>
+        <li><label><input type="radio" name="q1" value="b"> \( g(x) = 2^x \)</label></li>
+        <li><label><input type="radio" name="q1" value="c"> \( h(x) = x^3 + 2x \)</label></li>
+        <li><label><input type="radio" name="q1" value="d"> \( p(x) = \sqrt{x} + 1 \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q1','a')">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution">
+        <div class="solution-label">Solution:</div>
+        \( f(x) = 3x^4 \) is a power function because it has the form \( f(x) = ax^n \) where \( a = 3 \) and \( n = 4 \).
+        <br>• \( g(x) = 2^x \) is exponential (base is constant, exponent is variable).
+        <br>• \( h(x) = x^3 + 2x \) is a polynomial, but not a single power function.
+        <br>• \( p(x) = \sqrt{x} + 1 \) is a transformed root function, not a pure power function.
+    </div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">What is the end behaviour of \( f(x) = -2x^5 \)?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> As \( x \to \infty, f(x) \to \infty \); as \( x \to -\infty, f(x) \to -\infty \)</label></li>
+        <li><label><input type="radio" name="q2" value="b"> As \( x \to \infty, f(x) \to -\infty \); as \( x \to -\infty, f(x) \to \infty \)</label></li>
+        <li><label><input type="radio" name="q2" value="c"> As \( x \to \pm\infty, f(x) \to \infty \)</label></li>
+        <li><label><input type="radio" name="q2" value="d"> As \( x \to \pm\infty, f(x) \to -\infty \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution">
+        <div class="solution-label">Solution:</div>
+        Odd degree (5) with negative leading coefficient (-2):
+        <br>• As \( x \to \infty \), the large positive \( x^5 \) multiplied by \( -2 \) gives \( f(x) \to -\infty \)
+        <br>• As \( x \to -\infty \), the large negative \( x^5 \) multiplied by \( -2 \) gives \( f(x) \to +\infty \)
+        <br>This extends from Quadrant II to Quadrant IV.
+    </div>
+</div>
+
+</div>
+
+<!-- ==================== TOPIC 1.3 ==================== -->
+<div class="topic-section">
+<div class="topic-header">Topic 1.3 — Characteristics of Polynomial Functions</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">For \( f(x) = 2x^3 - 5x^2 + x - 7 \), what is the maximum number of turning points?</div>
+    <div class="answer-area">
+        <input type="text" id="q3-input" placeholder="Enter a number...">
+    </div>
+    <button class="btn btn-check" onclick="checkNumeric('q3', 2)">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution">
+        <div class="solution-label">Solution:</div>
+        A polynomial of degree \( n \) has at most \( n - 1 \) turning points.
+        <br>Degree = 3, so maximum turning points = \( 3 - 1 = 2 \).
+    </div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">True or False: A polynomial of degree 4 <em>must</em> have exactly 3 turning points.</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q4" value="a"> True</label></li>
+        <li><label><input type="radio" name="q4" value="b"> False</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution">
+        <div class="solution-label">Solution:</div>
+        <strong>False.</strong> A degree 4 polynomial has <em>at most</em> 3 turning points, but it can have 1 or 3.
+        <br>For example, \( f(x) = x^4 \) has only 1 turning point (at the origin).
+        <br>The key word is "at most" — not "exactly."
+    </div>
+</div>
+
+</div>
+
+<!-- ==================== TOPIC 1.4 ==================== -->
+<div class="topic-section">
+<div class="topic-header">Topic 1.4 — Finite Differences</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">A table of values has constant <strong>third</strong> differences of 12. What is the degree of the polynomial?</div>
+    <div class="answer-area">
+        <input type="text" id="q5-input" placeholder="Enter the degree...">
+    </div>
+    <button class="btn btn-check" onclick="checkNumeric('q5', 3)">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution">
+        <div class="solution-label">Solution:</div>
+        If the \( n \)th differences are constant, the polynomial has degree \( n \).
+        <br>Constant 3rd differences → degree 3.
+    </div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">If the leading coefficient of a cubic function is 2, what are the constant third differences? (Assume equally spaced x-values with step 1)</div>
+    <div class="answer-area">
+        <input type="text" id="q6-input" placeholder="Enter a number...">
+    </div>
+    <button class="btn btn-check" onclick="checkNumeric('q6', 12)">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution">
+        <div class="solution-label">Solution:</div>
+        For a polynomial of degree \( n \) with leading coefficient \( a \):
+        $$ \text{Constant } n\text{th differences} = a \cdot n! $$
+        Here: \( a = 2 \), \( n = 3 \), so \( 2 \times 3! = 2 \times 6 = 12 \).
+    </div>
+</div>
+
+</div>
+
+<!-- ==================== TOPIC 1.5 ==================== -->
+<div class="topic-section">
+<div class="topic-header">Topic 1.5 — Graphing from Factored Form</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">For \( f(x) = -2(x+1)^2(x-3) \), what is the y-intercept?</div>
+    <div class="answer-area">
+        <input type="text" id="q7-input" placeholder="Enter the y-value...">
+    </div>
+    <button class="btn btn-check" onclick="checkNumeric('q7', 6)">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution">
+        <div class="solution-label">Solution:</div>
+        The y-intercept is \( f(0) \):
+        $$ f(0) = -2(0+1)^2(0-3) = -2(1)(-3) = 6 $$
+    </div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">In the function \( f(x) = -2(x+1)^2(x-3) \), what happens at \( x = -1 \)?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q8" value="a"> The graph crosses the x-axis</label></li>
+        <li><label><input type="radio" name="q8" value="b"> The graph bounces off (is tangent to) the x-axis</label></li>
+        <li><label><input type="radio" name="q8" value="c"> The graph has a vertical asymptote</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution">
+        <div class="solution-label">Solution:</div>
+        At \( x = -1 \), the factor is \( (x+1)^2 \) — the exponent is 2 (even multiplicity).
+        <br>At zeros with <strong>even</strong> multiplicity, the graph <strong>bounces off</strong> the x-axis (tangent).
+        <br>At zeros with <strong>odd</strong> multiplicity (like \( x = 3 \) with exponent 1), the graph <strong>crosses</strong>.
+    </div>
+</div>
+
+</div>
+
+<!-- ==================== TOPIC 1.6 ==================== -->
+<div class="topic-section">
+<div class="topic-header">Topic 1.6 — Even and Odd Functions</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Is \( f(x) = x^4 - 3x^2 \) even, odd, or neither?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> Even: \( f(-x) = f(x) \)</label></li>
+        <li><label><input type="radio" name="q9" value="b"> Odd: \( f(-x) = -f(x) \)</label></li>
+        <li><label><input type="radio" name="q9" value="c"> Neither</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','a')">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution">
+        <div class="solution-label">Solution:</div>
+        Test \( f(-x) \):
+        $$ f(-x) = (-x)^4 - 3(-x)^2 = x^4 - 3x^2 = f(x) $$
+        Since \( f(-x) = f(x) \), the function is <strong>even</strong>.
+        <br>Even functions have symmetry about the y-axis. Note that all exponents are even.
+    </div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">Is \( g(x) = x^3 - x \) even, odd, or neither?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> Even</label></li>
+        <li><label><input type="radio" name="q10" value="b"> Odd</label></li>
+        <li><label><input type="radio" name="q10" value="c"> Neither</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution">
+        <div class="solution-label">Solution:</div>
+        Test \( g(-x) \):
+        $$ g(-x) = (-x)^3 - (-x) = -x^3 + x = -(x^3 - x) = -g(x) $$
+        Since \( g(-x) = -g(x) \), the function is <strong>odd</strong>.
+        <br>Odd functions have rotational symmetry about the origin. All exponents are odd.
+    </div>
+</div>
+
+</div>
+
+<!-- ==================== TOPIC 1.8-1.9 ==================== -->
+<div class="topic-section">
+<div class="topic-header">Topics 1.8–1.9 — Rates of Change</div>
+
+<div class="question-card" id="q11">
+    <div class="q-number">Question 11</div>
+    <div class="q-text">Calculate the average rate of change of \( f(x) = x^2 - 4x + 1 \) on the interval \([1, 3]\).</div>
+    <div class="answer-area">
+        <input type="text" id="q11-input" placeholder="Enter the rate of change...">
+    </div>
+    <button class="btn btn-check" onclick="checkNumeric('q11', 0)">Check Answer</button>
+    <div class="feedback" id="q11-feedback"></div>
+    <div class="solution" id="q11-solution">
+        <div class="solution-label">Solution:</div>
+        $$ \text{Average RoC} = \frac{f(3) - f(1)}{3 - 1} $$
+        $$ f(3) = 9 - 12 + 1 = -2 $$
+        $$ f(1) = 1 - 4 + 1 = -2 $$
+        $$ \text{Average RoC} = \frac{-2 - (-2)}{2} = \frac{0}{2} = 0 $$
+    </div>
+</div>
+
+<div class="question-card" id="q12">
+    <div class="q-number">Question 12</div>
+    <div class="q-text">The instantaneous rate of change of \( f(x) = x^2 - 4x + 1 \) at \( x = 2 \) is closest to:</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q12" value="a"> \(-4\)</label></li>
+        <li><label><input type="radio" name="q12" value="b"> \(0\)</label></li>
+        <li><label><input type="radio" name="q12" value="c"> \(2\)</label></li>
+        <li><label><input type="radio" name="q12" value="d"> \(4\)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q12','b')">Check Answer</button>
+    <div class="feedback" id="q12-feedback"></div>
+    <div class="solution" id="q12-solution">
+        <div class="solution-label">Solution:</div>
+        Using the limit of secant slopes approaching \( x = 2 \):
+        $$ \frac{f(2.01) - f(1.99)}{0.02} = \frac{-2.9999 - (-2.9999)}{0.02} \approx 0 $$
+        The vertex of this parabola is at \( x = 2 \), so the tangent line is horizontal there.
+        <br>Instantaneous rate of change at the vertex = 0.
+    </div>
+</div>
+
+</div>
+
+<!-- ==================== SELF-REFLECTION ==================== -->
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    
+    <div class="reflect-item">
+        <select><option>1</option><option>2</option><option selected>3</option><option>4</option></select>
+        <label>1.1 Power Functions</label>
+    </div>
+    <div class="reflect-item">
+        <select><option>1</option><option>2</option><option selected>3</option><option>4</option></select>
+        <label>1.3 Characteristics of Polynomials</label>
+    </div>
+    <div class="reflect-item">
+        <select><option>1</option><option>2</option><option selected>3</option><option>4</option></select>
+        <label>1.4 Finite Differences</label>
+    </div>
+    <div class="reflect-item">
+        <select><option>1</option><option>2</option><option selected>3</option><option>4</option></select>
+        <label>1.5 Graphing from Factored Form</label>
+    </div>
+    <div class="reflect-item">
+        <select><option>1</option><option>2</option><option selected>3</option><option>4</option></select>
+        <label>1.6 Even and Odd Functions</label>
+    </div>
+    <div class="reflect-item">
+        <select><option>1</option><option>2</option><option selected>3</option><option>4</option></select>
+        <label>1.8–1.9 Rates of Change</label>
+    </div>
+    
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+        <strong>Topics rated 1 or 2:</strong> Review the corresponding video lectures and retake those questions.
+    </p>
+</div>
+
+<footer>
+    MHF4U — Advanced Functions, Grade 12 | Ontario Curriculum 2007 (Revised)<br>
+    Strand C: Polynomial and Rational Functions | Strand D: Characteristics of Functions<br>
+    Assessment AS Learning — Self-Directed, Not Graded
+</footer>
+
+</div>
+
+<script>
+let score = 0;
+let answered = 0;
+const total = 12;
+
+function updateProgress() {
+    document.getElementById('totalScore').textContent = score;
+    document.getElementById('progressFill').style.width = (answered / total * 100) + '%';
+}
+
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return; // already answered
+    
+    answered++;
+    if (selected.value === correct) {
+        score++;
+        card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = '❌ Not quite. See the solution below.';
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+
+function checkNumeric(qid, correct) {
+    const input = document.getElementById(qid + '-input');
+    const val = parseFloat(input.value.trim());
+    if (isNaN(val)) return;
+    
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    
+    answered++;
+    if (Math.abs(val - correct) < 0.01) {
+        score++;
+        card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = `❌ The correct answer is ${correct}. See the solution below.`;
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+</script>
+</body>
+</html>

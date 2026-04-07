@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Strand B: Energy and Momentum</title>
+<style>
+body{font-family:'Segoe UI',system-ui,sans-serif;max-width:900px;margin:0 auto;padding:24px;line-height:1.7;color:#1e293b}
+h1{color:#059669;border-bottom:3px solid #059669;padding-bottom:8px}
+h2{color:#065f46;margin-top:32px}h3{color:#065f46;margin-top:20px}
+.diagram{text-align:center;margin:24px 0;padding:16px;background:#ecfdf5;border:1px solid #86efac;border-radius:12px}
+.key-concept{background:#ecfdf5;border-left:4px solid #059669;padding:12px 16px;margin:16px 0;border-radius:0 8px 8px 0}
+.equation{background:#f8fafc;padding:12px 16px;border-radius:8px;text-align:center;font-size:18px;margin:12px 0;font-family:Georgia,serif;border:1px solid #e2e8f0}
+.question-box{background:#fff;border:2px solid #86efac;border-radius:8px;padding:16px;margin:12px 0}
+.question-box .q-num{font-weight:700;color:#059669}
+.answer-line{border-bottom:1px solid #d1d5db;min-height:24px;margin:8px 0}
+table{border-collapse:collapse;width:100%;margin:16px 0}
+th,td{border:1px solid #d1d5db;padding:8px 12px;text-align:left}
+th{background:#ecfdf5}
+.vocab{font-weight:700;color:#059669}
+.draw-box{height:180px;border:1px solid #d1d5db;border-radius:8px;margin:8px 0}
+@media print{.question-box{page-break-inside:avoid}}
+</style>
+</head><body>
+
+<h1>⚡ Strand B: Energy and Momentum</h1>
+<p><strong>Course:</strong> SPH4U — Physics, Grade 12<br>
+<strong>Focus:</strong> Work, energy, power, momentum, and collisions</p>
+
+<h2>1. Work and Energy</h2>
+<div class="equation">W = Fd cosθ &nbsp;&nbsp;|&nbsp;&nbsp; E_k = ½mv² &nbsp;&nbsp;|&nbsp;&nbsp; E_p = mgh</div>
+<div class="equation">W_net = ΔE_k &nbsp;&nbsp;|&nbsp;&nbsp; P = W/t = Fv</div>
+
+<div class="key-concept">
+<strong>Conservation of Energy:</strong> In an isolated system, the total mechanical energy (E_k + E_p) remains constant if only conservative forces act. E_k₁ + E_p₁ = E_k₂ + E_p₂
+</div>
+
+<h2>2. Momentum and Impulse</h2>
+<div class="equation">p = mv &nbsp;&nbsp;|&nbsp;&nbsp; J = FΔt = Δp &nbsp;&nbsp;|&nbsp;&nbsp; Σp_before = Σp_after</div>
+
+<h3>Types of Collisions</h3>
+<table>
+<tr><th>Type</th><th>Momentum Conserved?</th><th>Kinetic Energy Conserved?</th><th>Example</th></tr>
+<tr><td>Elastic</td><td>Yes</td><td>Yes</td><td>Billiard balls (idealized)</td></tr>
+<tr><td>Inelastic</td><td>Yes</td><td>No (some lost)</td><td>Car crash, clay ball</td></tr>
+<tr><td>Perfectly Inelastic</td><td>Yes</td><td>No (maximum loss)</td><td>Objects stick together</td></tr>
+<tr><td>Explosion</td><td>Yes</td><td>No (KE increases)</td><td>Firecracker, recoil</td></tr>
+</table>
+
+<div class="diagram">
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg">
+<text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#065f46">1D Elastic Collision</text>
+<defs><marker id="ar" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1e293b"/></marker></defs>
+<!-- Before -->
+<text x="170" y="50" text-anchor="middle" font-size="13" fill="#64748b">BEFORE</text>
+<circle cx="100" cy="100" r="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+<text x="100" y="105" text-anchor="middle" font-size="12" font-weight="bold">m₁</text>
+<line x1="125" y1="100" x2="175" y2="100" stroke="#3b82f6" stroke-width="2" marker-end="url(#ar)"/>
+<text x="155" y="90" font-size="11" fill="#3b82f6">v₁</text>
+<circle cx="230" cy="100" r="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="230" y="105" text-anchor="middle" font-size="12" font-weight="bold">m₂</text>
+<text x="230" y="130" text-anchor="middle" font-size="11" fill="#64748b">at rest</text>
+<!-- Arrow -->
+<text x="330" y="105" font-size="24" fill="#64748b">→</text>
+<!-- After -->
+<text x="530" y="50" text-anchor="middle" font-size="13" fill="#64748b">AFTER</text>
+<circle cx="430" cy="100" r="25" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+<text x="430" y="105" text-anchor="middle" font-size="12" font-weight="bold">m₁</text>
+<line x1="455" y1="100" x2="490" y2="100" stroke="#3b82f6" stroke-width="2" marker-end="url(#ar)"/>
+<text x="475" y="90" font-size="11" fill="#3b82f6">v₁'</text>
+<circle cx="570" cy="100" r="25" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+<text x="570" y="105" text-anchor="middle" font-size="12" font-weight="bold">m₂</text>
+<line x1="595" y1="100" x2="650" y2="100" stroke="#f59e0b" stroke-width="2" marker-end="url(#ar)"/>
+<text x="630" y="90" font-size="11" fill="#f59e0b">v₂'</text>
+<text x="350" y="170" text-anchor="middle" font-size="12" fill="#065f46">m₁v₁ = m₁v₁' + m₂v₂' (momentum conserved)</text>
+</svg>
+</div>
+
+<h2>📝 Worksheet — Strand B: Energy and Momentum</h2>
+
+<div class="question-box">
+<p><span class="q-num">1. [K/U — 3 marks]</span> A 0.50 kg ball is dropped from a height of 10.0 m.</p>
+<p>a) Calculate its potential energy at the top.</p>
+<div class="answer-line"></div>
+<p>b) Using conservation of energy, find its speed just before hitting the ground.</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">2. [K/U — 3 marks]</span> A 60 kg skater moving at 4.0 m/s collides with and holds onto a stationary 80 kg skater.</p>
+<p>a) What type of collision is this?</p>
+<div class="answer-line"></div>
+<p>b) Calculate their combined velocity after the collision.</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+<p>c) Calculate the kinetic energy lost in the collision.</p>
+<div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">3. [Thinking — 4 marks]</span> A 2000 kg car traveling east at 20 m/s collides with a 3000 kg truck traveling north at 15 m/s. They lock together.</p>
+<p>a) Find the velocity (magnitude and direction) of the wreckage after collision.</p>
+<div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div>
+<p>b) Was this collision elastic or inelastic? Justify with a calculation.</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">4. [Communication — 3 marks]</span> Explain why modern cars are designed with crumple zones using the concepts of impulse and momentum. Include the relationship J = FΔt in your explanation.</p>
+<div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<div class="question-box">
+<p><span class="q-num">5. [Application — 4 marks]</span> A roller coaster car (mass 500 kg, including riders) starts from rest at the top of a 40 m hill.</p>
+<p>a) What is its speed at the bottom of the hill? (Ignore friction.)</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+<p>b) The car then enters a vertical loop of radius 10 m. What is the minimum speed needed at the top of the loop to maintain contact?</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+<p>c) Will the car make it through the loop? Show your reasoning.</p>
+<div class="answer-line"></div><div class="answer-line"></div>
+</div>
+
+<p style="margin-top:32px;text-align:center;color:#64748b;font-size:13px;">
+SPH4U — Physics, Grade 12 | Strand B: Energy and Momentum | Ontario Curriculum 2008</p>
+</body></html>

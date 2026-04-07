@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Polynomial Functions — Diagnostic (FOR Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.parts { margin-left: 20px; margin-bottom: 12px; }
+.parts li { margin-bottom: 8px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.btn-s { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+.btn-submit { background: #059669; color: #fff; font-size: 16px; padding: 14px 32px; margin-top: 24px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.desmos-link { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #1e293b; color: #fff; border-radius: 6px; text-decoration: none; font-size: 13px; }
+.desmos-link:hover { background: #334155; }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.feedback-box { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-top: 16px; }
+.feedback-box h4 { color: #92400e; margin-bottom: 8px; }
+.feedback-box textarea { min-height: 60px; border-color: #fde68a; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn, .desmos-link, .feedback-box { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+    <h1>🔍 Chapter 1: Polynomial Functions</h1>
+    <div class="sub">Assessment FOR Learning — Mid-Unit Diagnostic</div>
+    <div class="badge">📋 Not Graded — Teacher Feedback Only</div>
+</header>
+<div class="info">
+    <strong>Purpose:</strong> Your teacher uses this to identify gaps before the unit test. 
+    You'll receive <strong>descriptive feedback</strong>, not a grade. Be honest about what you don't understand — that's the whole point.
+</div>
+<div class="qcard">
+<div class="qnum">Question 1 <span class="section-hdr ku" style="display:inline;padding:2px 10px;font-size:12px;margin-left:8px;">Knowledge</span></div>
+<div class="qmarks">[3 marks]</div>
+<div class="qtxt">State the degree, leading coefficient, and end behaviour of \( f(x) = -3x^5 + 2x^3 - x \).</div>
+<div class="ans-area"><textarea placeholder="Write your answer here..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 2 <span class="section-hdr ku" style="display:inline;padding:2px 10px;font-size:12px;margin-left:8px;">Knowledge</span></div>
+<div class="qmarks">[5 marks]</div>
+<div class="qtxt">Given \( f(x) = (x+2)(x-1)^2(x-4) \):<br>a) State all x-intercepts and behaviour at each<br>b) State the y-intercept<br>c) Sketch the graph</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Open Desmos Graphing Calculator</a><br>
+<div class="ans-area"><textarea placeholder="Write your answer here..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 3 <span class="section-hdr c" style="display:inline;padding:2px 10px;font-size:12px;margin-left:8px;">Communication</span></div>
+<div class="qmarks">[3 marks]</div>
+<div class="qtxt">Explain what happens to the graph of a polynomial at a zero of order 2 versus order 1. Use the terms "tangent" and "cross."</div>
+<div class="ans-area"><textarea placeholder="Write your answer here..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 4 <span class="section-hdr c" style="display:inline;padding:2px 10px;font-size:12px;margin-left:8px;">Reflection</span></div>
+<div class="qtxt">What topic from Chapter 1 do you feel least confident about? What specific concept is unclear?</div>
+<div class="ans-area"><textarea placeholder="Write your answer here..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+
+<div class="feedback-box">
+    <h4>📝 Teacher Feedback</h4>
+    <p style="font-size:13px;color:#92400e;margin-bottom:8px;">Your teacher will provide feedback here after reviewing your responses.</p>
+    <p><strong>Strengths:</strong></p>
+    <textarea placeholder="(Teacher fills this in)"></textarea>
+    <p style="margin-top:12px;"><strong>Next Steps:</strong></p>
+    <textarea placeholder="(Teacher fills this in)"></textarea>
+</div>
+<footer>MHF4U — Advanced Functions | C. Polynomial and Rational Functions | Assessment FOR Learning — Diagnostic, Not Graded</footer>
+</div>
+<script>document.querySelectorAll("textarea").forEach(t=>{t.addEventListener("input",()=>{const p=t.closest(".qcard")||t.closest(".feedback-box");const wc=p?.querySelector(".word-count");if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+" words";});});</script>
+</body>
+</html>

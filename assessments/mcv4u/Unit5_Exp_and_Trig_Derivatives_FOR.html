@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Exp and Trig Derivatives — Diagnostic</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#059669;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
+.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
+.fb-box h4{color:#92400e;margin-bottom:8px}
+.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="ctr">
+
+<header><h1>🔍 Unit 5: Exp and Trig Derivatives — Mid-Unit Diagnostic</h1>
+<div class="sub">Assessment FOR Learning — MCV4U</div><div class="badge">📋 Not Graded</div></header>
+<div class="info"><strong>Purpose:</strong> Teacher diagnostic. Show all work and reasoning.</div>
+<div class="formula-ref"><h3>📋 Reference</h3>See unit notes for relevant formulas.</div>
+
+<div class="sec-hdr ku">Knowledge & Understanding</div>
+<div class="qc"><div class="qn">Q1 <span class="qm">[3 marks]</span></div>
+<div class="qt">Solve a standard calculation or concept question from this unit. Show all steps.</div>
+<textarea placeholder="Show all work..."></textarea></div>
+
+<div class="sec-hdr t">Thinking</div>
+<div class="qc"><div class="qn">Q2 <span class="qm">[4 marks]</span></div>
+<div class="qt">Solve a multi-step problem that combines concepts from different topics in this unit.</div>
+<textarea placeholder="Show reasoning..."></textarea></div>
+
+<div class="sec-hdr c">Reflection</div>
+<div class="qc"><div class="qn">Q3</div>
+<div class="qt">What concept in this unit do you find most challenging? What steps have you taken to address it?</div>
+<textarea style="min-height:100px;"></textarea><div class="wc">0 words</div></div>
+
+<div class="fb-box"><h4>📝 Teacher Feedback</h4>
+<table style="width:100%;border-collapse:collapse;margin-top:8px;">
+<tr><th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">K/U</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Thinking</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Communication</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Application</th></tr>
+<tr><td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;resize:none;" placeholder="..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;resize:none;" placeholder="..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;resize:none;" placeholder="..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;resize:none;" placeholder="..."></textarea></td></tr></table>
+<p style="margin-top:12px;"><strong>Next Steps:</strong></p><textarea placeholder="..."></textarea></div>
+
+<footer>SPH4U — Physics, Grade 12 | Unit 5: Exp and Trig Derivatives — FOR | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=0;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector(`input[name="${q}"]:checked`);
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function chkNum(q,c,tol){
+const v=parseFloat(document.getElementById(q+'-in').value.trim());
+if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Programming Foundations — Pre-Unit Diagnostic</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
+.fb-box h4{color:#92400e;margin-bottom:8px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128269; Unit 1: Programming Foundations &mdash; Pre-Unit Diagnostic</h1>
+<div class="sub">Assessment FOR Learning &mdash; Teacher Feedback</div>
+<div class="badge">&#128203; Not Graded &mdash; Descriptive Feedback Only</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Your teacher uses this to identify gaps in problem-solving, basic logic, and math reasoning <em>before</em> Unit 1. Be thorough &mdash; show all work and reasoning. There is no "wrong" answer at this stage; partial responses help your teacher help you.</div>
+
+<div class="qc">
+<div class="qn">Question 1 &mdash; Problem-solving</div>
+<div class="qt">A pizza is cut into 8 equal slices. Three friends each eat 2 slices. Then a fourth friend joins and eats half of what is left. <strong>How many slices are now gone?</strong> Show your reasoning step by step.</div>
+<textarea placeholder="Step 1: 3 friends * 2 slices = ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 2 &mdash; Basic logic</div>
+<div class="qt">Fill in the truth table. Use <strong>T</strong> or <strong>F</strong>.
+<div class="code">A | B | (A and B) | (A or B) | (not A)
+T | T |    ?     |    ?     |    ?
+T | F |    ?     |    ?     |    ?
+F | T |    ?     |    ?     |    ?
+F | F |    ?     |    ?     |    ?</div>
+</div>
+<textarea placeholder="Row 1: ..., Row 2: ..., Row 3: ..., Row 4: ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 3 &mdash; Math: integer arithmetic</div>
+<div class="qt">If a school has 247 students and they are placed into teams of 8, (a) how many full teams of 8 are formed, and (b) how many students are left over?</div>
+<textarea placeholder="(a)... (b)..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 4 &mdash; Decomposition</div>
+<div class="qt">A teacher wants a program that calculates a final mark from <em>five</em> term marks plus an exam. The exam is 30%, and the term work is the average of the five marks (70%). <strong>List the high-level steps</strong> the program would need to perform, in order, in plain English.</div>
+<textarea placeholder="Step 1... Step 2..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 5 &mdash; Pattern recognition</div>
+<div class="qt">What is the next number in each sequence, and briefly explain the pattern?
+<ol style="margin-left:24px;margin-top:6px;">
+<li>2, 4, 8, 16, ___</li>
+<li>1, 4, 9, 16, ___</li>
+<li>1, 1, 2, 3, 5, 8, ___</li>
+<li>3, 6, 11, 18, ___</li>
+</ol>
+</div>
+<textarea placeholder="(1)... (2)..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 6 &mdash; Following instructions precisely</div>
+<div class="qt">Read these instructions and produce the final value.
+<div class="code">START with x = 10
+DOUBLE x
+SUBTRACT 5
+DOUBLE x AGAIN
+ADD x to itself
+WHAT IS x?</div>
+</div>
+<textarea placeholder="Show each step..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 7 &mdash; Comfort self-check</div>
+<div class="qt">On a scale of 1 (none) to 5 (very confident), rate yourself on each. Write 1-5 plus one sentence explaining why.
+<ul style="margin-left:22px;">
+<li>I have written code (any language) before</li>
+<li>I'm comfortable with basic algebra (solve <code>2x + 3 = 11</code>)</li>
+<li>I can follow a sequence of "if-then" instructions</li>
+<li>I have used a text-based file editor</li>
+<li>I'm comfortable typing</li>
+</ul>
+</div>
+<textarea placeholder="(a) 4 - I learned Scratch in Grade 7..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 8 &mdash; Reflection</div>
+<div class="qt">What is one specific thing you are excited to learn this term, and one thing you are nervous about?</div>
+<textarea></textarea>
+</div>
+
+<div class="fb-box">
+<h4>&#128221; Teacher Feedback (filled in by your teacher)</h4>
+<table style="width:100%;border-collapse:collapse;margin-top:8px;">
+<tr><th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Problem-solving</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Logic / Math</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Communication</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Background</th></tr>
+<tr><td style="padding:8px;border:1px solid #fde68a;height:60px;vertical-align:top;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="Strength/gap..."></textarea></td></tr>
+</table>
+<p style="margin-top:12px;"><strong>Suggested next steps before Unit 1 starts:</strong></p>
+<textarea placeholder="(Teacher: recommend specific topics or pre-reading.)"></textarea>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 1: Programming Foundations &mdash; FOR Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

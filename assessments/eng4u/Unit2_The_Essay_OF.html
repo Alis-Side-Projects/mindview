@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: The Essay — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #16a34a; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: The Essay — Unit Test</h1><div class="sub">Assessment OF Learning · Strand C</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; In-class essay-construction tasks. Open answer keys after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define and distinguish: <em>expository essay</em>, <em>persuasive essay</em>, and <em>literary-analysis essay</em>. Identify the dominant purpose of each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Expository</strong>: explains/informs neutrally (definition, classification, comparison, cause-effect). <strong>Persuasive</strong>: convinces audience of a position via ethos/pathos/logos and counter-argument. <strong>Literary-analysis</strong>: argues an interpretive claim about a text using textual evidence and analysis of form/meaning. Common feature: thesis + organised support; difference: purpose (inform vs convince vs interpret).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Aristotle's three rhetorical appeals are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Plot, character, theme</label></li>
+<li><label><input type="radio" name="q2"> Ethos, pathos, logos</label></li>
+<li><label><input type="radio" name="q2"> Past, present, future</label></li>
+<li><label><input type="radio" name="q2"> Subject, verb, object</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Ethos = credibility, pathos = emotion, logos = logic.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">Identify and define two logical fallacies (other than ad hominem). Give a one-sentence example of each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Possible: <strong>Straw man</strong> — misrepresenting an opponent's argument so it is easier to attack ("My opponent wants no testing — schools without rigour"). <strong>Slippery slope</strong> — claiming one step inevitably leads to extreme outcomes. <strong>False dilemma</strong> — presenting only two options when more exist. <strong>Bandwagon</strong> — appealing to popularity. <strong>Hasty generalisation</strong> — drawing conclusions from too few examples. Marks: 1 each (definition + example).</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify the three qualities of a strong analytical thesis. Then evaluate this thesis: <em>"Hamlet is a play that has many themes."</em> — what is missing?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong theses are <strong>specific</strong> (focused on particular text/device/effect), <strong>debatable</strong> (someone could disagree), <strong>supportable</strong> (can be proven with textual evidence). The given thesis is none — it is vague (which themes?), undebatable (true of every play), and unsupportable (no specific direction). Stronger version: "Hamlet's repeated metaphor of disease — 'something rotten in the state of Denmark' — turns Claudius's regicide into a symbolic infection that spreads moral corruption beyond a single court."</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">An MLA-9 in-text citation for a quotation from page 87 of a book by George Orwell would be written as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> [Orwell: 87]</label></li>
+<li><label><input type="radio" name="q5"> (Orwell 87)</label></li>
+<li><label><input type="radio" name="q5"> (Orwell, p. 87)</label></li>
+<li><label><input type="radio" name="q5"> (Orwell 1949, 87)</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> MLA: (Author Page) — no comma, no "p." before the page.</p></details></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define and distinguish: <em>revising</em>, <em>editing</em>, <em>proofreading</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Revising</strong> — re-seeing the whole; reshaping argument, structure, evidence, paragraph order. <strong>Editing</strong> — refining sentence-level expression: word choice, transitions, clarity. <strong>Proofreading</strong> — final pass for surface errors: grammar, punctuation, spelling, formatting. The order matters: revise first, edit next, proofread last.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">Plan a persuasive essay on the topic: <em>"Should standardised testing in Ontario high schools be reduced?"</em> Provide: (a) a debatable thesis, (b) two reasons supporting the thesis, (c) one anticipated counter-argument and a rebuttal.</div>
+<textarea placeholder="Your essay plan..."></textarea>
+<details><summary>Answer Key</summary><p>Sample: (a) "Ontario should reduce standardised testing in secondary schools because the time spent on test preparation undermines the deeper literacy and inquiry the curriculum requires." (b) Reason 1 — measurable opportunity-cost in instructional hours. Reason 2 — narrow forms of literacy assessed (multiple-choice reading) misrepresent the curriculum's demand for sustained writing and discussion. (c) Counter — testing provides comparability across schools and accountability. Rebuttal — comparability can be achieved through moderated writing samples or audited classroom assessment without large-scale single-day testing. Marks: 1 thesis, 2 reasons, 2 counter+rebuttal.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="passage">A student writes: "Atwood's <em>Handmaid's Tale</em> is a feminist book and there's lots of evidence in the book like when Offred is forced to wear red and the men have all the power and so it's clear that the author wants the readers to know about feminism."</div>
+<div class="qtxt">Diagnose the weaknesses in this analytical sentence (at least three). Then rewrite it as a strong PEEL topic sentence + first sentence of evidence (no full paragraph required).</div>
+<textarea placeholder="Diagnosis + rewrite..."></textarea>
+<details><summary>Answer Key</summary><p>Weaknesses: (1) "is a feminist book" — vague generic claim, not interpretive. (2) "lots of evidence" + run-on listing without analysis. (3) "the author wants the readers to know" — intentional fallacy / vague purpose. (4) Punctuation (run-on); informal "lots of" register. Rewrite: "Atwood's <em>The Handmaid's Tale</em> uses Gilead's colour-coded uniforms — Offred's red robe, the Wives' blue, the Marthas' green — to literalise patriarchal classification: women's bodies are read before their voices are heard. The novel's opening scene establishes this hierarchy when …" Marks: 3 for diagnosis, 2 for rewrite quality.</p></details></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">Identify the strongest single piece of evidence for this thesis: <em>"In Frost's 'Stopping by Woods on a Snowy Evening,' the speaker is tempted by death but chooses life."</em> Choose from the four options below and explain in 3–4 sentences why your choice is the strongest, and why the others are weaker.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9"> A: "Whose woods these are I think I know."</label></li>
+<li><label><input type="radio" name="q9"> B: "The woods are lovely, dark and deep, / But I have promises to keep."</label></li>
+<li><label><input type="radio" name="q9"> C: "He gives his harness bells a shake."</label></li>
+<li><label><input type="radio" name="q9"> D: "The only other sound's the sweep / Of easy wind and downy flake."</label></li>
+</ul>
+<textarea placeholder="Explain your choice..."></textarea>
+<details><summary>Answer Key</summary><p><strong>B.</strong> The "lovely, dark and deep" woods evoke the seductive pull (often read as the death-wish), while "But I have promises to keep" pivots back to social/life obligations — both halves of the thesis appear in two adjacent lines. (A) sets ownership; (C) shows the horse's interruption (good context but doesn't speak the dilemma); (D) is descriptive atmosphere. Marks: 1 correct selection; 4 for the comparative analysis of why the others are weaker.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write one full PEEL body paragraph (8–10 sentences) for the thesis: <em>"In Frost's 'The Road Not Taken,' the speaker's tone is more wistful than triumphant."</em> Embed at least two quotations with line citations.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<details><summary>Answer Key</summary><p>Marks rubric: clear topic sentence (1), two embedded quotations with signal phrases and line citations (2), interpretive analysis of <em>how</em> the language signals wistfulness (2), conclusion sentence linking back (1). Sample first sentence: "Although Frost's speaker has often been mis-read as a celebrant of self-reliance, his diction throughout 'The Road Not Taken' positions him as wistful, even regretful, about the irreversibility of choice." Sample evidence: '"And sorry I could not travel both / And be one traveller" (lines 2–3) ' followed by analysis of "sorry" as regret.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[4]</span>
+<div class="qtxt">Write a Works Cited entry (MLA 9) for each:<br>(a) The novel <em>1984</em> by George Orwell, published by Secker and Warburg in 1949;<br>(b) An online article titled "On the Limits of Realism" by Zadie Smith, posted to <em>The Guardian</em> on 4 February 2022 (URL: https://www.theguardian.com/books/sample-url).</div>
+<textarea placeholder="Your Works Cited entries..."></textarea>
+<details><summary>Answer Key</summary><p>(a) Orwell, George. <em>1984.</em> Secker and Warburg, 1949.<br>(b) Smith, Zadie. "On the Limits of Realism." <em>The Guardian</em>, 4 Feb. 2022, www.theguardian.com/books/sample-url. Marks: 2 each — author format, title format, container, date, URL where applicable.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt">Revise the following weak introduction so that it has (a) a strong opening, (b) a clear, debatable thesis, (c) a roadmap of two body paragraphs:<br><em>"This essay will look at George Orwell's 1984. The book has a lot of ideas. I will show what I think about them."</em></div>
+<textarea placeholder="Your revised intro..."></textarea>
+<details><summary>Answer Key</summary><p>Sample: "George Orwell finished <em>1984</em> in 1948, eight months before his death; the novel reads now less as a prophecy than as a warning we have not yet heeded. Orwell's central insight — that the manipulation of language is the manipulation of thought — is dramatised through two parallel devices: the systematic creation of Newspeak and the public performance of doublethink. Together these show how a regime can foreclose dissent before dissent can find words." Marks: 1 hook, 2 thesis (specific + debatable), 2 roadmap.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="passage">Sample student work: "I think we need to ban junk food in schools because it's unhealthy. Everyone knows junk food is bad. Studies show it makes students less focused. Plus, my friend ate chips every day and he failed math. So junk food obviously hurts learning."</div>
+<div class="qtxt"><strong>Apply</strong> what you have learned about logical fallacies and argument quality. Identify two specific fallacies in this paragraph, name them, and rewrite one sentence to remove the fallacy without losing the writer's overall argument.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Fallacies: (1) <strong>Bandwagon</strong> — "Everyone knows junk food is bad." (2) <strong>Hasty generalisation</strong> / anecdotal — "my friend ate chips every day and he failed math" — one case is not evidence. (3) Could also identify "Studies show" as missing source. Rewrite of (2): "A 2018 University of Toronto study of 4,200 students linked daily ultra-processed-food intake to a 12% drop in standardised reading scores, suggesting that diet, alongside other factors, can affect academic outcomes." Marks: 2 fallacy IDs, 1 explanation, 2 rewrite.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Apply</strong> the rhetorical triangle. Choose any current advertisement or political speech (real or invented). In 5–7 sentences identify how it uses ethos, pathos, and logos, and evaluate which appeal dominates.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses: name a specific ad/speech, identify each appeal with a concrete textual or visual example, then evaluate. Marks: 1 ethos, 1 pathos, 1 logos, 1 evaluation, 1 communication conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Real-World Transfer:</strong> University writing is more demanding than five-paragraph essays. In 5–7 sentences, explain how the unit's skills (thesis, paragraph structure, MLA, counter-argument, revision) transfer to a 1500-word university paper. What new demands will you face? Identify one new strategy you will need to develop.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong responses note: longer papers require sustained thesis (one argument across 5–10 paragraphs); evidence integration from primary AND secondary sources; nuance via counter-readings; tighter conventions (style guide, citation accuracy). New strategies might include outlining at the section level, drafting in stages, peer review, source-management tools (Zotero), and timetabling for revision passes. Marks: 1 transfer of skill, 2 new demands, 1 strategy, 1 conventions.</p></details></div>
+
+<footer>ENG4U — English, Grade 12 | Strand C: Writing | Assessment OF Learning — Graded</footer>
+</div></body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH4U — Final Exam</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#1e293b;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:920px;margin:0 auto;padding:20px}
+header{background:linear-gradient(135deg,#0f172a,#dc2626);color:#fff;padding:28px;border-radius:14px;margin-bottom:24px}
+header h1{font-size:26px}.sub{font-size:14px;opacity:.85;margin-top:4px}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 14px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:18px;margin-bottom:14px}
+.qn{font-weight:700;color:#dc2626;font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.tag{display:inline-block;font-size:11px;background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;margin-right:6px}
+textarea{width:100%;min-height:90px;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit;resize:vertical}
+.draw{height:140px;border:1px dashed #94a3b8;border-radius:8px;margin:8px 0;background:#fff;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;font-style:italic}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.chart-i{text-align:center;padding:14px;border-radius:8px}
+.chart-i .lb{font-size:13px;font-weight:600}.chart-i .vl{font-size:26px;font-weight:800}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:14px;margin-bottom:24px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:8px;color:#dc2626}
+details{background:#f8fafc;border:1px solid var(--b);border-radius:8px;padding:12px 16px;margin-top:16px}
+details summary{font-weight:700;color:#dc2626;cursor:pointer;font-size:15px}
+details .sol-block{margin-top:12px;font-size:14px}
+details .sol-block h4{color:#dc2626;margin:10px 0 4px;font-size:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sph4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="ctr">
+<header>
+<h1>📝 SPH4U — Final Exam</h1>
+<div class="sub">Cumulative summative evaluation across all 5 strands</div>
+<div class="badge">⏱️ 3 hours · /100 marks · Worth up to 30% of final grade</div>
+</header>
+
+<div class="warn">
+<strong>Instructions.</strong> Show all work, including diagrams (FBDs, ray, vector, energy bars). Include units and significant figures. Calculators and a non-programmable scientific reference are permitted. Constants:<br>
+\(g=9.8\,\text{m/s}^2\), \(c=3.00\times10^8\,\text{m/s}\), \(h=6.63\times10^{-34}\,\text{J·s}\), \(k=8.99\times10^9\,\text{N·m}^2/\text{C}^2\), \(G=6.67\times10^{-11}\,\text{N·m}^2/\text{kg}^2\), \(e=1.60\times10^{-19}\,\text{C}\), \(m_e=9.11\times10^{-31}\,\text{kg}\), \(M_E=5.98\times10^{24}\,\text{kg}\), \(R_E=6.38\times10^6\,\text{m}\).
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;color:#1e40af"><div class="lb">K/U</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#fef3c7;color:#92400e"><div class="lb">Thinking</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#d1fae5;color:#065f46"><div class="lb">Communication</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#ede9fe;color:#5b21b6"><div class="lb">Application</div><div class="vl">/25</div></div>
+</div>
+
+<div class="formula-ref"><h3>📋 Formula Sheet</h3>
+Kinematics: \(v=v_0+at\), \(d=v_0 t+\tfrac12 at^2\), \(v^2=v_0^2+2ad\) ·
+Dynamics: \(\Sigma F = ma\), \(f=\mu N\), \(F_c=mv^2/r\), \(a_c=v^2/r\), \(T=2\pi r/v\) ·
+Energy/Momentum: \(W=Fd\cos\theta\), \(E_k=\tfrac12 mv^2\), \(E_p=mgh\), \(E_s=\tfrac12 kx^2\), \(p=mv\), \(J=F\Delta t=\Delta p\) ·
+Fields: \(F_g=Gm_1m_2/r^2\), \(g=GM/r^2\), \(F_e=kq_1q_2/r^2\), \(E=kQ/r^2\), \(V=kQ/r\), \(F=qvB\sin\theta\), \(F=BIL\), \(r=mv/(qB)\) ·
+Waves: \(c=f\lambda\), \(n_1\sin\theta_1=n_2\sin\theta_2\), \(d\sin\theta=m\lambda\), \(\Delta y=\lambda L/d\), \(I=I_0\cos^2\theta\) ·
+Modern: \(\gamma=1/\sqrt{1-v^2/c^2}\), \(\Delta t=\gamma\Delta t_0\), \(L=L_0/\gamma\), \(E_0=mc^2\), \(E_k=hf-W\), \(\lambda=h/p\), \(N=N_0(1/2)^{t/T_{1/2}}\)
+</div>
+
+<!-- ========== K/U ========== -->
+<div class="sec-hdr ku">Part A — Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
+<span class="tag">Strand B · Dynamics</span>
+<div class="qt">A \(2.0\,\text{kg}\) block on a horizontal surface (\(\mu_k=0.30\)) is pushed with \(F=15\,\text{N}\) horizontally. Find (a) friction force, (b) net force, (c) acceleration.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
+<span class="tag">Strand C · Energy</span>
+<div class="qt">A \(0.50\,\text{kg}\) ball is dropped from \(8.0\,\text{m}\) and hits the ground at \(11.0\,\text{m/s}\). (a) Find the KE at impact. (b) Find the energy dissipated by air resistance.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
+<span class="tag">Strand C · Momentum</span>
+<div class="qt">A \(60\,\text{kg}\) skater throws a \(2.0\,\text{kg}\) ball horizontally at \(15\,\text{m/s}\). Find the recoil speed of the skater (frictionless ice).</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
+<span class="tag">Strand D · Gravitation</span>
+<div class="qt">Find the gravitational field strength on the surface of a planet with mass \(2.5\times10^{24}\,\text{kg}\) and radius \(4.0\times10^6\,\text{m}\).</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
+<span class="tag">Strand D · Coulomb</span>
+<div class="qt">Two charges \(+8.0\,\mu\text{C}\) and \(-3.0\,\mu\text{C}\) are \(0.25\,\text{m}\) apart. Find the magnitude and direction of the electric force on the negative charge.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">6. <span class="qm">[3]</span></div>
+<span class="tag">Strand E · Waves</span>
+<div class="qt">Light of \(\lambda=600\,\text{nm}\) hits a double slit \(0.25\,\text{mm}\) apart. The screen is \(1.5\,\text{m}\) away. Find the spacing between adjacent bright fringes.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">7. <span class="qm">[2]</span></div>
+<span class="tag">Strand E · Refraction</span>
+<div class="qt">Find the critical angle for a glass-air interface (\(n_{glass}=1.50\)).</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">8. <span class="qm">[2]</span></div>
+<span class="tag">Strand F · Photon</span>
+<div class="qt">Compute the energy of a photon with \(\lambda=400\,\text{nm}\), in eV.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">9. <span class="qm">[3]</span></div>
+<span class="tag">Strand F · Half-life</span>
+<div class="qt">A radioactive sample decays from \(8.0\,\text{g}\) to \(0.50\,\text{g}\) in \(20\,\text{years}\). Find the half-life.</div>
+<textarea></textarea></div>
+
+<!-- ========== Thinking ========== -->
+<div class="sec-hdr t">Part B — Thinking &amp; Investigation <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">10. <span class="qm">[6]</span></div>
+<span class="tag">Strand B · Inclined plane</span>
+<div class="qt">A \(5.0\,\text{kg}\) block is released from rest on a \(30°\) ramp with \(\mu_k=0.20\). After sliding \(4.0\,\text{m}\) down the ramp it reaches a horizontal surface (same \(\mu_k\)). (a) Draw FBDs for both segments. (b) Find the speed at the bottom of the ramp using Newton's laws or energy. (c) Find how far the block travels on the horizontal surface before stopping.</div>
+<div class="draw">[ FBDs: ramp (mg, N, friction) and horizontal segment ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">11. <span class="qm">[6]</span></div>
+<span class="tag">Strand C · 2-D collision</span>
+<div class="qt">A \(1500\,\text{kg}\) car moving east at \(20\,\text{m/s}\) collides at an intersection with a \(2000\,\text{kg}\) truck moving north at \(12\,\text{m/s}\). They stick together. Find their velocity (magnitude and direction) after the collision and the kinetic energy lost.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">12. <span class="qm">[6]</span></div>
+<span class="tag">Strand D · Charged particle in fields</span>
+<div class="qt">An electron is accelerated from rest through a potential difference of \(1500\,\text{V}\) and then enters a magnetic field of \(0.020\,\text{T}\) perpendicular to its velocity. (a) Find the speed of the electron entering the field. (b) Find the radius of its circular path. (c) Sketch the motion (include direction of \(\vec B\) and circular path).</div>
+<div class="draw">[ Electron path bending in B field ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">13. <span class="qm">[7]</span></div>
+<span class="tag">Strand E · Diffraction grating + Strand F · Photon</span>
+<div class="qt">A diffraction grating with 5000 lines/cm is illuminated by light from a hydrogen lamp. The first-order maximum for the H-α line appears at \(\theta = 19.07°\). (a) Determine the wavelength. (b) From your answer to (a), determine the energy in eV of the photon. (c) Show that this matches the Bohr-model transition \(n=3 \to n=2\) within experimental tolerance.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<!-- ========== Communication ========== -->
+<div class="sec-hdr c">Part C — Communication <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">14. <span class="qm">[6]</span></div>
+<span class="tag">Strands B/C/D — synthesis</span>
+<div class="qt">Compare the three conservation laws used in Grade 12 physics: conservation of energy, conservation of linear momentum, and conservation of charge. For each: state the law precisely, give one situation where it applies, and identify a physical quantity it does <em>not</em> equate to.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">15. <span class="qm">[6]</span></div>
+<span class="tag">Strand E · Misconception</span>
+<div class="qt">A student claims: "Light slows down when it enters glass because the photons are heavier in glass." Write a corrective explanation, using the wave model and including refractive index, to teach a peer.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">16. <span class="qm">[7]</span></div>
+<span class="tag">Strand F · STSE essay</span>
+<div class="qt">Write a 200–300 word response: <em>"How have advances in modern physics changed everyday life?"</em> Address at least three specific technologies (e.g., GPS, lasers, transistors, MRI, nuclear power). Include both benefits and concerns.</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">17. <span class="qm">[6]</span></div>
+<span class="tag">Strand A · Lab communication</span>
+<div class="qt">A student claims to have measured \(g\) by timing a falling object as \(g=10.4\,\text{m/s}^2 \pm 0.6\,\text{m/s}^2\). Critique: (a) Is the accepted value \(9.81\,\text{m/s}^2\) within the reported uncertainty? (b) Identify two likely sources of systematic error in a free-fall timing experiment. (c) Suggest one method to reduce each error.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<!-- ========== Application ========== -->
+<div class="sec-hdr a">Part D — Application <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">18. <span class="qm">[6]</span></div>
+<span class="tag">Strands B/C · Roller coaster</span>
+<div class="qt">A roller-coaster car (\(800\,\text{kg}\)) starts from rest at the top of a \(40\,\text{m}\) hill. It enters a circular vertical loop of radius \(15\,\text{m}\). Friction loses 20% of the initial PE. (a) Speed at the bottom of the loop. (b) Speed at the top of the loop. (c) Normal force on a \(70\,\text{kg}\) rider at the top of the loop.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">19. <span class="qm">[6]</span></div>
+<span class="tag">Strand D · Satellites</span>
+<div class="qt">A communications satellite is to be placed in geostationary orbit (\(T = 24\,\text{h}\)). (a) Calculate the orbital radius. (b) Calculate the orbital speed. (c) Discuss one social benefit and one environmental concern for geostationary technology.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">20. <span class="qm">[6]</span></div>
+<span class="tag">Strand E · Optical tech</span>
+<div class="qt">An optical fibre has core \(n=1.50\) and cladding \(n=1.46\). (a) Calculate the critical angle at the core-cladding interface. (b) Compute the maximum acceptance angle in air. (c) Explain how fibre-optic technology has impacted communication globally.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">21. <span class="qm">[7]</span></div>
+<span class="tag">Strand F · Medical &amp; nuclear</span>
+<div class="qt">A medical isotope, technetium-99m, has \(T_{1/2}=6.0\,\text{h}\). A patient is injected with \(0.040\,\text{g}\) of the isotope. (a) Find the mass remaining after \(18\,\text{h}\). (b) Discuss why short half-life is desirable in diagnostic imaging. (c) Identify one social-equity concern with medical isotope production worldwide.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<details>
+<summary>📖 Complete Answer Key (click to reveal)</summary>
+<div class="sol-block">
+<h4>Part A — K/U</h4>
+<p><strong>Q1.</strong> N = mg = 19.6 N. f = μN = 5.88 N. Net = 15 − 5.88 = 9.12 N. a = 4.56 m/s².</p>
+<p><strong>Q2.</strong> KE = ½(0.5)(11)² = 30.25 J. PE lost = mgh = 0.5·9.8·8 = 39.2 J. Air resistance dissipated 39.2 − 30.25 = 8.95 J.</p>
+<p><strong>Q3.</strong> 0 = 60v + 2(15) ⇒ v = −0.50 m/s (skater moves opposite at 0.50 m/s).</p>
+<p><strong>Q4.</strong> g = GM/r² = (6.67e-11)(2.5e24)/(4e6)² = 10.4 m/s².</p>
+<p><strong>Q5.</strong> F = k|q₁q₂|/r² = (8.99e9)(8e-6)(3e-6)/(0.25)² = 3.45 N, directed toward the +q (attractive).</p>
+<p><strong>Q6.</strong> Δy = λL/d = (6e-7)(1.5)/(2.5e-4) = 3.6 mm.</p>
+<p><strong>Q7.</strong> sin θ_c = 1/1.50 ⇒ θ_c = 41.8°.</p>
+<p><strong>Q8.</strong> E = hc/λ = 1240 eV·nm / 400 nm = 3.10 eV.</p>
+<p><strong>Q9.</strong> 8.0 → 0.5 = factor of 16 = (1/2)⁴, so 4 half-lives = 20 yr ⇒ T_½ = 5.0 yr.</p>
+
+<h4>Part B — Thinking</h4>
+<p><strong>Q10.</strong> On ramp: a = g(sin30 − μcos30) = 9.8(0.5 − 0.2·0.866)=3.20 m/s². v² = 2·3.20·4.0 ⇒ v = 5.06 m/s. On flat: a = −μg = −1.96 m/s². d = v²/(2|a|) = 25.6/3.92 = 6.53 m.</p>
+<p><strong>Q11.</strong> p_x = (1500)(20) = 30000 kg·m/s; p_y = (2000)(12) = 24000 kg·m/s. Total mass 3500 kg. v_x = 8.57 m/s, v_y = 6.86 m/s. |v| = 10.98 m/s, θ = arctan(6.86/8.57) = 38.7° N of E. KE_i = ½(1500)(20)² + ½(2000)(12)² = 300000 + 144000 = 444000 J. KE_f = ½(3500)(10.98)² = 211000 J. ΔKE = −233 kJ lost.</p>
+<p><strong>Q12.</strong> (a) eV = ½m_e v² ⇒ v = √(2·1.6e-19·1500/9.11e-31) = 2.30×10⁷ m/s. (b) r = m_e v/(eB) = (9.11e-31)(2.30e7)/((1.6e-19)(0.020)) = 6.55×10⁻³ m = 6.55 mm. (c) Circle in plane perpendicular to B.</p>
+<p><strong>Q13.</strong> (a) d = 1/5000 cm = 2.0×10⁻⁶ m. λ = d sinθ = 2e-6 · sin(19.07°) = 6.534×10⁻⁷ m = 653 nm. (b) E = hc/λ = 1240/653 = 1.90 eV. (c) Bohr: ΔE = −13.6(1/9 − 1/4) = 1.89 eV. Matches within 0.01 eV.</p>
+
+<h4>Part C — Communication</h4>
+<p><strong>Q14.</strong> Energy: total mechanical energy is conserved when only conservative forces do work; e.g., free-fall in vacuum; not equal to momentum. Momentum: in absence of external net force, total p is conserved (vector); e.g., collisions; not equal to KE. Charge: total electric charge in an isolated system is constant; e.g., chemical reactions and beta decay; not equal to current.</p>
+<p><strong>Q15.</strong> Photons are massless. In glass, the wave model says light interacts with bound electrons that re-emit slightly delayed waves; the resulting wave packet has a phase velocity \(v=c/n\). Photon energy is unchanged (frequency stays the same); only wavelength and speed change.</p>
+<p><strong>Q16.</strong> Free-response — assess use of three named technologies, mention of underlying physics, and balanced benefits/concerns.</p>
+<p><strong>Q17.</strong> (a) 9.81 is within 10.4 ± 0.6 (range 9.8–11.0) — barely. (b) Reaction-time error in start/stop, air resistance. (c) Use a photogate or motion sensor; use a denser/smaller object.</p>
+
+<h4>Part D — Application</h4>
+<p><strong>Q18.</strong> E_initial = mgh = 800·9.8·40 = 313600 J. After 20% loss: 250880 J → all KE at the bottom of the loop (taking loop bottom as reference). v_bottom = √(2·250880/800) = 25.0 m/s. At top: extra height 2r = 30 m. KE_top = 250880 − 800·9.8·30 = 15800 J → v_top = √(2·15800/800) = 6.29 m/s. (c) For a 70 kg rider at top: N + mg = mv²/r ⇒ N = m(v²/r − g) = 70(6.29²/15 − 9.8) = 70(2.64 − 9.8) = −501 N. Negative ⇒ the loop is too slow at the top: the rider would lose contact (would need to be strapped in, or initial energy must be greater).</p>
+<p><strong>Q19.</strong> (a) T² = 4π² r³/(GM_E) ⇒ r = ∛(GM_E T²/(4π²)) = ∛((6.67e-11)(5.98e24)(86400)²/(4π²)) = 4.22×10⁷ m. (b) v = 2π r/T = 3.07×10³ m/s. (c) Benefit: continuous TV/internet over fixed footprint. Concern: orbital debris and end-of-life satellite disposal.</p>
+<p><strong>Q20.</strong> (a) sin θ_c = 1.46/1.50 ⇒ θ_c = 76.7°. (b) sin θ_a = √(n₁² − n₂²) = √(2.25 − 2.13) = 0.343 ⇒ θ_a = 20.1°. (c) High-bandwidth, low-loss data — global internet, healthcare telemedicine, finance.</p>
+<p><strong>Q21.</strong> (a) 18/6 = 3 half-lives ⇒ remaining = 0.040·(1/2)³ = 5.0×10⁻³ g = 5 mg. (b) Short half-life reduces patient radiation dose after imaging. (c) Production relies on a few aging research reactors (Canada/Netherlands); shortages can disrupt cancer/cardiac diagnostics globally.</p>
+</div></details>
+
+<div class="rubric"><h3 style="margin-top:24px;">Final Exam Rubric (per category)</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough, insightful, demonstrates a high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td>3</td><td>Considerable effectiveness — provincial standard</td><td>70–79%</td></tr>
+<tr><td>2</td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td>1</td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td>R</td><td>Insufficient — has not demonstrated the required knowledge or skills</td><td>&lt;50%</td></tr></table></div>
+
+<footer>SPH4U — Physics, Grade 12 University Preparation | Final Exam | Ontario Curriculum 2008 (Revised) | Aligned with Growing Success (2010)</footer>
+</div></body></html>

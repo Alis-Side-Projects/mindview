@@ -1,182 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 1: Biochemistry — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Biochemistry — Unit Test (OF Learning)</title>
 <style>
-:root{--p:#16a34a;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 1: Biochemistry — Unit Test</h1>
-<div class="sub">Assessment OF Learning — SBI4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+:root { --primary: #16a34a; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Biochemistry — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all work. Open answer keys after attempting each question.</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>Macromolecules | Enzymes | Dehydration synthesis vs hydrolysis</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Match each macromolecule with its monomer and one major function: carbohydrate, lipid, protein, nucleic acid.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Carbohydrate: monosaccharide (e.g., glucose), energy &amp; structural (cellulose); Lipid: glycerol + fatty acids (no true monomer), energy storage / membranes / hormones; Protein: amino acid, structure / catalysis / transport; Nucleic acid: nucleotide (sugar + phosphate + base), information storage (DNA) / expression (RNA).</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Which is true of phospholipids?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Hydrophilic head, hydrophilic tails</label></li>
+<li><label><input type="radio" name="q2"> Hydrophilic head, hydrophobic tails</label></li>
+<li><label><input type="radio" name="q2"> Hydrophobic head, hydrophilic tails</label></li>
+<li><label><input type="radio" name="q2"> Entirely hydrophobic</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Phosphate-containing head is polar/charged (hydrophilic); two fatty-acid tails are non-polar (hydrophobic). This amphipathic property drives bilayer formation.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">An enzyme catalyzes a reaction by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> Increasing the activation energy</label></li>
+<li><label><input type="radio" name="q3"> Lowering the activation energy</label></li>
+<li><label><input type="radio" name="q3"> Changing the equilibrium constant</label></li>
+<li><label><input type="radio" name="q3"> Increasing temperature</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Enzymes provide an alternate pathway with lower E_a so more substrate molecules have enough energy to react at body temperature. They do not change ΔG or K_eq.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Label the following on a Michaelis-Menten v vs [S] curve: V_max, K_m, the saturation region. Explain what each tells you about the enzyme.</div>
+<textarea placeholder="Describe..."></textarea>
+<details><summary>Answer Key</summary><p>V_max = horizontal asymptote; rate when all sites occupied. K_m = [S] at v = ½V_max; lower K_m means higher affinity. Saturation region = plateau where adding [S] no longer increases rate (rate-limited by enzyme amount).</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">A protein loses function above 60 °C because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> Peptide bonds break</label></li>
+<li><label><input type="radio" name="q5"> Hydrogen bonds and weak interactions break, denaturing tertiary structure</label></li>
+<li><label><input type="radio" name="q5"> Amino acid sequence changes</label></li>
+<li><label><input type="radio" name="q5"> The protein evaporates</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Heat disrupts H-bonds and hydrophobic interactions that hold tertiary structure; the active site collapses (denaturation). Primary sequence is intact (peptide bonds are covalent and stable).</p></details></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">List the components of the cell membrane in the fluid mosaic model and state one role for each.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Phospholipid bilayer (semipermeable barrier); cholesterol (fluidity buffer); integral/transmembrane proteins (transport, receptors); peripheral proteins (signaling, structure); glycoproteins/glycolipids (cell recognition, immunity).</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">A scientist measures initial reaction velocity at 5 substrate concentrations and finds V_max = 100 µmol/min, K_m = 2 mM. Predict the rate at [S] = 2 mM, [S] = 4 mM, and [S] = 20 mM. Show calculations using v = V_max[S]/(K_m + [S]).</div>
 <textarea placeholder="Show all work..."></textarea>
-</div>
+<details><summary>Answer Key</summary><p>v = 100·[S]/(2+[S]). At [S]=2: v = 100·2/4 = 50 µmol/min. At [S]=4: v = 100·4/6 ≈ 66.7 µmol/min. At [S]=20: v = 100·20/22 ≈ 90.9 µmol/min (approaching V_max).</p></details></div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt">Design a controlled experiment to determine whether temperature affects amylase activity. Identify variables, controls, and how you would measure rate.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>IV: temperature (e.g., 0, 20, 37, 60, 80 °C). DV: rate of starch breakdown (time for iodine test to stop turning blue-black, or absorbance over time). Controlled: amylase concentration, starch concentration, pH (buffer), volume, mixing. Hypothesis: rate increases up to ~37 °C optimum then declines as enzyme denatures. Replicate ≥3 trials/condition; plot rate vs T.</p></details></div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">A non-competitive inhibitor I is added to an enzyme. On a single graph, sketch v vs [S] curves for: (a) no inhibitor, (b) with inhibitor. Label V_max and K_m for each. Explain the shapes.</div>
+<textarea placeholder="Describe your sketch and reasoning..."></textarea>
+<details><summary>Answer Key</summary><p>Without I: hyperbolic curve to V_max with K_m = some value. With non-competitive I: lower V_max (because some enzyme molecules are inactive regardless of [S]); K_m unchanged (the enzymes that remain active have unchanged affinity). The curve plateaus at lower height. (Contrast with competitive: same V_max, higher apparent K_m.)</p></details></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Explain the induced-fit model of enzyme action and contrast it with the lock-and-key model. Use proper terminology: active site, substrate, conformational change, transition state.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Lock-and-key (Fischer, 1894): rigid active site fits one substrate exactly. Induced-fit (Koshland, 1958): active site is flexible — substrate binding induces a conformational change that brings catalytic residues into optimal alignment, stabilizes the transition state, and lowers E_a. Induced-fit better explains promiscuous enzymes and allosteric regulation.</p></details></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Draw and label a labeled diagram of a phospholipid and a labeled cross-section of a fluid-mosaic membrane (description acceptable). Show: phosphate head, fatty acid tails, cholesterol, integral and peripheral proteins, glycolipid, glycoprotein.</div>
+<textarea placeholder="Describe each labeled component..."></textarea>
+<details><summary>Answer Key</summary><p>Phospholipid: glycerol backbone, phosphate head (polar), 2 fatty acid tails (non-polar). Bilayer with heads outward, tails inward. Cholesterol nestled among tails. Integral (transmembrane) proteins span the bilayer; peripheral proteins on one face only. Glycolipids and glycoproteins on extracellular side carry oligosaccharide chains for cell recognition.</p></details></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt">Compare and contrast simple diffusion, facilitated diffusion, and active transport in a 3-row table. Include: ATP requirement, gradient direction, example.</div>
+<textarea placeholder="Build your table here..."></textarea>
+<details><summary>Answer Key</summary><p>Simple diffusion: no ATP, with gradient, example O₂/CO₂. Facilitated diffusion: no ATP, with gradient, requires channel/carrier protein, example glucose via GLUT, water via aquaporin. Active transport: ATP required, against gradient, example Na+/K+ ATPase pumping 3 Na+ out / 2 K+ in.</p></details></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr a">Part D: Application [15 marks]</div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case Study — Lactose Intolerance:</strong> A patient cannot digest dairy. Explain the molecular mechanism of the deficiency, what happens in the gut when undigested lactose reaches the colon, and how an enzyme supplement (lactase) restores function.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Lactase, a brush-border enzyme on small intestine villi, hydrolyzes lactose → glucose + galactose for absorption. Deficient lactase means lactose persists, drawing water osmotically (diarrhea) and is fermented by colon bacteria producing H₂, CO₂, methane (gas, cramps). Oral lactase supplement provides exogenous enzyme that hydrolyzes lactose before bacteria can ferment it.</p></details></div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case Study — IV Saline:</strong> A dehydrated patient receives 0.9% NaCl IV (isotonic). Explain why this concentration is chosen rather than pure water or 5% NaCl, using osmosis and tonicity.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>0.9% NaCl matches blood plasma osmolarity (~300 mOsm), so RBCs experience no net water movement and remain normal. Pure water (hypotonic) → water rushes into RBCs → swell &amp; hemolyse. 5% NaCl (hypertonic) → water leaves RBCs → crenate (shrivel), losing function. Isotonic prevents both.</p></details></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>STSE — Trans-Fats:</strong> Health Canada limits trans-fat content. Explain (i) why trans-fats are produced industrially, (ii) why their structure makes them solid at room temperature, and (iii) the cardiovascular health concern.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(i) Partial hydrogenation of vegetable oils converts cis-double bonds (kinked) to trans (straight), increasing shelf life and giving spreadable texture. (ii) Trans tails pack like saturated fats, raising melting point. (iii) Trans-fats raise LDL ("bad") cholesterol and lower HDL ("good"), accelerating atherosclerosis and heart-disease risk; hence regulatory limits.</p></details></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
-
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
-
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
-
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 1: Biochemistry — OF | Ontario Curriculum 2008</footer>
-</div>
-
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<footer>SBI4U — Biology, Grade 12 | Strand B: Biochemistry | Assessment OF Learning — Graded</footer>
+</div></body></html>

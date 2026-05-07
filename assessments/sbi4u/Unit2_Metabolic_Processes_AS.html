@@ -1,111 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 2: Metabolic Processes — Practice Quiz</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Metabolic Processes — Practice Quiz (AS Learning)</title>
 <style>
-:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:850px;margin:0 auto;padding:20px}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px;margin-bottom:4px}header .sub{font-size:14px;opacity:.85}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 10px;border-radius:20px;font-size:12px;margin-top:8px}
+.info-box{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.topic-section{margin-bottom:32px}.topic-header{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--primary)}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
+.qcard.correct{border-color:var(--correct);background:#f0fdf4}.qcard.wrong{border-color:var(--wrong);background:#fef2f2}
+.qnum{font-weight:700;color:var(--primary);margin-bottom:8px}.qtxt{margin-bottom:12px}
+.mc{list-style:none;margin-top:8px}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}
+input[type="text"]{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px}
+.btn{padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;background:var(--primary);color:#fff;margin-top:8px}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}.fb.show{display:block}
+.fb.correct{background:#f0fdf4;color:#166534;border:1px solid #86efac}.fb.wrong{background:#fef2f2;color:#991b1b;border:1px solid #fca5a5}
+.sol{margin-top:10px;padding:12px;background:#f8fafc;border:1px solid var(--border);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-lbl{font-weight:700;color:var(--primary)}
+.score-display{text-align:center;font-size:18px;margin-bottom:16px}
+.score-display .score{font-size:32px;font-weight:800;color:var(--primary)}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-top:32px;border-top:1px solid var(--border)}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Metabolic Processes — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check on cellular respiration, photosynthesis, and fermentation.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
 
-<header><h1>📝 Unit 2: Metabolic Processes — Practice Quiz</h1>
-<div class="sub">Assessment AS Learning — SBI4U</div><div class="badge">🔄 Not Graded</div></header>
-<div class="info"><strong>Purpose:</strong> Self-check your understanding. Instant feedback on every question.</div>
-<div class="formula-ref"><h3>📋 Key Formulas/Concepts</h3>\(C_6H_{12}O_6 + 6O_2 \to 6CO_2 + 6H_2O + ATP\) | Glycolysis | Krebs | ETC | Photosynthesis</div>
-<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 1 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
-<div class="qc" id="q1"><div class="qn">Q1</div>
-<div class="qt">Conceptual question for Metabolic Processes.</div>
+<div class="topic-section"><div class="topic-header">Topic 2.1 — Glycolysis &amp; Krebs Cycle</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Glycolysis occurs in the ___ and produces a NET of ___ ATP per glucose.</div>
 <ul class="mc">
-<li><label><input type="radio" name="q1" value="a"> Correct</label></li>
-<li><label><input type="radio" name="q1" value="b"> Wrong A</label></li>
-<li><label><input type="radio" name="q1" value="c"> Wrong B</label></li>
-<li><label><input type="radio" name="q1" value="d"> Wrong C</label></li>
+<li><label><input type="radio" name="q1" value="a"> Mitochondrial matrix; 2</label></li>
+<li><label><input type="radio" name="q1" value="b"> Cytoplasm; 2</label></li>
+<li><label><input type="radio" name="q1" value="c"> Cytoplasm; 4</label></li>
+<li><label><input type="radio" name="q1" value="d"> Inner mitochondrial membrane; 36</label></li>
 </ul>
-<button class="btn btn-p" onclick="chkMC('q1','a')">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
-<div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>See unit notes.</div>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Glycolysis: cytoplasm. 4 ATP produced (substrate-level phosphorylation) − 2 ATP invested = NET 2 ATP. Also yields 2 NADH and 2 pyruvate.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Per glucose molecule, the Krebs (citric acid) cycle directly produces:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> 2 ATP, 6 NADH, 2 FADH₂, 4 CO₂</label></li>
+<li><label><input type="radio" name="q2" value="b"> 4 ATP, 10 NADH, 2 FADH₂</label></li>
+<li><label><input type="radio" name="q2" value="c"> 32 ATP</label></li>
+<li><label><input type="radio" name="q2" value="d"> 2 NADH, 2 ATP, 6 O₂</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','a')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Krebs runs twice per glucose (one per acetyl-CoA). Per turn: 1 ATP, 3 NADH, 1 FADH₂, 2 CO₂. ×2 = 2 ATP, 6 NADH, 2 FADH₂, 4 CO₂. (The 2 CO₂ from pyruvate oxidation give 6 CO₂ total released.)</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Calculate total CO₂ released per glucose in aerobic respiration.</div>
+<input type="text" id="q3-in" placeholder="Enter number">
+<button class="btn" onclick="cN('q3',6)">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Pyruvate oxidation: 2 CO₂ (one per pyruvate × 2). Krebs: 4 CO₂ (2 per turn × 2). Total = 6 CO₂, matching the equation C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O.</div></div>
+
 </div>
 
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Electron Transport Chain &amp; Chemiosmosis</div>
 
-<footer>SPH4U — Physics, Grade 12 | Unit 2: Metabolic Processes | Ontario Curriculum 2008</footer>
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">In chemiosmosis, ATP is generated when:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> H+ ions flow down their gradient through ATP synthase</label></li>
+<li><label><input type="radio" name="q4" value="b"> Electrons leave NADH directly</label></li>
+<li><label><input type="radio" name="q4" value="c"> O₂ is split</label></li>
+<li><label><input type="radio" name="q4" value="d"> Glucose is broken in half</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','a')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> ETC pumps H+ from matrix to intermembrane space, building a proton-motive force. H+ flows back through ATP synthase, rotating its F₀ rotor and driving ADP + P_i → ATP.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The final electron acceptor in aerobic ETC is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> NAD+</label></li>
+<li><label><input type="radio" name="q5" value="b"> Pyruvate</label></li>
+<li><label><input type="radio" name="q5" value="c"> O₂ → forms H₂O</label></li>
+<li><label><input type="radio" name="q5" value="d"> CO₂</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','c')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> O₂ accepts electrons at Complex IV and combines with H+ to form H₂O. Without O₂ the ETC stalls; NAD+ can't be regenerated and respiration halts (cells switch to fermentation).</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Approximately how many ATP per glucose are produced by ETC + chemiosmosis (oxidative phosphorylation)?</div>
+<input type="text" id="q6-in" placeholder="Enter number (approx)">
+<button class="btn" onclick="cN('q6',26)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Modern stoichiometry: 10 NADH × 2.5 ATP + 2 FADH₂ × 1.5 ATP = 25 + 3 = ~28 ATP, minus shuttle costs for cytosolic NADH ≈ 26. (Older texts use 3 and 2 → ~34 from oxphos for total ~38.) Either 26 or 28 accepted.</div></div>
+
 </div>
 
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Photosynthesis</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The light-dependent reactions of photosynthesis occur in the ___ and produce ___.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Stroma; glucose</label></li>
+<li><label><input type="radio" name="q7" value="b"> Thylakoid membrane; ATP, NADPH, O₂</label></li>
+<li><label><input type="radio" name="q7" value="c"> Outer membrane; CO₂</label></li>
+<li><label><input type="radio" name="q7" value="d"> Cytoplasm; pyruvate</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Photosystems II and I in the thylakoid membrane absorb light, splitting H₂O (releasing O₂) and pumping H+ into the thylakoid lumen. ATP synthase in the thylakoid produces ATP; NADP+ is reduced to NADPH. ATP and NADPH then power the Calvin cycle in the stroma.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In the Calvin cycle, the enzyme RuBisCO catalyzes:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Splitting of water</label></li>
+<li><label><input type="radio" name="q8" value="b"> Fixation of CO₂ onto RuBP, forming a 6-C intermediate that splits into two 3-PGA</label></li>
+<li><label><input type="radio" name="q8" value="c"> Production of ATP from sunlight</label></li>
+<li><label><input type="radio" name="q8" value="d"> Regeneration of chlorophyll</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> RuBisCO (Ribulose-1,5-bisphosphate carboxylase/oxygenase) attaches CO₂ to RuBP (5-C); the unstable 6-C immediately splits into two 3-PGA. ATP and NADPH then reduce 3-PGA → G3P; 5 of 6 G3P regenerate RuBP, 1 leaves as net product.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">How many CO₂ molecules and how many turns of the Calvin cycle are needed to produce one glucose (C₆)?</div>
+<input type="text" id="q9-in" placeholder="Enter total CO₂ molecules">
+<button class="btn" onclick="cN('q9',6)">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> One turn fixes 1 CO₂ and produces ⅓ G3P (net). Six turns fix 6 CO₂ and yield 2 G3P (3-C each), which combine to form 1 glucose (C₆). Energy cost: 18 ATP and 12 NADPH per glucose.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Fermentation</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">Lactic-acid fermentation in human muscle cells occurs because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> NAD+ must be regenerated to keep glycolysis running when O₂ is limited</label></li>
+<li><label><input type="radio" name="q10" value="b"> Lactic acid is needed for muscle structure</label></li>
+<li><label><input type="radio" name="q10" value="c"> Mitochondria are absent</label></li>
+<li><label><input type="radio" name="q10" value="d"> CO₂ is not allowed in muscle</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','a')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Without O₂, ETC halts and NADH cannot be re-oxidized. Lactate dehydrogenase reduces pyruvate to lactate, regenerating NAD+ so glycolysis (and its 2 ATP/glucose) can continue.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Compared to aerobic respiration, alcoholic fermentation in yeast yields:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> The same ATP per glucose</label></li>
+<li><label><input type="radio" name="q11" value="b"> Far less ATP (only 2 net) and produces ethanol + CO₂</label></li>
+<li><label><input type="radio" name="q11" value="c"> More ATP because no O₂ is wasted</label></li>
+<li><label><input type="radio" name="q11" value="d"> Lactic acid only</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Aerobic ≈ 30–32 ATP per glucose. Fermentation = 2 ATP per glucose (only glycolysis). Yeast converts pyruvate → acetaldehyde → ethanol, releasing CO₂ (used in baking, brewing).</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">If oxygen is suddenly removed from a respiring cell, the immediate consequence is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> ETC halts, NADH accumulates, NAD+ depletes, Krebs slows, ATP drops</label></li>
+<li><label><input type="radio" name="q12" value="b"> Photosynthesis starts</label></li>
+<li><label><input type="radio" name="q12" value="c"> All ATP is destroyed</label></li>
+<li><label><input type="radio" name="q12" value="d"> The mitochondria multiply</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','a')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> No O₂ → no terminal e- acceptor → ETC stops → H+ gradient collapses → ATP synthase stops → ATP drops. NADH accumulates and NAD+ runs out, halting Krebs and pyruvate oxidation. Cell switches to fermentation to keep glycolysis (and minimal ATP) going.</div></div>
+
+</div>
+
+<footer>SBI4U — Biology, Grade 12 | Strand C: Metabolic Processes | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
 <script>
-let sc=0,ans=0,tot=1;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<2.5){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

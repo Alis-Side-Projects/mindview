@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Energy and Society — Practice Quiz (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+input[type=text]{padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>⚡ Unit 3: Energy and Society — Practice Quiz</h1>
+<div class="sub">Assessment AS Learning — Self-Check (SPH3U)</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test understanding of work, energy, conservation, power, efficiency, heat. Instant feedback with worked solutions.</div>
+
+<div class="formula-ref"><strong>Formulae:</strong> \( W=Fd\cos\theta \) &nbsp;|&nbsp; \( E_k=\tfrac{1}{2}mv^2 \) &nbsp;|&nbsp; \( E_g=mgh \) &nbsp;|&nbsp; \( P=W/t \) &nbsp;|&nbsp; \( \eta=E_\text{useful}/E_\text{input}\times 100\% \) &nbsp;|&nbsp; \( Q=mc\Delta T \) &nbsp;|&nbsp; \( c_\text{water}=4186 \) J/(kg·°C) &nbsp;|&nbsp; \( g=9.8 \) m/s²</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 10 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Q1 — Work done by constant force</div>
+<div class="qt">A worker pushes a \(50\)-kg crate \(8.0\) m horizontally with a constant horizontal force of \(120\) N. How much work does the worker do?</div>
+<div>Answer: <input type="text" id="q1-in" style="width:140px"> J</div>
+<button class="btn btn-p" onclick="chkNum('q1',960,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>
+\( W = Fd\cos(0°) = 120 \times 8.0 = 960 \) J
+</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Q2 — Kinetic energy</div>
+<div class="qt">Calculate the kinetic energy of a \(1200\)-kg car moving at \(25\) m/s.</div>
+<div>Answer: <input type="text" id="q2-in" style="width:160px"> J</div>
+<button class="btn btn-p" onclick="chkNum('q2',375000,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>
+\( E_k = \tfrac{1}{2}mv^2 = \tfrac{1}{2}(1200)(25)^2 = \tfrac{1}{2}(1200)(625) = 3.75\times10^5 \) J
+</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Q3 — Gravitational PE</div>
+<div class="qt">A \(2.0\)-kg book is lifted from the floor to a shelf \(1.8\) m above. Calculate the change in gravitational potential energy.</div>
+<div>Answer: <input type="text" id="q3-in" style="width:140px"> J</div>
+<button class="btn btn-p" onclick="chkNum('q3',35.3,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>
+\( \Delta E_g = mgh = 2.0(9.8)(1.8) = 35.3 \) J
+</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Q4 — Conservation of energy (drop)</div>
+<div class="qt">A \(0.50\)-kg ball is dropped from rest at a height of \(20\) m. Ignoring air resistance, what is its speed just before hitting the ground?</div>
+<div>Answer: <input type="text" id="q4-in" style="width:140px"> m/s</div>
+<button class="btn btn-p" onclick="chkNum('q4',19.8,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>
+Conservation: \( mgh = \tfrac{1}{2}mv^2 \) → \( v = \sqrt{2gh} = \sqrt{2(9.8)(20)} = \sqrt{392} = 19.8 \) m/s
+</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Q5 — Power</div>
+<div class="qt">A motor lifts a \(40\)-kg load \(10\) m in \(8.0\) s at constant speed. Calculate the power output.</div>
+<div>Answer: <input type="text" id="q5-in" style="width:140px"> W</div>
+<button class="btn btn-p" onclick="chkNum('q5',490,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>
+\( W = mgh = 40(9.8)(10) = 3920 \) J. \( P = W/t = 3920/8 = 490 \) W
+</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Q6 — Efficiency</div>
+<div class="qt">A motor uses \(2000\) J of electrical energy and produces \(1500\) J of useful mechanical work. What is its efficiency?</div>
+<div>Answer: <input type="text" id="q6-in" style="width:140px"> %</div>
+<button class="btn btn-p" onclick="chkNum('q6',75,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>
+\( \eta = E_\text{useful}/E_\text{input} \times 100\% = 1500/2000 \times 100 = 75\% \)
+</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Q7 — Heat / specific heat</div>
+<div class="qt">How much heat is required to raise the temperature of \(0.50\) kg of water from \(20°\)C to \(80°\)C? (\( c=4186 \) J/(kg·°C))</div>
+<div>Answer: <input type="text" id="q7-in" style="width:160px"> J</div>
+<button class="btn btn-p" onclick="chkNum('q7',125580,0.01)">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>
+\( Q = mc\Delta T = 0.50(4186)(60) = 1.26\times 10^5 \) J
+</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Q8 — Conservation with friction</div>
+<div class="qt">A \(2.0\)-kg block slides from rest down a frictionless ramp of height \(5.0\) m, then slides on a rough horizontal surface (\( \mu_k = 0.20 \)) until it stops. How far does it travel on the horizontal surface?</div>
+<div>Answer: <input type="text" id="q8-in" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q8',25,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>
+At bottom of ramp: \( E_k = mgh = 2.0(9.8)(5.0) = 98 \) J<br>
+Friction does work: \( W_f = f_k d = \mu_k mg d = 0.20(2.0)(9.8)d = 3.92d \)<br>
+Set \( 3.92d = 98 \) → \( d = 25 \) m
+</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Q9 — STSE (concept)</div>
+<div class="qt">Which Ontario electricity source has the highest typical efficiency at converting input energy to electrical output?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> a) Coal-fired thermal (~33%)</label></li>
+<li><label><input type="radio" name="q9" value="b"> b) Nuclear thermal (~33%)</label></li>
+<li><label><input type="radio" name="q9" value="c"> c) Hydroelectric (~85–90%)</label></li>
+<li><label><input type="radio" name="q9" value="d"> d) Solar PV (~20%)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>
+Hydroelectric plants achieve about 85–90% efficiency because gravitational PE of water is converted directly to mechanical and then electrical energy with relatively few thermal losses.
+</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Q10 — Calorimetry (heat exchange)</div>
+<div class="qt">A \(0.20\)-kg block of metal at \(100°\)C is dropped into \(0.30\) kg of water at \(20°\)C. Final temperature is \(28°\)C. Calculate the specific heat capacity of the metal. (\( c_\text{water}=4186 \) J/(kg·°C))</div>
+<div>Answer: <input type="text" id="q10-in" style="width:160px"> J/(kg·°C)</div>
+<button class="btn btn-p" onclick="chkNum('q10',698,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>
+Heat lost by metal = heat gained by water:<br>
+\( m_M c_M (100-28) = m_W c_W (28-20) \)<br>
+\( 0.20 c_M (72) = 0.30(4186)(8) \)<br>
+\( 14.4 c_M = 10046 \) → \( c_M = 698 \) J/(kg·°C)
+</div></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 3: Energy and Society | Ontario Curriculum 2008</footer>
+</div>
+<script>
+let sc=0,ans=0,tot=10;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ See solution.';}
+if(sl)sl.classList.add('show');up();}
+function chkNum(q,c,tol){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.5){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected ≈ '+c+'. See solution.';}
+if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

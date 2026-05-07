@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Counting &amp; Sample Spaces — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; transition: border-color 0.3s; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area { margin-top: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; transition: border-color 0.2s; }
+.answer-area input:focus { border-color: var(--primary); outline: none; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; transition: all 0.2s; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input[type="radio"] { accent-color: var(--primary); }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #15803d; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+.self-reflect { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
+.self-reflect h3 { color: var(--primary); margin-bottom: 12px; }
+.reflect-item { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.reflect-item select { padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border); }
+.reflect-item label { flex: 1; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#16a34a;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>📝 Chapter 1: Counting &amp; Sample Spaces</h1>
+    <div class="subtitle">Assessment AS Learning — Practice Quiz</div>
+    <div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info-box">
+    <strong>Purpose:</strong> Self-check your understanding after each topic. This quiz is <strong>not graded</strong>.
+    Use results to identify areas needing review before the unit test. Topics covered: sample spaces, fundamental counting principle, mutually exclusive events, Venn diagrams, conditional/independent probability.
+</div>
+
+<div class="score-display">
+    Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.1 — Sample Spaces</div>
+
+<div class="question-card" id="q1">
+    <div class="q-number">Question 1</div>
+    <div class="q-text">A fair coin is tossed twice. What is the size of the sample space?</div>
+    <div class="answer-area"><input type="text" id="q1-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q1', 4)">Check Answer</button>
+    <div class="feedback" id="q1-feedback"></div>
+    <div class="solution" id="q1-solution">
+        <div class="solution-label">Solution:</div>
+        Each toss has 2 outcomes. By the multiplicative principle: \( 2 \times 2 = 4 \).
+        <br>Sample space: \( S = \{HH, HT, TH, TT\} \), so \( n(S) = 4 \).
+    </div>
+</div>
+
+<div class="question-card" id="q2">
+    <div class="q-number">Question 2</div>
+    <div class="q-text">A standard die is rolled once. What is the probability of rolling a number less than 5?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q2" value="a"> \( \tfrac{1}{6} \)</label></li>
+        <li><label><input type="radio" name="q2" value="b"> \( \tfrac{2}{3} \)</label></li>
+        <li><label><input type="radio" name="q2" value="c"> \( \tfrac{5}{6} \)</label></li>
+        <li><label><input type="radio" name="q2" value="d"> \( \tfrac{1}{2} \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+    <div class="feedback" id="q2-feedback"></div>
+    <div class="solution" id="q2-solution">
+        <div class="solution-label">Solution:</div>
+        Favourable outcomes: \( \{1,2,3,4\} \), so 4 outcomes. Sample space: 6.
+        <br>\( P(X<5) = \dfrac{4}{6} = \dfrac{2}{3} \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.2 — Fundamental Counting Principle</div>
+
+<div class="question-card" id="q3">
+    <div class="q-number">Question 3</div>
+    <div class="q-text">A 4-digit PIN can use any digit 0–9. How many PINs are possible if digits may repeat?</div>
+    <div class="answer-area"><input type="text" id="q3-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q3', 10000)">Check Answer</button>
+    <div class="feedback" id="q3-feedback"></div>
+    <div class="solution" id="q3-solution">
+        <div class="solution-label">Solution:</div>
+        Each of 4 positions has 10 choices: \( 10 \times 10 \times 10 \times 10 = 10^4 = 10\,000 \).
+    </div>
+</div>
+
+<div class="question-card" id="q4">
+    <div class="q-number">Question 4</div>
+    <div class="q-text">A licence plate has 3 letters (A–Z) followed by 3 digits (0–9), no repeats allowed. How many plates are possible?</div>
+    <div class="answer-area"><input type="text" id="q4-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q4', 11232000)">Check Answer</button>
+    <div class="feedback" id="q4-feedback"></div>
+    <div class="solution" id="q4-solution">
+        <div class="solution-label">Solution:</div>
+        Letters (no repeat): \( 26 \times 25 \times 24 = 15\,600 \).
+        <br>Digits (no repeat): \( 10 \times 9 \times 8 = 720 \).
+        <br>Total: \( 15\,600 \times 720 = 11\,232\,000 \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.3 — Mutually Exclusive Events</div>
+
+<div class="question-card" id="q5">
+    <div class="q-number">Question 5</div>
+    <div class="q-text">A card is drawn from a standard 52-card deck. What is \( P(\text{King or Queen}) \)?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q5" value="a"> \( \tfrac{1}{13} \)</label></li>
+        <li><label><input type="radio" name="q5" value="b"> \( \tfrac{2}{13} \)</label></li>
+        <li><label><input type="radio" name="q5" value="c"> \( \tfrac{4}{13} \)</label></li>
+        <li><label><input type="radio" name="q5" value="d"> \( \tfrac{1}{52} \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q5','b')">Check Answer</button>
+    <div class="feedback" id="q5-feedback"></div>
+    <div class="solution" id="q5-solution">
+        <div class="solution-label">Solution:</div>
+        Kings and Queens are mutually exclusive (a card cannot be both).
+        <br>\( P(K \cup Q) = P(K) + P(Q) = \dfrac{4}{52} + \dfrac{4}{52} = \dfrac{8}{52} = \dfrac{2}{13} \).
+    </div>
+</div>
+
+<div class="question-card" id="q6">
+    <div class="q-number">Question 6</div>
+    <div class="q-text">A card is drawn from a standard deck. What is \( P(\text{Heart or Face card}) \)?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q6" value="a"> \( \tfrac{1}{4} \)</label></li>
+        <li><label><input type="radio" name="q6" value="b"> \( \tfrac{3}{13} \)</label></li>
+        <li><label><input type="radio" name="q6" value="c"> \( \tfrac{11}{26} \)</label></li>
+        <li><label><input type="radio" name="q6" value="d"> \( \tfrac{25}{52} \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q6','c')">Check Answer</button>
+    <div class="feedback" id="q6-feedback"></div>
+    <div class="solution" id="q6-solution">
+        <div class="solution-label">Solution:</div>
+        Events are NOT mutually exclusive — there are 3 face cards that are also Hearts (J, Q, K of Hearts).
+        <br>\( P(H \cup F) = P(H) + P(F) - P(H \cap F) = \dfrac{13}{52} + \dfrac{12}{52} - \dfrac{3}{52} = \dfrac{22}{52} = \dfrac{11}{26} \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.4 — Venn Diagrams</div>
+
+<div class="question-card" id="q7">
+    <div class="q-number">Question 7</div>
+    <div class="q-text">In a class of 30 students, 18 study French and 14 study Spanish. 6 study both. How many study neither?</div>
+    <div class="answer-area"><input type="text" id="q7-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q7', 4)">Check Answer</button>
+    <div class="feedback" id="q7-feedback"></div>
+    <div class="solution" id="q7-solution">
+        <div class="solution-label">Solution:</div>
+        \( n(F \cup S) = n(F) + n(S) - n(F \cap S) = 18 + 14 - 6 = 26 \).
+        <br>Neither: \( 30 - 26 = 4 \).
+    </div>
+</div>
+
+<div class="question-card" id="q8">
+    <div class="q-number">Question 8</div>
+    <div class="q-text">In a survey of 100 people: 60 like coffee, 50 like tea, 30 like both. How many like coffee OR tea?</div>
+    <div class="answer-area"><input type="text" id="q8-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q8', 80)">Check Answer</button>
+    <div class="feedback" id="q8-feedback"></div>
+    <div class="solution" id="q8-solution">
+        <div class="solution-label">Solution:</div>
+        Inclusion–exclusion: \( |C \cup T| = |C| + |T| - |C \cap T| = 60 + 50 - 30 = 80 \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Topic 1.5 — Independent &amp; Dependent Events</div>
+
+<div class="question-card" id="q9">
+    <div class="q-number">Question 9</div>
+    <div class="q-text">Two cards are drawn WITHOUT replacement from a standard deck. What is \( P(\text{both Aces}) \)?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q9" value="a"> \( \tfrac{4}{52} \cdot \tfrac{4}{52} = \tfrac{1}{169} \)</label></li>
+        <li><label><input type="radio" name="q9" value="b"> \( \tfrac{4}{52} \cdot \tfrac{3}{51} = \tfrac{1}{221} \)</label></li>
+        <li><label><input type="radio" name="q9" value="c"> \( \tfrac{4}{52} + \tfrac{4}{52} = \tfrac{2}{13} \)</label></li>
+        <li><label><input type="radio" name="q9" value="d"> \( \tfrac{1}{4} \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q9','b')">Check Answer</button>
+    <div class="feedback" id="q9-feedback"></div>
+    <div class="solution" id="q9-solution">
+        <div class="solution-label">Solution:</div>
+        Without replacement, events are dependent. \( P(A_1 \cap A_2) = P(A_1) \cdot P(A_2 \mid A_1) \).
+        <br>\( = \dfrac{4}{52} \cdot \dfrac{3}{51} = \dfrac{12}{2652} = \dfrac{1}{221} \).
+    </div>
+</div>
+
+<div class="question-card" id="q10">
+    <div class="q-number">Question 10</div>
+    <div class="q-text">A bag has 5 red and 3 blue marbles. Two are drawn WITH replacement. \( P(\text{red, then blue}) \) = ?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q10" value="a"> \( \tfrac{15}{56} \)</label></li>
+        <li><label><input type="radio" name="q10" value="b"> \( \tfrac{15}{64} \)</label></li>
+        <li><label><input type="radio" name="q10" value="c"> \( \tfrac{8}{64} \)</label></li>
+        <li><label><input type="radio" name="q10" value="d"> \( \tfrac{1}{2} \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+    <div class="feedback" id="q10-feedback"></div>
+    <div class="solution" id="q10-solution">
+        <div class="solution-label">Solution:</div>
+        With replacement, events are independent.
+        <br>\( P(R) \cdot P(B) = \dfrac{5}{8} \cdot \dfrac{3}{8} = \dfrac{15}{64} \).
+    </div>
+</div>
+</div>
+
+<div class="topic-section">
+<div class="topic-header">Mixed Application</div>
+
+<div class="question-card" id="q11">
+    <div class="q-number">Question 11</div>
+    <div class="q-text">A breakfast menu has 3 cereals, 4 fruits, and 2 drinks. How many different breakfasts (one of each) are possible?</div>
+    <div class="answer-area"><input type="text" id="q11-input" placeholder="Enter a number..."></div>
+    <button class="btn btn-check" onclick="checkNumeric('q11', 24)">Check Answer</button>
+    <div class="feedback" id="q11-feedback"></div>
+    <div class="solution" id="q11-solution">
+        <div class="solution-label">Solution:</div>
+        \( 3 \times 4 \times 2 = 24 \) breakfasts.
+    </div>
+</div>
+
+<div class="question-card" id="q12">
+    <div class="q-number">Question 12</div>
+    <div class="q-text">A jar contains 4 red, 6 green, and 2 yellow candies. One is selected at random. \( P(\text{not green}) \) = ?</div>
+    <ul class="mc-options">
+        <li><label><input type="radio" name="q12" value="a"> \( \tfrac{1}{2} \)</label></li>
+        <li><label><input type="radio" name="q12" value="b"> \( \tfrac{1}{4} \)</label></li>
+        <li><label><input type="radio" name="q12" value="c"> \( \tfrac{6}{12} \)</label></li>
+        <li><label><input type="radio" name="q12" value="d"> \( \tfrac{2}{3} \)</label></li>
+    </ul>
+    <button class="btn btn-check" onclick="checkMC('q12','a')">Check Answer</button>
+    <div class="feedback" id="q12-feedback"></div>
+    <div class="solution" id="q12-solution">
+        <div class="solution-label">Solution:</div>
+        Total: 12. Not green: \( 4 + 2 = 6 \).
+        <br>\( P(\text{not green}) = \dfrac{6}{12} = \dfrac{1}{2} \). (Or: \( 1 - \dfrac{6}{12} = \dfrac{1}{2} \).)
+    </div>
+</div>
+</div>
+
+<div class="self-reflect">
+    <h3>📊 Self-Reflection</h3>
+    <p style="margin-bottom:12px; color: var(--muted);">Rate your confidence on each topic (1 = need help, 4 = mastered):</p>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.1 Sample Spaces</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.2 Fundamental Counting Principle</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.3 Mutually Exclusive Events</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.4 Venn Diagrams</label></div>
+    <div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>1.5 Independent &amp; Dependent Events</label></div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);"><strong>Topics rated 1 or 2:</strong> Review the corresponding video lectures and retake those questions.</p>
+</div>
+
+<footer>
+    MDM4U — Mathematics of Data Management, Grade 12 | Ontario Curriculum 2007 (Revised)<br>
+    Strand A: Counting and Probability | Assessment AS Learning — Self-Directed, Not Graded
+</footer>
+
+</div>
+
+<script>
+let score = 0;
+let answered = 0;
+const total = 12;
+
+function updateProgress() {
+    document.getElementById('totalScore').textContent = score;
+    document.getElementById('progressFill').style.width = (answered / total * 100) + '%';
+}
+function checkMC(qid, correct) {
+    const selected = document.querySelector(`input[name="${qid}"]:checked`);
+    if (!selected) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (selected.value === correct) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = '❌ Not quite. See the solution below.';
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+function checkNumeric(qid, correct) {
+    const input = document.getElementById(qid + '-input');
+    const val = parseFloat(input.value.trim());
+    if (isNaN(val)) return;
+    const card = document.getElementById(qid);
+    const feedback = document.getElementById(qid + '-feedback');
+    const solution = document.getElementById(qid + '-solution');
+    if (card.classList.contains('correct') || card.classList.contains('wrong')) return;
+    answered++;
+    if (Math.abs(val - correct) < 0.01) {
+        score++; card.classList.add('correct');
+        feedback.className = 'feedback show correct';
+        feedback.textContent = '✅ Correct!';
+    } else {
+        card.classList.add('wrong');
+        feedback.className = 'feedback show wrong';
+        feedback.textContent = `❌ The correct answer is ${correct}. See the solution below.`;
+    }
+    solution.classList.add('show');
+    updateProgress();
+}
+</script>
+</body>
+</html>

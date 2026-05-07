@@ -1,182 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 2: Metabolic Processes — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Metabolic Processes — Unit Test (OF Learning)</title>
 <style>
-:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+:root{--primary:#2563eb;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:900px;margin:0 auto;padding:20px}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
 header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.warn{background:#fef3c7;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
 .chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 2: Metabolic Processes — Unit Test</h1>
-<div class="sub">Assessment OF Learning — SBI4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+.chart-item{text-align:center;padding:12px;border-radius:8px}.chart-item .label{font-size:12px;font-weight:600}.chart-item .value{font-size:24px;font-weight:800}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px}
+.section-hdr.ku{background:#dbeafe;color:#1e40af}.section-hdr.t{background:#fef3c7;color:#92400e}
+.section-hdr.c{background:#d1fae5;color:#065f46}.section-hdr.a{background:#ede9fe;color:#5b21b6}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
+.qnum{font-weight:700;color:var(--primary)}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600}
+.qtxt{margin:8px 0 12px}.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer}
+input[type="text"],textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:14px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+details{background:#f8fafc;border-left:4px solid var(--primary);padding:10px 14px;margin-top:10px;border-radius:0 6px 6px 0;font-size:14px}
+details summary{cursor:pointer;font-weight:700;color:var(--primary)}details p{margin-top:8px}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border)}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: Metabolic Processes — Unit Test</h1><div class="sub">Assessment OF Learning · Strand C</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 min &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all work.</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>\(C_6H_{12}O_6 + 6O_2 \to 6CO_2 + 6H_2O + ATP\) | Glycolysis | Krebs | ETC | Photosynthesis</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div></div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">State the location and net products (per glucose) of: glycolysis, pyruvate oxidation, Krebs cycle.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Glycolysis: cytoplasm. Net 2 ATP, 2 NADH, 2 pyruvate. Pyruvate oxidation: mitochondrial matrix. 2 acetyl-CoA, 2 NADH, 2 CO₂. Krebs (×2 turns): mitochondrial matrix. 2 ATP, 6 NADH, 2 FADH₂, 4 CO₂.</p></details></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">In aerobic respiration the final electron acceptor is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> NAD+</label></li>
+<li><label><input type="radio" name="q2"> O₂</label></li>
+<li><label><input type="radio" name="q2"> CO₂</label></li>
+<li><label><input type="radio" name="q2"> Glucose</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> O₂ accepts electrons at Complex IV and combines with H+ to form H₂O.</p></details></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">Light-dependent reactions occur in the ___ and produce ___.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> Stroma; glucose</label></li>
+<li><label><input type="radio" name="q3"> Thylakoid; ATP, NADPH, O₂</label></li>
+<li><label><input type="radio" name="q3"> Cytoplasm; pyruvate</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Photosystems II/I are embedded in thylakoid membranes; water-splitting yields O₂ in the lumen; ATP and NADPH are made for the Calvin cycle.</p></details></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define and contrast: substrate-level phosphorylation vs oxidative phosphorylation.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Substrate-level: direct enzymatic transfer of a phosphate from a high-energy substrate to ADP (e.g., in glycolysis steps 7,10 and one Krebs step). Oxidative phosphorylation: ATP synthesis using energy from the H+ gradient generated by the ETC; depends on O₂. Yields most of the cell's ATP (~26 of ~30).</p></details></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify each: (a) cytoplasmic stage that splits glucose; (b) molecule that carries acetyl groups into Krebs; (c) chloroplast pigment that absorbs red and blue light.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(a) glycolysis. (b) acetyl-CoA. (c) chlorophyll a (with chlorophyll b and carotenoids as accessory pigments).</p></details></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[2]</span>
+<div class="qtxt">A poison that blocks ATP synthase will:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6"> Stop oxygen consumption immediately</label></li>
+<li><label><input type="radio" name="q6"> Stop ATP production by oxidative phosphorylation; H+ gradient builds up</label></li>
+<li><label><input type="radio" name="q6"> Increase ATP yield</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> H+ flow back through the synthase is blocked; gradient builds up; eventually ETC also stalls (no proton-pumping driving force) and O₂ consumption falls.</p></details></div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">Calculate the total ATP per glucose in aerobic respiration assuming the modern P/O ratios (NADH = 2.5, FADH₂ = 1.5). Show steps for each stage.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Glycolysis: 2 ATP (substrate-level) + 2 NADH (cytosolic, ~1.5 each via glycerol-3-P shuttle) = 2 + 3 = 5. Pyruvate oxidation: 2 NADH × 2.5 = 5. Krebs: 2 ATP + 6 NADH × 2.5 + 2 FADH₂ × 1.5 = 2 + 15 + 3 = 20. Total = 5 + 5 + 20 = <strong>30 ATP</strong> (or 32 with malate-aspartate shuttle).</p></details></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt">DNP (2,4-dinitrophenol) is an "uncoupler" of oxidative phosphorylation. Predict its effect on (a) H+ gradient, (b) ATP synthesis, (c) heat production, (d) O₂ consumption. Explain.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(a) Collapses gradient — DNP carries H+ across membrane bypassing synthase. (b) ATP drops sharply. (c) Heat rises (energy from electron transport dissipates as heat instead of being captured as ATP). (d) O₂ consumption increases (ETC runs faster trying to pump H+ that DNP keeps draining). Historically marketed for weight loss; banned due to fatal hyperthermia.</p></details></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">Design a controlled experiment to compare the rate of photosynthesis in elodea at 3 light intensities. Identify variables and how you'd measure rate.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>IV: light intensity (e.g., distance to lamp 10, 30, 60 cm) — quantify with lux meter. DV: O₂ production rate (count bubbles/min, or measure dissolved O₂ probe). Controlled: temperature (water bath), CO₂ supply (NaHCO₃ buffer), elodea length, light wavelength, time. Hypothesis: rate increases with intensity until light saturation. Replicate ≥3 trials.</p></details></div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Draw a labeled diagram (or detailed description) of a mitochondrion showing where each stage of aerobic respiration takes place and the direction of H+ pumping.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Outer membrane; intermembrane space (high H+); inner membrane (folded into cristae) — site of ETC complexes I–IV and ATP synthase; matrix (low H+) — site of pyruvate oxidation and Krebs. ETC pumps H+ from matrix to intermembrane space; H+ flows back through ATP synthase into matrix → ATP.</p></details></div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 2: Metabolic Processes — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Compare aerobic respiration with lactic-acid fermentation in a table: ATP yield, O₂ requirement, end products, location.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Aerobic: ~30 ATP/glucose, requires O₂, end products CO₂ + H₂O, location cytoplasm + mitochondria. Lactic fermentation: 2 ATP/glucose, no O₂, end product lactate (and NAD+ regenerated), location cytoplasm only. Common stage: glycolysis.</p></details></div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt">Explain how photosynthesis and cellular respiration are essentially the reverse of each other and how the two processes form the basis of energy flow in ecosystems.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Photosynthesis: 6 CO₂ + 6 H₂O + light → C₆H₁₂O₆ + 6 O₂; respiration is the reverse. Plants capture solar energy as chemical bonds; respiration releases that energy to make ATP. Producers fix carbon; consumers and decomposers respire it back to CO₂. The cyclic exchange of CO₂ and O₂ links all aerobic life.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case — Cyanide Poisoning:</strong> Cyanide (CN⁻) blocks Complex IV (cytochrome c oxidase). Explain (i) effect on ETC, (ii) effect on ATP, (iii) why tissues with high O₂ demand (heart, brain) fail first.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(i) ETC halts at Complex IV; no electrons can reach O₂; entire chain backs up. (ii) Oxidative phosphorylation stops; only 2 ATP/glucose from glycolysis remain (lactate accumulates → metabolic acidosis). (iii) Heart and brain rely heavily on continuous oxidative phosphorylation; they have minimal glycolytic capacity, so ATP collapse is rapid → cardiac arrest and unconsciousness within minutes.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case — Marathon Runner:</strong> A runner switches from steady jogging to a sprint. Describe the metabolic shift in muscle: ATP source, fuel, O₂ status, lactate, breathing rate.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Jogging (aerobic): O₂ supply meets demand; muscles use oxidative phosphorylation of glucose and fatty acids → CO₂ + H₂O + ATP. Sprint: O₂ demand exceeds supply (anaerobic threshold). Cells run glycolysis hard; pyruvate → lactate via lactate dehydrogenase to regenerate NAD+. Lactate accumulates (burning sensation). Breathing rate ↑ to repay "oxygen debt" — lactate is later transported to the liver (Cori cycle) and re-converted to glucose.</p></details></div>
+
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>STSE — Biofuels:</strong> Discuss bioethanol production by yeast fermentation: chemistry, advantages over fossil fuels, and one drawback (e.g., land use, food vs fuel).</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Yeast: glucose → 2 ethanol + 2 CO₂ + 2 ATP. Crops (corn, sugarcane) → starch → glucose → fermentation → distillation → ethanol fuel (E10/E85). Advantages: renewable, lower net CO₂ if plants reabsorb (carbon-cycle neutral in theory). Drawbacks: competes with food crops; energy-intensive distillation; land/water use; some life-cycle analyses show modest net energy gain.</p></details></div>
+
+<footer>SBI4U — Biology, Grade 12 | Strand C: Metabolic Processes | Assessment OF Learning — Graded</footer>
+</div></body></html>

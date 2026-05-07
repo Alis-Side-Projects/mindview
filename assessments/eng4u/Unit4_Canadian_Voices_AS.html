@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Canadian Voices — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #dc2626; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Canadian Voices — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B + D</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of Canadian literary traditions, key authors, and cross-cultural reading practices. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.1 — Authors &amp; Traditions</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which Canadian author won the Nobel Prize in Literature in 2013, primarily for short fiction set in rural Ontario?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Margaret Atwood</label></li>
+<li><label><input type="radio" name="q1" value="b"> Alice Munro</label></li>
+<li><label><input type="radio" name="q1" value="c"> Michael Ondaatje</label></li>
+<li><label><input type="radio" name="q1" value="d"> Mordecai Richler</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Alice Munro received the Nobel Prize in 2013, the first Canadian to win the literature prize. Her stories often follow girls and women in southwestern Ontario across long stretches of time.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Northrop Frye's well-known phrase for a defining feature of Canadian sensibility is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> "The lonely crowd"</label></li>
+<li><label><input type="radio" name="q2" value="b"> "The garrison mentality" — small, fearful settlements isolated against a vast and indifferent wilderness</label></li>
+<li><label><input type="radio" name="q2" value="c"> "The melting pot"</label></li>
+<li><label><input type="radio" name="q2" value="d"> "The end of history"</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> In <em>The Bush Garden</em> (1971), Frye coined "garrison mentality" to describe how Canadian writing returns to a defensive consciousness produced by small communities surrounded by physically and psychologically threatening space.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Margaret Atwood's 1972 thematic study of CanLit is titled:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> <em>Survival</em> — proposing the central Canadian theme is "survival" rather than the American theme of "the frontier"</label></li>
+<li><label><input type="radio" name="q3" value="b"> <em>The Edible Woman</em></label></li>
+<li><label><input type="radio" name="q3" value="c"> <em>Cat's Eye</em></label></li>
+<li><label><input type="radio" name="q3" value="d"> <em>Alias Grace</em></label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','a')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> <em>Survival: A Thematic Guide to Canadian Literature</em> (Atwood, 1972) argues that where the central American myth is the frontier and the central British myth is the island, the central Canadian myth is the act of "bare survival" against threatening environment, history, or relationship.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.2 — Munro &amp; the Short Story</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div>
+<div class="passage">"My father was a fox farmer. That is, he raised silver foxes, in pens; and in the fall and early winter, when their fur was prime, he killed them and skinned them and sold their pelts to the Hudson's Bay Company …" — Munro, opening of "Boys and Girls"</div>
+<div class="qtxt">The opening establishes the story's:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Magical-realist setting</label></li>
+<li><label><input type="radio" name="q4" value="b"> Specific rural-Ontario setting and its economy of pelts and pragmatic violence — central to the story's exploration of gender</label></li>
+<li><label><input type="radio" name="q4" value="c"> Urban modernist mood</label></li>
+<li><label><input type="radio" name="q4" value="d"> Science-fiction premise</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Munro's specificity (silver foxes, Hudson's Bay Company, "fall and early winter") locates the story in a particular post-Depression rural Canadian setting whose economic violence — the pelting of animals — will quietly mirror the gendered violence the narrator witnesses inside her own family.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">In "Boys and Girls," what is the central conflict for the unnamed narrator?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> She wants to be the family's heir but is told she must take her place as "a girl"</label></li>
+<li><label><input type="radio" name="q5" value="b"> She wants to leave the farm for the city</label></li>
+<li><label><input type="radio" name="q5" value="c"> She wants her brother to teach her</label></li>
+<li><label><input type="radio" name="q5" value="d"> She wants to learn French</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','a')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> The narrator's identification with her father's outdoor work and her resistance to being categorised as "a girl" (with the indoor, domestic role her mother represents) drive the story. The defining moment is her decision to release the horse Flora — a moment she frames as defiance but the family later dismisses with "She's only a girl."</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Munro's narrative voice in this story is best described as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Third-person omniscient</label></li>
+<li><label><input type="radio" name="q6" value="b"> First-person retrospective — the adult narrator looks back at her childhood self with both intimacy and ironic distance</label></li>
+<li><label><input type="radio" name="q6" value="c"> Second-person present</label></li>
+<li><label><input type="radio" name="q6" value="d"> Third-person objective</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> The retrospective first-person ("I would tell myself stories …") allows Munro to render a child's perception while letting the adult narrator subtly comment on what the child did not yet understand.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.3 — Indigenous Voices &amp; Storytelling</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div>
+<div class="passage">"There is a story I know. It's about the earth and how it floats in space on the back of a turtle. I've heard this story many times, and each time someone tells the story, it changes. Sometimes the change is simply in the voice of the storyteller …" — Thomas King, opening of <em>The Truth About Stories</em></div>
+<div class="qtxt">King's argument in this opening foregrounds:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The fixedness of written texts</label></li>
+<li><label><input type="radio" name="q7" value="b"> Oral storytelling as a living, varying tradition where the act of telling shapes meaning — central to Indigenous narrative epistemologies</label></li>
+<li><label><input type="radio" name="q7" value="c"> The unimportance of context</label></li>
+<li><label><input type="radio" name="q7" value="d"> A scientific cosmology</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> King's CBC Massey Lectures (2003), and his later writing, frame stories as relational — they bind tellers and listeners — and as variable. The book's repeated phrase "you know how it goes" enacts the ethics of oral transmission.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Thomas King is associated primarily with:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Romantic poetry</label></li>
+<li><label><input type="radio" name="q8" value="b"> Cherokee, Greek, and German heritage; novels and essays foregrounding Indigenous (Cherokee/Blackfoot) perspectives in North America</label></li>
+<li><label><input type="radio" name="q8" value="c"> Renaissance drama</label></li>
+<li><label><input type="radio" name="q8" value="d"> Victorian children's literature</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> King has Cherokee, Greek, and German ancestry. His major works include <em>Green Grass, Running Water</em>, <em>The Inconvenient Indian</em>, and <em>The Truth About Stories</em>. He combines Indigenous oral traditions with literary fiction in English.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">In Indigenous literary criticism, "two-eyed seeing" (Etuaptmumk, from Mi'kmaw Elder Albert Marshall) refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> A medical condition</label></li>
+<li><label><input type="radio" name="q9" value="b"> Reading with both Indigenous and Western knowledge frames in dialogue, neither replacing the other</label></li>
+<li><label><input type="radio" name="q9" value="c"> Watching films from both stages</label></li>
+<li><label><input type="radio" name="q9" value="d"> A reading speed strategy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Two-eyed seeing — "Etuaptmumk" — articulates an ethic of reading where Indigenous knowledge systems and Western frameworks can both be brought to a text without one erasing the other. In ENG4U it offers a way to read Indigenous texts that respects their traditions.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.4 — Atwood &amp; Place</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div>
+<div class="passage">"The city is no calmer place / than the country: / behind the lawn-green tidiness, / behind the sane fence-posts / a panic …" — Atwood, "The City Planners" (paraphrased)</div>
+<div class="qtxt">Atwood's poem critiques suburban order by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Praising rigid uniformity</label></li>
+<li><label><input type="radio" name="q10" value="b"> Suggesting that the visible order conceals psychic and ecological violence beneath</label></li>
+<li><label><input type="radio" name="q10" value="c"> Mocking small towns</label></li>
+<li><label><input type="radio" name="q10" value="d"> Defending urban planners' decisions</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> The poem's signature move is to set the suburb's "tidiness" against the "panic" beneath, making the planners' rationality a thin sheet over chaos. This pattern recurs across Atwood's poetry — sanitised surfaces and the wilderness beneath.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Place often functions in Canadian literature as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Mere backdrop</label></li>
+<li><label><input type="radio" name="q11" value="b"> An active force shaping character, identity, and conflict (the wilderness in Atwood, rural Ontario in Munro, the Prairie in Laurence)</label></li>
+<li><label><input type="radio" name="q11" value="c"> Always urban</label></li>
+<li><label><input type="radio" name="q11" value="d"> Irrelevant</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Place in CanLit is rarely passive scenery. The Ontario fox farm (Munro), the Toronto suburb (Atwood), the Alberta plains (Kroetsch), the Atlantic outport (Crummey), the Métis river-edge (Robinson) — each writes back from a specific land that shapes the people on it.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Multivocality (or polyvocality) in CanLit refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> A single national voice</label></li>
+<li><label><input type="radio" name="q12" value="b"> The recognition that "Canadian literature" includes many voices — Indigenous, Francophone, Anglophone, immigrant, racialised — that contest a single national narrative</label></li>
+<li><label><input type="radio" name="q12" value="c"> Loud poetry readings</label></li>
+<li><label><input type="radio" name="q12" value="d"> Repeating the same line</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Recent criticism increasingly resists a singular CanLit, attending instead to the plurality of national, Indigenous, and diasporic voices that complicate any single account of Canada.</div></div>
+
+</div>
+
+<footer>ENG4U — English, Grade 12 | Strand B + D: Reading &amp; Media | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS4U — Final Exam</title>
+<style>
+:root{--p:#1e293b;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:920px;margin:0 auto;padding:20px}
+header{background:linear-gradient(135deg,#0f172a,#6366f1);color:#fff;padding:28px;border-radius:14px;margin-bottom:24px}
+header h1{font-size:26px}.sub{font-size:14px;opacity:.85;margin-top:4px}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 14px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:18px;margin-bottom:14px}
+.qn{font-weight:700;color:#6366f1;font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.tag{display:inline-block;font-size:11px;background:#f1f5f9;color:#475569;padding:2px 8px;border-radius:10px;margin-right:6px}
+textarea{width:100%;min-height:90px;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit;resize:vertical}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.chart-i{text-align:center;padding:14px;border-radius:8px}
+.chart-i .lb{font-size:13px;font-weight:600}.chart-i .vl{font-size:26px;font-weight:800}
+details{background:#f8fafc;border:1px solid var(--b);border-radius:8px;padding:12px 16px;margin-top:16px}
+details summary{font-weight:700;color:#6366f1;cursor:pointer;font-size:15px}
+details .sol-block{margin-top:12px;font-size:14px}
+details .sol-block h4{color:#6366f1;margin:10px 0 4px;font-size:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+<header>
+<h1>&#128221; ICS4U &mdash; Final Exam</h1>
+<div class="sub">Cumulative summative evaluation across all 5 units</div>
+<div class="badge">&#9201;&#65039; 3 hours &middot; /100 marks &middot; Worth up to 30% of final grade</div>
+</header>
+
+<div class="warn">
+<strong>Instructions.</strong> All code must be syntactically valid <strong>Python 3</strong>. Show all work, including trace tables and reasoning where requested. Use proper style: meaningful names, comments where useful. Write code by hand &mdash; you may not run it. <strong>No internet, no AI tools, no calculators except a basic four-function calculator.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;color:#1e40af"><div class="lb">K/U</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#fef3c7;color:#92400e"><div class="lb">Thinking</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#d1fae5;color:#065f46"><div class="lb">Communication</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#ede9fe;color:#5b21b6"><div class="lb">Application</div><div class="vl">/25</div></div>
+</div>
+
+<!-- ========== K/U ========== -->
+<div class="sec-hdr ku">Part A &mdash; Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
+<span class="tag">Unit 1 &middot; Tracing</span>
+<div class="qt">What is the output of:
+<div class="code">x = 5
+y = 0
+for i in range(4):
+    y = y + x
+    x = x - 1
+print(x, y)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">2. <span class="qm">[2]</span></div>
+<span class="tag">Unit 1 &middot; Types</span>
+<div class="qt">Give the value AND the type of each:
+<ol style="margin-left:24px;">
+<li><code>3 / 2</code></li>
+<li><code>3 // 2</code></li>
+<li><code>"a" * 3</code></li>
+<li><code>bool(0)</code></li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
+<span class="tag">Unit 2 &middot; Lists</span>
+<div class="qt">Given <code>a = [10, 20, 30, 40, 50]</code>, write the value of:
+<ol style="margin-left:24px;">
+<li><code>a[1:4]</code></li>
+<li><code>sum(a) / len(a)</code></li>
+<li><code>a[::-1]</code></li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
+<span class="tag">Unit 2 &middot; Dictionaries</span>
+<div class="qt">Trace and give the final value of <code>d</code>:
+<div class="code">d = {}
+for ch in "MISSISSIPPI":
+    d[ch] = d.get(ch, 0) + 1
+print(d)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
+<span class="tag">Unit 3 &middot; Recursion</span>
+<div class="qt">What does <code>f(4)</code> return?
+<div class="code">def f(n):
+    if n &lt;= 1:
+        return n
+    return f(n-1) + f(n-2)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">6. <span class="qm">[3]</span></div>
+<span class="tag">Unit 3 &middot; Scope</span>
+<div class="qt">What is printed?
+<div class="code">total = 0
+def add(x):
+    total = x
+    return total
+
+print(add(5))
+print(total)</div>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">7. <span class="qm">[3]</span></div>
+<span class="tag">Unit 4 &middot; Big-O</span>
+<div class="qt">State the worst-case Big-O complexity of:
+<ol style="margin-left:24px;">
+<li>Linear search</li>
+<li>Binary search</li>
+<li>Bubble sort</li>
+<li>Merge sort</li>
+<li>Insertion sort on a sorted list (best case)</li>
+</ol>
+</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">8. <span class="qm">[2]</span></div>
+<span class="tag">Unit 5 &middot; Testing</span>
+<div class="qt">Define "regression test" in one sentence. Why is regression testing important when fixing a bug?</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">9. <span class="qm">[3]</span></div>
+<span class="tag">Unit 5 &middot; SDLC</span>
+<div class="qt">Place the following SDLC steps in correct order: <em>Maintenance, Design, Implementation, Requirements gathering, Testing, Deployment</em>.</div>
+<textarea></textarea></div>
+
+<!-- ========== Thinking ========== -->
+<div class="sec-hdr t">Part B &mdash; Thinking &amp; Investigation <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">10. <span class="qm">[6]</span></div>
+<span class="tag">Unit 4 &middot; Sort trace</span>
+<div class="qt">Trace insertion sort (ascending) on <code>[7, 3, 9, 2, 8, 1]</code>. Show the list after EACH iteration of the outer loop.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">11. <span class="qm">[6]</span></div>
+<span class="tag">Unit 4 &middot; Binary search</span>
+<div class="qt">Trace binary search for the value <code>57</code> in the sorted list:
+<div class="code">[3, 8, 14, 21, 28, 35, 42, 49, 57, 64, 71]</div>
+Show <code>lo</code>, <code>hi</code>, and <code>mid</code> at each step. Conclude by stating the index returned.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">12. <span class="qm">[6]</span></div>
+<span class="tag">Unit 3 &middot; Recursion design</span>
+<div class="qt">Write a recursive function <code>palindrome(s)</code> that returns <code>True</code> if a string is the same forwards and backwards (case-sensitive). <strong>You may not use any loops or string-reversal built-ins.</strong> Then trace <code>palindrome("level")</code>.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">13. <span class="qm">[7]</span></div>
+<span class="tag">Units 1+2+3 &middot; Debugging</span>
+<div class="qt">Find &amp; fix the bugs. The function below should return the average of even numbers in a list. There are <strong>three bugs</strong>. (a) Provide the corrected function. (b) Briefly state what each bug was.
+<div class="code">def avg_evens(nums):
+    total = 0
+    count = 1
+    for n in range(nums):
+        if n % 2 = 0:
+            total + n
+            count += 1
+    return total / count</div>
+</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<!-- ========== Communication ========== -->
+<div class="sec-hdr c">Part C &mdash; Communication <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">14. <span class="qm">[6]</span></div>
+<span class="tag">Units 2+3 &middot; OOP design</span>
+<div class="qt">Design a Python class <code>Library</code> with attributes and methods to manage a small library. Include AT LEAST: an <code>__init__</code>, an <code>add_book(title)</code> method, a <code>borrow(title)</code> method (returns <code>True</code> on success or <code>False</code> if not on shelf), a <code>return_book(title)</code> method, and a docstring describing the class. Use sensible data structures (e.g., a dict mapping title to count, or two sets for "on shelf" and "borrowed"). Comment thoroughly.</div>
+<textarea style="min-height:240px;"></textarea></div>
+
+<div class="qc"><div class="qn">15. <span class="qm">[6]</span></div>
+<span class="tag">Unit 4 &middot; Algorithm comparison</span>
+<div class="qt">Compare <strong>merge sort</strong> and <strong>quicksort</strong> in 3-5 sentences each. Address: time complexity (best/average/worst), space, stability, and one situation where you'd prefer each.</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">16. <span class="qm">[7]</span></div>
+<span class="tag">Unit 5 &middot; Ethics essay</span>
+<div class="qt">Write a 200-300 word response: <em>"Should developers of AI systems be legally responsible for harms caused by those systems?"</em> Take a clear position. Your response must reference: (a) at least one concrete real-world AI harm, (b) at least one stakeholder beyond the developer, and (c) a comparison to liability in another industry (e.g., automotive, pharmaceutical).</div>
+<textarea style="min-height:240px;"></textarea></div>
+
+<div class="qc"><div class="qn">17. <span class="qm">[6]</span></div>
+<span class="tag">Unit 5 &middot; Code review</span>
+<div class="qt">Below is a peer's submission. Write a constructive code review: identify at least <strong>five distinct quality issues</strong> (style, correctness, maintainability, naming, comments, etc.) and suggest a fix for each.
+<div class="code">def x(L,n):
+ r=[]
+ for i in range(0,len(L)):
+  if L[i]&gt;n:r.append(L[i])
+ return r</div>
+</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<!-- ========== Application ========== -->
+<div class="sec-hdr a">Part D &mdash; Application <span>[25 marks]</span></div>
+
+<div class="qc"><div class="qn">18. <span class="qm">[6]</span></div>
+<span class="tag">Units 1+2 &middot; File I/O + dict</span>
+<div class="qt">A file <code>orders.csv</code> contains lines of the form <code>customer,item,price</code>, e.g.:
+<div class="code">Ada,book,25.50
+Bob,pen,3.00
+Ada,pen,3.00
+Cay,book,25.50</div>
+Write a complete program that reads the file and prints the total spending per customer, sorted by name. The output should look like:
+<div class="code">Ada: $28.50
+Bob: $3.00
+Cay: $25.50</div>
+</div>
+<textarea style="min-height:240px;"></textarea></div>
+
+<div class="qc"><div class="qn">19. <span class="qm">[6]</span></div>
+<span class="tag">Unit 4 &middot; Sort + search</span>
+<div class="qt">A school keeps student GPAs in a list of dicts: <code>[{"name":..., "gpa":...}, ...]</code>. Write a function <code>top_n(students, n)</code> that returns the names of the <em>n</em> students with the HIGHEST GPAs, in descending order. Then briefly justify your choice of algorithm and state its complexity.</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">20. <span class="qm">[6]</span></div>
+<span class="tag">Units 3+4 &middot; Recursion + complexity</span>
+<div class="qt">Naive Fibonacci is O(2&#8319;). Rewrite Fibonacci iteratively (with a single loop) so it runs in O(n) time and O(1) extra space. Then briefly explain why your version is faster than the recursive one.</div>
+<textarea style="min-height:200px;"></textarea></div>
+
+<div class="qc"><div class="qn">21. <span class="qm">[7]</span></div>
+<span class="tag">All units &middot; Capstone-style</span>
+<div class="qt">A teacher wants a small grade-tracking program. Required:
+<ol style="margin-left:24px;">
+<li>A class <code>Course</code> with attributes <code>name</code> (str) and <code>marks</code> (list of floats).</li>
+<li>A method <code>add_mark(m)</code> that appends a mark in the range 0&ndash;100 (raise <code>ValueError</code> otherwise).</li>
+<li>A method <code>average()</code> returning the mean.</li>
+<li>A method <code>highest()</code> returning the maximum mark (or <code>None</code> if no marks yet).</li>
+<li>A free function <code>rank(courses)</code> that takes a list of <code>Course</code> objects and returns them sorted by average descending.</li>
+</ol>
+Write the complete code with docstrings and at least 3 inline comments. Then briefly describe how you would unit-test it.</div>
+<textarea style="min-height:280px;"></textarea></div>
+
+<details>
+<summary>&#128214; Complete Answer Key (click to reveal)</summary>
+<div class="sol-block">
+<h4>Part A &mdash; K/U</h4>
+<p><strong>Q1.</strong> Loop runs i=0..3. Iter 0: y=5,x=4. Iter 1: y=9,x=3. Iter 2: y=12,x=2. Iter 3: y=14,x=1. Output: <code>1 14</code>.</p>
+<p><strong>Q2.</strong> (1) 1.5 (float). (2) 1 (int). (3) "aaa" (str). (4) False (bool).</p>
+<p><strong>Q3.</strong> (1) [20, 30, 40]. (2) 30.0. (3) [50, 40, 30, 20, 10].</p>
+<p><strong>Q4.</strong> {'M': 1, 'I': 4, 'S': 4, 'P': 2}.</p>
+<p><strong>Q5.</strong> f(4) = f(3)+f(2) = (f(2)+f(1)) + (f(1)+f(0)) = ((f(1)+f(0))+1) + (1+0) = ((1+0)+1)+1 = <strong>3</strong>. (This is Fibonacci F(4) where F(0)=0, F(1)=1.)</p>
+<p><strong>Q6.</strong> Inside <code>add</code>, <code>total = x</code> creates a local <code>total</code> shadowing the global. Output: <code>5</code> then <code>0</code>.</p>
+<p><strong>Q7.</strong> O(n), O(log n), O(n²), O(n log n), O(n).</p>
+<p><strong>Q8.</strong> A regression test re-runs old test cases after a code change to confirm previously-correct behaviour still works. Important because fixes can introduce new bugs in unrelated places.</p>
+<p><strong>Q9.</strong> Requirements gathering &rarr; Design &rarr; Implementation &rarr; Testing &rarr; Deployment &rarr; Maintenance.</p>
+
+<h4>Part B &mdash; Thinking</h4>
+<p><strong>Q10.</strong> [7,3,9,2,8,1] &rarr; [3,7,9,2,8,1] &rarr; [3,7,9,2,8,1] &rarr; [2,3,7,9,8,1] &rarr; [2,3,7,8,9,1] &rarr; [1,2,3,7,8,9].</p>
+<p><strong>Q11.</strong> Step 1: lo=0, hi=10, mid=5 (35 &lt; 57; lo=6). Step 2: lo=6, hi=10, mid=8 (57 = 57). Return index 8.</p>
+<p><strong>Q12.</strong>
+<div class="code">def palindrome(s):
+    if len(s) &lt;= 1:
+        return True
+    if s[0] != s[-1]:
+        return False
+    return palindrome(s[1:-1])</div>
+Trace: palindrome("level") &rarr; first/last 'l'/'l' match &rarr; palindrome("eve") &rarr; 'e'/'e' match &rarr; palindrome("v") &rarr; True.</p>
+<p><strong>Q13.</strong> Bugs: (1) <code>range(nums)</code> should be <code>nums</code> (iterating list, not int). (2) <code>=</code> should be <code>==</code>. (3) <code>total + n</code> doesn't store anything &mdash; should be <code>total += n</code>. (4) Counting bug: <code>count = 1</code> initially makes the average wrong; should be 0 (and protect division-by-zero).
+<div class="code">def avg_evens(nums):
+    total, count = 0, 0
+    for n in nums:
+        if n % 2 == 0:
+            total += n
+            count += 1
+    return total / count if count else 0</div>
+</p>
+
+<h4>Part C &mdash; Communication</h4>
+<p><strong>Q14.</strong> Sample:
+<div class="code">class Library:
+    """A simple library that tracks copies of books and borrowing."""
+    def __init__(self):
+        self.shelf = {}     # title -> count available
+
+    def add_book(self, title):
+        self.shelf[title] = self.shelf.get(title, 0) + 1
+
+    def borrow(self, title):
+        if self.shelf.get(title, 0) &gt; 0:
+            self.shelf[title] -= 1
+            return True
+        return False
+
+    def return_book(self, title):
+        self.shelf[title] = self.shelf.get(title, 0) + 1</div>
+</p>
+<p><strong>Q15.</strong> Merge sort: O(n log n) best/avg/worst, O(n) extra space, stable. Quicksort: O(n log n) avg, O(n²) worst (bad pivot), O(log n) recursion stack, generally not stable, but in-place. Prefer merge sort when stability matters or worst-case guarantees are needed (e.g., real-time). Prefer quicksort when memory is tight and average performance dominates (most general-purpose libraries).</p>
+<p><strong>Q16.</strong> Free response. Award marks for: (a) clear position; (b) named real-world harm (e.g., bias in COMPAS, autonomous-vehicle deaths, generative-AI defamation); (c) named stakeholder (data subject, regulator, end-user); (d) industry comparison (e.g., automotive recall law, FDA pharmaceutical liability).</p>
+<p><strong>Q17.</strong> Sample issues: (1) Function name <code>x</code> is uninformative &rarr; rename <code>filter_above</code>. (2) Parameter <code>L</code> is uninformative &rarr; rename <code>lst</code> or <code>numbers</code>. (3) Inconsistent / unusual indentation (1 then 2 spaces) &rarr; PEP 8: 4 spaces. (4) <code>range(0, len(L))</code> can be <code>for x in lst:</code> &mdash; iterate values directly. (5) Missing docstring. (6) Single-line if/append is hard to read. (7) No tests/comments.</p>
+
+<h4>Part D &mdash; Application</h4>
+<p><strong>Q18.</strong> Sample:
+<div class="code">spending = {}
+with open("orders.csv") as f:
+    for line in f:
+        c, _, p = line.strip().split(",")
+        spending[c] = spending.get(c, 0) + float(p)
+
+for c in sorted(spending):
+    print(f"{c}: ${spending[c]:.2f}")</div>
+</p>
+<p><strong>Q19.</strong>
+<div class="code">def top_n(students, n):
+    return [s["name"] for s in sorted(students, key=lambda s: -s["gpa"])[:n]]</div>
+Sorting is O(n log n). With n much smaller than total, a partial-selection (heap-based) approach in O(N log n) could be faster for large datasets, but the O(N log N) full sort is clearer and adequate for class-sized lists.</p>
+<p><strong>Q20.</strong>
+<div class="code">def fib(n):
+    a, b = 0, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a</div>
+The naive recursive solution recomputes the same sub-problems exponentially many times. The iterative version computes each Fibonacci value once in O(n) and uses only two variables of state.</p>
+<p><strong>Q21.</strong> Sample:
+<div class="code">class Course:
+    """A course with a list of marks and helpers to compute statistics."""
+    def __init__(self, name):
+        self.name = name
+        self.marks = []  # list of floats in [0, 100]
+
+    def add_mark(self, m):
+        if not 0 &lt;= m &lt;= 100:
+            raise ValueError(f"mark {m} out of range")
+        self.marks.append(m)
+
+    def average(self):
+        # avoid div-by-zero on a fresh course
+        return sum(self.marks) / len(self.marks) if self.marks else 0.0
+
+    def highest(self):
+        return max(self.marks) if self.marks else None
+
+def rank(courses):
+    """Return courses sorted by average descending."""
+    return sorted(courses, key=lambda c: -c.average())</div>
+Testing: cover (a) empty course (average=0, highest=None), (b) full marks 0..100, (c) raise on -1 and 101, (d) rank with 3 courses of differing averages.</p>
+</div>
+</details>
+
+<div class="rubric"><h3 style="margin-top:24px;">Final Exam Rubric (per category)</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough, insightful, demonstrates a high degree of effectiveness</td><td>80&ndash;100%</td></tr>
+<tr><td>3</td><td>Considerable effectiveness &mdash; provincial standard</td><td>70&ndash;79%</td></tr>
+<tr><td>2</td><td>Some effectiveness</td><td>60&ndash;69%</td></tr>
+<tr><td>1</td><td>Limited effectiveness</td><td>50&ndash;59%</td></tr>
+<tr><td>R</td><td>Insufficient &mdash; has not demonstrated the required knowledge or skills</td><td>&lt;50%</td></tr></table></div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 University Preparation | Final Exam | Ontario Curriculum 2008 (Revised) | Aligned with Growing Success (2010)</footer>
+</div></body></html>

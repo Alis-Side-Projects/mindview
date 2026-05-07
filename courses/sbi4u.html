@@ -9,7 +9,7 @@
 .unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
 .unit-header h2 { font-size: 22px; margin-bottom: 4px; }
 .unit-header p { opacity: 0.85; font-size: 14px; }
-.unit-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; opacity: 0.7; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
 
 .topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
@@ -19,6 +19,8 @@
 
 .resource-group { margin-bottom: 12px; }
 .resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #2563eb; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
 
 .video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
 .video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
@@ -41,10 +43,18 @@
 .assessment-card .a-body p { font-size: 12px; color: #64748b; }
 .assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
 
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
 </style>
 </head><body>
 <nav class="navbar"><div class="nav-container">
-<a href="../" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
+<a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
 <div class="nav-links"><a href="../">Home</a><a href="../#courses">Courses</a></div></div></nav>
 
 <div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
@@ -64,17 +74,278 @@
 <a href="#unit5" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #d97706;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 5: Population Dynamics</a>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     STRAND A: SCIENTIFIC INVESTIGATION SKILLS & CAREER EXPLORATION
+     Mandatory embedded strand — Ontario 2008 Science Framework
+════════════════════════════════════════════════════════════ -->
+<div class="unit-section" id="strandA">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#475569);">
+        <h2>🔬 Strand A: Scientific Investigation Skills & Career Exploration</h2>
+        <p>Mandatory cross-cutting skills embedded across all units — laboratory technique, experimental design, data analysis, scientific communication, and STSE/career connections</p>
+        <div class="unit-meta">
+            <span>📚 Strand A — Ontario 2008</span>
+            <span>📹 5 lessons</span>
+        </div>
+    </div>
 
+    <div class="resource-group">
+    <div class="resource-group-label">📹 Video Lessons</div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-1-sbi')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">Laboratory Safety Symbols with Meanings — Lab Signs & Hazards</span>
+            <span class="vid-duration">07:30</span>
+            <span class="vid-toggle" id="toggle-strandA-1-sbi">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-1-sbi">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/HiDZdUTtrDE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=HiDZdUTtrDE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-2-sbi')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">The Scientific Method — Crash Course Biology #2</span>
+            <span class="vid-duration">12:08</span>
+            <span class="vid-toggle" id="toggle-strandA-2-sbi">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-2-sbi">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xOLcZMw0hd4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=xOLcZMw0hd4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-3-sbi')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">Significant Figures Made Easy! — Tyler DeWitt</span>
+            <span class="vid-duration">10:49</span>
+            <span class="vid-toggle" id="toggle-strandA-3-sbi">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-3-sbi">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/PNH7_nDE6SQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=PNH7_nDE6SQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-4-sbi')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">AP Physics 1 — Graph Linearization (Data Analysis)</span>
+            <span class="vid-duration">11:24</span>
+            <span class="vid-toggle" id="toggle-strandA-4-sbi">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-4-sbi">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2LhXskTAnes?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=2LhXskTAnes" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-5-sbi')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">How To Write A Scientific Report — Step-by-Step Lab Report Guide</span>
+            <span class="vid-duration">09:18</span>
+            <span class="vid-toggle" id="toggle-strandA-5-sbi">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-5-sbi">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Yqioa8Njhhk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=Yqioa8Njhhk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 1: BIOCHEMISTRY
+     Videos: Carbohydrates, Lipids, Enzymes, Cell Membrane & Transport
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit1">
         <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
             <h2>Unit 1: Biochemistry</h2>
-            <p>Biological molecules, enzymes, macromolecules, water chemistry</p>
+            <p>Biological molecules (carbohydrates, lipids, proteins, nucleic acids), enzymes, cell membrane structure and transport</p>
             <div class="unit-meta">
                 <span>📚 Strand A: Biochemistry</span>
-                <span>📹 8 lessons</span>
+                <span>📹 7 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Biological Molecules -->
+        <div class="subsection-label">🧪 Biological Molecules</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Carbohydrates</span>
+                <span class="vid-duration">31:36</span>
+                <span class="vid-toggle" id="toggle-v17">▶</span>
+            </div>
+            <div class="video-player" id="player-v17">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/017_Carbohydrates.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=39VD467cb0I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Lipids</span>
+                <span class="vid-duration">3:42</span>
+                <span class="vid-toggle" id="toggle-v23">▶</span>
+            </div>
+            <div class="video-player" id="player-v23">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/023_Lipids_Warm-Up.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=KVSpmgzgTj0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Biomolecules — Lipids: Saturated/Unsaturated, Phospholipids &amp; Steroids — Amoeba Sisters</span>
+                <span class="vid-duration">9:31</span>
+                <span class="vid-toggle" id="toggle-yt27">▶</span>
+            </div>
+            <div class="video-player" id="player-yt27">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/1Dx7LDwINLU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=1Dx7LDwINLU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Enzymes -->
+        <div class="subsection-label">⚗️ Enzymes</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Enzymes</span>
+                <span class="vid-duration">14:28</span>
+                <span class="vid-toggle" id="toggle-v12">▶</span>
+            </div>
+            <div class="video-player" id="player-v12">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/012_Enzymes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=md7l5bO1Oqs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Cell Membrane & Transport -->
+        <div class="subsection-label">🔬 Cell Membrane Structure &amp; Transport</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v35')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Fluid Mosaic Model</span>
+                <span class="vid-duration">3:04</span>
+                <span class="vid-toggle" id="toggle-v35">▶</span>
+            </div>
+            <div class="video-player" id="player-v35">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/035_The_Fluid_Mosaic_Model.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=1OJgh6bzUN0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v37')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Passive Transport — Part A</span>
+                <span class="vid-duration">12:32</span>
+                <span class="vid-toggle" id="toggle-v37">▶</span>
+            </div>
+            <div class="video-player" id="player-v37">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/037_Passive_Transport_-_Part_A.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=MARdteTAJNw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v38')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Passive Transport — Part B</span>
+                <span class="vid-duration">10:49</span>
+                <span class="vid-toggle" id="toggle-v38">▶</span>
+            </div>
+            <div class="video-player" id="player-v38">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/038_Passive_Transport_-_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=m1BSs6mmqSk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v36')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Active Transport</span>
+                <span class="vid-duration">12:48</span>
+                <span class="vid-toggle" id="toggle-v36">▶</span>
+            </div>
+            <div class="video-player" id="player-v36">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/036_Active_Transport.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=A1rRh-HXzhE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        <!-- Curriculum topics — Proteins & Nucleic Acids (curated YouTube) -->
+        <div class="subsection-label">🧫 Proteins &amp; Amino Acids</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Biomolecules (Updated): Proteins — Amoeba Sisters</span>
+                <span class="vid-duration">8:24</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2Jgb_DpaQhM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2Jgb_DpaQhM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Protein Structure and Folding — Bozeman Science</span>
+                <span class="vid-duration">9:08</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/hok2hyED9go?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=hok2hyED9go" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧬 Nucleic Acids — DNA &amp; RNA</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">DNA vs RNA (Updated) — Amoeba Sisters</span>
+                <span class="vid-duration">6:14</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/JQByjprj_mA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=JQByjprj_mA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">DNA Structure and Replication — Crash Course Biology #10</span>
+                <span class="vid-duration">12:59</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8kK2zwjRV0M?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=8kK2zwjRV0M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 1 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -83,128 +354,350 @@
                 <a href="../assessments/sbi4u/Unit1_Biochemistry_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v1')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">The Urinary System</span>
-                        <span class="vid-duration">24:16</span>
-                        <span class="vid-toggle" id="toggle-v1">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v1">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/001_The_Urinary_System.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Ela3stm0EEc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v2')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Noncyclic Electron Flow</span>
-                        <span class="vid-duration">17:30</span>
-                        <span class="vid-toggle" id="toggle-v2">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v2">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/002_Noncyclic_Electron_Flow.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=1bduTeEo1Nc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v3')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Transcription</span>
-                        <span class="vid-duration">13:52</span>
-                        <span class="vid-toggle" id="toggle-v3">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v3">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/003_Transcription.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=CLxfOaEeiMI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v4')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chlorophyll and Chloroplasts</span>
-                        <span class="vid-duration">20:35</span>
-                        <span class="vid-toggle" id="toggle-v4">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v4">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/004_Chlorophyll_and_Chloroplasts.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Gr1hh4eLLo8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v5')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Light Reactions- Part B</span>
-                        <span class="vid-duration">19:49</span>
-                        <span class="vid-toggle" id="toggle-v5">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v5">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/005_Light_Reactions-_Part_B.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=LLOWikE-3PY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v6')">
-                        <span class="vid-icon">📝</span>
-                        <span class="vid-title">Alternate Pathways - Cellular Respiration</span>
-                        <span class="vid-duration">24:10</span>
-                        <span class="vid-toggle" id="toggle-v6">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v6">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/006_Alternate_Pathways_-_Cellular_Respiration.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=MKnmuW_PGUE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v7')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">tRNA</span>
-                        <span class="vid-duration">7:13</span>
-                        <span class="vid-toggle" id="toggle-v7">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v7">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/007_tRNA.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Nghb08oZ4L4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v8')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">DNA Direction Of Construction</span>
-                        <span class="vid-duration">5:48</span>
-                        <span class="vid-toggle" id="toggle-v8">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v8">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/008_DNA_Direction_Of_Construction.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Okzgy72jsX8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
-
         <div style="margin-top:12px;">
-            <a href="../assessments/sbi4u/Strand_A_Biochemistry_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes & Worksheet</a>
+            <a href="../assessments/sbi4u/Strand_A_Biochemistry_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
         </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 2: METABOLIC PROCESSES
+     Videos: Photosynthesis (7) + Cellular Respiration (14)
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit2">
         <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
             <h2>Unit 2: Metabolic Processes</h2>
-            <p>Cellular respiration, photosynthesis, ATP, electron transport chain</p>
+            <p>Photosynthesis (light reactions, Calvin cycle), cellular respiration (glycolysis, Krebs cycle, ETC), fermentation</p>
             <div class="unit-meta">
                 <span>📚 Strand B: Metabolic Processes</span>
-                <span>📹 8 lessons</span>
+                <span>📹 21 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- PHOTOSYNTHESIS -->
+        <div class="subsection-label">🌿 Photosynthesis</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Leaf Structure</span>
+                <span class="vid-duration">13:23</span>
+                <span class="vid-toggle" id="toggle-v10">▶</span>
+            </div>
+            <div class="video-player" id="player-v10">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/010_Leaf_Structure.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=aY3nN_0xg54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Light and Photosynthetic Pigments</span>
+                <span class="vid-duration">14:08</span>
+                <span class="vid-toggle" id="toggle-v13">▶</span>
+            </div>
+            <div class="video-player" id="player-v13">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/013_Light_and_Photosynthetic_Pigments.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=tbRFGwBmTso" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chlorophyll and Chloroplasts</span>
+                <span class="vid-duration">20:35</span>
+                <span class="vid-toggle" id="toggle-v4">▶</span>
+            </div>
+            <div class="video-player" id="player-v4">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/004_Chlorophyll_and_Chloroplasts.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Gr1hh4eLLo8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Overview of Photosynthesis</span>
+                <span class="vid-duration">12:03</span>
+                <span class="vid-toggle" id="toggle-v15">▶</span>
+            </div>
+            <div class="video-player" id="player-v15">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/015_Overview_of_Photosynthesis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=wuW7T5S2sNk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Noncyclic Electron Flow</span>
+                <span class="vid-duration">17:30</span>
+                <span class="vid-toggle" id="toggle-v2">▶</span>
+            </div>
+            <div class="video-player" id="player-v2">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/002_Noncyclic_Electron_Flow.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=1bduTeEo1Nc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Light Reactions — Part B</span>
+                <span class="vid-duration">19:49</span>
+                <span class="vid-toggle" id="toggle-v5">▶</span>
+            </div>
+            <div class="video-player" id="player-v5">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/005_Light_Reactions-_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=LLOWikE-3PY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Stomata Opening and Closing</span>
+                <span class="vid-duration">14:38</span>
+                <span class="vid-toggle" id="toggle-v14">▶</span>
+            </div>
+            <div class="video-player" id="player-v14">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/014_Stomata_Opening_and_Closing.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=urPPrct-iJU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🌱 Calvin Cycle (Light-Independent Reactions)</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Photosynthesis: Calvin Cycle — Bozeman Science</span>
+                <span class="vid-duration">7:55</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/slm6FP8PtdA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=slm6FP8PtdA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">C3, C4 and CAM Plant Photosynthesis &amp; Photorespiration — Professor Dave Explains</span>
+                <span class="vid-duration">9:24</span>
+                <span class="vid-toggle" id="toggle-yt21">▶</span>
+            </div>
+            <div class="video-player" id="player-yt21">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/P_JU9vYd5O0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=P_JU9vYd5O0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Photosynthesis (Updated) — Amoeba Sisters</span>
+                <span class="vid-duration">7:12</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CMiPYHNNg7A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CMiPYHNNg7A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- CELLULAR RESPIRATION -->
+        <div class="subsection-label">🔋 Cellular Respiration</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to Metabolism</span>
+                <span class="vid-duration">14:07</span>
+                <span class="vid-toggle" id="toggle-v24">▶</span>
+            </div>
+            <div class="video-player" id="player-v24">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/024_Introduction_To_Metabolism.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=fyAc5CvOCgk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v28')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Redox Reactions</span>
+                <span class="vid-duration">13:30</span>
+                <span class="vid-toggle" id="toggle-v28">▶</span>
+            </div>
+            <div class="video-player" id="player-v28">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/028_Redox_Reactions.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=3NNAkTOi2Lc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">NAD⁺ and FAD</span>
+                <span class="vid-duration">9:50</span>
+                <span class="vid-toggle" id="toggle-v26">▶</span>
+            </div>
+            <div class="video-player" id="player-v26">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/026_NAD__and_FAD.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=pRf3x1wEFq4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v30')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Overview of Cellular Respiration</span>
+                <span class="vid-duration">15:00</span>
+                <span class="vid-toggle" id="toggle-v30">▶</span>
+            </div>
+            <div class="video-player" id="player-v30">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/030_Note_4___Overview_of_Cellular_Respiratation.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Uf26tM2haKg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Glycolysis — Part A</span>
+                <span class="vid-duration">10:40</span>
+                <span class="vid-toggle" id="toggle-v27">▶</span>
+            </div>
+            <div class="video-player" id="player-v27">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/027_Glycolysis_Part_A.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=0xPmmh2uDJg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v34')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Glycolysis — Part B</span>
+                <span class="vid-duration">10:31</span>
+                <span class="vid-toggle" id="toggle-v34">▶</span>
+            </div>
+            <div class="video-player" id="player-v34">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/034_Glycolysis_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=kW2vgSlVmzU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v29')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Glycolysis — Part C</span>
+                <span class="vid-duration">13:20</span>
+                <span class="vid-toggle" id="toggle-v29">▶</span>
+            </div>
+            <div class="video-player" id="player-v29">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/029_Glycolysis_Part_C.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=EMw1uyyeEco" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v33')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Krebs Cycle — Part A</span>
+                <span class="vid-duration">8:59</span>
+                <span class="vid-toggle" id="toggle-v33">▶</span>
+            </div>
+            <div class="video-player" id="player-v33">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/033_Krebs_Cycle_-_Part_A.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=iJVG6XIarvo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v31')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Krebs Cycle — Part B</span>
+                <span class="vid-duration">14:11</span>
+                <span class="vid-toggle" id="toggle-v31">▶</span>
+            </div>
+            <div class="video-player" id="player-v31">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/031_Krebs_Cycle_-_Part_B.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=cjeReav_xEE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Electron Transport Chain</span>
+                <span class="vid-duration">19:31</span>
+                <span class="vid-toggle" id="toggle-v18">▶</span>
+            </div>
+            <div class="video-player" id="player-v18">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/018_The_Electron_Transport_Chain.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=arQKhsAQnAI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chemiosmosis</span>
+                <span class="vid-duration">9:57</span>
+                <span class="vid-toggle" id="toggle-v9">▶</span>
+            </div>
+            <div class="video-player" id="player-v9">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/009_Chemiosmosis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=V9JSzCX4Bac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v32')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Energy Transfer</span>
+                <span class="vid-duration">13:23</span>
+                <span class="vid-toggle" id="toggle-v32">▶</span>
+            </div>
+            <div class="video-player" id="player-v32">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/032_Note__5_Energy_Transfer.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=dH3kZJyMF10" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cellular Respiration — ATP Count</span>
+                <span class="vid-duration">8:56</span>
+                <span class="vid-toggle" id="toggle-v11">▶</span>
+            </div>
+            <div class="video-player" id="player-v11">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/011_Cellular_Respiration_ATP_Count.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=mE0hIVWmj54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v6')">
+                <span class="vid-icon">📝</span>
+                <span class="vid-title">Alternate Pathways — Fermentation</span>
+                <span class="vid-duration">24:10</span>
+                <span class="vid-toggle" id="toggle-v6">▶</span>
+            </div>
+            <div class="video-player" id="player-v6">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/006_Alternate_Pathways_-_Cellular_Respiration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=MKnmuW_PGUE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 2 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -213,128 +706,224 @@
                 <a href="../assessments/sbi4u/Unit2_Metabolic_Processes_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v9')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemiosmosis</span>
-                        <span class="vid-duration">9:57</span>
-                        <span class="vid-toggle" id="toggle-v9">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v9">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/009_Chemiosmosis.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=V9JSzCX4Bac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v10')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Leaf Structure</span>
-                        <span class="vid-duration">13:23</span>
-                        <span class="vid-toggle" id="toggle-v10">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v10">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/010_Leaf_Structure.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=aY3nN_0xg54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v11')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Cellular Respiration ATP Count</span>
-                        <span class="vid-duration">8:56</span>
-                        <span class="vid-toggle" id="toggle-v11">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v11">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/011_Cellular_Respiration_ATP_Count.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=mE0hIVWmj54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v12')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Enzymes</span>
-                        <span class="vid-duration">14:28</span>
-                        <span class="vid-toggle" id="toggle-v12">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v12">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/012_Enzymes.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=md7l5bO1Oqs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v13')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Light and Photosynthetic Pigments</span>
-                        <span class="vid-duration">14:08</span>
-                        <span class="vid-toggle" id="toggle-v13">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v13">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/013_Light_and_Photosynthetic_Pigments.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=tbRFGwBmTso" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v14')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Stomata Opening and Closing</span>
-                        <span class="vid-duration">14:38</span>
-                        <span class="vid-toggle" id="toggle-v14">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v14">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/014_Stomata_Opening_and_Closing.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=urPPrct-iJU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v15')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Overview of Photosynthesis</span>
-                        <span class="vid-duration">12:03</span>
-                        <span class="vid-toggle" id="toggle-v15">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v15">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/015_Overview_of_Photosynthesis.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=wuW7T5S2sNk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v16')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Overview of Protein Synthesis</span>
-                        <span class="vid-duration">31:22</span>
-                        <span class="vid-toggle" id="toggle-v16">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v16">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/016_Overview_of_Protein_Synthesis.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=zMurY1aiFug" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
-
         <div style="margin-top:12px;">
-            <a href="../assessments/sbi4u/Strand_B_Metabolic_Processes_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes & Worksheet</a>
+            <a href="../assessments/sbi4u/Strand_B_Metabolic_Processes_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
         </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 3: MOLECULAR GENETICS
+     Videos: DNA, Transcription, Translation (4 videos)
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit3">
         <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
             <h2>Unit 3: Molecular Genetics</h2>
-            <p>DNA replication, transcription, translation, mutations, biotechnology</p>
+            <p>DNA structure and replication, transcription, translation (protein synthesis), gene regulation, mutations, biotechnology</p>
             <div class="unit-meta">
                 <span>📚 Strand C: Molecular Genetics</span>
-                <span>📹 10 lessons</span>
+                <span>📹 4 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- DNA -->
+        <div class="subsection-label">🧬 DNA Structure &amp; Replication</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">DNA Direction of Construction</span>
+                <span class="vid-duration">5:48</span>
+                <span class="vid-toggle" id="toggle-v8">▶</span>
+            </div>
+            <div class="video-player" id="player-v8">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/008_DNA_Direction_Of_Construction.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Okzgy72jsX8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Transcription & Translation -->
+        <div class="subsection-label">🔬 Transcription &amp; Translation</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Transcription</span>
+                <span class="vid-duration">13:52</span>
+                <span class="vid-toggle" id="toggle-v3">▶</span>
+            </div>
+            <div class="video-player" id="player-v3">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/003_Transcription.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=CLxfOaEeiMI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">tRNA</span>
+                <span class="vid-duration">7:13</span>
+                <span class="vid-toggle" id="toggle-v7">▶</span>
+            </div>
+            <div class="video-player" id="player-v7">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/007_tRNA.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Nghb08oZ4L4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Overview of Protein Synthesis</span>
+                <span class="vid-duration">31:22</span>
+                <span class="vid-toggle" id="toggle-v16">▶</span>
+            </div>
+            <div class="video-player" id="player-v16">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/016_Overview_of_Protein_Synthesis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=zMurY1aiFug" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Curriculum topics — Gene Regulation, Mutations, Biotechnology (curated YouTube) -->
+        <div class="subsection-label">🔧 Gene Regulation</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The lac Operon — Amoeba Sisters</span>
+                <span class="vid-duration">7:47</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/oBwtxdI1zvk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=oBwtxdI1zvk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Gene Regulation and the Order of the Operon — Crash Course Biology #16</span>
+                <span class="vid-duration">11:47</span>
+                <span class="vid-toggle" id="toggle-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/F4xxZSwzeNQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=F4xxZSwzeNQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">⚠️ Mutations</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mutations (Updated) — Amoeba Sisters</span>
+                <span class="vid-duration">7:53</span>
+                <span class="vid-toggle" id="toggle-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qxXRKVompI8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=qxXRKVompI8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mutations: The Potential Power of a Small Change — Bozeman Science</span>
+                <span class="vid-duration">7:52</span>
+                <span class="vid-toggle" id="toggle-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Xy-FqG3Fxac?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Xy-FqG3Fxac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔬 Biotechnology &amp; Genetic Engineering</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Biotechnology — Amoeba Sisters</span>
+                <span class="vid-duration">7:36</span>
+                <span class="vid-toggle" id="toggle-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/AhrK2Hue1lE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=AhrK2Hue1lE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">PCR (Polymerase Chain Reaction) — Bozeman Science</span>
+                <span class="vid-duration">8:18</span>
+                <span class="vid-toggle" id="toggle-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iQsu3Kz9NYo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iQsu3Kz9NYo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">CRISPR: Gene editing and beyond — TED-Ed</span>
+                <span class="vid-duration">5:24</span>
+                <span class="vid-toggle" id="toggle-yt13">▶</span>
+            </div>
+            <div class="video-player" id="player-yt13">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/UKbrwPL3wXE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=UKbrwPL3wXE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Gel Electrophoresis — Amoeba Sisters</span>
+                <span class="vid-duration">7:30</span>
+                <span class="vid-toggle" id="toggle-yt22">▶</span>
+            </div>
+            <div class="video-player" id="player-yt22">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZDZUAleWX78?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ZDZUAleWX78" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Genetic Engineering: Restriction Enzymes &amp; Recombinant DNA — Amoeba Sisters</span>
+                <span class="vid-duration">8:54</span>
+                <span class="vid-toggle" id="toggle-yt23">▶</span>
+            </div>
+            <div class="video-player" id="player-yt23">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CDw4WPng2iE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CDw4WPng2iE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Regulation of Gene Expression: Operons, Epigenetics, and Transcription Factors — Professor Dave Explains</span>
+                <span class="vid-duration">9:38</span>
+                <span class="vid-toggle" id="toggle-yt24">▶</span>
+            </div>
+            <div class="video-player" id="player-yt24">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=J9jhg90A7Lw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 3 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -343,154 +932,173 @@
                 <a href="../assessments/sbi4u/Unit3_Molecular_Genetics_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v17')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Carbohydrates</span>
-                        <span class="vid-duration">31:36</span>
-                        <span class="vid-toggle" id="toggle-v17">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v17">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/017_Carbohydrates.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=39VD467cb0I" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v18')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">The Electron Transport Chain</span>
-                        <span class="vid-duration">19:31</span>
-                        <span class="vid-toggle" id="toggle-v18">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v18">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/018_The_Electron_Transport_Chain.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=arQKhsAQnAI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v19')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Hormones That Affect Metabolism</span>
-                        <span class="vid-duration">16:04</span>
-                        <span class="vid-toggle" id="toggle-v19">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v19">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/019_Hormones_That_Affect_Metabolism.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=3PGoTBZ_wIQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v20')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Male Reproductive Hormones</span>
-                        <span class="vid-duration">11:32</span>
-                        <span class="vid-toggle" id="toggle-v20">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v20">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/020_Male_Reproductive_Hormones.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Ozbu_nvLu24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v21')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Female Reproductive Hormones</span>
-                        <span class="vid-duration">22:07</span>
-                        <span class="vid-toggle" id="toggle-v21">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v21">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/021_Female_Reproductive_Hormones.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=QmClBdZrJbA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v22')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Thermoregulation</span>
-                        <span class="vid-duration">12:56</span>
-                        <span class="vid-toggle" id="toggle-v22">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v22">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/022_Thermoregulation.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=942xZjVfCLw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v23')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Lipids Warm-Up</span>
-                        <span class="vid-duration">3:42</span>
-                        <span class="vid-toggle" id="toggle-v23">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v23">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/023_Lipids_Warm-Up.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=KVSpmgzgTj0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v24')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Introduction To Metabolism</span>
-                        <span class="vid-duration">14:07</span>
-                        <span class="vid-toggle" id="toggle-v24">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v24">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/024_Introduction_To_Metabolism.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=fyAc5CvOCgk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v25')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Homeostasis</span>
-                        <span class="vid-duration">14:18</span>
-                        <span class="vid-toggle" id="toggle-v25">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v25">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/025_Homeostasis.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=oAsqYJUk-Xc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v26')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">NAD+ and FAD</span>
-                        <span class="vid-duration">9:50</span>
-                        <span class="vid-toggle" id="toggle-v26">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v26">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/026_NAD__and_FAD.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=pRf3x1wEFq4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
-
         <div style="margin-top:12px;">
-            <a href="../assessments/sbi4u/Strand_C_Molecular_Genetics_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes & Worksheet</a>
+            <a href="../assessments/sbi4u/Strand_C_Molecular_Genetics_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
         </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 4: HOMEOSTASIS
+     Videos: Homeostasis, Thermoregulation, Urinary System, Hormones (6)
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit4">
         <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
             <h2>Unit 4: Homeostasis</h2>
-            <p>Feedback mechanisms, nervous system, endocrine system, immune response</p>
+            <p>Feedback mechanisms, nervous system, endocrine system, thermoregulation, osmoregulation, blood glucose regulation</p>
             <div class="unit-meta">
                 <span>📚 Strand D: Homeostasis</span>
-                <span>📹 8 lessons</span>
+                <span>📹 6 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <!-- Homeostasis Overview -->
+        <div class="subsection-label">⚖️ Homeostasis &amp; Feedback</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Homeostasis</span>
+                <span class="vid-duration">14:18</span>
+                <span class="vid-toggle" id="toggle-v25">▶</span>
+            </div>
+            <div class="video-player" id="player-v25">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/025_Homeostasis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=oAsqYJUk-Xc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Thermoregulation</span>
+                <span class="vid-duration">12:56</span>
+                <span class="vid-toggle" id="toggle-v22">▶</span>
+            </div>
+            <div class="video-player" id="player-v22">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/022_Thermoregulation.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=942xZjVfCLw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Osmoregulation -->
+        <div class="subsection-label">💧 Osmoregulation</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Urinary System</span>
+                <span class="vid-duration">24:16</span>
+                <span class="vid-toggle" id="toggle-v1">▶</span>
+            </div>
+            <div class="video-player" id="player-v1">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/001_The_Urinary_System.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Ela3stm0EEc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Endocrine System -->
+        <div class="subsection-label">🧬 Endocrine System &amp; Hormones</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hormones That Affect Metabolism</span>
+                <span class="vid-duration">16:04</span>
+                <span class="vid-toggle" id="toggle-v19">▶</span>
+            </div>
+            <div class="video-player" id="player-v19">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/019_Hormones_That_Affect_Metabolism.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=3PGoTBZ_wIQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Male Reproductive Hormones</span>
+                <span class="vid-duration">11:32</span>
+                <span class="vid-toggle" id="toggle-v20">▶</span>
+            </div>
+            <div class="video-player" id="player-v20">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/020_Male_Reproductive_Hormones.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Ozbu_nvLu24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Female Reproductive Hormones</span>
+                <span class="vid-duration">22:07</span>
+                <span class="vid-toggle" id="toggle-v21">▶</span>
+            </div>
+            <div class="video-player" id="player-v21">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/021_Female_Reproductive_Hormones.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=QmClBdZrJbA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <!-- Curriculum-aligned external video lessons -->
+        <div class="subsection-label">⚡ Nervous System</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Action Potential — Amoeba Sisters</span>
+                <span class="vid-duration">11:24</span>
+                <span class="vid-toggle" id="toggle-yt14">▶</span>
+            </div>
+            <div class="video-player" id="player-yt14">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-uty1gne6zs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=-uty1gne6zs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Nervous System, Part 2 — Action Potential — Crash Course A&amp;P #9</span>
+                <span class="vid-duration">10:54</span>
+                <span class="vid-toggle" id="toggle-yt15">▶</span>
+            </div>
+            <div class="video-player" id="player-yt15">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/OZG8M_ldA1M?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=OZG8M_ldA1M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Nervous System, Part 3 — Synapses! — Crash Course A&amp;P #10</span>
+                <span class="vid-duration">11:00</span>
+                <span class="vid-toggle" id="toggle-yt25">▶</span>
+            </div>
+            <div class="video-player" id="player-yt25">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/VitFvNvRIIY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=VitFvNvRIIY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🩸 Blood Glucose Regulation</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Insulin and Glucagon | Physiology — FuseSchool</span>
+                <span class="vid-duration">5:10</span>
+                <span class="vid-toggle" id="toggle-yt16">▶</span>
+            </div>
+            <div class="video-player" id="player-yt16">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/y9Bdi4dnSlg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=y9Bdi4dnSlg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 4 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -499,128 +1107,102 @@
                 <a href="../assessments/sbi4u/Unit4_Homeostasis_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v27')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Glycolysis Part A</span>
-                        <span class="vid-duration">10:40</span>
-                        <span class="vid-toggle" id="toggle-v27">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v27">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/027_Glycolysis_Part_A.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=0xPmmh2uDJg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v28')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Redox Reactions</span>
-                        <span class="vid-duration">13:30</span>
-                        <span class="vid-toggle" id="toggle-v28">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v28">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/028_Redox_Reactions.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=3NNAkTOi2Lc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v29')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Glycolysis Part C</span>
-                        <span class="vid-duration">13:20</span>
-                        <span class="vid-toggle" id="toggle-v29">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v29">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/029_Glycolysis_Part_C.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=EMw1uyyeEco" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v30')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Note 4:  Overview of Cellular Respiratation</span>
-                        <span class="vid-duration">15:00</span>
-                        <span class="vid-toggle" id="toggle-v30">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v30">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/030_Note_4___Overview_of_Cellular_Respiratation.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Uf26tM2haKg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v31')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Krebs Cycle - Part B</span>
-                        <span class="vid-duration">14:11</span>
-                        <span class="vid-toggle" id="toggle-v31">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v31">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/031_Krebs_Cycle_-_Part_B.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=cjeReav_xEE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v32')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Note #5 Energy Transfer</span>
-                        <span class="vid-duration">13:23</span>
-                        <span class="vid-toggle" id="toggle-v32">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v32">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/032_Note__5_Energy_Transfer.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=dH3kZJyMF10" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v33')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Krebs Cycle - Part A</span>
-                        <span class="vid-duration">8:59</span>
-                        <span class="vid-toggle" id="toggle-v33">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v33">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/033_Krebs_Cycle_-_Part_A.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=iJVG6XIarvo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v34')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Glycolysis Part B</span>
-                        <span class="vid-duration">10:31</span>
-                        <span class="vid-toggle" id="toggle-v34">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v34">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/034_Glycolysis_Part_B.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=kW2vgSlVmzU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
-
         <div style="margin-top:12px;">
-            <a href="../assessments/sbi4u/Strand_D_Homeostasis_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes & Worksheet</a>
+            <a href="../assessments/sbi4u/Strand_D_Homeostasis_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
         </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 5: POPULATION DYNAMICS
+     No existing videos — content coming soon
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit5">
         <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
             <h2>Unit 5: Population Dynamics</h2>
-            <p>Population growth, carrying capacity, ecosystem interactions, human impact</p>
+            <p>Population growth models, carrying capacity, limiting factors, predator-prey relationships, ecological succession, human population impact</p>
             <div class="unit-meta">
                 <span>📚 Strand E: Population Dynamics</span>
-                <span>📹 4 lessons</span>
+                <span>📹 5 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">📈 Exponential &amp; Logistic Population Growth</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Population Ecology — Crash Course Biology #46</span>
+                <span class="vid-duration">12:32</span>
+                <span class="vid-toggle" id="toggle-yt17">▶</span>
+            </div>
+            <div class="video-player" id="player-yt17">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RBOsqmBQBQk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=RBOsqmBQBQk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🦁 Community Ecology &amp; Predator-Prey</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Community Ecology II: Predators — Crash Course Ecology #5</span>
+                <span class="vid-duration">11:38</span>
+                <span class="vid-toggle" id="toggle-yt18">▶</span>
+            </div>
+            <div class="video-player" id="player-yt18">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mFDiiSqGB7M?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=mFDiiSqGB7M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Community Ecology: Feel the Love — Competition &amp; Symbiosis — Crash Course Ecology #4</span>
+                <span class="vid-duration">10:53</span>
+                <span class="vid-toggle" id="toggle-yt26">▶</span>
+            </div>
+            <div class="video-player" id="player-yt26">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GxE1SSqbSn4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=GxE1SSqbSn4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🌳 Ecological Succession</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Ecological Succession: Change is Good — Crash Course Ecology #6</span>
+                <span class="vid-duration">10:53</span>
+                <span class="vid-toggle" id="toggle-yt19">▶</span>
+            </div>
+            <div class="video-player" id="player-yt19">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jZKIHe2LDP8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=jZKIHe2LDP8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🌍 Human Population Growth &amp; Environmental Impact</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Human Population Growth — Crash Course Ecology #3</span>
+                <span class="vid-duration">11:24</span>
+                <span class="vid-toggle" id="toggle-yt20">▶</span>
+            </div>
+            <div class="video-player" id="player-yt20">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/E8dkWQVFAoA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=E8dkWQVFAoA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 5 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -629,65 +1211,20 @@
                 <a href="../assessments/sbi4u/Unit5_Population_Dynamics_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v35')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">The Fluid Mosaic Model</span>
-                        <span class="vid-duration">3:04</span>
-                        <span class="vid-toggle" id="toggle-v35">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v35">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/035_The_Fluid_Mosaic_Model.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=1OJgh6bzUN0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v36')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Active Transport</span>
-                        <span class="vid-duration">12:48</span>
-                        <span class="vid-toggle" id="toggle-v36">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v36">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/036_Active_Transport.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=A1rRh-HXzhE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v37')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Passive Transport - Part A</span>
-                        <span class="vid-duration">12:32</span>
-                        <span class="vid-toggle" id="toggle-v37">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v37">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/037_Passive_Transport_-_Part_A.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=MARdteTAJNw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v38')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Passive Transport - Part B</span>
-                        <span class="vid-duration">10:49</span>
-                        <span class="vid-toggle" id="toggle-v38">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v38">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SBI4U/038_Passive_Transport_-_Part_B.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=m1BSs6mmqSk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
-
         <div style="margin-top:12px;">
-            <a href="../assessments/sbi4u/Strand_E_Population_Dynamics_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes & Worksheet</a>
+            <a href="../assessments/sbi4u/Strand_E_Population_Dynamics_Notes_and_Worksheet.html" style="padding:8px 16px;background:#f1f5f9;color:#1e293b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📝 Notes &amp; Worksheet</a>
         </div>
     </div>
+
+</div>
+
+<div style="margin-top:48px;padding:28px;background:linear-gradient(135deg,#16a34add,#16a34a);border-radius:12px;color:#fff;">
+<h2 style="margin-bottom:8px;">Course-wide Resources</h2>
+<p style="opacity:0.9;font-size:14px;margin-bottom:16px;">Curriculum policy document and cumulative final examination covering all five strands.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;">
+<a href="sbi4u_curriculum.html" style="padding:10px 18px;background:rgba(255,255,255,0.2);color:#fff;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Curriculum Document</a>
+<a href="../assessments/sbi4u/Final_Exam.html" style="padding:10px 18px;background:#fff;color:#14532d;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">Final Exam (3 hr · /100)</a>
+</div></div>
 
 </div>
 

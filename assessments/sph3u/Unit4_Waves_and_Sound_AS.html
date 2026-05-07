@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Waves and Sound — Practice Quiz (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+input[type=text]{padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>🌊 Unit 4: Waves and Sound — Practice Quiz</h1>
+<div class="sub">Assessment AS Learning — Self-Check (SPH3U)</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test understanding of wave properties, sound, resonance, harmonics, and the Doppler effect.</div>
+
+<div class="formula-ref"><strong>Formulae:</strong> \( v=f\lambda \) &nbsp;|&nbsp; \( T=1/f \) &nbsp;|&nbsp; \( v_\text{sound}=331+0.6T_C \) m/s &nbsp;|&nbsp; String: \( f_n=nv/(2L) \) &nbsp;|&nbsp; Open pipe: \( f_n=nv/(2L) \) &nbsp;|&nbsp; Closed pipe: \( f_n=nv/(4L) \), n odd &nbsp;|&nbsp; Doppler: \( f' = f \cdot v/(v-v_s) \) (approaching)</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 10 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Q1 — Wave equation</div>
+<div class="qt">A wave on a string has frequency \(50\) Hz and wavelength \(0.40\) m. What is its speed?</div>
+<div>Answer: <input type="text" id="q1-in" style="width:140px"> m/s</div>
+<button class="btn btn-p" onclick="chkNum('q1',20,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>
+\( v = f\lambda = 50(0.40) = 20 \) m/s
+</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Q2 — Speed of sound in air</div>
+<div class="qt">Calculate the speed of sound at \(20°\)C.</div>
+<div>Answer: <input type="text" id="q2-in" style="width:140px"> m/s</div>
+<button class="btn btn-p" onclick="chkNum('q2',343,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>
+\( v = 331 + 0.6(20) = 331 + 12 = 343 \) m/s
+</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Q3 — Period and frequency</div>
+<div class="qt">A pendulum completes 30 oscillations in 60 seconds. What is its frequency?</div>
+<div>Answer: <input type="text" id="q3-in" style="width:140px"> Hz</div>
+<button class="btn btn-p" onclick="chkNum('q3',0.5,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>
+\( f = 30/60 = 0.5 \) Hz (or \( T = 2 \) s, \( f = 1/T = 0.5 \) Hz)
+</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Q4 — Echo timing</div>
+<div class="qt">A sonar pulse returns from a fish 0.40 s after being emitted. The water temperature is such that sound speed is \(1500\) m/s. How far away is the fish?</div>
+<div>Answer: <input type="text" id="q4-in" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q4',300,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>
+Round-trip distance: \( d_\text{total} = vt = 1500(0.40) = 600 \) m. One-way: \( 300 \) m.
+</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Q5 — Wavelength of sound</div>
+<div class="qt">A guitar string vibrates at \(440\) Hz (concert A) in air at \(20°\)C. What is the wavelength of the sound it produces in air?</div>
+<div>Answer: <input type="text" id="q5-in" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q5',0.78,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>
+\( v = 343 \) m/s; \( \lambda = v/f = 343/440 = 0.78 \) m
+</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Q6 — Standing wave on string</div>
+<div class="qt">A string of length \(0.50\) m is fixed at both ends and vibrates in its fundamental mode (n=1). The wave speed on the string is \(200\) m/s. What is the fundamental frequency?</div>
+<div>Answer: <input type="text" id="q6-in" style="width:140px"> Hz</div>
+<button class="btn btn-p" onclick="chkNum('q6',200,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>
+\( f_1 = v/(2L) = 200/(2\times 0.50) = 200 \) Hz
+</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Q7 — Closed pipe (resonance)</div>
+<div class="qt">A pipe closed at one end has length \(0.85\) m. What is the fundamental frequency of standing wave produced inside (\(v=343\) m/s)?</div>
+<div>Answer: <input type="text" id="q7-in" style="width:140px"> Hz</div>
+<button class="btn btn-p" onclick="chkNum('q7',101,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>
+For a closed pipe (n odd): \( f_1 = v/(4L) = 343/(4\times 0.85) = 343/3.4 = 101 \) Hz
+</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Q8 — Doppler effect (approaching source)</div>
+<div class="qt">A train sounds its horn at \(500\) Hz while approaching a stationary observer at \(34\) m/s. Speed of sound is \(343\) m/s. What frequency does the observer hear?</div>
+<div>Answer: <input type="text" id="q8-in" style="width:140px"> Hz</div>
+<button class="btn btn-p" onclick="chkNum('q8',555,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>
+\( f' = f \cdot \frac{v}{v-v_s} = 500 \cdot \frac{343}{343-34} = 500 \cdot \frac{343}{309} = 555 \) Hz
+</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Q9 — Wave concept</div>
+<div class="qt">When a sound wave travels from air into water, which property of the wave changes most?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> a) Frequency</label></li>
+<li><label><input type="radio" name="q9" value="b"> b) Period</label></li>
+<li><label><input type="radio" name="q9" value="c"> c) Wavelength (because the speed changes — \( v=f\lambda \), and \( f \) is set by the source)</label></li>
+<li><label><input type="radio" name="q9" value="d"> d) Amplitude only</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>
+Frequency is set by the source and does not change as the wave moves between media. Speed depends on the medium (faster in water). Since \( v=f\lambda \), wavelength changes proportionally to \( v \).
+</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Q10 — Beat frequency</div>
+<div class="qt">Two tuning forks at \(440\) Hz and \(443\) Hz are sounded together. What is the beat frequency the listener hears?</div>
+<div>Answer: <input type="text" id="q10-in" style="width:140px"> Hz</div>
+<button class="btn btn-p" onclick="chkNum('q10',3,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>
+\( f_\text{beat} = |f_1-f_2| = |443-440| = 3 \) Hz (3 beats per second)
+</div></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 4: Waves and Sound | Ontario Curriculum 2008</footer>
+</div>
+<script>
+let sc=0,ans=0,tot=10;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ See solution.';}
+if(sl)sl.classList.add('show');up();}
+function chkNum(q,c,tol){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.5){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected ≈ '+c+'. See solution.';}
+if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Hamlet — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #7c3aed; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-style: italic; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: <em>Hamlet</em> — Unit Test</h1><div class="sub">Assessment OF Learning · Strand B + A</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; You may quote from memory or paraphrase. Open answer keys after attempting each question.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify the speaker and context of each line: (a) "Frailty, thy name is woman!" (b) "The lady doth protest too much, methinks." (c) "Goodnight, sweet prince, / And flights of angels sing thee to thy rest."</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>(a) <strong>Hamlet</strong>, 1.2 — addressing his mother Gertrude's swift remarriage to Claudius. (b) <strong>Gertrude</strong>, 3.2 — during the play-within-the-play, watching the Player Queen's vow to her Player King. (c) <strong>Horatio</strong>, 5.2 — at Hamlet's death, the play's final benediction.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Hamlet's hamartia (tragic flaw) is most often identified as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> Greed for power</label></li>
+<li><label><input type="radio" name="q2"> Excessive thought / inability to act decisively (also read as melancholy or scrupulosity)</label></li>
+<li><label><input type="radio" name="q2"> Cowardice in battle</label></li>
+<li><label><input type="radio" name="q2"> Romantic obsession with Ophelia</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Most readings highlight Hamlet's tendency to think where action is called for — the soliloquies dramatise this delay. (Some critics, e.g. Nuttall, emphasise Hamlet's ethical scrupulosity rather than weakness.)</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">Define <em>blank verse</em>:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> Rhyming couplets</label></li>
+<li><label><input type="radio" name="q3"> Unrhymed iambic pentameter</label></li>
+<li><label><input type="radio" name="q3"> Verse with no syllabic pattern</label></li>
+<li><label><input type="radio" name="q3"> Verse written in stanzas of four</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Blank verse = unrhymed iambic pentameter — the standard meter of Shakespeare's plays.</p></details></div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Define and distinguish: <em>soliloquy</em>, <em>aside</em>, <em>dramatic monologue</em>.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p><strong>Soliloquy</strong> — character alone on stage, voicing inner thoughts to the audience (Hamlet's "To be, or not to be"). <strong>Aside</strong> — short speech delivered to the audience (or another character) while others on stage are theoretically not hearing. <strong>Dramatic monologue</strong> — sustained speech by one character, may be addressed to others on stage (Browning's "My Last Duchess" is a literary cousin).</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">Identify the function of the gravedigger scene (5.1) within the play's structure:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> Comic relief and meditation on mortality (memento mori) just before the lethal final scene</label></li>
+<li><label><input type="radio" name="q5"> Introduction of the central villain</li></label>
+<li><label><input type="radio" name="q5"> A flashback to Denmark's medieval past</label></li>
+<li><label><input type="radio" name="q5"> The ghost's reappearance</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>A.</strong> The gravediggers' bawdy humour relieves tension, and the Yorick speech turns the play's accumulated reflection on death into a tactile encounter with a skull, immediately before the final blood-bath.</p></details></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[3]</span>
+<div class="qtxt">Match each of the following terms with its definition: <em>peripeteia</em>, <em>anagnorisis</em>, <em>catharsis</em>. (i) reversal of fortune; (ii) emotional purgation in the audience; (iii) recognition / moment of realisation.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Peripeteia = (i) reversal of fortune; Anagnorisis = (iii) recognition; Catharsis = (ii) audience's emotional purgation. In Hamlet: peripeteia in 3.2 (the Mousetrap reveals Claudius's guilt and Hamlet's path solidifies); anagnorisis at 5.2 (Hamlet/Laertes recognise the King's plot at the duel); catharsis at the play's close.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="passage">"To be, or not to be, that is the question: / Whether 'tis nobler in the mind to suffer / The slings and arrows of outrageous fortune, / Or to take arms against a sea of troubles / And by opposing end them." — Hamlet, 3.1.55–60</div>
+<div class="qtxt">Analyse this passage. Identify two literary devices, explain Hamlet's central question, and explain how the verse form (iambic pentameter, line break) shapes the meaning.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Devices: (1) <strong>Antithesis</strong> ("To be, or not to be") frames existence and non-existence as a binary; (2) <strong>Mixed metaphor</strong> ("take arms against a sea of troubles") strains coherence — one cannot fight an ocean — enacting the futility Hamlet contemplates. Question: whether endurance ("suffer") or self-destruction ("end them") is more "noble" — many editors read this as a meditation on suicide; others as a meditation on action. Verse: blank verse gives the speech philosophical seriousness; the line breaks force pauses around "suffer" and "trouble" emphasising the choice. Marks: 2 devices, 2 question, 1 form.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt">Construct an argumentative thesis answering the question: <em>"Is Hamlet's madness real or feigned?"</em> Then give two pieces of textual evidence that support your thesis and one that complicates it.</div>
+<textarea placeholder="Thesis + evidence..."></textarea>
+<details><summary>Answer Key</summary><p>Sample thesis: "Hamlet's madness begins as a deliberate disguise (the 'antic disposition' he announces to Horatio in 1.5) but the strain of sustained pretence — combined with grief, isolation, and the impossible ethical pressure of revenge — bleeds the performance into genuine instability by Act 4." Supporting: (1) "I am but mad north-north-west" (2.2) shows self-aware control; (2) the closet scene's vision of the Ghost when Gertrude sees nothing suggests slipping perception. Complicating: (3) the consistent wit and lucidity of his exchanges with the gravediggers (5.1) suggest he never fully loses his mind. Marks: 1 thesis, 2 supporting, 1 complicating, 1 communication.</p></details></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">Compare and contrast Hamlet, Laertes, and Fortinbras as three sons avenging dead fathers. What does their differing approaches reveal about Hamlet's inaction?</div>
+<textarea placeholder="Your comparison..."></textarea>
+<details><summary>Answer Key</summary><p>All three are revenge sons: Hamlet (father killed by Claudius), Laertes (father Polonius killed by Hamlet), Fortinbras (father killed by King Hamlet long before play). Laertes acts immediately and with passion — he raises a mob, storms the castle, and willingly conspires in the poisoned-rapier plot. Fortinbras acts politically — he raises an army, marches across Europe to die "for an eggshell." Hamlet, alone, hesitates. The juxtaposition (foil characters) makes Hamlet's delay structurally visible: it is not the situation but his particular relation to it that produces the delay. Marks: 1 each character, 2 thematic synthesis.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[6]</span>
+<div class="qtxt">Write one full PEEL paragraph (8–10 sentences) on the prompt: <em>"How does Shakespeare use the disease motif to develop the theme of corruption?"</em> Include at least two embedded quotations with act/scene/line citations.</div>
+<textarea placeholder="Your paragraph..."></textarea>
+<details><summary>Answer Key</summary><p>Marks rubric: clear topic sentence (1), two embedded quotations with proper Shakespeare citation format (2.1.1) (2), interpretive analysis of HOW the disease imagery operates (2), conclusion linking back (1). Sample evidence: "Something is rotten in the state of Denmark" (1.4.90); the "ulcerous place" Hamlet describes to Gertrude (3.4.147); "this canker of our nature" describing Claudius (5.2.69).</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Write a 4–6 sentence character analysis of Ophelia. Address: her social position, her treatment by men in the play, and one possible interpretation of her madness.</div>
+<textarea placeholder="Your analysis..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: identification of Ophelia as caught between her father (Polonius) ordering her behaviour, her brother (Laertes) instructing her about her chastity, her lover (Hamlet) berating her in 3.1, and the King and Queen using her to spy. Madness reading: psychological collapse under contradictory paternal/lover demands plus grief; or, as feminist critics argue, the only space the play permits her interiority is in fragmented song after she has lost the men who governed her. Marks: 1 social position, 2 treatment, 1 interpretation, 1 communication.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[4]</span>
+<div class="qtxt">In 4–5 sentences, explain the dramatic function of Horatio in the play. Why does Hamlet entrust him with the play's "story" at the end?</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Horatio is the rational sceptic (he is initially unsure about the Ghost), the loyal university friend, the audience's surrogate (he sees what Hamlet sees), and the play's surviving witness. Hamlet's dying request — "Report me and my cause aright / To the unsatisfied" — gives Horatio the function of telling the play's truth. Without Horatio there is no narrative continuity from Denmark's bloody floor to the audience. Marks: 2 functions, 1 ending request, 1 communication.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Adaptation Application:</strong> A director is staging <em>Hamlet</em> in a contemporary setting (e.g., a modern political family, a tech CEO's company). Choose one famous scene and explain in 5–7 sentences (a) the modern setting you would choose, (b) one specific staging choice (lighting, costume, prop) and what it would communicate, (c) what would be gained AND what would be risked.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Look for: a clear contemporary setting; a specific staging choice tied to thematic meaning (e.g., security cameras for the surveillance theme; corporate boardroom for the play-within-a-play); thoughtful weighing of gain/loss (gain: relevance, accessibility; risk: losing the verse, anachronism). Marks: 1 setting, 2 staging choice + meaning, 2 evaluation.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Cross-Text Application:</strong> Connect <em>Hamlet</em> to one other text, film, or contemporary phenomenon. In 5–7 sentences explain one substantive parallel (e.g., another revenge narrative, another protagonist who delays, another work concerned with surveillance, another work about grief and remarriage). Cite both texts.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Possible: <em>The Lion King</em> (overt parallel — uncle kills king-father, son must avenge); Tom Stoppard's <em>Rosencrantz and Guildenstern Are Dead</em> (existential reframing); the film <em>The Northman</em> (Eggers, 2022, drawing on the same Amleth saga Shakespeare used). Strong responses identify a substantive parallel rather than a surface coincidence and analyse what comparison reveals. Marks: 1 selection, 3 substance of parallel, 1 communication.</p></details></div>
+
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Real-World Application:</strong> Why has <em>Hamlet</em> remained the most-performed and most-studied play in the English-speaking world for 400+ years? In 5–7 sentences, propose your own answer, supported by at least one specific aspect of the play.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Answer Key</summary><p>Strong answers might point to: the soliloquies' direct access to interior thought as the foundation of psychological realism; Hamlet's combination of intellectual brilliance with crippling indecision making him universally relatable; the play's openness to interpretation (every age finds its own Hamlet — Romantic melancholy, modernist alienation, post-Freudian Oedipal son, post-9/11 hesitator about violence). Marks: 1 thesis, 3 evidence and reasoning, 1 communication.</p></details></div>
+
+<footer>ENG4U — English, Grade 12 | Strand B + A: Reading &amp; Oral Communication | Assessment OF Learning — Graded</footer>
+</div></body></html>

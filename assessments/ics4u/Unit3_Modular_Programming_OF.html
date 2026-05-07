@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Modular Programming &amp; Recursion — Unit Test</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 3: Modular Programming &amp; Recursion &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code answers must be syntactically valid Python 3. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[2 marks]</span></div>
+<div class="qt">What does this print?
+<div class="code">def mystery(a, b=2, c=1):
+    return a * b + c
+
+print(mystery(3))
+print(mystery(3, 4))
+print(mystery(3, c=5))</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace this recursive function. Show every recursive call until the base case, then the value returned at each level. What is <code>power(2, 5)</code>?
+<div class="code">def power(base, exp):
+    if exp == 0:
+        return 1
+    return base * power(base, exp - 1)</div>
+</div>
+<textarea placeholder="power(2,5) = 2 * power(2,4) = ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">Identify two distinct types of <em>parameter passing</em> seen in Python (e.g., positional vs. keyword) and give a one-line example of each.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[2 marks]</span></div>
+<div class="qt">What is the output?
+<div class="code">x = 1
+def f(x):
+    x = x + 1
+    return x
+
+print(f(x))
+print(x)</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">A recursion has two essential parts. Name them and explain the danger of getting either wrong.</div>
+<textarea style="min-height:100px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[3 marks]</span></div>
+<div class="qt">Write the simplest Python function <code>is_palindrome(s)</code> that returns <code>True</code> when the string reads the same forwards and backwards (case-insensitive). You may use slicing.</div>
+<textarea placeholder="def is_palindrome(s): ..."></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find &amp; fix the bugs. The recursive function below is supposed to compute the sum of digits in a positive integer (e.g., <code>sum_digits(123) = 6</code>). It has <strong>two bugs</strong>.
+<div class="code">def sum_digits(n):
+    if n = 0:
+        return 1
+    return (n % 10) + sum_digits(n // 10)</div>
+</div>
+<textarea placeholder="Corrected function..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Convert this iterative function to a recursive one. Show both versions and confirm they return the same answer for <code>n = 5</code>.
+<div class="code">def count_down_iter(n):
+    while n &gt; 0:
+        print(n)
+        n -= 1
+    print("Blastoff!")</div>
+</div>
+<textarea placeholder="def count_down_rec(n): ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">A team is asked to design a function <code>checkout_total(cart, tax_rate)</code>. The cart is a list of <code>(name, price, quantity)</code> tuples. The function should return the after-tax total (rounded to 2 decimal places). Decompose the problem into <strong>at least three</strong> helper functions, list their signatures, and write the orchestrating <code>checkout_total</code> in terms of those helpers.</div>
+<textarea placeholder="Helpers: subtotal_for_item(item), subtotal(cart), apply_tax(amount, rate)" style="min-height:160px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Explain in your own words: what is <strong>variable scope</strong>? Use the LEGB rule (Local, Enclosing, Global, Built-in) and a small code example.</div>
+<textarea style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">A peer says: "Recursion is just iteration with extra steps &mdash; you can always rewrite a loop with recursion or vice versa, so it doesn't matter." Write a thoughtful response (3&ndash;5 sentences) discussing trade-offs: clarity, performance, stack-depth limits, and naturalness for tree/divide-and-conquer problems.</div>
+<textarea style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a complete docstring for the function below following Python conventions (Description, Parameters, Returns, Example).
+<div class="code">def gcd(a, b):
+    if b == 0:
+        return a
+    return gcd(b, a % b)</div>
+</div>
+<textarea placeholder='def gcd(a, b):\n    """Return the greatest common divisor ...' style="min-height:180px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a recursive function <code>count_letter(s, ch)</code> that returns the number of times the character <code>ch</code> appears in the string <code>s</code>. <strong>Do not use loops or <code>.count()</code>.</strong> Show the result for <code>count_letter("banana", "a")</code>.</div>
+<textarea placeholder="def count_letter(s, ch): ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">Top-down design problem. A teacher wants a small program that:
+<ol style="margin-left:24px;">
+<li>Reads a list of marks (one per line) from a file <code>marks.txt</code>.</li>
+<li>Drops the lowest mark.</li>
+<li>Reports the average of the remaining marks.</li>
+</ol>
+Write the function <code>main()</code> that orchestrates this work, plus the three helper functions <code>read_marks(path)</code>, <code>drop_lowest(marks)</code>, and <code>average(marks)</code>. Each helper should do one thing.</div>
+<textarea placeholder="def read_marks(path): ..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">15. <span class="qm">[5 marks]</span></div>
+<div class="qt">Tower-of-Hanoi style problem. Write a recursive function <code>moves(n)</code> that returns the minimum number of moves required to transfer <em>n</em> disks in the Tower of Hanoi (formula: 2&#8319; - 1; you must <em>derive</em> it via recursion, not hard-code). Show <code>moves(3)</code> and <code>moves(5)</code>.</div>
+<textarea placeholder="def moves(n): ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard) &mdash; mostly correct with minor issues</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness &mdash; partial credit; logic largely sound but contains errors</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 3: Modular Programming &amp; Recursion &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

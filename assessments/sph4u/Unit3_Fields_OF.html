@@ -10,123 +10,151 @@
 :root{--p:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
+.ctr{max-width:880px;margin:0 auto;padding:20px}
 header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
 header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
 .warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
 .sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
 .sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
 .sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
 .qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
 .qm{float:right;font-size:13px;color:var(--m);font-weight:600}
 .qt{margin:8px 0 12px}
 .mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px}
+textarea{width:100%;min-height:100px;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit;resize:vertical}
+.draw{height:160px;border:1px dashed #94a3b8;border-radius:8px;margin:8px 0;background:#fff;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;font-style:italic}
 .chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
 .chart-i{text-align:center;padding:12px;border-radius:8px}
 .chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:14px;margin-bottom:24px;font-size:14px}
 .formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+details{background:#f8fafc;border:1px solid var(--b);border-radius:8px;padding:12px 16px;margin-top:16px}
+details summary{font-weight:700;color:var(--p);cursor:pointer;font-size:15px}
+details .sol-block{margin-top:12px;font-size:14px}
+details .sol-block h4{color:var(--p);margin:12px 0 4px;font-size:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
 footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
+</style></head>
 <body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sph4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
 <div class="ctr">
-
 <header><h1>📝 Unit 3: Fields — Unit Test</h1>
-<div class="sub">Assessment OF Learning</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+<div class="sub">Assessment OF Learning — Summative</div>
+<div class="badge">✅ Graded — Counts toward 70% term mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks. Show all work, including diagrams. Use \(k=8.99\times10^9\,\text{N·m}^2/\text{C}^2\), \(G=6.67\times10^{-11}\,\text{N·m}^2/\text{kg}^2\), \(e=1.60\times10^{-19}\,\text{C}\), \(M_E=5.98\times10^{24}\,\text{kg}\), \(R_E=6.38\times10^{6}\,\text{m}\).</div>
 <div class="chart">
 <div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Formulae</h3>\( F_e = kq_1q_2/r^2 \) | \( E = kQ/r^2 \) | \( V = kQ/r \) | \( F = qvB\sin\theta \) | \( F = BIL \) | \( g = GM/r^2 \)</div>
-
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div><div class="qt">Standard calculation problem for this unit.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div><div class="qt">Conceptual knowledge question.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div><div class="qt">Multi-part calculation.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div><div class="qt">Define and explain key concepts.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div><div class="qt">Apply formula to solve problem.</div><textarea></textarea></div>
-
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div><div class="qt">Complex multi-step problem requiring derivation or proof.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div><div class="qt">Problem combining multiple concepts from this unit.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div><div class="qt">Novel situation requiring creative application of principles.</div><textarea style="min-height:150px;"></textarea></div>
-
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div><div class="qt">Explain a key concept with diagrams and proper terminology.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div><div class="qt">Correct a misconception with clear reasoning.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div><div class="qt">Compare and contrast related concepts with examples.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div><div class="qt">Real-world application problem.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div><div class="qt">Technology or engineering context problem.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div><div class="qt">Multi-context problem requiring transfer of knowledge.</div><textarea style="min-height:150px;"></textarea></div>
-
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-
-<footer>SPH4U — Physics, Grade 12 | Unit 3: Fields — OF | Ontario Curriculum 2008</footer>
+<div class="formula-ref"><h3>📋 Formulae</h3>
+\(F_g = \dfrac{Gm_1m_2}{r^2}\) | \(g = \dfrac{GM}{r^2}\) | \(F_e = \dfrac{kq_1q_2}{r^2}\) | \(E = \dfrac{kQ}{r^2}\) | \(V = \dfrac{kQ}{r}\) | \(E = \dfrac{V}{d}\) | \(F = qvB\sin\theta\) | \(F = BIL\sin\theta\) | \(r = \dfrac{mv}{qB}\)
 </div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">1. <span class="qm">[2]</span></div>
+<div class="qt">Two point charges \(q_1=+5.0\,\mu\text{C}\) and \(q_2=-3.0\,\mu\text{C}\) are separated by \(0.20\,\text{m}\). Calculate the magnitude and state the direction of the electric force on \(q_1\).</div>
+<textarea placeholder="Apply Coulomb's law and indicate direction..."></textarea></div>
+
+<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
+<div class="qt">A satellite orbits Earth at an altitude of \(400\,\text{km}\). Calculate (a) the gravitational field strength at this altitude, (b) the orbital speed, (c) the orbital period.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">3. <span class="qm">[2]</span></div>
+<div class="qt">Sketch the electric field pattern between two oppositely charged parallel plates. Mark the direction of the field, indicate where the field is uniform, and label the high-V and low-V plates.</div>
+<div class="draw">[ Sketch parallel plates with field lines from + to − plate ]</div></div>
+
+<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
+<div class="qt">An electron (\(m=9.11\times10^{-31}\,\text{kg}\)) is accelerated through a potential difference of \(2500\,\text{V}\). Calculate its final speed using energy conservation.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">5. <span class="qm">[2]</span></div>
+<div class="qt">A current of \(4.0\,\text{A}\) flows in a wire of length \(0.50\,\text{m}\) placed perpendicular to a magnetic field of \(0.30\,\text{T}\). Calculate the magnetic force on the wire.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">6. <span class="qm">[3]</span></div>
+<div class="qt">State, with brief justification, whether each is true or false:<br>
+(a) Electric field lines can cross.<br>
+(b) The electric field inside a conductor in equilibrium is zero.<br>
+(c) Magnetic forces can do work on a moving charged particle.</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
+<div class="qt">Three charges are placed at corners of an equilateral triangle of side \(0.10\,\text{m}\): \(q_A=+2.0\,\mu\text{C}\), \(q_B=+2.0\,\mu\text{C}\), \(q_C=-2.0\,\mu\text{C}\). Calculate the magnitude and direction of the net electric force on \(q_C\). Show the vector diagram.</div>
+<div class="draw">[ Draw triangle with charges and force vectors on q_C ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
+<div class="qt">An alpha particle (\(q=+2e\), \(m=6.64\times10^{-27}\,\text{kg}\)) enters a uniform magnetic field of \(0.40\,\text{T}\) at a speed of \(2.0\times10^{6}\,\text{m/s}\) perpendicular to the field. (a) Show that the path is a circle. (b) Calculate the radius. (c) Calculate the period of the motion.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
+<div class="qt">In Millikan's oil drop experiment, a charged droplet of mass \(3.2\times10^{-15}\,\text{kg}\) is held stationary between parallel plates separated by \(1.5\,\text{cm}\) when the potential difference is \(490\,\text{V}\). (a) Determine the charge on the droplet. (b) How many excess electrons does it carry? (c) Justify the conclusion that charge is quantized.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
+<div class="qt">Compare and contrast gravitational and electric fields. Address: source of the field, sign of "charge", magnitude of \(k\) vs. \(G\), shielding, and one specific phenomenon that depends on each.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
+<div class="qt">A student claims: "A magnetic field exerts a force on a charged particle whether or not it moves." Correct this misconception with clear reasoning, including the formula \(F = qvB\sin\theta\) and an example.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
+<div class="qt">Using a labelled diagram, explain how a mass spectrometer separates ions of different mass-to-charge ratio. Include the velocity selector (E and B), the deflection chamber (B only), and derive the relationship \(m/q = Br/v\).</div>
+<div class="draw">[ Mass spectrometer: velocity selector → deflection region ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
+<div class="qt">A geostationary communications satellite orbits Earth with a period of \(24\,\text{h}\). (a) Calculate the orbital radius. (b) Calculate the orbital speed. (c) Discuss one technological benefit and one social/environmental concern of geostationary satellites.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
+<div class="qt">An inkjet printer deflects charged ink droplets between parallel plates. A droplet of mass \(2.0\times10^{-10}\,\text{kg}\) and charge \(-3.0\times10^{-13}\,\text{C}\) enters horizontally at \(15\,\text{m/s}\) midway between plates that are \(0.5\,\text{cm}\) long with field \(2.0\times10^{6}\,\text{N/C}\) directed downward. Find the vertical deflection on exit.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">15. <span class="qm">[5]</span></div>
+<div class="qt">A simple DC motor uses a rectangular loop \((L=8.0\,\text{cm}, W=5.0\,\text{cm})\) of \(50\) turns carrying \(2.5\,\text{A}\) in a \(0.10\,\text{T}\) field. (a) Calculate the maximum torque on the loop. (b) Explain why the torque varies with orientation. (c) Discuss two STSE implications of replacing internal-combustion engines with electric motors.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<details>
+<summary>📖 Complete Answer Key (Click to reveal)</summary>
+<div class="sol-block">
+<h4>Q1.</h4> \(F = k|q_1q_2|/r^2 = 8.99\times10^9 \cdot 15\times10^{-12}/0.04 = 3.37\,\text{N}\), attractive (toward \(q_2\)).
+<h4>Q2.</h4> \(r = R_E + 4\times10^5 = 6.78\times10^6\,\text{m}\). (a) \(g = GM_E/r^2 = 8.68\,\text{m/s}^2\). (b) \(v=\sqrt{GM_E/r}=7.67\times10^3\,\text{m/s}\). (c) \(T = 2\pi r/v = 5552\,\text{s}\approx 92.5\,\text{min}\).
+<h4>Q3.</h4> Field lines straight, evenly spaced, from + plate to − plate; uniform between plates, fringes at edges.
+<h4>Q4.</h4> \(eV = \tfrac12 mv^2 \Rightarrow v = \sqrt{2eV/m} = \sqrt{2(1.6e{-}19)(2500)/9.11e{-}31} = 2.96\times10^7\,\text{m/s}\).
+<h4>Q5.</h4> \(F = BIL = 0.30 \cdot 4.0 \cdot 0.50 = 0.60\,\text{N}\).
+<h4>Q6.</h4> (a) F — uniqueness of field direction at each point. (b) T — free charges redistribute to cancel internal field. (c) F — magnetic force is always perpendicular to \(\vec v\), hence \(\vec F\cdot\vec v=0\).
+<h4>Q7.</h4> \(F_{AC}=F_{BC}=kq^2/r^2=8.99e9(2e{-}6)^2/0.01=3.60\,\text{N}\). By symmetry the components along AB cancel; net force points away from midpoint of AB along the perpendicular: \(F_{net} = 2F\cos 30° = 6.23\,\text{N}\) (attractive, so toward AB midpoint since C is negative). Direction: along the altitude from C toward midpoint of AB.
+<h4>Q8.</h4> (a) \(\vec F\) is always \(\perp \vec v\) and constant in magnitude → uniform circular motion. (b) \(r = mv/(qB) = (6.64e{-}27)(2e6)/((3.2e{-}19)(0.40))=0.104\,\text{m}\). (c) \(T=2\pi m/(qB)=3.26\times10^{-7}\,\text{s}\).
+<h4>Q9.</h4> (a) Equilibrium: \(qE = mg\), \(E = V/d = 490/0.015 = 3.27\times10^4\,\text{N/C}\). \(q = mg/E = (3.2e{-}15)(9.8)/(3.27e4)=9.6\times10^{-19}\,\text{C}\). (b) \(N = q/e = 6\) electrons. (c) Repeated trials always yield integer multiples of \(e\) — supports quantization.
+<h4>Q10.</h4> Both inverse-square central fields; gravity always attractive (mass only +), electric attractive or repulsive. \(k\gg G\); electric force can be screened by conductors, gravity cannot. Phenomena: orbits (gravity); lightning (electric).
+<h4>Q11.</h4> Magnetic force = \(qvB\sin\theta\). For stationary charge \(v=0\) → \(F=0\). Example: a stationary electron near a bar magnet experiences no magnetic force, but a moving electron does.
+<h4>Q12.</h4> Velocity selector: \(qE = qvB_1 \Rightarrow v=E/B_1\). In deflection region: \(qvB_2 = mv^2/r \Rightarrow m/q = B_2 r/v\). Different masses → different radii → ions strike detector at different positions.
+<h4>Q13.</h4> (a) \(T^2=4\pi^2 r^3/(GM_E)\Rightarrow r=\sqrt[3]{GM_E T^2/(4\pi^2)}=4.22\times10^7\,\text{m}\) (\(\approx 35{,}900\,\text{km}\) altitude). (b) \(v=2\pi r/T=3.07\times10^3\,\text{m/s}\). (c) Benefit: continuous coverage for telecom/weather. Concern: orbital debris and electronic-waste from end-of-life satellites.
+<h4>Q14.</h4> \(t = L/v = 0.005/15 = 3.33\times10^{-4}\,\text{s}\). \(F = qE = 6.0\times10^{-7}\,\text{N}\) (upward since charge is negative and field is down). \(a = F/m = 3000\,\text{m/s}^2\). \(\Delta y = \tfrac12 at^2 = 1.66\times10^{-4}\,\text{m} \approx 0.17\,\text{mm}\) upward.
+<h4>Q15.</h4> (a) \(\tau_{max} = NBIA = 50(0.10)(2.5)(0.08\cdot0.05) = 5.0\times10^{-2}\,\text{N·m}\). (b) \(\tau = NBIA\sin\phi\); zero when plane of coil is parallel to B. (c) Reduced tailpipe emissions (benefit); increased grid demand and battery raw-material extraction (concern).
+</div></details>
+
+<div class="rubric"><h3 style="margin-top:24px;">Evaluation Rubric</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough, insightful</td><td>80–100%</td></tr>
+<tr><td>3</td><td>Considerable (provincial standard)</td><td>70–79%</td></tr>
+<tr><td>2</td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td>1</td><td>Limited</td><td>50–59%</td></tr>
+<tr><td>R</td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
+
+<footer>SPH4U — Physics, Grade 12 | Unit 3: Fields — OF Learning | Ontario Curriculum 2008</footer>
+</div></body></html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: Quadratic Functions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; } body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; } header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; } header .subtitle { font-size: 14px; opacity: 0.85; } header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; } .topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; } .question-card.correct { border-color: var(--correct); background: #f0fdf4; } .question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; } .q-text { margin-bottom: 12px; } input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; } .mc-options li { margin-bottom: 6px; } .mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; } .mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; } .btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; } .feedback.show { display: block; } .feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; } .feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; } .solution.show { display: block; } .solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; } .progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; } .score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mcr3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 2: Quadratic Functions &amp; Equations</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check factoring, completing the square, the quadratic formula, and applications.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1–2.2 — Forms &amp; Factoring</div>
+<div class="question-card" id="q1"><div class="q-number">Question 1</div><div class="q-text">The vertex of \( y = -2(x - 3)^2 + 5 \) is:</div>
+<ul class="mc-options"><li><label><input type="radio" name="q1" value="a"> (3, 5)</label></li><li><label><input type="radio" name="q1" value="b"> (-3, 5)</label></li><li><label><input type="radio" name="q1" value="c"> (3, -5)</label></li><li><label><input type="radio" name="q1" value="d"> (-3, -5)</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q1','a')">Check Answer</button><div class="feedback" id="q1-feedback"></div><div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Vertex form \( y = a(x-h)^2 + k \) gives vertex \( (h, k) = (3, 5) \).</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div><div class="q-text">Factor: \( x^2 - 11x + 24 \).</div>
+<ul class="mc-options"><li><label><input type="radio" name="q2" value="a"> \( (x - 8)(x - 3) \)</label></li><li><label><input type="radio" name="q2" value="b"> \( (x + 8)(x + 3) \)</label></li><li><label><input type="radio" name="q2" value="c"> \( (x - 6)(x - 4) \)</label></li><li><label><input type="radio" name="q2" value="d"> \( (x + 6)(x - 4) \)</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q2','a')">Check Answer</button><div class="feedback" id="q2-feedback"></div><div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Need two numbers whose sum is \( -11 \) and product is \( 24 \): \( -8 \) and \( -3 \). So \( (x-8)(x-3) \).</div></div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div><div class="q-text">Factor completely: \( 6x^2 + 7x - 5 \).</div>
+<ul class="mc-options"><li><label><input type="radio" name="q3" value="a"> \( (3x + 5)(2x - 1) \)</label></li><li><label><input type="radio" name="q3" value="b"> \( (6x - 5)(x + 1) \)</label></li><li><label><input type="radio" name="q3" value="c"> \( (3x - 5)(2x + 1) \)</label></li><li><label><input type="radio" name="q3" value="d"> \( (2x + 5)(3x - 1) \)</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button><div class="feedback" id="q3-feedback"></div><div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Decomposition: need \( ac = 6 \cdot (-5) = -30 \), \( b = 7 \). Numbers: 10, -3. \( 6x^2 + 10x - 3x - 5 = 2x(3x + 5) - (3x + 5) = (3x + 5)(2x - 1) \).</div></div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div><div class="q-text">Factor \( 9x^2 - 16 \) as a difference of squares.</div>
+<ul class="mc-options"><li><label><input type="radio" name="q4" value="a"> \( (3x - 4)^2 \)</label></li><li><label><input type="radio" name="q4" value="b"> \( (3x + 4)(3x - 4) \)</label></li><li><label><input type="radio" name="q4" value="c"> \( 3(x - 4)(x + 4) \)</label></li><li><label><input type="radio" name="q4" value="d"> \( (9x - 16)(9x + 16) \)</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button><div class="feedback" id="q4-feedback"></div><div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( 9x^2 - 16 = (3x)^2 - 4^2 = (3x - 4)(3x + 4) \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Completing the Square &amp; Discriminant</div>
+<div class="question-card" id="q5"><div class="q-number">Question 5</div><div class="q-text">Convert \( y = x^2 - 6x + 11 \) to vertex form. The vertex \( (h, k) \) is at \( h = \) ?</div>
+<input type="text" id="q5-input" placeholder="Enter h..."><button class="btn btn-check" onclick="checkNumeric('q5', 3)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div><div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\( y = (x^2 - 6x + 9) - 9 + 11 = (x - 3)^2 + 2 \). So \( h = 3 \), \( k = 2 \).</div></div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div><div class="q-text">For \( x^2 + 4x + 7 = 0 \), the discriminant \( \Delta = b^2 - 4ac \) equals:</div>
+<input type="text" id="q6-input" placeholder="Enter discriminant..."><button class="btn btn-check" onclick="checkNumeric('q6', -12)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div><div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( \Delta = 4^2 - 4(1)(7) = 16 - 28 = -12 \). Since \( \Delta < 0 \), there are no real roots.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Solving Quadratic Equations</div>
+<div class="question-card" id="q7"><div class="q-number">Question 7</div><div class="q-text">Solve \( x^2 - 5x + 6 = 0 \). The smaller root is:</div>
+<input type="text" id="q7-input" placeholder="Enter smaller root..."><button class="btn btn-check" onclick="checkNumeric('q7', 2)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div><div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\( (x - 2)(x - 3) = 0 \), so \( x = 2 \) or \( x = 3 \). Smaller is 2.</div></div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div><div class="q-text">Using the quadratic formula, the sum of the roots of \( x^2 - 6x + 4 = 0 \) is:</div>
+<input type="text" id="q8-input" placeholder="Enter sum..."><button class="btn btn-check" onclick="checkNumeric('q8', 6)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div><div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>By Vieta or formula: roots are \( 3 \pm \sqrt{5} \). Their sum is \( 6 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.5 — Applications</div>
+<div class="question-card" id="q9"><div class="q-number">Question 9</div><div class="q-text">A ball thrown straight up has \( h(t) = -5t^2 + 30t + 2 \) (in metres). The time at maximum height is \( t = \) ?</div>
+<input type="text" id="q9-input" placeholder="Enter time in seconds..."><button class="btn btn-check" onclick="checkNumeric('q9', 3)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div><div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( t = -\frac{b}{2a} = -\frac{30}{2(-5)} = 3 \) seconds.</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div><div class="q-text">From Q9, the maximum height (m) is:</div>
+<input type="text" id="q10-input" placeholder="Enter max height..."><button class="btn btn-check" onclick="checkNumeric('q10', 47)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div><div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( h(3) = -5(9) + 30(3) + 2 = -45 + 90 + 2 = 47 \) m.</div></div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div><div class="q-text">A rectangle's perimeter is 40 m. Its area in terms of width \( w \) is \( A(w) = w(20 - w) \). The maximum area (m²) is:</div>
+<input type="text" id="q11-input" placeholder="Enter max area..."><button class="btn btn-check" onclick="checkNumeric('q11', 100)">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div><div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>Vertex at \( w = 10 \), giving \( A = 10 \cdot 10 = 100 \) m². Always a square.</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div><div class="q-text">A profit function is \( P(x) = -x^2 + 14x - 24 \) (thousands of dollars). The break-even values of \( x \) (where \( P = 0 \)) are 2 and:</div>
+<input type="text" id="q12-input" placeholder="Enter the larger break-even..."><button class="btn btn-check" onclick="checkNumeric('q12', 12)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div><div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\( -x^2 + 14x - 24 = 0 \Rightarrow x^2 - 14x + 24 = 0 \Rightarrow (x - 2)(x - 12) = 0 \). So \( x = 2 \) or \( x = 12 \).</div></div>
+</div>
+
+<footer>MCR3U — Functions, Grade 11 | Strand A: Characteristics of Functions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Not quite. See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.01){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ Answer: ${c}. See solution.`;}sl.classList.add('show');updateProgress();}
+</script></body></html>

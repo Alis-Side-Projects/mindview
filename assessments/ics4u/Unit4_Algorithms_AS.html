@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Algorithms — Practice Quiz</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text]{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128202; Unit 4: Algorithms &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Self-check on linear/binary search, sorting algorithms, and Big-O complexity. Instant feedback. Python 3.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 — Linear search count</div>
+<div class="qt">In the worst case, how many comparisons does linear search make on a list of 1000 items?</div>
+<input type="text" id="q1-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q1','1000')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>Worst case: target is at the end (or absent). Linear search inspects every item: <strong>1000</strong> comparisons. This is O(n).</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 — Binary search count</div>
+<div class="qt">In the worst case, how many comparisons does binary search need on a sorted list of 1024 items?</div>
+<input type="text" id="q2-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q2','10')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>1024 = 2&sup1;&deg;. Binary search halves the search space each step: ceiling(log&#8322;1024) = <strong>10</strong> comparisons. This is O(log n).</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 — Binary search precondition</div>
+<div class="qt">Which precondition must hold for binary search to give a correct answer?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> The list must contain only integers</label></li>
+<li><label><input type="radio" name="q3" value="b"> The list must be sorted</label></li>
+<li><label><input type="radio" name="q3" value="c"> The list must have an even length</label></li>
+<li><label><input type="radio" name="q3" value="d"> The list must contain the target</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>The list must be <strong>sorted</strong>. The algorithm relies on comparing to the midpoint; if the list isn't ordered, the wrong half is eliminated.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 — Bubble sort trace</div>
+<div class="qt">After ONE complete pass of bubble sort (ascending) on <code>[5, 2, 9, 1, 7]</code>, what does the list look like?</div>
+<input type="text" id="q4-in" placeholder="e.g. [1, 2, 3, 4, 5]">
+<button class="btn btn-p" onclick="chkContains('q4',['[2,5,1,7,9]','[2, 5, 1, 7, 9]'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>Compare/swap adjacent pairs left-to-right:<br>
+<code>5,2 → swap</code> &rarr; <code>[2,5,9,1,7]</code><br>
+<code>5,9 → no</code> &rarr; <code>[2,5,9,1,7]</code><br>
+<code>9,1 → swap</code> &rarr; <code>[2,5,1,9,7]</code><br>
+<code>9,7 → swap</code> &rarr; <code>[2,5,1,7,9]</code>. Largest "bubbled" to the end.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 — Big-O of bubble sort</div>
+<div class="qt">What is the worst-case time complexity of bubble sort?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> O(1)</label></li>
+<li><label><input type="radio" name="q5" value="b"> O(log n)</label></li>
+<li><label><input type="radio" name="q5" value="c"> O(n)</label></li>
+<li><label><input type="radio" name="q5" value="d"> O(n²)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','d')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>Bubble sort's nested loops give <strong>O(n²)</strong> in the worst (and average) case.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 — Merge sort complexity</div>
+<div class="qt">Average-case complexity of merge sort?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> O(n)</label></li>
+<li><label><input type="radio" name="q6" value="b"> O(n log n)</label></li>
+<li><label><input type="radio" name="q6" value="c"> O(n²)</label></li>
+<li><label><input type="radio" name="q6" value="d"> O(2&#8319;)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>Merge sort divides into halves (log n levels) and does linear merging at each level: <strong>O(n log n)</strong>. This is the same in best, average, and worst cases.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 — Selection sort trace</div>
+<div class="qt">Selection sort, ascending. After the FIRST iteration on <code>[64, 25, 12, 22, 11]</code>, what is the list?</div>
+<input type="text" id="q7-in" placeholder="e.g. [1, 2, 3, 4, 5]">
+<button class="btn btn-p" onclick="chkContains('q7',['[11,25,12,22,64]','[11, 25, 12, 22, 64]'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>Find min (11) and swap with index 0: <strong>[11, 25, 12, 22, 64]</strong>.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 — Order growth rates</div>
+<div class="qt">For very large n, which is fastest (smallest)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> O(n²)</label></li>
+<li><label><input type="radio" name="q8" value="b"> O(n)</label></li>
+<li><label><input type="radio" name="q8" value="c"> O(log n)</label></li>
+<li><label><input type="radio" name="q8" value="d"> O(n log n)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Order from fast to slow for large n: O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2&#8319;). <strong>O(log n)</strong> is fastest of the four listed.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 — Counting operations</div>
+<div class="qt">How many times does the inner statement execute?
+<div class="code">count = 0
+for i in range(n):
+    for j in range(n):
+        count += 1</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> n</label></li>
+<li><label><input type="radio" name="q9" value="b"> 2n</label></li>
+<li><label><input type="radio" name="q9" value="c"> n²</label></li>
+<li><label><input type="radio" name="q9" value="d"> n!</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>Outer runs n times; inner runs n each iteration: <strong>n²</strong>. Big-O is O(n²).</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 — Quicksort pivot</div>
+<div class="qt">In quicksort with the FIRST element as pivot, what is the worst case input?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> All identical elements</label></li>
+<li><label><input type="radio" name="q10" value="b"> An already-sorted list</label></li>
+<li><label><input type="radio" name="q10" value="c"> A randomly-shuffled list</label></li>
+<li><label><input type="radio" name="q10" value="d"> An empty list</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>An already-sorted list (or reverse-sorted) makes the pivot always the smallest (or largest), producing severely unbalanced partitions: O(n²). Random pivot or median-of-three avoids this.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 — Choose the right algorithm</div>
+<div class="qt">A teacher has a sorted phone list of 5000 students and needs to look up one student. Which algorithm is best?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Linear search</label></li>
+<li><label><input type="radio" name="q11" value="b"> Binary search</label></li>
+<li><label><input type="radio" name="q11" value="c"> Bubble sort then linear search</label></li>
+<li><label><input type="radio" name="q11" value="d"> Merge sort then quicksort</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q11','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div>Already sorted &rarr; binary search in ~13 comparisons (log&#8322;5000 ≈ 12.3). Linear is up to 5000.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 — Insertion sort efficiency</div>
+<div class="qt">When is insertion sort especially efficient (close to O(n))?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> When the list is already (or nearly) sorted</label></li>
+<li><label><input type="radio" name="q12" value="b"> When the list is reverse-sorted</label></li>
+<li><label><input type="radio" name="q12" value="c"> Always — it's a fast algorithm</label></li>
+<li><label><input type="radio" name="q12" value="d"> Never — bubble sort is always faster</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','a')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>On a nearly-sorted list, insertion sort makes few shifts and approaches <strong>O(n)</strong>. This is why it's used as the fallback inside Python's Timsort for small/sorted runs.</div></div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 4: Algorithms | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector('input[name="'+q+'"]:checked');
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function chkText(q,c){
+const v=document.getElementById(q+'-in').value.trim();
+if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}
+if(sl)sl.classList.add('show');up();
+}
+function chkContains(q,acceptable){
+const v=document.getElementById(q+'-in').value.trim().toLowerCase();
+if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+const norm=v.replace(/\s+/g,'');
+const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));
+if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

@@ -9,16 +9,12 @@
 .unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
 .unit-header h2 { font-size: 22px; margin-bottom: 4px; }
 .unit-header p { opacity: 0.85; font-size: 14px; }
-.unit-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; opacity: 0.7; }
-
-.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
-.topic-block:last-child { border-bottom: none; }
-.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
-.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
-.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
 
 .resource-group { margin-bottom: 12px; }
 .resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.subsection-label { font-size: 14px; font-weight: 700; color: #1e293b; background: #f1f5f9; border-left: 4px solid #059669; padding: 8px 14px; border-radius: 0 6px 6px 0; margin: 18px 0 10px; }
 
 .video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
 .video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
@@ -32,49 +28,334 @@
 .video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
 .yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
 
-.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
-.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
-
-.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
-.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
-.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
-.assessment-card .a-body p { font-size: 12px; color: #64748b; }
-.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.coming-soon-box { background: #fffbeb; border: 2px dashed #d97706; border-radius: 12px; padding: 32px; text-align: center; margin-top: 12px; }
+.coming-soon-box h3 { color: #92400e; font-size: 20px; margin-bottom: 8px; }
+.coming-soon-box p { color: #78350f; font-size: 14px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
 
 </style>
 </head><body>
 <nav class="navbar"><div class="nav-container">
-<a href="../" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
+<a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
 <div class="nav-links"><a href="../">Home</a><a href="../#courses">Courses</a></div></div></nav>
 
 <div class="chapter-hero" style="background:linear-gradient(135deg,#059669dd,#059669);">
 <div class="container">
 <div class="strand-tag">Science — Grade 12 University Preparation</div>
 <h1>🧪 SCH4U: Chemistry</h1>
-<p>Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry</p>
+<p>Organic chemistry, structure &amp; properties, energy &amp; rates, equilibrium, electrochemistry</p>
 <p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours · 38 video lessons · 5 units · Prerequisite: SCH3U Chemistry (Grade 11)</p>
 </div></div>
 
 <div class="container" style="padding-top:32px;padding-bottom:64px;">
 <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
 <a href="#unit1" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #059669;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 1: Organic Chemistry</a>
-<a href="#unit2" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #2563eb;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 2: Structure and Properti</a>
-<a href="#unit3" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #dc2626;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 3: Energy and Rates of Re</a>
+<a href="#unit2" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #2563eb;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 2: Structure &amp; Properties</a>
+<a href="#unit3" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #dc2626;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 3: Energy &amp; Rates</a>
 <a href="#unit4" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #7c3aed;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 4: Chemical Equilibrium</a>
 <a href="#unit5" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #d97706;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Unit 5: Electrochemistry</a>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     STRAND A: SCIENTIFIC INVESTIGATION SKILLS & CAREER EXPLORATION
+     Mandatory embedded strand — Ontario 2008 Science Framework
+════════════════════════════════════════════════════════════ -->
+<div class="unit-section" id="strandA">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#475569);">
+        <h2>🔬 Strand A: Scientific Investigation Skills & Career Exploration</h2>
+        <p>Mandatory cross-cutting skills embedded across all units — laboratory technique, experimental design, data analysis, scientific communication, and STSE/career connections</p>
+        <div class="unit-meta">
+            <span>📚 Strand A — Ontario 2008</span>
+            <span>📹 5 lessons</span>
+        </div>
+    </div>
 
+    <div class="resource-group">
+    <div class="resource-group-label">📹 Video Lessons</div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-1-sch')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">Laboratory Safety Symbols with Meanings — Lab Signs & Hazards</span>
+            <span class="vid-duration">07:30</span>
+            <span class="vid-toggle" id="toggle-strandA-1-sch">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-1-sch">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/HiDZdUTtrDE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=HiDZdUTtrDE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-2-sch')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">The Scientific Method — Crash Course Biology #2</span>
+            <span class="vid-duration">12:08</span>
+            <span class="vid-toggle" id="toggle-strandA-2-sch">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-2-sch">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xOLcZMw0hd4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=xOLcZMw0hd4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-3-sch')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">Significant Figures Made Easy! — Tyler DeWitt</span>
+            <span class="vid-duration">10:49</span>
+            <span class="vid-toggle" id="toggle-strandA-3-sch">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-3-sch">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/PNH7_nDE6SQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=PNH7_nDE6SQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-4-sch')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">AP Physics 1 — Graph Linearization (Data Analysis)</span>
+            <span class="vid-duration">11:24</span>
+            <span class="vid-toggle" id="toggle-strandA-4-sch">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-4-sch">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2LhXskTAnes?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=2LhXskTAnes" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    <div class="video-card">
+        <div class="video-header" onclick="toggleVideo('strandA-5-sch')">
+            <span class="vid-icon">📖</span>
+            <span class="vid-title">How To Write A Scientific Report — Step-by-Step Lab Report Guide</span>
+            <span class="vid-duration">09:18</span>
+            <span class="vid-toggle" id="toggle-strandA-5-sch">▶</span>
+        </div>
+        <div class="video-player" id="player-strandA-5-sch">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Yqioa8Njhhk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+            <a href="https://www.youtube.com/watch?v=Yqioa8Njhhk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 1: ORGANIC CHEMISTRY
+     v11–v20: Hydrocarbons, Functional Groups, Polymers
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit1">
         <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
             <h2>Unit 1: Organic Chemistry</h2>
-            <p>Hydrocarbons, functional groups, naming, reactions, polymers</p>
+            <p>Hydrocarbons, functional groups, IUPAC nomenclature, organic reactions, polymers</p>
             <div class="unit-meta">
                 <span>📚 Strand A: Organic Chemistry</span>
                 <span>📹 10 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⛽ Hydrocarbons</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alkanes</span>
+                <span class="vid-duration">51:57</span>
+                <span class="vid-toggle" id="toggle-v11">▶</span>
+            </div>
+            <div class="video-player" id="player-v11">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/011_Chemistry_12_SCH4U_Alkanes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=oCjzGMChn3E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cycloalkanes and Alkyl Halides</span>
+                <span class="vid-duration">49:32</span>
+                <span class="vid-toggle" id="toggle-v12">▶</span>
+            </div>
+            <div class="video-player" id="player-v12">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/012_Chemistry_12_SCH4U_Cycloalkanes_and_Alkyl_Halides.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=fACc-0WfE8s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alkenes</span>
+                <span class="vid-duration">50:04</span>
+                <span class="vid-toggle" id="toggle-v13">▶</span>
+            </div>
+            <div class="video-player" id="player-v13">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/013_Chemistry_12_SCH4U_Alkenes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=gJk60joy12E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alkynes and Aromatics</span>
+                <span class="vid-duration">41:41</span>
+                <span class="vid-toggle" id="toggle-v14">▶</span>
+            </div>
+            <div class="video-player" id="player-v14">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/014_Chemistry_12_SCH4U_Alkynes_and_Aromatics.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=ObqaiwHX_2k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧴 Functional Groups</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Alcohols and Ethers</span>
+                <span class="vid-duration">40:15</span>
+                <span class="vid-toggle" id="toggle-v15">▶</span>
+            </div>
+            <div class="video-player" id="player-v15">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/015_Chemistry_12_SCH4U_Alcohols_and_Ethers.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=ijc89tAnNHc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Aldehydes and Ketones</span>
+                <span class="vid-duration">31:41</span>
+                <span class="vid-toggle" id="toggle-v16">▶</span>
+            </div>
+            <div class="video-player" id="player-v16">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/016_Chemistry_12_SCH4U_Aldehydes_and_Ketones.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=u9X7plDiowk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Carboxylic Acids and Esters</span>
+                <span class="vid-duration">42:42</span>
+                <span class="vid-toggle" id="toggle-v17">▶</span>
+            </div>
+            <div class="video-player" id="player-v17">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/017_Chemistry_12_SCH4U_Carboxylic_Acids_and_Esters.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=QFK3rWa4rjI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Amines and Amides</span>
+                <span class="vid-duration">29:48</span>
+                <span class="vid-toggle" id="toggle-v18">▶</span>
+            </div>
+            <div class="video-player" id="player-v18">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/018_Chemistry_12_SCH4U_Amines_and_Amides.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=6mCaJ42_c_M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔗 Polymers</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Addition Polymers</span>
+                <span class="vid-duration">35:41</span>
+                <span class="vid-toggle" id="toggle-v19">▶</span>
+            </div>
+            <div class="video-player" id="player-v19">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/019_Chemistry_12_SCH4U_Addition_Polymers.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=HDcKtJOVLrI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Condensation Polymers</span>
+                <span class="vid-duration">34:26</span>
+                <span class="vid-toggle" id="toggle-v20">▶</span>
+            </div>
+            <div class="video-player" id="player-v20">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/020_Chemistry_12_SCH4U_Condensation_Polymers.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=SylG60UsGaQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔤 IUPAC Nomenclature</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">IUPAC Nomenclature of Alkanes — Naming Organic Compounds — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">23:32</span>
+                <span class="vid-toggle" id="toggle-yt15">▶</span>
+            </div>
+            <div class="video-player" id="player-yt15">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/TYU_JluleME?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=TYU_JluleME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔁 Organic Reaction Mechanisms</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Reaction Mechanisms — Addition, Elimination, Substitution &amp; Rearrangement — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">22:01</span>
+                <span class="vid-toggle" id="toggle-yt16">▶</span>
+            </div>
+            <div class="video-player" id="player-yt16">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Efh5GkVbhEc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Efh5GkVbhEc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔄 Isomers</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to Stereoisomers — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">19:04</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RquhlyP1Sxg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=RquhlyP1Sxg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chirality, Enantiomers, & Diastereomers — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">15:59</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/eHpxVnoSTtY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=eHpxVnoSTtY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 1 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -83,150 +364,187 @@
                 <a href="../assessments/sch4u/Unit1_Organic_Chemistry_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v1')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Atomic History</span>
-                        <span class="vid-duration">36:50</span>
-                        <span class="vid-toggle" id="toggle-v1">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v1">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/001_Chemistry_12_SCH4U_Atomic_History.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=gzNIgGE26Is" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v2')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Bohr Model</span>
-                        <span class="vid-duration">34:17</span>
-                        <span class="vid-toggle" id="toggle-v2">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v2">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/002_Chemistry_12_SCH4U_Bohr_Model.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=E1NU7BN5VDc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v3')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Quantum Model</span>
-                        <span class="vid-duration">55:37</span>
-                        <span class="vid-toggle" id="toggle-v3">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v3">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/003_Chemistry_12_SCH4U_Quantum_Model.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Kpl_YexDiK0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v4')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Electron Configuration</span>
-                        <span class="vid-duration">1:10:15</span>
-                        <span class="vid-toggle" id="toggle-v4">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v4">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/004_Chemistry_12_SCH4U_Electron_Configuration.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=m_79pA1SIy4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v5')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Lewis Diagrams I</span>
-                        <span class="vid-duration">1:00:13</span>
-                        <span class="vid-toggle" id="toggle-v5">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v5">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/005_Chemistry_12_SCH4U_Lewis_Diagrams_I.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=hKp36P2GXqY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v6')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Lewis Diagrams II</span>
-                        <span class="vid-duration">43:38</span>
-                        <span class="vid-toggle" id="toggle-v6">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v6">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/006_Chemistry_12_SCH4U_Lewis_Diagrams_II.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=ZKG0CHoJNl8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v7')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U VSEPR</span>
-                        <span class="vid-duration">47:23</span>
-                        <span class="vid-toggle" id="toggle-v7">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v7">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/007_Chemistry_12_SCH4U_VSEPR.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=q70dr0459Ag" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v8')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Chemical Bonding and Polarity</span>
-                        <span class="vid-duration">44:24</span>
-                        <span class="vid-toggle" id="toggle-v8">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v8">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/008_Chemistry_12_SCH4U_Chemical_Bonding_and_Polarity.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=--GwbHevWrY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v9')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Hybridization</span>
-                        <span class="vid-duration">51:48</span>
-                        <span class="vid-toggle" id="toggle-v9">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v9">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/009_Chemistry_12_SCH4U_Hybridization.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=K5n2bVZkH0o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v10')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Intermolecular Forces and Crystals</span>
-                        <span class="vid-duration">1:03:35</span>
-                        <span class="vid-toggle" id="toggle-v10">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v10">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/010_Chemistry_12_SCH4U_Intermolecular_Forces_and_Crystals.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=kfvf5lneFkA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 2: STRUCTURE AND PROPERTIES OF MATTER
+     v1–v10: Atomic Theory, Bonding, VSEPR, IMFs
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit2">
         <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
-            <h2>Unit 2: Structure and Properties</h2>
-            <p>Atomic structure, bonding, intermolecular forces, properties of solids/liquids</p>
+            <h2>Unit 2: Structure and Properties of Matter</h2>
+            <p>Atomic theory, quantum model, electron configuration, Lewis diagrams, VSEPR, hybridization, intermolecular forces</p>
             <div class="unit-meta">
-                <span>📚 Strand B: Structure & Properties</span>
-                <span>📹 8 lessons</span>
+                <span>📚 Strand B: Structure &amp; Properties</span>
+                <span>📹 10 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⚛️ Atomic Theory &amp; Electronic Structure</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Atomic History</span>
+                <span class="vid-duration">36:50</span>
+                <span class="vid-toggle" id="toggle-v1">▶</span>
+            </div>
+            <div class="video-player" id="player-v1">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/001_Chemistry_12_SCH4U_Atomic_History.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=gzNIgGE26Is" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Bohr Model</span>
+                <span class="vid-duration">34:17</span>
+                <span class="vid-toggle" id="toggle-v2">▶</span>
+            </div>
+            <div class="video-player" id="player-v2">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/002_Chemistry_12_SCH4U_Bohr_Model.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=E1NU7BN5VDc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Quantum Mechanical Model</span>
+                <span class="vid-duration">55:37</span>
+                <span class="vid-toggle" id="toggle-v3">▶</span>
+            </div>
+            <div class="video-player" id="player-v3">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/003_Chemistry_12_SCH4U_Quantum_Model.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Kpl_YexDiK0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Electron Configuration</span>
+                <span class="vid-duration">1:10:15</span>
+                <span class="vid-toggle" id="toggle-v4">▶</span>
+            </div>
+            <div class="video-player" id="player-v4">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/004_Chemistry_12_SCH4U_Electron_Configuration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=m_79pA1SIy4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔗 Chemical Bonding &amp; Molecular Geometry</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Lewis Diagrams — Part I</span>
+                <span class="vid-duration">1:00:13</span>
+                <span class="vid-toggle" id="toggle-v5">▶</span>
+            </div>
+            <div class="video-player" id="player-v5">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/005_Chemistry_12_SCH4U_Lewis_Diagrams_I.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=hKp36P2GXqY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Lewis Diagrams — Part II</span>
+                <span class="vid-duration">43:38</span>
+                <span class="vid-toggle" id="toggle-v6">▶</span>
+            </div>
+            <div class="video-player" id="player-v6">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/006_Chemistry_12_SCH4U_Lewis_Diagrams_II.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=ZKG0CHoJNl8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">VSEPR Theory and Molecular Geometry</span>
+                <span class="vid-duration">47:23</span>
+                <span class="vid-toggle" id="toggle-v7">▶</span>
+            </div>
+            <div class="video-player" id="player-v7">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/007_Chemistry_12_SCH4U_VSEPR.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=q70dr0459Ag" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Chemical Bonding and Polarity</span>
+                <span class="vid-duration">44:24</span>
+                <span class="vid-toggle" id="toggle-v8">▶</span>
+            </div>
+            <div class="video-player" id="player-v8">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/008_Chemistry_12_SCH4U_Chemical_Bonding_and_Polarity.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=--GwbHevWrY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hybridization (sp, sp², sp³)</span>
+                <span class="vid-duration">51:48</span>
+                <span class="vid-toggle" id="toggle-v9">▶</span>
+            </div>
+            <div class="video-player" id="player-v9">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/009_Chemistry_12_SCH4U_Hybridization.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=K5n2bVZkH0o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Intermolecular Forces and Crystals</span>
+                <span class="vid-duration">1:03:35</span>
+                <span class="vid-toggle" id="toggle-v10">▶</span>
+            </div>
+            <div class="video-player" id="player-v10">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/010_Chemistry_12_SCH4U_Intermolecular_Forces_and_Crystals.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=kfvf5lneFkA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        <div class="subsection-label">📈 Periodic Trends</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Periodic Trends: Atomic Radius, Ionization Energy, Electronegativity — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">18:55</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/hePb00CqvP0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=hePb00CqvP0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Periodic Table: Crash Course Chemistry #4</span>
+                <span class="vid-duration">11:21</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/0RRVV4Diomg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=0RRVV4Diomg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 2 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -235,124 +553,161 @@
                 <a href="../assessments/sch4u/Unit2_Structure_and_Properties_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v11')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Alkanes</span>
-                        <span class="vid-duration">51:57</span>
-                        <span class="vid-toggle" id="toggle-v11">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v11">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/011_Chemistry_12_SCH4U_Alkanes.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=oCjzGMChn3E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v12')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Cycloalkanes and Alkyl Halides</span>
-                        <span class="vid-duration">49:32</span>
-                        <span class="vid-toggle" id="toggle-v12">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v12">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/012_Chemistry_12_SCH4U_Cycloalkanes_and_Alkyl_Halides.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=fACc-0WfE8s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v13')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Alkenes</span>
-                        <span class="vid-duration">50:04</span>
-                        <span class="vid-toggle" id="toggle-v13">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v13">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/013_Chemistry_12_SCH4U_Alkenes.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=gJk60joy12E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v14')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Alkynes and Aromatics</span>
-                        <span class="vid-duration">41:41</span>
-                        <span class="vid-toggle" id="toggle-v14">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v14">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/014_Chemistry_12_SCH4U_Alkynes_and_Aromatics.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=ObqaiwHX_2k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v15')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Alcohols and Ethers</span>
-                        <span class="vid-duration">40:15</span>
-                        <span class="vid-toggle" id="toggle-v15">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v15">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/015_Chemistry_12_SCH4U_Alcohols_and_Ethers.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=ijc89tAnNHc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v16')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Aldehydes and Ketones</span>
-                        <span class="vid-duration">31:41</span>
-                        <span class="vid-toggle" id="toggle-v16">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v16">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/016_Chemistry_12_SCH4U_Aldehydes_and_Ketones.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=u9X7plDiowk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v17')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Carboxylic Acids and Esters</span>
-                        <span class="vid-duration">42:42</span>
-                        <span class="vid-toggle" id="toggle-v17">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v17">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/017_Chemistry_12_SCH4U_Carboxylic_Acids_and_Esters.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=QFK3rWa4rjI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v18')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Amines and Amides</span>
-                        <span class="vid-duration">29:48</span>
-                        <span class="vid-toggle" id="toggle-v18">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v18">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/018_Chemistry_12_SCH4U_Amines_and_Amides.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=6mCaJ42_c_M" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 3: ENERGY AND RATES OF REACTION
+     v21–v28: Thermochemistry + Reaction Rates
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit3">
         <div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
             <h2>Unit 3: Energy and Rates of Reaction</h2>
-            <p>Thermochemistry, Hess's law, reaction rates, catalysts</p>
+            <p>Thermochemistry, enthalpy, Hess's law, reaction rates, collision theory, rate law</p>
             <div class="unit-meta">
-                <span>📚 Strand C: Energy & Rates</span>
+                <span>📚 Strand C: Energy &amp; Rates</span>
                 <span>📹 8 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">🔥 Thermochemistry</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Energy Changes and Enthalpy</span>
+                <span class="vid-duration">43:56</span>
+                <span class="vid-toggle" id="toggle-v21">▶</span>
+            </div>
+            <div class="video-player" id="player-v21">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/021_Chemistry_12_SCH4U_Energy_Changes.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=t2hdrqVgwiQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Calorimetry</span>
+                <span class="vid-duration">55:56</span>
+                <span class="vid-toggle" id="toggle-v22">▶</span>
+            </div>
+            <div class="video-player" id="player-v22">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/022_Chemistry_12_SCH4U_Calorimetry.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=KJfSbdY5vWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Bond Energy</span>
+                <span class="vid-duration">30:27</span>
+                <span class="vid-toggle" id="toggle-v23">▶</span>
+            </div>
+            <div class="video-player" id="player-v23">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/023_Chemistry_12_SCH4U_Bond_Energy.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=elER4R2Edi4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hess's Law</span>
+                <span class="vid-duration">20:46</span>
+                <span class="vid-toggle" id="toggle-v24">▶</span>
+            </div>
+            <div class="video-player" id="player-v24">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/024_Chemistry_12_SCH4U_Hess_s_Law.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=35ouCRSq6x4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Standard Enthalpy of Formation</span>
+                <span class="vid-duration">35:51</span>
+                <span class="vid-toggle" id="toggle-v25">▶</span>
+            </div>
+            <div class="video-player" id="player-v25">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/025_Chemistry_12_SCH4U_Standard_Enthalpy_of_Formation.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Kylh7vieVws" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">⚡ Reaction Rates</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Rate of Reaction</span>
+                <span class="vid-duration">33:01</span>
+                <span class="vid-toggle" id="toggle-v26">▶</span>
+            </div>
+            <div class="video-player" id="player-v26">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/026_Chemistry_12_SCH4U_Rate_of_Reaction.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=FLzGE7uz-mI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Collision Theory and Activation Energy</span>
+                <span class="vid-duration">44:28</span>
+                <span class="vid-toggle" id="toggle-v27">▶</span>
+            </div>
+            <div class="video-player" id="player-v27">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/027_Chemistry_12_SCH4U_Collision_Theory.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=QbM1IE14NN0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v28')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Rate Law and Reaction Mechanisms</span>
+                <span class="vid-duration">45:07</span>
+                <span class="vid-toggle" id="toggle-v28">▶</span>
+            </div>
+            <div class="video-player" id="player-v28">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/028_Chemistry_12_SCH4U_Rate_Law_and_Reaction_Mechanisms.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=YCsN_dV16Bg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        <div class="subsection-label">♻️ Entropy and Gibbs Free Energy</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Gibbs Free Energy — Entropy, Enthalpy & Equilibrium Constant K — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">22:48</span>
+                <span class="vid-toggle" id="toggle-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jvqPfTgZyVs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=jvqPfTgZyVs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Entropy: Embrace the Chaos! — Crash Course Chemistry #20</span>
+                <span class="vid-duration">12:24</span>
+                <span class="vid-toggle" id="toggle-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZsY4WcQOrfk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ZsY4WcQOrfk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 3 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -361,124 +716,175 @@
                 <a href="../assessments/sch4u/Unit3_Energy_and_Rates_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v19')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Addition Polymers</span>
-                        <span class="vid-duration">35:41</span>
-                        <span class="vid-toggle" id="toggle-v19">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v19">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/019_Chemistry_12_SCH4U_Addition_Polymers.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=HDcKtJOVLrI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v20')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Condensation Polymers</span>
-                        <span class="vid-duration">34:26</span>
-                        <span class="vid-toggle" id="toggle-v20">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v20">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/020_Chemistry_12_SCH4U_Condensation_Polymers.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=SylG60UsGaQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v21')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Energy Changes</span>
-                        <span class="vid-duration">43:56</span>
-                        <span class="vid-toggle" id="toggle-v21">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v21">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/021_Chemistry_12_SCH4U_Energy_Changes.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=t2hdrqVgwiQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v22')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Calorimetry</span>
-                        <span class="vid-duration">55:56</span>
-                        <span class="vid-toggle" id="toggle-v22">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v22">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/022_Chemistry_12_SCH4U_Calorimetry.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=KJfSbdY5vWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v23')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Bond Energy</span>
-                        <span class="vid-duration">30:27</span>
-                        <span class="vid-toggle" id="toggle-v23">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v23">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/023_Chemistry_12_SCH4U_Bond_Energy.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=elER4R2Edi4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v24')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Hess's Law</span>
-                        <span class="vid-duration">20:46</span>
-                        <span class="vid-toggle" id="toggle-v24">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v24">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/024_Chemistry_12_SCH4U_Hess_s_Law.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=35ouCRSq6x4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v25')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Standard Enthalpy of Formation</span>
-                        <span class="vid-duration">35:51</span>
-                        <span class="vid-toggle" id="toggle-v25">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v25">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/025_Chemistry_12_SCH4U_Standard_Enthalpy_of_Formation.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Kylh7vieVws" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v26')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Rate of Reaction</span>
-                        <span class="vid-duration">33:01</span>
-                        <span class="vid-toggle" id="toggle-v26">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v26">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/026_Chemistry_12_SCH4U_Rate_of_Reaction.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=FLzGE7uz-mI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 4: CHEMICAL EQUILIBRIUM
+     v29–v38: Equilibrium + Full Acid-Base Chemistry
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit4">
         <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
-            <h2>Unit 4: Chemical Equilibrium</h2>
-            <p>Le Chatelier's principle, Keq, Ka, Kb, Ksp, pH, buffers</p>
+            <h2>Unit 4: Chemical Systems and Equilibrium</h2>
+            <p>Dynamic equilibrium, Le Chatelier's principle, Keq, Ksp, acids &amp; bases, pH, Ka, Kb, titration</p>
             <div class="unit-meta">
                 <span>📚 Strand D: Equilibrium</span>
-                <span>📹 8 lessons</span>
+                <span>📹 10 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⚖️ Chemical Equilibrium</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v29')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Dynamic Equilibrium</span>
+                <span class="vid-duration">47:45</span>
+                <span class="vid-toggle" id="toggle-v29">▶</span>
+            </div>
+            <div class="video-player" id="player-v29">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/029_Chemistry_12_SCH4U_Dynamic_Equilibrium.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=aUkl9sOX3Kc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v30')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Le Chatelier's Principle</span>
+                <span class="vid-duration">1:02:04</span>
+                <span class="vid-toggle" id="toggle-v30">▶</span>
+            </div>
+            <div class="video-player" id="player-v30">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/030_Chemistry_12_SCH4U_Le_Chatelier_s_Principle.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=xPppngRxuSk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v31')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Quantitative Equilibrium (Keq)</span>
+                <span class="vid-duration">49:41</span>
+                <span class="vid-toggle" id="toggle-v31">▶</span>
+            </div>
+            <div class="video-player" id="player-v31">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/031_Chemistry_12_SCH4U_Quantitative_Changes_in_Equilibrium.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=hTS6hmRHd1U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v32')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Solubility Equilibrium (Ksp)</span>
+                <span class="vid-duration">48:30</span>
+                <span class="vid-toggle" id="toggle-v32">▶</span>
+            </div>
+            <div class="video-player" id="player-v32">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/032_Chemistry_12_SCH4U_Solubility_Equilibrium.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=jSVEkCccrKc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧪 Acid-Base Chemistry</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v33')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Acids and Bases</span>
+                <span class="vid-duration">49:49</span>
+                <span class="vid-toggle" id="toggle-v33">▶</span>
+            </div>
+            <div class="video-player" id="player-v33">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/033_Chemistry_12_SCH4U_Acids_and_Bases.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=Uwkwk3wJ7iM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v34')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">pH of Strong Acids and Bases</span>
+                <span class="vid-duration">43:35</span>
+                <span class="vid-toggle" id="toggle-v34">▶</span>
+            </div>
+            <div class="video-player" id="player-v34">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/034_Chemistry_12_SCH4U_pH_of_Strong_Acids_and_Bases.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=eUMFmXxZo9Y" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v35')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Ka and Kb Calculations</span>
+                <span class="vid-duration">28:52</span>
+                <span class="vid-toggle" id="toggle-v35">▶</span>
+            </div>
+            <div class="video-player" id="player-v35">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/035_Chemistry_12_SCH4U_Ka_and_Kb_Calculations.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=iiToVSasT9E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v36')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Hydrolysis of Salts</span>
+                <span class="vid-duration">46:54</span>
+                <span class="vid-toggle" id="toggle-v36">▶</span>
+            </div>
+            <div class="video-player" id="player-v36">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/036_Chemistry_12_SCH4U_Hydrolysis.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=EO7D9wB2SRg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v37')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Titration — Strong Acid/Base</span>
+                <span class="vid-duration">1:03:57</span>
+                <span class="vid-toggle" id="toggle-v37">▶</span>
+            </div>
+            <div class="video-player" id="player-v37">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/037_Chemistry_12_SCH4U_Strong_Titration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=fMM-3XkmI40" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('v38')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Titration — Weak Acid/Base</span>
+                <span class="vid-duration">55:45</span>
+                <span class="vid-toggle" id="toggle-v38">▶</span>
+            </div>
+            <div class="video-player" id="player-v38">
+                <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/038_Chemistry_12_SCH4U_Weak_Titration.mp4" type="video/mp4"></video>
+                <a href="https://youtube.com/watch?v=mQc9RbJ23R4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🧪 Buffers &amp; Henderson-Hasselbalch</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Buffer Solutions — pH Calculations, Henderson-Hasselbalch Equation — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">21:09</span>
+                <span class="vid-toggle" id="toggle-yt17">▶</span>
+            </div>
+            <div class="video-player" id="player-yt17">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/us_x9cbQs94?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=us_x9cbQs94" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 4 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -487,124 +893,146 @@
                 <a href="../assessments/sch4u/Unit4_Equilibrium_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v27')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Collision Theory</span>
-                        <span class="vid-duration">44:28</span>
-                        <span class="vid-toggle" id="toggle-v27">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v27">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/027_Chemistry_12_SCH4U_Collision_Theory.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=QbM1IE14NN0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v28')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Rate Law and Reaction Mechanisms</span>
-                        <span class="vid-duration">45:07</span>
-                        <span class="vid-toggle" id="toggle-v28">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v28">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/028_Chemistry_12_SCH4U_Rate_Law_and_Reaction_Mechanisms.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=YCsN_dV16Bg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v29')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Dynamic Equilibrium</span>
-                        <span class="vid-duration">47:45</span>
-                        <span class="vid-toggle" id="toggle-v29">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v29">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/029_Chemistry_12_SCH4U_Dynamic_Equilibrium.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=aUkl9sOX3Kc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v30')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Le Chatelier's Principle</span>
-                        <span class="vid-duration">1:02:04</span>
-                        <span class="vid-toggle" id="toggle-v30">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v30">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/030_Chemistry_12_SCH4U_Le_Chatelier_s_Principle.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=xPppngRxuSk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v31')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Quantitative Changes in Equilibrium</span>
-                        <span class="vid-duration">49:41</span>
-                        <span class="vid-toggle" id="toggle-v31">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v31">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/031_Chemistry_12_SCH4U_Quantitative_Changes_in_Equilibrium.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=hTS6hmRHd1U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v32')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Solubility Equilibrium</span>
-                        <span class="vid-duration">48:30</span>
-                        <span class="vid-toggle" id="toggle-v32">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v32">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/032_Chemistry_12_SCH4U_Solubility_Equilibrium.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=jSVEkCccrKc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v33')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Acids and Bases</span>
-                        <span class="vid-duration">49:49</span>
-                        <span class="vid-toggle" id="toggle-v33">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v33">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/033_Chemistry_12_SCH4U_Acids_and_Bases.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=Uwkwk3wJ7iM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v34')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U pH of Strong Acids and Bases</span>
-                        <span class="vid-duration">43:35</span>
-                        <span class="vid-toggle" id="toggle-v34">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v34">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/034_Chemistry_12_SCH4U_pH_of_Strong_Acids_and_Bases.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=eUMFmXxZo9Y" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
     </div>
 
+<!-- ═══════════════════════════════════════════════════════
+     UNIT 5: ELECTROCHEMISTRY
+     No existing videos — content coming soon
+════════════════════════════════════════════════════════════ -->
     <div class="unit-section" id="unit5">
         <div class="unit-header" style="background:linear-gradient(135deg,#d97706dd,#d97706);">
             <h2>Unit 5: Electrochemistry</h2>
-            <p>Oxidation-reduction, galvanic cells, electrolysis, corrosion</p>
+            <p>Oxidation-reduction reactions, galvanic cells, standard reduction potentials, electrolytic cells, Faraday's laws, corrosion</p>
             <div class="unit-meta">
                 <span>📚 Strand E: Electrochemistry</span>
                 <span>📹 4 lessons</span>
             </div>
         </div>
-        <div class="resource-group"><div class="resource-group-label">📹 Video Lessons
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="subsection-label">⚡ Oxidation-Reduction Reactions</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Half Reaction Method, Balancing Redox in Acidic &amp; Basic Solution — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">23:14</span>
+                <span class="vid-toggle" id="toggle-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fdbrhQAM9Gw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=fdbrhQAM9Gw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔋 Galvanic (Voltaic) Cells</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Galvanic Cells, Cell Potential (E°cell) &amp; Standard Reduction Potentials</span>
+                <span class="vid-duration">42:01</span>
+                <span class="vid-toggle" id="toggle-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fPqHY1Wevzw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=fPqHY1Wevzw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔌 Electrolytic Cells &amp; Faraday's Laws</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Faraday's First Law of Electrolysis — Khan Academy</span>
+                <span class="vid-duration">10:24</span>
+                <span class="vid-toggle" id="toggle-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/sLq6DoNwn3g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=sLq6DoNwn3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🦠 Corrosion &amp; Prevention</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Electrochemistry Made Easy: Corrosion</span>
+                <span class="vid-duration">14:50</span>
+                <span class="vid-toggle" id="toggle-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Ur2pTWRogxA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Ur2pTWRogxA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🔢 Oxidation Numbers</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Assigning Oxidation Numbers — Tyler DeWitt</span>
+                <span class="vid-duration">12:23</span>
+                <span class="vid-toggle" id="toggle-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9nxfgI77Mxk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=9nxfgI77Mxk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">📝 Cell Notation &amp; Diagrams</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Cell Notation Practice Problems, Voltaic Cells — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">14:51</span>
+                <span class="vid-toggle" id="toggle-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iWqUWwyPkSs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iWqUWwyPkSs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">⚖️ Faraday's Second Law</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Faraday's Second Law of Electrolysis — Khan Academy</span>
+                <span class="vid-duration">10:42</span>
+                <span class="vid-toggle" id="toggle-yt13">▶</span>
+            </div>
+            <div class="video-player" id="player-yt13">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/w9o1VP7m_Nc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=w9o1VP7m_Nc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="subsection-label">🏭 Industrial Electrochemistry</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Making Aluminium (The Hall-Héroult Process)</span>
+                <span class="vid-duration">10:09</span>
+                <span class="vid-toggle" id="toggle-yt14">▶</span>
+            </div>
+            <div class="video-player" id="player-yt14">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/aSx59lbc5cg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=aSx59lbc5cg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+        </div>
+
         <div style="margin-top:20px;">
             <div style="font-size:15px;font-weight:700;margin-bottom:10px;">📊 Unit 5 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
@@ -613,62 +1041,17 @@
                 <a href="../assessments/sch4u/Unit5_Electrochemistry_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
             </div>
         </div>
-</div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v35')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Ka and Kb Calculations</span>
-                        <span class="vid-duration">28:52</span>
-                        <span class="vid-toggle" id="toggle-v35">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v35">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/035_Chemistry_12_SCH4U_Ka_and_Kb_Calculations.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=iiToVSasT9E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v36')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Hydrolysis</span>
-                        <span class="vid-duration">46:54</span>
-                        <span class="vid-toggle" id="toggle-v36">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v36">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/036_Chemistry_12_SCH4U_Hydrolysis.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=EO7D9wB2SRg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v37')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Strong Titration</span>
-                        <span class="vid-duration">1:03:57</span>
-                        <span class="vid-toggle" id="toggle-v37">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v37">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/037_Chemistry_12_SCH4U_Strong_Titration.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=fMM-3XkmI40" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-
-                <div class="video-card">
-                    <div class="video-header" onclick="toggleVideo('v38')">
-                        <span class="vid-icon">📖</span>
-                        <span class="vid-title">Chemistry 12 SCH4U Weak Titration</span>
-                        <span class="vid-duration">55:45</span>
-                        <span class="vid-toggle" id="toggle-v38">▶</span>
-                    </div>
-                    <div class="video-player" id="player-v38">
-                        <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/SCH4U/038_Chemistry_12_SCH4U_Weak_Titration.mp4" type="video/mp4"></video>
-                        <a href="https://youtube.com/watch?v=mQc9RbJ23R4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
-                    </div>
-                </div>
-        </div>
     </div>
 
+</div>
+
+<div style="margin-top:32px;padding:24px;background:linear-gradient(135deg,#059669dd,#059669);color:#fff;border-radius:12px;text-align:center;">
+    <div style="font-size:18px;font-weight:700;margin-bottom:8px;">📝 Final Exam</div>
+    <p style="font-size:14px;opacity:0.9;margin-bottom:12px;">Cumulative 3-hour summative exam covering all five strands · 100 marks · 30% of final grade</p>
+    <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
+        <a href="../assessments/sch4u/Final_Exam.html" style="padding:10px 20px;background:#fff;color:#059669;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📋 Open Final Exam</a>
+        <a href="sch4u_curriculum.html" style="padding:10px 20px;background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📚 Curriculum Document</a>
+    </div>
 </div>
 
 <footer class="site-footer"><div class="container">

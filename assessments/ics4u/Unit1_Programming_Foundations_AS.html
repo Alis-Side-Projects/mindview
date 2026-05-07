@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Programming Foundations — Practice Quiz</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:100px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128187; Unit 1: Programming Foundations &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test your understanding of variables, types, I/O, selection, iteration, and program tracing. Instant feedback on every question. All code samples are Python 3.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 — Type conversion</div>
+<div class="qt">What is the output of:
+<div class="code">x = "5"
+y = 2
+print(int(x) + y)</div>
+</div>
+<input type="text" id="q1-in" placeholder="output">
+<button class="btn btn-p" onclick="chkText('q1','7')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div><code>int("5")</code> converts the string <code>"5"</code> to the integer <code>5</code>. Then <code>5 + 2 = 7</code>. Output: <strong>7</strong>. Without <code>int()</code>, you would get a <code>TypeError</code> because <code>"5" + 2</code> mixes incompatible types.</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 — Operator precedence</div>
+<div class="qt">What does this expression evaluate to: <code>2 + 3 * 4 ** 2 - 1</code>?</div>
+<input type="text" id="q2-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q2','49')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>Order: <strong>**</strong> first, then <strong>*</strong>, then <strong>+/-</strong> left-to-right.<br><code>4 ** 2 = 16</code>; <code>3 * 16 = 48</code>; <code>2 + 48 - 1 = 49</code>.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 — Tracing if/elif</div>
+<div class="qt">What is printed?
+<div class="code">x = 75
+if x &gt;= 90:
+    print("A")
+elif x &gt;= 80:
+    print("B")
+elif x &gt;= 70:
+    print("C")
+else:
+    print("F")</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> A</label></li>
+<li><label><input type="radio" name="q3" value="b"> B</label></li>
+<li><label><input type="radio" name="q3" value="c"> C</label></li>
+<li><label><input type="radio" name="q3" value="d"> F</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>75 fails <code>&gt;=90</code> and <code>&gt;=80</code> but passes <code>&gt;=70</code>. So we print <strong>"C"</strong> and exit the chain (<code>elif</code>/<code>else</code> branches are mutually exclusive).</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 — Loop trace</div>
+<div class="qt">What is the value of <code>total</code> after this loop?
+<div class="code">total = 0
+for i in range(1, 6):
+    total += i * 2
+print(total)</div>
+</div>
+<input type="text" id="q4-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q4','30')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div><code>range(1,6)</code> &rarr; <code>1,2,3,4,5</code>. Each iteration adds <code>i*2</code>: <code>2+4+6+8+10 = 30</code>.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 — Boolean logic</div>
+<div class="qt">What is the value of: <code>(5 &gt; 3) and not (10 &lt; 5)</code>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> True</label></li>
+<li><label><input type="radio" name="q5" value="b"> False</label></li>
+<li><label><input type="radio" name="q5" value="c"> None</label></li>
+<li><label><input type="radio" name="q5" value="d"> SyntaxError</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','a')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div><code>5&gt;3</code> &rarr; <code>True</code>. <code>10&lt;5</code> &rarr; <code>False</code>. <code>not False</code> &rarr; <code>True</code>. <code>True and True</code> &rarr; <strong>True</strong>.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 — Identify the bug</div>
+<div class="qt">This code is supposed to print numbers 1 through 10. What's wrong?
+<div class="code">i = 1
+while i &lt; 10:
+    print(i)
+    i += 1</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Variable i is not initialized</label></li>
+<li><label><input type="radio" name="q6" value="b"> Off-by-one: condition should be i &lt;= 10</label></li>
+<li><label><input type="radio" name="q6" value="c"> The increment should be i = i + 2</label></li>
+<li><label><input type="radio" name="q6" value="d"> while loops can't print numbers</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>The condition <code>i &lt; 10</code> stops at i=9. The fix: change to <code>i &lt;= 10</code>. This is a classic <strong>off-by-one</strong> error.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 — Write a small function</div>
+<div class="qt">Write a Python function <code>is_even(n)</code> that returns <code>True</code> if n is even, otherwise <code>False</code>. Type your one-line function body (everything after the colon).</div>
+<input type="text" id="q7-in" placeholder="return ...">
+<button class="btn btn-p" onclick="chkContains('q7',['n%2==0','n % 2 == 0','not n%2','n%2 == 0'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div><code>return n % 2 == 0</code>. The modulo operator <code>%</code> gives the remainder; an even number divided by 2 has remainder 0.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 — Predict output</div>
+<div class="qt">What does this print?
+<div class="code">a, b = 3, 7
+a, b = b, a
+print(a, b)</div>
+</div>
+<input type="text" id="q8-in" placeholder="e.g. 1 2">
+<button class="btn btn-p" onclick="chkText('q8','7 3')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Tuple unpacking. The right side <code>(b, a)</code> evaluates to <code>(7, 3)</code>, then is unpacked to <code>a</code> and <code>b</code>. Output: <strong>7 3</strong>. This is a <em>swap without a temporary variable</em>.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 — Predict nested-loop output</div>
+<div class="qt">How many <code>"*"</code> characters are printed?
+<div class="code">for i in range(3):
+    for j in range(4):
+        print("*", end="")</div>
+</div>
+<input type="text" id="q9-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q9','12')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>Outer runs 3 times; inner runs 4 times each iteration: <code>3 &times; 4 = 12</code> stars.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 — Modulo and integer division</div>
+<div class="qt">What does the following print?
+<div class="code">x = 17
+print(x // 5, x % 5)</div>
+</div>
+<input type="text" id="q10-in" placeholder="e.g. 1 2">
+<button class="btn btn-p" onclick="chkText('q10','3 2')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div><code>//</code> is integer division: <code>17 // 5 = 3</code>. <code>%</code> is remainder: <code>17 % 5 = 2</code>. Output: <strong>3 2</strong>.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 — Complete the pseudocode</div>
+<div class="qt">Convert this pseudocode to Python (fill in the missing line). The function returns the maximum of two numbers.
+<div class="code">def maximum(a, b):
+    if a &gt;= b:
+        return a
+    ____________________</div>
+</div>
+<input type="text" id="q11-in" placeholder="missing line">
+<button class="btn btn-p" onclick="chkContains('q11',['return b','else: return b','else:','return  b'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div><code>return b</code> (the <code>else</code> is implicit because the first <code>return</code> exits the function). Some teachers prefer the explicit <code>else: return b</code>.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 — Identify a runtime error</div>
+<div class="qt">Which of the following lines will raise a runtime error in Python 3?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> <code>x = "3" + "4"</code></label></li>
+<li><label><input type="radio" name="q12" value="b"> <code>x = int("hello")</code></label></li>
+<li><label><input type="radio" name="q12" value="c"> <code>x = 10 / 2</code></label></li>
+<li><label><input type="radio" name="q12" value="d"> <code>x = bool(0)</code></label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div><code>int("hello")</code> raises <code>ValueError</code> because <code>"hello"</code> is not a parseable integer. <code>"3" + "4"</code> concatenates to <code>"34"</code> (no error). <code>10/2</code> = 5.0 (no error). <code>bool(0)</code> = False (no error).</div></div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 1: Programming Foundations | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector('input[name="'+q+'"]:checked');
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function chkText(q,c){
+const v=document.getElementById(q+'-in').value.trim();
+if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}
+if(sl)sl.classList.add('show');up();
+}
+function chkContains(q,acceptable){
+const v=document.getElementById(q+'-in').value.trim().toLowerCase();
+if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+const norm=v.replace(/\s+/g,'');
+const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));
+if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

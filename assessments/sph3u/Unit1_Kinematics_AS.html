@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Kinematics — Practice Quiz (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text]{padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>⚙️ Unit 1: Kinematics — Practice Quiz</h1>
+<div class="sub">Assessment AS Learning — Self-Check (SPH3U)</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test your understanding of 1-D and 2-D motion, vectors, free fall, projectile motion, and relative velocity. Instant feedback with worked solutions on every question.</div>
+
+<div class="formula-ref">
+<h3>📋 Formula Reference</h3>
+\( v = v_0 + at \) &nbsp;|&nbsp; \( d = v_0 t + \tfrac{1}{2}at^2 \) &nbsp;|&nbsp; \( v^2 = v_0^2 + 2ad \) &nbsp;|&nbsp; \( d = \tfrac{1}{2}(v_0+v)t \)<br>
+\( g = 9.8 \text{ m/s}^2 \) &nbsp;|&nbsp; Range \( R = v_0^2\sin(2\theta)/g \) &nbsp;|&nbsp; \( c^2 = a^2+b^2 \)
+</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 10 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 — Average velocity</div>
+<div class="qt">A jogger runs 800 m east in 4.0 min, then 400 m west in 2.0 min. What is the average velocity for the whole trip?</div>
+<div>Answer: <input type="text" id="q1-in" placeholder="m/s" style="width:140px"> m/s [E]</div>
+<button class="btn btn-p" onclick="chkNum('q1',1.11,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>
+Net displacement: \( 800 - 400 = 400 \text{ m east} \)<br>
+Total time: \( 4.0 + 2.0 = 6.0 \text{ min} = 360 \text{ s} \)<br>
+\( v_\text{avg} = 400/360 = 1.11 \text{ m/s [E]} \)
+</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 — Uniform acceleration</div>
+<div class="qt">A car accelerates uniformly from \(8.0\) m/s to \(28\) m/s over a distance of \(120\) m. What is the acceleration?</div>
+<div>Answer: <input type="text" id="q2-in" placeholder="m/s²" style="width:140px"> m/s²</div>
+<button class="btn btn-p" onclick="chkNum('q2',3.0,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>
+Use \( v^2 = v_0^2 + 2ad \):<br>
+\( 28^2 = 8^2 + 2a(120) \)<br>
+\( 784 = 64 + 240a \)<br>
+\( a = 720/240 = 3.0 \text{ m/s}^2 \)
+</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 — Free fall</div>
+<div class="qt">A stone is dropped from a cliff and hits the water \(2.5\) s later. How tall is the cliff (assume air resistance negligible)?</div>
+<div>Answer: <input type="text" id="q3-in" placeholder="m" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q3',30.6,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>
+\( d = \tfrac{1}{2}gt^2 = \tfrac{1}{2}(9.8)(2.5)^2 = 30.6 \text{ m} \)
+</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 — Vector addition</div>
+<div class="qt">A hiker walks \(6.0\) km east then \(8.0\) km north. What is the magnitude of the displacement?</div>
+<div>Answer: <input type="text" id="q4-in" placeholder="km" style="width:140px"> km</div>
+<button class="btn btn-p" onclick="chkNum('q4',10.0,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>
+\( |\vec d| = \sqrt{6^2 + 8^2} = \sqrt{36+64} = \sqrt{100} = 10.0 \text{ km} \)
+</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 — Horizontal projectile</div>
+<div class="qt">A ball is thrown horizontally at \(15\) m/s from a cliff \(45\) m high. How long does it take to hit the ground?</div>
+<div>Answer: <input type="text" id="q5-in" placeholder="s" style="width:140px"> s</div>
+<button class="btn btn-p" onclick="chkNum('q5',3.03,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>
+Vertical motion: \( 45 = \tfrac{1}{2}(9.8)t^2 \) so \( t^2 = 9.18 \), \( t = 3.03 \text{ s} \)
+</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 — Projectile range (angle launch)</div>
+<div class="qt">A football is kicked at \(20\) m/s at \(30°\) above the horizontal. What is its range on level ground?</div>
+<div>Answer: <input type="text" id="q6-in" placeholder="m" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q6',35.3,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>
+\( R = v_0^2 \sin(2\theta)/g = 20^2 \sin(60°)/9.8 = 400(0.866)/9.8 = 35.3 \text{ m} \)
+</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 — Maximum height</div>
+<div class="qt">For the kick in Q6, what maximum height does the ball reach?</div>
+<div>Answer: <input type="text" id="q7-in" placeholder="m" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q7',5.10,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>
+\( v_{0y} = 20\sin(30°) = 10 \text{ m/s} \)<br>
+At apex \( v_y=0 \): \( 0 = 10^2 - 2(9.8)H \), so \( H = 100/19.6 = 5.10 \text{ m} \)
+</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 — Relative velocity (river crossing)</div>
+<div class="qt">A boat heads directly across a river at \(4.0\) m/s relative to the water. The current flows downstream at \(3.0\) m/s. What is the boat's resultant speed relative to the shore?</div>
+<div>Answer: <input type="text" id="q8-in" placeholder="m/s" style="width:140px"> m/s</div>
+<button class="btn btn-p" onclick="chkNum('q8',5.0,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>
+Velocities are perpendicular: \( v = \sqrt{4^2+3^2} = \sqrt{25} = 5.0 \text{ m/s} \)
+</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 — Concept (multiple choice)</div>
+<div class="qt">A ball thrown straight up returns to the thrower's hand. At the highest point of its motion, which statement is correct?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Velocity is zero, acceleration is zero</label></li>
+<li><label><input type="radio" name="q9" value="b"> Velocity is zero, acceleration is \( 9.8 \text{ m/s}^2 \) downward</label></li>
+<li><label><input type="radio" name="q9" value="c"> Velocity is maximum, acceleration is zero</label></li>
+<li><label><input type="radio" name="q9" value="d"> Velocity equals initial velocity, acceleration is zero</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>
+At the apex the ball is momentarily at rest (\( v=0 \)) but gravity continues to accelerate it downward at \( g = 9.8 \) m/s², which is what brings it back down.
+</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 — Stopping distance</div>
+<div class="qt">A car travelling at \(25\) m/s applies the brakes and decelerates uniformly at \(5.0\) m/s². How far does the car travel before stopping?</div>
+<div>Answer: <input type="text" id="q10-in" placeholder="m" style="width:140px"> m</div>
+<button class="btn btn-p" onclick="chkNum('q10',62.5,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>
+\( v^2 = v_0^2 + 2ad \): \( 0 = 25^2 + 2(-5)d \), so \( d = 625/10 = 62.5 \text{ m} \)
+</div></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 1: Kinematics | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=10;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();}
+function chkNum(q,c,tol){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.05){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected ≈ '+c.toFixed(2)+'. See solution.';}
+if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

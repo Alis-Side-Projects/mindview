@@ -9,7 +9,7 @@
 .unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
 .unit-header h2 { font-size: 22px; margin-bottom: 4px; }
 .unit-header p { opacity: 0.85; font-size: 14px; }
-.unit-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; opacity: 0.7; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
 
 .topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
@@ -40,11 +40,15 @@
 .assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
 .assessment-card .a-body p { font-size: 12px; color: #64748b; }
 .assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
 
 </style>
 </head><body>
 <nav class="navbar"><div class="nav-container">
-<a href="../" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
+<a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
 <div class="nav-links"><a href="../">Home</a><a href="../#courses">Courses</a></div></div></nav>
 
 <div class="chapter-hero" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
@@ -266,6 +270,32 @@
                         <a href="https://youtube.com/watch?v=cqPV1668eYg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt5')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Implicit Differentiation Explained — Product Rule, Quotient &amp; Chain Rule — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">18:15</span>
+                        <span class="vid-toggle" id="toggle-yt5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt5">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LGY-DjFsALc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=LGY-DjFsALc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Higher Order Derivatives — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">8:03</span>
+                        <span class="vid-toggle" id="toggle-yt6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt6">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/s7rd9YPJrNc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=s7rd9YPJrNc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
         </div>
     </div>
 
@@ -416,6 +446,19 @@
                     <div class="video-player" id="player-v22">
                         <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/022_Calculus_Chapter_3_Optimization_Practice_Test_Part_3.mp4" type="video/mp4"></video>
                         <a href="https://youtube.com/watch?v=PJ4H_4kdFRc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt7')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Introduction to Related Rates — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">12:08</span>
+                        <span class="vid-toggle" id="toggle-yt7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt7">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/I9mVUo-bhM8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=I9mVUo-bhM8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
         </div>
@@ -620,6 +663,19 @@
                 </div>
 
                 <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Logarithmic Functions Differentiation — Derivative of ln x and log_b x — Khan Academy</span>
+                        <span class="vid-duration">8:39</span>
+                        <span class="vid-toggle" id="toggle-yt8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt8">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WZPpbkVESVk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=WZPpbkVESVk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v35')">
                         <span class="vid-icon">📖</span>
                         <span class="vid-title">Calculus 5.3 Optimization Problems using exponential functions</span>
@@ -683,6 +739,59 @@
                         <a href="https://youtube.com/watch?v=B7iXl_C8rwk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+
+        <!-- Curriculum-aligned external video lessons -->
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Logarithmic Differentiation Formula — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">11:21</span>
+                <span class="vid-toggle" id="toggle-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/C2kbaQeb_FM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=C2kbaQeb_FM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Logarithmic Differentiation of Exponential Functions — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">40:13</span>
+                <span class="vid-toggle" id="toggle-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/sgKuoFLnZEs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=sgKuoFLnZEs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Sinusoidal Models — Daily Temperature Word Problem — Khan Academy</span>
+                <span class="vid-duration">5:42</span>
+                <span class="vid-toggle" id="toggle-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/oD9e4xOeaWE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=oD9e4xOeaWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Sinusoidal Word Problems — Tides &amp; Periodic Functions — Khan Academy</span>
+                <span class="vid-duration">7:55</span>
+                <span class="vid-toggle" id="toggle-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/g0X4c8dBT4g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=g0X4c8dBT4g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
         </div>
     </div>
 
@@ -924,6 +1033,19 @@
                 </div>
 
                 <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt9')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Cross Product of Two Vectors — Definition &amp; Calculation — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">12:53</span>
+                        <span class="vid-toggle" id="toggle-yt9">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt9">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/pWbOisq1MJU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=pWbOisq1MJU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
                     <div class="video-header" onclick="toggleVideo('v55')">
                         <span class="vid-icon">📖</span>
                         <span class="vid-title">Vectors 7.7 Applications of Cross Product and The Triple Scalar Product</span>
@@ -1046,6 +1168,19 @@
                     <div class="video-player" id="player-v62">
                         <video controls preload="none"><source src="https://storage.googleapis.com/dondelete_vi/MCV4U/062_Vectors_8.5_The_Cartesian_Equation_of_a_Plane.mp4" type="video/mp4"></video>
                         <a href="https://youtube.com/watch?v=A0t6nxDm0ic" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt10')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Equation of a Plane Given a Point and Perpendicular Normal Vector — Scalar/Normal Form — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">10:58</span>
+                        <span class="vid-toggle" id="toggle-yt10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt10">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2sZKZHyaQJ8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=2sZKZHyaQJ8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
 
@@ -1200,6 +1335,16 @@
                         <a href="https://youtube.com/watch?v=wnaCx_0o4DE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
                     </div>
                 </div>
+        </div>
+    </div>
+
+    <div style="margin-top:48px;padding:28px;background:linear-gradient(135deg,#7c3aedee,#6366f1);color:#fff;border-radius:14px;">
+        <div style="font-size:13px;opacity:0.85;letter-spacing:1px;text-transform:uppercase;font-weight:700;">📘 Final Evaluation — 30% of Final Grade</div>
+        <h2 style="font-size:24px;margin:8px 0 6px;">MCV4U Final Exam (Cumulative)</h2>
+        <p style="font-size:14px;opacity:0.9;margin-bottom:14px;">3 hours · 100 marks · K/U 25 / T 25 / C 25 / A 25 · Covers all 9 units. Includes a complete answer key.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <a href="../assessments/mcv4u/Final_Exam.html" style="padding:10px 20px;background:#fff;color:#5b21b6;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📝 Open Final Exam</a>
+            <a href="mcv4u_curriculum.html" style="padding:10px 20px;background:rgba(255,255,255,0.2);color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,0.4);">📋 Curriculum Document</a>
         </div>
     </div>
 

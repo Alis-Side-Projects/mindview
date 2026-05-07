@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Software Engineering &amp; Society — Unit Test</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 5: Software Engineering &amp; Society &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code answers must be syntactically valid Python 3. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[2 marks]</span></div>
+<div class="qt">List the six standard phases of the Software Development Life Cycle (SDLC) in order.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Define each term in your own words (one sentence each):
+<ul style="margin-left:22px;">
+<li>Unit testing</li>
+<li>Regression testing</li>
+<li>Black-box vs. white-box testing</li>
+</ul>
+</div>
+<textarea style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">A teammate runs <code>git pull</code>. Explain what just happened, and what they should do next if there is a merge conflict.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[2 marks]</span></div>
+<div class="qt">Identify <strong>two</strong> historical contributors to computer science (one Canadian if possible) and briefly state their contribution.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">In one or two sentences each, define:
+<ul style="margin-left:22px;">
+<li>Algorithmic bias</li>
+<li>Open-source software</li>
+<li>The principle of least privilege</li>
+</ul>
+</div>
+<textarea style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[3 marks]</span></div>
+<div class="qt">Identify three Ontario universities that offer a Bachelor of Computer Science (or equivalent), and three Ontario colleges that offer related diploma programs.</div>
+<textarea></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find &amp; fix the bugs / write tests. Below is a buggy function that should return <code>True</code> if a year is a leap year (Gregorian rules: divisible by 4, but not by 100, unless also by 400). It has <strong>two bugs</strong>.
+<div class="code">def is_leap(year):
+    if year % 4 == 0:
+        return True
+    elif year % 100 == 0:
+        return False
+    else:
+        return False</div>
+(a) Provide the corrected function. (b) Write four test cases (year, expected) that, together, would have caught the bugs.</div>
+<textarea placeholder="def is_leap(year): ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Algorithmic-bias case study. A high-school admissions algorithm uses past acceptance data and ends up favouring applicants from certain postal codes. (a) Identify two plausible mechanisms by which this bias could have entered the system. (b) Suggest two concrete mitigations a development team could implement.</div>
+<textarea style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Estimate the carbon impact of a typical home Wi-Fi router that draws 8 W continuously over one year. Assume Ontario's grid has roughly 30 g of CO&#8322; per kWh delivered. Provide:
+<ol style="margin-left:24px;">
+<li>kWh per year (round to 1 dp)</li>
+<li>kg of CO&#8322; per year</li>
+<li>One software-related way someone could reduce this per year (with a brief justification)</li>
+</ol>
+</div>
+<textarea style="min-height:140px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">A peer's program works but is one giant 200-line <code>main()</code> with no comments. Write a 4-5 point review explaining specific maintainability issues and how to fix each.</div>
+<textarea style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">Short essay (150-200 words). "Should facial-recognition technology be regulated by the Canadian government? Discuss." Take a position and provide at least two specific reasons. Reference at least one specific risk and one specific benefit.</div>
+<textarea style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a clear, professional commit message (50-character title + body) for a change that "fixes a crash when the user enters a non-numeric input to the wage calculator". Use Git conventions: imperative mood, why &gt; what, blank line before body.</div>
+<textarea placeholder="Fix crash on non-numeric wage input\n\nWage calculator previously crashed with ValueError when..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a function <code>safe_divide(a, b)</code> that returns <code>a/b</code>. If <code>b == 0</code>, the function should raise a <code>ValueError</code> with a clear message. Then write 4 unit tests using <code>unittest</code>: normal case, zero numerator, zero denominator (should raise), and negative inputs.</div>
+<textarea placeholder="import unittest..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">A teammate's function below has a logic bug AND a poor design choice. (a) Identify the bug and explain its symptom. (b) Identify the design issue. (c) Refactor the function to fix both issues, with a brief docstring.
+<div class="code">def calculate_total(items):
+    total = 0
+    for item in items:
+        if item["price"] &gt; 0:
+            total += item["price"]
+    print("Your total is " + str(total))</div>
+</div>
+<textarea placeholder="(a) Bug: ..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">15. <span class="qm">[5 marks]</span></div>
+<div class="qt">Capstone planning. Write a one-page proposal for a small, ethical software project you could build as a final capstone. Include:
+<ol style="margin-left:24px;">
+<li>Problem &amp; user (who needs this?)</li>
+<li>Two main features</li>
+<li>Data structures involved</li>
+<li>One ethical/privacy consideration</li>
+<li>How you would test it</li>
+</ol>
+</div>
+<textarea placeholder="Project: ..." style="min-height:240px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code; clear ethical reasoning</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard) &mdash; mostly correct with minor issues</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 5: Software Engineering &amp; Society &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

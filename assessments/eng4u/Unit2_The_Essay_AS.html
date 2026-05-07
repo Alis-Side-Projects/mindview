@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: The Essay — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 2: The Essay — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand C</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of the writing process, essay forms, MLA citation, and rhetorical appeals. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1 — Thesis &amp; Process</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">A strong analytical thesis must be:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Vague enough to cover any topic</label></li>
+<li><label><input type="radio" name="q1" value="b"> Specific, debatable, and supportable with textual evidence</label></li>
+<li><label><input type="radio" name="q1" value="c"> A factual statement no one would contest</label></li>
+<li><label><input type="radio" name="q1" value="d"> A question</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Theses must be debatable (someone could disagree), specific (about this text, this device, this effect), and supportable (you can prove it with quoted evidence). Facts and questions are not theses.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">In the writing process, "revising" differs from "editing" because revising:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Only fixes spelling</label></li>
+<li><label><input type="radio" name="q2" value="b"> Reshapes ideas, structure, and argument; editing polishes sentence-level mechanics</label></li>
+<li><label><input type="radio" name="q2" value="c"> Is identical to editing</label></li>
+<li><label><input type="radio" name="q2" value="d"> Is the very last step</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Revising = re-seeing — you may cut a paragraph, re-order sections, sharpen the thesis. Editing/proofreading = sentence-level repair (grammar, punctuation, spelling, citation format). Both are needed; revision should come first.</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div>
+<div class="passage">Sample thesis: "This essay is going to talk about how Hamlet is sad in different ways."</div>
+<div class="qtxt">Why is this thesis weak?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> It refers to the play; theses cannot mention texts</label></li>
+<li><label><input type="radio" name="q3" value="b"> It announces an intention rather than asserting an interpretive claim, and "sad in different ways" is vague</label></li>
+<li><label><input type="radio" name="q3" value="c"> It is too specific</label></li>
+<li><label><input type="radio" name="q3" value="d"> It uses too many technical terms</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Strong theses make a claim, not an announcement. A revision: "Hamlet's melancholy in 1.2 expresses moral revulsion at his uncle's marriage rather than mere personal grief, framing his later inaction as ethical scruple rather than weakness."</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Essay Forms &amp; Rhetoric</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">Aristotle's three rhetorical appeals are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Past, present, future</label></li>
+<li><label><input type="radio" name="q4" value="b"> Ethos (credibility), Pathos (emotion), Logos (logic)</label></li>
+<li><label><input type="radio" name="q4" value="c"> Plot, character, setting</label></li>
+<li><label><input type="radio" name="q4" value="d"> Subject, verb, object</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Ethos appeals to the speaker's credibility/character; pathos to the audience's emotions; logos to reason, evidence, and logical structure. Effective persuasion typically blends all three.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div>
+<div class="passage">"Everyone is buying the new phone — you should too."</div>
+<div class="qtxt">This argument commits which logical fallacy?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Ad hominem</label></li>
+<li><label><input type="radio" name="q5" value="b"> Bandwagon (appeal to popularity)</label></li>
+<li><label><input type="radio" name="q5" value="c"> Straw man</label></li>
+<li><label><input type="radio" name="q5" value="d"> Slippery slope</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Bandwagon (ad populum) — claiming a thing is true/good because many people accept it. Popularity is not evidence of correctness or value.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">A persuasive essay's <em>counter-argument</em> paragraph should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Be omitted to keep your case strong</label></li>
+<li><label><input type="radio" name="q6" value="b"> Acknowledge the strongest opposing view fairly, then refute or accommodate it</label></li>
+<li><label><input type="radio" name="q6" value="c"> Insult opponents</label></li>
+<li><label><input type="radio" name="q6" value="d"> Restate your own thesis</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Strong argument writing models the steel-man, not the straw-man. State the best opposing case in good faith, then show why your view still holds (refute) or how the two perspectives can be reconciled (accommodate).</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">An <em>expository</em> essay primarily aims to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Persuade readers to take action</label></li>
+<li><label><input type="radio" name="q7" value="b"> Inform or explain a topic objectively</label></li>
+<li><label><input type="radio" name="q7" value="c"> Tell a fictional story</label></li>
+<li><label><input type="radio" name="q7" value="d"> Express a single emotion</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Exposition explains. Common patterns: definition, classification, comparison/contrast, cause/effect, process. Tone is neutral and informational, though arguments may emerge.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — MLA Citation</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">In MLA 9th edition, an in-text citation for a paraphrased idea from page 47 of a book by Atwood is written as:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> (Atwood, 47)</label></li>
+<li><label><input type="radio" name="q8" value="b"> (Atwood 47)</label></li>
+<li><label><input type="radio" name="q8" value="c"> [Atwood, p. 47]</label></li>
+<li><label><input type="radio" name="q8" value="d"> Atwood (47)</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> MLA in-text format: (Author Page) — author's last name and page, no comma, no "p." Example: (Atwood 47). When the author is named in the sentence, only the page goes in parentheses: "Atwood argues … (47)."</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">Which Works Cited entry is correctly formatted (MLA 9)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Atwood, Margaret. <em>The Handmaid's Tale.</em> McClelland and Stewart, 1985.</label></li>
+<li><label><input type="radio" name="q9" value="b"> Margaret Atwood — <em>The Handmaid's Tale</em>, 1985, McClelland.</label></li>
+<li><label><input type="radio" name="q9" value="c"> The Handmaid's Tale by M. Atwood (1985)</label></li>
+<li><label><input type="radio" name="q9" value="d"> Atwood, M. 1985. The Handmaid's Tale. Toronto.</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> MLA core elements: Author. <em>Title of book</em>. Publisher, Year. Author given Last, First; book title italicised; period after title; publisher then year separated by comma; period at end.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">When citing four or more lines of poetry as a block quotation, you should:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Run them inline with quotation marks and slashes</label></li>
+<li><label><input type="radio" name="q10" value="b"> Indent the block half an inch, omit the quotation marks, and cite line numbers in parentheses after the closing punctuation</label></li>
+<li><label><input type="radio" name="q10" value="c"> Italicise them</label></li>
+<li><label><input type="radio" name="q10" value="d"> Bold them</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> MLA block-quote rule: 4+ lines of verse (or 4+ typed lines of prose) → start a new line, indent 0.5", no quotation marks, citation in parens AFTER the final period.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Style &amp; Conventions</div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div>
+<div class="passage">"In the essay 'The Death of the Moth,' Woolf shows that the moth is dying. The moth is dying. The moth's death is shown by Woolf."</div>
+<div class="qtxt">The most important revision strategy for this passage is to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Add more sentences</label></li>
+<li><label><input type="radio" name="q11" value="b"> Combine and vary the sentences to eliminate repetition and add analytical depth (the writer is paraphrasing, not analysing)</label></li>
+<li><label><input type="radio" name="q11" value="c"> Translate it into another language</label></li>
+<li><label><input type="radio" name="q11" value="d"> Add the word "very"</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> The passage repeats the same fact. Strong revision combines sentences and pushes toward analysis: "In 'The Death of the Moth,' Woolf transforms the dying moth into a meditation on the futility and dignity of resistance — the creature's small body becomes the vehicle for a vision of life's losing struggle against death."</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Academic writing typically uses which point of view for literary analysis?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> First person ("I think")</label></li>
+<li><label><input type="radio" name="q12" value="b"> Third person ("Atwood argues …")</label></li>
+<li><label><input type="radio" name="q12" value="c"> Second person ("you must see")</label></li>
+<li><label><input type="radio" name="q12" value="d"> No POV at all</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Most academic literary analysis uses third person to keep focus on the text and its claims rather than the writer. Some Canadian university programs accept measured first-person ("I argue") in conclusions; high-school marking still favours third person throughout.</div></div>
+
+</div>
+
+<footer>ENG4U — English, Grade 12 | Strand C: Writing | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

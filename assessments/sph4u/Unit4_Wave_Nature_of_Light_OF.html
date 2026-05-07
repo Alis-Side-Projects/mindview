@@ -10,123 +10,152 @@
 :root{--p:#d97706;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
+.ctr{max-width:880px;margin:0 auto;padding:20px}
 header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
 header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
 .warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
 .sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
 .sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
 .sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
 .qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
 .qm{float:right;font-size:13px;color:var(--m);font-weight:600}
 .qt{margin:8px 0 12px}
 .mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px}
+textarea{width:100%;min-height:100px;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit;resize:vertical}
+.draw{height:160px;border:1px dashed #94a3b8;border-radius:8px;margin:8px 0;background:#fff;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;font-style:italic}
 .chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
 .chart-i{text-align:center;padding:12px;border-radius:8px}
 .chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:14px;margin-bottom:24px;font-size:14px}
 .formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+details{background:#f8fafc;border:1px solid var(--b);border-radius:8px;padding:12px 16px;margin-top:16px}
+details summary{font-weight:700;color:var(--p);cursor:pointer;font-size:15px}
+details .sol-block{margin-top:12px;font-size:14px}
+details .sol-block h4{color:var(--p);margin:12px 0 4px;font-size:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
 footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
+</style></head>
 <body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sph4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
 <div class="ctr">
-
 <header><h1>📝 Unit 4: Wave Nature of Light — Unit Test</h1>
-<div class="sub">Assessment OF Learning</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+<div class="sub">Assessment OF Learning — Summative</div>
+<div class="badge">✅ Graded — Counts toward 70% term mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks. Use \(c=3.00\times10^8\,\text{m/s}\), \(h=6.63\times10^{-34}\,\text{J·s}\).</div>
 <div class="chart">
 <div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Formulae</h3>\( c = f\lambda \) | \( n\lambda = d\sin\theta \) | \( E = hf \) | \( E_k = hf - W \) | \( h = 6.63\times10^{-34}\text{ J·s} \)</div>
-
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div><div class="qt">Standard calculation problem for this unit.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div><div class="qt">Conceptual knowledge question.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div><div class="qt">Multi-part calculation.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div><div class="qt">Define and explain key concepts.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div><div class="qt">Apply formula to solve problem.</div><textarea></textarea></div>
-
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div><div class="qt">Complex multi-step problem requiring derivation or proof.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div><div class="qt">Problem combining multiple concepts from this unit.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div><div class="qt">Novel situation requiring creative application of principles.</div><textarea style="min-height:150px;"></textarea></div>
-
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div><div class="qt">Explain a key concept with diagrams and proper terminology.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div><div class="qt">Correct a misconception with clear reasoning.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div><div class="qt">Compare and contrast related concepts with examples.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div><div class="qt">Real-world application problem.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div><div class="qt">Technology or engineering context problem.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div><div class="qt">Multi-context problem requiring transfer of knowledge.</div><textarea style="min-height:150px;"></textarea></div>
-
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-
-<footer>SPH4U — Physics, Grade 12 | Unit 4: Wave Nature of Light — OF | Ontario Curriculum 2008</footer>
+<div class="formula-ref"><h3>📋 Formulae</h3>
+\(c=f\lambda\) | \(n_1\sin\theta_1=n_2\sin\theta_2\) | \(\sin\theta_c=n_2/n_1\) | Double slit (max): \(d\sin\theta=m\lambda\), \(\Delta y=\lambda L/d\) | Single slit (min): \(a\sin\theta=m\lambda\) | Grating: \(d\sin\theta=m\lambda\) | Thin film: \(2nt = (m+\tfrac12)\lambda\) (constructive, soft-hard) | \(E=hf\) | Malus: \(I=I_0\cos^2\theta\)
 </div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">1. <span class="qm">[2]</span></div>
+<div class="qt">A radio wave has wavelength \(3.0\,\text{m}\). Calculate its frequency.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
+<div class="qt">Light travels from air (\(n=1.00\)) into water (\(n=1.33\)) at an angle of incidence of \(40°\). (a) Find the angle of refraction. (b) Compute the speed of light in water. (c) State Snell's law.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">3. <span class="qm">[2]</span></div>
+<div class="qt">Determine the critical angle for light passing from glass (\(n=1.50\)) into air.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
+<div class="qt">In a Young's double-slit experiment, slits separated by \(0.20\,\text{mm}\) produce fringes \(6.6\,\text{mm}\) apart on a screen \(2.5\,\text{m}\) away. Calculate the wavelength of the light.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">5. <span class="qm">[2]</span></div>
+<div class="qt">Choose the best answer. Diffraction is most pronounced when:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> (a) wavelength \(\ll\) slit width</label></li>
+<li><label><input type="radio" name="q5"> (b) wavelength \(\gg\) slit width</label></li>
+<li><label><input type="radio" name="q5"> (c) wavelength \(\approx\) slit width</label></li>
+<li><label><input type="radio" name="q5"> (d) the wave is monochromatic</label></li></ul></div>
+
+<div class="qc"><div class="qn">6. <span class="qm">[3]</span></div>
+<div class="qt">Briefly state how each of the following provides evidence for the wave nature of light: (a) diffraction, (b) interference, (c) polarization.</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
+<div class="qt">A diffraction grating with \(6000\) lines/cm is illuminated with monochromatic light. The 2nd-order maximum is observed at \(43°\). (a) Find the slit spacing \(d\). (b) Calculate the wavelength. (c) How many maxima are observable in total?</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
+<div class="qt">An anti-reflective coating on a camera lens has refractive index \(n_{film}=1.38\) on glass (\(n_{glass}=1.52\)). Find the minimum thickness of the coating that minimizes reflection of light with vacuum wavelength \(550\,\text{nm}\). Show reasoning about phase changes.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
+<div class="qt">Two polarizing filters are crossed (axes at \(90°\)). A third polarizer is inserted between them with its axis at \(\theta\) to the first. (a) Derive the transmitted intensity in terms of \(I_0\) and \(\theta\). (b) Find the value of \(\theta\) that maximizes transmission and the maximum fraction transmitted.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
+<div class="qt">Using a labelled diagram, explain how Young's double-slit experiment provides quantitative evidence for the wave nature of light. Include path difference and the conditions for constructive/destructive interference.</div>
+<div class="draw">[ Diagram: source → slits → screen with fringe pattern; mark path difference \(d\sin\theta\) ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
+<div class="qt">A student says: "Total internal reflection happens whenever light hits a boundary going from a less dense to a more dense medium." Correct this statement, defining the critical angle and giving one technological example (e.g., fibre optics) where TIR is exploited.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
+<div class="qt">Compare and contrast single-slit diffraction and double-slit interference patterns. Address central maximum width, fringe spacing formulas, intensity envelope, and a simple sketch of each pattern.</div>
+<div class="draw">[ Sketch single-slit envelope vs double-slit fringes ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
+<div class="qt">An optical fibre core has \(n=1.50\); the cladding has \(n=1.46\). (a) Compute the critical angle at the core-cladding boundary. (b) Compute the maximum acceptance angle in air for a ray that will undergo TIR. (c) Discuss one social impact of fibre-optic networks.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
+<div class="qt">A soap film (\(n=1.33\)) on a window appears to reflect green light strongly at \(\lambda=540\,\text{nm}\). Find the minimum non-zero thickness consistent with constructive reflection. Identify the phase changes at each surface.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">15. <span class="qm">[5]</span></div>
+<div class="qt">Polarized sunglasses are useful for reducing glare from horizontal surfaces (water, roads). (a) Explain using Brewster's idea why glare is preferentially polarized. (b) Calculate Brewster's angle for water (\(n=1.33\)). (c) Discuss the orientation of the transmission axis of polarized sunglasses and its effect on LCD screen visibility.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<details>
+<summary>📖 Complete Answer Key (Click to reveal)</summary>
+<div class="sol-block">
+<h4>Q1.</h4> \(f=c/\lambda = 3.0e8/3.0 = 1.0\times10^8\,\text{Hz} = 100\,\text{MHz}\).
+<h4>Q2.</h4> (a) \(\sin\theta_2 = (1/1.33)\sin 40°=0.483 \Rightarrow \theta_2=28.9°\). (b) \(v = c/n = 2.26\times10^8\,\text{m/s}\). (c) \(n_1\sin\theta_1=n_2\sin\theta_2\).
+<h4>Q3.</h4> \(\sin\theta_c = 1/1.50 \Rightarrow \theta_c = 41.8°\).
+<h4>Q4.</h4> \(\lambda = d\Delta y/L = (2e{-}4)(6.6e{-}3)/2.5 = 5.28\times10^{-7}\,\text{m}=528\,\text{nm}\).
+<h4>Q5.</h4> (c).
+<h4>Q6.</h4> (a) Bending around obstacles → wave behaviour. (b) Bright/dark fringes from path-difference interference (only waves superpose). (c) Transverse waves can be filtered by axis orientation; particles cannot be polarized.
+<h4>Q7.</h4> (a) \(d=1/6000\,\text{cm}=1.667\times10^{-6}\,\text{m}\). (b) \(\lambda = d\sin 43°/2 = (1.667e{-}6)(0.682)/2=5.68\times10^{-7}\,\text{m}=568\,\text{nm}\). (c) \(m_{max}=d/\lambda=2.93 \Rightarrow m=0,\pm1,\pm2 \Rightarrow 5\) maxima visible.
+<h4>Q8.</h4> Both reflections (air→film, film→glass) introduce \(\pi\) phase changes (low→high \(n\) at each), so destructive condition is \(2nt = (m+\tfrac12)\lambda\). Min: \(t_{min} = \lambda/(4n) = 550/(4\cdot1.38)=99.6\,\text{nm}\).
+<h4>Q9.</h4> (a) After P1: \(I_0/2\). After P2 (at θ): \(I_0/2 \cdot \cos^2\theta\). After P3 (at \(90°-\theta\) to P2): \(I_0/2 \cdot \cos^2\theta\cdot\cos^2(90°-\theta) = I_0/2 \cdot \cos^2\theta\sin^2\theta = I_0/8 \cdot \sin^2(2\theta)\). (b) Max at \(\theta=45°\), maximum fraction = \(1/8\) = 12.5%.
+<h4>Q10.</h4> Bright fringes where \(d\sin\theta=m\lambda\); dark where \(d\sin\theta=(m+\tfrac12)\lambda\). Fringe spacing \(\Delta y = \lambda L/d\). Equal-spaced bright/dark fringes are predicted only by superposition of waves.
+<h4>Q11.</h4> TIR requires going from higher \(n\) to lower \(n\) AND \(\theta>\theta_c\). Example: fibre-optic communication.
+<h4>Q12.</h4> Single slit: central max twice as wide, minima at \(a\sin\theta=m\lambda\), intensity envelope decreases. Double slit: equally spaced bright fringes inside diffraction envelope.
+<h4>Q13.</h4> (a) \(\sin\theta_c = 1.46/1.50 \Rightarrow \theta_c = 76.7°\). (b) Acceptance: \(n_0\sin\theta_a = \sqrt{n_1^2-n_2^2}=\sqrt{1.50^2-1.46^2}=0.343 \Rightarrow \theta_a=20.1°\). (c) High-bandwidth global telecom; "digital divide" if access is uneven.
+<h4>Q14.</h4> One π phase change (air→soap), none soap→air → constructive condition: \(2nt=(m+\tfrac12)\lambda\). Min: \(t=\lambda/(4n)=540/(4\cdot1.33)=101\,\text{nm}\).
+<h4>Q15.</h4> (a) Reflection off horizontal surfaces preferentially polarizes light horizontally (especially near Brewster's angle). (b) \(\tan\theta_B = 1.33 \Rightarrow \theta_B=53.1°\). (c) Glasses block horizontal polarization (vertical axis). LCD screens emit polarized light; rotating head can dim the display.
+</div></details>
+
+<div class="rubric"><h3 style="margin-top:24px;">Evaluation Rubric</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough, insightful</td><td>80–100%</td></tr>
+<tr><td>3</td><td>Considerable (provincial standard)</td><td>70–79%</td></tr>
+<tr><td>2</td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td>1</td><td>Limited</td><td>50–59%</td></tr>
+<tr><td>R</td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
+
+<footer>SPH4U — Physics, Grade 12 | Unit 4: Wave Nature of Light — OF Learning | Ontario Curriculum 2008</footer>
+</div></body></html>

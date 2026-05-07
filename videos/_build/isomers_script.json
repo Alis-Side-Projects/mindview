@@ -1,0 +1,71 @@
+{
+  "title": "Isomers in Organic Chemistry",
+  "course": "SCH4U",
+  "sections": [
+    {
+      "title": "Isomers",
+      "slide": [
+        "Same molecular formula.",
+        "Different arrangement of atoms.",
+        "",
+        "- Structural isomers",
+        "- Geometric isomers",
+        "- Optical isomers"
+      ],
+      "narration": "Welcome to MindView. In this lesson, we're going to explore one of the most important concepts in organic chemistry: isomers. Two molecules are called isomers when they share the exact same molecular formula, but the atoms inside them are arranged differently. That different arrangement gives them different properties — sometimes very different properties. We'll look at three major types: structural isomers, geometric isomers, and optical isomers."
+    },
+    {
+      "title": "Structural Isomers",
+      "slide": [
+        "Same atoms, different connections.",
+        "",
+        "Example: C four H ten",
+        "> butane vs. 2-methylpropane",
+        "",
+        "- Different boiling points",
+        "- Different reactions",
+        "- Different physical properties"
+      ],
+      "narration": "Let's start with structural isomers, also called constitutional isomers. These are molecules where the atoms are connected to each other in a different order. Take the formula C four H ten. You can arrange those four carbons in a straight chain — that's butane — or you can branch them, putting a methyl group off the middle carbon — that's 2-methylpropane. Same atoms, same formula, completely different connection pattern. And because of that, butane boils at minus 1 degree Celsius, while 2-methylpropane boils at minus 12. Different molecule, different behaviour."
+    },
+    {
+      "title": "Geometric Isomers (cis/trans)",
+      "slide": [
+        "Restricted rotation around a double bond.",
+        "",
+        "> cis: same side    trans: opposite sides",
+        "",
+        "- Found in alkenes (C=C)",
+        "- Different physical properties",
+        "- Critical in fats: cis = healthy, trans = harmful"
+      ],
+      "narration": "Geometric isomers, also called cis-trans isomers, show up when a molecule has a feature that prevents free rotation. The classic example is a carbon-carbon double bond. Because the double bond is rigid, the groups attached to it stay locked in place. If two big groups are on the same side, we call it cis. If they're on opposite sides, we call it trans. This isn't just chemistry trivia — it matters in your kitchen. The cis form of unsaturated fats is the natural, healthy form found in olive oil. The trans form, often created during industrial processing, has been linked to heart disease, which is why trans fats are now restricted in many countries."
+    },
+    {
+      "title": "Optical Isomers (Enantiomers)",
+      "slide": [
+        "Non-superimposable mirror images.",
+        "",
+        "- Caused by a chiral centre",
+        "- Carbon bonded to 4 different groups",
+        "",
+        "> Like your left and right hand",
+        "",
+        "Same physical properties, except how they rotate light."
+      ],
+      "narration": "Now for the most subtle type: optical isomers, also called enantiomers. Imagine your left hand and your right hand. They have the same parts in the same places, but no matter how you twist them, you can't make them perfectly overlap. They're mirror images of each other. Some molecules behave the same way. They contain what we call a chiral centre — usually a carbon atom bonded to four different groups. That asymmetry creates two versions of the molecule that are mirror images. They have identical melting points, identical boiling points, but they rotate polarized light in opposite directions. And in biology, this difference is huge — your body often recognizes one enantiomer and ignores the other completely."
+    },
+    {
+      "title": "Why Isomers Matter",
+      "slide": [
+        "# Real-world impact",
+        "",
+        "- Drug design (left vs right enantiomer)",
+        "- Food chemistry (trans fats)",
+        "- Petroleum (octane rating)",
+        "- Biochemistry (only L-amino acids in proteins)"
+      ],
+      "narration": "So why does any of this matter? Because nature is incredibly picky about which isomer it uses. Almost every protein in your body is built from L-amino acids — never the D form. The drug ibuprofen has two enantiomers; only one of them actually relieves pain. The other does nothing. Trans fats versus cis fats determines whether your food helps or hurts your heart. The octane rating on gasoline depends on structural isomers. Isomerism isn't an academic curiosity — it's the difference between medicine and a useless pill, between a healthy fat and a toxic one. Get comfortable with these three categories — structural, geometric, and optical — and you've got a foundation that runs through the rest of organic chemistry, biochemistry, and pharmacology. I'll see you in the next lesson."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# MindView — files that should NOT be committed
+
+# User database (contains hashed credentials — sensitive)
+users.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Flask session secret key (regenerated per environment)
+.secret_key
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local

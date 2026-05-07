@@ -10,123 +10,147 @@
 :root{--p:#dc2626;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
+.ctr{max-width:880px;margin:0 auto;padding:20px}
 header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
 header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
 .warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
 .sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
 .sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
 .sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
 .qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
 .qm{float:right;font-size:13px;color:var(--m);font-weight:600}
 .qt{margin:8px 0 12px}
 .mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px}
+textarea{width:100%;min-height:100px;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit;resize:vertical}
+.draw{height:160px;border:1px dashed #94a3b8;border-radius:8px;margin:8px 0;background:#fff;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px;font-style:italic}
 .chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
 .chart-i{text-align:center;padding:12px;border-radius:8px}
 .chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:14px;margin-bottom:24px;font-size:14px}
 .formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
+details{background:#f8fafc;border:1px solid var(--b);border-radius:8px;padding:12px 16px;margin-top:16px}
+details summary{font-weight:700;color:var(--p);cursor:pointer;font-size:15px}
+details .sol-block{margin-top:12px;font-size:14px}
+details .sol-block h4{color:var(--p);margin:12px 0 4px;font-size:14px}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
 footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
+</style></head>
 <body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sph4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
 <div class="ctr">
-
 <header><h1>📝 Unit 5: Modern Physics — Unit Test</h1>
-<div class="sub">Assessment OF Learning</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+<div class="sub">Assessment OF Learning — Summative</div>
+<div class="badge">✅ Graded — Counts toward 70% term mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks. Use \(c=3.00\times10^8\,\text{m/s}\), \(h=6.63\times10^{-34}\,\text{J·s}\), \(m_e=9.11\times10^{-31}\,\text{kg}\), \(1\,\text{eV}=1.60\times10^{-19}\,\text{J}\).</div>
 <div class="chart">
 <div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
 <div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Formulae</h3>\( \gamma = 1/\sqrt{1-v^2/c^2} \) | \( \Delta t = \gamma\Delta t_0 \) | \( L = L_0/\gamma \) | \( E = mc^2 \) | \( \lambda = h/(mv) \)</div>
-
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div><div class="qt">Standard calculation problem for this unit.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div><div class="qt">Conceptual knowledge question.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div><div class="qt">Multi-part calculation.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div><div class="qt">Define and explain key concepts.</div><textarea></textarea></div>
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div><div class="qt">Apply formula to solve problem.</div><textarea></textarea></div>
-
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div><div class="qt">Complex multi-step problem requiring derivation or proof.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div><div class="qt">Problem combining multiple concepts from this unit.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div><div class="qt">Novel situation requiring creative application of principles.</div><textarea style="min-height:150px;"></textarea></div>
-
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div><div class="qt">Explain a key concept with diagrams and proper terminology.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div><div class="qt">Correct a misconception with clear reasoning.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div><div class="qt">Compare and contrast related concepts with examples.</div><textarea style="min-height:150px;"></textarea><div class="wc">0 words</div></div>
-
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div><div class="qt">Real-world application problem.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div><div class="qt">Technology or engineering context problem.</div><textarea style="min-height:150px;"></textarea></div>
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div><div class="qt">Multi-context problem requiring transfer of knowledge.</div><textarea style="min-height:150px;"></textarea></div>
-
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-
-<footer>SPH4U — Physics, Grade 12 | Unit 5: Modern Physics — OF | Ontario Curriculum 2008</footer>
+<div class="formula-ref"><h3>📋 Formulae</h3>
+\(\gamma=\dfrac{1}{\sqrt{1-v^2/c^2}}\) | \(\Delta t=\gamma\Delta t_0\) | \(L=L_0/\gamma\) | \(E=\gamma m c^2\), \(E_0=mc^2\) | \(E_k=hf-W\) | \(\lambda=h/p\) | \(E_n=-13.6/n^2\,\text{eV}\) (H) | \(N=N_0(1/2)^{t/T_{1/2}}\)
 </div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">1. <span class="qm">[2]</span></div>
+<div class="qt">A spaceship moves past Earth at \(v=0.60c\). (a) Compute \(\gamma\). (b) An observer on the ship measures their journey to take \(8.0\,\text{years}\) (proper time). How long does an Earth observer measure?</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">2. <span class="qm">[2]</span></div>
+<div class="qt">A metre stick on a rocket flies past at \(v=0.80c\) along its length. What is its length as measured by a stationary observer?</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
+<div class="qt">Light of frequency \(8.0\times10^{14}\,\text{Hz}\) strikes a metal with work function \(W=2.4\,\text{eV}\). (a) Calculate the photon energy in eV. (b) Determine the maximum kinetic energy of emitted electrons. (c) Will photoemission occur if the frequency is \(5.0\times10^{14}\,\text{Hz}\)? Justify.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
+<div class="qt">Calculate the de Broglie wavelength of (a) an electron with KE \(=100\,\text{eV}\), (b) a \(0.145\,\text{kg}\) baseball at \(40\,\text{m/s}\). Comment on observability.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">5. <span class="qm">[2]</span></div>
+<div class="qt">In the Bohr hydrogen atom, an electron transitions from \(n=4\) to \(n=2\). (a) Find the energy of the emitted photon (eV). (b) Find its wavelength (nm) and identify the visible-spectrum colour.</div>
+<textarea></textarea></div>
+
+<div class="qc"><div class="qn">6. <span class="qm">[3]</span></div>
+<div class="qt">A radioactive sample of iodine-131 (\(T_{1/2}=8.0\,\text{days}\)) initially has \(8.0\times10^{16}\) atoms. How many remain after \(24\,\text{days}\)? What fraction has decayed?</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
+<div class="qt">Muons (\(T_{1/2}=1.56\,\mu\text{s}\) at rest) are produced \(10\,\text{km}\) above Earth and travel at \(v=0.995c\). (a) Compute \(\gamma\). (b) Compare the time-of-flight in the Earth frame with the muon's half-life from Earth's perspective and explain why so many reach the surface. (c) Explain the same observation in the muon's rest frame using length contraction.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
+<div class="qt">In a photoelectric experiment, the stopping potential \(V_s\) varies with frequency \(f\) as \(V_s = (h/e)f - W/e\). Data: at \(f=7.0\times10^{14}\,\text{Hz}\), \(V_s=0.80\,\text{V}\); at \(f=10.0\times10^{14}\,\text{Hz}\), \(V_s=2.05\,\text{V}\). (a) Determine Planck's constant from the data. (b) Determine the work function in eV. (c) State the threshold frequency.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
+<div class="qt">A nuclear power reactor uses U-235 fission, releasing about \(200\,\text{MeV}\) per fission. (a) How many fissions per second produce \(1.0\,\text{GW}\) of thermal power? (b) Calculate the mass of U-235 consumed per day in kg (atomic mass \(\approx 235\,\text{u}\), \(1\,\text{u}=1.66\times10^{-27}\,\text{kg}\)). (c) Compare with the mass of coal needed (chemical energy density \(\approx 30\,\text{MJ/kg}\)) for the same energy.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
+<div class="qt">Using a labelled diagram of a photoelectric experiment, explain why three of its features (threshold frequency, instantaneous emission, KE depending on frequency not intensity) cannot be explained by the wave model of light.</div>
+<div class="draw">[ Photoelectric apparatus: light → cathode → anode → ammeter, variable V ]</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
+<div class="qt">A student says: "Special relativity is just an illusion — clocks don't really run slow." Write a corrective response. Reference one experimental verification (e.g., Hafele-Keating, muon decay, GPS) and explain what "real" means in this context.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
+<div class="qt">Compare the Rutherford and Bohr models of the atom. For each: how it was developed, what it explains, and one limitation. End by explaining how quantum mechanics resolved Bohr's main shortcoming.</div>
+<textarea style="min-height:160px;"></textarea></div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
+<div class="qt">GPS satellites carry atomic clocks. Special relativity (orbital speed \(\sim 3.9\,\text{km/s}\)) makes satellite clocks run slow by about \(7\,\mu\text{s/day}\) relative to Earth-bound clocks. If this drift were uncorrected, estimate the position error after one day (light travels \(\sim 300\,\text{m/}\mu\text{s}\)). Discuss the social implications.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
+<div class="qt">Carbon-14 (\(T_{1/2}=5730\,\text{yr}\)) is used to date organic remains. A bone fragment shows a \({}^{14}\text{C}\) activity of \(0.10\) of that of a living organism. (a) Determine the age. (b) Discuss two assumptions that limit the accuracy of carbon dating. (c) State a context in which radiocarbon dating provides important social/historical evidence.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<div class="qc"><div class="qn">15. <span class="qm">[5]</span></div>
+<div class="qt">A medical PET scanner relies on positron–electron annihilation, where each annihilation produces two \(0.511\,\text{MeV}\) photons. (a) Use \(E=mc^2\) to verify the photon energy from the rest mass of an electron. (b) State why two oppositely directed photons are produced (conservation principles). (c) Discuss one benefit and one risk of PET imaging in medicine.</div>
+<textarea style="min-height:140px;"></textarea></div>
+
+<details>
+<summary>📖 Complete Answer Key (Click to reveal)</summary>
+<div class="sol-block">
+<h4>Q1.</h4> (a) \(\gamma=1/\sqrt{1-0.36}=1/\sqrt{0.64}=1.25\). (b) \(\Delta t = 1.25\cdot 8.0 = 10.0\,\text{years}\).
+<h4>Q2.</h4> \(\gamma = 1/\sqrt{1-0.64}=1/0.6=1.667\). \(L = 1.00/1.667 = 0.60\,\text{m}\).
+<h4>Q3.</h4> (a) \(E = hf = (6.63e{-}34)(8e14) = 5.30e{-}19\,\text{J} = 3.31\,\text{eV}\). (b) \(KE_{max} = 3.31-2.4 = 0.91\,\text{eV}\). (c) \(f_0 = W/h = 2.4(1.6e{-}19)/(6.63e{-}34)=5.79\times10^{14}\,\text{Hz}\); \(5.0\times10^{14} < f_0\) → no emission.
+<h4>Q4.</h4> (a) \(p=\sqrt{2m_e KE}=\sqrt{2(9.11e{-}31)(1.6e{-}17)} = 5.40e{-}24\,\text{kg·m/s}\); \(\lambda = h/p = 1.23\times10^{-10}\,\text{m}\) (atomic scale, observable). (b) \(\lambda = h/(mv)=6.63e{-}34/(0.145\cdot 40)=1.14\times10^{-34}\,\text{m}\) (vastly smaller than any aperture; not observable).
+<h4>Q5.</h4> (a) \(\Delta E = -13.6(1/16-1/4)=-13.6(-3/16)=2.55\,\text{eV}\). (b) \(\lambda = hc/E = 1240\,\text{eV·nm}/2.55=486\,\text{nm}\) (blue-green; H-β line of Balmer series).
+<h4>Q6.</h4> \(N = 8e16 \cdot (1/2)^{3} = 1.0\times10^{16}\). Fraction decayed = \(7/8 = 87.5\%\).
+<h4>Q7.</h4> (a) \(\gamma = 1/\sqrt{1-0.99^2}=10.0\) (using \(v=0.995c\) gives \(\gamma\approx10\)). (b) Earth time \(t = 10000/(0.995\cdot3e8)=3.35e{-}5\,\text{s}=33.5\,\mu\text{s}\); muon half-life dilated to \(15.6\,\mu\text{s}\); \(t/T_{1/2}\approx2.15\) → fraction surviving \(\approx 0.225\) (substantial). (c) In muon frame, distance is contracted to \(L_0/\gamma=1\,\text{km}\); travel time \(\approx 3.35\,\mu\text{s}\) — only ~2 half-lives → same fraction survives.
+<h4>Q8.</h4> Slope \(= (2.05-0.80)/(3.0\times10^{14}) = 4.17\times10^{-15}\,\text{V·s}\). \(h = e\cdot\text{slope} = 1.6e{-}19 \cdot 4.17e{-}15 = 6.67\times10^{-34}\,\text{J·s}\) (within 1% of true value). Intercept: at \(f=7e14\), \(0.80 = (h/e)(7e14) - W/e \Rightarrow W/e = (4.17e{-}15)(7e14) - 0.80 = 2.92 - 0.80 = 2.12\,\text{V} \Rightarrow W=2.12\,\text{eV}\). Threshold \(f_0 = W/h = 5.12\times10^{14}\,\text{Hz}\).
+<h4>Q9.</h4> (a) Energy/fission \(=200\,\text{MeV}=3.20\times10^{-11}\,\text{J}\). \(N = 10^9/3.2e{-}11 = 3.13\times10^{19}\,\text{fissions/s}\). (b) Daily atoms \(=N\cdot 86400 = 2.70\times10^{24}\); mass \(=2.70e24\cdot235\cdot1.66e{-}27 = 1.05\,\text{kg/day}\). (c) Coal: total energy \(=10^9\cdot86400=8.64\times10^{13}\,\text{J}\); coal mass \(=8.64e13/3e7\approx 2.88\times10^{6}\,\text{kg}\) (~2900 t). Roughly 3 million times more mass.
+<h4>Q10.</h4> Wave model would predict (i) any frequency could eject electrons given enough intensity (no threshold), (ii) energy build-up time would delay emission, (iii) intensity should set KE. Photon model: \(E_{photon} = hf\) — explains all three.
+<h4>Q11.</h4> Time dilation has been verified by atomic-clock comparisons in flight (Hafele-Keating, 1971), atmospheric muons reaching Earth, and GPS satellite-clock corrections. It is "real" in the operational sense — measurements differ in different frames.
+<h4>Q12.</h4> Rutherford: scattering experiment showed nucleus is small/dense; explained mass concentration; couldn't explain why orbiting electrons don't radiate and spiral in. Bohr: postulated quantized orbits; explained H spectral lines; ad hoc and failed for multi-electron atoms. Quantum mechanics: replaces orbits with probability distributions (orbitals), naturally explains stability and spectra.
+<h4>Q13.</h4> Position error \(=300\,\text{m}/\mu\text{s}\cdot7\,\mu\text{s}=2100\,\text{m/day}\) — would render GPS useless without correction. Social implications: navigation, telecommunications, finance time-stamping all rely on relativistic corrections.
+<h4>Q14.</h4> (a) \(0.10 = (1/2)^{t/5730} \Rightarrow t = 5730\log_2(10) = 19{,}035\,\text{yr}\approx 1.9\times10^4\,\text{yr}\). (b) Assumes constant atmospheric \({}^{14}\text{C}/{}^{12}\text{C}\) and that the sample exchanged carbon with the atmosphere until death; both are imperfect (industrial CO\(_2\) and reservoir effects). (c) Dating archeological remains, validating recorded historical timelines.
+<h4>Q15.</h4> (a) \(E_0 = m_e c^2 = (9.11e{-}31)(9e16)=8.20e{-}14\,\text{J} = 0.511\,\text{MeV}\). (b) Conservation of momentum (zero before in CM frame) and energy → two photons of equal energy in opposite directions. (c) Benefit: functional imaging of metabolism (cancer, brain). Risk: ionizing-radiation dose; need for short-lived isotopes.
+</div></details>
+
+<div class="rubric"><h3 style="margin-top:24px;">Evaluation Rubric</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough, insightful</td><td>80–100%</td></tr>
+<tr><td>3</td><td>Considerable (provincial standard)</td><td>70–79%</td></tr>
+<tr><td>2</td><td>Some effectiveness</td><td>60–69%</td></tr>
+<tr><td>1</td><td>Limited</td><td>50–59%</td></tr>
+<tr><td>R</td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
+
+<footer>SPH4U — Physics, Grade 12 | Unit 5: Modern Physics — OF Learning | Ontario Curriculum 2008</footer>
+</div></body></html>

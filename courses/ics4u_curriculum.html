@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICS4U Curriculum Document — Ontario 2008 Revised | MindView</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.7}
+.wrap{max-width:980px;margin:0 auto;padding:32px 20px}
+.hero{background:linear-gradient(135deg,#6366f1dd,#6366f1);color:#fff;padding:32px;border-radius:14px;margin-bottom:28px}
+.hero h1{font-size:28px;margin-bottom:6px}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.18);padding:4px 12px;border-radius:18px;font-size:12px;margin-bottom:8px}
+.toc{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:20px;margin-bottom:28px}
+.toc h2{font-size:18px;margin-bottom:10px;color:#6366f1}
+.toc a{display:block;padding:4px 0;color:#1e293b;text-decoration:none;font-size:14px}
+.toc a:hover{color:#6366f1}
+section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;margin-bottom:24px}
+section h2{color:#6366f1;font-size:22px;margin-bottom:14px;border-bottom:2px solid #e0e7ff;padding-bottom:8px}
+section h3{color:#1e293b;font-size:17px;margin:20px 0 10px}
+section h4{font-size:15px;margin:14px 0 6px;color:#475569}
+section p,section li{font-size:14.5px}
+section ul,section ol{margin-left:22px;margin-bottom:10px}
+section li{margin-bottom:5px}
+.strand{background:#eef2ff;border-left:4px solid #6366f1;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:14px}
+.strand .code{font-weight:700;color:#3730a3}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+th,td{border:1px solid #e2e8f0;padding:8px 12px;text-align:left;vertical-align:top}
+th{background:#eef2ff;color:#3730a3}
+.chip{display:inline-block;background:#e0e7ff;color:#3730a3;padding:2px 10px;border-radius:14px;font-size:12px;font-weight:600;margin-right:6px}
+.callout{background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:14px 16px;margin:14px 0;font-size:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+.grid4 .cell{padding:14px;border-radius:10px;text-align:center}
+.code-snip{background:#0f172a;color:#e2e8f0;border-radius:8px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto}
+footer{text-align:center;padding:28px;color:#64748b;font-size:13px;margin-top:32px;border-top:1px solid #e2e8f0}
+.back{display:inline-block;margin-bottom:14px;color:#fff;text-decoration:none;font-size:14px;opacity:.85}
+.back:hover{opacity:1}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="wrap">
+
+<div class="hero">
+<a class="back" href="ics4u.html">&larr; Back to ICS4U Course</a>
+<div class="tag">Ontario Ministry of Education &mdash; 2008 Revised Curriculum (Computer Studies)</div>
+<h1>ICS4U Curriculum Document</h1>
+<p>Computer Science, Grade 12, University Preparation &middot; 110 hours &middot; Recommended Prerequisite: ICS3U</p>
+</div>
+
+<div class="toc">
+<h2>Contents</h2>
+<a href="#overview">1. Course Overview &amp; Vision</a>
+<a href="#big-ideas">2. Big Ideas</a>
+<a href="#fundamental">3. Fundamental Concepts</a>
+<a href="#strand-a">4. Strand A &mdash; Programming Concepts &amp; Skills</a>
+<a href="#strand-b">5. Strand B &mdash; Software Development</a>
+<a href="#strand-c">6. Strand C &mdash; Designing Modular Programs</a>
+<a href="#strand-d">7. Strand D &mdash; Topics in Computer Science</a>
+<a href="#languages">8. Programming Languages &amp; Environments</a>
+<a href="#stse">9. STSE Connections &amp; Career Pathways</a>
+<a href="#achievement">10. Achievement Chart</a>
+<a href="#evaluation">11. Evaluation Policy (Growing Success 2010)</a>
+</div>
+
+<section id="overview">
+<h2>1. Course Overview &amp; Vision</h2>
+<p>ICS4U enables students to further develop their knowledge and skills in computer science. Students will use modular design principles to create complex and fully documented programs, according to industry standards. Student teams will manage a large software-development project, from planning through to project review. Students will also analyse algorithms for effectiveness, will study emerging issues related to computer science (such as the impact of artificial intelligence and the environmental footprint of computing), and will investigate ethics, privacy, and post-secondary opportunities in computer-related fields.</p>
+<div class="callout"><strong>Recommended Prerequisite:</strong> ICS3U Introduction to Computer Science, Grade 11, University Preparation. Students entering directly with strong math (MCR3U) but no prior programming will need a brief Python primer in Unit 1.</div>
+</section>
+
+<section id="big-ideas">
+<h2>2. Big Ideas</h2>
+<ul>
+<li><strong>Algorithms and abstraction:</strong> A computer program is a precise expression of an algorithm; effective programs are organized through layers of abstraction.</li>
+<li><strong>Data structures:</strong> The choice of data structure (array, dictionary, record, class) shapes which operations are efficient and which are not.</li>
+<li><strong>Modularity and reuse:</strong> Large programs are built from small, well-tested, well-named pieces; modularity is the foundation of maintainability.</li>
+<li><strong>Algorithmic efficiency:</strong> Two correct algorithms can differ in running time by orders of magnitude &mdash; analysis (Big-O) lets us compare them before measuring.</li>
+<li><strong>Software engineering as a discipline:</strong> Coding is a small part of software development; testing, debugging, version control, communication, and ethics are equally important.</li>
+<li><strong>Computing in society:</strong> Software shapes the world &mdash; with great capability comes responsibility for privacy, accessibility, equity, and the environment.</li>
+</ul>
+</section>
+
+<section id="fundamental">
+<h2>3. Fundamental Concepts</h2>
+<table>
+<tr><th>Concept</th><th>Description</th></tr>
+<tr><td>Abstraction</td><td>Hiding implementation details behind a clear interface (functions, classes, modules).</td></tr>
+<tr><td>Decomposition</td><td>Breaking a problem into smaller, independently-solvable subproblems.</td></tr>
+<tr><td>Pattern recognition</td><td>Recognizing recurring structures (search, sort, accumulator, recursion) and reusing standard solutions.</td></tr>
+<tr><td>Algorithm design</td><td>Describing a step-by-step process that always terminates with a correct answer.</td></tr>
+<tr><td>Data &amp; representation</td><td>How information is encoded (binary, types, structures) and the consequences of those choices.</td></tr>
+<tr><td>Systems &amp; interactions</td><td>Components (hardware, OS, network, user) interact via defined contracts; failures arise at the seams.</td></tr>
+</table>
+</section>
+
+<section id="strand-a">
+<h2>4. Strand A &mdash; Programming Concepts and Skills</h2>
+<div class="strand"><span class="code">A1.</span> Demonstrate the ability to use different data types and data structures (e.g., one-dimensional arrays/lists, multi-dimensional arrays, records, classes, dictionaries) in computer programs.</div>
+<div class="strand"><span class="code">A2.</span> Demonstrate the ability to use modular programming concepts and techniques in computer programs (procedures, functions, parameter passing, return values, recursion).</div>
+<div class="strand"><span class="code">A3.</span> Use proper code-maintenance techniques and conventions (commenting, indentation, naming) when creating computer programs, and design and analyse simple algorithms in terms of correctness and efficiency.</div>
+
+<h3>Specific Expectations (selected)</h3>
+<ul>
+<li><strong>A1.1</strong> Demonstrate the ability to declare, initialize, modify, and access primitive types (integer, real/float, character/string, Boolean) in computer programs.</li>
+<li><strong>A1.2</strong> Use one-dimensional arrays/lists in computer programs to store, retrieve, and update structured data.</li>
+<li><strong>A1.3</strong> Use multi-dimensional arrays/lists (two-dimensional minimum) to model grid-like data (e.g., a tic-tac-toe board, an image, a seating chart).</li>
+<li><strong>A1.4</strong> Use records or classes to represent compound data with named fields (e.g., a <code>Student</code> record with <code>name</code>, <code>id</code>, <code>grades</code>).</li>
+<li><strong>A2.1</strong> Use existing language libraries (modules) and write functions/procedures that solve well-defined sub-problems.</li>
+<li><strong>A2.2</strong> Use parameters (positional, keyword, default) and return values appropriately, distinguishing pass-by-value from pass-by-reference behavior.</li>
+<li><strong>A2.3</strong> Apply recursion to problems that can be expressed in terms of a smaller version of themselves (factorial, Fibonacci, divide-and-conquer search and sort), correctly identifying base and recursive cases.</li>
+<li><strong>A3.1</strong> Demonstrate the ability to write code that follows accepted style conventions (PEP 8 for Python; Java conventions where Java is used).</li>
+<li><strong>A3.2</strong> Analyse the efficiency of an algorithm by counting basic operations and expressing growth using Big-O notation (O(1), O(log n), O(n), O(n log n), O(n&sup2;)).</li>
+</ul>
+</section>
+
+<section id="strand-b">
+<h2>5. Strand B &mdash; Software Development</h2>
+<div class="strand"><span class="code">B1.</span> Use a variety of problem-solving strategies (top-down design, bottom-up implementation, modular design) to solve problems at the design stage of software development.</div>
+<div class="strand"><span class="code">B2.</span> Apply standard programming techniques and conventions to create computer programs that are readable, maintainable, and efficient.</div>
+<div class="strand"><span class="code">B3.</span> Apply standard algorithms (linear search, binary search, bubble sort, insertion sort, selection sort, merge sort, quicksort) to solve problems.</div>
+<div class="strand"><span class="code">B4.</span> Use systematic testing &amp; debugging strategies to verify program correctness and identify the location and cause of errors.</div>
+
+<h3>Specific Expectations (selected)</h3>
+<ul>
+<li><strong>B1.1</strong> Apply top-down design (stepwise refinement) to a problem of moderate complexity, producing a hierarchical structure chart.</li>
+<li><strong>B1.3</strong> Use UML-style or comparable notation to describe the relationships between classes/modules in a planned program.</li>
+<li><strong>B2.1</strong> Use comments, meaningful variable names, consistent indentation, and helper functions to produce maintainable code.</li>
+<li><strong>B2.4</strong> Use a version-control tool (e.g., Git) to track changes and collaborate on a programming project.</li>
+<li><strong>B3.1</strong> Implement and trace linear search and binary search; explain the precondition (sorted input) for binary search.</li>
+<li><strong>B3.2</strong> Implement and trace bubble, insertion, and selection sort; show their O(n&sup2;) behavior on test data.</li>
+<li><strong>B3.3</strong> Implement and trace merge sort and quicksort; explain the divide-and-conquer principle and average vs. worst-case complexity.</li>
+<li><strong>B4.1</strong> Use a debugger and/or print-statement tracing to locate the cause of a runtime or logic error.</li>
+<li><strong>B4.2</strong> Design test cases including normal inputs, boundary inputs, and invalid inputs; document expected vs. actual results.</li>
+</ul>
+</section>
+
+<section id="strand-c">
+<h2>6. Strand C &mdash; Designing Modular Programs</h2>
+<div class="strand"><span class="code">C1.</span> Demonstrate the ability to use modular structure (functions, classes, modules) to plan and code complex programs.</div>
+<div class="strand"><span class="code">C2.</span> Maintain and extend existing code, including code written by others, using accepted conventions and tools.</div>
+<div class="strand"><span class="code">C3.</span> Use abstraction (procedural and data) to manage complexity in problem-solving and program design.</div>
+
+<h3>Specific Expectations (selected)</h3>
+<ul>
+<li><strong>C1.1</strong> Decompose a problem into modules with single responsibilities; identify the inputs, outputs, and side-effects of each module.</li>
+<li><strong>C1.2</strong> Design a class with appropriate attributes and methods to model a real-world entity; use encapsulation to protect internal state.</li>
+<li><strong>C2.1</strong> Read and understand a peer's code (or unfamiliar legacy code) and add a feature or fix a bug without breaking existing behavior (regression testing).</li>
+<li><strong>C2.2</strong> Refactor a working program to improve readability or efficiency without changing observable behavior.</li>
+<li><strong>C3.1</strong> Choose an appropriate data structure (list, dictionary, class) for a given problem and justify the choice.</li>
+<li><strong>C3.2</strong> Use a procedural abstraction (a single function name) to hide a complex multi-step computation from the rest of the program.</li>
+</ul>
+</section>
+
+<section id="strand-d">
+<h2>7. Strand D &mdash; Topics in Computer Science</h2>
+<div class="strand"><span class="code">D1.</span> Describe key emerging areas of computer science (artificial intelligence, machine learning, quantum computing, cloud computing, cybersecurity).</div>
+<div class="strand"><span class="code">D2.</span> Analyse environmental and ethical issues related to the use of computers (energy footprint of data centres &amp; AI training, e-waste, privacy, algorithmic bias, intellectual property, accessibility).</div>
+<div class="strand"><span class="code">D3.</span> Describe postsecondary education and career opportunities related to computer studies, including in Ontario and Canada.</div>
+<div class="strand"><span class="code">D4.</span> Describe key contributions to the history and development of computer science, including contributions by Canadian innovators.</div>
+
+<h3>Specific Expectations (selected)</h3>
+<ul>
+<li><strong>D1.1</strong> Describe the basic ideas behind supervised machine learning (training data, model, loss, prediction).</li>
+<li><strong>D1.2</strong> Describe what a qubit is and one situation where quantum computing would offer an advantage over classical computing.</li>
+<li><strong>D2.1</strong> Estimate the energy footprint of a typical software-related activity (e.g., training a model, streaming a video) and discuss mitigation strategies.</li>
+<li><strong>D2.2</strong> Identify a real-world example of algorithmic bias and propose mitigations.</li>
+<li><strong>D2.3</strong> Distinguish open-source, free, and proprietary software licensing models, and describe ethical responsibilities of programmers.</li>
+<li><strong>D3.1</strong> Identify at least three university programs and three college programs in Ontario related to computer science, and three career roles a graduate may pursue.</li>
+<li><strong>D4.1</strong> Identify at least three landmark contributions to computing (e.g., Babbage, Lovelace, Turing, Hopper, von Neumann; Canadian: Stephen Cook, Geoffrey Hinton, Yoshua Bengio, Maurice Wilkes&rsquo; collaboration with Calgary, the Avro Arrow's airborne computer).</li>
+</ul>
+</section>
+
+<section id="languages">
+<h2>8. Programming Languages &amp; Environments</h2>
+<p>The Ontario curriculum is language-agnostic. The most common choices in Ontario boards are <strong>Python</strong> and <strong>Java</strong>. This MindView build defaults to Python for accessibility and reading clarity, with Java parallel examples added where appropriate.</p>
+<table>
+<tr><th>Language</th><th>Strengths</th><th>Trade-offs</th></tr>
+<tr><td><strong>Python 3.x</strong> (default)</td><td>Readable syntax close to pseudocode; rich standard library; excellent for data structures, algorithms, AI demos.</td><td>Dynamic typing makes some bugs harder to catch at compile time; slower than compiled languages.</td></tr>
+<tr><td><strong>Java</strong></td><td>Static typing makes types &amp; interfaces explicit; aligns with university CS1; widely used in industry.</td><td>More verbose; setup of <code>main</code>, classes, types adds friction for early learners.</td></tr>
+</table>
+<h3>Recommended Tooling</h3>
+<ul>
+<li><strong>Editor/IDE:</strong> VS Code (free, cross-platform), Thonny (beginner-friendly Python), IntelliJ IDEA (Java).</li>
+<li><strong>Version control:</strong> Git, with a GitHub or GitLab account for student portfolios.</li>
+<li><strong>Testing:</strong> Python <code>unittest</code> or <code>pytest</code>; Java JUnit.</li>
+<li><strong>Browser-only fallback:</strong> repl.it, Trinket, or Google Colab for students without local install rights.</li>
+</ul>
+<div class="code-snip"><span style="color:#94a3b8"># A complete Python program: read a CSV, sort by mark, write top-3 to file</span>
+<span style="color:#818cf8">import</span> csv
+<span style="color:#818cf8">with</span> open(<span style="color:#86efac">"roster.csv"</span>) <span style="color:#818cf8">as</span> f:
+    rows = sorted(csv.reader(f), key=<span style="color:#818cf8">lambda</span> r: -int(r[1]))
+<span style="color:#818cf8">with</span> open(<span style="color:#86efac">"top3.csv"</span>, <span style="color:#86efac">"w"</span>, newline=<span style="color:#86efac">""</span>) <span style="color:#818cf8">as</span> f:
+    csv.writer(f).writerows(rows[:3])
+</div>
+</section>
+
+<section id="stse">
+<h2>9. STSE Connections &amp; Career Pathways</h2>
+<h3>Sample STSE Topics (Strand D)</h3>
+<ul>
+<li>Privacy &amp; surveillance &mdash; facial recognition, location tracking, data brokers.</li>
+<li>Algorithmic bias in hiring, lending, and criminal-justice tools.</li>
+<li>Energy footprint of large-language-model training; environmental cost of cryptocurrency mining.</li>
+<li>Accessibility &mdash; WCAG-compliant interfaces; assistive technologies for visually-impaired or motor-impaired users.</li>
+<li>Open-source ecosystems and the contribution model (Linux, Python, Wikipedia).</li>
+<li>Cybersecurity &amp; ethical hacking &mdash; the role of disclosure programs.</li>
+</ul>
+<h3>Career Pathways</h3>
+<p>Software engineering, data science, machine-learning engineering, cybersecurity analyst, cloud architect, mobile/web developer, embedded systems / robotics, game design, UX/UI design, devops, technical writing, computing teacher, CS researcher (M.Sc./Ph.D.). Adjacent quantitative careers include actuarial science, financial engineering, bioinformatics, and computational science.</p>
+<h3>Sample Ontario Postsecondary Pathways</h3>
+<ul>
+<li><strong>Universities:</strong> Computer Science, Software Engineering, Computer Engineering &mdash; e.g., U of Waterloo, U of Toronto, McMaster, Western, Queens, Carleton, York, Ottawa.</li>
+<li><strong>Colleges:</strong> Computer Programmer / Programmer-Analyst, Game Development, Cybersecurity, Mobile Development &mdash; e.g., Seneca, Centennial, Sheridan, Algonquin, Conestoga.</li>
+</ul>
+</section>
+
+<section id="achievement">
+<h2>10. Ontario Achievement Chart for ICS4U</h2>
+<div class="grid4">
+<div class="cell" style="background:#dbeafe;color:#1e40af"><strong>K/U</strong><br>25%</div>
+<div class="cell" style="background:#fef3c7;color:#92400e"><strong>Thinking</strong><br>25%</div>
+<div class="cell" style="background:#d1fae5;color:#065f46"><strong>Communication</strong><br>25%</div>
+<div class="cell" style="background:#ede9fe;color:#5b21b6"><strong>Application</strong><br>25%</div>
+</div>
+<table>
+<tr><th>Category</th><th>Description</th><th>Examples in ICS4U</th></tr>
+<tr><td><strong>Knowledge &amp; Understanding</strong></td><td>Recall of facts, terms, definitions; understanding of programming constructs, data structures, and standard algorithms.</td><td>Define recursion; identify the precondition for binary search; state the average-case complexity of merge sort.</td></tr>
+<tr><td><strong>Thinking &amp; Investigation</strong></td><td>Use of critical and creative thinking processes &mdash; algorithm design, debugging, problem-solving with constraints.</td><td>Design an algorithm given a novel problem; trace and fix a buggy recursive function; choose between two data structures and justify.</td></tr>
+<tr><td><strong>Communication</strong></td><td>Conveying meaning through code (style, comments, naming) and through written/spoken language about programs.</td><td>Well-commented code; clear docstrings; an STSE position paper; technical explanation to a peer.</td></tr>
+<tr><td><strong>Application</strong></td><td>Use of programming knowledge in familiar and unfamiliar contexts; transfer of skills.</td><td>Build a roster manager from scratch; extend legacy code; apply Big-O analysis to estimate the running time of an unknown function.</td></tr>
+</table>
+</section>
+
+<section id="evaluation">
+<h2>11. Evaluation Policy (Growing Success, 2010)</h2>
+<table>
+<tr><th>Component</th><th>Weight</th><th>Description</th></tr>
+<tr><td>Term Work</td><td><strong>70%</strong></td><td>Unit tests, programming assignments, code reviews, lab worksheets, quizzes &mdash; balanced across the four achievement categories.</td></tr>
+<tr><td>Final Evaluation</td><td><strong>30%</strong></td><td>Cumulative final exam (worth ~20%) and a final culminating capstone software project (~10%). Together capped at 30%.</td></tr>
+</table>
+<h3>Assessment Types</h3>
+<ul>
+<li><span class="chip">AS</span><strong>Assessment AS Learning:</strong> self-directed practice quizzes &mdash; student uses results to plan study; not graded.</li>
+<li><span class="chip">FOR</span><strong>Assessment FOR Learning:</strong> teacher diagnostics &mdash; descriptive feedback only, not graded.</li>
+<li><span class="chip">OF</span><strong>Assessment OF Learning:</strong> summative unit tests, programming assignments, capstone, and final exam &mdash; counted toward final grade.</li>
+</ul>
+<div class="callout"><strong>Levels of Achievement:</strong> Level 4 (80&ndash;100%, thorough and insightful), Level 3 (70&ndash;79%, considerable effectiveness &mdash; provincial standard), Level 2 (60&ndash;69%), Level 1 (50&ndash;59%), R (below 50%, insufficient).</div>
+<h3>Learning Skills &amp; Work Habits (reported separately)</h3>
+<p>Responsibility, Organization, Independent Work, Collaboration, Initiative, Self-Regulation &mdash; each rated E (Excellent) / G (Good) / S (Satisfactory) / N (Needs Improvement). Collaboration and Self-Regulation are particularly visible in the term-long capstone project.</p>
+</section>
+
+<footer>
+ICS4U &mdash; Computer Science, Grade 12 University Preparation &mdash; Ontario Curriculum 2008 (Revised) &mdash; Aligned with <em>Growing Success</em> (Ontario Ministry of Education, 2010)
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Kinematics — Unit Test (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;min-height:100px;resize:vertical;font-family:inherit}
+textarea:focus{border-color:var(--p);outline:none}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.draw{height:180px;border:1px dashed var(--b);border-radius:8px;margin:8px 0;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>📝 Unit 1: Kinematics — Unit Test</h1>
+<div class="sub">Assessment OF Learning — Summative (SPH3U)</div>
+<div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work including diagrams. Answers without supporting work receive at most partial credit. Use \( g = 9.8 \) m/s².</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="formula-ref">
+<strong>Formulae:</strong> \( v = v_0+at \) &nbsp;|&nbsp; \( d = v_0t+\tfrac{1}{2}at^2 \) &nbsp;|&nbsp; \( v^2 = v_0^2+2ad \) &nbsp;|&nbsp; \( R = v_0^2 \sin(2\theta)/g \) &nbsp;|&nbsp; \( g = 9.8 \) m/s²
+</div>
+
+<div class="sec-hdr ku">Part A — Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[3 marks]</span></div>
+<div class="qt">Define each, with units: (a) displacement; (b) velocity; (c) acceleration. State whether each is a vector or a scalar.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[2 marks]</span></div>
+<div class="qt">A car accelerates uniformly from \(15\) m/s to \(35\) m/s in \(8.0\) s. Calculate the acceleration <em>and</em> the distance traveled.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">Multiple choice: A ball thrown vertically upward returns to the thrower's hand. At the highest point:
+<ul class="mc">
+<li><label><input type="radio" name="q3"> a) v=0, a=0</label></li>
+<li><label><input type="radio" name="q3"> b) v=0, a=9.8 m/s² downward</label></li>
+<li><label><input type="radio" name="q3"> c) v=v₀, a=0</label></li>
+<li><label><input type="radio" name="q3"> d) v=max, a=9.8 m/s² downward</label></li>
+</ul>Justify your choice in one sentence.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[4 marks]</span></div>
+<div class="qt">A position-time graph is given as a horizontal line at \(20\) m for \(0\) to \(3\) s, then a straight line up to \((8 \text{ s}, 50 \text{ m})\). For each segment, describe the motion (qualitatively) and calculate the velocity.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[4 marks]</span></div>
+<div class="qt">Convert: (a) \(108\) km/h to m/s. (b) An acceleration of \(0.50\) g (where g = 9.8 m/s²) into m/s². (c) State which has greater magnitude: \(36\) km/h or \(12\) m/s. (d) State the SI unit of force and define it from \( F = ma \).</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr t">Part B — Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[5 marks]</span></div>
+<div class="qt">A stone is thrown vertically upward at \(20\) m/s from the edge of a cliff that is \(35\) m above the ground.<br>(a) How high above the cliff does the stone rise? (b) What is its total time in the air before hitting the ground? (c) With what speed does it strike the ground?</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">A swimmer can swim at \(1.5\) m/s in still water. She swims directly across a river that is \(60\) m wide and flows at \(0.80\) m/s. (a) How long does it take her to cross? (b) How far downstream does she land? (c) What is her resultant velocity (magnitude and direction relative to the bank)?</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">A pendulum experiment shows that period \(T\) varies with length \(L\). When students plot \(T\) vs. \(L\) the curve is non-linear. Describe how to <strong>linearise</strong> the data, what to plot on each axis, and what slope they would obtain (in terms of \(g\)). Show the manipulation \( T = 2\pi\sqrt{L/g} \) explicitly.</div>
+<textarea placeholder="Square both sides... plot T² vs. L ..."></textarea></div>
+
+<div class="sec-hdr c">Part C — Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Sketch and label, with axes (\(d\) vs. \(t\)), three position–time graphs that show: (i) an object at rest; (ii) an object moving with constant positive velocity; (iii) an object accelerating uniformly from rest. State the corresponding shape of the velocity-time graph for each.</div>
+<div class="draw">[Sketch space — graphs i, ii, iii]</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">A package is dropped from a plane flying horizontally at \(80\) m/s and \(500\) m altitude. (a) Draw a labelled diagram showing the trajectory and the components of velocity at three instants (just after release, halfway, just before impact). (b) Identify what is constant and what is changing about the package's motion.</div>
+<div class="draw">[Trajectory + velocity components]</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">In one paragraph (4–6 sentences), explain — <em>using correct vocabulary</em> — why the kinematic equations are restricted to <strong>uniformly accelerated</strong> motion. Reference what the slope of \( v(t) \) tells you and how the area under it gives displacement.</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr a">Part D — Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt"><strong>STSE — Highway safety:</strong> A driver travelling at \(110\) km/h on the 400-series highway sees a deer ahead and slams on the brakes \(0.75\) s later (reaction time). The car decelerates at \(7.0\) m/s² once braking begins. (a) Convert speed to m/s. (b) Calculate distance covered during reaction time. (c) Calculate braking distance. (d) Total stopping distance. (e) Comment on how Ontario's posted following distances relate to your answer.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">A soccer ball is kicked from ground level at \(25\) m/s at an angle of \(40°\) above the horizontal toward a net \(40\) m away whose crossbar is \(2.4\) m high. Will the ball clear the crossbar? Show all calculations: (a) horizontal time to reach the net; (b) vertical position at that time; (c) conclusion.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt"><strong>Lab analysis:</strong> A free-fall experiment using video analysis (Tracker) gave the following data for \( y \) (m) vs. \( t \) (s): (0, 0), (0.10, 0.049), (0.20, 0.196), (0.30, 0.441), (0.40, 0.784). (a) Sketch \( y \) vs. \( t \) and \( y \) vs. \( t^2 \). (b) Determine \( g \) from the slope of the linearised plot. (c) Calculate the percent error if you compare with \(9.8\) m/s².</div>
+<textarea></textarea></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 1 Test | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

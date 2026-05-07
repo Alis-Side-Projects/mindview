@@ -1,182 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 2: Structure and Properties — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Structure & Properties — Unit Test (OF)</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 <style>
-:root{--p:#2563eb;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 2: Structure and Properties — Unit Test</h1>
-<div class="sub">Assessment OF Learning — SCH4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+:root{--primary:#2563eb;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+.container{max-width:850px;margin:0 auto;padding:20px;}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px;}
+header h1{font-size:22px;} header .sub{font-size:14px;opacity:0.85;margin-top:4px;}
+header .badge{display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px;}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px;}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;}
+.section-hdr.ku{background:#dbeafe;color:#1e40af;} .section-hdr.t{background:#fef3c7;color:#92400e;}
+.section-hdr.c{background:#d1fae5;color:#065f46;} .section-hdr.a{background:#ede9fe;color:#5b21b6;}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;}
+.qnum{font-weight:700;color:var(--primary);}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600;}
+.qtxt{margin:8px 0 12px;}
+textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:inherit;min-height:80px;}
+.mc{list-style:none;}.mc li{margin-bottom:6px;}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0;}
+.chart-item{text-align:center;padding:12px;border-radius:8px;}
+.chart-item .label{font-size:12px;font-weight:600;}.chart-item .value{font-size:24px;font-weight:800;}
+details summary{cursor:pointer;font-weight:600;color:var(--primary);}
+.sol{margin-top:8px;padding:10px;background:#f8fafc;border:1px solid var(--border);border-radius:6px;font-size:14px;}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border);}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sch4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav><div class="container">
+<header><h1>Unit 2: Structure & Properties — Unit Test</h1><div class="sub">Assessment OF Learning</div><div class="badge">Graded</div></header>
+<div class="warn"><strong>Duration:</strong> 75 min | <strong>Total:</strong> /60</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>VSEPR | Intermolecular forces | Polarity | Bonding</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div></div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: Knowledge & Understanding [15]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q1 <span class="qmarks">[3]</span></div>
+<div class="qtxt">Write ground-state electron configurations: (a) S, (b) Cr, (c) Br⁻.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q2 <span class="qmarks">[3]</span></div>
+<div class="qtxt">For each, give VSEPR shape and bond angle: (a) BF₃, (b) H₂O, (c) PCl₅.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q3 <span class="qmarks">[4]</span></div>
+<div class="qtxt">Multiple choice — strongest IMF in CH₃OH:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> London dispersion</label></li>
+<li><label><input type="radio" name="q3"> Dipole–dipole</label></li>
+<li><label><input type="radio" name="q3"> Hydrogen bonding</label></li>
+<li><label><input type="radio" name="q3"> Ionic</label></li></ul></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q4 <span class="qmarks">[5]</span></div>
+<div class="qtxt">State hybridization at the central atom of: H₂O, NH₃, BeCl₂, SF₆, C₂H₂.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking & Investigation [15]</div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q5 <span class="qmarks">[5]</span></div>
+<div class="qtxt">For SO₂: draw Lewis structure (with resonance); state shape, polarity, and hybridization.</div><textarea></textarea></div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q6 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Compare and predict relative b.p.: CH₃CH₂CH₃ vs CH₃OCH₃ vs CH₃CH₂OH (justify with IMFs).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q7 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Predict whether NF₃ is polar; justify using shape and bond dipoles.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15]</div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q8 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Explain the quantum mechanical model in terms of orbitals (s, p, d shapes), Pauli exclusion, and Hund's rule.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q9 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Explain why ionization energy increases left-to-right across a period but decreases down a group.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">Q10 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Compare network covalent (e.g., diamond) and molecular covalent (e.g., I₂) solids — properties and reasons.</div><textarea></textarea></div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 2: Structure and Properties — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="section-hdr a">Part D: Application [15]</div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">Q11 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Why is water a "universal solvent" for ionic salts? Use IMFs and structure.</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">Q12 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Geckos cling to walls via van der Waals forces. Explain in terms of London dispersion.</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">Q13 <span class="qmarks">[5]</span></div>
+<div class="qtxt">Predict whether XeF₄ is polar; give shape, hybridization, and reasoning.</div><textarea></textarea></div>
+
+<details style="margin-top:32px;"><summary><strong>Complete Answer Key</strong></summary>
+<div class="sol">
+<p><strong>Q1.</strong> S: [Ne] 3s²3p⁴; Cr: [Ar] 4s¹3d⁵; Br⁻: [Ar] 4s²3d¹⁰4p⁶ = [Kr].</p>
+<p><strong>Q2.</strong> BF₃ trigonal planar 120°; H₂O bent ~104.5°; PCl₅ trigonal bipyramidal 120°/90°.</p>
+<p><strong>Q3.</strong> Hydrogen bonding.</p>
+<p><strong>Q4.</strong> H₂O sp³; NH₃ sp³; BeCl₂ sp; SF₆ sp³d²; C₂H₂ sp.</p>
+<p><strong>Q5.</strong> SO₂: bent (AX₂E), sp², polar; resonance between two S=O / S–O structures.</p>
+<p><strong>Q6.</strong> Propane (London only) < dimethyl ether (dipole) < ethanol (H-bond). Ranks: −42, −24, 78 °C.</p>
+<p><strong>Q7.</strong> NF₃ trigonal pyramidal; bond dipoles + lone pair give net dipole — polar (small dipole, but nonzero).</p>
+<p><strong>Q8.</strong> Orbitals are probability regions: s spherical, p dumbbell, d cloverleaf. Pauli: max 2 e⁻/orbital, opposite spins. Hund: fill degenerate orbitals singly first.</p>
+<p><strong>Q9.</strong> Across: Z<sub>eff</sub> ↑, radius ↓ → IE ↑. Down: shell number ↑ + shielding → IE ↓.</p>
+<p><strong>Q10.</strong> Network: very high m.p., hard, insulator (diamond). Molecular: low m.p., soft, weak London (I₂). Difference: covalent network throughout vs discrete molecules.</p>
+<p><strong>Q11.</strong> Water's polar H-bonding network solvates ions via ion–dipole forces.</p>
+<p><strong>Q12.</strong> Many tiny gecko foot setae produce huge cumulative London dispersion contact area.</p>
+<p><strong>Q13.</strong> XeF₄: square planar (AX₄E₂), sp³d²; nonpolar — symmetric, dipoles cancel.</p>
+</div></details>
+
+<footer>SCH4U — Chemistry, Grade 12 | Ontario Curriculum 2008 | Strand C: Structure & Properties | Assessment OF Learning</footer>
+</div></body></html>

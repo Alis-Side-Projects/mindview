@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U Final Exam — Mathematics of Data Management (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.section-hdr.ci { background: #fce7f3; color: #9d174d; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.btn-s { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.answer-key { margin-top: 40px; background: #fff; border: 2px solid var(--primary); border-radius: 10px; padding: 4px 20px; }
+.answer-key summary { font-size: 18px; font-weight: 700; color: var(--primary); cursor: pointer; padding: 14px 4px; }
+.answer-key .akq { border-left: 3px solid var(--primary); padding: 8px 14px; margin: 14px 0; background: #f0fdf4; }
+.answer-key .akq h4 { color: var(--primary); margin-bottom: 6px; font-size: 14px; }
+.answer-key .akq p { font-size: 14px; margin-bottom: 4px; }
+.rubric-grid { display: grid; grid-template-columns: 60px 1fr 1fr 1fr 1fr; gap: 0; margin: 12px 0 0; font-size: 13px; }
+.rubric-grid > div { padding: 10px; border: 1px solid var(--border); }
+.rubric-grid .head { background: #f1f5f9; font-weight: 700; }
+.rubric-grid .lvl { background: #f8fafc; font-weight: 700; text-align: center; }
+.ci-card { background: #fdf2f8; border: 1px solid #fbcfe8; border-radius: 8px; padding: 18px; margin-bottom: 16px; }
+.ci-card h4 { color: #9d174d; margin-bottom: 8px; font-size: 16px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#16a34a;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>🎓 MDM4U Final Exam &amp; Culminating Investigation</h1>
+    <div class="sub">Comprehensive Final Evaluation — Chapters 1 through 8 plus Culminating Investigation (Strand D)</div>
+    <div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 3 hours (180 minutes) for the written exam &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+    <strong>Materials allowed:</strong> Scientific calculator, ruler, standard normal table (provided). No graphing technology during the exam.<br>
+    Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+    <strong>Coverage:</strong> Ch 1 Counting &amp; Sample Spaces · Ch 2 Permutations · Ch 3 Combinations · Ch 4 Probability · Ch 5 Discrete Distributions (Binomial, Geometric, Hypergeometric) · Ch 6 Normal Distribution · Ch 7 Statistics &amp; Sampling · Ch 8 Correlation, Regression. The Culminating Investigation rubric is provided at the end of this document.
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [25 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Compute \( P(8, 3) - C(8, 3) \).</div>
+<input type="text" id="q1-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q1',280)">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>\( P(8,3) = 336 \), \( C(8,3) = 56 \). Difference \( = 336 - 56 = 280 \).</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A coin is flipped 6 times. \( P(\text{exactly 4 heads}) = ? \) (decimal to 4 places)</div>
+<input type="text" id="q2-in" placeholder="Enter a decimal...">
+<button class="btn btn-p" onclick="chkNum('q2',0.2344)">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>\( P = \binom{6}{4}(0.5)^6 = 15 \cdot \dfrac{1}{64} = 0.234375 \approx 0.2344 \).</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For \( X \sim N(70, 8) \), find the z-score corresponding to \( x = 82 \).</div>
+<input type="text" id="q3-in" placeholder="Enter a decimal...">
+<button class="btn btn-p" onclick="chkNum('q3',1.5)">Check</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>\( z = \dfrac{82-70}{8} = 1.5 \).</div>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">From a deck of 52 cards, 5 cards are drawn. The number of possible 5-card hands is:</div>
+<input type="text" id="q4-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q4',2598960)">Check</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>\( \binom{52}{5} = 2\,598\,960 \).</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For \( X \sim \mathrm{Binomial}(40, 0.25) \), find \( E(X) \).</div>
+<input type="text" id="q5-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q5',10)">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>\( E(X) = np = 40(0.25) = 10 \).</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A die is rolled until a 6 appears. The expected number of rolls is:</div>
+<input type="text" id="q6-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q6',6)">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>Geometric: \( \mu = \dfrac{1}{p} = \dfrac{1}{1/6} = 6 \).</div>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A correlation \( r = -0.7 \). The proportion of variation in \( y \) explained by \( x \) is:</div>
+<input type="text" id="q7-in" placeholder="Enter as decimal...">
+<button class="btn btn-p" onclick="chkNum('q7',0.49)">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>\( r^2 = (-0.7)^2 = 0.49 \).</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">How many distinct arrangements of the letters of "STATISTICS"?</div>
+<input type="text" id="q8-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q8',50400)">Check</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>10 letters: 3 S, 3 T, 1 A, 2 I, 1 C. \( \dfrac{10!}{3!\,3!\,1!\,2!\,1!} = \dfrac{3\,628\,800}{6 \cdot 6 \cdot 2} = 50\,400 \).</div>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">In a stratified random sample, a researcher divides a population by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Numbering everyone and using random digits</label></li>
+<li><label><input type="radio" name="q9" value="b"> Subgroups, then samples within each</label></li>
+<li><label><input type="radio" name="q9" value="c"> Selecting every \( k \)th individual</label></li>
+<li><label><input type="radio" name="q9" value="d"> Choosing whoever volunteers</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','b')">Check</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>Stratified = subgroups (strata), then sample within each.</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A bag has 4 red, 6 blue, 2 green marbles. Two are drawn without replacement. \( P(\text{both red}) = ? \) (decimal to 4 places)</div>
+<input type="text" id="q10-in" placeholder="Enter a decimal...">
+<button class="btn btn-p" onclick="chkNum('q10',0.0909)">Check</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>\( P = \dfrac{4}{12}\cdot\dfrac{3}{11} = \dfrac{12}{132} = \dfrac{1}{11} \approx 0.0909 \).</div>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Find the median of: 8, 12, 15, 19, 22, 25, 30.</div>
+<input type="text" id="q11-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q11',19)">Check</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-lbl">Solution:</div>For 7 values, median = 4th = 19.</div>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">The standard normal table gives \( P(Z < 1.0) \approx \) (4 places):</div>
+<input type="text" id="q12-in" placeholder="Enter a decimal...">
+<button class="btn btn-p" onclick="chkNum('q12',0.8413)">Check</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-lbl">Solution:</div>From the table, \( P(Z < 1.0) = 0.8413 \).</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 13 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A committee of 5 is to be selected from 8 men and 6 women. a) How many committees of 5 are possible? b) How many have exactly 3 women? c) How many have at least 3 women?</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">In a class of 30, the probability of a student passing the test is 0.8. Use the binomial distribution to find:<br>
+a) \( P(\text{exactly 25 pass}) \).<br>
+b) \( E(X), \mathrm{Var}(X) \) for \( X \) = number who pass.<br>
+c) Use the normal approximation to estimate \( P(X \le 22) \). Apply the continuity correction.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A box contains 100 widgets, of which 8 are defective. A sample of 10 is drawn without replacement. a) Identify the distribution. b) Find \( P(\text{exactly 1 defective in sample}) \). c) Find \( P(\text{at least 1 defective}) \). d) State the expected number of defectives.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 16 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">For data \( x: 1, 2, 3, 4, 5 \) and \( y: 3, 5, 6, 8, 11 \): a) Compute \( \bar{x}, \bar{y}, s_x, s_y \). b) Compute \( r \). c) State the regression line. d) Predict \( y \) when \( x = 3.5 \). e) Compute \( r^2 \) and interpret.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 17 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A bag contains 4 white and 6 black balls. Three balls are drawn without replacement. Construct the probability distribution for \( X \) = number of white balls drawn. Compute \( E(X) \) and \( \mathrm{Var}(X) \).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 18 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Explain the difference between the binomial and hypergeometric distributions. Use a specific example involving cards, marbles, or quality-control to demonstrate when each applies. Discuss the role of "with vs. without replacement."</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 19 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A magazine reports: "Studies show that students who eat breakfast score higher on tests. Therefore, breakfast causes higher test scores." Critique this conclusion. Identify lurking variables and the difference between observational studies and controlled experiments.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 20 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Describe the empirical (68-95-99.7) rule. Sketch a normal curve labelled with \( \mu \pm \sigma, \mu \pm 2\sigma, \mu \pm 3\sigma \). Verify the 68% figure using the standard normal table.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 21 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A student claims, "If we use the binomial distribution to model 100 voters in a national poll, we are assuming the voters are independent." Is this assumption reasonable? When does it break down? Discuss when the hypergeometric distribution should be used instead.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 22 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Describe a step-by-step procedure for designing an unbiased survey, including: (a) defining the population, (b) selecting a sampling method, (c) writing neutral questions, (d) ensuring high response rate, (e) interpreting and reporting results responsibly.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [25 marks]</div>
+
+<div class="qcard">
+<div class="qnum">Question 23 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">In Lotto 6/49, a player chooses 6 distinct numbers from 1 to 49. a) How many possible tickets exist? b) Find \( P(\text{matching all 6}) \). c) Find \( P(\text{matching exactly 5 of 6}) \) (assuming the winning combination is fixed). d) If a ticket costs $3 and the jackpot averages $5 million (assume no shared prize), is the bet "fair" in terms of expected value? Compute and interpret.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 24 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A coffee chain claims its mean wait time is 4.0 minutes with \( \sigma = 0.5 \) min, normally distributed. a) What proportion of customers wait less than 3 minutes? b) The chain promises 95% of customers will wait less than \( T \) minutes. Find \( T \). c) If the actual wait time follows the same distribution, what is \( P(\text{wait} > 5\text{ min}) \)?</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 25 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A medical screening test has sensitivity 0.98 (true positive rate) and specificity 0.95 (true negative rate). Disease prevalence is 0.5%. a) Find \( P(\text{disease} \mid \text{positive test}) \) using Bayes' theorem and a tree diagram. b) Comment on the implication for medical decision-making.</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 26 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A car dealership records monthly sales (\( y \), in units) vs advertising spending (\( x \), in $1000) over 6 months: \( (5, 30), (8, 45), (10, 50), (12, 60), (15, 70), (18, 85) \).<br>
+a) Plot the data.<br>
+b) Compute \( r \) and interpret strength/direction.<br>
+c) State the regression line.<br>
+d) Predict sales when \( x = 13 \).<br>
+e) Discuss validity of extrapolating to \( x = 30 \).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="qcard">
+<div class="qnum">Question 27 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A survey of 1000 Canadians asks if they favour a new tax. 540 say yes. The pollster claims this is "evidence of majority support." a) Use the normal approximation to find the probability of getting at least 540 "yes" responses if the true proportion is 0.50. b) Comment on whether the result is statistically meaningful (use a 5% threshold).</div>
+<textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr ci">Culminating Data-Management Investigation Rubric</div>
+
+<div class="ci-card">
+<h4>📊 Strand D — The Culminating Investigation (15% of Final Evaluation)</h4>
+<p style="font-size:14px;color:#475569;margin-bottom:10px;">The Culminating Investigation is a separate, multi-week independent inquiry submitted before the final exam window. It contributes 15% of the 30% Final Evaluation, with the remaining 15% from this written exam.</p>
+
+<p style="font-size:14px;color:#1e293b;font-weight:700;margin-top:14px;margin-bottom:6px;">Required Components</p>
+<ul style="margin-left:20px;font-size:14px;color:#334155;">
+<li>Research question (significant, personally meaningful, requires substantial data analysis)</li>
+<li>Data plan (variables, source: primary or secondary, sampling method, ethics)</li>
+<li>Data collection or acquisition (organized table, properly cited if secondary)</li>
+<li>Two-variable analysis (scatter plot, correlation, regression, residuals)</li>
+<li>Univariate descriptive statistics (mean, median, spread, distribution shape)</li>
+<li>Probability or distribution model (where appropriate, e.g., normal, binomial fit)</li>
+<li>Interpretation (causation discussion, lurking variables, limitations)</li>
+<li>Written report (1500–2500 words) with proper citations and visualizations</li>
+<li>Oral presentation (5–8 minutes) with Q&amp;A</li>
+<li>Critique of one peer's investigation</li>
+</ul>
+</div>
+
+<div class="ci-card">
+<h4>📋 Achievement-Chart Rubric (Total 100 marks)</h4>
+<div class="rubric-grid">
+<div class="head">Level</div><div class="head">K/U (25)</div><div class="head">Thinking (25)</div><div class="head">Comm (25)</div><div class="head">Application (25)</div>
+
+<div class="lvl">4 (80–100%)</div>
+<div>Demonstrates thorough understanding of statistical/probability concepts; uses formulas and conventions accurately; quantifies all key statistics correctly.</div>
+<div>Shows insightful planning, sophisticated reasoning, and strong critical evaluation of conclusions, lurking variables, and study design.</div>
+<div>Communicates findings with high clarity, precise vocabulary, well-labelled tables/graphs, and articulate written/oral presentation.</div>
+<div>Makes meaningful connections among investigation, real-world context, and other course strands; interprets results with depth.</div>
+
+<div class="lvl">3 (70–79%)</div>
+<div>Considerable understanding; minor formula or computational gaps; most key statistics correct.</div>
+<div>Considerable evidence of planning and reasoning; identifies major confounders and limitations; some critical evaluation.</div>
+<div>Considerable clarity in communication; good use of conventions; minor gaps in labels or terminology.</div>
+<div>Considerable transfer of concepts to context; reasonable interpretation; minor gaps in connecting strands.</div>
+
+<div class="lvl">2 (60–69%)</div>
+<div>Some understanding; recurring errors in formulas or computations; gaps in core ideas.</div>
+<div>Some planning and reasoning; limited critical evaluation; identifies obvious confounders only.</div>
+<div>Some clarity but with notable inconsistencies in conventions, vocabulary, or visuals; report needs revision.</div>
+<div>Some transfer; basic interpretation; weak connections to context or other strands.</div>
+
+<div class="lvl">1 (50–59%)</div>
+<div>Limited understanding; many basic errors; unclear use of vocabulary.</div>
+<div>Limited planning; lacks reasoning depth; conclusions not justified by data.</div>
+<div>Limited clarity; conventions and vocabulary frequently incorrect; weak presentation.</div>
+<div>Limited transfer; superficial interpretation; little connection to context.</div>
+
+<div class="lvl">R (&lt;50%)</div>
+<div>Insufficient understanding shown.</div>
+<div>Insufficient planning or reasoning shown.</div>
+<div>Insufficient communication of findings.</div>
+<div>Insufficient connection to context shown.</div>
+</div>
+<p style="font-size:12px;color:#64748b;margin-top:12px;">Per Growing Success (2010): Final mark = 70% Term Work + 30% Final Evaluation. The Final Evaluation comprises 15% Culminating Investigation + 15% written Final Exam.</p>
+</div>
+
+<details class="answer-key">
+<summary>📑 Brief Final Exam Answer Key (open after attempting)</summary>
+<div class="akq"><h4>Q1</h4><p>280</p></div>
+<div class="akq"><h4>Q2</h4><p>0.2344 (15/64)</p></div>
+<div class="akq"><h4>Q3</h4><p>z = 1.5</p></div>
+<div class="akq"><h4>Q4</h4><p>2 598 960</p></div>
+<div class="akq"><h4>Q5</h4><p>10</p></div>
+<div class="akq"><h4>Q6</h4><p>6</p></div>
+<div class="akq"><h4>Q7</h4><p>0.49 (49%)</p></div>
+<div class="akq"><h4>Q8</h4><p>50 400</p></div>
+<div class="akq"><h4>Q9</h4><p>(b) Stratified random</p></div>
+<div class="akq"><h4>Q10</h4><p>1/11 ≈ 0.0909</p></div>
+<div class="akq"><h4>Q11</h4><p>median = 19</p></div>
+<div class="akq"><h4>Q12</h4><p>0.8413</p></div>
+<div class="akq"><h4>Q13</h4><p>(a) C(14,5) = 2002 (b) C(6,3)·C(8,2) = 20·28 = 560 (c) C(6,3)·C(8,2)+C(6,4)·C(8,1)+C(6,5)·C(8,0) = 560+120+6 = 686</p></div>
+<div class="akq"><h4>Q14</h4><p>(a) C(30,25)·(0.8)^25·(0.2)^5 ≈ 0.1023 (b) E = 24, Var = 4.8 (c) μ = 24, σ ≈ 2.19; z = (22.5−24)/2.19 ≈ −0.685; P(Z &lt; −0.685) ≈ 0.247</p></div>
+<div class="akq"><h4>Q15</h4><p>(a) Hypergeometric (b) C(8,1)·C(92,9)/C(100,10) ≈ 0.396 (c) 1 − C(92,10)/C(100,10) ≈ 0.572 (d) E = n·r/N = 10·8/100 = 0.8</p></div>
+<div class="akq"><h4>Q16</h4><p>x̄ = 3, ȳ = 6.6; s_x ≈ 1.581, s_y ≈ 2.966; r ≈ 0.992; ŷ = 0.6 + 2x; ŷ(3.5) = 7.6; r² ≈ 0.985 → 98.5% of variation explained.</p></div>
+<div class="akq"><h4>Q17</h4><p>X ∈ {0,1,2,3}; using hypergeometric: P(0)=20/120, P(1)=60/120, P(2)=36/120, P(3)=4/120. E(X) = 1.2; E(X²) = 1.8; Var = 1.8 − 1.44 = 0.36 (matches n·r/N · (N−r)/N · (N−n)/(N−1) = 3·0.4·0.6·7/9 = 0.56? — see note: the simple formula gives Var = n·(r/N)·((N−r)/N)·((N−n)/(N−1)) ≈ 3·0.4·0.6·7/9 ≈ 0.56. Direct calculation from the distribution above gives 0.56. Recompute: P(0)=20/120, P(1)=60/120, P(2)=36/120, P(3)=4/120. Sums must total 1: 20+60+36+4 = 120 ✓. E = (0·20+1·60+2·36+3·4)/120 = 144/120 = 1.2. E(X²)=(0+60+144+36)/120 = 240/120=2. Var = 2 − 1.44 = 0.56.</p></div>
+<div class="akq"><h4>Q23</h4><p>(a) C(49,6) = 13 983 816 (b) 1/13 983 816 ≈ 7.15×10^-8 (c) C(6,5)·C(43,1)/C(49,6) = 6·43/13 983 816 ≈ 1.84×10^-5 (d) E ≈ $5 000 000/13 983 816 − $3 ≈ $0.36 − $3 = −$2.64. Unfair (negative expected return).</p></div>
+<div class="akq"><h4>Q24</h4><p>(a) z = (3−4)/0.5 = −2; P(Z &lt; −2) = 0.0228 (b) z = 1.645 → T = 4 + 1.645·0.5 ≈ 4.82 min (c) z = 2 → P(Z &gt; 2) = 0.0228</p></div>
+<div class="akq"><h4>Q25</h4><p>P(D)=0.005, P(¬D)=0.995. P(+|D)=0.98, P(+|¬D)=0.05. P(+) = 0.005·0.98 + 0.995·0.05 = 0.0049 + 0.04975 = 0.05465. P(D|+) = 0.0049/0.05465 ≈ 0.0897 ≈ 9.0%. Even after a positive test, only ~9% have the disease — illustrates the base-rate fallacy.</p></div>
+<div class="akq"><h4>Q26</h4><p>r ≈ 0.998; ŷ ≈ 13.5 + 4.0x (approx); ŷ(13) ≈ 65.5. Extrapolation to $30k may not be valid (outside observed range, market saturation may flatten the relationship).</p></div>
+<div class="akq"><h4>Q27</h4><p>μ = 500, σ = √(1000·0.5·0.5) ≈ 15.81. z = (539.5−500)/15.81 ≈ 2.50. P(Z ≥ 2.50) = 0.0062. p &lt; 0.05, so result is statistically significant — there is meaningful evidence against the 50% null hypothesis.</p></div>
+</details>
+
+<footer>MDM4U — Mathematics of Data Management, Grade 12 | Strands A, B, C, D | Final Evaluation (30%): Culminating Investigation 15% + Written Final Exam 15%</footer>
+</div>
+
+<script>
+let score=0,answered=0;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;const tol=Math.abs(c)<1?0.005:Math.abs(c)<100?0.5:5;if(Math.abs(v-c)<tol){score++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

@@ -1,111 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 1: Biochemistry — Practice Quiz</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Biochemistry — Practice Quiz (AS Learning)</title>
 <style>
-:root{--p:#16a34a;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #86efac; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 1: Biochemistry — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand B</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of macromolecules, enzymes, and membrane transport. Each question has a worked solution.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
 
-<header><h1>📝 Unit 1: Biochemistry — Practice Quiz</h1>
-<div class="sub">Assessment AS Learning — SBI4U</div><div class="badge">🔄 Not Graded</div></header>
-<div class="info"><strong>Purpose:</strong> Self-check your understanding. Instant feedback on every question.</div>
-<div class="formula-ref"><h3>📋 Key Formulas/Concepts</h3>Macromolecules | Enzymes | Dehydration synthesis vs hydrolysis</div>
-<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 1 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
-<div class="qc" id="q1"><div class="qn">Q1</div>
-<div class="qt">Conceptual question for Biochemistry.</div>
+<div class="topic-section"><div class="topic-header">Topic 1.1 — Macromolecules</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">Which monomer pairs with which polymer correctly?</div>
 <ul class="mc">
-<li><label><input type="radio" name="q1" value="a"> Correct</label></li>
-<li><label><input type="radio" name="q1" value="b"> Wrong A</label></li>
-<li><label><input type="radio" name="q1" value="c"> Wrong B</label></li>
-<li><label><input type="radio" name="q1" value="d"> Wrong C</label></li>
+<li><label><input type="radio" name="q1" value="a"> Amino acid → starch</label></li>
+<li><label><input type="radio" name="q1" value="b"> Glucose → glycogen</label></li>
+<li><label><input type="radio" name="q1" value="c"> Nucleotide → triglyceride</label></li>
+<li><label><input type="radio" name="q1" value="d"> Glycerol → DNA</label></li>
 </ul>
-<button class="btn btn-p" onclick="chkMC('q1','a')">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
-<div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>See unit notes.</div>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Glucose monomers join via alpha-1,4 (and alpha-1,6 branching) glycosidic bonds to form glycogen, the animal storage polysaccharide. Amino acids form proteins; nucleotides form nucleic acids; glycerol + 3 fatty acids form a triglyceride.</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">A saturated fatty acid differs from an unsaturated fatty acid because it:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Contains nitrogen</label></li>
+<li><label><input type="radio" name="q2" value="b"> Has no C=C double bonds in its hydrocarbon tail</label></li>
+<li><label><input type="radio" name="q2" value="c"> Is hydrophilic</label></li>
+<li><label><input type="radio" name="q2" value="d"> Is a polymer</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Saturated = no C=C; tails are straight, pack tightly, solid at room temperature (e.g., butter). Unsaturated has one or more C=C, creating kinks; usually liquid (oils).</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">Which level of protein structure is stabilized primarily by hydrogen bonding between backbone atoms?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Primary</label></li>
+<li><label><input type="radio" name="q3" value="b"> Secondary</label></li>
+<li><label><input type="radio" name="q3" value="c"> Tertiary</label></li>
+<li><label><input type="radio" name="q3" value="d"> Quaternary</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Secondary structure (alpha-helices, beta-sheets) is held by H-bonds between backbone N-H and C=O groups. Primary is the amino-acid sequence; tertiary involves R-group interactions (disulfide, ionic, hydrophobic); quaternary involves multiple subunits.</div></div>
+
 </div>
 
+<div class="topic-section"><div class="topic-header">Topic 1.2 — Enzyme Kinetics</div>
 
-<footer>SPH4U — Physics, Grade 12 | Unit 1: Biochemistry | Ontario Curriculum 2008</footer>
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">In a Michaelis–Menten plot of reaction rate (v) vs [substrate], V_max represents:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The substrate concentration at half-maximum rate</label></li>
+<li><label><input type="radio" name="q4" value="b"> The maximum rate when all enzyme active sites are saturated</label></li>
+<li><label><input type="radio" name="q4" value="c"> The activation energy</label></li>
+<li><label><input type="radio" name="q4" value="d"> The optimum pH</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> V_max is the asymptotic maximum rate when every active site is occupied — adding more substrate cannot speed it up further. K_m = [S] at half V_max and is inversely related to enzyme–substrate affinity.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">A competitive inhibitor of an enzyme will:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Decrease V_max; K_m unchanged</label></li>
+<li><label><input type="radio" name="q5" value="b"> Increase apparent K_m; V_max unchanged</label></li>
+<li><label><input type="radio" name="q5" value="c"> Decrease both V_max and K_m</label></li>
+<li><label><input type="radio" name="q5" value="d"> Bind irreversibly to the substrate</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> A competitive inhibitor binds the active site, competing with substrate. With enough substrate, V_max can still be reached, so V_max is unchanged but apparent K_m rises (more substrate is needed for half V_max). Non-competitive inhibitors lower V_max.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">Calculate K_m: an enzyme reaches V_max = 80 µmol/min. At [S] = 5 mM, v = 40 µmol/min.</div>
+<input type="text" id="q6-in" placeholder="Enter Km in mM">
+<button class="btn" onclick="cN('q6',5)">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> K_m = [S] at half V_max. Half V_max = 40 µmol/min, observed at [S] = 5 mM. Therefore K_m = 5 mM.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">The induced-fit model of enzyme action proposes that:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> The active site is rigid and substrate must match perfectly</label></li>
+<li><label><input type="radio" name="q7" value="b"> The active site changes shape upon substrate binding to enhance catalysis</label></li>
+<li><label><input type="radio" name="q7" value="c"> Enzymes are consumed during the reaction</label></li>
+<li><label><input type="radio" name="q7" value="d"> All enzymes work at pH 7</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','b')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Koshland's induced-fit model: the active site is flexible. Substrate binding induces a conformational change that strains substrate bonds, lowering activation energy. Replaces the older rigid lock-and-key view.</div></div>
+
 </div>
 
+<div class="topic-section"><div class="topic-header">Topic 1.3 — Cell Membrane &amp; Transport</div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">Which transport mechanism requires ATP and moves a solute against its gradient?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Simple diffusion</label></li>
+<li><label><input type="radio" name="q8" value="b"> Osmosis</label></li>
+<li><label><input type="radio" name="q8" value="c"> Facilitated diffusion</label></li>
+<li><label><input type="radio" name="q8" value="d"> Primary active transport</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','d')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Primary active transport (e.g., Na+/K+ ATPase: 3 Na+ out, 2 K+ in per ATP) hydrolyzes ATP directly to move solutes uphill. Facilitated diffusion uses channel/carrier proteins but follows the gradient (no ATP).</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">A red blood cell placed in a hypotonic solution will:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Shrivel (crenate)</label></li>
+<li><label><input type="radio" name="q9" value="b"> Swell and possibly lyse</label></li>
+<li><label><input type="radio" name="q9" value="c"> Remain unchanged</label></li>
+<li><label><input type="radio" name="q9" value="d"> Become turgid like a plant cell</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','b')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> In a hypotonic solution (lower solute outside), water enters the cell by osmosis. Animal cells lack a cell wall, so they swell and may lyse (hemolysis). Plant cells become turgid because the wall resists.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">In the fluid-mosaic model, which feature most affects membrane fluidity at low temperatures?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Higher cholesterol content keeps the membrane fluid</label></li>
+<li><label><input type="radio" name="q10" value="b"> More saturated fatty acids increase fluidity</label></li>
+<li><label><input type="radio" name="q10" value="c"> Glycoproteins increase fluidity</label></li>
+<li><label><input type="radio" name="q10" value="d"> Phosphate heads make the membrane rigid</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','a')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Cholesterol is a fluidity buffer: at low T it prevents tails packing too tightly (maintains fluidity); at high T it restrains motion (prevents excess fluidity). Unsaturated fatty acids (kinks) increase fluidity; saturated decrease it.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Calculate water potential. A plant cell has solute potential ψ_s = −0.7 MPa and pressure potential ψ_p = +0.4 MPa. What is ψ?</div>
+<input type="text" id="q11-in" placeholder="Enter MPa (e.g., -0.3)">
+<button class="btn" onclick="cN('q11',-0.3)">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> ψ = ψ_s + ψ_p = −0.7 + 0.4 = <strong>−0.3 MPa</strong>. Water moves from higher (less negative) ψ to lower ψ.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">Endocytosis differs from facilitated diffusion because endocytosis:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Brings large particles or fluid into the cell using vesicles, requiring ATP</label></li>
+<li><label><input type="radio" name="q12" value="b"> Moves only ions</label></li>
+<li><label><input type="radio" name="q12" value="c"> Is a passive process</label></li>
+<li><label><input type="radio" name="q12" value="d"> Uses aquaporins</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','a')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Endocytosis (phagocytosis = solids; pinocytosis = fluids; receptor-mediated = specific) engulfs material in membrane vesicles, requires ATP and cytoskeletal rearrangement. Facilitated diffusion is passive, single-molecule, channel/carrier-mediated.</div></div>
+
+</div>
+
+<footer>SBI4U — Biology, Grade 12 | Strand B: Biochemistry | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
 <script>
-let sc=0,ans=0,tot=1;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+function cN(q,c){const v=parseFloat(document.getElementById(q+'-in').value);if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<0.05){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Answer: '+c;}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

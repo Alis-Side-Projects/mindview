@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6: Media Literacy — Practice Quiz (AS Learning)</title>
+<style>
+:root { --primary: #0891b2; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .sub { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #67e8f9; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.qtxt { margin-bottom: 12px; }
+.mc { list-style: none; margin-top: 8px; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; background: var(--primary); color: #fff; margin-top: 8px; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+.fb.wrong { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.sol { margin-top: 10px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 32px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 6: Media Literacy — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand D</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-assess your understanding of media texts, news/source evaluation, advertising rhetoric, and media-creation conventions.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.1 — Media Forms &amp; Conventions</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">In Ontario's Media Literacy framework, the principle that "media texts are constructions" means:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> Media texts simply mirror reality</label></li>
+<li><label><input type="radio" name="q1" value="b"> Media texts are deliberately built — through choices about what to include, exclude, frame, and emphasise — and therefore present a version of reality</label></li>
+<li><label><input type="radio" name="q1" value="c"> Media texts cannot be analysed</label></li>
+<li><label><input type="radio" name="q1" value="d"> Media texts are always true</label></li>
+</ul>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Constructedness is the foundational principle. Every media text reflects creator choices: what is shown, who speaks, what is omitted, how cameras frame, what music plays. Critical viewers ask "what choices were made and why?"</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">A "low-angle shot" in film typically:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Makes the subject look smaller and weaker</label></li>
+<li><label><input type="radio" name="q2" value="b"> Makes the subject look powerful, dominant, or imposing — viewer is positioned looking up</label></li>
+<li><label><input type="radio" name="q2" value="c"> Has no effect</label></li>
+<li><label><input type="radio" name="q2" value="d"> Is always used for comedy</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','b')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> Camera angles encode power: low angle (camera below subject) elevates the subject; high angle (camera above) diminishes. Eye-level normalises. These choices are part of "media language."</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">"Codes and conventions" of a media form refer to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Computer programming languages</label></li>
+<li><label><input type="radio" name="q3" value="b"> The rules and recurring features that audiences expect (e.g., the inverted pyramid in news writing, the establishing shot in film, the headline + lede + nut graf structure)</label></li>
+<li><label><input type="radio" name="q3" value="c"> Random choices</label></li>
+<li><label><input type="radio" name="q3" value="d"> Government censorship</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','b')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> Codes and conventions = the genre-specific rules that producers use and audiences interpret. Knowing them lets you read media texts critically — and break them deliberately.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.2 — News &amp; Source Evaluation</div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">"Lateral reading" (a technique studied by the Stanford History Education Group) is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Reading the same article twice</label></li>
+<li><label><input type="radio" name="q4" value="b"> Opening multiple tabs to see what other independent sources say about the source you are evaluating, rather than judging it from its own self-presentation</label></li>
+<li><label><input type="radio" name="q4" value="c"> Reading at an angle</label></li>
+<li><label><input type="radio" name="q4" value="d"> Skimming headlines only</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> Professional fact-checkers don't trust a website to tell the truth about itself; they "read laterally" by checking what others (Wikipedia, library databases, established outlets) say about the source.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">The acronym <strong>SIFT</strong> for source evaluation stands for:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Sit, Inspect, Fix, Try</label></li>
+<li><label><input type="radio" name="q5" value="b"> Stop, Investigate the source, Find better coverage, Trace claims to the original context</label></li>
+<li><label><input type="radio" name="q5" value="c"> Search, Index, File, Track</label></li>
+<li><label><input type="radio" name="q5" value="d"> Send, Inform, Forward, Tag</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Mike Caulfield's SIFT method — Stop, Investigate the source, Find better coverage, Trace claims/quotes/media to original context — is now widely used in media-literacy curricula.</div></div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div>
+<div class="passage">A news headline reads: "Rebels storm the capital." A different outlet reports: "Freedom fighters reach the capital."</div>
+<div class="qtxt">The choice between "rebels" and "freedom fighters" is an example of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Identical wording</label></li>
+<li><label><input type="radio" name="q6" value="b"> Framing through diction (loaded language) — the same event encoded with different connotations to shape reader sympathy</label></li>
+<li><label><input type="radio" name="q6" value="c"> A typo</label></li>
+<li><label><input type="radio" name="q6" value="d"> Random word choice</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Diction encodes framing. "Rebels" connotes lawlessness; "freedom fighters" connotes liberation. The choice signals whose perspective the outlet is foregrounding.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.3 — Advertising &amp; Algorithms</div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div>
+<div class="passage">A laundry-detergent ad shows a perfect family in a sunlit kitchen, ending with "America's most-trusted detergent."</div>
+<div class="qtxt">Two persuasion techniques at work here are:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Pathos (idealised family imagery) and bandwagon ("most-trusted" — appeal to popularity/authority)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Pure logical proof</label></li>
+<li><label><input type="radio" name="q7" value="c"> Negative emotional manipulation only</label></li>
+<li><label><input type="radio" name="q7" value="d"> No persuasion is used</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> The imagery does emotional work (idealised family); the slogan piggybacks on perceived consensus. Together they invite the viewer to join the imagined community of trusting consumers.</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">An "algorithmic feed" (TikTok, Instagram Reels, YouTube Shorts):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Shows posts in chronological order only</label></li>
+<li><label><input type="radio" name="q8" value="b"> Selects content based on engagement signals (watch time, likes, shares) and your inferred preferences — quietly amplifying what holds attention, including outrage</label></li>
+<li><label><input type="radio" name="q8" value="c"> Shows random posts</label></li>
+<li><label><input type="radio" name="q8" value="d"> Is identical for every user</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','b')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Recommender systems optimise for engagement metrics. Because outrage and identity-affirming content drive engagement, algorithms can quietly amplify them. This shapes the information ecosystem in ways users may not perceive.</div></div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">"Confirmation bias" in social-media use refers to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> The tendency to seek and credit information that confirms what we already believe, while discounting disconfirming evidence</label></li>
+<li><label><input type="radio" name="q9" value="b"> Two-factor authentication</label></li>
+<li><label><input type="radio" name="q9" value="c"> A misspelling</label></li>
+<li><label><input type="radio" name="q9" value="d"> A geometric pattern</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Confirmation bias is a cognitive shortcut amplified by algorithmic feeds: we seek what fits, the algorithm shows us more of what fits, and the cycle hardens. Critical media-users notice the loop and deliberately seek disconfirming sources.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 6.4 — Creating Media Texts</div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">When designing a public-service announcement (PSA), the most important early step is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Choose a font</label></li>
+<li><label><input type="radio" name="q10" value="b"> Identify your target audience and their relationship to the issue — every other choice (tone, channel, length, imagery) flows from this</label></li>
+<li><label><input type="radio" name="q10" value="c"> Pick a colour palette</label></li>
+<li><label><input type="radio" name="q10" value="d"> Decide on background music</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> Audience first. A PSA on vaping aimed at parents and one aimed at Grade 11 students will look entirely different — even when the underlying issue is identical. Targeting determines tone, channel, length, language, and imagery.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">A "storyboard" is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> A finished video</label></li>
+<li><label><input type="radio" name="q11" value="b"> A pre-production sequence of sketched panels showing each shot, accompanied by notes on dialogue, sound, and timing</label></li>
+<li><label><input type="radio" name="q11" value="c"> A list of titles</label></li>
+<li><label><input type="radio" name="q11" value="d"> A budget</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Storyboards are the bridge between script and shoot. Each panel is a frame; notes specify camera angle, actor action, dialogue, and sound. Storyboards force you to visualise pacing before filming.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">An "ethical media creator" considers:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Only the visual aesthetic</label></li>
+<li><label><input type="radio" name="q12" value="b"> Truthfulness, representation, consent, source crediting, and likely effects of the text on its audiences and communities depicted</label></li>
+<li><label><input type="radio" name="q12" value="c"> Nothing besides views</label></li>
+<li><label><input type="radio" name="q12" value="d"> Only the colour palette</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Ethics in media creation extends beyond accuracy. Are you depicting people fairly? Do they consent to their image's use? Are you crediting sources? Could the work cause harm? These are creator responsibilities.</div></div>
+
+</div>
+
+<footer>ENG4U — English, Grade 12 | Strand D: Media Studies | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
+<script>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

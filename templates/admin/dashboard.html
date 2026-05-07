@@ -1,0 +1,64 @@
+{% from 'admin/_layout.html' import page %}
+{% call page('Dashboard', user) %}
+<h1>Welcome, {{ user.full_name }}</h1>
+<p class="sub">Role: <span class="role-pill {{ user.role }}">{{ role_labels[user.role] }}</span></p>
+
+{% if user.role in ['superuser','admin'] %}
+<div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:16px;margin-bottom:28px;">
+    <div class="card" style="text-align:center;">
+        <div style="font-size:42px;font-weight:800;color:#2563eb;">{{ stats.total_users }}</div>
+        <div class="muted">Total active users</div>
+    </div>
+    <div class="card" style="text-align:center;">
+        <div style="font-size:32px;font-weight:800;color:#dc2626;">{{ stats.by_role.superuser }}</div>
+        <div class="muted">Super Users</div>
+    </div>
+    <div class="card" style="text-align:center;">
+        <div style="font-size:32px;font-weight:800;color:#7c3aed;">{{ stats.by_role.admin }}</div>
+        <div class="muted">Administrators</div>
+    </div>
+    <div class="card" style="text-align:center;">
+        <div style="font-size:32px;font-weight:800;color:#059669;">{{ stats.by_role.teacher }}</div>
+        <div class="muted">Teachers</div>
+    </div>
+    <div class="card" style="text-align:center;">
+        <div style="font-size:32px;font-weight:800;color:#2563eb;">{{ stats.by_role.student }}</div>
+        <div class="muted">Students</div>
+    </div>
+</div>
+
+<div class="card">
+    <h2 style="font-size:18px;margin-bottom:14px;">Recent Logins</h2>
+    {% if recent_logins %}
+    <table>
+        <thead><tr><th>User</th><th>Role</th><th>Last Login</th></tr></thead>
+        <tbody>
+        {% for r in recent_logins %}
+        <tr>
+            <td><strong>{{ r.full_name }}</strong> <span class="muted">@{{ r.username }}</span></td>
+            <td><span class="role-pill {{ r.role }}">{{ role_labels[r.role] }}</span></td>
+            <td class="muted">{{ r.last_login.replace('T',' ').split('+')[0] }} UTC</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}<p class="muted">No login activity yet.</p>{% endif %}
+</div>
+
+<div style="display:flex;gap:10px;margin-top:20px;">
+    <a href="/admin/users" class="btn">Manage Users →</a>
+    <a href="/admin/audit" class="btn ghost">View Audit Log</a>
+    <a href="/" class="btn ghost">Browse Courses</a>
+</div>
+{% else %}
+<div class="card">
+    <h2 style="font-size:18px;margin-bottom:14px;">Your Access</h2>
+    {% if user.role == 'teacher' %}
+    <p>As a Teacher, you can access all course content and assessments. Student management is available through your assigned classes.</p>
+    {% else %}
+    <p>As a Student, you have full access to all course materials, video lessons, and assessments.</p>
+    {% endif %}
+    <div style="margin-top:16px;"><a href="/" class="btn">Browse Courses →</a></div>
+</div>
+{% endif %}
+{% endcall %}

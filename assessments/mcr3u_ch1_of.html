@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 1: Introduction to Functions — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; }
+.btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mcr3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header>
+<h1>📝 Chapter 1: Introduction to Functions</h1>
+<div class="sub">Assessment OF Learning — Unit Test</div>
+<div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work. Answers without supporting work receive partial credit at best.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which of the following is NOT a function?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> \( y = 3x - 5 \)</label></li>
+<li><label><input type="radio" name="q1" value="b"> \( y = x^2 + 1 \)</label></li>
+<li><label><input type="radio" name="q1" value="c"> \( y^2 = x + 4 \)</label></li>
+<li><label><input type="radio" name="q1" value="d"> \( y = |x| \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','c')">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>\( y^2 = x + 4 \) gives two y-values for each \( x > -4 \), failing the vertical line test.</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">For \( f(x) = -2x^2 + 5x - 3 \), evaluate \( f(-1) \).</div>
+<input type="text" id="q2-in" placeholder="Enter a number...">
+<button class="btn btn-p" onclick="chkNum('q2',-10)">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>\( f(-1) = -2(1) + 5(-1) - 3 = -2 - 5 - 3 = -10 \).</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">State the domain of \( g(x) = \dfrac{2x + 1}{x^2 - 9} \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> \( \{x \in \mathbb{R}\} \)</label></li>
+<li><label><input type="radio" name="q3" value="b"> \( \{x \in \mathbb{R} \mid x \neq \pm 3\} \)</label></li>
+<li><label><input type="radio" name="q3" value="c"> \( \{x \in \mathbb{R} \mid x \neq 9\} \)</label></li>
+<li><label><input type="radio" name="q3" value="d"> \( \{x \in \mathbb{R} \mid x \geq 3\} \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','b')">Check</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>Denominator \( x^2 - 9 = (x-3)(x+3) = 0 \) when \( x = \pm 3 \). Exclude both.</div>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Find the inverse of \( f(x) = 4x - 9 \). Show all algebraic steps.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Determine whether \( f(x) = 5x^3 - 2x \) is even, odd, or neither.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Even</label></li>
+<li><label><input type="radio" name="q5" value="b"> Odd</label></li>
+<li><label><input type="radio" name="q5" value="c"> Neither</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>\( f(-x) = -5x^3 + 2x = -(5x^3 - 2x) = -f(x) \). Odd.</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Sketch \( y = (x + 2)^2 - 5 \) using transformations of \( y = x^2 \). State vertex and direction of opening.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [15 marks]</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Given \( f(x) = x^2 + 3x \) and \( g(x) = 2x - 1 \), determine: (a) \( f(g(2)) \); (b) \( g(f(2)) \); (c) explain why composition is generally not commutative.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">For \( f(x) = -x^2 + 4 \): (a) state the domain and range; (b) find \( f^{-1}(x) \) restricted so that the inverse is a function; (c) state the domain and range of \( f^{-1} \).</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">For \( f(x) = 3x - 7 \), find \( \dfrac{f(2 + h) - f(2)}{h} \) and explain what this expression represents.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A function \( f \) is even AND odd. Prove that \( f(x) = 0 \) for every \( x \) in its domain.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Explain in your own words the difference between a relation and a function. Use one example of each.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Describe the geometric relationship between the graph of \( f(x) \) and \( f^{-1}(x) \). Mention the line of reflection and one specific example.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe each transformation in \( g(x) = -3 f(2(x - 1)) + 5 \), in the order they should be applied. Include effects on key points such as a vertex.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">For \( f(x) = \sqrt{x + 3} - 2 \): identify the parent function, list the transformations in order, state the domain and range, and explain how restrictions arise from the radical.</div>
+<textarea placeholder="Write a clear explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A swimming pool's water depth (m) is modelled by \( d(t) = 0.5t + 1 \), where \( t \) is the time (hours) after the pool starts filling. Find: (a) the depth at \( t = 5 \) h; (b) the time when depth is 4 m; (c) state the domain and range that make sense for this real-world context if the pool is full at depth 5 m.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A rectangular dog run uses 30 m of fencing. The area is \( A(w) = w(15 - w) \), where \( w \) is the width. Find: (a) the area when \( w = 5 \) m; (b) the value of \( w \) that maximizes the area; (c) the maximum area.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A taxi charges \$3.50 plus \$1.25 per km. Let \( C(d) = 3.50 + 1.25d \). (a) Find the inverse \( C^{-1}(x) \); (b) interpret what \( C^{-1}(x) \) represents in this context; (c) Aretha was charged \$16.00 — how far did she travel?</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q18">
+<div class="qnum">Question 18 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A ball's height (m) above the ground is \( h(t) = -5(t - 2)^2 + 20 \), where \( t \) is in seconds. Use transformations of the parent \( y = t^2 \) to identify the maximum height and the time it occurs. Justify with reference to the vertex form.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>MCR3U — Functions, Grade 11 | Strand A: Characteristics of Functions | Assessment OF Learning — Graded</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<0.1){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

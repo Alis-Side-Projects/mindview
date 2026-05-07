@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Software Engineering &amp; Computing in Society — Practice Quiz</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text]{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#127760; Unit 5: Software Engineering &amp; Computing in Society &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Self-check on testing/debugging, version control, ethics, AI/ML, careers, history, and environmental impact. Instant feedback. Python 3.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 — Test design</div>
+<div class="qt">A function <code>divide(a, b)</code> returns <code>a/b</code>. Which of the following is the BEST set of test cases?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> divide(10,2), divide(8,4)</label></li>
+<li><label><input type="radio" name="q1" value="b"> divide(10,2), divide(0,5), divide(10,0), divide(-6,2)</label></li>
+<li><label><input type="radio" name="q1" value="c"> divide(2,10), divide(5,5)</label></li>
+<li><label><input type="radio" name="q1" value="d"> divide("a", "b")</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>(b) covers normal, boundary (0 numerator), edge (0 denominator), and negative cases. (a) and (c) test only happy paths.</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 — Git basics</div>
+<div class="qt">What does <code>git commit</code> do?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Sends your changes to a remote server</label></li>
+<li><label><input type="radio" name="q2" value="b"> Records a snapshot of staged changes in your local repository</label></li>
+<li><label><input type="radio" name="q2" value="c"> Permanently deletes your changes</label></li>
+<li><label><input type="radio" name="q2" value="d"> Downloads someone else's changes</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div><code>git commit</code> records staged changes locally. <code>git push</code> sends them to the remote.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 — Debugging</div>
+<div class="qt">A program correctly handles 99% of inputs but crashes on the empty list. What kind of bug is this?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> Syntax error</label></li>
+<li><label><input type="radio" name="q3" value="b"> Logic error / boundary / edge case</label></li>
+<li><label><input type="radio" name="q3" value="c"> Memory leak</label></li>
+<li><label><input type="radio" name="q3" value="d"> Infinite loop</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q3','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>This is an <strong>edge-case</strong> bug. Most testing checklists insist on testing empty/zero/null inputs because they often expose missed assumptions.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 — AI / Machine Learning</div>
+<div class="qt">Which best describes supervised machine learning?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> A program that thinks like a human</label></li>
+<li><label><input type="radio" name="q4" value="b"> An algorithm that learns a function from labeled training examples (input, output) and then predicts outputs for new inputs</label></li>
+<li><label><input type="radio" name="q4" value="c"> Software that always achieves 100% accuracy</label></li>
+<li><label><input type="radio" name="q4" value="d"> A robot that walks autonomously</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>Supervised ML learns a mapping from labeled examples. The model's accuracy is empirical, not guaranteed.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 — Ethics</div>
+<div class="qt">A hiring algorithm is found to reject more applicants from one neighbourhood than another, even when qualifications are comparable. This is an example of:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> A computer virus</label></li>
+<li><label><input type="radio" name="q5" value="b"> Algorithmic bias</label></li>
+<li><label><input type="radio" name="q5" value="c"> A memory leak</label></li>
+<li><label><input type="radio" name="q5" value="d"> Open-source licensing</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div><strong>Algorithmic bias</strong> &mdash; the system has internalized a pattern from biased training data or design choices, causing differential outcomes across groups.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 — History</div>
+<div class="qt">Who is generally credited with writing the first algorithm intended for a machine (the Analytical Engine), in the 1840s?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Alan Turing</label></li>
+<li><label><input type="radio" name="q6" value="b"> Ada Lovelace</label></li>
+<li><label><input type="radio" name="q6" value="c"> Charles Babbage</label></li>
+<li><label><input type="radio" name="q6" value="d"> Grace Hopper</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div><strong>Ada Lovelace</strong> &mdash; her notes on Babbage's Analytical Engine include what is widely recognized as the first published algorithm.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 — Code review</div>
+<div class="qt">Which is NOT a typical code-quality concern raised in a code review?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Magic numbers (unexplained literals)</label></li>
+<li><label><input type="radio" name="q7" value="b"> Inconsistent indentation</label></li>
+<li><label><input type="radio" name="q7" value="c"> Lack of comments on tricky logic</label></li>
+<li><label><input type="radio" name="q7" value="d"> The colour of the editor's syntax highlighting</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','d')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>Editor colour scheme is personal preference. (a), (b), (c) are real maintainability concerns.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 — Environmental impact</div>
+<div class="qt">Roughly what fraction of global electricity demand is currently attributed to data centres (a typical figure used in the news as of the mid-2020s)?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> About 0.01%</label></li>
+<li><label><input type="radio" name="q8" value="b"> About 1-2%</label></li>
+<li><label><input type="radio" name="q8" value="c"> About 50%</label></li>
+<li><label><input type="radio" name="q8" value="d"> About 0% — they run on solar exclusively</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Estimates from the IEA put data-centre electricity at approximately <strong>1-2%</strong> of global demand, growing rapidly with AI workloads. The exact figure is debated but the order of magnitude is robust.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 — Version control workflow</div>
+<div class="qt">Which is the recommended workflow for working on a new feature in a team using Git?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Edit files directly on main, commit, push</label></li>
+<li><label><input type="radio" name="q9" value="b"> Create a feature branch, commit there, open a pull request, merge after review</label></li>
+<li><label><input type="radio" name="q9" value="c"> Email the changed files to teammates</label></li>
+<li><label><input type="radio" name="q9" value="d"> Force-push to overwrite teammates' work</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>Branch &rarr; commit &rarr; PR &rarr; review &rarr; merge is the standard collaborative workflow. Direct edits to main risk breaking shared work.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 — Software Development Life Cycle</div>
+<div class="qt">In the SDLC, which phase comes IMMEDIATELY after design?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Requirements</label></li>
+<li><label><input type="radio" name="q10" value="b"> Implementation</label></li>
+<li><label><input type="radio" name="q10" value="c"> Maintenance</label></li>
+<li><label><input type="radio" name="q10" value="d"> Retirement</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>Typical SDLC: Requirements &rarr; Design &rarr; <strong>Implementation</strong> &rarr; Testing &rarr; Deployment &rarr; Maintenance.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 — Privacy</div>
+<div class="qt">A free mobile game asks for permission to access your contacts and microphone, even though it is just a number-guessing game. The MOST appropriate response is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> Always grant — apps need this to function</label></li>
+<li><label><input type="radio" name="q11" value="b"> Deny by default; only grant permissions clearly justified by the feature being used (least privilege)</label></li>
+<li><label><input type="radio" name="q11" value="c"> Uninstall every app that requests any permission</label></li>
+<li><label><input type="radio" name="q11" value="d"> Reset your phone</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q11','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div>The <strong>principle of least privilege</strong> &mdash; software should request only the permissions needed for the feature in use.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 — Career exploration</div>
+<div class="qt">Which postsecondary path is BEST suited to someone interested in building large-scale software systems used by many users?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Bachelor of Computer Science / Software Engineering</label></li>
+<li><label><input type="radio" name="q12" value="b"> Bachelor of Fine Arts (Visual Arts)</label></li>
+<li><label><input type="radio" name="q12" value="c"> Bachelor of Linguistics (sole focus)</label></li>
+<li><label><input type="radio" name="q12" value="d"> Diploma in Industrial Mechanics</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','a')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>Computer Science or Software Engineering programs at any major Ontario university (Waterloo, U of T, McMaster, Western, Queens, etc.) are the most direct path. The other options are valuable but not focused on large-scale software development.</div></div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 5: Software Engineering &amp; Society | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector('input[name="'+q+'"]:checked');
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

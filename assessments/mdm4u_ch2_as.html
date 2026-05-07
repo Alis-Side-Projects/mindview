@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 2: Permutations — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #15803d; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input { accent-color: var(--primary); }
+.btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #166534; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#15803d;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 2: Permutations</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your skills with factorials, permutations of distinct/identical objects, restrictions, and circular permutations.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.1 — Factorials</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div>
+<div class="q-text">Evaluate \( 6! \).</div>
+<input type="text" id="q1-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q1',720)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( 6! = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720 \).</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div>
+<div class="q-text">Simplify \( \dfrac{8!}{6!} \).</div>
+<input type="text" id="q2-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q2',56)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( \dfrac{8!}{6!} = \dfrac{8\cdot 7\cdot 6!}{6!} = 8\cdot 7 = 56 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.2 — Permutations \( P(n,r) \)</div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div>
+<div class="q-text">In how many ways can the gold, silver, and bronze medals be awarded to 8 finalists?</div>
+<input type="text" id="q3-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q3',336)">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( P(8,3) = \dfrac{8!}{5!} = 8 \cdot 7 \cdot 6 = 336 \).</div></div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div>
+<div class="q-text">How many 5-letter "words" (any string of letters) can be formed from a 26-letter alphabet with NO repetition?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q4" value="a"> \( 26^5 \)</label></li>
+<li><label><input type="radio" name="q4" value="b"> \( P(26,5) = 7\,893\,600 \)</label></li>
+<li><label><input type="radio" name="q4" value="c"> \( C(26,5) \)</label></li>
+<li><label><input type="radio" name="q4" value="d"> \( 5! \cdot 26 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Order matters, no repetition: \( P(26,5) = 26 \cdot 25 \cdot 24 \cdot 23 \cdot 22 = 7\,893\,600 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.3 — Permutations with Identical Objects</div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div>
+<div class="q-text">How many distinct arrangements of the letters of "BOOK" are possible?</div>
+<input type="text" id="q5-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q5',12)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>4 letters with O repeated twice: \( \dfrac{4!}{2!} = \dfrac{24}{2} = 12 \).</div></div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div>
+<div class="q-text">How many distinct arrangements of the letters of "MISSISSIPPI"?</div>
+<input type="text" id="q6-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q6',34650)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>11 letters: 1 M, 4 I, 4 S, 2 P. \( \dfrac{11!}{1!\, 4!\, 4!\, 2!} = \dfrac{39\,916\,800}{1\cdot 24\cdot 24\cdot 2} = 34\,650 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.4 — Permutations with Restrictions</div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div>
+<div class="q-text">Five people sit in a row. In how many ways can they sit if Alice and Bob must sit together?</div>
+<input type="text" id="q7-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q7',48)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>"Glue" Alice and Bob: 4 units arrange in \( 4! = 24 \) ways. Internal AB or BA: \( 2! = 2 \). Total: \( 24 \cdot 2 = 48 \).</div></div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div>
+<div class="q-text">How many 4-letter "words" can be made from letters A, B, C, D, E if the word must START with a vowel (A or E) and have no repetition?</div>
+<input type="text" id="q8-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q8',48)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>First letter: 2 vowels. Remaining 3 letters from 4: \( P(4,3) = 24 \). Total: \( 2 \cdot 24 = 48 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 2.5 — Circular Permutations</div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div>
+<div class="q-text">How many ways can 6 distinct people sit around a circular table?</div>
+<input type="text" id="q9-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q9',120)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Circular permutation: \( (n-1)! = 5! = 120 \) (one seat is fixed by rotation symmetry).</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div>
+<div class="q-text">In how many ways can 8 distinct beads be arranged on a bracelet (which can be flipped)?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> \( 8! \)</label></li>
+<li><label><input type="radio" name="q10" value="b"> \( 7! = 5040 \)</label></li>
+<li><label><input type="radio" name="q10" value="c"> \( \tfrac{7!}{2} = 2520 \)</label></li>
+<li><label><input type="radio" name="q10" value="d"> \( 6! = 720 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Bracelet = circle with reflection. \( \dfrac{(n-1)!}{2} = \dfrac{7!}{2} = 2520 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Mixed Application</div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div>
+<div class="q-text">Solve for \( n \) in \( P(n,2) = 30 \). (\( n \in \mathbb{N} \))</div>
+<input type="text" id="q11-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q11',6)">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( n(n-1) = 30 \Rightarrow n^2 - n - 30 = 0 \Rightarrow (n-6)(n+5)=0 \Rightarrow n = 6 \).</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div>
+<div class="q-text">How many 4-digit numbers can be formed from {1,2,3,4,5,6,7} without repetition such that the number is even?</div>
+<input type="text" id="q12-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q12',360)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>Last digit even: 3 choices (2, 4, 6). Then 3 remaining positions from 6 remaining digits: \( P(6,3) = 120 \). Total: \( 3 \cdot 120 = 360 \).</div></div>
+</div>
+
+<footer>MDM4U — Mathematics of Data Management, Grade 12 | A. Counting and Probability | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.01){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Answer: '+c;}sl.classList.add('show');updateProgress();}
+</script>
+</body></html>

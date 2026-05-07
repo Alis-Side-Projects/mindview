@@ -10,137 +10,151 @@
 :root{--p:#d97706;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
+.ctr{max-width:880px;margin:0 auto;padding:20px}
 header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+header h1{font-size:22px}.sub{font-size:14px;opacity:.85;margin-top:4px}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:20px;font-size:14px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:14px;margin-bottom:20px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:6px;color:var(--p)}
 .score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.sc{font-size:28px;font-weight:800;color:var(--p)}
 .pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
 .pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:14px}
 .qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
 .qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
 .qt{margin:8px 0 12px}
 .mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}
+input[type=text]{padding:8px 12px;border:2px solid var(--b);border-radius:6px;font-size:15px;width:140px}
+.btn{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:6px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:8px;padding:8px;border-radius:6px;font-size:14px;display:none}
 .fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
 .fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol{margin-top:8px;padding:12px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
 .sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
+.reflect{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:18px;margin-top:20px}
+.reflect h3{color:var(--p);margin-bottom:10px;font-size:16px}
+.reflect-item{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:14px}
+.reflect-item select{padding:4px 8px;border-radius:4px;border:1px solid var(--b)}
+footer{text-align:center;padding:20px;color:var(--m);font-size:12px;margin-top:24px;border-top:1px solid var(--b)}
+</style></head>
 <body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sph4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
 <div class="ctr">
-
 <header><h1>🌊 Unit 4: Wave Nature of Light — Practice Quiz</h1>
-<div class="sub">Assessment AS Learning</div><div class="badge">🔄 Not Graded</div></header>
-<div class="info"><strong>Purpose:</strong> Self-check your understanding.</div>
-<div class="formula-ref"><h3>📋 Formulae</h3>\( c = f\lambda \) | \( n\lambda = d\sin\theta \) | \( E = hf \) | \( E_k = hf - W \) | \( h = 6.63\times10^{-34}\text{ J·s} \)</div>
-<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 5 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
-<div class="qc" id="q1"><div class="qn">Q1</div>
-<div class="qt">Light of wavelength \(550\text{ nm}\) passes through slits \(0.10\text{ mm}\) apart. Screen is \(2.0\text{ m}\) away. Distance to first bright fringe (mm)?</div>
-<div>Answer: <input type="text" id="q1-in" style="width:120px;display:inline-block"></div>
-<button class="btn btn-p" onclick="chkNum('q1',11.0,0.1)">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="sub">Assessment AS Learning</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info"><strong>Purpose:</strong> Self-check understanding after each topic. Use results to plan study before the unit test. Use \(c=3.00\times10^8\,\text{m/s}\), \(h=6.63\times10^{-34}\,\text{J·s}\).</div>
+<div class="formula-ref"><h3>📋 Formulae</h3>\(c=f\lambda\) | \(n_1\sin\theta_1=n_2\sin\theta_2\) | \(\sin\theta_c=n_2/n_1\) | \(d\sin\theta=m\lambda\) | \(\Delta y=\lambda L/d\) | \(a\sin\theta=m\lambda\) (single-slit min) | Thin film (low-high-low): \(2nt=(m+\tfrac12)\lambda\) | \(I=I_0\cos^2\theta\)</div>
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 9 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1"><div class="qn">Q1 — Frequency from wavelength</div>
+<div class="qt">A laser emits red light of wavelength \(632.8\,\text{nm}\) in vacuum. Calculate its frequency in \(10^{14}\,\text{Hz}\).</div>
+Answer: <input type="text" id="q1-in"> ×10¹⁴ Hz
+<button class="btn btn-p" onclick="chkNum('q1',4.74,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
 <div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>y = λL/d = 550e-9 × 2.0 / 0.1e-3 = 0.011 m = 11 mm</div>
-</div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>\(f = c/\lambda = 3.00\times10^8/632.8\times10^{-9} = 4.74\times10^{14}\,\text{Hz}\).</div></div>
 
-<div class="qc" id="q2"><div class="qn">Q2</div>
-<div class="qt">Calculate the energy of a photon with frequency \(5.0\times10^{14}\text{ Hz}\) (×10⁻¹⁹ J).</div>
-<div>Answer: <input type="text" id="q2-in" style="width:120px;display:inline-block"></div>
-<button class="btn btn-p" onclick="chkNum('q2',3.32,0.1)">Check</button><button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="qc" id="q2"><div class="qn">Q2 — Refraction (Snell's law)</div>
+<div class="qt">Light passes from air (\(n=1.00\)) into glass (\(n=1.50\)) at \(\theta_1=35°\). Find the angle of refraction (degrees).</div>
+Answer: <input type="text" id="q2-in"> °
+<button class="btn btn-p" onclick="chkNum('q2',22.5,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
 <div class="fb" id="q2-fb"></div>
-<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>E = hf = 6.63e-34 × 5e14 = 3.315e-19 J</div>
-</div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>\(\sin\theta_2 = (1.00/1.50)\sin 35° = 0.382 \Rightarrow \theta_2 = 22.5°\).</div></div>
 
-<div class="qc" id="q3"><div class="qn">Q3</div>
-<div class="qt">The photoelectric effect shows that light:</div>
-<ul class="mc">
-<li><label><input type="radio" name="q3" value="a"> Behaves as particles (photons)</label></li>
-<li><label><input type="radio" name="q3" value="b"> Only behaves as waves</label></li>
-<li><label><input type="radio" name="q3" value="c"> Has no energy</label></li>
-<li><label><input type="radio" name="q3" value="d"> Cannot eject electrons</label></li>
-</ul>
-<button class="btn btn-p" onclick="chkMC('q3','a')">Check</button>
+<div class="qc" id="q3"><div class="qn">Q3 — Critical angle</div>
+<div class="qt">Calculate the critical angle for light going from water (\(n=1.33\)) into air. Answer in degrees.</div>
+Answer: <input type="text" id="q3-in"> °
+<button class="btn btn-p" onclick="chkNum('q3',48.8,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
 <div class="fb" id="q3-fb"></div>
-</div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>\(\sin\theta_c = 1/1.33 \Rightarrow \theta_c = 48.8°\).</div></div>
 
-<div class="qc" id="q4"><div class="qn">Q4</div>
-<div class="qt">A diffraction grating has 5000 lines/cm. What is the slit spacing d (×10⁻⁶ m)?</div>
-<div>Answer: <input type="text" id="q4-in" style="width:120px;display:inline-block"></div>
-<button class="btn btn-p" onclick="chkNum('q4',2.0,0.1)">Check</button><button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="qc" id="q4"><div class="qn">Q4 — Young's double slit</div>
+<div class="qt">Slits \(0.15\,\text{mm}\) apart are illuminated by \(\lambda=600\,\text{nm}\) light. The screen is \(2.0\,\text{m}\) away. Find the fringe spacing in mm.</div>
+Answer: <input type="text" id="q4-in"> mm
+<button class="btn btn-p" onclick="chkNum('q4',8.0,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
 <div class="fb" id="q4-fb"></div>
-<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>d = 1/5000 cm = 2e-4 cm = 2e-6 m</div>
-</div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>\(\Delta y = \lambda L/d = (6\times10^{-7})(2)/(1.5\times10^{-4}) = 8.0\times10^{-3}\,\text{m}=8.0\,\text{mm}\).</div></div>
 
-<div class="qc" id="q5"><div class="qn">Q5</div>
-<div class="qt">Which phenomenon cannot be explained by the wave model of light?</div>
-<ul class="mc">
-<li><label><input type="radio" name="q5" value="a"> Photoelectric effect</label></li>
-<li><label><input type="radio" name="q5" value="b"> Diffraction</label></li>
-<li><label><input type="radio" name="q5" value="c"> Interference</label></li>
-<li><label><input type="radio" name="q5" value="d"> Refraction</label></li>
-</ul>
-<button class="btn btn-p" onclick="chkMC('q5','a')">Check</button>
+<div class="qc" id="q5"><div class="qn">Q5 — Diffraction grating</div>
+<div class="qt">A grating with 4000 lines/cm produces a 1st-order maximum at \(\theta=14°\). Find the wavelength (nm).</div>
+Answer: <input type="text" id="q5-in"> nm
+<button class="btn btn-p" onclick="chkNum('q5',605,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
 <div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>\(d = 1/4000\,\text{cm}=2.5\times10^{-6}\,\text{m}\). \(\lambda = d\sin\theta = 2.5e{-}6 \times \sin 14° = 6.05\times10^{-7}\,\text{m}=605\,\text{nm}\).</div></div>
+
+<div class="qc" id="q6"><div class="qn">Q6 — Single-slit diffraction</div>
+<div class="qt">Light of \(\lambda=500\,\text{nm}\) passes through a slit of width \(0.10\,\text{mm}\). Find the angular position (degrees) of the first minimum.</div>
+Answer: <input type="text" id="q6-in"> °
+<button class="btn btn-p" onclick="chkNum('q6',0.286,0.1)">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>\(\sin\theta = \lambda/a = 5\times10^{-7}/10^{-4}=5\times10^{-3}\Rightarrow\theta\approx 0.286°\).</div></div>
+
+<div class="qc" id="q7"><div class="qn">Q7 — Polarization (Malus)</div>
+<div class="qt">Unpolarized light of intensity \(I_0\) passes through one polarizer, then a second polarizer at \(60°\) to the first. Express transmitted intensity as a fraction of \(I_0\).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> 1/2</label></li>
+<li><label><input type="radio" name="q7" value="b"> 1/4</label></li>
+<li><label><input type="radio" name="q7" value="c"> 1/8</label></li>
+<li><label><input type="radio" name="q7" value="d"> 3/4</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q7','c')">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>After 1st: \(I_0/2\). After 2nd: \(I_0/2 \cdot \cos^2 60° = I_0/2 \cdot 1/4 = I_0/8\).</div></div>
+
+<div class="qc" id="q8"><div class="qn">Q8 — Wave-particle conceptual</div>
+<div class="qt">Which observation cannot be explained by a pure wave model of light?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Two-slit interference fringes</label></li>
+<li><label><input type="radio" name="q8" value="b"> Refraction at a glass surface</label></li>
+<li><label><input type="radio" name="q8" value="c"> Photoelectric threshold frequency</label></li>
+<li><label><input type="radio" name="q8" value="d"> Polarization through a filter</label></li></ul>
+<button class="btn btn-p" onclick="chkMC('q8','c')">Check</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>The photoelectric threshold (no emission below a critical \(f\) regardless of intensity) requires the photon model.</div></div>
+
+<div class="qc" id="q9"><div class="qn">Q9 — Thin film</div>
+<div class="qt">A thin oil film (\(n=1.40\)) on water (\(n=1.33\)) appears to reflect green light (\(\lambda=550\,\text{nm}\)) strongly. Find the minimum non-zero film thickness (nm). Use the constructive condition appropriate for low-high-low: \(2nt=(m+\tfrac12)\lambda\).</div>
+Answer: <input type="text" id="q9-in"> nm
+<button class="btn btn-p" onclick="chkNum('q9',98.2,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>\(t_{min}=\lambda/(4n)=550/(4\cdot1.40)=98.2\,\text{nm}\).</div></div>
+
+<div class="reflect"><h3>📊 Self-Reflection</h3>
+<p style="font-size:13px;color:var(--m);margin-bottom:8px;">Rate your confidence (1 = need help, 4 = mastered):</p>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.1 Properties of waves &amp; refraction</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.2 Diffraction &amp; interference</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.3 Young's double slit</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.4 Thin film interference</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.5 Single-slit &amp; gratings</label></div>
+<div class="reflect-item"><select><option>1</option><option>2</option><option selected>3</option><option>4</option></select><label>4.6 EM radiation &amp; polarization</label></div>
 </div>
 
-
-<footer>SPH4U — Physics, Grade 12 | Unit 4: Wave Nature of Light | Ontario Curriculum 2008</footer>
+<footer>SPH4U — Physics, Grade 12 | Unit 4: Wave Nature of Light — AS Learning | Ontario Curriculum 2008</footer>
 </div>
-
 <script>
-let sc=0,ans=0,tot=5;
+let sc=0,ans=0,tot=9;
 function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
 if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ See solution.';}
+if(sl)sl.classList.add('show');up();}
+function chkNum(q,c,tol){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+if(Math.abs(v-c)<Math.abs(c*tol)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c+'. See solution.';}
+if(sl)sl.classList.add('show');up();}
 function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+</script></body></html>

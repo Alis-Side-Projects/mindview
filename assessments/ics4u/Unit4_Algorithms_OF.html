@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Algorithms — Unit Test</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 4: Algorithms &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code answers must be syntactically valid Python 3. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[2 marks]</span></div>
+<div class="qt">State the worst-case Big-O complexity of each:
+<ol style="margin-left:24px;">
+<li>Linear search</li>
+<li>Binary search</li>
+<li>Bubble sort</li>
+<li>Merge sort</li>
+</ol>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace bubble sort (ascending) on <code>[6, 3, 8, 1, 5]</code>. Show the list state after EACH complete pass through the list.</div>
+<textarea placeholder="After pass 1: ... After pass 2: ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">Trace binary search for the value <code>23</code> in the sorted list <code>[2, 5, 8, 12, 17, 23, 29, 31, 40]</code>. Show <code>lo</code>, <code>hi</code>, and <code>mid</code> at each step.</div>
+<textarea placeholder="Step 1: lo=0, hi=8, mid=4 ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[2 marks]</span></div>
+<div class="qt">If a list has 1,000,000 elements, approximately how many comparisons does binary search use in the worst case?</div>
+<input type="text" placeholder="number">
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">A program does this:
+<div class="code">for i in range(n):
+    for j in range(n):
+        for k in range(n):
+            do_something()</div>
+What is the Big-O complexity? Justify briefly.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace selection sort (ascending) on <code>[20, 5, 12, 3, 9]</code>. Show the list after EACH selection (3 passes).</div>
+<textarea placeholder="Pass 1: select min, swap with index 0 -> ..."></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find &amp; fix the bugs. The binary search below has <strong>three bugs</strong>. Provide the corrected function.
+<div class="code">def binary_search(arr, target):
+    lo, hi = 0, len(arr)
+    while lo &lt; hi:
+        mid = (lo + hi) / 2
+        if arr[mid] == target:
+            return False
+        elif arr[mid] &lt; target:
+            lo = mid - 1
+        else:
+            hi = mid + 1
+    return -1</div>
+</div>
+<textarea placeholder="Corrected function..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Implement insertion sort from scratch in Python (ascending). Then describe in 2-3 sentences why insertion sort is O(n²) in the worst case but O(n) on a nearly-sorted list.</div>
+<textarea placeholder="def insertion_sort(a): ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">A team needs to find the <em>k</em>-th largest mark in a list of student grades (e.g., the 5-th highest). Compare two strategies:
+<ol style="margin-left:24px;">
+<li>Sort the list (descending) and pick index <code>k-1</code>.</li>
+<li>Repeat <em>k</em> times: scan for the maximum and remove it.</li>
+</ol>
+What is the Big-O of each? When would each be preferable? (3-4 sentences.)</div>
+<textarea style="min-height:140px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Explain the divide-and-conquer principle as it applies to merge sort. Use a small example (4-element list). Include: dividing, conquering (recursion), and combining (merging). Use diagrams or trees if helpful.</div>
+<textarea style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">A peer says: "Big-O notation is just academic theory &mdash; in practice, code that runs fast on my laptop is what matters." Write a clear, respectful response (3-5 sentences) explaining why algorithm analysis matters in industry, with a concrete example involving large inputs.</div>
+<textarea style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Add high-quality comments to this merge function so a peer can understand each step.
+<div class="code">def merge(left, right):
+    out = []
+    i = j = 0
+    while i &lt; len(left) and j &lt; len(right):
+        if left[i] &lt;= right[j]:
+            out.append(left[i])
+            i += 1
+        else:
+            out.append(right[j])
+            j += 1
+    out.extend(left[i:])
+    out.extend(right[j:])
+    return out</div>
+</div>
+<textarea placeholder="def merge(left, right):\n    \"\"\"...\"\"\"\n    # Initialize..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a function <code>linear_search(arr, target)</code> that returns the FIRST index of <code>target</code> in <code>arr</code>, or -1 if not found. Then write <code>linear_search_all(arr, target)</code> that returns a list of ALL indices.</div>
+<textarea placeholder="def linear_search(arr, target): ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">A library tracks borrowed books as a list of dicts: <code>[{"title":..., "borrower":..., "due":...}, ...]</code>. Write a function <code>overdue(books, today)</code> that returns the books due before <code>today</code> (a string like <code>"2026-05-07"</code>), <strong>sorted ascending by due date</strong>. You may use Python's built-in <code>sorted()</code>.</div>
+<textarea placeholder="def overdue(books, today): ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">15. <span class="qm">[5 marks]</span></div>
+<div class="qt">Algorithm comparison &mdash; experiment design. Describe (do not implement) an experiment to <em>empirically</em> verify that bubble sort is O(n²). Include:
+<ol style="margin-left:24px;">
+<li>What variables you would change.</li>
+<li>What you would measure.</li>
+<li>What graph you would produce.</li>
+<li>What pattern in the graph would confirm O(n²).</li>
+<li>One source of measurement error and how you would mitigate it.</li>
+</ol>
+</div>
+<textarea style="min-height:200px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard) &mdash; mostly correct with minor issues</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 4: Algorithms &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

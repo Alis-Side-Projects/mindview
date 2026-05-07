@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Sequences &amp; Series — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #059669; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; } body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; } header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; } header .subtitle { font-size: 14px; opacity: 0.85; } header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #d1fae5; border: 1px solid #6ee7b7; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; } .topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; } .question-card.correct { border-color: var(--correct); background: #f0fdf4; } .question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; } .q-text { margin-bottom: 12px; } input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; } .mc-options li { margin-bottom: 6px; } .mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; } .mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; } .btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; } .feedback.show { display: block; } .feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; } .feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; } .solution.show { display: block; } .solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; } .progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; } .score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mcr3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 5: Sequences and Series</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check arithmetic and geometric sequences and series.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Arithmetic Sequences &amp; Series</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div><div class="q-text">For the arithmetic sequence \( 5, 8, 11, 14, \ldots \), find \( t_{20} \).</div>
+<input type="text" id="q1-input" placeholder="Enter t20..."><button class="btn btn-check" onclick="checkNumeric('q1', 62)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div><div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( a = 5, d = 3 \). \( t_{20} = 5 + (20 - 1)(3) = 5 + 57 = 62 \).</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div><div class="q-text">Which term of \( 7, 11, 15, 19, \ldots \) equals 95?</div>
+<input type="text" id="q2-input" placeholder="Enter n..."><button class="btn btn-check" onclick="checkNumeric('q2', 23)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div><div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( 95 = 7 + (n - 1)(4) \Rightarrow n = 23 \).</div></div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div><div class="q-text">Find \( S_{15} \) for \( 4 + 7 + 10 + 13 + \ldots \).</div>
+<input type="text" id="q3-input" placeholder="Enter sum..."><button class="btn btn-check" onclick="checkNumeric('q3', 375)">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div><div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( a = 4, d = 3 \). \( S_{15} = \tfrac{15}{2}(2(4) + 14(3)) = \tfrac{15}{2}(50) = 375 \).</div></div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div><div class="q-text">Sum the first 50 even numbers (2 + 4 + ... + 100).</div>
+<input type="text" id="q4-input" placeholder="Enter sum..."><button class="btn btn-check" onclick="checkNumeric('q4', 2550)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div><div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( a = 2, d = 2, n = 50 \), \( t_{50} = 100 \). \( S_{50} = \tfrac{50}{2}(2 + 100) = 25(102) = 2550 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Geometric Sequences &amp; Series</div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div><div class="q-text">For the geometric sequence \( 2, 6, 18, 54, \ldots \), find \( t_8 \).</div>
+<input type="text" id="q5-input" placeholder="Enter t8..."><button class="btn btn-check" onclick="checkNumeric('q5', 4374)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div><div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>\( a = 2, r = 3 \). \( t_8 = 2 \cdot 3^7 = 2 \cdot 2187 = 4374 \).</div></div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div><div class="q-text">A geometric sequence has \( t_1 = 5 \) and \( t_4 = 40 \). Find \( r \).</div>
+<input type="text" id="q6-input" placeholder="Enter r..."><button class="btn btn-check" onclick="checkNumeric('q6', 2)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div><div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( t_4 = 5 r^3 = 40 \Rightarrow r^3 = 8 \Rightarrow r = 2 \).</div></div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div><div class="q-text">Find \( S_6 \) for \( 3, 6, 12, 24, \ldots \).</div>
+<input type="text" id="q7-input" placeholder="Enter sum..."><button class="btn btn-check" onclick="checkNumeric('q7', 189)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div><div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\( a = 3, r = 2 \). \( S_6 = \tfrac{3(2^6 - 1)}{2 - 1} = 3 \cdot 63 = 189 \).</div></div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div><div class="q-text">Sum: \( 1 + 2 + 4 + 8 + \ldots + 1024 \). (Hint: 1024 = \( 2^{10} \), so 11 terms.)</div>
+<input type="text" id="q8-input" placeholder="Enter sum..."><button class="btn btn-check" onclick="checkNumeric('q8', 2047)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div><div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( a = 1, r = 2, n = 11 \). \( S_{11} = \tfrac{1(2^{11} - 1)}{1} = 2047 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Recursive &amp; Mixed</div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div><div class="q-text">For \( t_n = t_{n-1} + 4 \) with \( t_1 = 7 \), find \( t_5 \).</div>
+<input type="text" id="q9-input" placeholder="Enter t5..."><button class="btn btn-check" onclick="checkNumeric('q9', 23)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div><div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Arithmetic with \( a = 7, d = 4 \). \( t_5 = 7 + 4(4) = 23 \).</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div><div class="q-text">Sigma: \( \displaystyle\sum_{k=1}^{4} (2k + 3) \) equals:</div>
+<input type="text" id="q10-input" placeholder="Enter sum..."><button class="btn btn-check" onclick="checkNumeric('q10', 32)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div><div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>5 + 7 + 9 + 11 = 32.</div></div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div><div class="q-text">Identify whether \( 100, 80, 64, 51.2, \ldots \) is arithmetic, geometric, or neither.</div>
+<ul class="mc-options"><li><label><input type="radio" name="q11" value="a"> Arithmetic</label></li><li><label><input type="radio" name="q11" value="b"> Geometric</label></li><li><label><input type="radio" name="q11" value="c"> Neither</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q11','b')">Check Answer</button><div class="feedback" id="q11-feedback"></div><div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( 80/100 = 0.8, 64/80 = 0.8, 51.2/64 = 0.8 \). Constant ratio \( r = 0.8 \). Geometric.</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div><div class="q-text">A ball dropped from 10 m bounces 80% as high each time. Total distance travelled before the 5th bounce (down + up between bounces, in m):</div>
+<input type="text" id="q12-input" placeholder="Round to nearest..."><button class="btn btn-check" onclick="checkNumeric('q12', 39.5)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div><div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>Down: 10 + 8 + 6.4 + 5.12 + 4.096. Up after each bounce: 8 + 6.4 + 5.12 + 4.096. Total \( \approx 33.6 + 23.6 = 39.5 \) m (approximately).</div></div>
+</div>
+
+<footer>MCR3U — Functions, Grade 11 | Strand C: Discrete Functions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<Math.max(0.5,Math.abs(c*0.005))){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ Answer: ${c}.`;}sl.classList.add('show');updateProgress();}
+</script></body></html>

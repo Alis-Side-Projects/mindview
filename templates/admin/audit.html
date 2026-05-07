@@ -1,0 +1,23 @@
+{% from 'admin/_layout.html' import page %}
+{% call page('Audit Log', user) %}
+<h1>Audit Log</h1>
+<p class="sub">Most recent 200 events. All authentication and user-management actions are logged.</p>
+
+<div class="card" style="padding:0;overflow:hidden;">
+<table>
+    <thead><tr><th>Timestamp (UTC)</th><th>Actor</th><th>Action</th><th>Target</th><th>Details</th><th>IP</th></tr></thead>
+    <tbody>
+    {% for e in entries %}
+    <tr>
+        <td class="muted" style="white-space:nowrap;font-family:ui-monospace,monospace;font-size:12px;">{{ e.timestamp.replace('T',' ').split('+')[0] }}</td>
+        <td><strong>{{ e.actor_username or '(anon)' }}</strong></td>
+        <td><code style="background:#f1f5f9;padding:2px 8px;border-radius:4px;font-size:12px;">{{ e.action }}</code></td>
+        <td>{{ e.target_username or '—' }}</td>
+        <td class="muted" style="font-size:12px;">{{ e.details or '' }}</td>
+        <td class="muted" style="font-family:ui-monospace,monospace;font-size:11px;">{{ e.ip or '—' }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endcall %}

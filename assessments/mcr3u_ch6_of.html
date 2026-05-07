@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 6: Financial Mathematics — Unit Test (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #16a34a; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; } body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; } header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; } header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; } header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; } .section-hdr.t { background: #fef3c7; color: #92400e; } .section-hdr.c { background: #d1fae5; color: #065f46; } .section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; } .qcard.correct { border-color: var(--correct); background: #f0fdf4; } .qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; } .qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; } .qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; } textarea { min-height: 100px; resize: vertical; }
+.mc { list-style: none; margin: 8px 0; } .mc li { margin-bottom: 6px; } .mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; } .mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; } .btn-p { background: var(--primary); color: #fff; }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; } .fb.show { display: block; } .fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; } .fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; } .sol.show { display: block; } .sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; } .chart-item { text-align: center; padding: 12px; border-radius: 8px; } .chart-item .label { font-size: 12px; font-weight: 600; } .chart-item .value { font-size: 24px; font-weight: 800; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; } .rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; } .rubric th { background: #f1f5f9; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mcr3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 6: Financial Mathematics</h1><div class="sub">Assessment OF Learning — Unit Test</div><div class="badge">✅ Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>Show all work. Calculator allowed.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1 <span class="qmarks">[3 marks]</span></div><div class="qtxt">\$3000 invested at 4.5% per year compounded annually for 7 years. Find the final amount.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div><div class="qtxt">How much should be deposited today at 5% compounded semi-annually to grow to \$8000 in 6 years?</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q3"><div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div><div class="qtxt">FV of an ordinary annuity: \$300 deposited at the end of each month for 4 years at 6% compounded monthly.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div><div class="qtxt">PV of an ordinary annuity: \$1000 paid at the end of each year for 8 years at 4% compounded annually.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div><div class="qtxt">A loan of \$15{,}000 at 6% per year compounded monthly is amortised over 4 years. Find the monthly payment.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry [15 marks]</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6 <span class="qmarks">[5 marks]</span></div><div class="qtxt">A young professional starts saving \$200/month at age 25 for 40 years at 7% compounded monthly. Find the future value at age 65, then determine how much would have to be saved monthly starting at age 35 to achieve the same total.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7 <span class="qmarks">[5 marks]</span></div><div class="qtxt">An annuity pays \$2000 every 6 months for 10 years. The present value at 8% compounded semi-annually is what amount? Round to the nearest dollar.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8 <span class="qmarks">[5 marks]</span></div><div class="qtxt">A \$200{,}000 mortgage at 4% per year compounded semi-annually is amortised over 25 years (monthly payments). (a) Find the equivalent monthly rate \( i_{\text{mo}} \) such that \( (1 + i_{\text{mo}})^{12} = (1.02)^2 \). (b) Find the monthly payment.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9 <span class="qmarks">[4 marks]</span></div><div class="qtxt">Explain the difference between FV and PV of an annuity. Use a real-world example for each (e.g. a savings goal vs. a loan or pension).</div><textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10 <span class="qmarks">[4 marks]</span></div><div class="qtxt">Why is the FV of an ordinary annuity formula a finite geometric series in disguise? Show the connection.</div><textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11 <span class="qmarks">[4 marks]</span></div><div class="qtxt">In an amortisation schedule, why does the proportion of each payment going to interest decrease over time? Use a 30-year mortgage as your context.</div><textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12 <span class="qmarks">[3 marks]</span></div><div class="qtxt">A teen says, "Saving \$50/month is the same as saving \$600 once a year." Use the language of FV-of-annuity to explain why this is not quite true if the account compounds monthly.</div><textarea placeholder="Write your explanation..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard" id="q13"><div class="qnum">Question 13 <span class="qmarks">[5 marks]</span></div><div class="qtxt">Mei is saving for a down payment of \$30{,}000 in 5 years. The bank pays 3% compounded monthly. (a) How much should she save at the end of each month? (b) What is the total amount she will deposit? (c) How much interest is earned?</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q14"><div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div><div class="qtxt">A retiree receives \$3000/month for 20 years from a fund earning 5% per year compounded monthly. (a) What lump sum was needed at retirement? (b) What is the total of all payments received? (c) How much of that total is interest?</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard" id="q15"><div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div><div class="qtxt">Compare two student-loan options for \$20{,}000: (Option A) 5%/year, 6 years; (Option B) 6%/year, 4 years. Both compounded monthly. (a) Find the monthly payment for each. (b) Find the total interest for each. (c) Which is cheaper overall? Justify.</div><textarea placeholder="Show all work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="rubric"><h3 style="margin-bottom:12px;">Evaluation Rubric</h3><table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful, high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard)</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement</td><td>Below 50%</td></tr>
+</table></div>
+
+<footer>MCR3U — Functions, Grade 11 | Strand C: Discrete Functions | Assessment OF Learning — Graded</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<0.1){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script></body></html>

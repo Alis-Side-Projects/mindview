@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Data Structures — Unit Test</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 2: Data Structures &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code answers must be syntactically valid Python 3. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[2 marks]</span></div>
+<div class="qt">Given <code>nums = [3, 1, 4, 1, 5, 9, 2, 6]</code>, write the value of:
+<ol style="margin-left:24px;">
+<li><code>nums[3]</code></li>
+<li><code>nums[-1]</code></li>
+<li><code>nums[2:6]</code></li>
+<li><code>len(nums)</code></li>
+</ol>
+</div>
+<textarea placeholder="(1)... (2)... (3)... (4)..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace this code and report the final value of <code>d</code>.
+<div class="code">d = {}
+words = ["red", "blue", "red", "red", "blue", "green"]
+for w in words:
+    d[w] = d.get(w, 0) + 1
+print(d)</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">Write a single line of Python that creates a 2-D list (3 rows &times; 4 columns) initialized with all zeros.</div>
+<input type="text" placeholder="grid = ...">
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[2 marks]</span></div>
+<div class="qt">What is the output?
+<div class="code">s = "abracadabra"
+print(s.count("a"), s.replace("a", "*"))</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">Given:
+<div class="code">class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def distance_from_origin(self):
+        return (self.x**2 + self.y**2) ** 0.5
+
+p = Point(3, 4)
+print(p.distance_from_origin())</div>
+What is printed?</div>
+<input type="text" placeholder="number">
+</div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[3 marks]</span></div>
+<div class="qt">For each scenario, choose the most appropriate data structure (list, dictionary, 2-D list, or class) and briefly justify.
+<ol style="margin-left:24px;">
+<li>Storing a chess board.</li>
+<li>Looking up a word's definition.</li>
+<li>Modeling a "Vehicle" with attributes (make, model, year) and methods (start, stop).</li>
+</ol>
+</div>
+<textarea style="min-height:120px;"></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find and fix the bugs. The function below should remove duplicates from a list and return the result, preserving order. There are <strong>two bugs</strong>.
+<div class="code">def deduplicate(items):
+    seen = []
+    result = []
+    for x in items:
+        if x not in seen:
+            seen.append(x)
+        result.append(x)
+    return seen</div>
+</div>
+<textarea placeholder="Corrected function..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Trace this 2-D list code. Show the final state of <code>grid</code>.
+<div class="code">grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+for i in range(3):
+    for j in range(3):
+        if i == j:
+            grid[i][j] = 1
+        elif (i + j) == 2:
+            grid[i][j] = -1
+print(grid)</div>
+</div>
+<textarea placeholder="grid = [[..., ..., ...], ...]"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Design a class <code>BankAccount</code> with:
+<ul style="margin-left:22px;">
+<li>An <code>__init__</code> that takes the owner name and an optional starting balance (default 0).</li>
+<li>A <code>deposit(amount)</code> method.</li>
+<li>A <code>withdraw(amount)</code> method that does not allow the balance to go below 0; if the withdrawal would overdraw, raise a <code>ValueError</code>.</li>
+<li>A <code>__str__</code> that returns <code>"&lt;owner&gt;: $&lt;balance&gt;"</code>.</li>
+</ul>
+</div>
+<textarea placeholder="class BankAccount: ..." style="min-height:180px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Explain in your own words: when would you choose a <strong>dictionary</strong> over a <strong>list</strong>? Provide one specific example where each is best suited and explain the trade-offs.</div>
+<textarea style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">A peer claims: "I copied the list with <code>b = a</code>, so when I sort <code>b</code> the original is unaffected." Explain why this is wrong, what actually happens, and provide the correct way to make an independent copy.</div>
+<textarea style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Add docstrings and inline comments to this class so a future reader can understand each method's purpose and constraints.
+<div class="code">class Stack:
+    def __init__(self):
+        self.items = []
+    def push(self, x):
+        self.items.append(x)
+    def pop(self):
+        return self.items.pop()
+    def peek(self):
+        return self.items[-1]
+    def empty(self):
+        return len(self.items) == 0</div>
+</div>
+<textarea placeholder='class Stack:\n    """A LIFO stack..."""\n    ...' style="min-height:200px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a function <code>most_common(words)</code> that takes a list of strings and returns the string that appears most often. If there is a tie, return any one of the tied words. Test it with <code>most_common(["red","blue","red","green","red","blue"])</code> &mdash; show the result.</div>
+<textarea placeholder="def most_common(words): ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">A CSV file <code>marks.csv</code> contains lines of the form <code>name,mark</code>, e.g.:
+<div class="code">Ada,88
+Bob,75
+Cay,92</div>
+Write a complete program that reads the file and prints the name of the student with the highest mark, plus the class average to 1 decimal place.</div>
+<textarea placeholder='with open("marks.csv") as f: ...' style="min-height:180px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">15. <span class="qm">[5 marks]</span></div>
+<div class="qt">Design a 2-D list representation for a 4&times;4 game board where each cell can be empty (<code>" "</code>), <code>"X"</code>, or <code>"O"</code>. Write a function <code>print_board(board)</code> that displays the board nicely, with column and row labels (1-4 / A-D), and a function <code>place(board, col_letter, row_num, mark)</code> that places a mark and returns <code>True</code>, or returns <code>False</code> if the cell is taken.</div>
+<textarea placeholder="def print_board(board): ..." style="min-height:200px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard) &mdash; mostly correct with minor issues</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness &mdash; partial credit; logic largely sound but contains errors</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 2: Data Structures &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

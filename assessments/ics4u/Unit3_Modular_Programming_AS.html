@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Modular Programming &amp; Recursion — Practice Quiz</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text]{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
+.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#129518; Unit 3: Modular Programming &amp; Recursion &mdash; Practice Quiz</h1>
+<div class="sub">Assessment AS Learning &mdash; Self-Check</div>
+<div class="badge">&#128260; Not Graded &mdash; Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Self-check on functions, parameters, scope, and recursion. Instant feedback. Python 3.</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 12 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Question 1 — Function call output</div>
+<div class="qt">What is printed?
+<div class="code">def add(a, b):
+    return a + b
+
+x = add(3, add(2, 5))
+print(x)</div>
+</div>
+<input type="text" id="q1-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q1','10')">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>Inner: <code>add(2,5)=7</code>. Outer: <code>add(3,7)=10</code>.</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Question 2 — Default argument</div>
+<div class="qt">What is the output?
+<div class="code">def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Ada"))
+print(greet("Bob", "Hi"))</div>
+</div>
+<input type="text" id="q2-in" placeholder='exact two lines, separated by &#92;n'>
+<button class="btn btn-p" onclick="chkContains('q2',['Hello, Ada!', 'Hi, Bob!'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>Line 1: <code>Hello, Ada!</code>. Line 2: <code>Hi, Bob!</code>. The default value <code>"Hello"</code> is used only when the second arg is omitted.</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Question 3 — Recursion: factorial</div>
+<div class="qt">What does <code>factorial(4)</code> return?
+<div class="code">def factorial(n):
+    if n &lt;= 1:
+        return 1
+    return n * factorial(n - 1)</div>
+</div>
+<input type="text" id="q3-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q3','24')">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>4! = 4 &times; 3 &times; 2 &times; 1 = <strong>24</strong>.</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Question 4 — Identify the base case</div>
+<div class="qt">In a recursive function, what is the role of the <em>base case</em>?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> The first call from <code>main()</code></label></li>
+<li><label><input type="radio" name="q4" value="b"> The smallest input the function will accept</label></li>
+<li><label><input type="radio" name="q4" value="c"> The condition that stops the recursion to avoid infinite calls</label></li>
+<li><label><input type="radio" name="q4" value="d"> The most efficient version of the algorithm</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>The base case is the simplest case the function can solve directly without further recursion. Without it, the function calls itself forever and crashes with a stack overflow.</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Question 5 — Scope</div>
+<div class="qt">What is printed?
+<div class="code">x = 10
+def f():
+    x = 5
+    print(x)
+f()
+print(x)</div>
+</div>
+<input type="text" id="q5-in" placeholder="two values">
+<button class="btn btn-p" onclick="chkContains('q5',['5 10','5\n10','510'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>Inside <code>f</code>, <code>x = 5</code> creates a local <code>x</code> that shadows the global. After the function returns, the global <code>x</code> is unchanged. Output: <strong>5</strong> then <strong>10</strong>.</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Question 6 — Mutating a list parameter</div>
+<div class="qt">What is printed?
+<div class="code">def add_one(lst):
+    lst.append(1)
+
+a = [10, 20]
+add_one(a)
+print(a)</div>
+</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> [10, 20]</label></li>
+<li><label><input type="radio" name="q6" value="b"> [10, 20, 1]</label></li>
+<li><label><input type="radio" name="q6" value="c"> [1]</label></li>
+<li><label><input type="radio" name="q6" value="d"> Error</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q6','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>Lists are mutable; <code>lst</code> inside the function refers to the <em>same</em> list as <code>a</code>. <code>.append</code> mutates the list in place, so <code>a</code> is now <strong>[10, 20, 1]</strong>.</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Question 7 — Recursive sum</div>
+<div class="qt">What does <code>rsum(4)</code> return?
+<div class="code">def rsum(n):
+    if n == 0:
+        return 0
+    return n + rsum(n - 1)</div>
+</div>
+<input type="text" id="q7-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q7','10')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>4 + 3 + 2 + 1 + 0 = <strong>10</strong>.</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Question 8 — Counting Fibonacci calls</div>
+<div class="qt">For the naive recursive Fibonacci, <code>fib(5)</code> calls <code>fib</code> a total of how many times (including the original call)?
+<div class="code">def fib(n):
+    if n &lt; 2: return n
+    return fib(n-1) + fib(n-2)</div>
+</div>
+<input type="text" id="q8-in" placeholder="number">
+<button class="btn btn-p" onclick="chkText('q8','15')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>Total calls follow the recurrence T(n)=T(n-1)+T(n-2)+1 with T(0)=T(1)=1. So T(2)=3, T(3)=5, T(4)=9, <strong>T(5)=15</strong>. The exponential blow-up is why memoization matters.</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Question 9 — Modularization</div>
+<div class="qt">Which is the BEST reason to break a 200-line program into multiple short functions?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Functions run faster than inline code.</label></li>
+<li><label><input type="radio" name="q9" value="b"> Each function can be tested, understood, and reused independently.</label></li>
+<li><label><input type="radio" name="q9" value="c"> The Python interpreter requires it.</label></li>
+<li><label><input type="radio" name="q9" value="d"> Functions use less memory.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q9','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>The principle is <strong>modularity</strong> &mdash; small, single-purpose functions are easier to test, read, and reuse. (a), (c), (d) are false.</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Question 10 — Return vs. print</div>
+<div class="qt">What does this print?
+<div class="code">def double(x):
+    print(x * 2)
+
+result = double(7)
+print(result)</div>
+</div>
+<input type="text" id="q10-in" placeholder="two lines">
+<button class="btn btn-p" onclick="chkContains('q10',['14\nNone','14 None'])">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>Line 1: <code>14</code> (printed inside the function). Line 2: <code>None</code> &mdash; <code>double</code> has no <code>return</code> statement, so it implicitly returns <code>None</code>.</div></div>
+
+<div class="qc" id="q11">
+<div class="qn">Question 11 — Recursive string reversal</div>
+<div class="qt">What does <code>reverse("dog")</code> return?
+<div class="code">def reverse(s):
+    if len(s) &lt;= 1:
+        return s
+    return reverse(s[1:]) + s[0]</div>
+</div>
+<input type="text" id="q11-in" placeholder='e.g. "abc"'>
+<button class="btn btn-p" onclick="chkContains('q11',['god','\"god\"',\"'god'\"])">Check</button>
+<button class="btn btn-s" onclick="showSol('q11')">Solution</button>
+<div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><div class="sol-l">Solution:</div><code>reverse("dog")</code> = <code>reverse("og") + "d"</code> = <code>(reverse("g") + "o") + "d"</code> = <code>("g" + "o") + "d"</code> = <strong>"god"</strong>.</div></div>
+
+<div class="qc" id="q12">
+<div class="qn">Question 12 — When to use recursion</div>
+<div class="qt">Which problem is BEST suited to a recursive solution?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Summing a list of 100 numbers</label></li>
+<li><label><input type="radio" name="q12" value="b"> Checking if a flat list is sorted</label></li>
+<li><label><input type="radio" name="q12" value="c"> Traversing a directory of folders that contain folders</label></li>
+<li><label><input type="radio" name="q12" value="d"> Reading a CSV file line by line</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q12','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q12')">Solution</button>
+<div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><div class="sol-l">Solution:</div>Recursion shines on naturally recursive (self-similar) data structures &mdash; here, a tree of folders. (a), (b), (d) are flat / sequential and a simple loop is preferred.</div></div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 3: Modular Programming &amp; Recursion | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=12;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){
+const s=document.querySelector('input[name="'+q+'"]:checked');
+if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution below.';}
+if(sl)sl.classList.add('show');up();
+}
+function chkText(q,c){
+const v=document.getElementById(q+'-in').value.trim();
+if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+if(v.replace(/\s+/g,' ')===c.replace(/\s+/g,' ')){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Expected: '+c;}
+if(sl)sl.classList.add('show');up();
+}
+function chkContains(q,acceptable){
+const v=document.getElementById(q+'-in').value.trim().toLowerCase();
+if(v==='')return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
+ans++;
+const norm=v.replace(/\s+/g,'');
+const match=acceptable.some(a=>norm.includes(a.toLowerCase().replace(/\s+/g,'')));
+if(match){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='Correct.';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='Not quite. See solution.';}
+if(sl)sl.classList.add('show');up();
+}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

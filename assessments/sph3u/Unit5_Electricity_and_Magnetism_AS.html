@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Electricity and Magnetism — Practice Quiz (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+input[type=text]{padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>🔌 Unit 5: Electricity and Magnetism — Practice Quiz</h1>
+<div class="sub">Assessment AS Learning — Self-Check (SPH3U)</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test understanding of charge, current, voltage, resistance, Ohm's law, series/parallel circuits, magnetism, and electromagnetism.</div>
+
+<div class="formula-ref"><strong>Formulae:</strong> \( V=IR \) &nbsp;|&nbsp; \( I=Q/t \) &nbsp;|&nbsp; \( P=VI=I^2R=V^2/R \) &nbsp;|&nbsp; \( E=Pt \) &nbsp;|&nbsp; series \( R_T=\sum R_i \), \( I_T=I_1=I_2 \), \( V_T=\sum V_i \) &nbsp;|&nbsp; parallel \( 1/R_T=\sum 1/R_i \), \( V_T=V_1=V_2 \), \( I_T=\sum I_i \) &nbsp;|&nbsp; 1 kWh = \(3.6\times10^6\) J</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 10 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Q1 — Ohm's law</div>
+<div class="qt">A resistor draws \(0.50\) A when connected to a \(12\) V battery. What is its resistance?</div>
+<div>Answer: <input type="text" id="q1-in" style="width:140px"> Ω</div>
+<button class="btn btn-p" onclick="chkNum('q1',24,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>
+\( R = V/I = 12/0.50 = 24 \) Ω
+</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Q2 — Current from charge</div>
+<div class="qt">A wire carries \(60\) C of charge in \(30\) s. What is the current?</div>
+<div>Answer: <input type="text" id="q2-in" style="width:140px"> A</div>
+<button class="btn btn-p" onclick="chkNum('q2',2.0,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>
+\( I = Q/t = 60/30 = 2.0 \) A
+</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Q3 — Series circuit</div>
+<div class="qt">Two resistors, \(4.0\) Ω and \(6.0\) Ω, are connected in series across a \(20\) V battery. What is the current through the circuit?</div>
+<div>Answer: <input type="text" id="q3-in" style="width:140px"> A</div>
+<button class="btn btn-p" onclick="chkNum('q3',2.0,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>
+\( R_T = 4+6 = 10 \) Ω. \( I = V/R = 20/10 = 2.0 \) A
+</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Q4 — Parallel circuit</div>
+<div class="qt">Two resistors, \(6.0\) Ω and \(12\) Ω, are connected in parallel. Calculate the equivalent resistance.</div>
+<div>Answer: <input type="text" id="q4-in" style="width:140px"> Ω</div>
+<button class="btn btn-p" onclick="chkNum('q4',4.0,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>
+\( 1/R_T = 1/6 + 1/12 = 2/12 + 1/12 = 3/12 \) → \( R_T = 4.0 \) Ω
+</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Q5 — Power</div>
+<div class="qt">A heater draws \(8.0\) A from a \(120\) V supply. What is its power?</div>
+<div>Answer: <input type="text" id="q5-in" style="width:140px"> W</div>
+<button class="btn btn-p" onclick="chkNum('q5',960,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>
+\( P = VI = 120(8.0) = 960 \) W
+</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Q6 — Energy in kWh</div>
+<div class="qt">A \(1500\) W kettle is on for \(0.20\) hours. How much electrical energy (in kWh) does it use?</div>
+<div>Answer: <input type="text" id="q6-in" style="width:140px"> kWh</div>
+<button class="btn btn-p" onclick="chkNum('q6',0.30,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>
+\( E = Pt = 1.5 \text{ kW} \times 0.20 \text{ h} = 0.30 \) kWh
+</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Q7 — Mixed circuit</div>
+<div class="qt">A \(12\) V battery is connected to a \(6.0\) Ω resistor in series with a parallel combination of two \(4.0\) Ω resistors. What is the current from the battery?</div>
+<div>Answer: <input type="text" id="q7-in" style="width:140px"> A</div>
+<button class="btn btn-p" onclick="chkNum('q7',1.5,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>
+Parallel: \( R_p = (4\times 4)/(4+4) = 2.0 \) Ω<br>
+Total: \( R_T = 6.0 + 2.0 = 8.0 \) Ω<br>
+\( I = V/R = 12/8 = 1.5 \) A
+</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Q8 — Right-hand rule (concept)</div>
+<div class="qt">A current flows out of the page through a wire. Using the right-hand rule, the magnetic field around the wire forms loops that go:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> a) clockwise as viewed from the front (wire toward you)</label></li>
+<li><label><input type="radio" name="q8" value="b"> b) counterclockwise as viewed from the front</label></li>
+<li><label><input type="radio" name="q8" value="c"> c) radially outward</label></li>
+<li><label><input type="radio" name="q8" value="d"> d) parallel to the wire</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q8','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>
+Right-hand rule for a straight wire: thumb in the direction of conventional current (out of page), fingers curl counterclockwise as viewed by an observer looking at the page.
+</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Q9 — Cost calculation</div>
+<div class="qt">A 60-W light bulb runs for 8 hours per day for 30 days. At \(\$0.12\)/kWh, what is the cost?</div>
+<div>Answer: <input type="text" id="q9-in" style="width:140px"> $</div>
+<button class="btn btn-p" onclick="chkNum('q9',1.73,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>
+\( E = 0.060 \text{ kW} \times 8 \times 30 = 14.4 \) kWh<br>
+Cost \( = 14.4 \times 0.12 = \$1.73 \)
+</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Q10 — EM induction (concept)</div>
+<div class="qt">A bar magnet is pushed into a coil of wire connected to a galvanometer. What is observed?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> a) No current is induced because the magnet is moving.</label></li>
+<li><label><input type="radio" name="q10" value="b"> b) A current is induced only after the magnet is at rest inside.</label></li>
+<li><label><input type="radio" name="q10" value="c"> c) A current is induced while the magnetic flux through the coil changes (i.e., during the motion). The faster the motion, the larger the induced EMF.</label></li>
+<li><label><input type="radio" name="q10" value="d"> d) A current is induced only on the second push.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','c')">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>
+Faraday's law: an EMF is induced whenever the magnetic flux through the coil changes. The induced EMF is proportional to the rate of change of flux.
+</div></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 5: Electricity and Magnetism | Ontario Curriculum 2008</footer>
+</div>
+<script>
+let sc=0,ans=0,tot=10;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ See solution.';}
+if(sl)sl.classList.add('show');up();}
+function chkNum(q,c,tol){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.05){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected ≈ '+c+'. See solution.';}
+if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

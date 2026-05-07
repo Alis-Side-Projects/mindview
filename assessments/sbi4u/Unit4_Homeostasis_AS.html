@@ -1,111 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 4: Homeostasis — Practice Quiz</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Homeostasis — Practice Quiz (AS Learning)</title>
 <style>
-:root{--p:#dc2626;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
+:root{--primary:#dc2626;--correct:#16a34a;--wrong:#dc2626;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:850px;margin:0 auto;padding:20px}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px;margin-bottom:4px}header .sub{font-size:14px;opacity:.85}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 10px;border-radius:20px;font-size:12px;margin-top:8px}
+.info-box{background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.topic-section{margin-bottom:32px}.topic-header{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--primary)}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
+.qcard.correct{border-color:var(--correct);background:#f0fdf4}.qcard.wrong{border-color:var(--wrong);background:#fef2f2}
+.qnum{font-weight:700;color:var(--primary);margin-bottom:8px}.qtxt{margin-bottom:12px}
+.mc{list-style:none;margin-top:8px}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}
+input[type="text"]{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px}
+.btn{padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;background:var(--primary);color:#fff;margin-top:8px}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}.fb.show{display:block}
+.fb.correct{background:#f0fdf4;color:#166534;border:1px solid #86efac}.fb.wrong{background:#fef2f2;color:#991b1b;border:1px solid #fca5a5}
+.sol{margin-top:10px;padding:12px;background:#f8fafc;border:1px solid var(--border);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-lbl{font-weight:700;color:var(--primary)}
+.score-display{text-align:center;font-size:18px;margin-bottom:16px}
+.score-display .score{font-size:32px;font-weight:800;color:var(--primary)}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-top:32px;border-top:1px solid var(--border)}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Homeostasis — Practice Quiz</h1><div class="sub">Assessment AS Learning · Self-check · Strand E</div><div class="badge">Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check on feedback loops, neurons, hormones, kidney function, and glucose regulation.</div>
+<div class="score-display">Score: <span class="score" id="ts">0</span> / 12</div>
 
-<header><h1>📝 Unit 4: Homeostasis — Practice Quiz</h1>
-<div class="sub">Assessment AS Learning — SBI4U</div><div class="badge">🔄 Not Graded</div></header>
-<div class="info"><strong>Purpose:</strong> Self-check your understanding. Instant feedback on every question.</div>
-<div class="formula-ref"><h3>📋 Key Formulas/Concepts</h3>Negative feedback | Hormones | Nervous system | Thermoregulation | Blood glucose</div>
-<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 1 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
-<div class="qc" id="q1"><div class="qn">Q1</div>
-<div class="qt">Conceptual question for Homeostasis.</div>
+<div class="topic-section"><div class="topic-header">Topic 4.1 — Feedback Loops</div>
+
+<div class="qcard" id="q1"><div class="qnum">Question 1</div><div class="qtxt">In a negative feedback loop:</div>
 <ul class="mc">
-<li><label><input type="radio" name="q1" value="a"> Correct</label></li>
-<li><label><input type="radio" name="q1" value="b"> Wrong A</label></li>
-<li><label><input type="radio" name="q1" value="c"> Wrong B</label></li>
-<li><label><input type="radio" name="q1" value="d"> Wrong C</label></li>
+<li><label><input type="radio" name="q1" value="a"> A change is amplified, moving the system further from set point</label></li>
+<li><label><input type="radio" name="q1" value="b"> A change triggers a response that returns the variable toward set point</label></li>
+<li><label><input type="radio" name="q1" value="c"> The system shuts off completely</label></li>
+<li><label><input type="radio" name="q1" value="d"> Hormones are not involved</label></li>
 </ul>
-<button class="btn btn-p" onclick="chkMC('q1','a')">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
-<div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>See unit notes.</div>
+<button class="btn" onclick="cMC('q1','b')">Check</button><div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><span class="sol-lbl">Solution:</span> Negative feedback opposes the change (e.g., thermoregulation: high T° → sweating, vasodilation → T° drops). Positive feedback amplifies (e.g., oxytocin in childbirth, blood clotting cascade).</div></div>
+
+<div class="qcard" id="q2"><div class="qnum">Question 2</div><div class="qtxt">Which is an example of POSITIVE feedback?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> Body temperature regulation</label></li>
+<li><label><input type="radio" name="q2" value="b"> Blood glucose regulation</label></li>
+<li><label><input type="radio" name="q2" value="c"> Oxytocin release during childbirth</label></li>
+<li><label><input type="radio" name="q2" value="d"> Blood pressure regulation</label></li>
+</ul>
+<button class="btn" onclick="cMC('q2','c')">Check</button><div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><span class="sol-lbl">Solution:</span> In labor, uterine contractions stretch the cervix → oxytocin release → stronger contractions → more stretch → more oxytocin. Cycle terminates with delivery.</div></div>
+
 </div>
 
+<div class="topic-section"><div class="topic-header">Topic 4.2 — Neuron Action Potential</div>
 
-<footer>SPH4U — Physics, Grade 12 | Unit 4: Homeostasis | Ontario Curriculum 2008</footer>
+<div class="qcard" id="q3"><div class="qnum">Question 3</div><div class="qtxt">A neuron's resting membrane potential is approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3" value="a"> +30 mV</label></li>
+<li><label><input type="radio" name="q3" value="b"> 0 mV</label></li>
+<li><label><input type="radio" name="q3" value="c"> -70 mV</label></li>
+<li><label><input type="radio" name="q3" value="d"> -200 mV</label></li>
+</ul>
+<button class="btn" onclick="cMC('q3','c')">Check</button><div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><span class="sol-lbl">Solution:</span> ~−70 mV. Maintained by Na+/K+ pump (3 Na+ out, 2 K+ in per ATP) and selective K+ leak channels. Inside is more negative than outside.</div></div>
+
+<div class="qcard" id="q4"><div class="qnum">Question 4</div><div class="qtxt">During depolarization (rising phase of the action potential):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> Voltage-gated K+ channels open and K+ flows out</label></li>
+<li><label><input type="radio" name="q4" value="b"> Voltage-gated Na+ channels open and Na+ flows in</label></li>
+<li><label><input type="radio" name="q4" value="c"> Cl- flows in</label></li>
+<li><label><input type="radio" name="q4" value="d"> The Na+/K+ pump speeds up</label></li>
+</ul>
+<button class="btn" onclick="cMC('q4','b')">Check</button><div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><span class="sol-lbl">Solution:</span> At threshold (−55 mV), voltage-gated Na+ channels open. Na+ rushes in → membrane potential rises rapidly to ~+30 mV. Then Na+ channels inactivate and K+ channels open → repolarization.</div></div>
+
+<div class="qcard" id="q5"><div class="qnum">Question 5</div><div class="qtxt">Saltatory conduction in myelinated axons:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> Slows conduction velocity</label></li>
+<li><label><input type="radio" name="q5" value="b"> Allows the action potential to "jump" between Nodes of Ranvier, increasing speed</label></li>
+<li><label><input type="radio" name="q5" value="c"> Eliminates the need for ion channels</label></li>
+<li><label><input type="radio" name="q5" value="d"> Occurs only in unmyelinated axons</label></li>
+</ul>
+<button class="btn" onclick="cMC('q5','b')">Check</button><div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><span class="sol-lbl">Solution:</span> Myelin sheath (Schwann/oligodendrocytes) insulates the axon between Nodes of Ranvier. Action potentials regenerate only at nodes — a "jumping" pattern that speeds conduction up to ~120 m/s.</div></div>
+
 </div>
 
+<div class="topic-section"><div class="topic-header">Topic 4.3 — Hormones &amp; Glucose Regulation</div>
+
+<div class="qcard" id="q6"><div class="qnum">Question 6</div><div class="qtxt">After a high-sugar meal, blood glucose rises. The pancreas releases ___, which causes the liver and muscles to ___.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6" value="a"> Glucagon; convert glycogen to glucose</label></li>
+<li><label><input type="radio" name="q6" value="b"> Insulin; convert glucose to glycogen</label></li>
+<li><label><input type="radio" name="q6" value="c"> Adrenaline; release stored fat</label></li>
+<li><label><input type="radio" name="q6" value="d"> ADH; retain water</label></li>
+</ul>
+<button class="btn" onclick="cMC('q6','b')">Check</button><div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><span class="sol-lbl">Solution:</span> Beta-cells of pancreatic islets secrete insulin → liver and muscle uptake glucose (GLUT4) and store as glycogen; adipose stores as fat. Lowers blood glucose toward set point (~5 mM). Glucagon (alpha-cells) reverses this when glucose is low.</div></div>
+
+<div class="qcard" id="q7"><div class="qnum">Question 7</div><div class="qtxt">Steroid hormones (e.g., cortisol, estrogen) act by:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Binding intracellular receptors and altering gene transcription</label></li>
+<li><label><input type="radio" name="q7" value="b"> Binding membrane receptors that activate cAMP</label></li>
+<li><label><input type="radio" name="q7" value="c"> Acting only as neurotransmitters</label></li>
+<li><label><input type="radio" name="q7" value="d"> Being phagocytosed</label></li>
+</ul>
+<button class="btn" onclick="cMC('q7','a')">Check</button><div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><span class="sol-lbl">Solution:</span> Steroids are lipid-soluble and diffuse through the cell membrane. They bind intracellular receptors that translocate to the nucleus and alter transcription. Slow but long-lasting effects. Peptide hormones (insulin, glucagon) bind surface receptors → second messengers (cAMP).</div></div>
+
+<div class="qcard" id="q8"><div class="qnum">Question 8</div><div class="qtxt">A patient has Type 1 diabetes. The most likely underlying issue is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q8" value="a"> Autoimmune destruction of pancreatic beta-cells; little or no insulin</label></li>
+<li><label><input type="radio" name="q8" value="b"> Cells become resistant to insulin</label></li>
+<li><label><input type="radio" name="q8" value="c"> Excess insulin production</label></li>
+<li><label><input type="radio" name="q8" value="d"> Liver does not produce glucagon</label></li>
+</ul>
+<button class="btn" onclick="cMC('q8','a')">Check</button><div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><span class="sol-lbl">Solution:</span> Type 1: autoimmune attack on beta-cells; insulin must be supplied exogenously. Type 2: insulin resistance plus relative insulin deficiency, often associated with obesity; managed with diet, exercise, oral agents, sometimes insulin.</div></div>
+
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 4.4 — Kidney Nephron</div>
+
+<div class="qcard" id="q9"><div class="qnum">Question 9</div><div class="qtxt">In the nephron, filtration occurs at:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q9" value="a"> Bowman's capsule (glomerulus)</label></li>
+<li><label><input type="radio" name="q9" value="b"> Loop of Henle</label></li>
+<li><label><input type="radio" name="q9" value="c"> Distal convoluted tubule</label></li>
+<li><label><input type="radio" name="q9" value="d"> Collecting duct</label></li>
+</ul>
+<button class="btn" onclick="cMC('q9','a')">Check</button><div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><span class="sol-lbl">Solution:</span> Blood pressure forces water and small solutes out of glomerular capillaries into Bowman's capsule (~180 L/day filtrate). Cells and proteins remain in blood.</div></div>
+
+<div class="qcard" id="q10"><div class="qnum">Question 10</div><div class="qtxt">ADH (antidiuretic hormone) acts on the collecting duct to:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> Increase Na+ reabsorption</label></li>
+<li><label><input type="radio" name="q10" value="b"> Insert aquaporins, increasing water reabsorption (concentrating urine)</label></li>
+<li><label><input type="radio" name="q10" value="c"> Decrease blood pressure</label></li>
+<li><label><input type="radio" name="q10" value="d"> Add glucose to urine</label></li>
+</ul>
+<button class="btn" onclick="cMC('q10','b')">Check</button><div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><span class="sol-lbl">Solution:</span> ADH (vasopressin) from posterior pituitary inserts aquaporin-2 channels into collecting-duct cells; more water moves out of filtrate into the medullary interstitium → small volume of concentrated urine. Released when blood osmolarity rises.</div></div>
+
+<div class="qcard" id="q11"><div class="qnum">Question 11</div><div class="qtxt">Glucose appears in the urine when blood glucose exceeds about 10 mM because:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q11" value="a"> The kidney destroys excess glucose</label></li>
+<li><label><input type="radio" name="q11" value="b"> The proximal tubule's glucose transporters become saturated; remaining glucose is excreted</label></li>
+<li><label><input type="radio" name="q11" value="c"> Glucose can't enter the kidney</label></li>
+<li><label><input type="radio" name="q11" value="d"> The bladder produces glucose</label></li>
+</ul>
+<button class="btn" onclick="cMC('q11','b')">Check</button><div class="fb" id="q11-fb"></div>
+<div class="sol" id="q11-sl"><span class="sol-lbl">Solution:</span> Normally all filtered glucose is reabsorbed in the proximal tubule via SGLT2/GLUT2 transporters. Above the renal threshold (~10 mM blood glucose), transporters saturate and glucose appears in urine (glucosuria) — a classic sign of uncontrolled diabetes.</div></div>
+
+<div class="qcard" id="q12"><div class="qnum">Question 12</div><div class="qtxt">A drop in blood pressure detected by the kidneys triggers release of ___ from the adrenal cortex, which causes ___.</div>
+<ul class="mc">
+<li><label><input type="radio" name="q12" value="a"> Insulin; increased glucose uptake</label></li>
+<li><label><input type="radio" name="q12" value="b"> Aldosterone; increased Na+ (and water) reabsorption, raising blood pressure</label></li>
+<li><label><input type="radio" name="q12" value="c"> Glucagon; glucose release</label></li>
+<li><label><input type="radio" name="q12" value="d"> Thyroxine; increased metabolism</label></li>
+</ul>
+<button class="btn" onclick="cMC('q12','b')">Check</button><div class="fb" id="q12-fb"></div>
+<div class="sol" id="q12-sl"><span class="sol-lbl">Solution:</span> Renin-angiotensin-aldosterone system: low BP → renin → angiotensin II → adrenal cortex releases aldosterone → distal tubule and collecting duct increase Na+ reabsorption (water follows) → blood volume and pressure rise.</div></div>
+
+</div>
+
+<footer>SBI4U — Biology, Grade 12 | Strand E: Homeostasis | Assessment AS Learning — Self-Directed, Not Graded</footer>
+</div>
 <script>
-let sc=0,ans=0,tot=1;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+let s=0;
+function cMC(q,c){const sel=document.querySelector(`input[name="${q}"]:checked`);if(!sel)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(sel.value===c){s++;cd.classList.add('correct');fb.className='fb show correct';fb.textContent='Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='Not quite — see solution.';}sl.classList.add('show');document.getElementById('ts').textContent=s;}
+</script></body></html>

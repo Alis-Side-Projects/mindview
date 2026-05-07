@@ -1,182 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 9: Intersections — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 9: Intersections — Unit Test (OF Learning)</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
-:root{--p:#16a34a;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 9: Intersections — Unit Test</h1>
-<div class="sub">Assessment OF Learning — MCV4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+:root{--primary:#16a34a;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+.container{max-width:850px;margin:0 auto;padding:20px;}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px;}
+header h1{font-size:22px;}.sub{font-size:14px;opacity:.85;margin-top:4px;}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px;}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px;}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0;}
+.chart-item{text-align:center;padding:12px;border-radius:8px;}
+.chart-item .label{font-size:12px;font-weight:600;}.chart-item .value{font-size:24px;font-weight:800;}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;}
+.section-hdr.ku{background:#dbeafe;color:#1e40af;}.section-hdr.t{background:#fef3c7;color:#92400e;}
+.section-hdr.c{background:#d1fae5;color:#065f46;}.section-hdr.a{background:#ede9fe;color:#5b21b6;}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;}
+.qnum{font-weight:700;color:var(--primary);font-size:15px;}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600;}
+.qtxt{margin:8px 0 12px;}
+.mc{list-style:none;margin:8px 0;}.mc li{margin-bottom:6px;}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;}
+input[type="text"],textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:inherit;}
+textarea{min-height:90px;resize:vertical;}
+.rubric{margin-top:32px;}.rubric table{width:100%;border-collapse:collapse;font-size:14px;}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--border);text-align:left;}.rubric th{background:#f1f5f9;}
+details{background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 18px;margin-top:24px;}
+details summary{cursor:pointer;font-weight:700;color:#065f46;font-size:16px;}
+details .ans{margin-top:12px;font-size:14px;line-height:1.7;}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border);}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/mcv4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav><div class="container">
+<header><h1>📝 Unit 9: Intersections — Unit Test</h1><div class="sub">Line–Line · Line–Plane · Plane–Plane · Three Planes</div><div class="badge">✅ Graded</div></header>
+<div class="warn"><strong>⏱️</strong> 75 min &nbsp;|&nbsp; <strong>Total:</strong> /60 marks</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>See unit notes for relevant formulas.</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
 </div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: K/U [15]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">1 <span class="qmarks">[3]</span></div><div class="qtxt">Find the point of intersection of \(L_1: (1,2)+t(2,3)\) and \(L_2: (5,1)+s(-1,2)\) (in R²).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">2 <span class="qmarks">[3]</span></div><div class="qtxt">Determine whether \(L_1: (1,0,1)+t(2,1,-1)\) and \(L_2: (3,1,0)+s(2,1,-1)\) are parallel, coincident, intersecting, or skew.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">3 <span class="qmarks">[3]</span></div><div class="qtxt">Find the intersection of line \((x,y,z)=(2,-1,3)+t(1,2,-1)\) with plane \(x+y+2z=8\).</div><textarea></textarea></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">4 <span class="qmarks">[3]</span></div><div class="qtxt">Find a vector equation of the line of intersection of \(\pi_1: x+2y-z=4\) and \(\pi_2: 2x-y+z=3\).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">5 <span class="qmarks">[3]</span></div><div class="qtxt">MC: Three planes meet in a single common point. The augmented matrix has:</div>
+<ul class="mc"><li><label><input type="radio" name="q5" value="a"> rank 2</label></li><li><label><input type="radio" name="q5" value="b"> rank 3</label></li>
+<li><label><input type="radio" name="q5" value="c"> rank 1</label></li><li><label><input type="radio" name="q5" value="d"> rank 0</label></li></ul></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking [15]</div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Communication question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">6 <span class="qmarks">[5]</span></div><div class="qtxt">Solve: \(x+y+z=6,\ 2x-y+3z=14,\ x+4y-z=-2\). Determine if there's a unique solution; if so, find it.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Communication question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">7 <span class="qmarks">[5]</span></div><div class="qtxt">Show that \(L_1: (0,1,2)+t(1,1,1)\) and \(L_2: (1,0,3)+s(2,3,1)\) are skew. Find the (perpendicular) distance between them. Use \(d=\frac{|\vec{P_1P_2}\cdot(\vec d_1\times\vec d_2)|}{|\vec d_1\times\vec d_2|}\).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Communication question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">8 <span class="qmarks">[5]</span></div><div class="qtxt">A system of three planes \(\pi_1:x+y+z=2\), \(\pi_2:2x+2y+2z=4\), \(\pi_3:x-y+z=0\). Determine if the system is consistent and describe the geometric configuration.</div><textarea></textarea></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">Application problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15]</div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">Application problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9 <span class="qmarks">[4]</span></div><div class="qtxt">Describe step-by-step procedures for each of: (a) two lines in R²; (b) two lines in R³; (c) a line and a plane; (d) two planes. Include the algebra each requires.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">Application problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10 <span class="qmarks">[4]</span></div><div class="qtxt">Catalogue all possible configurations of three planes in R³ (single point, line, coincident, no common point — and sub-cases). Sketch (in words) each.</div><textarea></textarea></div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 9: Intersections — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="qcard"><div class="qnum">11 <span class="qmarks">[4]</span></div><div class="qtxt">Explain why two non-parallel planes always intersect in a line. Why is the direction of the line given by \(\vec n_1\times\vec n_2\)?</div><textarea></textarea></div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">12 <span class="qmarks">[3]</span></div><div class="qtxt">Justify why the formula for distance between skew lines uses the cross product of the two direction vectors.</div><textarea></textarea></div>
+
+<div class="section-hdr a">Part D: Application [15]</div>
+
+<div class="qcard"><div class="qnum">13 <span class="qmarks">[5]</span></div><div class="qtxt">Two airplanes fly along straight paths: \(A_1:(0,0,1)+t(2,3,0.1)\) and \(A_2:(5,0,1)+s(0,3,0)\) (km, with \(t,s\) in min). Determine if their paths intersect, and if so, will the planes collide (meet at the same time)?</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">14 <span class="qmarks">[5]</span></div><div class="qtxt">A laser pointer fires from \((1,2,5)\) in direction \((2,3,-4)\). A flat target plate occupies the plane \(x+2y-z=10\). Find where the beam strikes.</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">15 <span class="qmarks">[5]</span></div><div class="qtxt">Three drone flight corridors are defined by the planes \(2x+y-z=4\), \(x-y+z=2\), \(3x+2y-2z=6\). Determine if there is a common safe meeting point.</div><textarea></textarea></div>
+
+<div class="rubric"><h3>Evaluation Rubric</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough</td><td>80–100</td></tr><tr><td>3</td><td>Considerable</td><td>70–79</td></tr>
+<tr><td>2</td><td>Some</td><td>60–69</td></tr><tr><td>1</td><td>Limited</td><td>50–59</td></tr><tr><td>R</td><td>Insufficient</td><td>&lt;50</td></tr></table></div>
+
+<details><summary>📕 Answer Key</summary><div class="ans">
+<p><strong>1.</strong> \(1+2t=5-s\) and \(2+3t=1+2s\). From first: \(s=4-2t\); sub into second: \(2+3t=1+2(4-2t)=9-4t\) → \(7t=7\) → \(t=1\), \(s=2\). Point: \((3,5)\).</p>
+<p><strong>2.</strong> Same direction \((2,1,-1)\). Test if \((3,1,0)\) on \(L_1\): \(3=1+2t\) → \(t=1\); then \(y=0+1=1\) ✓; \(z=1-1=0\) ✓. → coincident.</p>
+<p><strong>3.</strong> \((2+t)+(-1+2t)+2(3-t)=8\) → \(2+t-1+2t+6-2t=8\) → \(7+t=8\) → \(t=1\). Point: \((3,1,2)\).</p>
+<p><strong>4.</strong> \(\vec d=\vec n_1\times\vec n_2=(1,2,-1)\times(2,-1,1)=(2\cdot 1-(-1)(-1),\,(-1)(2)-(1)(1),\,(1)(-1)-(2)(2))=(1,-3,-5)\). Set \(z=0\): \(x+2y=4,\ 2x-y=3\) → \(y=(2x-3)\), so \(x+2(2x-3)=4\) → \(5x=10\) → \(x=2,y=1\). Line: \((2,1,0)+t(1,-3,-5)\).</p>
+<p><strong>5.</strong> Unique point ↔ rank 3 → (b).</p>
+<p><strong>6.</strong> Add (1)+(3): \(2x+5y=4\). (1)·2 - (2): \(0+3y-z=...\) easier: from (1) \(z=6-x-y\); sub into (2): \(2x-y+3(6-x-y)=14\) → \(-x-4y=-4\) → \(x+4y=4\). System: \(2x+5y=4,\ x+4y=4\). \(2(x+4y)-( 2x+5y)=8-4\) → \(3y=4\) → \(y=4/3\), \(x=4-16/3=-4/3\), \(z=6-(-4/3)-4/3=6=18/3\). Solution \((-4/3,4/3,6)\). Verify (3): \(-4/3+16/3-6=12/3-6=4-6=-2\) ✓.</p>
+<p><strong>7.</strong> \(\vec d_1\times\vec d_2=(1,1,1)\times(2,3,1)=(1\cdot1-1\cdot3,\,1\cdot2-1\cdot1,\,1\cdot3-1\cdot2)=(-2,1,1)\). \(\vec{P_1P_2}=(1,-1,1)\). Dot: \(-2-1+1=-2\). \(|\vec d_1\times\vec d_2|=\sqrt{6}\). Distance \(=2/\sqrt 6\approx 0.816\). Skew because \((-2)\ne 0\).</p>
+<p><strong>8.</strong> \(\pi_2=2\pi_1\) (same plane). \(\pi_3\) intersects \(\pi_1\) in a line (different normal). System reduces to 2 effective equations in 3 unknowns → infinitely many solutions along that line.</p>
+<p><strong>9.</strong> (a) Set up 2 eqs in 2 params \(s,t\), solve. (b) Same, but check consistency in 3rd component (otherwise skew or parallel). (c) Substitute parametric line into plane scalar equation, solve for \(t\). (d) Solve 2-eq 3-unknown system: assign one variable as parameter.</p>
+<p><strong>10.</strong> Cases: (i) Single point — three planes mutually intersecting. (ii) Common line — two planes coincident plus one intersecting; or all three meeting along the line. (iii) Coincident — all three same. (iv) No common point — parallel planes (one or more), or "triangular prism" (each pair meets in a line, no common line).</p>
+<p><strong>11.</strong> Two non-parallel normals span the orthogonal complement direction. The intersection set satisfies both linear equations → a 1-parameter family (line). Direction perpendicular to both normals = \(\vec n_1\times\vec n_2\).</p>
+<p><strong>12.</strong> \(\vec d_1\times\vec d_2\) is perpendicular to both lines' directions. Project the displacement \(\vec{P_1P_2}\) onto this common-perpendicular direction → shortest distance.</p>
+<p><strong>13.</strong> Set positions equal: \(2t=5\), \(3t=3s\), \(1+0.1t=1\). From 1st: \(t=2.5\); from 3rd: \(t=0\). Contradiction → paths don't even cross at same place → no intersection of paths in 3D (skew). No collision.</p>
+<p><strong>14.</strong> \((1+2t)+2(2+3t)-(5-4t)=10\) → \(1+2t+4+6t-5+4t=10\) → \(12t=10\) → \(t=5/6\). Point: \((1+5/3,2+5/2,5-10/3)=(8/3,9/2,5/3)\).</p>
+<p><strong>15.</strong> Try eliminating: (1)+(2): \(3x+0+0=6\) → \(x=2\). Sub into (1): \(4+y-z=4\) → \(y=z\). Sub into (3): \(6+2y-2y=6\) ✓ identically. So infinitely many solutions: \((2,t,t)\). Three planes meet in a line — common safe corridor exists.</p>
+</div></details>
+<footer>MCV4U — Calculus and Vectors, Grade 12 | Strand C | Assessment OF Learning</footer>
+</div></body></html>

@@ -1,0 +1,77 @@
+{% macro page(title, user) %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} — MindView Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
+.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.topbar a{color:#fff;text-decoration:none;}
+.topbar .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px;}
+.topbar .brand img{height:32px;}
+.topbar nav{display:flex;gap:20px;}
+.topbar nav a{font-size:14px;font-weight:600;color:#cbd5e1;}
+.topbar nav a:hover, .topbar nav a.active{color:#fff;}
+.user-chip{display:flex;align-items:center;gap:10px;font-size:13px;}
+.user-chip .role{background:#1e40af;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;}
+.user-chip .role.superuser{background:#dc2626;}
+.user-chip .role.admin{background:#7c3aed;}
+.user-chip .role.teacher{background:#059669;}
+.user-chip .role.student{background:#2563eb;}
+.container{max-width:1200px;margin:0 auto;padding:32px 24px;}
+h1{font-size:28px;font-weight:800;margin-bottom:6px;}
+.sub{color:#64748b;margin-bottom:28px;}
+.btn{display:inline-block;padding:9px 16px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;}
+.btn:hover{background:#1d4ed8;}
+.btn.danger{background:#dc2626;}.btn.danger:hover{background:#b91c1c;}
+.btn.ghost{background:#fff;color:#475569;border:1px solid #e2e8f0;}.btn.ghost:hover{border-color:#94a3b8;}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:20px;}
+table{width:100%;border-collapse:collapse;}
+th, td{text-align:left;padding:12px 14px;border-bottom:1px solid #e2e8f0;font-size:14px;}
+th{background:#f8fafc;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:#64748b;font-weight:700;}
+.role-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;}
+.role-pill.superuser{background:#dc2626;}
+.role-pill.admin{background:#7c3aed;}
+.role-pill.teacher{background:#059669;}
+.role-pill.student{background:#2563eb;}
+.muted{color:#94a3b8;font-size:13px;}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#16a34a;margin-right:6px;vertical-align:middle;}
+.status-dot.inactive{background:#94a3b8;}
+.modal-bg{position:fixed;inset:0;background:rgba(15,23,42,0.6);display:none;align-items:center;justify-content:center;z-index:200;}
+.modal-bg.show{display:flex;}
+.modal{background:#fff;border-radius:12px;padding:28px;width:100%;max-width:460px;}
+.modal h2{font-size:20px;margin-bottom:18px;}
+.field{margin-bottom:14px;}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:5px;color:#475569;}
+.field input, .field select{width:100%;padding:10px 12px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:14px;font-family:inherit;}
+.field input:focus, .field select:focus{outline:none;border-color:#2563eb;}
+.row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
+.alert{padding:12px;border-radius:6px;margin-bottom:14px;font-size:13px;}
+.alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
+.alert.ok{background:#d1fae5;color:#065f46;border:1px solid #a7f3d0;}
+</style>
+</head>
+<body>
+<div class="topbar">
+    <div class="brand"><a href="/admin"><img src="/logo.png" alt="MindView"></a><span>MindView Admin</span></div>
+    <nav>
+        <a href="/admin" {% if title == 'Dashboard' %}class="active"{% endif %}>Dashboard</a>
+        {% if user.role in ['superuser','admin'] %}
+        <a href="/admin/users" {% if title == 'Users' %}class="active"{% endif %}>Users</a>
+        <a href="/admin/audit" {% if title == 'Audit Log' %}class="active"{% endif %}>Audit Log</a>
+        {% endif %}
+        <a href="/">Courses →</a>
+    </nav>
+    <div class="user-chip">
+        <span>{{ user.full_name }}</span>
+        <span class="role {{ user.role }}">{{ ({'superuser':'Super User','admin':'Admin','teacher':'Teacher','student':'Student'}[user.role]) }}</span>
+        <a href="/logout" style="margin-left:6px;color:#94a3b8;">Logout</a>
+    </div>
+</div>
+<div class="container">{{ caller() }}</div>
+</body>
+</html>
+{% endmacro %}

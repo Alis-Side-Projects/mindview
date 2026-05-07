@@ -1,111 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 5: Electrochemistry — Practice Quiz</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: Electrochemistry — Practice Quiz (AS)</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 <style>
-:root{--p:#d97706;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
+:root{--primary:#d97706;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.container{max-width:850px;margin:0 auto;padding:20px;}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px;}
+header h1{font-size:22px;}
+header .subtitle{font-size:14px;opacity:0.85;}
+header .badge{display:inline-block;background:rgba(255,255,255,0.2);padding:4px 10px;border-radius:20px;font-size:12px;margin-top:8px;}
+.info-box{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px;}
+.topic-section{margin-bottom:32px;}
+.topic-header{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--primary);}
+.question-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;}
+.q-number{font-weight:700;color:var(--primary);margin-bottom:8px;}
+.q-text{margin-bottom:12px;}
+input[type="text"]{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:inherit;}
+.mc-options{list-style:none;margin-top:8px;}.mc-options li{margin-bottom:6px;}
+.mc-options label{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;}
+.mc-options label:hover{background:#f1f5f9;}
+.solution{margin-top:12px;padding:12px;background:#f8fafc;border:1px solid var(--border);border-radius:6px;font-size:14px;}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-top:32px;}
+details summary{cursor:pointer;font-weight:600;color:var(--primary);padding:6px 0;}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sch4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav><div class="container">
+<header><h1>Unit 5: Electrochemistry</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">Not graded</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check oxidation numbers, half-reactions, E°cell, and Faraday's law.</div>
 
-<header><h1>📝 Unit 5: Electrochemistry — Practice Quiz</h1>
-<div class="sub">Assessment AS Learning — SCH4U</div><div class="badge">🔄 Not Graded</div></header>
-<div class="info"><strong>Purpose:</strong> Self-check your understanding. Instant feedback on every question.</div>
-<div class="formula-ref"><h3>📋 Key Formulas/Concepts</h3>Oxidation/reduction | Cell potential | Faraday's law | Galvanic vs electrolytic cells</div>
-<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 1 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
-<div class="qc" id="q1"><div class="qn">Q1</div>
-<div class="qt">Conceptual question for Electrochemistry.</div>
-<ul class="mc">
-<li><label><input type="radio" name="q1" value="a"> Correct</label></li>
-<li><label><input type="radio" name="q1" value="b"> Wrong A</label></li>
-<li><label><input type="radio" name="q1" value="c"> Wrong B</label></li>
-<li><label><input type="radio" name="q1" value="d"> Wrong C</label></li>
-</ul>
-<button class="btn btn-p" onclick="chkMC('q1','a')">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
-<div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>See unit notes.</div>
+<div class="topic-section"><div class="topic-header">Oxidation Numbers</div>
+
+<div class="question-card"><div class="q-number">Q1</div>
+<div class="q-text">Oxidation number of S in H₂SO₄?</div>
+<input type="text" placeholder="e.g., +6">
+<details><summary>Show solution</summary><div class="solution">2(+1) + S + 4(−2) = 0 → S = <strong>+6</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q2</div>
+<div class="q-text">Oxidation number of Cr in K₂Cr₂O₇.</div>
+<details><summary>Show solution</summary><div class="solution">2(+1) + 2Cr + 7(−2) = 0 → 2Cr = +12 → Cr = <strong>+6</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q3</div>
+<div class="q-text">In 2 Na + Cl₂ → 2 NaCl, identify oxidizing agent and reducing agent.</div>
+<details><summary>Show solution</summary><div class="solution">Na: 0 → +1 (oxidized) — reducing agent. Cl₂: 0 → −1 (reduced) — oxidizing agent.</div></details></div>
 </div>
 
+<div class="topic-section"><div class="topic-header">Balancing Redox</div>
 
-<footer>SPH4U — Physics, Grade 12 | Unit 5: Electrochemistry | Ontario Curriculum 2008</footer>
+<div class="question-card"><div class="q-number">Q4</div>
+<div class="q-text">Balance in acidic solution: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺.</div>
+<details><summary>Show solution</summary><div class="solution">Reduction: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O. Oxidation: Fe²⁺ → Fe³⁺ + e⁻ (×5). Net: <strong>MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q5</div>
+<div class="q-text">Balance in basic solution: Cr(OH)₃ + ClO⁻ → CrO₄²⁻ + Cl⁻.</div>
+<details><summary>Show solution</summary><div class="solution">Cr: +3→+6 loses 3e⁻; Cl: +1→−1 gains 2e⁻. Multiply Cr by 2, ClO⁻ by 3. Balanced: <strong>2Cr(OH)₃ + 3ClO⁻ + 4OH⁻ → 2CrO₄²⁻ + 3Cl⁻ + 5H₂O</strong>.</div></details></div>
 </div>
 
-<script>
-let sc=0,ans=0,tot=1;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="topic-section"><div class="topic-header">Galvanic Cells (E°cell)</div>
+
+<div class="question-card"><div class="q-number">Q6</div>
+<div class="q-text">Given E°(Cu²⁺/Cu) = +0.34 V; E°(Zn²⁺/Zn) = −0.76 V. Calculate E°cell for Zn|Zn²⁺‖Cu²⁺|Cu.</div>
+<details><summary>Show solution</summary><div class="solution">E°cell = E°(cathode) − E°(anode) = (+0.34) − (−0.76) = <strong>+1.10 V</strong>. Reaction is spontaneous.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q7</div>
+<div class="q-text">In a galvanic cell, the anode is where:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q7"> Reduction occurs</label></li>
+<li><label><input type="radio" name="q7"> Oxidation occurs</label></li></ul>
+<details><summary>Show solution</summary><div class="solution">Oxidation occurs at anode (mnemonic: AN OX).</div></details></div>
+
+<div class="question-card"><div class="q-number">Q8</div>
+<div class="q-text">Write cell notation for Zn|Cu cell described above.</div>
+<details><summary>Show solution</summary><div class="solution">Zn(s) | Zn²⁺(aq) ‖ Cu²⁺(aq) | Cu(s).</div></details></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Electrolysis & Faraday</div>
+
+<div class="question-card"><div class="q-number">Q9</div>
+<div class="q-text">Calculate moles of electrons in 1.50 A flowing for 30.0 minutes (F = 96485 C/mol).</div>
+<details><summary>Show solution</summary><div class="solution">Q = It = 1.50 × 1800 = 2700 C. n = Q/F = 2700/96485 = <strong>0.02798 mol e⁻</strong>.</div></details</div></div>
+
+<div class="question-card"><div class="q-number">Q10</div>
+<div class="q-text">Mass of Cu deposited from CuSO₄ by 2.00 A for 1.00 h? (Cu²⁺ + 2e⁻ → Cu; M = 63.55)</div>
+<details><summary>Show solution</summary><div class="solution">Q = 2.00 × 3600 = 7200 C. n(e⁻) = 7200/96485 = 0.0746 mol → n(Cu) = 0.0373 mol → m = 0.0373 × 63.55 = <strong>2.37 g</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q11</div>
+<div class="q-text">Aluminum is produced via electrolysis: Al³⁺ + 3e⁻ → Al. How many coulombs to produce 1.00 kg Al?</div>
+<details><summary>Show solution</summary><div class="solution">n(Al) = 1000/26.98 = 37.06 mol; n(e⁻) = 111.2 mol; Q = nF = 111.2 × 96485 = <strong>1.07×10⁷ C</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q12</div>
+<div class="q-text">A bicycle frame rusts (corrodes) faster in salt-spray. Why?</div>
+<details><summary>Show solution</summary><div class="solution">NaCl provides ions that improve electrolyte conductivity, accelerating the electrochemical corrosion process (Fe → Fe²⁺ + 2e⁻, with O₂ + 2H₂O + 4e⁻ → 4OH⁻).</div></details></div>
+</div>
+
+<footer>SCH4U — Chemistry, Grade 12 | Ontario Curriculum 2008 | Strand F: Electrochemistry | Assessment AS Learning</footer>
+</div></body></html>

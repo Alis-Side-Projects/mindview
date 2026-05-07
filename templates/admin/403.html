@@ -1,0 +1,9 @@
+{% from 'admin/_layout.html' import page %}
+{% call page('Forbidden', user) %}
+<div class="card" style="text-align:center;padding:60px 24px;">
+    <div style="font-size:64px;margin-bottom:16px;">🚫</div>
+    <h1>Access denied</h1>
+    <p class="sub" style="margin-top:10px;">Your role ({{ user.role }}) does not have permission to view this page.</p>
+    <div style="margin-top:24px;"><a href="/admin" class="btn">Back to Dashboard</a></div>
+</div>
+{% endcall %}

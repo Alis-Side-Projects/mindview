@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Waves and Sound — Unit Test (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;min-height:100px;resize:vertical;font-family:inherit}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.draw{height:160px;border:1px dashed var(--b);border-radius:8px;margin:8px 0;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>📝 Unit 4: Waves and Sound — Unit Test</h1>
+<div class="sub">Assessment OF Learning — Summative (SPH3U)</div>
+<div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks. Show all work. Use \( v_\text{sound} = 343 \) m/s at \(20°\)C unless otherwise stated.</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="formula-ref"><strong>Formulae:</strong> \( v=f\lambda \), \( T=1/f \), \( v_s=331+0.6T_C \), string \( f_n=nv/(2L) \), open pipe \( f_n=nv/(2L) \), closed pipe \( f_n=nv/(4L) \) [n odd], Doppler \( f' = fv/(v\mp v_s) \), beat \( f_b=|f_1-f_2| \)</div>
+
+<div class="sec-hdr ku">Part A — Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[3 marks]</span></div>
+<div class="qt">Define wavelength, period, frequency, and amplitude. Sketch a transverse wave and label these.</div>
+<div class="draw">[Wave sketch with labels]</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Calculate the speed of sound at (a) \(0°\)C; (b) \(25°\)C; (c) \(-30°\)C.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[3 marks]</span></div>
+<div class="qt">A guitar string of length \(0.65\) m has a wave speed of \(330\) m/s. Calculate (a) the fundamental frequency; (b) the second harmonic.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[3 marks]</span></div>
+<div class="qt">A pipe closed at one end is \(0.50\) m long. (a) Calculate the wavelength of the fundamental. (b) Calculate the fundamental frequency in air at \(20°\)C.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">MC: Two waves with same amplitude meet exactly out of phase. The result is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5"> a) constructive interference (doubled amplitude)</label></li>
+<li><label><input type="radio" name="q5"> b) destructive interference (cancellation)</label></li>
+<li><label><input type="radio" name="q5"> c) reflection</label></li>
+<li><label><input type="radio" name="q5"> d) refraction</label></li>
+</ul>
+<textarea placeholder="Justify briefly..."></textarea></div>
+
+<div class="sec-hdr t">Part B — Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[5 marks]</span></div>
+<div class="qt">A train approaches a railway crossing at \(30\) m/s sounding its horn at \(450\) Hz. (a) What frequency does a stationary observer at the crossing hear before the train passes? (b) What frequency after the train passes? (c) Explain why the pitch suddenly drops as the train moves past. Take \(v_\text{sound}=343\) m/s.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">A student stands \(45\) m from a tall cliff face and claps once. The student hears the echo \(0.265\) s later. (a) Calculate the speed of sound. (b) Compare to the predicted speed at the air temperature suggested by your value (use \( v=331+0.6 T_C \)). (c) State two sources of error in this experiment and how to reduce them.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt"><strong>Investigation design:</strong> Design an experiment to determine the speed of sound in air using a resonance tube (closed pipe with movable water level). Identify the IV/DV/CV, equipment, key measurements, and the calculation linking measured resonance length to speed of sound. State one major source of systematic error.</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr c">Part C — Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Sketch on the same axes a labelled diagram of: (i) fundamental of a string fixed at both ends, (ii) third harmonic of the same string, (iii) fundamental of a pipe closed at one end. Mark nodes (N) and antinodes (A).</div>
+<div class="draw">[Standing wave sketches]</div></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">In a paragraph (4–6 sentences), explain how a stringed instrument (guitar, violin) produces different pitches. Use the formula \( f_n=nv/(2L) \) and the relationship between string tension and \( v \) on the string.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">Compare and contrast (table OR paragraph): constructive vs. destructive interference. Include a sketch of two waves combining for each case and one real-world example (e.g., noise-cancelling headphones).</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr a">Part D — Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt"><strong>STSE — Medical ultrasound:</strong> Diagnostic ultrasound uses frequencies of \(2.0\) to \(15\) MHz. A pulse from a probe takes \(40 \mu\)s to return from a tissue layer. Speed of ultrasound in soft tissue is \(1540\) m/s. (a) Calculate the wavelength at \(5.0\) MHz. (b) Calculate the depth of the reflecting layer. (c) Why are higher frequencies used for shallow imaging and lower frequencies for deeper imaging? (Hint: resolution vs. attenuation.)</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">A flute behaves like a pipe open at both ends with effective length \(0.32\) m. (a) Calculate the fundamental frequency at \(20°\)C. (b) Calculate the frequency when the player covers a hole that effectively lengthens the column to \(0.48\) m. (c) State which note has the higher pitch and explain qualitatively why opening more keys raises the pitch.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">Two tuning forks at \(440\) Hz and an unknown frequency produce \(4\) beats per second. (a) State two possible frequencies for the unknown fork. (b) The musician then attaches a small piece of tape to the unknown fork (slightly lowering its frequency) and the beat rate rises to \(6\) Hz. Determine the original unknown frequency. (c) Explain how piano tuners use beats to tune strings.</div>
+<textarea></textarea></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 4 Test | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

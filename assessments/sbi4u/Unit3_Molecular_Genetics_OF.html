@@ -1,182 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 3: Molecular Genetics — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Molecular Genetics — Unit Test (OF Learning)</title>
 <style>
-:root{--p:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+:root{--primary:#7c3aed;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:900px;margin:0 auto;padding:20px}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
 header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.warn{background:#fef3c7;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
 .chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 3: Molecular Genetics — Unit Test</h1>
-<div class="sub">Assessment OF Learning — SBI4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+.chart-item{text-align:center;padding:12px;border-radius:8px}.chart-item .label{font-size:12px;font-weight:600}.chart-item .value{font-size:24px;font-weight:800}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px}
+.section-hdr.ku{background:#dbeafe;color:#1e40af}.section-hdr.t{background:#fef3c7;color:#92400e}
+.section-hdr.c{background:#d1fae5;color:#065f46}.section-hdr.a{background:#ede9fe;color:#5b21b6}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
+.qnum{font-weight:700;color:var(--primary)}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600}
+.qtxt{margin:8px 0 12px}.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer}
+input[type="text"],textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:14px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+details{background:#f8fafc;border-left:4px solid var(--primary);padding:10px 14px;margin-top:10px;border-radius:0 6px 6px 0;font-size:14px}
+details summary{cursor:pointer;font-weight:700;color:var(--primary)}details p{margin-top:8px}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border)}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 3: Molecular Genetics — Unit Test</h1><div class="sub">Assessment OF Learning · Strand D</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 min &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all work.</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>DNA → RNA → Protein | Codons | Mutations | Replication | Transcription | Translation</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div></div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">List the four nucleotides in DNA and state the base-pairing rules with hydrogen-bond counts.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>A (adenine), T (thymine), G (guanine), C (cytosine). A=T (2 H-bonds), G≡C (3 H-bonds). Strands antiparallel: 5'→3' opposite 3'→5'.</p></details></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[3]</span>
+<div class="qtxt">Name the role of each in DNA replication: helicase, topoisomerase, primase, DNA polymerase III, ligase.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Helicase unwinds the double helix; topoisomerase relieves supercoiling ahead of the fork; primase synthesizes RNA primers; DNA polymerase III adds nucleotides 5'→3' onto primers; DNA ligase seals nicks (especially Okazaki fragments on lagging strand).</p></details></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[2]</span>
+<div class="qtxt">Stop codons in mRNA include:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> AUG, GUA, CCC</label></li>
+<li><label><input type="radio" name="q3"> UAA, UAG, UGA</label></li>
+<li><label><input type="radio" name="q3"> TAA, TAG, TGA</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> UAA, UAG, UGA — recognized by release factors (no tRNA).</p></details></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[3]</span>
+<div class="qtxt">Distinguish silent, missense, nonsense, and frameshift mutations. Give an example of each effect on the resulting protein.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Silent: same amino acid (degenerate code) — no effect. Missense: different amino acid (e.g., sickle-cell: GAG→GUG, Glu→Val). Nonsense: stop codon → truncated protein (e.g., some Duchenne muscular dystrophy). Frameshift: insertion/deletion not multiple of 3 → all downstream codons changed (e.g., Tay-Sachs allele HEXA-1278insTATC).</p></details></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[2]</span>
+<div class="qtxt">In eukaryotic mRNA processing, what are the three modifications applied before export to the cytoplasm?</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>5' cap (modified guanine — protects from exonucleases, aids ribosome binding); 3' poly-A tail (~200 A's — stability and export); splicing (introns removed, exons joined by spliceosome).</p></details></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[2]</span>
+<div class="qtxt">Restriction enzymes cut DNA at specific:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6"> Methylation marks</label></li>
+<li><label><input type="radio" name="q6"> Palindromic recognition sequences</label></li>
+<li><label><input type="radio" name="q6"> Random sites</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Recognize 4–8 bp palindromes (e.g., EcoRI: GAATTC) and produce sticky or blunt ends. Used in cloning to splice DNA from different sources.</p></details></div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">A DNA template strand reads 3'-TAC GCT TTA CCG ATC-5'. (a) Write the mRNA. (b) Translate using a codon table. (c) Identify the start and stop signals.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(a) mRNA 5'-AUG CGA AAU GGC UAG-3'. (b) AUG=Met (start), CGA=Arg, AAU=Asn, GGC=Gly, UAG=stop. Peptide: Met-Arg-Asn-Gly. (c) Start codon AUG; stop codon UAG.</p></details></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt">Starting with 1 DNA template molecule, calculate how many copies you have after 25 cycles of PCR (assume 100% efficiency). Show calculation. Estimate the visibility threshold for ethidium-bromide-stained agarose gel (~10 ng).</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>2²⁵ = 33,554,432 copies (~3.4 × 10⁷). One copy = ~6.5 × 10⁻¹² ng (assuming 1 kb amplicon). Total ≈ 0.22 µg = 220 ng — well above the ~10 ng visibility threshold, so the band will be clearly visible after 25 cycles.</p></details></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">A patient's beta-globin gene has the change GAG → GTG at codon 6. Predict the altered amino acid and the disease. Explain how the mutation alters protein behaviour.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>GAG = Glu (charged, hydrophilic). GTG → GUG in mRNA = Val (hydrophobic). Disease: <strong>sickle-cell anemia</strong>. Hydrophobic patch on β-globin allows polymerization of hemoglobin under low O₂; RBCs deform into rigid sickle shape, blocking capillaries, causing pain crises and hemolysis.</p></details></div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Draw and label a replication fork. Show: leading strand, lagging strand, Okazaki fragments, helicase, primers, polymerase, ligase, 5' and 3' ends.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Helicase opens the fork. Leading strand (synthesized continuously toward fork, 5'→3'). Lagging strand (synthesized away from fork in short Okazaki fragments). Each fragment starts with an RNA primer made by primase. DNA pol III extends; pol I removes primers; ligase seals nicks. Both new strands are antiparallel to template.</p></details></div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 3: Molecular Genetics — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Describe the three stages of translation (initiation, elongation, termination), naming the components (small/large ribosomal subunits, initiator Met-tRNA, A/P/E sites, release factors).</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p><strong>Initiation:</strong> small ribosomal subunit + initiator Met-tRNA recognize 5' cap; scan to start AUG; large subunit joins. <strong>Elongation:</strong> aminoacyl tRNA enters A site; peptide bond forms (large subunit's peptidyl transferase); ribosome translocates (E exits, P holds chain, A ready for next). <strong>Termination:</strong> stop codon entering A site recruits release factor; chain hydrolyzed, ribosome dissociates.</p></details></div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt">Compare CRISPR-Cas9 with traditional restriction-enzyme cloning. Use a table with at least four points of comparison.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Restriction-enzyme cloning: cuts at fixed palindromic sequences; needs compatible sites; mostly used in plasmids/in vitro; insertion not site-specific in genomes. CRISPR-Cas9: programmable via guide RNA (gRNA) — any 20 bp sequence next to a PAM; cuts in vivo at chosen genomic locus; allows precise insertion, deletion, or base editing. CRISPR is faster, cheaper, more versatile but raises ethical issues for germline edits.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case — DNA Forensics:</strong> A crime-scene swab yields trace DNA. Outline the workflow: extraction → PCR of STR loci → capillary electrophoresis → comparison to suspect's DNA. State why STR profiling is highly individualizing.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Extract DNA, quantify, amplify ~13–20 STR loci by multiplex PCR using fluorescent primers, separate by capillary electrophoresis to read repeat counts, compare allele profile. Each STR locus has many alleles; combined probabilities of matching at all loci can be 1 in 10⁹+, allowing individualization (except identical twins).</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case — Recombinant Insulin:</strong> Describe how recombinant human insulin is produced in E. coli using restriction enzymes, plasmid vectors, transformation, selection (antibiotic-resistance), and harvest.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(1) Cut the human insulin cDNA and a plasmid with the same restriction enzyme (compatible sticky ends). (2) Ligate insulin gene into plasmid using DNA ligase. (3) Transform competent E. coli (heat-shock or electroporation). (4) Select on agar containing the antibiotic to which the plasmid confers resistance — only transformants grow. (5) Grow large cultures, induce expression, lyse cells, purify insulin chromatographically. Used clinically since 1982 (Humulin), replacing pig/cow insulin.</p></details></div>
+
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>STSE — CRISPR Germline Editing:</strong> In 2018, He Jiankui edited human embryos. Discuss two scientific risks and two ethical concerns. State your reasoned position.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Risks: off-target edits (unintended cuts) — could disrupt tumour-suppressor genes; mosaicism (some cells edited, others not); unknown long-term effects on heritable genome. Ethical: lack of informed consent (embryos cannot consent and changes pass to offspring); equity (access only to wealthy → "designer babies"); slippery slope to enhancement vs disease prevention. International consensus calls for moratorium on germline editing pending broader societal agreement and demonstrated safety. (Reasoned position acceptable if supported by evidence.)</p></details></div>
+
+<footer>SBI4U — Biology, Grade 12 | Strand D: Molecular Genetics | Assessment OF Learning — Graded</footer>
+</div></body></html>

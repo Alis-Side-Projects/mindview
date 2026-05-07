@@ -11,7 +11,7 @@
 .unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
 .unit-header h2 { font-size: 22px; margin-bottom: 4px; }
 .unit-header p { opacity: 0.85; font-size: 14px; }
-.unit-meta { display: flex; gap: 16px; margin-top: 8px; font-size: 13px; opacity: 0.7; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
 
 .topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
 .topic-block:last-child { border-bottom: none; }
@@ -37,6 +37,11 @@
 .pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
 .pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
 
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
 .assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
 .assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
 .assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
@@ -49,7 +54,7 @@
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="../" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
+        <a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
         <div class="nav-links">
             <a href="../">Home</a>
             <a href="../#courses">Courses</a>
@@ -69,12 +74,101 @@
 <div class="container" style="padding-top:32px;padding-bottom:64px;">
 
     <!-- Quick navigation -->
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
         <a href="#unit1" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 1: Dynamics</a>
         <a href="#unit2" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 2: Energy & Momentum</a>
         <a href="#unit3" style="padding:8px 16px;background:#ede9fe;color:#5b21b6;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 3: Fields</a>
         <a href="#unit4" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 4: Waves & Light</a>
         <a href="#unit5" style="padding:8px 16px;background:#fee2e2;color:#991b1b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 5: Modern Physics</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+        <a href="sph4u_curriculum.html" style="padding:8px 16px;background:#1e293b;color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">📘 Curriculum Document</a>
+        <a href="../assessments/sph4u/Final_Exam.html" style="padding:8px 16px;background:linear-gradient(135deg,#0f172a,#dc2626);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">🏁 Final Exam (Cumulative · /100)</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         STRAND A: SCIENTIFIC INVESTIGATION SKILLS & CAREER EXPLORATION
+         Mandatory embedded strand — Ontario 2008 Science Framework
+    ════════════════════════════════════════════════════════════ -->
+    <div class="unit-section" id="strandA">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#475569);">
+            <h2>🔬 Strand A: Scientific Investigation Skills & Career Exploration</h2>
+            <p>Mandatory cross-cutting skills embedded across all units — laboratory technique, experimental design, data analysis, scientific communication, and STSE/career connections</p>
+            <div class="unit-meta">
+                <span>📚 Strand A — Ontario 2008</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="resource-group">
+        <div class="resource-group-label">📹 Video Lessons</div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('strandA-1-sph')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Laboratory Safety Symbols with Meanings — Lab Signs & Hazards</span>
+                <span class="vid-duration">07:30</span>
+                <span class="vid-toggle" id="toggle-strandA-1-sph">▶</span>
+            </div>
+            <div class="video-player" id="player-strandA-1-sph">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/HiDZdUTtrDE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=HiDZdUTtrDE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('strandA-2-sph')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Scientific Method — Crash Course Biology #2</span>
+                <span class="vid-duration">12:08</span>
+                <span class="vid-toggle" id="toggle-strandA-2-sph">▶</span>
+            </div>
+            <div class="video-player" id="player-strandA-2-sph">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xOLcZMw0hd4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=xOLcZMw0hd4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('strandA-3-sph')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Significant Figures Made Easy! — Tyler DeWitt</span>
+                <span class="vid-duration">10:49</span>
+                <span class="vid-toggle" id="toggle-strandA-3-sph">▶</span>
+            </div>
+            <div class="video-player" id="player-strandA-3-sph">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/PNH7_nDE6SQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=PNH7_nDE6SQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('strandA-4-sph')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">AP Physics 1 — Graph Linearization (Data Analysis)</span>
+                <span class="vid-duration">11:24</span>
+                <span class="vid-toggle" id="toggle-strandA-4-sph">▶</span>
+            </div>
+            <div class="video-player" id="player-strandA-4-sph">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2LhXskTAnes?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2LhXskTAnes" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('strandA-5-sph')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">How To Write A Scientific Report — Step-by-Step Lab Report Guide</span>
+                <span class="vid-duration">09:18</span>
+                <span class="vid-toggle" id="toggle-strandA-5-sph">▶</span>
+            </div>
+            <div class="video-player" id="player-strandA-5-sph">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Yqioa8Njhhk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Yqioa8Njhhk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+
+        </div>
     </div>
 
 
@@ -338,7 +432,7 @@
 
         
         <div style="margin-top:20px;">
-            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#2563eb;">📊 Unit 1 Assessments</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 1 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 <a href="../assessments/sph4u/Unit1_Dynamics_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
                 <a href="../assessments/sph4u/Unit1_Dynamics_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
@@ -499,7 +593,7 @@
 
         
         <div style="margin-top:20px;">
-            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#059669;">📊 Unit 2 Assessments</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 2 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 <a href="../assessments/sph4u/Unit2_Energy_and_Momentum_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
                 <a href="../assessments/sph4u/Unit2_Energy_and_Momentum_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
@@ -664,9 +758,93 @@
             </div>
         </div>
 
-        
+        <div class="topic-block">
+            <div class="topic-title">3.6 — Electromagnetic Induction</div>
+            <div class="topic-desc">Faraday's law, Lenz's law, induced EMF, generators and motors, transformers</div>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt1')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Induced Current in a Wire — Crash Course Physics #34</span>
+                        <span class="vid-duration">9:53</span>
+                        <span class="vid-toggle" id="toggle-yt1">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt1">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/vwIdZjjd8fo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=vwIdZjjd8fo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt2')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Faraday's Law and Lenz's Law — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">25:39</span>
+                        <span class="vid-toggle" id="toggle-yt2">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt2">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/p8nLccx07do?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=p8nLccx07do" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt9')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Motional EMF (ε = BLv) — EMF Induced in Rod Through Magnetic Field — Khan Academy</span>
+                        <span class="vid-duration">9:50</span>
+                        <span class="vid-toggle" id="toggle-yt9">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt9">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rqq11Id_x5E?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=rqq11Id_x5E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt10')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Lenz's Law, Right Hand Rule, Induced Current Direction — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">12:20</span>
+                        <span class="vid-toggle" id="toggle-yt10">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt10">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/HhFZfWLl-P0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=HhFZfWLl-P0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt11')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Generators, Motors & AC Generation — Chad's Prep</span>
+                        <span class="vid-duration">15:30</span>
+                        <span class="vid-toggle" id="toggle-yt11">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt11">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ZRLXDiiUv8Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=ZRLXDiiUv8Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt12')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Transformers Physics Problems — Voltage, Current & Power Calculations — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">21:48</span>
+                        <span class="vid-toggle" id="toggle-yt12">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt12">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GJm-FOMeG4E?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=GJm-FOMeG4E" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div style="margin-top:20px;">
-            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#7c3aed;">📊 Unit 3 Assessments</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 3 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 <a href="../assessments/sph4u/Unit3_Fields_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
                 <a href="../assessments/sph4u/Unit3_Fields_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
@@ -825,7 +1003,7 @@
 
         
         <div style="margin-top:20px;">
-            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#d97706;">📊 Unit 4 Assessments</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 4 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 <a href="../assessments/sph4u/Unit4_Wave_Nature_of_Light_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
                 <a href="../assessments/sph4u/Unit4_Wave_Nature_of_Light_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
@@ -842,33 +1020,168 @@
             <div class="unit-meta">
                 <span>📚 Strand E: Modern Physics</span>
                 <span>⏱️ ~20 hours</span>
-                <span>📹 0 lessons</span>
+                <span>📹 6 lessons</span>
             </div>
+        </div>
+
+        <div class="resource-group" style="margin-bottom:16px;"><div class="resource-group-label">📄 Notes & Worksheets</div>
+            <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_205_20-_20Modern_20Physics_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Modern Physics Notes</a>
         </div>
 
         <div class="topic-block">
             <div class="topic-title">5.1 — Special Relativity</div>
-            <div class="topic-desc">Einstein's postulates, time dilation, length contraction, mass-energy equivalence</div>
-            <div class="topic-note">ℹ️ This unit uses the original worksheets and notes — video content is covered in previous units</div>
-            <div class="resource-group"><div class="resource-group-label">📄 Notes & Worksheets</div>
-                <a href="https://storage.googleapis.com/dondelete_vi/SPH4U/resources/Unit_205_20-_20Modern_20Physics_20-_20S2017.pdf" target="_blank" class="pdf-link">📄 Modern Physics Notes</a>
+            <div class="topic-desc">Einstein's postulates, time dilation, length contraction, mass-energy equivalence E=mc²</div>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt3')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Time Dilation and Length Contraction — Chad's Prep</span>
+                        <span class="vid-duration">25:55</span>
+                        <span class="vid-toggle" id="toggle-yt3">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt3">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/KbwjjcMGer0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=KbwjjcMGer0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt4')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Length Contraction and Time Dilation — MinutePhysics</span>
+                        <span class="vid-duration">7:48</span>
+                        <span class="vid-toggle" id="toggle-yt4">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt4">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-NN_m2yKAAk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=-NN_m2yKAAk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt13')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Mass-Energy Equivalence E = mc² — Derivation & Nuclear Binding Energy — PBS Space Time</span>
+                        <span class="vid-duration">10:51</span>
+                        <span class="vid-toggle" id="toggle-yt13">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt13">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Xo232kyTsO0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=Xo232kyTsO0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
             </div>
-
         </div>
 
         <div class="topic-block">
-            <div class="topic-title">5.2 — Quantum Mechanics and the Photoelectric Effect</div>
-            <div class="topic-desc">Photons, photoelectric effect, wave-particle duality, de Broglie wavelength</div>
+            <div class="topic-title">5.2 — Photoelectric Effect &amp; Quantum Mechanics</div>
+            <div class="topic-desc">Photons, work function, threshold frequency, de Broglie wavelength, wave-particle duality</div>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt5')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Blackbody Radiation, Photoelectric Effect &amp; de Broglie Relation — Chad's Prep</span>
+                        <span class="vid-duration">37:11</span>
+                        <span class="vid-toggle" id="toggle-yt5">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt5">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LJd1ILe6O7s?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=LJd1ILe6O7s" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt6')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">de Broglie Wavelength — Khan Academy</span>
+                        <span class="vid-duration">10:33</span>
+                        <span class="vid-toggle" id="toggle-yt6">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt6">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/A0LZSqDh1II?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=A0LZSqDh1II" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt14')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Bohr Model of the Hydrogen Atom — Electron Transitions, Energy Levels, Lyman & Balmer Series — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">25:46</span>
+                        <span class="vid-toggle" id="toggle-yt14">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt14">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/mXxsT1ut35Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=mXxsT1ut35Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="topic-block">
-            <div class="topic-title">5.3 — Nuclear Physics and Radioactivity</div>
-            <div class="topic-desc">Atomic models, nuclear reactions, fission and fusion, mass-energy</div>
+            <div class="topic-title">5.3 — Nuclear Physics &amp; Radioactivity</div>
+            <div class="topic-desc">Atomic models, nuclear reactions, alpha/beta/gamma decay, half-life, fission and fusion</div>
+            <div class="resource-group"><div class="resource-group-label">📹 Video Lessons</div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt7')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Nuclear Reactions, Radioactivity, Fission and Fusion</span>
+                        <span class="vid-duration">12:13</span>
+                        <span class="vid-toggle" id="toggle-yt7">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt7">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fES21E0qebw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=fES21E0qebw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt8')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Nuclear Physics — Fission, Fusion &amp; Half-Life</span>
+                        <span class="vid-duration">15:42</span>
+                        <span class="vid-toggle" id="toggle-yt8">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt8">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XJFWyMQFhLU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=XJFWyMQFhLU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt15')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">Half Life Chemistry Problems — Nuclear Radioactive Decay Calculations & C-14 Dating — The Organic Chemistry Tutor</span>
+                        <span class="vid-duration">21:37</span>
+                        <span class="vid-toggle" id="toggle-yt15">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt15">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WTQvfvoOF3g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=WTQvfvoOF3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-header" onclick="toggleVideo('yt16')">
+                        <span class="vid-icon">📖</span>
+                        <span class="vid-title">The Standard Model — Quarks, Leptons & Fundamental Forces — PBS Space Time</span>
+                        <span class="vid-duration">14:09</span>
+                        <span class="vid-toggle" id="toggle-yt16">▶</span>
+                    </div>
+                    <div class="video-player" id="player-yt16">
+                        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2ynMmhqVGx4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                        <a href="https://www.youtube.com/watch?v=2ynMmhqVGx4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         
         <div style="margin-top:20px;">
-            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#dc2626;">📊 Unit 5 Assessments</div>
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 5 Assessments</div>
             <div style="display:flex;flex-wrap:wrap;gap:8px;">
                 <a href="../assessments/sph4u/Unit5_Modern_Physics_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
                 <a href="../assessments/sph4u/Unit5_Modern_Physics_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
@@ -878,6 +1191,18 @@
         </div>
     </div>
 
+    <!-- Final Exam section -->
+    <div class="unit-section" style="margin-top:48px;">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0f172a,#dc2626);">
+            <h2>🏁 Cumulative Final Exam</h2>
+            <p>3-hour, /100, cumulative across all 5 strands · Worth up to 30% of final grade</p>
+            <div class="unit-meta"><span>📚 K/U 25 · T 25 · C 25 · A 25</span><span>⏱️ 3 hours</span><span>📝 Aligned with Growing Success (2010)</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/sph4u/Final_Exam.html" style="padding:10px 18px;background:#dc2626;color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">🏁 Open Final Exam</a>
+            <a href="sph4u_curriculum.html" style="padding:10px 18px;background:#1e293b;color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📘 Curriculum Document</a>
+        </div>
+    </div>
 
 </div>
 

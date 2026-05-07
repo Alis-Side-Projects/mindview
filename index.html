@@ -6,44 +6,78 @@
 <title>MindView — Virtual Classroom</title>
 <link rel="stylesheet" href="css/style.css">
 <style>
-.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; margin-top: 32px; }
-.course-card { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; transition: all 0.2s; color: #1e293b; text-decoration: none; }
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-top: 32px; }
+.course-card { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; transition: all 0.2s; color: #1e293b; text-decoration: none; }
 .course-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-3px); }
-.course-icon { font-size: 36px; padding: 20px 20px 0; }
-.course-body { padding: 0 20px 20px; }
-.course-code { font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
-.course-body h3 { font-size: 18px; margin-bottom: 8px; }
-.course-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
-.course-stats { display: flex; gap: 16px; font-size: 12px; color: #94a3b8; margin-bottom: 12px; }
+.course-icon { font-size: 52px; padding: 28px 28px 0; }
+.course-body { padding: 12px 28px 28px; }
+.course-code { font-size: 17px; font-weight: 800; letter-spacing: 1.5px; margin-bottom: 8px; }
+.course-body h3 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+.course-desc { font-size: 17px; color: #64748b; margin-bottom: 12px; line-height: 1.5; }
+.course-stats { display: flex; gap: 16px; font-size: 15px; color: #94a3b8; margin-bottom: 12px; }
 .course-strands { display: flex; flex-wrap: wrap; gap: 4px; }
-.strand-tag { font-size: 11px; padding: 2px 8px; background: #f1f5f9; border-radius: 10px; color: #64748b; }
-.subject-group { margin-bottom: 40px; }
-.subject-label { font-size: 14px; font-weight: 700; color: #64748b; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+.strand-tag { font-size: 14px; padding: 4px 12px; background: #f1f5f9; border-radius: 10px; color: #64748b; }
+.subject-group { margin-bottom: 48px; }
+.subject-label { font-size: 18px; font-weight: 800; color: #64748b; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #e2e8f0; }
 </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="/" class="nav-brand"><span class="brand-icon">🎓</span><span class="brand-text">MindView</span></a>
-        <div class="nav-links">
+        <a href="/" class="nav-brand"><img src="logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links" id="nav-links">
             <a href="/" class="active">Home</a>
             <a href="#courses">Courses</a>
             <a href="#resources">Resources</a>
+            <a href="/admin/users" id="nav-manage-users" style="display:none;color:#dc2626;font-weight:700;">👥 Manage Users</a>
+            <a href="/admin" id="nav-admin" style="display:none;">⚙️ Admin</a>
+            <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
+                <span id="user-name" style="font-weight:700;"></span>
+                <span id="user-role" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;"></span>
+                <a href="/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
+            </span>
+            <a href="/login" id="nav-login" style="display:none;background:#2563eb;color:#fff;padding:6px 14px;border-radius:6px;">Sign In</a>
         </div>
     </div>
 </nav>
+<div id="dev-banner" style="display:none;background:linear-gradient(90deg,#f59e0b,#d97706);color:#fff;padding:8px 24px;text-align:center;font-size:13px;font-weight:600;letter-spacing:0.3px;">
+    🛠️ <strong>DEV MODE</strong> — auto-logged in as Super User on localhost · external visitors will still need credentials · disable with <code style="background:rgba(0,0,0,0.2);padding:1px 6px;border-radius:3px;">MINDVIEW_DEV=0</code>
+</div>
+<script>
+// Inject role-based nav items based on /api/me
+fetch('/api/me').then(r => r.json()).then(data => {
+    if (!data.authenticated) {
+        document.getElementById('nav-login').style.display = 'inline-block';
+        return;
+    }
+    if (data.dev_mode) {
+        document.getElementById('dev-banner').style.display = 'block';
+    }
+    const u = data.user;
+    document.getElementById('user-name').textContent = u.full_name;
+    const roleEl = document.getElementById('user-role');
+    roleEl.textContent = u.role_label;
+    const roleColors = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', student:'#2563eb'};
+    roleEl.style.background = roleColors[u.role] || '#64748b';
+    document.getElementById('user-chip').style.display = 'inline-flex';
+    if (u.can_manage_users) {
+        document.getElementById('nav-manage-users').style.display = 'inline-block';
+        document.getElementById('nav-admin').style.display = 'inline-block';
+    }
+}).catch(() => {/* offline / not-running — leave nav as-is */});
+</script>
 
 <header class="hero">
     <div class="hero-content">
-        <div class="hero-badge">Ontario Curriculum — Grade 12 University Preparation</div>
-        <h1>MindView</h1>
+        <div class="hero-badge">Ontario Curriculum — Grade 11 &amp; 12 University Preparation</div>
+        <h1><div class="hero-logo-wrap"><img src="logo.png" alt="MindView Academy" class="hero-logo"></div></h1>
         <h2>Virtual Classroom</h2>
-        <p class="hero-sub">5 Courses · 22 Strands · Free & Open</p>
+        <p class="hero-sub">10 Courses · 41 Strands · Ministry-Aligned</p>
         <div class="hero-stats">
-            <div class="stat"><span class="stat-num">5</span><span class="stat-label">Courses</span></div>
-            <div class="stat"><span class="stat-num">296</span><span class="stat-label">Video Lessons</span></div>
-            <div class="stat"><span class="stat-num">667</span><span class="stat-label">Resources</span></div>
+            <div class="stat"><span class="stat-num">10</span><span class="stat-label">Courses</span></div>
+            <div class="stat"><span class="stat-num">560</span><span class="stat-label">Video Lessons</span></div>
+            <div class="stat"><span class="stat-num">212</span><span class="stat-label">Assessments &amp; Resources</span></div>
         </div>
         <a href="#courses" class="hero-cta">Explore Courses →</a>
     </div>
@@ -52,19 +86,33 @@
 <section id="courses" style="padding: 64px 0;">
     <div class="container">
         <h2>Courses</h2>
-        <p class="section-sub">Grade 12 University Preparation courses aligned with Ontario curriculum.</p>
-        
+        <p class="section-sub">Grade 11 and Grade 12 University Preparation courses aligned with Ontario curriculum.</p>
+
         <div class="subject-group">
             <div class="subject-label">📐 Mathematics</div>
             <div class="courses-grid">
-                <a href="courses/mhf4u.html" class="course-card" style="border-top:4px solid #2563eb"><div class="course-icon" style="color:#2563eb">📐</div><div class="course-body"><div class="course-code" style="color:#2563eb">MHF4U</div><h3>Advanced Functions</h3><p class="course-desc">Polynomial, rational, logarithmic, and trigonometric functions; rates of change</p></div></a><a href="courses/mcv4u.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">∫</div><div class="course-body"><div class="course-code" style="color:#7c3aed">MCV4U</div><h3>Calculus and Vectors</h3><p class="course-desc">Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes</p></div></a>
+                <a href="courses/mcr3u.html" class="course-card" style="border-top:4px solid #0891b2"><div class="course-icon" style="color:#0891b2">📐</div><div class="course-body"><div class="course-code" style="color:#0891b2">MCR3U <span style="font-size:11px;background:#ecfeff;color:#0e7490;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Functions</h3><p class="course-desc">Function notation, quadratics, exponentials, sequences &amp; series, financial math, trigonometry &amp; sinusoids</p></div></a><a href="courses/mhf4u.html" class="course-card" style="border-top:4px solid #2563eb"><div class="course-icon" style="color:#2563eb">📐</div><div class="course-body"><div class="course-code" style="color:#2563eb">MHF4U <span style="font-size:11px;background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Advanced Functions</h3><p class="course-desc">Polynomial, rational, logarithmic, and trigonometric functions; rates of change</p></div></a><a href="courses/mcv4u.html" class="course-card" style="border-top:4px solid #7c3aed"><div class="course-icon" style="color:#7c3aed">∫</div><div class="course-body"><div class="course-code" style="color:#7c3aed">MCV4U <span style="font-size:11px;background:#ede9fe;color:#5b21b6;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Calculus and Vectors</h3><p class="course-desc">Derivatives, curve sketching, optimization, vectors in 2D/3D, lines and planes</p></div></a><a href="courses/mdm4u.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">📊</div><div class="course-body"><div class="course-code" style="color:#16a34a">MDM4U <span style="font-size:11px;background:#f0fdf4;color:#15803d;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Mathematics of Data Management</h3><p class="course-desc">Counting, probability, probability distributions, statistics, correlation &amp; regression</p></div></a>
             </div>
         </div>
 
         <div class="subject-group">
             <div class="subject-label">🔬 Science</div>
             <div class="courses-grid">
-                <a href="courses/sph4u.html" class="course-card" style="border-top:4px solid #dc2626"><div class="course-icon" style="color:#dc2626">⚡</div><div class="course-body"><div class="course-code" style="color:#dc2626">SPH4U</div><h3>Physics</h3><p class="course-desc">Dynamics, energy & momentum, fields, wave nature of light, modern physics</p></div></a><a href="courses/sch4u.html" class="course-card" style="border-top:4px solid #059669"><div class="course-icon" style="color:#059669">🧪</div><div class="course-body"><div class="course-code" style="color:#059669">SCH4U</div><h3>Chemistry</h3><p class="course-desc">Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry</p></div></a><a href="courses/sbi4u.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">🧬</div><div class="course-body"><div class="course-code" style="color:#16a34a">SBI4U</div><h3>Biology</h3><p class="course-desc">Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics</p></div></a>
+                <a href="courses/sph3u.html" class="course-card" style="border-top:4px solid #ea580c"><div class="course-icon" style="color:#ea580c">⚡</div><div class="course-body"><div class="course-code" style="color:#ea580c">SPH3U <span style="font-size:11px;background:#fff7ed;color:#9a3412;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 11</span></div><h3>Physics</h3><p class="course-desc">Kinematics, forces, energy & society, waves & sound, electricity & magnetism — prerequisite for SPH4U</p></div></a><a href="courses/sph4u.html" class="course-card" style="border-top:4px solid #dc2626"><div class="course-icon" style="color:#dc2626">⚡</div><div class="course-body"><div class="course-code" style="color:#dc2626">SPH4U <span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Physics</h3><p class="course-desc">Dynamics, energy & momentum, fields, wave nature of light, modern physics</p></div></a><a href="courses/sch4u.html" class="course-card" style="border-top:4px solid #059669"><div class="course-icon" style="color:#059669">🧪</div><div class="course-body"><div class="course-code" style="color:#059669">SCH4U <span style="font-size:11px;background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Chemistry</h3><p class="course-desc">Organic chemistry, structure & properties, energy & rates, equilibrium, electrochemistry</p></div></a><a href="courses/sbi4u.html" class="course-card" style="border-top:4px solid #16a34a"><div class="course-icon" style="color:#16a34a">🧬</div><div class="course-body"><div class="course-code" style="color:#16a34a">SBI4U <span style="font-size:11px;background:#dcfce7;color:#166534;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Biology</h3><p class="course-desc">Biochemistry, metabolic processes, molecular genetics, homeostasis, population dynamics</p></div></a>
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <div class="subject-label">💻 Computer Science</div>
+            <div class="courses-grid">
+                <a href="courses/ics4u.html" class="course-card" style="border-top:4px solid #6366f1"><div class="course-icon" style="color:#6366f1">💻</div><div class="course-body"><div class="course-code" style="color:#6366f1">ICS4U <span style="font-size:11px;background:#e0e7ff;color:#4338ca;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>Computer Science</h3><p class="course-desc">Programming, data structures, recursion, algorithms (search/sort), software engineering, AI/ethics</p></div></a>
+            </div>
+        </div>
+
+        <div class="subject-group">
+            <div class="subject-label">📚 Languages</div>
+            <div class="courses-grid">
+                <a href="courses/eng4u.html" class="course-card" style="border-top:4px solid #1e40af"><div class="course-icon" style="color:#1e40af">📚</div><div class="course-body"><div class="course-code" style="color:#1e40af">ENG4U <span style="font-size:11px;background:#dbeafe;color:#1e3a8a;padding:2px 8px;border-radius:10px;margin-left:6px;letter-spacing:0.5px;">GRADE 12</span></div><h3>English</h3><p class="course-desc">Critical reading, essay writing, Shakespearean tragedy, Canadian voices, ISU, media literacy</p></div></a>
             </div>
         </div>
     </div>
@@ -87,8 +135,33 @@
                 <div class="tool-icon">⚗️</div><h3>PhET Simulations</h3><p>Science simulations</p>
             </a>
         </div>
+
+        <!-- Admin Tools (visible only to superuser / admin) -->
+        <div id="admin-tools-section" style="display:none;margin-top:48px;">
+            <h2 style="display:flex;align-items:center;gap:10px;">🔐 Administration <span style="font-size:13px;background:#fee2e2;color:#991b1b;padding:4px 12px;border-radius:12px;font-weight:700;letter-spacing:0.5px;">RESTRICTED</span></h2>
+            <p class="section-sub">User management, audit trail, and system settings — visible only to administrators.</p>
+            <div class="tools-grid">
+                <a href="/admin/users" class="tool-card" style="border-top:4px solid #dc2626;">
+                    <div class="tool-icon">👥</div><h3>Manage Users</h3><p>Create, edit, disable accounts (Super User &amp; Admin)</p>
+                </a>
+                <a href="/admin" class="tool-card" style="border-top:4px solid #7c3aed;">
+                    <div class="tool-icon">⚙️</div><h3>Admin Dashboard</h3><p>System overview, user counts, recent activity</p>
+                </a>
+                <a href="/admin/audit" class="tool-card" style="border-top:4px solid #2563eb;">
+                    <div class="tool-icon">📋</div><h3>Audit Log</h3><p>Authentication and user-management event history</p>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
+<script>
+// Reveal admin tools section when /api/me confirms admin/superuser role
+fetch('/api/me').then(r => r.json()).then(data => {
+    if (data.authenticated && data.user && data.user.can_manage_users) {
+        document.getElementById('admin-tools-section').style.display = 'block';
+    }
+}).catch(() => {});
+</script>
 
 <footer class="site-footer">
     <div class="container">

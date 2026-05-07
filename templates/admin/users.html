@@ -1,0 +1,140 @@
+{% from 'admin/_layout.html' import page %}
+{% call page('Users', user) %}
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+    <div>
+        <h1>User Management</h1>
+        <p class="sub">{% if user.role == 'superuser' %}Manage all users including other administrators{% else %}Manage teachers and students{% endif %}</p>
+    </div>
+    <button class="btn" onclick="openCreate()">+ New User</button>
+</div>
+
+<div id="alert"></div>
+
+<div class="card" style="padding:0;overflow:hidden;">
+<table>
+    <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Status</th><th>Last Login</th><th style="text-align:right;">Actions</th></tr></thead>
+    <tbody>
+    {% for u in users %}
+    <tr>
+        <td><strong>{{ u.full_name }}</strong><br><span class="muted">@{{ u.username }}</span></td>
+        <td class="muted">{{ u.email }}</td>
+        <td><span class="role-pill {{ u.role }}">{{ role_labels[u.role] }}</span></td>
+        <td><span class="status-dot {% if not u.active %}inactive{% endif %}"></span>{{ 'Active' if u.active else 'Disabled' }}</td>
+        <td class="muted">{{ (u.last_login or '—').replace('T',' ').split('+')[0] }}</td>
+        <td style="text-align:right;">
+            {% if u.id != user.id and can_manage_role(user.role, u.role) %}
+            <button class="btn ghost" onclick='openEdit({{ {"id":u.id,"username":u.username,"email":u.email,"full_name":u.full_name,"role":u.role,"active":(u.active == 1)}|tojson }})'>Edit</button>
+            <button class="btn danger" onclick="deleteUser({{ u.id }}, '{{ u.username }}')">Delete</button>
+            {% else %}<span class="muted">—</span>{% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+<!-- Modal -->
+<div class="modal-bg" id="modal">
+    <div class="modal">
+        <h2 id="modalTitle">Create User</h2>
+        <div id="modalAlert"></div>
+        <form id="userForm">
+            <input type="hidden" id="userId">
+            <div class="field"><label>Full name</label><input type="text" id="full_name" required></div>
+            <div class="field"><label>Username</label><input type="text" id="username" required></div>
+            <div class="field"><label>Email</label><input type="email" id="email" required></div>
+            <div class="field"><label>Role</label>
+                <select id="role" required>
+                    {% if user.role == 'superuser' %}
+                    <option value="superuser">Super User</option>
+                    <option value="admin">Administrator</option>
+                    {% endif %}
+                    <option value="teacher">Teacher</option>
+                    <option value="student" selected>Student</option>
+                </select>
+            </div>
+            <div class="field"><label>Password <span class="muted" id="pwHint">(min 8 chars)</span></label><input type="password" id="password" minlength="8"></div>
+            <div class="field" id="activeRow" style="display:none;"><label><input type="checkbox" id="active" checked> Active (uncheck to disable login)</label></div>
+            <div class="row">
+                <button type="button" class="btn ghost" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn" id="submitBtn">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const form = document.getElementById('userForm');
+const ids = ['userId','full_name','username','email','role','password','active'];
+function openCreate() {
+    form.reset();
+    document.getElementById('userId').value = '';
+    document.getElementById('modalTitle').textContent = 'Create User';
+    document.getElementById('pwHint').textContent = '(min 8 chars, required)';
+    document.getElementById('password').required = true;
+    document.getElementById('activeRow').style.display = 'none';
+    document.getElementById('modalAlert').innerHTML = '';
+    modal.classList.add('show');
+}
+function openEdit(u) {
+    form.reset();
+    document.getElementById('userId').value = u.id;
+    document.getElementById('full_name').value = u.full_name;
+    document.getElementById('username').value = u.username;
+    document.getElementById('username').disabled = true;
+    document.getElementById('email').value = u.email;
+    document.getElementById('role').value = u.role;
+    document.getElementById('active').checked = u.active;
+    document.getElementById('modalTitle').textContent = 'Edit User';
+    document.getElementById('pwHint').textContent = '(leave blank to keep current)';
+    document.getElementById('password').required = false;
+    document.getElementById('activeRow').style.display = 'block';
+    document.getElementById('modalAlert').innerHTML = '';
+    modal.classList.add('show');
+}
+function closeModal() {
+    modal.classList.remove('show');
+    document.getElementById('username').disabled = false;
+}
+function showAlert(target, msg, kind) {
+    document.getElementById(target).innerHTML = `<div class="alert ${kind}">${msg}</div>`;
+}
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('userId').value;
+    const body = {
+        full_name: document.getElementById('full_name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        role: document.getElementById('role').value,
+    };
+    const pw = document.getElementById('password').value;
+    if (pw) body.password = pw;
+    let url, method;
+    if (id) {
+        url = `/api/users/${id}`;
+        method = 'PATCH';
+        body.active = document.getElementById('active').checked;
+    } else {
+        url = '/api/users';
+        method = 'POST';
+        body.username = document.getElementById('username').value.trim();
+    }
+    try {
+        const r = await fetch(url, {method, headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+        const data = await r.json();
+        if (!r.ok) { showAlert('modalAlert', data.error || 'Error', 'error'); return; }
+        location.reload();
+    } catch (e) { showAlert('modalAlert', 'Network error', 'error'); }
+});
+async function deleteUser(id, username) {
+    if (!confirm(`Disable user "${username}"? They will not be able to log in. (Choose Hard Delete in confirmation if you need to permanently remove them.)`)) return;
+    try {
+        const r = await fetch(`/api/users/${id}`, {method: 'DELETE'});
+        const data = await r.json();
+        if (!r.ok) { showAlert('alert', data.error || 'Error', 'error'); return; }
+        location.reload();
+    } catch (e) { showAlert('alert', 'Network error', 'error'); }
+}
+</script>
+{% endcall %}

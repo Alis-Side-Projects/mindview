@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 4: Probability — Diagnostic (FOR Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0d9488; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; background: #dbeafe; color: #1e40af; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; min-height: 100px; resize: vertical; }
+textarea:focus { border-color: var(--primary); outline: none; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.feedback-box { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-top: 16px; }
+.feedback-box h4 { color: #92400e; margin-bottom: 8px; }
+.feedback-box textarea { min-height: 60px; border-color: #fde68a; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0d9488;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>🔍 Chapter 4: Probability</h1><div class="sub">Assessment FOR Learning — Pre-Unit Diagnostic</div><div class="badge">📋 Not Graded — Teacher Feedback Only</div></header>
+<div class="info"><strong>Purpose:</strong> Assess prerequisite skills from Chapters 1–3 before the probability unit: counting, basic probability, fractions/decimals, and use of conditional reasoning.</div>
+
+<div class="section-hdr">Prerequisite Knowledge</div>
+
+<div class="qcard"><div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">A jar has 5 red and 7 blue marbles. State, as fractions in lowest terms:<br>
+a) \( P(\text{red}) \) &nbsp;&nbsp; b) \( P(\text{not red}) \) &nbsp;&nbsp; c) \( P(\text{red}) + P(\text{blue}) \)</div>
+<textarea placeholder="Show your work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 2 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A 5-card hand is drawn from a 52-card deck. Use combinations to find:<br>
+a) Number of possible 5-card hands<br>
+b) Number of hands containing all 4 Aces (and 1 other card)<br>
+c) Probability of (b)</div>
+<textarea placeholder="Show your work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Convert each fraction to a decimal (4 places) and a percent:<br>
+a) \( \dfrac{3}{8} \) &nbsp;&nbsp; b) \( \dfrac{7}{36} \) &nbsp;&nbsp; c) \( \dfrac{1}{52} \)</div>
+<textarea placeholder="Show your work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 4 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">In a class, 60% study French, 30% study Spanish, and 20% study both. Use a Venn diagram or table to find:<br>
+a) \( P(\text{French only}) \)<br>
+b) \( P(\text{French OR Spanish}) \)<br>
+c) \( P(\text{neither}) \)</div>
+<textarea placeholder="Show your work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A weighted average problem: A student scored 80% on Test 1 (worth 30%), 70% on Test 2 (worth 30%), and 90% on the Final (worth 40%). Compute the overall percentage. Explain how this is conceptually similar to expected value.</div>
+<textarea placeholder="Show your work..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="qcard"><div class="qnum">Question 6 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Reflection: What do you find most challenging about probability so far — the language ("OR" vs "AND"), choosing the right counting method, or interpreting word problems? Be specific.</div>
+<textarea placeholder="Write your honest reflection..."></textarea><div class="word-count">0 words</div></div>
+
+<div class="feedback-box">
+<h4>📝 Teacher Feedback</h4>
+<p style="font-size:13px;color:#92400e;margin-bottom:8px;">Your teacher will provide feedback here.</p>
+<p><strong>Strengths:</strong></p><textarea placeholder="(Teacher fills this in)"></textarea>
+<p style="margin-top:12px;"><strong>Next Steps:</strong></p><textarea placeholder="(Teacher fills this in)"></textarea>
+</div>
+
+<footer>MDM4U — Mathematics of Data Management | A. Counting and Probability | Assessment FOR Learning</footer>
+</div>
+<script>document.querySelectorAll("textarea").forEach(t=>{t.addEventListener("input",()=>{const p=t.closest(".qcard")||t.closest(".feedback-box");const wc=p?.querySelector(".word-count");if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+" words";});});</script>
+</body></html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MHF4U Final Exam — Advanced Functions (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #2563eb; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.parts { margin-left: 20px; margin-bottom: 12px; }
+.parts li { margin-bottom: 8px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.mc input { accent-color: var(--primary); margin-top: 4px; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.btn-s { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.desmos-link { display: inline-block; margin-top: 8px; padding: 6px 14px; background: #1e293b; color: #fff; border-radius: 6px; text-decoration: none; font-size: 13px; }
+.desmos-link:hover { background: #334155; }
+.rubric { margin-top: 32px; }
+.rubric table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.rubric th, .rubric td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; }
+.rubric th { background: #f1f5f9; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.answer-key { margin-top: 40px; background: #fff; border: 2px solid var(--primary); border-radius: 10px; padding: 4px 20px; }
+.answer-key summary { font-size: 18px; font-weight: 700; color: var(--primary); cursor: pointer; padding: 14px 4px; }
+.answer-key .akq { border-left: 3px solid var(--primary); padding: 8px 14px; margin: 14px 0; background: #f8fafc; }
+.answer-key .akq h4 { color: var(--primary); margin-bottom: 6px; font-size: 14px; }
+.answer-key .akq p { font-size: 14px; margin-bottom: 4px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn, .desmos-link { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../courses/mhf4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+
+<header>
+    <h1>🎓 MHF4U Final Exam</h1>
+    <div class="sub">Comprehensive Final Evaluation — Chapters 1 through 8</div>
+    <div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+    <strong>⏱️ Duration:</strong> 3 hours (180 minutes) &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+    <strong>Materials allowed:</strong> Scientific calculator, ruler. No graphing technology during the exam.<br>
+    Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+    <div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+    <div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+    <strong>Coverage:</strong> Ch 1 Polynomial Functions · Ch 2 Polynomial Equations &amp; Inequalities · Ch 3 Rational Functions · Ch 4 Trigonometry · Ch 5 Trigonometric Functions · Ch 6 Exp. &amp; Log. Functions · Ch 7 Solving Exp. &amp; Log. Equations · Ch 8 Combining Functions.
+</div>
+
+<!-- ==================== PART A: KNOWLEDGE & UNDERSTANDING ==================== -->
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Which function is a polynomial of degree 4 with negative leading coefficient?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q1" value="a"> \( f(x) = -3x^4 + 2x^2 - 1 \)</label></li>
+<li><label><input type="radio" name="q1" value="b"> \( f(x) = 4x^3 - x^4 + 2 \) (leading coeff is +4)</label></li>
+<li><label><input type="radio" name="q1" value="c"> \( f(x) = 5x^{-4} + x \)</label></li>
+<li><label><input type="radio" name="q1" value="d"> \( f(x) = x^4 - 3x^2 \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q1','a')">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>Option (a): degree 4, leading coefficient \( -3 < 0 \).</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Convert \( 150° \) to radians (exact form).</div>
+<div class="ans-area"><input type="text" id="q2-in" placeholder="Enter in form a*pi/b..."></div>
+<button class="btn btn-s" onclick="document.getElementById('q2-sl').classList.add('show')">Reveal Answer</button>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>\( 150° \times \frac{\pi}{180°} = \frac{150\pi}{180} = \frac{5\pi}{6} \) rad.</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Evaluate \( \log_2 32 + \log_3 \tfrac{1}{27} \).</div>
+<div class="ans-area"><input type="text" id="q3-in" placeholder="Enter a number..."></div>
+<button class="btn btn-p" onclick="chkNum('q3',2)">Check</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-lbl">Solution:</div>\( \log_2 32 = 5 \) since \( 2^5 = 32 \). \( \log_3 \tfrac{1}{27} = -3 \) since \( 3^{-3}=\tfrac{1}{27} \). Sum \( = 5 + (-3) = 2 \).</div>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">State the exact value of \( \cos\!\left(\dfrac{7\pi}{6}\right) \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> \( \tfrac{\sqrt{3}}{2} \)</label></li>
+<li><label><input type="radio" name="q4" value="b"> \( -\tfrac{\sqrt{3}}{2} \)</label></li>
+<li><label><input type="radio" name="q4" value="c"> \( \tfrac{1}{2} \)</label></li>
+<li><label><input type="radio" name="q4" value="d"> \( -\tfrac{1}{2} \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','b')">Check</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>\( \tfrac{7\pi}{6} \) is in Quadrant III; reference angle \( \tfrac{\pi}{6} \). Cosine is negative in Q III, so \( \cos\tfrac{7\pi}{6}=-\tfrac{\sqrt{3}}{2} \).</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Identify all vertical asymptotes of \( r(x) = \dfrac{2x+3}{x^2 - 4} \).</div>
+<div class="ans-area"><input type="text" id="q5-in" placeholder="x = ?, x = ?"></div>
+<button class="btn btn-s" onclick="document.getElementById('q5-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="q5-sl"><div class="sol-lbl">Solution:</div>Set denominator to zero: \( x^2-4=0 \Rightarrow x=\pm 2 \). Numerator non-zero at these points. VAs: \( x=2 \) and \( x=-2 \).</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For \( f(x)=2x-1 \) and \( g(x)=x^2 \), evaluate \( (f \circ g)(3) \).</div>
+<div class="ans-area"><input type="text" id="q6-in" placeholder="Enter a number..."></div>
+<button class="btn btn-p" onclick="chkNum('q6',17)">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>\( g(3)=9 \), then \( f(9)=2(9)-1=17 \).</div>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Solve for \( x \): \( 5^{2x-1} = 125 \).</div>
+<div class="ans-area"><input type="text" id="q7-in" placeholder="Enter a number..."></div>
+<button class="btn btn-p" onclick="chkNum('q7',2)">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>\( 125 = 5^3 \), so \( 2x-1=3 \Rightarrow x=2 \).</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Identify the amplitude and period of \( y = -4\cos\!\left(\tfrac{\pi}{2}x\right) + 1 \).</div>
+<div class="ans-area"><input type="text" placeholder="Amplitude = __, Period = __"></div>
+<button class="btn btn-s" onclick="document.getElementById('q8-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>Amplitude \( = |-4| = 4 \). Period \( = \dfrac{2\pi}{\pi/2} = 4 \).</div>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Determine whether \( f(x) = x^5 - 3x^3 + x \) is even, odd, or neither. Justify algebraically.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Express as a single logarithm: \( 2\log_{10} x - \log_{10}(x+1) \).</div>
+<div class="ans-area"><input type="text" placeholder="Enter expression..."></div>
+<button class="btn btn-s" onclick="document.getElementById('q10-sl').classList.add('show')">Reveal</button>
+<div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>\( 2\log_{10}x = \log_{10}x^2 \). Then \( \log_{10}x^2 - \log_{10}(x+1) = \log_{10}\!\left(\dfrac{x^2}{x+1}\right) \).</div>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">A polynomial passes through \( (-2,0), (0,0), (3,0) \) with degree 3 and \( f(1)=-12 \). Determine \( f(x) \) in factored form.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<!-- ==================== PART B: THINKING / INQUIRY ==================== -->
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry <span>[25 marks]</span></div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Solve the inequality \( x^3 - 4x^2 - 11x + 30 > 0 \). Show factoring and a sign analysis on a number line.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Prove the identity \( \dfrac{1 - \cos 2\theta}{\sin 2\theta} = \tan\theta \). State any restrictions on \( \theta \).</div>
+<div class="ans-area"><textarea placeholder="Begin with one side and transform it to match the other..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Solve algebraically on \( 0 \le x < 2\pi \): \( 2\sin^2 x - 3\sin x + 1 = 0 \).</div>
+<div class="ans-area"><textarea placeholder="Show all work — state all solutions in radians..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Solve for \( x \): \( \log_2(x+3) + \log_2(x-3) = 4 \). State and verify any restrictions.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Given \( f(x)=x^2-1 \) and \( g(x)=\sqrt{x+5} \), determine \( (f\circ g)(x) \), state its domain, and find all \( x \) for which \( (f\circ g)(x)=8 \).</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<!-- ==================== PART C: COMMUNICATION ==================== -->
+<div class="section-hdr c">Part C: Communication <span>[25 marks]</span></div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Sketch \( f(x) = -\tfrac{1}{2}(x+3)(x-1)^2(x-4) \) without technology. Label all intercepts, state end behaviour, and indicate behaviour at each zero (cross or bounce).</div>
+<a class="desmos-link" href="https://www.desmos.com/calculator" target="_blank">📊 Open Desmos (post-exam check only)</a><br>
+<div class="ans-area"><textarea placeholder="Describe your sketch and label all features..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q18">
+<div class="qnum">Question 18 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Sketch one full period of \( y = 3\sin\!\left(2\!\left(x - \tfrac{\pi}{4}\right)\right) - 1 \). Label amplitude, period, phase shift, vertical translation, max value, min value, midline, and one zero of the function.</div>
+<div class="ans-area"><textarea placeholder="Describe each labelled feature..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q19">
+<div class="qnum">Question 19 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain, using clear mathematical language, the difference between average rate of change (AROC) and instantaneous rate of change (IROC) of a function. Include a labelled diagram (described in words) showing both as slopes.</div>
+<div class="ans-area"><textarea placeholder="Use complete sentences and proper terminology..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q20">
+<div class="qnum">Question 20 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">A student writes: "Since \( \log(a+b)=\log a + \log b \), \( \log(2+8)=\log 2 + \log 8 \)." Identify the error, state the correct law of logarithms, and provide a numerical counterexample.</div>
+<div class="ans-area"><textarea placeholder="Show the error and the correct property..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q21">
+<div class="qnum">Question 21 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">For the rational function \( r(x) = \dfrac{x^2 - 9}{x - 3} \), explain why \( x=3 \) is a removable discontinuity (hole) rather than a vertical asymptote. State the simplified function and the coordinates of the hole.</div>
+<div class="ans-area"><textarea placeholder="Use complete sentences and show simplification..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q22">
+<div class="qnum">Question 22 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Explain why exponential functions of the form \( y=a\cdot b^x \) (with \( b>1 \)) eventually grow faster than any polynomial function, and contrast this with logarithmic growth.</div>
+<div class="ans-area"><textarea placeholder="Use complete sentences with mathematical justification..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<!-- ==================== PART D: APPLICATION ==================== -->
+<div class="section-hdr a">Part D: Application <span>[25 marks]</span></div>
+
+<div class="qcard" id="q23">
+<div class="qnum">Question 23 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt"><strong>Compound Interest.</strong> Maya invests $4000 in an account paying 6.5%/a compounded monthly. (a) Write the function \( A(t) \) giving the value after \( t \) years. (b) Find the value after 8 years. (c) Determine, algebraically using logarithms, the time required for the investment to double.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q24">
+<div class="qnum">Question 24 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt"><strong>Sound Intensity (Decibels).</strong> Loudness is given by \( L = 10\log_{10}\!\left(\dfrac{I}{I_0}\right) \) where \( I_0 = 10^{-12} \) W/m². (a) Determine \( L \) for a rock concert with intensity \( I = 10^{-2} \) W/m². (b) How many times more intense is a 110 dB jet engine than a 70 dB vacuum cleaner? Show all logarithmic reasoning.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q25">
+<div class="qnum">Question 25 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt"><strong>Tidal Modelling.</strong> The water depth in a harbour varies sinusoidally between a minimum of 1.4 m and a maximum of 7.8 m. One full tidal cycle is 12.4 hours, and high tide first occurs at \( t = 3 \) h after midnight. (a) Write a sinusoidal function \( d(t) \) modelling depth. (b) Predict the depth at 8 a.m. (c) A boat needs at least 4 m of water; for how many hours of a full cycle is it safe to dock?</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q26">
+<div class="qnum">Question 26 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt"><strong>Open Box (Optimization-style).</strong> A 30 cm × 40 cm rectangular sheet of cardboard is made into an open-top box by cutting equal squares of side \( x \) cm from each corner and folding the sides up. (a) Express volume \( V(x) \) and state the realistic domain. (b) Estimate the value of \( x \) that yields the maximum volume by computing \( V(2), V(4), V(5), V(6), V(8) \), then state the maximum to the nearest cm³.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q27">
+<div class="qnum">Question 27 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt"><strong>Combined Functions — Population Model.</strong> The deer population in a park is modelled by \( D(t) = 200 + 50\sin\!\left(\tfrac{\pi}{6}t\right) \) (seasonal variation) and the wolf population by \( W(t) = 30 + 5t - 0.1t^2 \), where \( t \) is months from January 1. (a) Determine \( R(t) = D(t)/W(t) \), the deer-to-wolf ratio. (b) Calculate \( R(0) \) and \( R(6) \). (c) Use these values to estimate the average rate of change of the ratio over the first 6 months and interpret in context.</div>
+<div class="ans-area"><textarea placeholder="Show all work..."></textarea></div>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Final Exam Evaluation Rubric (per Achievement Chart)</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough understanding; insightful explanations; high degree of effectiveness</td><td>80–100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness — provincial standard met</td><td>70–79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness, approaching standard</td><td>60–69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness</td><td>50–59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient achievement of curriculum expectations</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<details class="answer-key">
+<summary>📘 Complete Answer Key &amp; Worked Solutions (click to expand)</summary>
+
+<h3 style="color:#1e40af;margin-top:14px;">Part A — Knowledge &amp; Understanding</h3>
+
+<div class="akq"><h4>Q1 [2] — Answer: (a)</h4>
+<p>(a) \( -3x^4+2x^2-1 \): degree 4, leading coefficient \( -3<0 \). ✓</p></div>
+
+<div class="akq"><h4>Q2 [2] — Answer: \( \tfrac{5\pi}{6} \) rad</h4>
+<p>\( 150°\cdot\tfrac{\pi}{180°}=\tfrac{150\pi}{180}=\tfrac{5\pi}{6} \).</p></div>
+
+<div class="akq"><h4>Q3 [2] — Answer: 2</h4>
+<p>\( \log_2 32=5 \); \( \log_3 \tfrac{1}{27}=\log_3 3^{-3}=-3 \); sum \( =2 \).</p></div>
+
+<div class="akq"><h4>Q4 [2] — Answer: (b) \( -\tfrac{\sqrt{3}}{2} \)</h4>
+<p>Q III, reference \( \tfrac{\pi}{6} \), cosine negative → \( -\tfrac{\sqrt{3}}{2} \).</p></div>
+
+<div class="akq"><h4>Q5 [2] — Answer: \( x=2,\ x=-2 \)</h4>
+<p>Factor denominator: \( (x-2)(x+2) \). Numerator \( 2x+3 \) is non-zero at \( x=\pm 2 \), so both are vertical asymptotes.</p></div>
+
+<div class="akq"><h4>Q6 [2] — Answer: 17</h4>
+<p>\( g(3)=9 \); \( f(9)=2(9)-1=17 \).</p></div>
+
+<div class="akq"><h4>Q7 [3] — Answer: \( x=2 \)</h4>
+<p>\( 5^{2x-1}=5^3 \Rightarrow 2x-1=3 \Rightarrow x=2 \).</p></div>
+
+<div class="akq"><h4>Q8 [2] — Amplitude 4, Period 4</h4>
+<p>\( |a|=4 \); period \( =\tfrac{2\pi}{|k|}=\tfrac{2\pi}{\pi/2}=4 \).</p></div>
+
+<div class="akq"><h4>Q9 [3] — Odd</h4>
+<p>\( f(-x)=(-x)^5-3(-x)^3+(-x)=-x^5+3x^3-x=-(x^5-3x^3+x)=-f(x) \). So odd. (1 for substitution, 1 for simplification, 1 for conclusion.)</p></div>
+
+<div class="akq"><h4>Q10 [2] — \( \log_{10}\!\left(\tfrac{x^2}{x+1}\right) \)</h4>
+<p>Power law: \( 2\log x=\log x^2 \). Quotient law: \( \log x^2-\log(x+1)=\log\!\tfrac{x^2}{x+1} \).</p></div>
+
+<div class="akq"><h4>Q11 [3] — \( f(x)=2x(x+2)(x-3) \)</h4>
+<p>Factored form: \( f(x)=a x(x+2)(x-3) \). Use \( f(1)=-12 \): \( a(1)(3)(-2)=-6a=-12 \Rightarrow a=2 \).</p></div>
+
+<h3 style="color:#92400e;margin-top:14px;">Part B — Thinking &amp; Inquiry</h3>
+
+<div class="akq"><h4>Q12 [5] — \( x \in (-3,2) \cup (5,\infty) \)</h4>
+<p>Test \( x=2 \): \( 8-16-22+30=0 \). Factor out \( (x-2) \): \( x^3-4x^2-11x+30=(x-2)(x^2-2x-15)=(x-2)(x-5)(x+3) \). Sign chart with critical points \( -3, 2, 5 \): the cubic with positive leading coefficient is positive on \( (-3,2)\cup(5,\infty) \).</p></div>
+
+<div class="akq"><h4>Q13 [5] — Identity Proven</h4>
+<p>Using \( 1-\cos 2\theta=2\sin^2\theta \) and \( \sin 2\theta=2\sin\theta\cos\theta \):<br>
+\( \dfrac{2\sin^2\theta}{2\sin\theta\cos\theta}=\dfrac{\sin\theta}{\cos\theta}=\tan\theta \). ✓<br>
+Restrictions: \( \sin\theta\neq 0 \) and \( \cos\theta\neq 0 \), i.e. \( \theta\neq \tfrac{n\pi}{2},\ n\in\mathbb{Z} \).</p></div>
+
+<div class="akq"><h4>Q14 [5] — \( x = \tfrac{\pi}{6}, \tfrac{5\pi}{6}, \tfrac{\pi}{2} \)</h4>
+<p>Let \( u=\sin x \): \( 2u^2-3u+1=0 \Rightarrow (2u-1)(u-1)=0 \Rightarrow u=\tfrac{1}{2} \) or \( u=1 \). For \( \sin x=\tfrac{1}{2} \) on \( [0,2\pi) \): \( x=\tfrac{\pi}{6}, \tfrac{5\pi}{6} \). For \( \sin x=1 \): \( x=\tfrac{\pi}{2} \).</p></div>
+
+<div class="akq"><h4>Q15 [5] — \( x=5 \)</h4>
+<p>Combine: \( \log_2[(x+3)(x-3)]=4 \Rightarrow (x+3)(x-3)=2^4=16 \Rightarrow x^2-9=16 \Rightarrow x^2=25 \Rightarrow x=\pm 5 \). Restrictions: \( x+3>0 \) and \( x-3>0 \Rightarrow x>3 \). Reject \( x=-5 \). Therefore \( x=5 \).</p></div>
+
+<div class="akq"><h4>Q16 [5] — \( (f\circ g)(x)=x+4 \), domain \( x\ge -5 \), \( x=4 \)</h4>
+<p>\( (f\circ g)(x)=f(\sqrt{x+5})=(\sqrt{x+5})^2-1=x+5-1=x+4 \). Domain inherits from \( g \): \( x+5\ge 0 \Rightarrow x\ge -5 \). Set \( x+4=8\Rightarrow x=4 \) (in domain ✓).</p></div>
+
+<h3 style="color:#065f46;margin-top:14px;">Part C — Communication</h3>
+
+<div class="akq"><h4>Q17 [5] — Polynomial Sketch</h4>
+<p>Leading term \( -\tfrac{1}{2}x^4 \) → both ends to \( -\infty \). x-intercepts: \( -3 \) (cross, order 1), \( 1 \) (bounce, order 2), \( 4 \) (cross, order 1). y-intercept: \( f(0)=-\tfrac12(3)(1)(-4)=6 \). Sketch: enters from below at left, crosses at \( -3 \), rises through \( (0,6) \), bounces off x-axis at \( 1 \), descends, crosses at \( 4 \), exits below.</p></div>
+
+<div class="akq"><h4>Q18 [5] — Sinusoidal Sketch</h4>
+<p>Amplitude \( =3 \). Period \( =\tfrac{2\pi}{2}=\pi \). Phase shift: \( \tfrac{\pi}{4} \) right. Vertical translation: \( -1 \) (midline \( y=-1 \)). Max \( =-1+3=2 \); Min \( =-1-3=-4 \). One zero: solve \( 3\sin(2(x-\tfrac{\pi}{4}))=1 \) — example zero at \( x=\tfrac{\pi}{4} \) where the curve crosses \( y=-1 \) (midline) ascending.</p></div>
+
+<div class="akq"><h4>Q19 [4] — AROC vs IROC</h4>
+<p>AROC over \( [a,b] \) = \( \tfrac{f(b)-f(a)}{b-a} \), the slope of the secant line through \( (a,f(a)) \) and \( (b,f(b)) \). IROC at \( x=a \) is the limiting slope of secants as the second point approaches \( a \); geometrically the slope of the tangent line at \( (a,f(a)) \). Diagram: curve with secant chord (AROC) and tangent line touching at one point (IROC).</p></div>
+
+<div class="akq"><h4>Q20 [4] — Logarithm Error</h4>
+<p>Error: \( \log(a+b)\neq \log a+\log b \). The correct product law is \( \log(ab)=\log a+\log b \). Counterexample: \( \log_{10}(2+8)=\log_{10}10=1 \), but \( \log_{10}2+\log_{10}8=\log_{10}16\approx 1.204 \neq 1 \).</p></div>
+
+<div class="akq"><h4>Q21 [4] — Removable Discontinuity</h4>
+<p>\( r(x)=\tfrac{x^2-9}{x-3}=\tfrac{(x-3)(x+3)}{x-3}=x+3 \) for \( x\neq 3 \). The factor \( (x-3) \) cancels — both numerator and denominator are zero at \( x=3 \). Because the simplified function is defined and continuous, \( x=3 \) is a hole rather than a VA. Hole at \( (3,6) \).</p></div>
+
+<div class="akq"><h4>Q22 [3] — Growth Comparison</h4>
+<p>Exponential \( b^x \) (with \( b>1 \)) increases by a constant factor over each unit interval, doubling/tripling repeatedly, while a polynomial \( x^n \) increases by amounts that grow only as a polynomial of \( x \). For sufficiently large \( x \), \( b^x \) exceeds any polynomial. Logarithmic functions are the inverse — they grow slower than any positive power of \( x \).</p></div>
+
+<h3 style="color:#5b21b6;margin-top:14px;">Part D — Application</h3>
+
+<div class="akq"><h4>Q23 [5] — Compound Interest</h4>
+<p>(a) \( A(t)=4000\!\left(1+\tfrac{0.065}{12}\right)^{12t} \).<br>
+(b) After 8 years: \( A(8)=4000(1.0054167)^{96}\approx 4000(1.6802)\approx \$6720.84 \).<br>
+(c) \( 2=\!\left(1+\tfrac{0.065}{12}\right)^{12t}\Rightarrow 12t=\tfrac{\log 2}{\log 1.0054167}\Rightarrow t\approx \tfrac{0.30103}{12(0.002347)}\approx 10.69 \) years.</p></div>
+
+<div class="akq"><h4>Q24 [5] — Decibels</h4>
+<p>(a) \( L=10\log_{10}(10^{-2}/10^{-12})=10\log_{10}10^{10}=10(10)=100 \) dB.<br>
+(b) \( \tfrac{I_{110}}{I_{70}}=10^{(110-70)/10}=10^{4}=10\,000 \). The jet engine is 10 000 times more intense.</p></div>
+
+<div class="akq"><h4>Q25 [5] — Tidal Model</h4>
+<p>Amplitude \( =\tfrac{7.8-1.4}{2}=3.2 \). Vertical shift \( c=\tfrac{7.8+1.4}{2}=4.6 \). Period \( =12.4\Rightarrow k=\tfrac{2\pi}{12.4}=\tfrac{\pi}{6.2} \). High tide at \( t=3 \) so phase shift \( d=3 \).<br>
+(a) \( d(t)=3.2\cos\!\left(\tfrac{\pi}{6.2}(t-3)\right)+4.6 \).<br>
+(b) \( d(8)=3.2\cos\!\left(\tfrac{\pi}{6.2}(5)\right)+4.6=3.2\cos(2.534)+4.6\approx 3.2(-0.815)+4.6\approx 1.99 \) m.<br>
+(c) Solve \( d(t)\ge 4 \Rightarrow \cos\!\left(\tfrac{\pi}{6.2}(t-3)\right)\ge -0.1875 \). The cosine is at least \( -0.1875 \) over a central interval of width \( \tfrac{2}{\pi}\arccos(-0.1875)\cdot 6.2 \approx \tfrac{2(1.7595)(6.2)}{\pi}\approx 6.95 \) hours per cycle.</p></div>
+
+<div class="akq"><h4>Q26 [5] — Open Box</h4>
+<p>(a) \( V(x)=x(30-2x)(40-2x) \). Domain: \( 0<x<15 \).<br>
+(b) Sample values: \( V(2)=2(26)(36)=1872 \); \( V(4)=4(22)(32)=2816 \); \( V(5)=5(20)(30)=3000 \); \( V(6)=6(18)(28)=3024 \); \( V(8)=8(14)(24)=2688 \). Maximum near \( x=6 \); volume \( \approx 3024 \) cm³.</p></div>
+
+<div class="akq"><h4>Q27 [5] — Combined Functions</h4>
+<p>(a) \( R(t)=\dfrac{200+50\sin(\pi t/6)}{30+5t-0.1t^2} \).<br>
+(b) \( R(0)=\tfrac{200+0}{30}=6.667 \); \( R(6)=\tfrac{200+50\sin(\pi)}{30+30-3.6}=\tfrac{200+0}{56.4}\approx 3.546 \).<br>
+(c) AROC \( =\tfrac{R(6)-R(0)}{6-0}\approx \tfrac{3.546-6.667}{6}\approx -0.520 \) deer/wolf per month. The number of deer per wolf is decreasing — wolves grow while deer oscillate around a constant mean.</p></div>
+
+</details>
+
+<footer>MHF4U — Advanced Functions, Grade 12 · Final Exam</footer>
+
+</div>
+
+<script>
+function chkMC(q,c){
+    const s=document.querySelector(`input[name="${q}"]:checked`);
+    if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution below.';}
+    if(sl)sl.classList.add('show');
+}
+function chkNum(q,c){
+    const v=parseFloat(document.getElementById(q+'-in').value.trim());
+    if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+    if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;
+    if(Math.abs(v-c)<0.1){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}
+    else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}
+    if(sl)sl.classList.add('show');
+}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body>
+</html>

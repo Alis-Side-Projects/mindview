@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 5: ISU — Unit Test (OF Learning)</title>
+<style>
+:root { --primary: #d97706; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.warn { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.passage { background: #fefce8; border-left: 4px solid #d97706; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: 14px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qnum { font-weight: 700; color: var(--primary); }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 14px; font-family: inherit; }
+textarea { min-height: 90px; resize: vertical; }
+details { background: #f8fafc; border-left: 4px solid var(--primary); padding: 10px 14px; margin-top: 10px; border-radius: 0 6px 6px 0; font-size: 14px; }
+details summary { cursor: pointer; font-weight: 700; color: var(--primary); }
+details p, details li { margin-top: 8px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../../courses/eng4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 5: ISU — Submission &amp; Defence</h1><div class="sub">Assessment OF Learning · Cross-Strand (B + C + A)</div><div class="badge">Graded — Major Culminating Task (part of 30% Final Evaluation)</div></header>
+<div class="warn"><strong>Format:</strong> 1500–2000 word essay submitted electronically + 5-minute oral defence with Q&A &nbsp;|&nbsp; <strong>Total:</strong> /60 marks (essay 45 / defence 15) &nbsp;|&nbsp; This document outlines the rubric components and includes a short concept test on ISU practices.</div>
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
+</div>
+
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
+
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Plot &amp; Context Quiz (essay subtype):</strong> In 5–7 sentences, summarise the central plot of your chosen novel and identify the historical and literary context relevant to your thesis (e.g., Cold War for <em>1984</em>, U.S. abolitionism for <em>Beloved</em>, the Belgian Congo for <em>Heart of Darkness</em>).</div>
+<textarea placeholder="Your summary..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 2 plot accuracy and concision (no over-summary), 2 historical/literary context relevant to thesis, 1 conventions. Strong responses make context contribute to interpretation.</p></details></div>
+
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Genre &amp; Form:</strong> Identify your novel's genre and one defining formal feature (POV, structure, voice, time-handling). Explain in 4–6 sentences how that form shapes meaning.</div>
+<textarea placeholder="Your answer..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 genre, 2 formal feature with example, 1 effect on meaning, 1 conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Terminology Check:</strong> Define the literary terms most relevant to your thesis (any 5 of: motif, symbol, allegory, irony, free indirect discourse, unreliable narrator, magical realism, frame narrative, polyphony, ekphrasis).</div>
+<textarea placeholder="Your definitions..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 each of 5 terms accurately defined; bonus quality if illustrated with a brief example from the novel under study.</p></details></div>
+
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
+
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Thesis &amp; Argument Architecture:</strong> Submit your final thesis statement and your top-level outline (5–6 body section topic sentences). Indicate which one is your strongest body section and why.</div>
+<textarea placeholder="Your thesis + outline..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 2 thesis specificity/debatability, 2 outline coherence (does each section advance argument?), 1 reflection on strongest section.</p></details></div>
+
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Evidence Reasoning:</strong> Identify the SINGLE strongest piece of textual evidence in your essay. In 5–7 sentences, defend your choice — why this evidence over the others?</div>
+<textarea placeholder="Your reasoning..."></textarea>
+<details><summary>Marking Notes</summary><p>Strong responses go beyond "this quotation supports my thesis" — they explain why this passage is more diagnostic, more central, or more revealing than alternatives. Marks: 1 selection, 3 reasoning, 1 conventions.</p></details></div>
+
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Counter-Reading:</strong> In 5–7 sentences, articulate the strongest possible counter-reading to your thesis (a reading that someone else might have, in good faith, defended). Then explain why your reading still holds (refute) or how the counter-reading complements yours (accommodate).</div>
+<textarea placeholder="Your counter-reading + response..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 2 counter-reading articulated in good faith (no straw man), 2 thoughtful response, 1 conventions. Strongest responses concede some ground while preserving the thesis.</p></details></div>
+
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
+
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Introduction:</strong> Submit the final introduction (approximately 200 words) of your ISU essay. It should include: a hook that sets up the novel's central tension, brief context, your thesis, and a roadmap.</div>
+<textarea placeholder="Your introduction..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 hook, 1 context, 2 thesis (specific + debatable), 1 roadmap. Conventions integrated throughout.</p></details></div>
+
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Sample Body Paragraph:</strong> Submit one body paragraph from your essay that you consider representative of your strongest analysis. It should embed at least 2 quotations and engage at least one secondary source.</div>
+<textarea placeholder="Your body paragraph..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 topic sentence, 2 evidence integration (primary + secondary), 1 analysis depth, 1 conventions. The secondary source must be cited correctly in MLA.</p></details></div>
+
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Works Cited:</strong> Submit your full Works Cited page (MLA 9th edition) listing your novel and at least 3 secondary sources. (Imagine real scholarly sources — peer-reviewed articles, scholarly books, or critical editions.)</div>
+<textarea placeholder="Your Works Cited..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 each correct entry (4 sources × 1 = 4) + 1 ordering/formatting (alphabetical, hanging indent, italics on book titles, quotation marks on article titles). Common errors: missing publisher, wrong italics, missing URL access date for online sources.</p></details></div>
+
+<div class="section-hdr a">Part D: Application — Oral Defence [15 marks]</div>
+
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>5-Minute Defence Outline:</strong> Sketch the structure of your 5-minute oral defence: (a) opening (thesis), (b) 2–3 strongest pieces of evidence, (c) significance/closing. Include estimated timing for each section.</div>
+<textarea placeholder="Your defence outline..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 thesis, 2 evidence selection, 1 significance, 1 timing. Strong defences distil rather than read.</p></details></div>
+
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Anticipated Q&A:</strong> Identify three questions a critical reader might ask about your thesis or evidence. Draft thoughtful one-paragraph answers to each.</div>
+<textarea placeholder="Your Q&A preparation..."></textarea>
+<details><summary>Marking Notes</summary><p>Marks: 1 each question (must be substantive — about your argument, not biographical) + 2 quality of answers. Predicting hard questions and preparing for them is the key defence skill.</p></details></div>
+
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Real-World Application:</strong> Outside ENG4U, what skills does the ISU build that will transfer to university or workplace? Identify three specific transferable skills and one specific real-world context where each would help.</div>
+<textarea placeholder="Your transfer reflection..."></textarea>
+<details><summary>Marking Notes</summary><p>Possible: project management (managing 4-week deadline → managing a multi-week internship project); source evaluation (evaluating peer-reviewed work → evaluating workplace memos for evidence); sustained argument (1500-word essay → graduate seminar paper or business proposal); oral defence (5-minute defence → job interview, university tutorial). Marks: 1 each skill + transfer (3 × 1) + 1 specificity + 1 conventions.</p></details></div>
+
+<footer>ENG4U — English, Grade 12 | Cross-Strand (B + C + A) | Assessment OF Learning — Graded</footer>
+</div></body></html>

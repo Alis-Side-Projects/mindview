@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 1: Programming Foundations — Unit Test</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128221; Unit 1: Programming Foundations &mdash; Unit Test</h1>
+<div class="sub">Assessment OF Learning &mdash; Summative</div>
+<div class="badge">&#9989; Graded &mdash; Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn">
+<strong>&#9201;&#65039; Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks<br>
+Show all work. Code-writing answers must be syntactically valid Python. Where space permits, add inline comments to clarify intent. <strong>No internet, no AI tools.</strong>
+</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="sec-hdr ku">Part A: Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[2 marks]</span></div>
+<div class="qt">State the value and the data type of each expression.
+<ol style="margin-left:24px;">
+<li><code>3 + 4 / 2</code></li>
+<li><code>"3" * 4</code></li>
+<li><code>10 // 3</code></li>
+<li><code>not (5 == 5)</code></li>
+</ol>
+</div>
+<textarea placeholder="(1) value and type ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">Trace this program. Show the value of <code>n</code> at each iteration and the final printed value.
+<div class="code">n = 1
+for i in range(5):
+    n = n * 2 + 1
+print(n)</div>
+</div>
+<textarea placeholder="Iteration 0: n=..., Iteration 1: n=..., ..., Final: n=..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">A program reads a user's age. Write the if/elif chain that prints "Child" if age &lt; 13, "Teen" if 13&ndash;19, "Adult" if 20&ndash;64, otherwise "Senior".</div>
+<textarea placeholder="if ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[2 marks]</span></div>
+<div class="qt">What is the output?
+<div class="code">x = 5
+y = 2
+print(f"{x} divided by {y} is {x/y:.2f}")</div>
+</div>
+<textarea placeholder="exact output..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">A student has written:
+<div class="code">while temperature &gt; 0:
+    print("Still hot")
+    temperature -= 5</div>
+What does this loop do, and what happens if <code>temperature</code> starts at <code>-3</code>? Explain in 2&ndash;3 sentences.</div>
+<textarea placeholder="The loop ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[3 marks]</span></div>
+<div class="qt">Identify the data type that should be used to represent each:
+<ul style="margin-left:22px;">
+<li>The age of a student</li>
+<li>The student's name</li>
+<li>Whether the student has paid their fee</li>
+<li>The student's grade-point average</li>
+<li>A list of the student's courses</li>
+<li>The number of letters in the student's last name</li>
+</ul>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="sec-hdr t">Part B: Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">Find and fix the bugs. The function below is supposed to return the sum of even numbers from 1 to n inclusive. There are <strong>three bugs</strong>. Rewrite the function correctly.
+<div class="code">def sum_evens(n):
+    total = 1
+    for i in range(0, n):
+        if i % 2 = 0:
+            total + i
+    return Total</div>
+</div>
+<textarea placeholder="Corrected function..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt">Trace the following nested-loop program. List every line that <code>print</code> outputs, in order.
+<div class="code">for i in range(3):
+    for j in range(3):
+        if i == j:
+            print(f"({i},{j}) diagonal")
+        elif i &lt; j:
+            print(f"({i},{j}) above")
+        else:
+            print(f"({i},{j}) below")</div>
+</div>
+<textarea placeholder="(0,0) diagonal, (0,1) above, ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">A vending machine accepts only loonies and toonies. Write a function <code>change(amount)</code> that, given an integer dollar amount, returns the <em>minimum</em> number of coins (toonies + loonies) required. Examples:
+<ul style="margin-left:22px;">
+<li><code>change(7)</code> &rarr; 4&nbsp; (3 toonies + 1 loonie)</li>
+<li><code>change(2)</code> &rarr; 1&nbsp; (1 toonie)</li>
+<li><code>change(0)</code> &rarr; 0</li>
+</ul>
+</div>
+<textarea placeholder="def change(amount): ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">Explain the difference between a <code>for</code> loop and a <code>while</code> loop in your own words. Include: when each is most appropriate, what risks each has, and a small example of each (1&ndash;3 lines).</div>
+<textarea placeholder="A for loop ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">A peer's code passes their tests but is hard to read &mdash; everything is inside <code>main()</code>, with single-letter variables, no comments, and lines that exceed 100 characters. List <strong>five</strong> specific style/quality issues you would raise in a code review and explain why each matters for maintainability.</div>
+<textarea placeholder="(1) Single-letter variable names: ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt">Add high-quality comments and rename variables in this program so a future reader can understand it without running it. Submit your re-commented version.
+<div class="code">def f(a, b):
+    c = 0
+    for x in range(a, b+1):
+        if x % 2:
+            c += x
+    return c</div>
+</div>
+<textarea placeholder="def f(a, b): becomes def sum_odd(low, high): ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a complete Python program that:
+<ol style="margin-left:24px;">
+<li>Asks the user for their hourly wage and the number of hours worked this week.</li>
+<li>Calculates pay: regular pay for the first 40 hours, time-and-a-half for hours over 40.</li>
+<li>Prints the formatted total to two decimal places.</li>
+</ol>
+Include input validation: if hours or wage is negative, print an error and exit.</div>
+<textarea placeholder="wage = float(input(...))" style="min-height:160px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">Write a function <code>count_vowels(s)</code> that takes a string and returns the number of vowels (a, e, i, o, u, case-insensitive). Then show the output of <code>count_vowels("Programming Foundations")</code>.</div>
+<textarea placeholder="def count_vowels(s): ..." style="min-height:140px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">15. <span class="qm">[5 marks]</span></div>
+<div class="qt">A teacher wants a small program that reads marks one at a time until the user enters <code>-1</code>, then prints (a) the number of marks entered, (b) the average, and (c) the highest mark. Write the program. (Hint: use a sentinel-controlled <code>while</code> loop.)</div>
+<textarea placeholder="marks = []; ..." style="min-height:160px;"></textarea>
+</div>
+
+<div class="rubric">
+<h3 style="margin-bottom:12px;">Evaluation Rubric</h3>
+<table>
+<tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td><strong>4</strong></td><td>Thorough, insightful; correct, idiomatic, well-commented code</td><td>80&ndash;100%</td></tr>
+<tr><td><strong>3</strong></td><td>Considerable effectiveness (provincial standard) &mdash; mostly correct with minor issues</td><td>70&ndash;79%</td></tr>
+<tr><td><strong>2</strong></td><td>Some effectiveness &mdash; partial credit; logic largely sound but contains errors</td><td>60&ndash;69%</td></tr>
+<tr><td><strong>1</strong></td><td>Limited effectiveness &mdash; significant errors or gaps</td><td>50&ndash;59%</td></tr>
+<tr><td><strong>R</strong></td><td>Insufficient</td><td>Below 50%</td></tr>
+</table>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 1: Programming Foundations &mdash; OF Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

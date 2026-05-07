@@ -1,182 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 4: Homeostasis — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Homeostasis — Unit Test (OF Learning)</title>
 <style>
-:root{--p:#dc2626;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+:root{--primary:#dc2626;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:900px;margin:0 auto;padding:20px}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
 header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
 header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
+.warn{background:#fef3c7;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
 .chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 4: Homeostasis — Unit Test</h1>
-<div class="sub">Assessment OF Learning — SBI4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+.chart-item{text-align:center;padding:12px;border-radius:8px}.chart-item .label{font-size:12px;font-weight:600}.chart-item .value{font-size:24px;font-weight:800}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px}
+.section-hdr.ku{background:#dbeafe;color:#1e40af}.section-hdr.t{background:#fef3c7;color:#92400e}
+.section-hdr.c{background:#d1fae5;color:#065f46}.section-hdr.a{background:#ede9fe;color:#5b21b6}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
+.qnum{font-weight:700;color:var(--primary)}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600}
+.qtxt{margin:8px 0 12px}.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer}
+input[type="text"],textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:14px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+details{background:#f8fafc;border-left:4px solid var(--primary);padding:10px 14px;margin-top:10px;border-radius:0 6px 6px 0;font-size:14px}
+details summary{cursor:pointer;font-weight:700;color:var(--primary)}details p{margin-top:8px}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border)}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sbi4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav>
+<div class="container">
+<header><h1>Unit 4: Homeostasis — Unit Test</h1><div class="sub">Assessment OF Learning · Strand E</div><div class="badge">Graded — Counts Toward 70% Term Mark</div></header>
+<div class="warn"><strong>Duration:</strong> 75 min &nbsp;|&nbsp; <strong>Total:</strong> /60 marks &nbsp;|&nbsp; Show all work.</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>Negative feedback | Hormones | Nervous system | Thermoregulation | Blood glucose</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div></div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding [15 marks]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">1</div><span class="qmarks">[3]</span>
+<div class="qtxt">Identify the four components of a feedback loop and apply them to glucose regulation after a meal.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Stimulus: rise in blood glucose. Sensor: pancreatic beta-cells. Control centre: islets of Langerhans. Effector: liver and muscle cells, which take up glucose under insulin and store it as glycogen. Result: blood glucose returns to ~5 mM (negative feedback).</p></details></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">2</div><span class="qmarks">[2]</span>
+<div class="qtxt">Resting membrane potential of a neuron is approximately:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2"> +30 mV</label></li>
+<li><label><input type="radio" name="q2"> -70 mV</label></li>
+<li><label><input type="radio" name="q2"> 0 mV</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> -70 mV; maintained by Na+/K+ pump and selective K+ leak channels.</p></details></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">3</div><span class="qmarks">[3]</span>
+<div class="qtxt">Sequence the four phases of the action potential and identify the ion movement at each.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(1) Resting (~−70 mV; Na/K pump active). (2) Depolarization to threshold (−55 mV) → voltage-gated Na+ channels open → Na+ in → rises to +30 mV. (3) Repolarization: Na+ channels inactivate; voltage-gated K+ channels open → K+ out → potential falls. (4) Hyperpolarization (~−80 mV) and refractory period; pump and K+ leak restore resting state.</p></details></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">4</div><span class="qmarks">[2]</span>
+<div class="qtxt">Steroid hormones (e.g., cortisol):</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4"> Bind cell-surface receptors and use cAMP</label></li>
+<li><label><input type="radio" name="q4"> Cross the membrane and bind intracellular receptors that alter transcription</label></li>
+<li><label><input type="radio" name="q4"> Are stored in vesicles like neurotransmitters</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Lipid-soluble steroids diffuse through the plasma membrane, bind nuclear receptors, and modulate gene expression — slow but durable effects.</p></details></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">5</div><span class="qmarks">[3]</span>
+<div class="qtxt">Label the four functional regions of a nephron and the dominant process at each: glomerulus / Bowman's capsule, proximal tubule, loop of Henle, distal tubule + collecting duct.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Glomerulus/Bowman's: filtration (water, ions, glucose, urea pushed out by BP). Proximal tubule: reabsorption of glucose, amino acids, ~65% Na+ and water. Loop of Henle: countercurrent multiplier creating medullary osmotic gradient (descending: water out; ascending: salt out). Distal tubule + collecting duct: tuned reabsorption under aldosterone (Na+) and ADH (water).</p></details></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">6</div><span class="qmarks">[2]</span>
+<div class="qtxt">An example of POSITIVE feedback is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q6"> Glucose homeostasis</label></li>
+<li><label><input type="radio" name="q6"> Oxytocin during childbirth</label></li>
+<li><label><input type="radio" name="q6"> Thermoregulation</label></li>
+</ul>
+<details><summary>Answer Key</summary><p><strong>B.</strong> Stretch → oxytocin → stronger contractions → more stretch (amplifying loop, ends with delivery).</p></details></div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking &amp; Investigation [15 marks]</div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">7</div><span class="qmarks">[5]</span>
+<div class="qtxt">A toxin blocks voltage-gated Na+ channels (e.g., tetrodotoxin from pufferfish). Predict the effect on (a) action potentials, (b) muscle contraction, (c) breathing.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(a) No depolarization possible — neurons cannot fire action potentials. (b) Motor neurons cannot deliver signals → muscles cannot contract → flaccid paralysis. (c) Diaphragm and intercostal muscles fail → respiratory arrest is the cause of death; victims must be ventilated until toxin clears.</p></details></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Comm.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">8</div><span class="qmarks">[5]</span>
+<div class="qtxt">Design a controlled experiment to test the effect of caffeine on resting heart rate. Identify variables, ethical considerations, and a hypothesis.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>IV: caffeine dose (0, 100, 200 mg). DV: resting heart rate (bpm). Controlled: time of day, recent activity, food intake, age range, no other stimulants. Ethics: informed consent, screen for cardiac conditions, use moderate doses, ensure participants can withdraw. Hypothesis: caffeine (a CNS stimulant blocking adenosine) raises HR; expect dose-dependent increase. Replicate ≥10 participants/condition; analyze with paired t-test.</p></details></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9</div><span class="qmarks">[5]</span>
+<div class="qtxt">A patient is dehydrated. Describe the chain of homeostatic events: from osmoreceptor activation to ADH release to nephron response. Compare to the response when blood pressure (not osmolarity) drops.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Dehydration → blood osmolarity ↑ → osmoreceptors in hypothalamus → posterior pituitary releases ADH → ADH binds collecting-duct cells → aquaporin-2 inserts in apical membrane → more water reabsorbed → urine concentrated, blood osmolarity ↓. Low BP path: juxtaglomerular cells release renin → angiotensinogen → angiotensin I → angiotensin II (ACE) → vasoconstriction + adrenal cortex releases aldosterone → distal/collecting tubules reabsorb Na+ and water → BP rises.</p></details></div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15 marks]</div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">App.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10</div><span class="qmarks">[5]</span>
+<div class="qtxt">Draw and describe a labeled action-potential graph (mV vs time): mark resting, threshold, peak, repolarization, hyperpolarization, refractory period.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>X-axis: time (ms). Y-axis: membrane potential (mV). Key points: resting (~−70 mV), threshold (−55 mV; if reached, action potential fires "all-or-none"), peak (~+30 mV), repolarization (rapid fall as K+ exits), hyperpolarization (~−80 mV), return to resting. Refractory period: absolute (cannot fire again until Na+ channels reset) and relative (stronger stimulus required).</p></details></div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 4: Homeostasis — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="qcard"><div class="qnum">11</div><span class="qmarks">[5]</span>
+<div class="qtxt">Compare and contrast the nervous and endocrine systems in a table: speed, duration, signal type, target specificity.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Nervous: very fast (ms), short-lived, electrochemical (action potentials, neurotransmitters), highly specific (synaptic). Endocrine: slow (s to min), long-lasting (min to days), chemical hormones via blood, broad — only cells with matching receptors respond. Both systems integrate at the hypothalamus-pituitary axis.</p></details></div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">12</div><span class="qmarks">[5]</span>
+<div class="qtxt">Explain the term "tropic hormone" using the HPA (hypothalamic-pituitary-adrenal) axis as an example.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Tropic hormones target endocrine glands. Stress → hypothalamus releases CRH → anterior pituitary releases ACTH (tropic) → adrenal cortex releases cortisol → metabolic effects (gluconeogenesis, immune suppression). Cortisol exerts negative feedback on hypothalamus and pituitary. Chronic stress dysregulates this axis.</p></details></div>
+
+<div class="section-hdr a">Part D: Application [15 marks]</div>
+
+<div class="qcard"><div class="qnum">13</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case — Type 1 Diabetes:</strong> A 14-year-old presents with frequent urination, thirst, weight loss, fatigue, and fasting blood glucose of 16 mM. Explain the underlying mechanism and why each symptom occurs.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>Autoimmune destruction of pancreatic beta-cells → no insulin → cells cannot import glucose; blood glucose remains high. Glucosuria: glucose exceeds renal threshold → glucose in urine. Polyuria: glucose in tubule increases osmolarity, drawing water → frequent urination. Polydipsia: water loss triggers thirst. Weight loss / fatigue: cells starve despite high blood sugar; body burns fat (ketogenesis → ketoacidosis if untreated) and protein. Treatment: lifelong insulin replacement.</p></details></div>
+
+<div class="qcard"><div class="qnum">14</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>Case — Multiple Sclerosis:</strong> MS damages myelin in the CNS. Predict the effect on (a) action-potential conduction, (b) typical symptoms, (c) MRI findings.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>(a) Demyelination disrupts saltatory conduction; action potentials slow or fail. (b) Symptoms depend on which tracts are affected: vision loss (optic neuritis), weakness, numbness/tingling, gait/coordination problems, fatigue; relapsing-remitting course is common. (c) MRI shows hyperintense plaques in white matter (periventricular, brainstem, spinal cord). Therapies modulate immune attack on myelin.</p></details></div>
+
+<div class="qcard"><div class="qnum">15</div><span class="qmarks">[5]</span>
+<div class="qtxt"><strong>STSE — Endocrine Disruptors:</strong> BPA in plastics can mimic estrogen. Discuss two health concerns and one regulatory response Health Canada has taken.</div>
+<textarea></textarea>
+<details><summary>Answer Key</summary><p>BPA binds estrogen receptors and can perturb development, reproduction, and metabolism. Concerns: developmental effects in fetuses/infants (links suggested with neurodevelopment, reproductive abnormalities); metabolic effects (insulin resistance, obesity); altered thyroid function. Regulatory response: Health Canada banned BPA in baby bottles (2008/2010) and added it to the Toxic Substances list under CEPA. Current advice: use BPA-free containers, avoid heating food in plastic.</p></details></div>
+
+<footer>SBI4U — Biology, Grade 12 | Strand E: Homeostasis | Assessment OF Learning — Graded</footer>
+</div></body></html>

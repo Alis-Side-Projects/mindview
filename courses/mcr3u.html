@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U — Functions, Grade 11 | MindView</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.summary-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-top: 8px; font-size: 14px; line-height: 1.7; color: #334155; }
+.summary-card strong { color: #0e7490; }
+
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../">Home</a><a href="../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+<div class="container">
+<div class="strand-tag">Mathematics &mdash; Grade 11 University Preparation</div>
+<h1>📐 MCR3U: Functions</h1>
+<p>Functions, exponential models, sequences &amp; series, financial math, trigonometry</p>
+<p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours &middot; 8 chapters &middot; 4 strands &middot; Prerequisite: MPM2D Principles of Mathematics (Grade 10 Academic)</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+<a href="#unit1" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #0891b2;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch1: Intro to Functions</a>
+<a href="#unit2" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #2563eb;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch2: Quadratic Functions</a>
+<a href="#unit3" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #e11d48;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch3: Exponential Functions</a>
+<a href="#unit4" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #dc2626;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch4: Exp. Equations</a>
+<a href="#unit5" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #059669;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch5: Sequences &amp; Series</a>
+<a href="#unit6" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #16a34a;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch6: Financial Math</a>
+<a href="#unit7" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #7c3aed;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch7: Trig Ratios &amp; Laws</a>
+<a href="#unit8" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #6366f1;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch8: Sinusoidal Functions</a>
+</div>
+
+<!-- =================== CHAPTER 1 =================== -->
+<div class="unit-section" id="unit1">
+<div class="unit-header" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+<h2>Chapter 1: Introduction to Functions</h2>
+<p>Function notation, domain &amp; range, mappings, even/odd, inverses, transformations</p>
+<div class="unit-meta">
+<span>📚 Strand A: Characteristics of Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 6 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.1 &mdash; Relations vs. Functions; the Vertical Line Test</div>
+<div class="topic-desc">Define a relation; recognise a function from a set of ordered pairs, mapping diagram, table, or graph; apply the vertical line test.</div>
+<div class="summary-card">A relation pairs inputs with outputs. A function is a relation in which <strong>each input has exactly one output</strong>. Graphically, a curve is a function iff every vertical line intersects it at most once. Common counter-example: \( x = y^2 \) (a sideways parabola) fails the test.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt1')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">What is a function? — Khan Academy</span>
+        <span class="vid-duration">9:22</span>
+        <span class="vid-toggle" id="toggle-mcr-yt1">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt1">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/52tpYl2tTqk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=52tpYl2tTqk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.2 &mdash; Function Notation \( f(x) \); Evaluation</div>
+<div class="topic-desc">Read and write \( f(x) \), \( g(t) \); evaluate at numerical and algebraic inputs; interpret the meaning of \( f(a) \) in context.</div>
+<div class="summary-card">For \( f(x)=2x^2-3x+1 \): \( f(-2)=2(4)-3(-2)+1=8+6+1=15 \). For \( f(a+h) \), substitute \( a+h \) wherever \( x \) appears: \( f(a+h)=2(a+h)^2-3(a+h)+1 \). Function notation makes the input-output relationship explicit and is foundational for all later work in MHF4U and MCV4U.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt2')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Function Notation Example Evaluate MCR3U — Anil Kumar</span>
+        <span class="vid-duration">8:45</span>
+        <span class="vid-toggle" id="toggle-mcr-yt2">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt2">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9Xbm1uhQGws?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=9Xbm1uhQGws" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.3 &mdash; Domain &amp; Range from Graphs and Equations</div>
+<div class="topic-desc">State domain and range using set-builder and interval notation; analyse restrictions from radicals (\( \sqrt{\,} \ge 0 \)) and rational expressions (denominator \( \ne 0 \)).</div>
+<div class="summary-card">For \( f(x)=\sqrt{x-3} \): domain \( \{x\in\mathbb{R} \mid x\ge 3\} \), range \( \{y\in\mathbb{R}\mid y\ge 0\} \). For \( g(x)=\dfrac{1}{x-2} \): domain \( \{x\in\mathbb{R}\mid x\ne 2\} \). Always check both algebraic restrictions and the contextual domain when modelling.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt3')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Domain and Range of Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:30</span>
+        <span class="vid-toggle" id="toggle-mcr-yt3">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt3">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/0pNix4eCcno?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=0pNix4eCcno" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.4 &mdash; Inverse Functions \( f^{-1}(x) \)</div>
+<div class="topic-desc">Find inverses algebraically (swap \( x \) and \( y \), solve for \( y \)); reflect graphs across \( y = x \); identify when the inverse is itself a function.</div>
+<div class="summary-card">For \( f(x)=3x-5 \), the inverse is found by writing \( y=3x-5 \), swapping to get \( x=3y-5 \), and solving: \( f^{-1}(x)=\dfrac{x+5}{3} \). The graph of \( f^{-1} \) is the reflection of \( f \) over the line \( y=x \). The inverse of \( f(x)=x^2 \) is not a function unless we restrict the domain to \( x\ge 0 \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt4')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Inverse Functions Test Questions MCR3U — Anil Kumar</span>
+        <span class="vid-duration">14:20</span>
+        <span class="vid-toggle" id="toggle-mcr-yt4">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt4">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/fJnLdn__R98?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=fJnLdn__R98" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.5 &mdash; Transformations of Functions: \( a f(k(x-d)) + c \)</div>
+<div class="topic-desc">Identify and apply vertical/horizontal stretches and compressions, reflections, and translations on parent functions \( y=x^2 \), \( y=\sqrt{x} \), \( y=|x| \), \( y=1/x \).</div>
+<div class="summary-card">In \( g(x)=a\,f(k(x-d))+c \): \( a \) controls vertical stretch (\(|a|>1\)) or compression and reflects in the x-axis if negative; \( k \) controls horizontal stretch (\(|k|<1\)) or compression and reflects in the y-axis if negative; \( d \) is a horizontal shift; \( c \) is a vertical shift. Always apply <em>stretches and reflections before translations</em>.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt5')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Transformation of Functions MCR3U Concept with Examples — Anil Kumar</span>
+        <span class="vid-duration">15:05</span>
+        <span class="vid-toggle" id="toggle-mcr-yt5">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt5">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/q0BVoaiOxRU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=q0BVoaiOxRU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">1.6 &mdash; Even and Odd Functions; Symmetry</div>
+<div class="topic-desc">Test symmetry algebraically: even iff \( f(-x)=f(x) \) (y-axis symmetric); odd iff \( f(-x)=-f(x) \) (origin symmetric).</div>
+<div class="summary-card">\( f(x)=x^4-3x^2 \) is even because \( f(-x)=(-x)^4-3(-x)^2=x^4-3x^2=f(x) \). \( g(x)=x^3-x \) is odd because \( g(-x)=-x^3+x=-g(x) \). Functions like \( h(x)=x^2+x \) are neither.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt6')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Even and Odd Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:18</span>
+        <span class="vid-toggle" id="toggle-mcr-yt6">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt6">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8VgmBe3ulb8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=8VgmBe3ulb8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 1 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch1_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch1_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch1_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 2 =================== -->
+<div class="unit-section" id="unit2">
+<div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+<h2>Chapter 2: Quadratic Functions &amp; Equations</h2>
+<p>Factoring, completing the square, quadratic formula, vertex form, applications</p>
+<div class="unit-meta">
+<span>📚 Strand A: Characteristics of Functions</span>
+<span>⏱️ ~12h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.1 &mdash; Quadratic Functions Review: Three Forms</div>
+<div class="topic-desc">Move fluently between standard \( y=ax^2+bx+c \), vertex \( y=a(x-h)^2+k \), and factored \( y=a(x-r)(x-s) \) forms.</div>
+<div class="summary-card">Each form reveals different features: standard gives the y-intercept (\( c \)) immediately; vertex gives the vertex \( (h,k) \); factored gives the x-intercepts \( (r,0), (s,0) \). Conversion between forms is a critical skill: expand factored to get standard; complete the square on standard to get vertex.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt7')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Three Forms of a Quadratic Function — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:50</span>
+        <span class="vid-toggle" id="toggle-mcr-yt7">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt7">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/IWVeIm9Ar3o?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=IWVeIm9Ar3o" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.2 &mdash; Factoring Trinomials &amp; Special Patterns</div>
+<div class="topic-desc">Factor \( ax^2+bx+c \), difference of squares \( a^2-b^2=(a-b)(a+b) \), perfect-square trinomials, and grouping; factor by GCF first.</div>
+<div class="summary-card">Examples: \( 6x^2+11x-10=(3x-2)(2x+5) \) (decomposition); \( 9x^2-25=(3x-5)(3x+5) \) (difference of squares); \( x^2+10x+25=(x+5)^2 \) (perfect square). Always factor out a GCF before attempting any other technique.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt8')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Factoring Trinomials — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">17:36</span>
+        <span class="vid-toggle" id="toggle-mcr-yt8">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt8">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-4jANGlJRLY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=-4jANGlJRLY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.3 &mdash; Completing the Square &amp; the Quadratic Formula</div>
+<div class="topic-desc">Convert standard form to vertex form by completing the square; derive and apply \( x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a} \); use the discriminant \( \Delta=b^2-4ac \) to count real roots.</div>
+<div class="summary-card">For \( y=2x^2+8x-3 \): factor 2 from x-terms: \( 2(x^2+4x)-3 \); add and subtract 4 inside: \( 2(x^2+4x+4-4)-3 = 2(x+2)^2 - 11 \). Vertex \( (-2,-11) \). The discriminant \( \Delta>0 \) means two real roots; \( \Delta=0 \) one (a double root); \( \Delta<0 \) no real roots.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt9')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Completing the Square — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:32</span>
+        <span class="vid-toggle" id="toggle-mcr-yt9">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt9">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bNQY0z76M5A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=bNQY0z76M5A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.4 &mdash; Solving Quadratic Equations</div>
+<div class="topic-desc">Solve quadratic equations by factoring, by completing the square, or by the quadratic formula; identify which method is most efficient.</div>
+<div class="summary-card">Solve \( 2x^2-7x+3=0 \): factor as \( (2x-1)(x-3)=0 \), so \( x=\tfrac{1}{2} \) or \( x=3 \). When factoring fails (e.g. \( x^2+4x+1=0 \)), use the quadratic formula: \( x=\frac{-4\pm\sqrt{12}}{2}=-2\pm\sqrt{3} \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt10')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Solving Quadratic Equations By Factoring &amp; Quadratic Formula — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">19:42</span>
+        <span class="vid-toggle" id="toggle-mcr-yt10">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt10">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qwpxeaz2GBI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=qwpxeaz2GBI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">2.5 &mdash; Quadratic Applications: Optimization &amp; Projectiles</div>
+<div class="topic-desc">Set up quadratic models for projectile motion, area maximization, and revenue/profit; identify the vertex as the optimal value.</div>
+<div class="summary-card">A ball is thrown so its height (m) is \( h(t)=-5t^2+20t+1.5 \). Maximum height occurs at \( t=-\frac{b}{2a}=\frac{-20}{-10}=2 \) s; \( h(2)=-20+40+1.5=21.5 \) m. The ball hits the ground when \( h(t)=0 \), solved by the quadratic formula.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt11')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Quadratic Word Problems — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">22:18</span>
+        <span class="vid-toggle" id="toggle-mcr-yt11">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt11">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RDFelZ4MCDQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=RDFelZ4MCDQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 2 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch2_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch2_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch2_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 3 =================== -->
+<div class="unit-section" id="unit3">
+<div class="unit-header" style="background:linear-gradient(135deg,#e11d48dd,#e11d48);">
+<h2>Chapter 3: Exponential Functions</h2>
+<p>Exponent laws, rational exponents, graphing, transformations, key features</p>
+<div class="unit-meta">
+<span>📚 Strand B: Exponential Functions</span>
+<span>⏱️ ~12h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.1 &mdash; Exponent Laws &amp; Integer Exponents</div>
+<div class="topic-desc">Apply the laws of exponents: product, quotient, power-of-a-power, zero, and negative exponents.</div>
+<div class="summary-card">Key laws: \( a^m\cdot a^n=a^{m+n} \); \( \dfrac{a^m}{a^n}=a^{m-n} \); \( (a^m)^n=a^{mn} \); \( a^0=1 \) (\(a\ne 0\)); \( a^{-n}=\dfrac{1}{a^n} \). Example: \( \dfrac{(2x^3)^2 \cdot x^{-4}}{x^2} = \dfrac{4x^6 x^{-4}}{x^2}=4x^{6-4-2}=4x^0=4 \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt12')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Laws of Exponents — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">17:25</span>
+        <span class="vid-toggle" id="toggle-mcr-yt12">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt12">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/JnpKkBFTwLE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=JnpKkBFTwLE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.2 &mdash; Rational Exponents &amp; Radicals</div>
+<div class="topic-desc">Convert between radical and rational-exponent form: \( a^{1/n} = \sqrt[n]{a} \) and \( a^{m/n} = \sqrt[n]{a^m} = (\sqrt[n]{a})^m \).</div>
+<div class="summary-card">\( 27^{2/3} = (\sqrt[3]{27})^2 = 3^2 = 9 \). \( 16^{-3/4} = \dfrac{1}{16^{3/4}} = \dfrac{1}{(\sqrt[4]{16})^3} = \dfrac{1}{2^3} = \dfrac{1}{8} \). Rational exponents allow us to extend exponent laws beyond integer powers and are essential for working with exponential functions of any base.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt13')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Rational Exponents — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:50</span>
+        <span class="vid-toggle" id="toggle-mcr-yt13">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt13">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2L-HDV-l_b4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=2L-HDV-l_b4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.3 &mdash; The Exponential Function \( y = b^x \)</div>
+<div class="topic-desc">Graph parent exponentials \( y=2^x, y=10^x, y=(\tfrac{1}{2})^x \); identify domain, range, asymptote, intercepts; distinguish growth (\(b>1\)) from decay (\(0<b<1\)).</div>
+<div class="summary-card">For \( y=b^x \) with \( b>0, b\ne 1 \): domain \( \mathbb{R} \); range \( y>0 \); horizontal asymptote \( y=0 \); y-intercept always \( (0,1) \) since \( b^0=1 \); no x-intercept. Growth functions rise to the right; decay functions fall to the right.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt14')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Graphing Exponential Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:18</span>
+        <span class="vid-toggle" id="toggle-mcr-yt14">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt14">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/5A4uqiyaVrE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=5A4uqiyaVrE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.4 &mdash; Transformations of Exponential Functions</div>
+<div class="topic-desc">Apply \( y=a\cdot b^{k(x-d)}+c \): identify the new asymptote (\( y=c \)), the y-intercept, and effects of each parameter.</div>
+<div class="summary-card">For \( y=2(3)^{x-1}-4 \): the parent \( y=3^x \) is stretched vertically by 2, shifted right 1, and down 4. New horizontal asymptote: \( y=-4 \). At \( x=1 \): \( y=2(3)^0-4=-2 \). At \( x=0 \): \( y=2(3)^{-1}-4=\tfrac{2}{3}-4=-\tfrac{10}{3} \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt15')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Transformations of Exponential Functions — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:04</span>
+        <span class="vid-toggle" id="toggle-mcr-yt15">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt15">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Q7BVc4UI2J0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Q7BVc4UI2J0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">3.5 &mdash; Comparing Linear, Quadratic, &amp; Exponential Growth</div>
+<div class="topic-desc">Compare rates of growth using finite differences and tables; understand why exponential eventually beats any polynomial.</div>
+<div class="summary-card">Linear functions have constant first differences; quadratics have constant second differences; exponentials have a constant <em>ratio</em> of consecutive y-values. For large \( x \), \( 2^x \) eventually exceeds \( x^{100} \) — a key intuition for limits and rates of change later in MHF4U.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt16')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Linear, Quadratic, &amp; Exponential Functions Compared — Khan Academy</span>
+        <span class="vid-duration">9:48</span>
+        <span class="vid-toggle" id="toggle-mcr-yt16">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt16">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/_AvfDTtt9OM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=_AvfDTtt9OM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 3 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch3_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch3_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch3_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 4 =================== -->
+<div class="unit-section" id="unit4">
+<div class="unit-header" style="background:linear-gradient(135deg,#dc2626dd,#dc2626);">
+<h2>Chapter 4: Solving Exponential Equations &amp; Applications</h2>
+<p>Same-base method, growth/decay models, half-life, compound interest preview</p>
+<div class="unit-meta">
+<span>📚 Strand B: Exponential Functions</span>
+<span>⏱️ ~12h</span>
+<span>📹 4 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.1 &mdash; Solving Exponential Equations (Same-Base Method)</div>
+<div class="topic-desc">Rewrite both sides with a common base, then equate exponents; recognise when the same-base technique applies.</div>
+<div class="summary-card">Solve \( 4^{x+1} = 8^{x-2} \): rewrite as \( (2^2)^{x+1}=(2^3)^{x-2} \), so \( 2^{2x+2}=2^{3x-6} \). Equate exponents: \( 2x+2=3x-6 \), giving \( x=8 \). When no common base exists (e.g. \( 2^x=7 \)), logarithms are required — that's MHF4U.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt17')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Solving Exponential Equations — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:46</span>
+        <span class="vid-toggle" id="toggle-mcr-yt17">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt17">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/TrenazsCVPM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=TrenazsCVPM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.2 &mdash; Exponential Growth Models</div>
+<div class="topic-desc">Use \( A(t)=A_0(1+r)^t \) and \( A(t)=A_0\,b^{t/T} \) for population growth, viral spread, and continuous appreciation.</div>
+<div class="summary-card">A culture starts with 500 cells and doubles every 3 hours. After \( t \) hours: \( A(t)=500\cdot 2^{t/3} \). After 12 hours: \( A(12)=500\cdot 2^4=8000 \) cells. After 1 day: \( A(24)=500\cdot 2^8=128{,}000 \). The form \( b^{t/T} \) is read &ldquo;b raised to (time per period)&rdquo; — the <em>doubling time</em> form.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt18')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Exponential Equations Growth and Decay Concepts MCR3U IB Math — Anil Kumar</span>
+        <span class="vid-duration">13:22</span>
+        <span class="vid-toggle" id="toggle-mcr-yt18">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt18">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/4Wt7FKuJu5Q?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=4Wt7FKuJu5Q" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.3 &mdash; Exponential Decay &amp; Half-Life</div>
+<div class="topic-desc">Use \( A(t)=A_0(\tfrac{1}{2})^{t/h} \) for radioactive decay, drug elimination, and cooling; relate half-life to the decay constant.</div>
+<div class="summary-card">Carbon-14 has a half-life of 5730 years. A 100 g sample after \( t \) years: \( A(t)=100(\tfrac{1}{2})^{t/5730} \). After 11{,}460 years: \( A=100(\tfrac{1}{2})^2=25 \) g. Equivalently: \( A(t)=100(0.5)^{t/5730} \). Decay models always have base \( 0<b<1 \) when written as \( b^t \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt19')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Half Life Chemistry Problems — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:24</span>
+        <span class="vid-toggle" id="toggle-mcr-yt19">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt19">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/WTQvfvoOF3g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=WTQvfvoOF3g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">4.4 &mdash; Compound Interest as an Exponential Application</div>
+<div class="topic-desc">Apply \( A=P(1+i)^n \) where \( i \) is the rate per compounding period and \( n \) is the number of compounding periods; preview the formal treatment in Ch 6.</div>
+<div class="summary-card">$1000 invested at 6% per annum compounded quarterly for 5 years: \( i = 0.06/4=0.015 \), \( n=5\cdot 4=20 \). \( A=1000(1.015)^{20}\approx \$1{,}346.86 \). Exponential growth at work — and the foundation for the more rigorous treatment of present value, future value, and annuities in Chapter 6.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt20')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Compound Interest Word Problems — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:38</span>
+        <span class="vid-toggle" id="toggle-mcr-yt20">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt20">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Slbz_HUpyQE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Slbz_HUpyQE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 4 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch4_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch4_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch4_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 5 =================== -->
+<div class="unit-section" id="unit5">
+<div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+<h2>Chapter 5: Sequences and Series</h2>
+<p>Arithmetic, geometric, recursive, sigma notation, finite series formulas</p>
+<div class="unit-meta">
+<span>📚 Strand C: Discrete Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.1 &mdash; Sequences: Recursive vs. General-Term Definitions</div>
+<div class="topic-desc">Define a sequence as a function with domain \( \mathbb{N} \); express explicitly (\( t_n = \) formula in \( n \)) or recursively (\( t_n=t_{n-1}+\dots \)).</div>
+<div class="summary-card">The Fibonacci sequence \( 1,1,2,3,5,8,\ldots \) is recursive: \( t_n=t_{n-1}+t_{n-2}, \, t_1=t_2=1 \). The same sequence has no simple closed-form. By contrast \( t_n=2n+1 \) gives \( 3,5,7,9,\ldots \) — both forms describe the sequence; they emphasise different patterns.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt21')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Recursive vs Explicit Sequence Formulas — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">10:29</span>
+        <span class="vid-toggle" id="toggle-mcr-yt21">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt21">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/X2QpfgoEm5w?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=X2QpfgoEm5w" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.2 &mdash; Arithmetic Sequences</div>
+<div class="topic-desc">Identify a constant common difference \( d \); use \( t_n = a + (n-1)d \) where \( a=t_1 \).</div>
+<div class="summary-card">Sequence: \( 7, 11, 15, 19, \ldots \); \( a=7, d=4 \). The 25th term is \( t_{25}=7+(25-1)(4)=7+96=103 \). To find which term equals 167: \( 167=7+(n-1)(4) \) gives \( n=41 \). The constant first difference is the function-class signature of an arithmetic (linear) sequence.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt22')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Discrete Functions MCR3U Arithmetic Sequences — Anil Kumar</span>
+        <span class="vid-duration">14:55</span>
+        <span class="vid-toggle" id="toggle-mcr-yt22">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt22">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CS86LVzYfkE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=CS86LVzYfkE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.3 &mdash; Geometric Sequences</div>
+<div class="topic-desc">Identify a constant common ratio \( r \); use \( t_n = a\,r^{n-1} \).</div>
+<div class="summary-card">Sequence: \( 3, 6, 12, 24, \ldots \); \( a=3, r=2 \). The 10th term is \( t_{10}=3\cdot 2^9=3\cdot 512=1536 \). Geometric sequences are discrete exponential functions — the link between Strands B and C.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt23')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Geometric Sequences and Series — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">15:38</span>
+        <span class="vid-toggle" id="toggle-mcr-yt23">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt23">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cYw4MFWsB6c?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=cYw4MFWsB6c" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.4 &mdash; Arithmetic Series \( S_n \)</div>
+<div class="topic-desc">Sum the first \( n \) terms of an arithmetic sequence: \( S_n = \dfrac{n}{2}\,(2a+(n-1)d) = \dfrac{n}{2}(t_1+t_n) \).</div>
+<div class="summary-card">Sum the first 50 odd numbers: \( a=1, d=2 \). \( S_{50}=\tfrac{50}{2}(2(1)+49(2))=25(100)=2500 \). The famous &ldquo;Gauss trick&rdquo; — pair the first and last terms — produces this same formula.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt24')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Arithmetic Sequences and Series — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:00</span>
+        <span class="vid-toggle" id="toggle-mcr-yt24">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt24">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XxHk2_-_QSU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=XxHk2_-_QSU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">5.5 &mdash; Geometric Series &amp; Sigma Notation</div>
+<div class="topic-desc">Sum the first \( n \) terms of a geometric sequence: \( S_n = \dfrac{a(r^n - 1)}{r-1} \) (\( r\ne 1 \)); read and write series in sigma notation.</div>
+<div class="summary-card">Sum: \( 2+6+18+\ldots+2(3)^9 \). Here \( a=2, r=3, n=10 \). \( S_{10}=\dfrac{2(3^{10}-1)}{3-1}=\dfrac{2(59048)}{2}=59048 \). In sigma notation: \( \displaystyle\sum_{k=1}^{10} 2\cdot 3^{k-1} \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt25')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Sigma Notation Summation — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">10:12</span>
+        <span class="vid-toggle" id="toggle-mcr-yt25">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt25">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/cdt9I3y0vjQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=cdt9I3y0vjQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 5 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch5_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch5_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch5_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 6 =================== -->
+<div class="unit-section" id="unit6">
+<div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+<h2>Chapter 6: Financial Mathematics</h2>
+<p>Compound interest, present/future value, ordinary annuities, mortgages</p>
+<div class="unit-meta">
+<span>📚 Strand C: Discrete Functions</span>
+<span>⏱️ ~16h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.1 &mdash; Compound Interest: Future Value &amp; Present Value</div>
+<div class="topic-desc">Apply \( A=P(1+i)^n \); solve for \( P \) (present value) by rearranging: \( P=A(1+i)^{-n} \).</div>
+<div class="summary-card">How much to invest now to have \$10{,}000 in 8 years at 5%/yr compounded annually? \( P=10000(1.05)^{-8}\approx \$6{,}768.39 \). Present value answers &ldquo;what's it worth today?&rdquo;; future value answers &ldquo;what will it grow to?&rdquo;.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt26')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Present Value and Future Value — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:55</span>
+        <span class="vid-toggle" id="toggle-mcr-yt26">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt26">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RiwAR-yK8Wk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=RiwAR-yK8Wk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.2 &mdash; Compounding Periods &amp; Effective Rates</div>
+<div class="topic-desc">Convert a nominal annual rate to a periodic rate \( i = j/m \) for \( m \) compounding periods per year; compare effective annual yields.</div>
+<div class="summary-card">A 6% annual rate compounded monthly: \( i=0.06/12=0.005 \); after 1 year, factor is \( (1.005)^{12}\approx 1.0617 \), so the effective annual rate is \( \approx 6.17\% \). More frequent compounding → higher effective yield.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt27')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Effective Annual Interest Rate — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">10:22</span>
+        <span class="vid-toggle" id="toggle-mcr-yt27">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt27">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/JoLIcXVUTOM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=JoLIcXVUTOM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.3 &mdash; Future Value of an Ordinary Annuity</div>
+<div class="topic-desc">Use \( FV = R\,\dfrac{(1+i)^n - 1}{i} \) for equal periodic deposits \( R \) made at the end of each period.</div>
+<div class="summary-card">Save \$200 monthly for 30 years at 6%/yr compounded monthly: \( i=0.005, n=360, R=200 \). \( FV=200\cdot\dfrac{1.005^{360}-1}{0.005}\approx \$200{,}903.01 \). Notice the formula is a finite geometric series — Ch 5 in disguise.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt28')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Future Value of an Annuity — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:36</span>
+        <span class="vid-toggle" id="toggle-mcr-yt28">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt28">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2eJBh_LzU5g?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=2eJBh_LzU5g" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.4 &mdash; Present Value of an Ordinary Annuity</div>
+<div class="topic-desc">Use \( PV = R\,\dfrac{1-(1+i)^{-n}}{i} \) to find the lump sum equivalent to a stream of equal future payments.</div>
+<div class="summary-card">A retiree wants \$2{,}000/month for 25 years at 4%/yr compounded monthly: \( i=0.04/12 \approx 0.00333, n=300 \). \( PV \approx 2000\cdot \dfrac{1-(1.00333)^{-300}}{0.00333}\approx \$378{,}824 \). The required lump-sum invested today.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt29')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Present Value of an Annuity — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:48</span>
+        <span class="vid-toggle" id="toggle-mcr-yt29">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt29">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RU-osjAs6hE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=RU-osjAs6hE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">6.5 &mdash; Mortgages &amp; Amortization</div>
+<div class="topic-desc">Apply PV-of-annuity to find mortgage payment \( R \); construct an amortization schedule (interest vs. principal).</div>
+<div class="summary-card">A \$300{,}000 mortgage at 5%/yr compounded semi-annually, 25-year amortization: convert to monthly equivalent rate, solve \( 300{,}000=R\cdot\dfrac{1-(1+i)^{-300}}{i} \) for \( R\approx \$1{,}744.81 \) per month. Early payments are mostly interest; later payments are mostly principal.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt30')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Mortgage Payments Calculation — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">13:52</span>
+        <span class="vid-toggle" id="toggle-mcr-yt30">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt30">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/X1Mc1Y6X-aY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=X1Mc1Y6X-aY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 6 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch6_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch6_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch6_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 7 =================== -->
+<div class="unit-section" id="unit7">
+<div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+<h2>Chapter 7: Trigonometric Ratios &amp; the Sine/Cosine Laws</h2>
+<p>Right triangles, primary &amp; reciprocal ratios, special angles, sine/cosine laws, ambiguous case</p>
+<div class="unit-meta">
+<span>📚 Strand D: Trigonometric Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.1 &mdash; Primary &amp; Reciprocal Trigonometric Ratios</div>
+<div class="topic-desc">Define \( \sin\theta = \tfrac{\text{opp}}{\text{hyp}}, \cos\theta = \tfrac{\text{adj}}{\text{hyp}}, \tan\theta = \tfrac{\text{opp}}{\text{adj}} \) and the reciprocals \( \csc, \sec, \cot \) for acute angles.</div>
+<div class="summary-card">In a right triangle with opposite 5, adjacent 12, hypotenuse 13: \( \sin\theta=\tfrac{5}{13}, \cos\theta=\tfrac{12}{13}, \tan\theta=\tfrac{5}{12} \) and \( \csc\theta=\tfrac{13}{5}, \sec\theta=\tfrac{13}{12}, \cot\theta=\tfrac{12}{5} \). Reciprocal ratios extend the toolkit beyond the three primary ratios.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt31')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Trigonometric Ratios SOH CAH TOA — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">15:30</span>
+        <span class="vid-toggle" id="toggle-mcr-yt31">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt31">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jsiy4TxgIME?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Jsiy4TxgIME" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.2 &mdash; Trigonometric Ratios of Any Angle (0°–360°)</div>
+<div class="topic-desc">Use the unit circle and the CAST rule to determine the sign of each trig ratio; find related/reference angles.</div>
+<div class="summary-card">For \( \theta \) in standard position with terminal arm passing through \( (-3, 4) \): \( r=5 \), so \( \sin\theta=4/5, \cos\theta=-3/5, \tan\theta=-4/3 \). The reference angle is \( \tan^{-1}(4/3)\approx 53.13° \); the principal angle is \( 180°-53.13°=126.87° \). Quadrant II: only sine positive (CAST).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt32')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Reference Angles and CAST Rule — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">11:14</span>
+        <span class="vid-toggle" id="toggle-mcr-yt32">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt32">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/_19_-imy5xY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=_19_-imy5xY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.3 &mdash; Special Angles &amp; Exact Values</div>
+<div class="topic-desc">Memorise the exact ratios for 0°, 30°, 45°, 60°, 90° and their multiples in standard position.</div>
+<div class="summary-card">Key exact values: \( \sin 30°=\tfrac{1}{2}, \cos 30°=\tfrac{\sqrt{3}}{2}, \tan 30°=\tfrac{1}{\sqrt{3}} \); \( \sin 45°=\cos 45°=\tfrac{\sqrt{2}}{2}, \tan 45°=1 \); \( \sin 60°=\tfrac{\sqrt{3}}{2}, \cos 60°=\tfrac{1}{2}, \tan 60°=\sqrt{3} \). Derived from 30-60-90 and 45-45-90 reference triangles.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt33')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Trigonometric Special Angles 30-60-90 and 45-45-90 — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">14:42</span>
+        <span class="vid-toggle" id="toggle-mcr-yt33">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt33">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CRY6vZyPpXE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=CRY6vZyPpXE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.4 &mdash; The Sine Law &amp; the Ambiguous Case</div>
+<div class="topic-desc">Apply \( \dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C} \) to non-right triangles; recognise SSA situations producing 0, 1, or 2 triangles.</div>
+<div class="summary-card">In \( \triangle ABC \): \( a=10, b=14, A=35° \). By sine law: \( \sin B=\dfrac{14\sin 35°}{10}\approx 0.803 \), so \( B\approx 53.4° \) or \( B\approx 126.6° \) — two triangles satisfy the data. Ambiguous case (SSA): always check whether the supplementary angle also gives a valid triangle (i.e. \( A+B<180° \)).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt34')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Ambiguous Case with Sine Law 4 Examples MCR3U — Anil Kumar</span>
+        <span class="vid-duration">17:38</span>
+        <span class="vid-toggle" id="toggle-mcr-yt34">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt34">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Y1FvHbKpSac?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Y1FvHbKpSac" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">7.5 &mdash; The Cosine Law &amp; 2D/3D Applications</div>
+<div class="topic-desc">Use \( c^2 = a^2 + b^2 - 2ab\cos C \) for SAS and SSS triangles; apply both laws in surveying, navigation, and 3D problems.</div>
+<div class="summary-card">In \( \triangle ABC \): \( a=8, b=11, C=42° \). Then \( c^2=64+121-2(8)(11)\cos 42°=185-130.79\approx 54.21 \), so \( c\approx 7.36 \). Cosine law is needed when sine law has insufficient information (no opposite-pair).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt35')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Law of Cosines Word Problems — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">12:48</span>
+        <span class="vid-toggle" id="toggle-mcr-yt35">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt35">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Mgs0z2tdlH8?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=Mgs0z2tdlH8" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 7 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch7_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch7_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch7_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== CHAPTER 8 =================== -->
+<div class="unit-section" id="unit8">
+<div class="unit-header" style="background:linear-gradient(135deg,#6366f1dd,#6366f1);">
+<h2>Chapter 8: Sinusoidal Functions</h2>
+<p>Sine and cosine graphs, period, amplitude, phase shift, modeling periodic phenomena</p>
+<div class="unit-meta">
+<span>📚 Strand D: Trigonometric Functions</span>
+<span>⏱️ ~14h</span>
+<span>📹 5 topic blocks</span>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.1 &mdash; Graphs of \( y=\sin x \) and \( y=\cos x \)</div>
+<div class="topic-desc">Sketch the parent sinusoidal functions in degree mode; identify period (360°), amplitude (1), domain (\(\mathbb{R}\)), range (\([-1,1]\)).</div>
+<div class="summary-card">The sine function passes through (0,0), peaks at (90°,1), returns to 0 at (180°,0), reaches a minimum at (270°,-1), then back to 0 at (360°,0). Cosine is sine shifted left by 90°: \( \cos x = \sin(x+90°) \). Both repeat every 360° — they are <em>periodic</em>.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt36')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Graphing Sine and Cosine — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">17:47</span>
+        <span class="vid-toggle" id="toggle-mcr-yt36">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt36">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/dB54FLkWlEo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=dB54FLkWlEo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.2 &mdash; Amplitude, Period, &amp; Vertical Shift</div>
+<div class="topic-desc">Analyse \( y = a\sin(kx) + c \): amplitude \( |a| \), period \( \dfrac{360°}{|k|} \), vertical shift \( c \), midline \( y=c \).</div>
+<div class="summary-card">For \( y=3\sin(2x)+1 \): amplitude 3, period \( 360°/2=180° \), midline \( y=1 \), maximum \( y=4 \), minimum \( y=-2 \). Stretch in the y-direction (amplitude) and compression in the x-direction (period) reshape the parent sine curve.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt37')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Amplitude Period and Vertical Shifts of Sinusoidal — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">13:06</span>
+        <span class="vid-toggle" id="toggle-mcr-yt37">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt37">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/RaVj_-DFkLU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=RaVj_-DFkLU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.3 &mdash; Phase Shift &amp; the General Sinusoidal Form</div>
+<div class="topic-desc">Analyse the full form \( y = a\sin(k(x-d)) + c \): the parameter \( d \) is a horizontal (phase) shift; combine with all other transformations.</div>
+<div class="summary-card">For \( y=2\sin(3(x-30°))-1 \): amplitude 2, period 120°, phase shift 30° right, midline \( y=-1 \). Always factor out \( k \) inside the argument before reading off the phase shift: \( \sin(3x-90°)=\sin(3(x-30°)) \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt38')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Determine Sinusoidal Function Equation and Sketch Graph MCR3U — Anil Kumar</span>
+        <span class="vid-duration">11:46</span>
+        <span class="vid-toggle" id="toggle-mcr-yt38">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt38">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xlpLoWiW2rU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=xlpLoWiW2rU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.4 &mdash; Modeling Periodic Phenomena</div>
+<div class="topic-desc">Build sinusoidal models from data: tides, daylight hours, sound waves, Ferris-wheel height, pendulum motion.</div>
+<div class="summary-card">Tide example: water depth varies between 1.5 m (low) and 7.5 m (high), with high tide at \( t=3 \) h and a 12-hour period. Midline \( c=4.5 \), amplitude \( a=3 \), period 12 → \( k=360°/12=30°/\text{h} \). Cosine fits cleanly with peak at \( t=3 \): \( h(t)=3\cos(30°(t-3))+4.5 \).</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt39')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Model Wall Clock with Sinusoidal Function MCR3U Trigonometry — Anil Kumar</span>
+        <span class="vid-duration">12:24</span>
+        <span class="vid-toggle" id="toggle-mcr-yt39">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt39">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/0F2cRZFkztU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=0F2cRZFkztU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div class="topic-block">
+<div class="topic-title">8.5 &mdash; Solving Sinusoidal Equations Graphically</div>
+<div class="topic-desc">Use a graph or table to solve equations of the form \( a\sin(k(x-d))+c = K \) on a given interval; interpret in context.</div>
+<div class="summary-card">From the tide model \( h(t)=3\cos(30°(t-3))+4.5 \), find when \( h=6 \) m. Solve \( 3\cos(30°(t-3))=1.5 \), so \( \cos(30°(t-3))=0.5 \), giving \( 30°(t-3)=\pm 60° \), so \( t=1 \) h or \( t=5 \) h within one period. Algebraic solution methods are studied formally in MHF4U.</div>
+<div class="video-card">
+    <div class="video-header" onclick="toggleVideo('mcr-yt40')">
+        <span class="vid-icon">📖</span>
+        <span class="vid-title">Solving Trigonometric Equations Using Graphs — The Organic Chemistry Tutor</span>
+        <span class="vid-duration">13:54</span>
+        <span class="vid-toggle" id="toggle-mcr-yt40">▶</span>
+    </div>
+    <div class="video-player" id="player-mcr-yt40">
+        <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iIcGVtQDHs0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+        <a href="https://www.youtube.com/watch?v=iIcGVtQDHs0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+    </div>
+</div>
+</div>
+
+<div style="margin-top:20px;">
+<div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 8 Assessments</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;">
+<a href="../assessments/mcr3u_ch8_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+<a href="../assessments/mcr3u_ch8_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+<a href="../assessments/mcr3u_ch8_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+</div>
+</div>
+</div>
+
+<!-- =================== Course Resources & Final Evaluation =================== -->
+<div class="unit-section" id="resources">
+<div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#1e293b);">
+<h2>📋 Course Resources &amp; Final Evaluation</h2>
+<p>Ministry curriculum overview and the comprehensive final exam (30% of course mark)</p>
+<div class="unit-meta">
+<span>📚 Ontario Curriculum 2007 (Revised)</span>
+<span>📐 Growing Success (2010)</span>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+<a href="mcr3u_curriculum.html" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:5px solid #0891b2;border-radius:10px;padding:18px 20px;text-decoration:none;color:#1e293b;">
+<div style="font-size:13px;color:#0891b2;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">📋 Curriculum Document</div>
+<div style="font-size:16px;font-weight:700;margin-bottom:4px;">MCR3U Curriculum Overview</div>
+<div style="font-size:13px;color:#64748b;">Strands A–D, mathematical processes, achievement chart, evaluation policy, and chapter mapping.</div>
+</a>
+
+<a href="../assessments/mcr3u_final_exam.html" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:5px solid #6366f1;border-radius:10px;padding:18px 20px;text-decoration:none;color:#1e293b;">
+<div style="font-size:13px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">🎓 Final Exam (30%)</div>
+<div style="font-size:16px;font-weight:700;margin-bottom:4px;">Comprehensive Final Exam — Ch 1–8</div>
+<div style="font-size:13px;color:#64748b;">3 hours · 100 marks · 25 marks each in K/U, Thinking, Communication, Application. Full answer key included.</div>
+</a>
+</div>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MCR3U — Functions, Grade 11 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+</body></html>

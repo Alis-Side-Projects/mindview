@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 8: Sinusoidal Functions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #6366f1; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; } body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; } header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; } header .subtitle { font-size: 14px; opacity: 0.85; } header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #e0e7ff; border: 1px solid #c7d2fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.topic-section { margin-bottom: 32px; } .topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; } .question-card.correct { border-color: var(--correct); background: #f0fdf4; } .question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; } .q-text { margin-bottom: 12px; } input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; } .mc-options li { margin-bottom: 6px; } .mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; } .mc-options label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; } .btn-check { background: var(--primary); color: #fff; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; } .feedback.show { display: block; } .feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; } .feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; } .solution.show { display: block; } .solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; } .progress-fill { height: 100%; background: var(--primary); border-radius: 20px; transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; } .score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mcr3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 8: Sinusoidal Functions</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check graphs, transformations, and modelling with sine and cosine functions.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Sine &amp; Cosine Graphs</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div><div class="q-text">The period of \( y = \sin x \) (in degrees) is:</div>
+<input type="text" id="q1-input" placeholder="Enter degrees..."><button class="btn btn-check" onclick="checkNumeric('q1', 360)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div><div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>The parent sine function has period 360°.</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div><div class="q-text">The amplitude of \( y = 5\sin x \) is:</div>
+<input type="text" id="q2-input" placeholder="Enter amplitude..."><button class="btn btn-check" onclick="checkNumeric('q2', 5)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div><div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Amplitude = \( |a| = 5 \).</div></div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div><div class="q-text">For \( y = \sin x \), the value at \( x = 90° \) is:</div>
+<input type="text" id="q3-input" placeholder="Enter value..."><button class="btn btn-check" onclick="checkNumeric('q3', 1)">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div><div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( \sin 90° = 1 \).</div></div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div><div class="q-text">The range of \( y = \cos x \) is:</div>
+<ul class="mc-options"><li><label><input type="radio" name="q4" value="a"> \( y \in \mathbb{R} \)</label></li><li><label><input type="radio" name="q4" value="b"> \( -1 \leq y \leq 1 \)</label></li><li><label><input type="radio" name="q4" value="c"> \( 0 \leq y \leq 1 \)</label></li><li><label><input type="radio" name="q4" value="d"> \( y \geq 0 \)</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q4','b')">Check Answer</button><div class="feedback" id="q4-feedback"></div><div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>Cosine oscillates between -1 and 1.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Amplitude, Period, Vertical Shift</div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div><div class="q-text">For \( y = 3\sin(2x) + 1 \), the period (degrees) is:</div>
+<input type="text" id="q5-input" placeholder="Enter period..."><button class="btn btn-check" onclick="checkNumeric('q5', 180)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div><div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Period = \( \frac{360°}{|k|} = \frac{360°}{2} = 180° \).</div></div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div><div class="q-text">For \( y = 4\sin(x) + 2 \), the maximum value is:</div>
+<input type="text" id="q6-input" placeholder="Enter max..."><button class="btn btn-check" onclick="checkNumeric('q6', 6)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div><div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>Max = midline + amplitude = 2 + 4 = 6.</div></div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div><div class="q-text">For \( y = -2\cos(x) - 5 \), the minimum value is:</div>
+<input type="text" id="q7-input" placeholder="Enter min..."><button class="btn btn-check" onclick="checkNumeric('q7', -7)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div><div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Amplitude 2, midline \( y = -5 \). Min = -5 - 2 = -7.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Phase Shift &amp; Modeling</div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div><div class="q-text">For \( y = \sin(x - 30°) \), the phase shift is:</div>
+<ul class="mc-options"><li><label><input type="radio" name="q8" value="a"> 30° to the right</label></li><li><label><input type="radio" name="q8" value="b"> 30° to the left</label></li><li><label><input type="radio" name="q8" value="c"> 30° up</label></li><li><label><input type="radio" name="q8" value="d"> 30° down</label></li></ul>
+<button class="btn btn-check" onclick="checkMC('q8','a')">Check Answer</button><div class="feedback" id="q8-feedback"></div><div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( y = \sin(x - d) \) shifts horizontally right by \( d \). Right 30°.</div></div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div><div class="q-text">A Ferris wheel has diameter 30 m. The lowest point is 2 m above ground. The midline (axis of the wheel) is at height (m):</div>
+<input type="text" id="q9-input" placeholder="Enter midline..."><button class="btn btn-check" onclick="checkNumeric('q9', 17)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div><div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Radius = 15. Midline = 2 + 15 = 17 m.</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div><div class="q-text">A high tide of 8 m occurs every 12 hours. Low tide is 2 m. Amplitude (m):</div>
+<input type="text" id="q10-input" placeholder="Enter amplitude..."><button class="btn btn-check" onclick="checkNumeric('q10', 3)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div><div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Amplitude = (max - min)/2 = (8 - 2)/2 = 3 m.</div></div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div><div class="q-text">From Q10, the equation \( h(t) = a\cos(k(t - d)) + c \) with peak at \( t = 0 \) has \( c = ? \)</div>
+<input type="text" id="q11-input" placeholder="Enter c..."><button class="btn btn-check" onclick="checkNumeric('q11', 5)">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div><div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( c \) = midline = (max + min)/2 = (8 + 2)/2 = 5 m.</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div><div class="q-text">For a tide with period 12 h, the value of \( k \) (in degrees per hour) is:</div>
+<input type="text" id="q12-input" placeholder="Enter k..."><button class="btn btn-check" onclick="checkNumeric('q12', 30)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div><div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\( k = \frac{360°}{12} = 30°/\text{h} \).</div></div>
+</div>
+
+<footer>MCR3U — Functions, Grade 11 | Strand D: Trigonometric Functions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(Math.abs(v-c)<0.5){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent=`❌ Answer: ${c}.`;}sl.classList.add('show');updateProgress();}
+</script></body></html>

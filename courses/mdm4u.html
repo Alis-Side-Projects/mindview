@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDM4U — Mathematics of Data Management | MindView</title>
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+</style>
+</head><body>
+<nav class="navbar"><div class="nav-container">
+<a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
+<div class="nav-links"><a href="../">Home</a><a href="../#courses">Courses</a></div></div></nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+<div class="container">
+<div class="strand-tag">Mathematics — Grade 12 University Preparation</div>
+<h1>📊 MDM4U: Mathematics of Data Management</h1>
+<p>Counting, probability, probability distributions, statistics, correlation &amp; regression</p>
+<p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours · 8 chapters · Prerequisite: MCR3U Functions or MCF3M Functions and Applications (Grade 11)</p>
+</div></div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+<a href="#unit1" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #16a34a;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch1: Counting &amp; Sample Spaces</a>
+<a href="#unit2" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #15803d;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch2: Permutations</a>
+<a href="#unit3" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #059669;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch3: Combinations</a>
+<a href="#unit4" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #0d9488;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch4: Probability</a>
+<a href="#unit5" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #0891b2;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch5: Discrete Distributions</a>
+<a href="#unit6" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #2563eb;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch6: Normal Distribution</a>
+<a href="#unit7" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #7c3aed;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch7: Statistics</a>
+<a href="#unit8" style="padding:8px 14px;background:#f1f5f9;color:#1e293b;border-left:3px solid #db2777;border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;">Ch8: Correlation &amp; Regression</a>
+</div>
+
+<!-- ============================== CHAPTER 1 ============================== -->
+<div class="unit-section" id="unit1">
+    <div class="unit-header" style="background:linear-gradient(135deg,#16a34add,#16a34a);">
+        <h2>Chapter 1: Counting &amp; Sample Spaces</h2>
+        <p>Fundamental counting principle, sample spaces, mutually exclusive and independent events, Venn diagrams, additive principle</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~12h</span>
+            <span>🎯 A1.1–A1.5</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.1 — Sample Spaces &amp; Counting Outcomes</div>
+        <div class="topic-desc">Listing outcomes of probability experiments; tree diagrams and tables for one- and two-stage experiments.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt1')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Sample Spaces, Tree Diagrams, Fundamental Counting Principle — Mario's Math Tutoring</span>
+                <span class="vid-duration">10:30</span>
+                <span class="vid-toggle" id="toggle-mdm-yt1">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt1">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/7V6QMb9koNs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=7V6QMb9koNs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.2 — The Fundamental Counting Principle</div>
+        <div class="topic-desc">Multiplicative principle for sequential independent choices; product rule \( n_1 \times n_2 \times \cdots \times n_k \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt2')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Fundamental Counting Principle (MDM4U) — Educator</span>
+                <span class="vid-duration">9:42</span>
+                <span class="vid-toggle" id="toggle-mdm-yt2">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt2">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/549eLWIu0Xk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=549eLWIu0Xk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.3 — Mutually Exclusive Events &amp; the Additive Principle</div>
+        <div class="topic-desc">When events cannot occur together: \( P(A \cup B) = P(A) + P(B) \). Inclusive case: \( P(A \cup B) = P(A) + P(B) - P(A \cap B) \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt3')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Probability of Mutually Exclusive Events With Venn Diagrams — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">12:35</span>
+                <span class="vid-toggle" id="toggle-mdm-yt3">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt3">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/X6usGgwXFyU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=X6usGgwXFyU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.4 — Venn Diagrams &amp; Set Operations</div>
+        <div class="topic-desc">Union, intersection, complement, and difference of events; counting elements in unions of sets.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt4')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mutually Exclusive Events — Khan Academy</span>
+                <span class="vid-duration">5:18</span>
+                <span class="vid-toggle" id="toggle-mdm-yt4">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt4">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8xlaJ9dGr9A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=8xlaJ9dGr9A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">1.5 — Independent vs Dependent Events</div>
+        <div class="topic-desc">Multiplicative principle for independent events; conditional probability for dependent events: \( P(A \cap B) = P(A) \cdot P(B \mid A) \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt5')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Independent Events (Basics of Probability) — jbstatistics</span>
+                <span class="vid-duration">8:51</span>
+                <span class="vid-toggle" id="toggle-mdm-yt5">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt5">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/1wuRV5z0PPE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=1wuRV5z0PPE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 1 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch1_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch1_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch1_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 2 ============================== -->
+<div class="unit-section" id="unit2">
+    <div class="unit-header" style="background:linear-gradient(135deg,#15803ddd,#15803d);">
+        <h2>Chapter 2: Permutations</h2>
+        <p>Arrangements with order: factorial notation, distinct objects, indistinguishable objects, restricted arrangements, circular permutations</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 A2.1–A2.4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.1 — Factorial Notation</div>
+        <div class="topic-desc">Definition \( n! = n(n-1)(n-2)\cdots 1 \); convention \( 0! = 1 \); evaluation and simplification of factorial expressions.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt6')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">MDM4U — Factorials and Permutations</span>
+                <span class="vid-duration">12:14</span>
+                <span class="vid-toggle" id="toggle-mdm-yt6">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt6">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/t2Dxdrg72Pg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=t2Dxdrg72Pg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.2 — Permutations of Distinct Objects</div>
+        <div class="topic-desc">Number of arrangements of \( r \) objects from \( n \) distinct objects: \( P(n,r) = \dfrac{n!}{(n-r)!} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt7')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Permutations and Combinations Tutorial — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">14:48</span>
+                <span class="vid-toggle" id="toggle-mdm-yt7">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt7">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/XJnIdRXUi7A?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=XJnIdRXUi7A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.3 — Permutations with Identical Objects</div>
+        <div class="topic-desc">Arrangements when some objects are indistinguishable: \( \dfrac{n!}{a!\,b!\,c!\cdots} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt8')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Permutations and Combinations Examples — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">10:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt8">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt8">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/lEzAMe47VWE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=lEzAMe47VWE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.4 — Permutations with Restrictions</div>
+        <div class="topic-desc">Cases where certain elements must (or must not) be adjacent, in specific positions, or treated as a single unit.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt9')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">MDM4U Permutations Review — Counting Principles</span>
+                <span class="vid-duration">11:08</span>
+                <span class="vid-toggle" id="toggle-mdm-yt9">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt9">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/jJWEAvxk6RI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=jJWEAvxk6RI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">2.5 — Circular Permutations</div>
+        <div class="topic-desc">Arrangements around a circle: \( (n-1)! \); applications to seating around tables and bracelet problems.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt10')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Harder Practice with Permutations and Combinations — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">12:52</span>
+                <span class="vid-toggle" id="toggle-mdm-yt10">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt10">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/B6RWpsE1YRM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=B6RWpsE1YRM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 2 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch2_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch2_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch2_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 3 ============================== -->
+<div class="unit-section" id="unit3">
+    <div class="unit-header" style="background:linear-gradient(135deg,#059669dd,#059669);">
+        <h2>Chapter 3: Combinations</h2>
+        <p>Selections without order: \( C(n,r) \), Pascal's triangle, the binomial theorem, applications to probability</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 A2.5–A2.8</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.1 — Combinations: Counting Without Order</div>
+        <div class="topic-desc">Number of subsets of size \( r \) from \( n \): \( C(n,r) = \binom{n}{r} = \dfrac{n!}{r!(n-r)!} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt11')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Counting Principles Combinations MDM4U Data Management Statistics</span>
+                <span class="vid-duration">10:42</span>
+                <span class="vid-toggle" id="toggle-mdm-yt11">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt11">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-zjqpzBzV54?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=-zjqpzBzV54" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.2 — Combination Identities</div>
+        <div class="topic-desc">\( \binom{n}{r} = \binom{n}{n-r} \) and \( \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1} \); the symmetry property.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt12')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Pascal's Triangle &amp; Combinatorics — Khan Academy</span>
+                <span class="vid-duration">7:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt12">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt12">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/x-N76NrMDNE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=x-N76NrMDNE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.3 — Pascal's Triangle &amp; Patterns</div>
+        <div class="topic-desc">Constructing Pascal's triangle; recursion, row sums \( 2^n \), hockey-stick identity, Fibonacci numbers in diagonals.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt13')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Pascal's Triangle for Binomial Expansion — Khan Academy</span>
+                <span class="vid-duration">8:24</span>
+                <span class="vid-toggle" id="toggle-mdm-yt13">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt13">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/v9Evg2tBdRk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=v9Evg2tBdRk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.4 — The Binomial Theorem</div>
+        <div class="topic-desc">Expansion \( (a+b)^n = \displaystyle\sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k \); finding specific terms.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt14')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Binomial Theorem Expansion, Pascal's Triangle, Finding Terms — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">22:55</span>
+                <span class="vid-toggle" id="toggle-mdm-yt14">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt14">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/s19dWIHficY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=s19dWIHficY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">3.5 — Combinations &amp; Probability</div>
+        <div class="topic-desc">Computing probabilities using combinations: \( P = \dfrac{\binom{\text{favourable}}{r}}{\binom{n}{r}} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt15')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">MDM4U — 2.5 Probability Problems Using Permutations</span>
+                <span class="vid-duration">9:30</span>
+                <span class="vid-toggle" id="toggle-mdm-yt15">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt15">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jg91Ic0EknE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Jg91Ic0EknE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 3 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch3_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch3_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch3_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 4 ============================== -->
+<div class="unit-section" id="unit4">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0d9488dd,#0d9488);">
+        <h2>Chapter 4: Probability — Theoretical &amp; Empirical</h2>
+        <p>Theoretical, empirical &amp; subjective probability; conditional probability; expected value of discrete random variables</p>
+        <div class="unit-meta">
+            <span>📚 Strand A: Counting and Probability</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 A3.1–A3.5</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">4.1 — Theoretical &amp; Empirical Probability</div>
+        <div class="topic-desc">Theoretical \( P(A) = \dfrac{n(A)}{n(S)} \) for equally likely outcomes; empirical (relative-frequency) probability from data; subjective probability.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt16')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to Conditional Probability — jbstatistics</span>
+                <span class="vid-duration">8:55</span>
+                <span class="vid-toggle" id="toggle-mdm-yt16">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt16">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/bgCMjHzXTXs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=bgCMjHzXTXs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">4.2 — Conditional Probability</div>
+        <div class="topic-desc">\( P(B \mid A) = \dfrac{P(A \cap B)}{P(A)} \); restricting the sample space; Bayes-style reasoning.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt17')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Conditional Probability &amp; Dependent vs. Independent Events — jbstatistics</span>
+                <span class="vid-duration">7:18</span>
+                <span class="vid-toggle" id="toggle-mdm-yt17">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt17">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/t6G8mL0w4xM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=t6G8mL0w4xM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">4.3 — Discrete Random Variables &amp; Probability Distributions</div>
+        <div class="topic-desc">Definition of discrete random variable \( X \); probability distribution table; conditions \( 0 \le P(X=x) \le 1 \) and \( \sum P(X=x) = 1 \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt18')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Expected Value of a Discrete Random Variable — jbstatistics</span>
+                <span class="vid-duration">7:34</span>
+                <span class="vid-toggle" id="toggle-mdm-yt18">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt18">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Oul69zvPfyo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Oul69zvPfyo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">4.4 — Expected Value</div>
+        <div class="topic-desc">\( E(X) = \displaystyle\sum_{i} x_i \cdot P(X = x_i) \); fair games; insurance pricing; long-run averages.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt19')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Expected Value and Variance of Discrete Random Variables — jbstatistics</span>
+                <span class="vid-duration">8:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt19">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt19">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Vyk8HQOckIE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Vyk8HQOckIE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">4.5 — Variance &amp; Standard Deviation of Discrete Random Variables</div>
+        <div class="topic-desc">\( \mathrm{Var}(X) = E(X^2) - [E(X)]^2 \); \( \sigma_X = \sqrt{\mathrm{Var}(X)} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt20')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Expected Value and Variance of Discrete Random Variables — jbstatistics (extended)</span>
+                <span class="vid-duration">14:46</span>
+                <span class="vid-toggle" id="toggle-mdm-yt20">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt20">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/OvTEhNL96v0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=OvTEhNL96v0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 4 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch4_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch4_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch4_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 5 ============================== -->
+<div class="unit-section" id="unit5">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0891b2dd,#0891b2);">
+        <h2>Chapter 5: Probability Distributions (Discrete)</h2>
+        <p>Binomial, geometric, and hypergeometric distributions; identifying which model fits a given experiment</p>
+        <div class="unit-meta">
+            <span>📚 Strand B: Probability Distributions</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 B1.1–B1.4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.1 — The Binomial Distribution</div>
+        <div class="topic-desc">Fixed number of independent Bernoulli trials: \( P(X=k) = \binom{n}{k} p^k (1-p)^{n-k} \). Mean \( np \), variance \( np(1-p) \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt21')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to the Binomial Distribution — jbstatistics</span>
+                <span class="vid-duration">11:11</span>
+                <span class="vid-toggle" id="toggle-mdm-yt21">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt21">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qIzC1-9PwQo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=qIzC1-9PwQo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.2 — The Geometric Distribution</div>
+        <div class="topic-desc">Number of independent Bernoulli trials until the first success: \( P(X = k) = (1-p)^{k-1} p \). Mean \( \tfrac{1}{p} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt22')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Discrete Probability Distributions: Example Problems — jbstatistics</span>
+                <span class="vid-duration">11:53</span>
+                <span class="vid-toggle" id="toggle-mdm-yt22">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt22">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Jm_Ch-iESBg?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=Jm_Ch-iESBg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.3 — The Hypergeometric Distribution</div>
+        <div class="topic-desc">Sampling without replacement from a finite population: \( P(X=k) = \dfrac{\binom{r}{k}\binom{N-r}{n-k}}{\binom{N}{n}} \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt23')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to the Hypergeometric Distribution — jbstatistics</span>
+                <span class="vid-duration">10:14</span>
+                <span class="vid-toggle" id="toggle-mdm-yt23">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt23">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/L2KMttDm3aY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=L2KMttDm3aY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">5.4 — Choosing the Right Distribution</div>
+        <div class="topic-desc">Decision tree: replacement? fixed trials? counting trials or successes? — selecting binomial vs. geometric vs. hypergeometric.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt24')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Introduction to the Binomial Distribution (fast version) — jbstatistics</span>
+                <span class="vid-duration">5:27</span>
+                <span class="vid-toggle" id="toggle-mdm-yt24">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt24">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/eSJ6ufTSJNk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=eSJ6ufTSJNk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 5 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch5_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch5_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch5_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 6 ============================== -->
+<div class="unit-section" id="unit6">
+    <div class="unit-header" style="background:linear-gradient(135deg,#2563ebdd,#2563eb);">
+        <h2>Chapter 6: The Normal Distribution</h2>
+        <p>Continuous distributions, properties of the normal curve, z-scores, the empirical rule, normal approximation to the binomial</p>
+        <div class="unit-meta">
+            <span>📚 Strand B: Probability Distributions</span>
+            <span>⏱️ ~12h</span>
+            <span>🎯 B1.5–B1.7</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.1 — Continuous Random Variables &amp; Density</div>
+        <div class="topic-desc">Probability density vs. probability mass; area under a density curve; uniform continuous distribution.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt25')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">An Introduction to the Normal Distribution — jbstatistics</span>
+                <span class="vid-duration">8:11</span>
+                <span class="vid-toggle" id="toggle-mdm-yt25">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt25">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/iYiOVISWXS4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=iYiOVISWXS4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.2 — Properties of the Normal Distribution</div>
+        <div class="topic-desc">Bell-shape, symmetry about \( \mu \), inflection points at \( \mu \pm \sigma \), total area = 1; the empirical (68-95-99.7) rule.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt26')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Normal Distribution, Z-Scores &amp; Empirical Rule — MarinStatsLectures</span>
+                <span class="vid-duration">10:25</span>
+                <span class="vid-toggle" id="toggle-mdm-yt26">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt26">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/zUnC1CV4FAc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=zUnC1CV4FAc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.3 — Standardizing &amp; z-Scores</div>
+        <div class="topic-desc">\( z = \dfrac{x - \mu}{\sigma} \); using the standard-normal table to compute \( P(Z \le z) \).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt27')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Standard Normal Distribution Tables, Z Scores, Probability — The Organic Chemistry Tutor</span>
+                <span class="vid-duration">21:51</span>
+                <span class="vid-toggle" id="toggle-mdm-yt27">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt27">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/CjF_yQ2N638?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=CjF_yQ2N638" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">6.4 — Normal Approximation to the Binomial</div>
+        <div class="topic-desc">When \( np \ge 5 \) and \( n(1-p) \ge 5 \), \( X \approx N(np, \sqrt{np(1-p)}) \); continuity correction.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt28')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">The Normal Curve, The Empirical Rule and Z-Scores</span>
+                <span class="vid-duration">12:40</span>
+                <span class="vid-toggle" id="toggle-mdm-yt28">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt28">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2YpUCcDMxlY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=2YpUCcDMxlY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 6 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch6_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch6_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch6_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 7 ============================== -->
+<div class="unit-section" id="unit7">
+    <div class="unit-header" style="background:linear-gradient(135deg,#7c3aeddd,#7c3aed);">
+        <h2>Chapter 7: Statistics</h2>
+        <p>Sampling techniques, sources of bias, measures of central tendency, measures of spread, frequency distributions</p>
+        <div class="unit-meta">
+            <span>📚 Strand C: Organization of Data for Analysis</span>
+            <span>⏱️ ~14h</span>
+            <span>🎯 C1.1–C2.4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">7.1 — Population, Sample &amp; Sampling Methods</div>
+        <div class="topic-desc">Census vs sample; simple random, stratified, systematic, cluster, voluntary-response, and convenience samples.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt29')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">AP Statistics — Sampling Methods &amp; Bias</span>
+                <span class="vid-duration">14:06</span>
+                <span class="vid-toggle" id="toggle-mdm-yt29">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt29">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/_hy40bIBf0k?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=_hy40bIBf0k" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">7.2 — Sources of Bias in Surveys</div>
+        <div class="topic-desc">Sampling bias, non-response bias, response bias, measurement bias, household bias; identifying bias in real surveys.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt30')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">How Does Stratified Sampling Reduce Bias?</span>
+                <span class="vid-duration">3:36</span>
+                <span class="vid-toggle" id="toggle-mdm-yt30">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt30">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/i5LwTbRzHfE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=i5LwTbRzHfE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">7.3 — Measures of Central Tendency</div>
+        <div class="topic-desc">Mean \( \bar{x} = \tfrac{\sum x_i}{n} \), median, mode; weighted mean; effect of outliers; trimmed mean.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt31')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Finding Mean, Median, and Mode — Khan Academy</span>
+                <span class="vid-duration">8:38</span>
+                <span class="vid-toggle" id="toggle-mdm-yt31">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt31">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/k3aKKasOmIw?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=k3aKKasOmIw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">7.4 — Measures of Spread</div>
+        <div class="topic-desc">Range, IQR, variance \( s^2 = \dfrac{\sum(x_i-\bar{x})^2}{n-1} \), standard deviation \( s \); five-number summary, box-and-whisker plots.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt32')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Mean and Standard Deviation Versus Median and IQR — Khan Academy</span>
+                <span class="vid-duration">5:42</span>
+                <span class="vid-toggle" id="toggle-mdm-yt32">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt32">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qNKOi08NxHs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=qNKOi08NxHs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">7.5 — Frequency Distributions &amp; Histograms</div>
+        <div class="topic-desc">Class intervals, frequency, relative-frequency, cumulative-frequency tables; histograms and ogives; shape (symmetric, skewed).</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt33')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Constructing a Scatter Plot — Khan Academy</span>
+                <span class="vid-duration">5:43</span>
+                <span class="vid-toggle" id="toggle-mdm-yt33">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt33">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/sHbX58y5D4U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=sHbX58y5D4U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 7 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch7_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch7_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch7_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- ============================== CHAPTER 8 ============================== -->
+<div class="unit-section" id="unit8">
+    <div class="unit-header" style="background:linear-gradient(135deg,#db2777dd,#db2777);">
+        <h2>Chapter 8: Correlation, Regression &amp; the Culminating Investigation</h2>
+        <p>Scatter plots, correlation coefficient, linear regression, residuals, two-variable analysis, the culminating data-management investigation</p>
+        <div class="unit-meta">
+            <span>📚 Strands C &amp; D: Organization &amp; Culminating Investigation</span>
+            <span>⏱️ ~16h</span>
+            <span>🎯 C3.1–C3.4, D1–D4</span>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.1 — Scatter Plots &amp; Correlation</div>
+        <div class="topic-desc">Constructing scatter plots; describing the form, direction, and strength of a relationship; explanatory vs response variable.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt34')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Linear Regression &amp; Correlation Coefficient — Algebra 1 Lesson</span>
+                <span class="vid-duration">9:18</span>
+                <span class="vid-toggle" id="toggle-mdm-yt34">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt34">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/m0mDTCA2ZsU?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=m0mDTCA2ZsU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.2 — The Pearson Correlation Coefficient \( r \)</div>
+        <div class="topic-desc">\( r = \dfrac{1}{n-1}\displaystyle\sum_{i=1}^{n} \dfrac{x_i-\bar{x}}{s_x}\cdot\dfrac{y_i-\bar{y}}{s_y} \); interpreting \( r \in [-1, 1] \); correlation \(\ne\) causation.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt35')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Regression Analysis: Learn Everything With Examples</span>
+                <span class="vid-duration">19:23</span>
+                <span class="vid-toggle" id="toggle-mdm-yt35">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt35">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xTpHD5WLuoA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=xTpHD5WLuoA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.3 — Linear Regression &amp; Line of Best Fit</div>
+        <div class="topic-desc">Least-squares line \( \hat{y} = b_0 + b_1 x \) where \( b_1 = r\dfrac{s_y}{s_x} \); interpreting slope and intercept; using \( \hat{y} \) for prediction.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt36')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Causality — Khan Academy</span>
+                <span class="vid-duration">5:34</span>
+                <span class="vid-toggle" id="toggle-mdm-yt36">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt36">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ROpbdO-gRUo?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=ROpbdO-gRUo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.4 — Residuals &amp; Goodness of Fit</div>
+        <div class="topic-desc">Residual \( e_i = y_i - \hat{y}_i \); residual plots; identifying when a non-linear model fits better.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt37')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Causation — Praxis Core Math (Khan Academy)</span>
+                <span class="vid-duration">3:48</span>
+                <span class="vid-toggle" id="toggle-mdm-yt37">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt37">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rzfEj8jjs24?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=rzfEj8jjs24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.5 — Two-Variable Analysis &amp; Causation</div>
+        <div class="topic-desc">Cause-and-effect, common cause, reverse cause-and-effect, accidental and presumed relationships; lurking and confounding variables.</div>
+        <div class="video-card">
+            <div class="video-header" onclick="toggleVideo('mdm-yt38')">
+                <span class="vid-icon">📖</span>
+                <span class="vid-title">Correlation and Causation Worked Example — Khan Academy</span>
+                <span class="vid-duration">3:48</span>
+                <span class="vid-toggle" id="toggle-mdm-yt38">▶</span>
+            </div>
+            <div class="video-player" id="player-mdm-yt38">
+                <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/rzfEj8jjs24?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                <a href="https://www.youtube.com/watch?v=rzfEj8jjs24" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="topic-block">
+        <div class="topic-title">8.6 — Culminating Data-Management Investigation</div>
+        <div class="topic-desc">Independent inquiry: develop a research question, collect/find primary or secondary data, apply two-variable analysis, present a written and oral report.</div>
+        <div class="topic-coming-soon"><span class="tcs-icon">🎬</span><div><div class="tcs-title">Project guidelines</div><div class="tcs-desc">The Culminating Investigation contributes to the 30% Final Evaluation. See the Final Exam page for the rubric.</div></div></div>
+    </div>
+
+    <div style="margin-top:20px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Chapter 8 Assessments</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/mdm4u_ch8_as.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+            <a href="../assessments/mdm4u_ch8_for.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+            <a href="../assessments/mdm4u_ch8_of.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+        </div>
+    </div>
+</div>
+
+<!-- Course Resources & Final Evaluation -->
+<div class="unit-section" id="resources">
+    <div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#1e293b);">
+        <h2>📋 Course Resources &amp; Final Evaluation</h2>
+        <p>Ministry curriculum overview, comprehensive final exam, and the Culminating Data-Management Investigation (30% combined)</p>
+        <div class="unit-meta">
+            <span>📚 Ontario Curriculum 2007 (Revised)</span>
+            <span>📐 Growing Success (2010)</span>
+        </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+        <a href="mdm4u_curriculum.html" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:5px solid #16a34a;border-radius:10px;padding:18px 20px;text-decoration:none;color:#1e293b;">
+            <div style="font-size:13px;color:#16a34a;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">📋 Curriculum Document</div>
+            <div style="font-size:16px;font-weight:700;margin-bottom:4px;">MDM4U Curriculum Overview</div>
+            <div style="font-size:13px;color:#64748b;">Strands A–D, mathematical processes, achievement chart, evaluation policy, and chapter mapping.</div>
+        </a>
+
+        <a href="../assessments/mdm4u_final_exam.html" style="display:block;background:#fff;border:1px solid #e2e8f0;border-left:5px solid #6366f1;border-radius:10px;padding:18px 20px;text-decoration:none;color:#1e293b;">
+            <div style="font-size:13px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">🎓 Final Evaluation (30%)</div>
+            <div style="font-size:16px;font-weight:700;margin-bottom:4px;">Final Exam &amp; Culminating Investigation</div>
+            <div style="font-size:13px;color:#64748b;">3 hours · 100 marks · K/U /25, Thinking /25, Communication /25, Application /25. Includes the Culminating Investigation rubric.</div>
+        </a>
+    </div>
+</div>
+
+</div>
+
+<footer class="site-footer"><div class="container">
+<p><strong>MindView Virtual Classroom</strong> · MDM4U — Mathematics of Data Management, Grade 12 · Ontario Curriculum 2007 (Revised)</p>
+</div></footer>
+
+<script>
+function toggleVideo(id){const p=document.getElementById('player-'+id);const t=document.getElementById('toggle-'+id);if(!p.style.display||p.style.display==='none'){p.style.display='block';t.classList.add('open');}else{p.style.display='none';t.classList.remove('open');const v=p.querySelector('video');if(v)v.pause();}}
+</script>
+</body></html>

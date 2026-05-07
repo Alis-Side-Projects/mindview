@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Cumulative Final Exam</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:900px;margin:0 auto;padding:20px}
+header{background:linear-gradient(135deg,#0f172a,#ea580c);color:#fff;padding:28px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:24px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:10px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;min-height:100px;resize:vertical;font-family:inherit}
+textarea:focus{border-color:var(--p);outline:none}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.draw{height:160px;border:1px dashed var(--b);border-radius:8px;margin:8px 0;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:14px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.formula-ref h3{font-size:15px;margin-bottom:6px;color:var(--p)}
+.tag{display:inline-block;background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;border-radius:14px;padding:2px 10px;font-size:11px;font-weight:700;margin-left:6px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>🏁 SPH3U — Cumulative Final Exam</h1>
+<div class="sub">Assessment OF Learning — Final Evaluation (3 hours)</div>
+<div class="badge">✅ Worth up to 30% of Final Grade · Ontario Growing Success (2010)</div>
+</header>
+
+<div class="warn"><strong>⏱️ Duration:</strong> 180 minutes (3 hours) &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>Cumulative across Strands A–F. Answer all questions in the provided space. Show work for full marks. Calculator and ruler permitted; no notes. Use \( g = 9.8 \) m/s², \( c_\text{water}=4186 \) J/(kg·°C), \( v_\text{sound at 20°C}=343 \) m/s.</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/25</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/25</div></div>
+</div>
+
+<div class="formula-ref">
+<h3>📋 Formula Sheet</h3>
+<strong>Kinematics:</strong> \( v=v_0+at \); \( d=v_0t+\tfrac{1}{2}at^2 \); \( v^2=v_0^2+2ad \); \( R=v_0^2\sin(2\theta)/g \) <br>
+<strong>Forces:</strong> \( \Sigma F=ma \); \( F_g=mg \); \( f_k=\mu_kN \); on incline: \( F_\parallel=mg\sin\theta \), \( N=mg\cos\theta \) <br>
+<strong>Energy:</strong> \( W=Fd\cos\theta \); \( E_k=\tfrac{1}{2}mv^2 \); \( E_g=mgh \); \( P=W/t \); \( \eta=E_\text{useful}/E_\text{input}\times100\% \); \( Q=mc\Delta T \)<br>
+<strong>Waves:</strong> \( v=f\lambda \); \( T=1/f \); \( v_s=331+0.6T_C \); string \( f_n=nv/(2L) \); closed pipe \( f_n=nv/(4L) \) [n odd]; Doppler \( f'=fv/(v\mp v_s) \)<br>
+<strong>E &amp; M:</strong> \( V=IR \); \( P=VI=I^2R=V^2/R \); \( I=Q/t \); \( E=Pt \); series \( R_T=\sum R_i \); parallel \( 1/R_T=\sum 1/R_i \)
+</div>
+
+<!-- ===========================================================
+     PART A — Knowledge & Understanding [25 marks]
+=========================================================== -->
+<div class="sec-hdr ku">Part A — Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qc">
+<div class="qn">A1. <span class="tag">Strand B</span> <span class="qm">[3]</span></div>
+<div class="qt">A car accelerates uniformly from \(12\) m/s to \(28\) m/s in \(8.0\) s. Calculate (a) the acceleration; (b) the distance covered.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A2. <span class="tag">Strand B</span> <span class="qm">[3]</span></div>
+<div class="qt">A ball is thrown horizontally at \(20\) m/s from a cliff \(80\) m high. (a) How long is it in the air? (b) How far from the base does it land?</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A3. <span class="tag">Strand C</span> <span class="qm">[3]</span></div>
+<div class="qt">A \(5.0\)-kg block is pushed across a horizontal floor by a horizontal force of \(30\) N. The kinetic friction coefficient is \(0.25\). Calculate (a) friction force; (b) net force; (c) acceleration.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A4. <span class="tag">Strand C</span> <span class="qm">[2]</span></div>
+<div class="qt">State Newton's three laws in your own words. Provide one specific example for each.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A5. <span class="tag">Strand D</span> <span class="qm">[3]</span></div>
+<div class="qt">A \(2.0\)-kg ball is dropped from a height of \(15\) m. Use conservation of energy to calculate its speed just before hitting the ground. State one assumption.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A6. <span class="tag">Strand D</span> <span class="qm">[3]</span></div>
+<div class="qt">A motor lifts a \(20\) kg load \(4.0\) m in \(2.0\) s. (a) Calculate useful mechanical power. (b) If electrical input is \(500\) W, calculate efficiency.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A7. <span class="tag">Strand E</span> <span class="qm">[3]</span></div>
+<div class="qt">A wave on a string has frequency \(80\) Hz and wavelength \(0.50\) m. (a) Calculate its speed. (b) Calculate its period.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A8. <span class="tag">Strand F</span> <span class="qm">[3]</span></div>
+<div class="qt">A \(15\) Ω resistor is connected to a \(9.0\) V battery. (a) Calculate the current. (b) Calculate the power dissipated. (c) Calculate the energy dissipated in 60 s.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">A9. <span class="tag">Strand A</span> <span class="qm">[2]</span></div>
+<div class="qt">Multiple choice: A student measures a length as \(4.5\) cm and a time as \(2.10\) s. The speed reported with correct significant digits is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="a9"> a) 2.142857 cm/s</label></li>
+<li><label><input type="radio" name="a9"> b) 2.14 cm/s</label></li>
+<li><label><input type="radio" name="a9"> c) 2.1 cm/s (2 sig figs)</label></li>
+<li><label><input type="radio" name="a9"> d) 2 cm/s (1 sig fig)</label></li>
+</ul>
+<textarea placeholder="Justify briefly..."></textarea></div>
+
+<!-- ===========================================================
+     PART B — Thinking & Investigation [25 marks]
+=========================================================== -->
+<div class="sec-hdr t">Part B — Thinking &amp; Investigation <span>[25 marks]</span></div>
+
+<div class="qc">
+<div class="qn">B1. <span class="tag">Strand B</span> <span class="qm">[5]</span></div>
+<div class="qt">A projectile is launched at \(35\) m/s at \(40°\) above the horizontal from ground level. Calculate: (a) maximum height; (b) time of flight; (c) horizontal range.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">B2. <span class="tag">Strand C</span> <span class="qm">[5]</span></div>
+<div class="qt">An Atwood machine has \(m_1=4.0\) kg and \(m_2=7.0\) kg connected by a massless rope over a frictionless pulley. (a) Derive (or state) the formula for acceleration. (b) Calculate \(a\). (c) Calculate the rope tension. (d) After release, how far has \(m_2\) descended in \(2.0\) s?</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">B3. <span class="tag">Strand D</span> <span class="qm">[5]</span></div>
+<div class="qt">A \(2.0\)-kg block slides from rest \(8.0\) m down a \(25°\) incline with \( \mu_k=0.20 \). Use the work-energy theorem with non-conservative friction work. Find (a) speed at the bottom; (b) the heat generated due to friction along the incline.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">B4. <span class="tag">Strand E</span> <span class="qm">[5]</span></div>
+<div class="qt">A police car (siren \(700\) Hz) approaches a stationary observer at \(35\) m/s. After passing, it recedes at the same speed. Use \(v_\text{sound}=343\) m/s. Calculate the frequency the observer hears (a) approaching and (b) receding. (c) Comment on the change in pitch.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">B5. <span class="tag">Strand F</span> <span class="qm">[5]</span></div>
+<div class="qt">A circuit contains a \(12\) V battery in series with a \(4.0\) Ω resistor and a parallel combination of \(6.0\) Ω and \(12\) Ω. (a) Calculate total resistance. (b) Calculate current from the battery. (c) Calculate the voltage across the parallel section. (d) Calculate the current through each parallel branch. (e) Calculate the total power dissipated by the circuit.</div>
+<textarea></textarea></div>
+
+<!-- ===========================================================
+     PART C — Communication [25 marks]
+=========================================================== -->
+<div class="sec-hdr c">Part C — Communication <span>[25 marks]</span></div>
+
+<div class="qc">
+<div class="qn">C1. <span class="tag">Strand B</span> <span class="qm">[4]</span></div>
+<div class="qt">Sketch a labelled diagram of a projectile's path from launch (at angle \( \theta \) above horizontal) to landing on level ground. Indicate at three instants the velocity components \( v_x \) and \( v_y \). State which is constant and which changes, and why.</div>
+<div class="draw">[Trajectory]</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">C2. <span class="tag">Strand C</span> <span class="qm">[4]</span></div>
+<div class="qt">Draw a labelled FBD for each: (i) a car accelerating up a frictionless incline, with an applied force parallel to the incline. (ii) A skier coasting down a frictional incline at constant velocity. State Newton's law that justifies each.</div>
+<div class="draw">[FBD i and ii]</div></div>
+
+<div class="qc">
+<div class="qn">C3. <span class="tag">Strand D</span> <span class="qm">[4]</span></div>
+<div class="qt">In one paragraph (5–7 sentences), explain how the law of conservation of energy applies to a roller coaster, including the role of friction. Use correct vocabulary (kinetic, potential, mechanical, thermal, non-conservative).</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">C4. <span class="tag">Strand E</span> <span class="qm">[4]</span></div>
+<div class="qt">Sketch on the same axes (i) the fundamental and (ii) third harmonic of a string fixed at both ends. Mark nodes (N) and antinodes (A). State the relationship between mode number \(n\) and frequency \(f_n\).</div>
+<div class="draw">[Standing waves]</div></div>
+
+<div class="qc">
+<div class="qn">C5. <span class="tag">Strand F</span> <span class="qm">[5]</span></div>
+<div class="qt">Draw a clear circuit schematic that includes: a 12 V battery, an open switch, a 6 Ω resistor in series with a parallel branch of two lamps (10 Ω each), an ammeter measuring total current, and a voltmeter measuring the voltage across the parallel branch. Label each component clearly and indicate measurement positions.</div>
+<div class="draw">[Schematic]</div></div>
+
+<div class="qc">
+<div class="qn">C6. <span class="tag">Strand A</span> <span class="qm">[4]</span></div>
+<div class="qt">Outline the structure of a formal lab report (in order). For one of your investigations this year, give a one-sentence sample sentence (purpose, hypothesis, conclusion) for each of those three sections.</div>
+<textarea></textarea></div>
+
+<!-- ===========================================================
+     PART D — Application [25 marks]
+=========================================================== -->
+<div class="sec-hdr a">Part D — Application <span>[25 marks]</span></div>
+
+<div class="qc">
+<div class="qn">D1. <span class="tag">STSE / B+C</span> <span class="qm">[5]</span></div>
+<div class="qt"><strong>Highway crash analysis:</strong> A \(1500\)-kg car travelling at \(90\) km/h collides with a wall and comes to rest in \(0.10\) s due to crumple zones. (a) Convert the speed to m/s. (b) Calculate the deceleration. (c) Calculate the average force on the car. (d) If the same car had a rigid frame and stopped in \(0.010\) s, how would the force change? (e) Explain in 2 sentences how this physics motivates Transport Canada vehicle-safety regulations.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">D2. <span class="tag">STSE / D</span> <span class="qm">[5]</span></div>
+<div class="qt"><strong>Energy use at home:</strong> A family in Ontario uses on average 30 kWh/day of electricity. (a) Calculate annual consumption (kWh and J). (b) At \(\$0.13\)/kWh, calculate annual cost. (c) If they switch all incandescent lighting (\(100\) W bulbs, 5 h/day average usage, 10 bulbs) to \(15\)-W LEDs, calculate the annual electricity savings (kWh and \$). (d) Comment on environmental benefits.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">D3. <span class="tag">E</span> <span class="qm">[5]</span></div>
+<div class="qt"><strong>Acoustics and music:</strong> A guitarist uses an A-string tuned to \(110\) Hz of length \(0.65\) m. (a) Calculate the wave speed on the string from \( f_1 = v/(2L) \). (b) The guitarist places a finger on the fretboard, shortening the vibrating length to \(0.55\) m without changing tension. Calculate the new fundamental frequency. (c) State the wavelength of the resulting sound in air at \(20°\)C.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">D4. <span class="tag">F</span> <span class="qm">[5]</span></div>
+<div class="qt"><strong>Domestic wiring:</strong> A typical Canadian household receptacle circuit operates at \(120\) V with a \(15\) A breaker. (a) Calculate the maximum power available on one circuit. (b) A homeowner runs a \(1500\)-W space heater and a \(900\)-W coffee maker simultaneously on the same circuit. Will the breaker trip? Show calculations. (c) Explain (1–2 sentences) how a circuit breaker is different from a fuse, and why both are essential safety devices.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">D5. <span class="tag">A / Lab</span> <span class="qm">[5]</span></div>
+<div class="qt"><strong>Lab analysis:</strong> A student investigates the period \(T\) of a simple pendulum vs. its length \(L\). Data: (0.20 m, 0.90 s), (0.40 m, 1.27 s), (0.60 m, 1.55 s), (0.80 m, 1.80 s), (1.00 m, 2.01 s). Theory predicts \( T = 2\pi\sqrt{L/g} \). (a) Describe how to <em>linearise</em> the data — state what to plot on each axis. (b) For one data point, calculate the predicted \(T\) using \(g=9.8\) m/s² and compare. (c) State two sources of experimental error. (d) Explain how the slope of the linearised plot can be used to determine \(g\).</div>
+<textarea></textarea></div>
+
+<footer>SPH3U — Physics, Grade 11 University Preparation | Cumulative Final Exam | Ontario Curriculum 2008 (Revised) — Aligned with Growing Success (2010)</footer>
+</div>
+</body></html>

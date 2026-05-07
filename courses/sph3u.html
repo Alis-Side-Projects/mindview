@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPH3U — Physics (Grade 11) | MindView</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.unit-section { margin-bottom: 48px; }
+.unit-header { padding: 20px 24px; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+.unit-header h2 { font-size: 22px; margin-bottom: 4px; }
+.unit-header p { opacity: 0.85; font-size: 14px; }
+.unit-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; font-size: 13px; font-weight: 600; color: #fff; opacity: 0.95; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+.topic-block { margin-bottom: 24px; padding: 0 0 24px; border-bottom: 1px solid #e2e8f0; }
+.topic-block:last-child { border-bottom: none; }
+.topic-title { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.topic-desc { font-size: 13px; color: #64748b; margin-bottom: 12px; }
+.topic-note { font-size: 12px; color: #d97706; background: #fffbeb; padding: 8px 12px; border-radius: 6px; margin-bottom: 12px; }
+
+.resource-group { margin-bottom: 12px; }
+.resource-group-label { font-size: 12px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+
+.video-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+.video-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; cursor: pointer; transition: background 0.2s; font-size: 14px; }
+.video-header:hover { background: #f8fafc; }
+.vid-icon { font-size: 18px; flex-shrink: 0; }
+.vid-title { flex: 1; font-weight: 500; }
+.vid-duration { font-size: 12px; color: #94a3b8; }
+.vid-toggle { font-size: 14px; color: #94a3b8; transition: transform 0.3s; }
+.vid-toggle.open { transform: rotate(90deg); color: #ea580c; }
+.video-player { padding: 0 14px 14px; display: none; }
+.video-player video { border-radius: 8px; background: #000; width: 100%; max-height: 500px; }
+.yt-fallback { display: block; text-align: center; font-size: 11px; color: #94a3b8; margin-top: 6px; }
+
+.pdf-link { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 13px; color: #1e293b; text-decoration: none; margin-right: 6px; margin-bottom: 6px; transition: all 0.2s; }
+.pdf-link:hover { background: #e2e8f0; border-color: #cbd5e1; }
+
+.topic-coming-soon { background: #f8fafc; border: 1px dashed #94a3b8; border-radius: 8px; padding: 14px 18px; margin: 10px 0 6px; display: flex; align-items: flex-start; gap: 12px; }
+.topic-coming-soon .tcs-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.topic-coming-soon .tcs-title { font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 3px; }
+.topic-coming-soon .tcs-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+
+.assessment-card { display: flex; gap: 12px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 16px; }
+.assessment-card .a-icon { font-size: 28px; flex-shrink: 0; }
+.assessment-card .a-body h4 { font-size: 14px; margin-bottom: 2px; }
+.assessment-card .a-body p { font-size: 12px; color: #64748b; }
+.assessment-card a { display: inline-block; margin-top: 6px; font-size: 13px; color: #2563eb; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="../" class="nav-brand"><img src="../logo.png" alt="MindView Academy" class="brand-logo"></a>
+        <div class="nav-links">
+            <a href="../">Home</a>
+            <a href="../#courses">Courses</a>
+        </div>
+    </div>
+</nav>
+
+<div class="chapter-hero" style="background:linear-gradient(135deg, #ea580cdd 0%, #ea580c 100%);">
+    <div class="container">
+        <div class="strand-tag">Science — Grade 11 University Preparation</div>
+        <h1>⚡ SPH3U: Physics (Grade 11)</h1>
+        <p>Kinematics, forces, energy &amp; society, waves &amp; sound, electricity &amp; magnetism — prerequisite for SPH4U</p>
+        <p style="margin-top:8px;font-size:14px;opacity:0.7;">110 hours · 5 units + Strand A · Prerequisite: SNC2D Grade 10 Science (Academic)</p>
+    </div>
+</div>
+
+<div class="container" style="padding-top:32px;padding-bottom:64px;">
+
+    <!-- Quick navigation -->
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+        <a href="#strandA" style="padding:8px 16px;background:#f1f5f9;color:#0f172a;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔬 Strand A: Inquiry &amp; STSE</a>
+        <a href="#unit1" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 1: Kinematics</a>
+        <a href="#unit2" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 2: Forces</a>
+        <a href="#unit3" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 3: Energy &amp; Society</a>
+        <a href="#unit4" style="padding:8px 16px;background:#ede9fe;color:#5b21b6;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 4: Waves &amp; Sound</a>
+        <a href="#unit5" style="padding:8px 16px;background:#fee2e2;color:#991b1b;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Unit 5: Electricity &amp; Magnetism</a>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
+        <a href="sph3u_curriculum.html" style="padding:8px 16px;background:#1e293b;color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">📘 Curriculum Document</a>
+        <a href="../assessments/sph3u/Final_Exam.html" style="padding:8px 16px;background:linear-gradient(135deg,#0f172a,#ea580c);color:#fff;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;">🏁 Final Exam (Cumulative · /100)</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════
+         STRAND A: SCIENTIFIC INVESTIGATION SKILLS & CAREER EXPLORATION
+         Mandatory embedded strand — Ontario 2008 Science Framework
+    ════════════════════════════════════════════════════════════ -->
+    <div class="unit-section" id="strandA">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0f172add,#475569);">
+            <h2>🔬 Strand A: Scientific Investigation Skills &amp; Career Exploration</h2>
+            <p>Mandatory cross-cutting strand embedded across every unit — laboratory technique, experimental design, data analysis, scientific communication, and STSE/career connections</p>
+            <div class="unit-meta">
+                <span>📚 Strand A — Ontario 2008</span>
+                <span>📹 5 lessons</span>
+                <span>🧪 WHMIS &amp; lab safety</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">A.1 — Lab Safety, WHMIS &amp; Measurement</div>
+            <div class="topic-desc">Hazard symbols, electrical/optical/sound safety, SI units, significant digits, uncertainty</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('a1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Laboratory Safety Symbols with Meanings — Lab Signs &amp; Hazards</span>
+                    <span class="vid-duration">07:30</span>
+                    <span class="vid-toggle" id="toggle-a1">▶</span>
+                </div>
+                <div class="video-player" id="player-a1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/HiDZdUTtrDE?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=HiDZdUTtrDE" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('a2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Significant Figures Made Easy! — Tyler DeWitt</span>
+                    <span class="vid-duration">10:49</span>
+                    <span class="vid-toggle" id="toggle-a2">▶</span>
+                </div>
+                <div class="video-player" id="player-a2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/PNH7_nDE6SQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=PNH7_nDE6SQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">A.2 — Scientific Method &amp; Experimental Design</div>
+            <div class="topic-desc">Hypotheses, variables (IV/DV/CV), controlled trials, sample size, replication</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('a3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">The Scientific Method — Crash Course</span>
+                    <span class="vid-duration">12:08</span>
+                    <span class="vid-toggle" id="toggle-a3">▶</span>
+                </div>
+                <div class="video-player" id="player-a3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/xOLcZMw0hd4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=xOLcZMw0hd4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">A.3 — Data Analysis &amp; Graph Linearisation</div>
+            <div class="topic-desc">Plotting, slope/intercept interpretation, linearising quadratics, percent error</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('a4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Graph Linearisation — Data Analysis</span>
+                    <span class="vid-duration">11:24</span>
+                    <span class="vid-toggle" id="toggle-a4">▶</span>
+                </div>
+                <div class="video-player" id="player-a4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/2LhXskTAnes?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=2LhXskTAnes" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">A.4 — Lab Reports &amp; Scientific Communication</div>
+            <div class="topic-desc">Structure (purpose, hypothesis, procedure, data, analysis, conclusion); citation</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('a5')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">How To Write A Scientific Report — Step-by-Step Guide</span>
+                    <span class="vid-duration">09:18</span>
+                    <span class="vid-toggle" id="toggle-a5">▶</span>
+                </div>
+                <div class="video-player" id="player-a5">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Yqioa8Njhhk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=Yqioa8Njhhk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">A.5 — STSE &amp; Career Exploration in Physics</div>
+            <div class="topic-desc">Engineering, skilled trades, medical imaging, audiology, energy industry, climate science</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt13')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">The Most Useful Thing AI Has Ever Done (Physics Careers) — Veritasium</span>
+                    <span class="vid-duration">24:01</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt13">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt13">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/P_fHJIYENdI?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=P_fHJIYENdI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- UNIT 1: KINEMATICS -->
+    <div class="unit-section" id="unit1">
+        <div class="unit-header" style="background:linear-gradient(135deg, #2563ebdd, #2563eb);">
+            <h2>Unit 1: Kinematics</h2>
+            <p>1-D &amp; 2-D motion, vectors, projectile motion, relative velocity, kinematic equations</p>
+            <div class="unit-meta">
+                <span>📚 Strand B: Kinematics</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.1 — Position, Displacement, Velocity, Acceleration</div>
+            <div class="topic-desc">Scalars vs. vectors, instantaneous vs. average, sign conventions in 1-D</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Distance, Displacement, Speed &amp; Velocity — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">15:40</span>
+                    <span class="vid-toggle" id="toggle-u1v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/JS9G06zS2HY?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=JS9G06zS2HY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Position vs. Time Graphs — Khan Academy</span>
+                    <span class="vid-duration">10:55</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt1">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/GtoamALPOP0?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=GtoamALPOP0" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.2 — Motion Graphs &amp; Kinematic Equations</div>
+            <div class="topic-desc">Slopes, areas, the five kinematic equations of uniformly accelerated motion</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Position, Velocity, Acceleration Graphs — Khan Academy</span>
+                    <span class="vid-duration">10:12</span>
+                    <span class="vid-toggle" id="toggle-u1v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/Gj_uFhogzJM?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=Gj_uFhogzJM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.3 — Free Fall &amp; Acceleration Due to Gravity</div>
+            <div class="topic-desc">\( g = 9.8 \) m/s²; sign of \( g \); experimental determination using ticker timer or photogates</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Free Fall Physics Problems — Acceleration Due to Gravity — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">21:34</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt2">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/BVgemK1Y2wA?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=BVgemK1Y2wA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Kinematic Equations — Five Big Ones — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">17:36</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt3">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ulXdXTkIkAM?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=ulXdXTkIkAM" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.4 — Vectors &amp; 2-D Motion</div>
+            <div class="topic-desc">Vector addition (graphical, component method), trigonometry review</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Vectors — Adding Vectors Using Components — Professor Dave</span>
+                    <span class="vid-duration">11:23</span>
+                    <span class="vid-toggle" id="toggle-u1v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/ml4NSzCQobk?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=ml4NSzCQobk" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">1.5 — Projectile Motion &amp; Relative Velocity</div>
+            <div class="topic-desc">Independence of horizontal and vertical motion; range, time of flight, max height; river-crossing &amp; aircraft-in-wind problems</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u1v4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Projectile Motion Problems — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">21:46</span>
+                    <span class="vid-toggle" id="toggle-u1v4">▶</span>
+                </div>
+                <div class="video-player" id="player-u1v4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-8MhulnAHFs?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=-8MhulnAHFs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px;">
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 1 Assessments</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <a href="../assessments/sph3u/Unit1_Kinematics_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+                <a href="../assessments/sph3u/Unit1_Kinematics_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+                <a href="../assessments/sph3u/Unit1_Kinematics_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- UNIT 2: FORCES -->
+    <div class="unit-section" id="unit2">
+        <div class="unit-header" style="background:linear-gradient(135deg, #059669dd, #059669);">
+            <h2>Unit 2: Forces</h2>
+            <p>Newton's three laws, FBDs, friction, tension, normal force, inclined planes, Atwood machines</p>
+            <div class="unit-meta">
+                <span>📚 Strand C: Forces</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.1 — Forces &amp; Free-Body Diagrams</div>
+            <div class="topic-desc">Identifying forces (gravity, normal, friction, tension, applied), drawing accurate FBDs</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u2v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Free Body Diagrams — Khan Academy</span>
+                    <span class="vid-duration">12:15</span>
+                    <span class="vid-toggle" id="toggle-u2v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u2v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/nDis6HbXxjg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=nDis6HbXxjg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.2 — Newton's First &amp; Second Laws</div>
+            <div class="topic-desc">Inertia, equilibrium, \( \Sigma F = ma \) in 1-D and 2-D</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u2v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Newton's Laws of Motion — Crash Course Physics</span>
+                    <span class="vid-duration">10:41</span>
+                    <span class="vid-toggle" id="toggle-u2v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u2v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/kKKM8Y-u7ds?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=kKKM8Y-u7ds" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.3 — Newton's Third Law</div>
+            <div class="topic-desc">Action-reaction pairs, identifying paired forces, walking, recoil, rocket propulsion</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Newton's Third Law of Motion — Action and Reaction</span>
+                    <span class="vid-duration">10:30</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt4">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/y61_VPKH2B4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=y61_VPKH2B4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.4 — Friction (Static &amp; Kinetic)</div>
+            <div class="topic-desc">\( f_s \le \mu_s N \), \( f_k = \mu_k N \), starting vs. sliding, rolling resistance</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u2v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Friction Force Problems — Static &amp; Kinetic</span>
+                    <span class="vid-duration">21:09</span>
+                    <span class="vid-toggle" id="toggle-u2v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u2v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/joP6BL7lVOQ?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=joP6BL7lVOQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">2.5 — Inclined Planes &amp; Connected Bodies (Atwood)</div>
+            <div class="topic-desc">Resolving gravity into components, multi-body systems with pulleys</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt5')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Static &amp; Kinetic Friction, Tension, Inclined Plane &amp; Pulley Problems — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">21:46</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt5">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt5">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/pL2YfC-22Uc?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=pL2YfC-22Uc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt6')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Atwood Machine Pulley Problems — Physics</span>
+                    <span class="vid-duration">14:29</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt6">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt6">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/teAbundrFLs?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=teAbundrFLs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px;">
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 2 Assessments</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <a href="../assessments/sph3u/Unit2_Forces_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+                <a href="../assessments/sph3u/Unit2_Forces_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+                <a href="../assessments/sph3u/Unit2_Forces_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- UNIT 3: ENERGY & SOCIETY -->
+    <div class="unit-section" id="unit3">
+        <div class="unit-header" style="background:linear-gradient(135deg, #d97706dd, #d97706);">
+            <h2>Unit 3: Energy and Society</h2>
+            <p>Work, kinetic &amp; gravitational potential energy, conservation of energy, power, efficiency, heat &amp; thermal energy, energy sources</p>
+            <div class="unit-meta">
+                <span>📚 Strand D: Energy</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 4 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.1 — Work, Power &amp; Kinetic Energy</div>
+            <div class="topic-desc">\( W = Fd\cos\theta \), \( E_k = \tfrac{1}{2}mv^2 \), \( P = W/t \), the work-energy theorem</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u3v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Work, Energy &amp; Power — Crash Course Physics</span>
+                    <span class="vid-duration">10:00</span>
+                    <span class="vid-toggle" id="toggle-u3v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u3v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/w4QFJb9a8vo?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=w4QFJb9a8vo" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.2 — Gravitational Potential Energy &amp; Conservation</div>
+            <div class="topic-desc">\( E_g = mgh \), conservation of mechanical energy in systems with no friction</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u3v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Conservation of Energy — Bozeman Science</span>
+                    <span class="vid-duration">08:54</span>
+                    <span class="vid-toggle" id="toggle-u3v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u3v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/U8SP15TRwHA?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=U8SP15TRwHA" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.3 — Heat, Thermal Energy &amp; Calorimetry</div>
+            <div class="topic-desc">\( Q = mc\Delta T \), specific heat capacity, principle of heat exchange, latent heat (qualitative)</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u3v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Specific Heat Capacity Problems — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">17:32</span>
+                    <span class="vid-toggle" id="toggle-u3v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u3v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/OVQUhQuqGFs?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=OVQUhQuqGFs" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">3.4 — Efficiency &amp; Energy Sources (STSE)</div>
+            <div class="topic-desc">Energy efficiency \( \eta \); fossil, nuclear, hydro, wind, solar, geothermal; Ontario's energy mix</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt7')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">The Biggest Lie About Renewable Energy — Veritasium</span>
+                    <span class="vid-duration">19:24</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt7">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt7">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/EhAemz1v7dQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=EhAemz1v7dQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt8')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Energy Sources &amp; Efficiency — Crash Course Physics</span>
+                    <span class="vid-duration">11:21</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt8">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt8">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/8KFOc_t1cz4?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=8KFOc_t1cz4" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px;">
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 3 Assessments</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <a href="../assessments/sph3u/Unit3_Energy_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+                <a href="../assessments/sph3u/Unit3_Energy_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+                <a href="../assessments/sph3u/Unit3_Energy_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- UNIT 4: WAVES & SOUND -->
+    <div class="unit-section" id="unit4">
+        <div class="unit-header" style="background:linear-gradient(135deg, #7c3aeddd, #7c3aed);">
+            <h2>Unit 4: Waves and Sound</h2>
+            <p>Wave properties, sound waves, interference, resonance, the Doppler effect, music &amp; medical applications</p>
+            <div class="unit-meta">
+                <span>📚 Strand E: Waves &amp; Sound</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 4 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.1 — Wave Properties &amp; the Wave Equation</div>
+            <div class="topic-desc">Transverse vs. longitudinal, amplitude, wavelength, frequency, period, \( v = f\lambda \)</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u4v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Mechanical Waves — Crash Course Physics</span>
+                    <span class="vid-duration">11:09</span>
+                    <span class="vid-toggle" id="toggle-u4v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u4v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qV4lR9EWGlY?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=qV4lR9EWGlY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.2 — Sound Waves &amp; the Speed of Sound</div>
+            <div class="topic-desc">\( v_\text{sound} = 331 + 0.6 T_C \) m/s, intensity, decibel scale, hearing range</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u4v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Sound Waves — Crash Course Physics</span>
+                    <span class="vid-duration">10:08</span>
+                    <span class="vid-toggle" id="toggle-u4v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u4v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/qFcdlKg5rNc?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=qFcdlKg5rNc" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.3 — Interference, Resonance &amp; Standing Waves</div>
+            <div class="topic-desc">Constructive/destructive interference, harmonics on strings (\( f_n = nv/(2L) \)) and in pipes</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u4v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Standing Waves &amp; Resonance — Khan Academy</span>
+                    <span class="vid-duration">14:00</span>
+                    <span class="vid-toggle" id="toggle-u4v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u4v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/no7ZPPqtZEg?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=no7ZPPqtZEg" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">4.4 — The Doppler Effect &amp; Applications</div>
+            <div class="topic-desc">Source/observer motion, ultrasound imaging, sonar, weather radar</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt9')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">The Doppler Effect — Khan Academy</span>
+                    <span class="vid-duration">11:12</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt9">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt9">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/h4OnBYrbCjY?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=h4OnBYrbCjY" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt10')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Ultrasound Physics — Explaining Doppler</span>
+                    <span class="vid-duration">09:08</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt10">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt10">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/9nzkF0hmy04?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=9nzkF0hmy04" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px;">
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 4 Assessments</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <a href="../assessments/sph3u/Unit4_Waves_and_Sound_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+                <a href="../assessments/sph3u/Unit4_Waves_and_Sound_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+                <a href="../assessments/sph3u/Unit4_Waves_and_Sound_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- UNIT 5: ELECTRICITY & MAGNETISM -->
+    <div class="unit-section" id="unit5">
+        <div class="unit-header" style="background:linear-gradient(135deg, #dc2626dd, #dc2626);">
+            <h2>Unit 5: Electricity and Magnetism</h2>
+            <p>Charge, current, voltage, resistance, Ohm's law, series &amp; parallel circuits, magnetism, motors, generators</p>
+            <div class="unit-meta">
+                <span>📚 Strand F: E &amp; M</span>
+                <span>⏱️ ~22 hours</span>
+                <span>📹 5 lessons</span>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.1 — Electric Charge &amp; Static Electricity</div>
+            <div class="topic-desc">Coulomb (qualitative), conductors vs. insulators, charging by friction, induction, contact</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v1')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Electric Charge: Crash Course Physics</span>
+                    <span class="vid-duration">09:23</span>
+                    <span class="vid-toggle" id="toggle-u5v1">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v1">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/TFlVWf8JX4A?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=TFlVWf8JX4A" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.2 — Current, Voltage, Resistance &amp; Ohm's Law</div>
+            <div class="topic-desc">\( I = Q/t \), \( V = IR \), measuring with ammeter (series) and voltmeter (parallel)</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v2')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Voltage, Current, Resistance &amp; Ohm's Law — How Stuff Works</span>
+                    <span class="vid-duration">09:33</span>
+                    <span class="vid-toggle" id="toggle-u5v2">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v2">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/-PJD42RYmqU?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=-PJD42RYmqU" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.3 — Series &amp; Parallel Circuits</div>
+            <div class="topic-desc">\( R_T \) for series and parallel; \( I, V \) splitting rules; mixed networks</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v3')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Series &amp; Parallel Circuits — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">23:43</span>
+                    <span class="vid-toggle" id="toggle-u5v3">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v3">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/p_t-RjbDgYI?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=p_t-RjbDgYI" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.4 — Magnetism &amp; Electromagnetism</div>
+            <div class="topic-desc">Magnetic fields, right-hand rules, force on a current-carrying conductor</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('u5v4')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Magnetism: Crash Course Physics</span>
+                    <span class="vid-duration">10:48</span>
+                    <span class="vid-toggle" id="toggle-u5v4">▶</span>
+                </div>
+                <div class="video-player" id="player-u5v4">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/s94suB5uLWw?rel=0&modestbranding=1" frameborder="0" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=s94suB5uLWw" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="topic-block">
+            <div class="topic-title">5.5 — Motors, Generators &amp; Electromagnetic Induction</div>
+            <div class="topic-desc">Faraday's law (qualitative), simple DC motor, AC generator, transformers (intro)</div>
+            <div class="resource-group">
+            <div class="resource-group-label">📹 Video Lessons</div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt11')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">World's First Electric Generator — Veritasium</span>
+                    <span class="vid-duration">04:34</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt11">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt11">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/NqdOyxJZj0U?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=NqdOyxJZj0U" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-header" onclick="toggleVideo('sph3-yt12')">
+                    <span class="vid-icon">📖</span>
+                    <span class="vid-title">Faraday's Law of Electromagnetic Induction, Magnetic Flux &amp; Induced EMF — The Organic Chemistry Tutor</span>
+                    <span class="vid-duration">14:11</span>
+                    <span class="vid-toggle" id="toggle-sph3-yt12">▶</span>
+                </div>
+                <div class="video-player" id="player-sph3-yt12">
+                    <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/LDOa7UdfcMQ?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+                    <a href="https://www.youtube.com/watch?v=LDOa7UdfcMQ" target="_blank" class="yt-fallback">📺 Watch on YouTube</a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div style="margin-top:20px;">
+            <div style="font-size:15px;font-weight:700;margin-bottom:10px;color:#1e293b;">📊 Unit 5 Assessments</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <a href="../assessments/sph3u/Unit5_Electricity_and_Magnetism_AS.html" style="padding:8px 16px;background:#dbeafe;color:#1e40af;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">🔄 Practice Quiz (AS)</a>
+                <a href="../assessments/sph3u/Unit5_Electricity_and_Magnetism_FOR.html" style="padding:8px 16px;background:#fef3c7;color:#92400e;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">📋 Diagnostic (FOR)</a>
+                <a href="../assessments/sph3u/Unit5_Electricity_and_Magnetism_OF.html" style="padding:8px 16px;background:#d1fae5;color:#065f46;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">✅ Unit Test (OF)</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final Exam section -->
+    <div class="unit-section" style="margin-top:48px;">
+        <div class="unit-header" style="background:linear-gradient(135deg,#0f172a,#ea580c);">
+            <h2>🏁 Cumulative Final Exam</h2>
+            <p>3-hour, /100, cumulative across Strands A–F · Worth up to 30% of final grade</p>
+            <div class="unit-meta"><span>📚 K/U 25 · T 25 · C 25 · A 25</span><span>⏱️ 3 hours</span><span>📝 Aligned with Growing Success (2010)</span></div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <a href="../assessments/sph3u/Final_Exam.html" style="padding:10px 18px;background:#ea580c;color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">🏁 Open Final Exam</a>
+            <a href="sph3u_curriculum.html" style="padding:10px 18px;background:#1e293b;color:#fff;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">📘 Curriculum Document</a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <p><strong>MindView Virtual Classroom</strong> · SPH3U — Physics, Grade 11 · Ontario Curriculum 2008</p>
+    </div>
+</footer>
+
+<script>
+function toggleVideo(id) {
+    const player = document.getElementById('player-' + id);
+    const toggle = document.getElementById('toggle-' + id);
+    if (player.style.display === 'none' || !player.style.display) {
+        player.style.display = 'block';
+        toggle.classList.add('open');
+    } else {
+        player.style.display = 'none';
+        toggle.classList.remove('open');
+        const vid = player.querySelector('video');
+        if (vid) vid.pause();
+    }
+}
+</script>
+</body></html>

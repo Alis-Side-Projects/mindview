@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCR3U Final Exam — Functions, Grade 11 (OF Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+.container { max-width: 850px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; }
+header .sub { font-size: 14px; opacity: 0.85; margin-top: 4px; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.warn { background: #fefce8; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.section-hdr { font-size: 18px; font-weight: 700; margin: 28px 0 16px; padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+.section-hdr.ku { background: #dbeafe; color: #1e40af; }
+.section-hdr.t { background: #fef3c7; color: #92400e; }
+.section-hdr.c { background: #d1fae5; color: #065f46; }
+.section-hdr.a { background: #ede9fe; color: #5b21b6; }
+.qcard { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.qcard.correct { border-color: var(--correct); background: #f0fdf4; }
+.qcard.wrong { border-color: var(--wrong); background: #fef2f2; }
+.qnum { font-weight: 700; color: var(--primary); font-size: 15px; }
+.qmarks { float: right; font-size: 13px; color: var(--muted); font-weight: 600; }
+.qtxt { margin: 8px 0 12px; }
+input[type="text"], textarea { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; font-family: inherit; }
+textarea { min-height: 100px; resize: vertical; }
+input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.mc { list-style: none; margin: 8px 0; }
+.mc li { margin-bottom: 6px; }
+.mc label { display: flex; align-items: flex-start; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc label:hover { background: #f1f5f9; }
+.btn { display: inline-block; padding: 8px 18px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; margin-top: 8px; margin-right: 6px; }
+.btn-p { background: var(--primary); color: #fff; }
+.btn-s { background: #f1f5f9; color: var(--text); border: 1px solid var(--border); }
+.fb { margin-top: 10px; padding: 10px; border-radius: 6px; font-size: 14px; display: none; }
+.fb.show { display: block; }
+.fb.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.fb.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.sol { margin-top: 10px; padding: 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.sol.show { display: block; }
+.sol-lbl { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.word-count { text-align: right; font-size: 12px; color: var(--muted); margin-top: 4px; }
+.chart { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+.chart-item { text-align: center; padding: 12px; border-radius: 8px; }
+.chart-item .label { font-size: 12px; font-weight: 600; }
+.chart-item .value { font-size: 24px; font-weight: 800; }
+.answer-key { margin-top: 40px; background: #fff; border: 2px solid var(--primary); border-radius: 10px; padding: 4px 20px; }
+.answer-key summary { font-size: 18px; font-weight: 700; color: var(--primary); cursor: pointer; padding: 14px 4px; }
+.answer-key .akq { border-left: 3px solid var(--primary); padding: 8px 14px; margin: 14px 0; background: #f8fafc; }
+.answer-key .akq h4 { color: var(--primary); margin-bottom: 6px; font-size: 14px; }
+.answer-key .akq p { font-size: 14px; margin-bottom: 4px; }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 12px; margin-top: 32px; border-top: 1px solid var(--border); }
+@media print { .btn { display: none; } .sol { display: block !important; } header { background: #333 !important; -webkit-print-color-adjust: exact; } }
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mcr3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+
+<header>
+<h1>🎓 MCR3U Final Exam</h1>
+<div class="sub">Comprehensive Final Evaluation — Chapters 1 through 8</div>
+<div class="badge">✅ Counts for 30% of Final Course Mark</div>
+</header>
+
+<div class="warn">
+<strong>⏱️ Duration:</strong> 3 hours (180 minutes) &nbsp;|&nbsp; <strong>Total:</strong> /100 marks<br>
+<strong>Materials allowed:</strong> Scientific calculator, ruler. No graphing technology during the exam.<br>
+Show all work. Answers without supporting work receive partial credit at best.
+</div>
+
+<div class="chart">
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/25</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/25</div></div>
+</div>
+
+<div class="info">
+<strong>Coverage:</strong> Ch 1 Functions &amp; Inverses · Ch 2 Quadratics · Ch 3 Exponentials · Ch 4 Exp. Equations &amp; Modelling · Ch 5 Sequences &amp; Series · Ch 6 Financial Math · Ch 7 Trig Ratios &amp; Sine/Cosine Laws · Ch 8 Sinusoidal Functions.
+</div>
+
+<!-- ========================= PART A: KNOWLEDGE & UNDERSTANDING [25 marks] ========================= -->
+<div class="section-hdr ku">Part A: Knowledge &amp; Understanding <span>[25 marks]</span></div>
+
+<div class="qcard" id="q1">
+<div class="qnum">Question 1 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For \( f(x) = -3x^2 + 5x - 1 \), evaluate \( f(-2) \).</div>
+<input type="text" id="q1-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q1',-23)">Check</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-lbl">Solution:</div>\( f(-2) = -3(4) + 5(-2) - 1 = -12 - 10 - 1 = -23 \).</div>
+</div>
+
+<div class="qcard" id="q2">
+<div class="qnum">Question 2 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">State the domain of \( g(x) = \dfrac{x + 2}{x^2 - 16} \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q2" value="a"> \( \{x \in \mathbb{R}\} \)</label></li>
+<li><label><input type="radio" name="q2" value="b"> \( \{x \in \mathbb{R} \mid x \neq \pm 4\} \)</label></li>
+<li><label><input type="radio" name="q2" value="c"> \( \{x \in \mathbb{R} \mid x \neq 16\} \)</label></li>
+<li><label><input type="radio" name="q2" value="d"> \( \{x \in \mathbb{R} \mid x \neq -2\} \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q2','b')">Check</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-lbl">Solution:</div>Denominator zero at \( x = \pm 4 \). Exclude both.</div>
+</div>
+
+<div class="qcard" id="q3">
+<div class="qnum">Question 3 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Find the inverse of \( f(x) = \tfrac{x + 5}{2} \). Show steps.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q4">
+<div class="qnum">Question 4 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Factor completely: \( 6x^2 - 13x - 5 \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q4" value="a"> \( (3x + 1)(2x - 5) \)</label></li>
+<li><label><input type="radio" name="q4" value="b"> \( (3x - 1)(2x + 5) \)</label></li>
+<li><label><input type="radio" name="q4" value="c"> \( (6x + 5)(x - 1) \)</label></li>
+<li><label><input type="radio" name="q4" value="d"> \( (3x + 5)(2x - 1) \)</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q4','a')">Check</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-lbl">Solution:</div>Decomposition: \( ac = -30, b = -13 \). Numbers \( -15, 2 \). \( 6x^2 - 15x + 2x - 5 = 3x(2x - 5) + (2x - 5) = (3x + 1)(2x - 5) \).</div>
+</div>
+
+<div class="qcard" id="q5">
+<div class="qnum">Question 5 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">Convert \( y = 2x^2 - 8x + 3 \) to vertex form by completing the square.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q6">
+<div class="qnum">Question 6 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Evaluate \( 32^{3/5} \) without a calculator.</div>
+<input type="text" id="q6-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q6',8)">Check</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-lbl">Solution:</div>\( 32^{3/5} = (\sqrt[5]{32})^3 = 2^3 = 8 \).</div>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qnum">Question 7 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">Solve: \( 3^{x+1} = 81 \).</div>
+<input type="text" id="q7-in" placeholder="Enter x..."><button class="btn btn-p" onclick="chkNum('q7',3)">Check</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-lbl">Solution:</div>\( 81 = 3^4 \), so \( x + 1 = 4 \), \( x = 3 \).</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qnum">Question 8 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For the arithmetic sequence \( 6, 11, 16, \ldots \), find \( t_{20} \).</div>
+<input type="text" id="q8-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q8',101)">Check</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-lbl">Solution:</div>\( t_{20} = 6 + 19(5) = 101 \).</div>
+</div>
+
+<div class="qcard" id="q9">
+<div class="qnum">Question 9 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">For the geometric sequence \( 4, 12, 36, \ldots \), find \( t_6 \).</div>
+<input type="text" id="q9-in" placeholder="Enter answer..."><button class="btn btn-p" onclick="chkNum('q9',972)">Check</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-lbl">Solution:</div>\( t_6 = 4 \cdot 3^5 = 4 \cdot 243 = 972 \).</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qnum">Question 10 <span class="qmarks">[2 marks]</span></div>
+<div class="qtxt">State the exact value of \( \cos 30° \).</div>
+<ul class="mc">
+<li><label><input type="radio" name="q10" value="a"> \( \tfrac{1}{2} \)</label></li>
+<li><label><input type="radio" name="q10" value="b"> \( \tfrac{\sqrt{2}}{2} \)</label></li>
+<li><label><input type="radio" name="q10" value="c"> \( \tfrac{\sqrt{3}}{2} \)</label></li>
+<li><label><input type="radio" name="q10" value="d"> 1</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q10','c')">Check</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-lbl">Solution:</div>From the 30-60-90 triangle: \( \cos 30° = \tfrac{\sqrt{3}}{2} \).</div>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qnum">Question 11 <span class="qmarks">[3 marks]</span></div>
+<div class="qtxt">For \( y = 3\sin(2x) - 1 \), state amplitude, period, and range.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<!-- ========================= PART B: THINKING & INQUIRY [25 marks] ========================= -->
+<div class="section-hdr t">Part B: Thinking &amp; Inquiry <span>[25 marks]</span></div>
+
+<div class="qcard" id="q12">
+<div class="qnum">Question 12 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A quadratic function passes through \( (-1, 0), (4, 0), (1, -12) \). Determine the equation in standard form.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q13">
+<div class="qnum">Question 13 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Determine the value of \( k \) so that \( x^2 + kx + 25 = 0 \) has exactly one real root. Justify.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q14">
+<div class="qnum">Question 14 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Solve: \( 9^{x} \cdot 27^{1-x} = \tfrac{1}{3^x} \). Show all work.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q15">
+<div class="qnum">Question 15 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">An arithmetic sequence has \( t_5 = 23 \) and \( t_{12} = 65 \). Find \( a, d, \) and \( t_n \).</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q16">
+<div class="qnum">Question 16 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">In \( \triangle ABC \): \( a = 9, b = 14, A = 38° \). Determine whether 0, 1, or 2 triangles satisfy these data, and if 2, find both values of \( B \).</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<!-- ========================= PART C: COMMUNICATION [25 marks] ========================= -->
+<div class="section-hdr c">Part C: Communication <span>[25 marks]</span></div>
+
+<div class="qcard" id="q17">
+<div class="qnum">Question 17 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Define a function and a relation. Use one example of each (one a function, one not). Cite the vertical line test in your reasoning.</div>
+<textarea placeholder="Write your explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q18">
+<div class="qnum">Question 18 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain how the discriminant of a quadratic determines the number of real roots, and how this connects to the x-intercepts of the parabola. Provide one numerical example for each case.</div>
+<textarea placeholder="Write your explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q19">
+<div class="qnum">Question 19 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Compare and contrast linear, quadratic, and exponential growth. Explain why exponential growth eventually exceeds polynomial growth, regardless of the polynomial's degree.</div>
+<textarea placeholder="Write your explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q20">
+<div class="qnum">Question 20 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Explain how the FV and PV of an ordinary annuity formulas are connected to a finite geometric series. Show the connection algebraically.</div>
+<textarea placeholder="Write your explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q21">
+<div class="qnum">Question 21 <span class="qmarks">[4 marks]</span></div>
+<div class="qtxt">Describe each transformation in \( y = -2\cos(\tfrac{1}{2}(x + 60°)) - 3 \) compared to the parent \( y = \cos x \). State the order of transformations.</div>
+<textarea placeholder="Write your explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q22">
+<div class="qnum">Question 22 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Explain when to use the sine law vs. the cosine law to solve a triangle. Provide a real-world example for each (e.g. surveying, navigation).</div>
+<textarea placeholder="Write your explanation..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<!-- ========================= PART D: APPLICATION [25 marks] ========================= -->
+<div class="section-hdr a">Part D: Application <span>[25 marks]</span></div>
+
+<div class="qcard" id="q23">
+<div class="qnum">Question 23 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A ball is thrown upward from a 1.5 m platform. Its height is \( h(t) = -4.9t^2 + 19.6t + 1.5 \) (m). Find: (a) the maximum height; (b) the time it returns to the ground; (c) the time(s) when \( h = 15 \) m.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q24">
+<div class="qnum">Question 24 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A bacteria culture starts at 200 cells and doubles every 4 hours. (a) Write \( N(t) \) for the population after \( t \) hours. (b) Find \( N(20) \). (c) After how many hours is \( N \) first at least 100{,}000?</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q25">
+<div class="qnum">Question 25 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Mei deposits \$300 at the end of each month for 5 years into an account paying 6% per year compounded monthly. (a) Find the future value at 5 years. (b) Find total deposits. (c) Find the interest earned.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q26">
+<div class="qnum">Question 26 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">Two ships leave a port simultaneously. Ship A travels N42°E at 18 km/h; Ship B travels S30°E at 22 km/h. Find the distance between them after 4 hours, using the cosine law.</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<div class="qcard" id="q27">
+<div class="qnum">Question 27 <span class="qmarks">[5 marks]</span></div>
+<div class="qtxt">A Ferris wheel of diameter 50 m has its lowest point 2 m above the ground and completes one revolution every 90 seconds. A rider boards at the lowest point at \( t = 0 \). (a) Write a sinusoidal function \( h(t) \) for the rider's height. (b) Find \( h(30) \). (c) When does the rider first reach 50 m above the ground?</div>
+<textarea placeholder="Show all work..."></textarea>
+<div class="word-count">0 words</div>
+</div>
+
+<details class="answer-key">
+<summary>📑 Answer Key &mdash; Click to Expand (After You're Done!)</summary>
+<div class="akq"><h4>Q1</h4><p>\( f(-2) = -23 \)</p></div>
+<div class="akq"><h4>Q2</h4><p>(b) \( \{x \in \mathbb{R} \mid x \ne \pm 4\} \) — denominator \( x^2 - 16 \) is zero at \( \pm 4 \).</p></div>
+<div class="akq"><h4>Q3</h4><p>Swap and solve: \( x = \tfrac{y + 5}{2} \Rightarrow y = 2x - 5 \), so \( f^{-1}(x) = 2x - 5 \).</p></div>
+<div class="akq"><h4>Q4</h4><p>(a) \( (3x + 1)(2x - 5) \).</p></div>
+<div class="akq"><h4>Q5</h4><p>\( 2x^2 - 8x + 3 = 2(x^2 - 4x) + 3 = 2((x - 2)^2 - 4) + 3 = 2(x - 2)^2 - 5 \). Vertex \( (2, -5) \).</p></div>
+<div class="akq"><h4>Q6</h4><p>\( 32^{3/5} = 2^3 = 8 \).</p></div>
+<div class="akq"><h4>Q7</h4><p>\( x = 3 \).</p></div>
+<div class="akq"><h4>Q8</h4><p>\( t_{20} = 6 + 19(5) = 101 \).</p></div>
+<div class="akq"><h4>Q9</h4><p>\( t_6 = 4 \cdot 3^5 = 972 \).</p></div>
+<div class="akq"><h4>Q10</h4><p>(c) \( \cos 30° = \tfrac{\sqrt{3}}{2} \).</p></div>
+<div class="akq"><h4>Q11</h4><p>Amplitude 3, period \( 180° \), range \( [-4, 2] \).</p></div>
+<div class="akq"><h4>Q12</h4><p>From roots \( -1 \) and \( 4 \): \( y = a(x + 1)(x - 4) \). Sub \( (1, -12) \): \( -12 = a(2)(-3) = -6a \Rightarrow a = 2 \). So \( y = 2(x + 1)(x - 4) = 2x^2 - 6x - 8 \).</p></div>
+<div class="akq"><h4>Q13</h4><p>Discriminant \( = 0 \): \( k^2 - 4(1)(25) = 0 \Rightarrow k^2 = 100 \Rightarrow k = \pm 10 \).</p></div>
+<div class="akq"><h4>Q14</h4><p>\( 3^{2x} \cdot 3^{3(1-x)} = 3^{-x} \Rightarrow 2x + 3 - 3x = -x \Rightarrow 3 = 0 \), contradiction. Recheck: \( 2x + 3 - 3x = -x \Rightarrow -x + 3 = -x \Rightarrow 3 = 0 \). No solution. (Or \( 2x + 3 - 3x = -x \Rightarrow 3 = 0 \): inconsistent — equation has no solution.)</p></div>
+<div class="akq"><h4>Q15</h4><p>\( t_{12} - t_5 = 7d = 65 - 23 = 42 \Rightarrow d = 6 \). Then \( t_5 = a + 4(6) = 23 \Rightarrow a = -1 \). So \( t_n = -1 + (n - 1)(6) = 6n - 7 \).</p></div>
+<div class="akq"><h4>Q16</h4><p>\( \sin B = \tfrac{14 \sin 38°}{9} \approx \tfrac{8.62}{9} \approx 0.957 \). Two values: \( B \approx 73.1° \) or \( B \approx 106.9° \). Both yield \( A + B < 180° \), so 2 triangles exist.</p></div>
+<div class="akq"><h4>Q17–Q22</h4><p>Communication / explanation questions — assess against rubric below.</p></div>
+<div class="akq"><h4>Q23</h4><p>(a) \( t_{\max} = -19.6/(2(-4.9)) = 2 \) s; \( h(2) = -4.9(4) + 39.2 + 1.5 = 21.1 \) m. (b) Solve \( -4.9t^2 + 19.6t + 1.5 = 0 \Rightarrow t \approx 4.075 \) s. (c) \( -4.9t^2 + 19.6t - 13.5 = 0 \Rightarrow t \approx 0.83 \) s or \( t \approx 3.17 \) s.</p></div>
+<div class="akq"><h4>Q24</h4><p>(a) \( N(t) = 200 \cdot 2^{t/4} \). (b) \( N(20) = 200 \cdot 2^5 = 6400 \). (c) Need \( 200 \cdot 2^{t/4} \geq 100000 \Rightarrow 2^{t/4} \geq 500 \Rightarrow t/4 \geq \log_2 500 \approx 8.97 \Rightarrow t \approx 35.9 \) h. So at least 36 hours.</p></div>
+<div class="akq"><h4>Q25</h4><p>\( i = 0.005, n = 60 \). (a) \( FV = 300 \cdot \tfrac{1.005^{60} - 1}{0.005} \approx 300 \cdot 69.77 \approx \$20{,}931 \). (b) Total deposits = \( 300 \cdot 60 = \$18{,}000 \). (c) Interest \( \approx \$2{,}931 \).</p></div>
+<div class="akq"><h4>Q26</h4><p>Distances: \( a = 72, b = 88 \) km. Angle between bearings: 42° + 30° = 72°. \( c^2 = 72^2 + 88^2 - 2(72)(88)\cos 72° = 5184 + 7744 - 12672(0.309) \approx 12928 - 3916 = 9012 \). \( c \approx 95 \) km.</p></div>
+<div class="akq"><h4>Q27</h4><p>Amplitude = 25, midline = 27, period 90 s. (a) \( h(t) = -25\cos(\tfrac{360°}{90}t) + 27 = -25\cos(4°t) + 27 \) (using degree mode). (b) \( h(30) = -25\cos(120°) + 27 = -25(-0.5) + 27 = 39.5 \) m. (c) Solve \( -25\cos(4t) + 27 = 50 \Rightarrow \cos(4t) = -0.92 \Rightarrow 4t \approx 156.93° \Rightarrow t \approx 39.2 \) s.</p></div>
+</details>
+
+<footer>MCR3U — Functions, Grade 11 | Ontario Curriculum 2007 (Revised) | Final Exam — 30% of Final Course Mark</footer>
+</div>
+<script>
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(s.value===c){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ See solution.';}if(sl)sl.classList.add('show');}
+function chkNum(q,c){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;if(Math.abs(v-c)<0.1){cd.classList.add('correct');fb.className='fb show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='fb show wrong';fb.textContent='❌ Answer: '+c;}if(sl)sl.classList.add('show');}
+document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qcard');const wc=p?.querySelector('.word-count');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
+</script>
+</body></html>

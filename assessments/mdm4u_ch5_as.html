@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 5: Discrete Distributions — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #0891b2; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #ecfeff; border: 1px solid #a5f3fc; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input { accent-color: var(--primary); }
+.btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #0e7490; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#0891b2;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 5: Discrete Probability Distributions</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your skills with binomial, geometric, and hypergeometric distributions and their identification.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Topic 5.1 — Binomial Distribution</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div>
+<div class="q-text">A coin is tossed 10 times. \( P(\text{exactly 7 heads}) \) = ? (Decimal to 4 places)</div>
+<input type="text" id="q1-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q1',0.1172)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( P(X=7) = \binom{10}{7}(0.5)^{10} = 120 \cdot \dfrac{1}{1024} = 0.1172 \).</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div>
+<div class="q-text">For \( X \sim \mathrm{Binomial}(n=20, p=0.3) \), find \( E(X) \) and \( \mathrm{Var}(X) \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q2" value="a"> \( E=6 \), Var = 4.2</label></li>
+<li><label><input type="radio" name="q2" value="b"> \( E=20 \), Var = 6</label></li>
+<li><label><input type="radio" name="q2" value="c"> \( E=6 \), Var = 6</label></li>
+<li><label><input type="radio" name="q2" value="d"> \( E=14 \), Var = 4.2</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q2','a')">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( E(X) = np = 20(0.3) = 6 \). \( \mathrm{Var}(X) = np(1-p) = 6(0.7) = 4.2 \).</div></div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div>
+<div class="q-text">A student guesses on 8 multiple-choice questions (4 options each). \( P(\text{at least 1 correct}) \) = ? (Decimal to 4 places)</div>
+<input type="text" id="q3-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q3',0.8999)">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( P(\text{at least 1}) = 1 - P(0) = 1 - \binom{8}{0}(0.25)^0(0.75)^8 = 1 - (0.75)^8 \approx 1 - 0.1001 = 0.8999 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 5.2 — Geometric Distribution</div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div>
+<div class="q-text">A free-throw shooter has 80% accuracy. What is the probability that her first miss occurs on the 3rd attempt?</div>
+<input type="text" id="q4-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q4',0.128)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>"Success" = miss, p=0.2. \( P(X=3) = (0.8)^2 \cdot 0.2 = 0.64 \cdot 0.2 = 0.128 \).</div></div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div>
+<div class="q-text">A die is rolled until a 6 appears. The expected number of rolls is:</div>
+<input type="text" id="q5-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q5',6)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Geometric mean: \( \mu = \dfrac{1}{p} = \dfrac{1}{1/6} = 6 \) rolls.</div></div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div>
+<div class="q-text">A salesperson succeeds on 30% of calls. \( P(\text{first success on 4th call}) \) = ? (Decimal to 4 places)</div>
+<input type="text" id="q6-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q6',0.1029)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>\( P(X=4) = (0.7)^3 \cdot 0.3 = 0.343 \cdot 0.3 = 0.1029 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 5.3 — Hypergeometric Distribution</div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div>
+<div class="q-text">A batch of 50 items contains 8 defective. A sample of 10 is selected. \( P(\text{exactly 2 defective}) \) = ? (Decimal to 4 places)</div>
+<input type="text" id="q7-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q7',0.2964)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{8}{2}\binom{42}{8}}{\binom{50}{10}} = \dfrac{28 \cdot 118\,030\,185}{10\,272\,278\,170} \approx 0.2964 \).</div></div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div>
+<div class="q-text">A bag has 10 marbles: 6 red, 4 blue. 3 are drawn without replacement. \( P(\text{exactly 2 red}) \) = ? (Decimal to 4 places)</div>
+<input type="text" id="q8-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q8',0.5)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{6}{2}\binom{4}{1}}{\binom{10}{3}} = \dfrac{15 \cdot 4}{120} = \dfrac{60}{120} = 0.5 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 5.4 — Choosing the Right Distribution</div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div>
+<div class="q-text">"A factory sells 100 widgets in lots; 5 are defective. A sample of 8 is drawn from a lot." Which distribution applies?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q9" value="a"> Binomial (n fixed, independent)</label></li>
+<li><label><input type="radio" name="q9" value="b"> Geometric (waiting for first success)</label></li>
+<li><label><input type="radio" name="q9" value="c"> Hypergeometric (sampling without replacement, finite pop)</label></li>
+<li><label><input type="radio" name="q9" value="d"> Normal</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q9','c')">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Sampling without replacement from a finite, mixed population → hypergeometric.</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div>
+<div class="q-text">"A coin is flipped repeatedly until tails appears." Which distribution describes the number of flips required?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> Binomial</label></li>
+<li><label><input type="radio" name="q10" value="b"> Geometric</label></li>
+<li><label><input type="radio" name="q10" value="c"> Hypergeometric</label></li>
+<li><label><input type="radio" name="q10" value="d"> Normal</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','b')">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Counting trials until first success → geometric.</div></div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div>
+<div class="q-text">"In a fixed sample of 30 voters surveyed by phone, asking each independently 'Do you support candidate A?'." Which distribution?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q11" value="a"> Binomial</label></li>
+<li><label><input type="radio" name="q11" value="b"> Geometric</label></li>
+<li><label><input type="radio" name="q11" value="c"> Hypergeometric</label></li>
+<li><label><input type="radio" name="q11" value="d"> Uniform</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q11','a')">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>Fixed n, independent trials, fixed p → binomial.</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div>
+<div class="q-text">A baseball player hits 0.300. What is the probability he gets his first hit on his 4th at-bat? (Decimal to 4 places)</div>
+<input type="text" id="q12-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q12',0.1029)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>Geometric: \( P(X=4) = (0.7)^3 (0.3) = 0.343 \cdot 0.3 = 0.1029 \).</div></div>
+</div>
+
+<footer>MDM4U — Mathematics of Data Management, Grade 12 | B. Probability Distributions | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;const tol=Math.abs(c)<1?0.01:0.5;if(Math.abs(v-c)<tol){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Answer: '+c;}sl.classList.add('show');updateProgress();}
+</script>
+</body></html>

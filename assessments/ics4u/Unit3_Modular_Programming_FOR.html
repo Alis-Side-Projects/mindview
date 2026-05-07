@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 3: Modular Programming &amp; Recursion — Pre-Unit Diagnostic</title>
+<style>
+:root{--p:#6366f1;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#eef2ff;border:1px solid #c7d2fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--p);outline:none}
+.code{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:10px 14px;font-family:Consolas,Monaco,monospace;font-size:13px;line-height:1.5;margin:6px 0;overflow-x:auto;white-space:pre}
+.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
+.fb-box h4{color:#92400e;margin-bottom:8px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#6366f1;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/ics4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to Course</a></nav>
+<div class="ctr">
+
+<header>
+<h1>&#128269; Unit 3: Modular Programming &amp; Recursion &mdash; Pre-Unit Diagnostic</h1>
+<div class="sub">Assessment FOR Learning &mdash; Teacher Feedback</div>
+<div class="badge">&#128203; Not Graded &mdash; Descriptive Feedback Only</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Confirms readiness for functions, scope, and recursion. Tests prior fluency with calling pre-built functions, basic decomposition, and self-referential reasoning.</div>
+
+<div class="qc">
+<div class="qn">Question 1 &mdash; Function call comfort</div>
+<div class="qt">Predict the output:
+<div class="code">print(len("apple"))
+print(min(8, 3, 5))
+print(round(3.7))</div>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 2 &mdash; Define a simple function (Unit 1 review)</div>
+<div class="qt">Write a Python function <code>area_of_rectangle(length, width)</code> that returns the area.</div>
+<textarea placeholder="def area_of_rectangle(length, width): ..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 3 &mdash; Decomposition: a real task</div>
+<div class="qt">Imagine you are writing a program that sends each student in a class an email with their final mark. Break the overall task into <strong>3-5 smaller subtasks</strong> that could each become a separate function.</div>
+<textarea placeholder="(1) ... (2) ..." style="min-height:120px;"></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 4 &mdash; Logic: self-reference (math)</div>
+<div class="qt">Define the factorial of a positive integer <em>n</em> in your own words, using the idea of "smaller version of the same problem". Write your definition for both <em>n</em> = 1 and <em>n</em> &gt; 1.</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 5 &mdash; Mental trace</div>
+<div class="qt">Work out each step. <em>F(n)</em> is defined as: <em>F(1) = 1</em>, <em>F(n) = n + F(n-1)</em>. What is <em>F(5)</em>?</div>
+<input type="text" placeholder="number">
+</div>
+
+<div class="qc">
+<div class="qn">Question 6 &mdash; Naming &amp; abstraction</div>
+<div class="qt">A friend writes a function called <code>do_it()</code> that does many things at once. List <strong>two</strong> better names if the function (a) calculates a tax, (b) reads a file and writes a summary.</div>
+<textarea placeholder="(a)... (b)..."></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 7 &mdash; Reading a function signature</div>
+<div class="qt">If you see <code>def f(x, y=10, z=0):</code>, answer:
+<ol style="margin-left:24px;">
+<li>How many arguments are required when calling <code>f</code>?</li>
+<li>What is <code>f(2)</code>'s effective <code>(x, y, z)</code>?</li>
+<li>What is <code>f(2, 5)</code>'s effective <code>(x, y, z)</code>?</li>
+</ol>
+</div>
+<textarea></textarea>
+</div>
+
+<div class="qc">
+<div class="qn">Question 8 &mdash; Reflection</div>
+<div class="qt">Have you ever written a function that calls itself? If yes, what was it for? If no, what about recursion intrigues or worries you?</div>
+<textarea></textarea>
+</div>
+
+<div class="fb-box">
+<h4>&#128221; Teacher Feedback</h4>
+<table style="width:100%;border-collapse:collapse;margin-top:8px;">
+<tr><th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">K/U</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Thinking</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Communication</th>
+<th style="width:25%;padding:8px;border:1px solid #fde68a;background:#fefce8;">Application</th></tr>
+<tr><td style="padding:8px;border:1px solid #fde68a;height:60px;vertical-align:top;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="..."></textarea></td>
+<td style="padding:8px;border:1px solid #fde68a;"><textarea style="width:100%;height:50px;border:none;background:transparent;resize:none;" placeholder="..."></textarea></td></tr>
+</table>
+<p style="margin-top:12px;"><strong>Suggested next steps:</strong></p>
+<textarea placeholder="(Teacher: recommend specific topics or pre-reading.)"></textarea>
+</div>
+
+<footer>ICS4U &mdash; Computer Science, Grade 12 | Unit 3: Modular Programming &amp; Recursion &mdash; FOR Learning | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

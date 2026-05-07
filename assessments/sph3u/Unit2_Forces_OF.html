@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Forces — Unit Test (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
+.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
+.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
+.qt{margin:8px 0 12px}
+textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;min-height:100px;resize:vertical;font-family:inherit}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.draw{height:180px;border:1px dashed var(--b);border-radius:8px;margin:8px 0;background:#fafafa;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:13px}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.chart-i{text-align:center;padding:12px;border-radius:8px}
+.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>📝 Unit 2: Forces — Unit Test</h1>
+<div class="sub">Assessment OF Learning — Summative (SPH3U)</div>
+<div class="badge">✅ Graded — Counts Toward 70% Term Mark</div>
+</header>
+
+<div class="warn"><strong>⏱️ Duration:</strong> 75 minutes &nbsp;|&nbsp; <strong>Total:</strong> /60 marks. Show all work; draw FBDs where required. Use \( g = 9.8 \) m/s².</div>
+
+<div class="chart">
+<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
+<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div>
+</div>
+
+<div class="formula-ref"><strong>Formulae:</strong> \( \Sigma F = ma \), \( F_g = mg \), \( f_k=\mu_k N \), \( f_s\le\mu_s N \), \( F_\parallel=mg\sin\theta \), \( N=mg\cos\theta \), \( g=9.8 \) m/s²</div>
+
+<div class="sec-hdr ku">Part A — Knowledge &amp; Understanding <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">1. <span class="qm">[3 marks]</span></div>
+<div class="qt">State Newton's three laws of motion. For each law, give a concrete example.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">2. <span class="qm">[3 marks]</span></div>
+<div class="qt">A \(4.0\)-kg block is on a horizontal surface with \( \mu_k = 0.30 \). A horizontal force of \(20\) N is applied. (a) Draw the FBD. (b) Calculate normal force, friction, net force, and acceleration.</div>
+<div class="draw">[FBD]</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">3. <span class="qm">[2 marks]</span></div>
+<div class="qt">MC: A \(10\)-kg object falls in air at terminal velocity. The net force on the object is:</div>
+<ul class="mc">
+<li><label><input type="radio" name="q3"> a) 98 N down</label></li>
+<li><label><input type="radio" name="q3"> b) 9.8 N down</label></li>
+<li><label><input type="radio" name="q3"> c) 0 N</label></li>
+<li><label><input type="radio" name="q3"> d) cannot be determined</label></li>
+</ul>
+<textarea placeholder="Justify briefly..."></textarea></div>
+
+<div class="qc">
+<div class="qn">4. <span class="qm">[4 marks]</span></div>
+<div class="qt">A child pulls a sled with mass \(8.0\) kg using a rope at \(25°\) above horizontal with a force of \(40\) N. There is no friction. (a) Draw the FBD. (b) Calculate the horizontal acceleration. (c) Calculate the normal force.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">5. <span class="qm">[3 marks]</span></div>
+<div class="qt">State Newton's third law in your own words. Identify the action-reaction pair when you walk forward on the sidewalk. Why does the Earth not visibly accelerate backward?</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr t">Part B — Thinking &amp; Investigation <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">6. <span class="qm">[5 marks]</span></div>
+<div class="qt">A \(12\)-kg crate sits on a ramp inclined at \(28°\). The coefficient of static friction is \(\mu_s = 0.45\) and kinetic is \(\mu_k = 0.30\). (a) Will the crate slide? Justify with calculations. (b) If a person gives it a small push to start, calculate the acceleration once it slides.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">7. <span class="qm">[5 marks]</span></div>
+<div class="qt">An Atwood machine has masses \(m_1 = 4.0\) kg and \(m_2 = 6.0\) kg connected over a frictionless, massless pulley. (a) Derive the formula for acceleration of the system. (b) Calculate \(a\) and the tension \(T\) in the rope.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">8. <span class="qm">[5 marks]</span></div>
+<div class="qt"><strong>Investigation design:</strong> Describe an experiment to determine the coefficient of kinetic friction between a wood block and a wooden plank. Identify variables (IV/DV/CV), required equipment, key measurements, calculation, and a major source of error with a way to reduce it.</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr c">Part C — Communication <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">9. <span class="qm">[5 marks]</span></div>
+<div class="qt">Draw a clearly labelled FBD for each: (i) a car accelerating forward; (ii) a skydiver at terminal velocity; (iii) a block sliding up a frictionless incline. Use arrows scaled to relative magnitudes.</div>
+<div class="draw">[FBDs i, ii, iii]</div></div>
+
+<div class="qc">
+<div class="qn">10. <span class="qm">[5 marks]</span></div>
+<div class="qt">In one paragraph (4–6 sentences), explain — using Newton's second law — why a car with anti-lock brakes (ABS) stops in a shorter distance than one with locked wheels. Use correct vocabulary (static vs. kinetic friction, \(\mu_s &gt; \mu_k\)).</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">11. <span class="qm">[5 marks]</span></div>
+<div class="qt">Compare and contrast (table OR paragraph form): static friction vs. kinetic friction. Include: when each acts, formulas, magnitude relationship, dependence on speed, and one real-world example.</div>
+<textarea></textarea></div>
+
+<div class="sec-hdr a">Part D — Application <span>[15 marks]</span></div>
+
+<div class="qc">
+<div class="qn">12. <span class="qm">[5 marks]</span></div>
+<div class="qt"><strong>STSE — Vehicle safety:</strong> A \(1500\)-kg car travelling at \(20\) m/s comes to rest in \(2.0\) s during a crash. (a) Calculate the deceleration. (b) Calculate the average force on the car. (c) Repeat (b) if a crumple zone increases stopping time to \(0.20\) s vs. \(0.020\) s for a rigid car. (d) Explain in 2–3 sentences how crumple zones, seat belts, and airbags work together to protect occupants.</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">13. <span class="qm">[5 marks]</span></div>
+<div class="qt">A \(50\)-kg skier slides down a \(15°\) slope with \( \mu_k = 0.05 \). (a) Calculate the acceleration. (b) Starting from rest, calculate the speed after \(60\) m. (c) If the skier suddenly enters a flat snowy patch (\( \mu_k = 0.05 \)), how far does she travel before stopping?</div>
+<textarea></textarea></div>
+
+<div class="qc">
+<div class="qn">14. <span class="qm">[5 marks]</span></div>
+<div class="qt">A \(2.0\)-kg block (A) sits on top of a \(6.0\)-kg block (B). B is pushed across a frictionless floor by a horizontal force of \(40\) N applied to B. The coefficient of static friction between A and B is \(\mu_s = 0.30\). (a) Calculate the acceleration of the system. (b) Calculate the friction force on A from B that accelerates A. (c) Will A slide on B? Justify.</div>
+<textarea></textarea></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 2 Test | Ontario Curriculum 2008</footer>
+</div>
+</body></html>

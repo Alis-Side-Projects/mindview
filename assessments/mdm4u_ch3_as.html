@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3: Combinations — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #059669; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input { accent-color: var(--primary); }
+.btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #047857; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#059669;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 3: Combinations</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your skills with combinations \( C(n,r) \), Pascal's triangle, the binomial theorem, and combinations in probability.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.1 — Combinations \( C(n,r) \)</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div>
+<div class="q-text">Evaluate \( \binom{8}{3} \).</div>
+<input type="text" id="q1-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q1',56)">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>\( \binom{8}{3} = \dfrac{8!}{3!\,5!} = \dfrac{8 \cdot 7 \cdot 6}{3 \cdot 2 \cdot 1} = 56 \).</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div>
+<div class="q-text">A committee of 4 is to be selected from 10 people. How many possible committees?</div>
+<input type="text" id="q2-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q2',210)">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>\( \binom{10}{4} = \dfrac{10!}{4!\,6!} = \dfrac{10\cdot 9 \cdot 8 \cdot 7}{4!} = \dfrac{5040}{24} = 210 \).</div></div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div>
+<div class="q-text">From a deck of 52 cards, how many 5-card hands are possible?</div>
+<input type="text" id="q3-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q3',2598960)">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>\( \binom{52}{5} = \dfrac{52!}{5!\,47!} = 2\,598\,960 \).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.2 — Combination Identities</div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div>
+<div class="q-text">Use the identity \( \binom{n}{r} = \binom{n}{n-r} \) to evaluate \( \binom{20}{18} \) more easily.</div>
+<input type="text" id="q4-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q4',190)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( \binom{20}{18} = \binom{20}{2} = \dfrac{20\cdot 19}{2} = 190 \).</div></div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div>
+<div class="q-text">Verify Pascal's identity: \( \binom{6}{2} + \binom{6}{3} \) equals which of the following?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q5" value="a"> \( \binom{7}{3} = 35 \)</label></li>
+<li><label><input type="radio" name="q5" value="b"> \( \binom{12}{5} \)</label></li>
+<li><label><input type="radio" name="q5" value="c"> \( \binom{6}{5} \)</label></li>
+<li><label><input type="radio" name="q5" value="d"> \( 5! \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q5','a')">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>Pascal: \( \binom{n}{r} + \binom{n}{r+1} = \binom{n+1}{r+1} \). So \( \binom{6}{2}+\binom{6}{3} = \binom{7}{3} = 35 \). Check: \( 15 + 20 = 35 \). ✓</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.3 — Pascal's Triangle</div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div>
+<div class="q-text">What is the sum of the entries in row 5 of Pascal's triangle (where row 0 has just \( \binom{0}{0} \))?</div>
+<input type="text" id="q6-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q6',32)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>The sum of row \( n \) is \( 2^n \). Row 5 sum = \( 2^5 = 32 \). (Row 5 = 1, 5, 10, 10, 5, 1.)</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.4 — Binomial Theorem</div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div>
+<div class="q-text">In the expansion of \( (x + 2)^5 \), what is the coefficient of \( x^3 \)?</div>
+<input type="text" id="q7-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q7',40)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>General term: \( \binom{5}{k} x^{5-k} 2^k \). For \( x^3 \): \( 5-k=3 \Rightarrow k=2 \). Coefficient: \( \binom{5}{2} \cdot 2^2 = 10 \cdot 4 = 40 \).</div></div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div>
+<div class="q-text">Find the constant term in the expansion of \( (a+b)^4 \) when \( a = b = 1 \).</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q8" value="a"> \( 8 \)</label></li>
+<li><label><input type="radio" name="q8" value="b"> \( 16 \)</label></li>
+<li><label><input type="radio" name="q8" value="c"> \( 4! = 24 \)</label></li>
+<li><label><input type="radio" name="q8" value="d"> \( 2^4 = 16 \)</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q8','b')">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>\( (1+1)^4 = 2^4 = 16 \). Equivalently, sum of row 4 of Pascal's triangle: 1+4+6+4+1 = 16.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 3.5 — Combinations &amp; Probability</div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div>
+<div class="q-text">A 5-card hand is drawn from a 52-card deck. What is the probability that all 5 cards are Hearts? (Express as \( \dfrac{a}{b} \) reduced; enter approximate decimal to 5 places.)</div>
+<input type="text" id="q9-input" placeholder="Enter decimal e.g. 0.00050"><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q9',0.000495)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{13}{5}}{\binom{52}{5}} = \dfrac{1287}{2\,598\,960} \approx 0.000495 \).</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div>
+<div class="q-text">A bag has 5 red, 4 blue, 3 green marbles. Three are drawn at random. Find \( P(\text{exactly 2 red}) \). (Decimal to 4 places)</div>
+<input type="text" id="q10-input" placeholder="Enter decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q10',0.3187)">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>\( P = \dfrac{\binom{5}{2}\binom{7}{1}}{\binom{12}{3}} = \dfrac{10 \cdot 7}{220} = \dfrac{70}{220} \approx 0.3182 \). (Accept 0.3182–0.3190 due to rounding.)</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Mixed</div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div>
+<div class="q-text">In how many ways can a teacher select 3 from 8 boys AND 2 from 6 girls to form a 5-person team?</div>
+<input type="text" id="q11-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q11',840)">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>\( \binom{8}{3} \cdot \binom{6}{2} = 56 \cdot 15 = 840 \).</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div>
+<div class="q-text">Solve for \( n \): \( \binom{n}{2} = 21 \).</div>
+<input type="text" id="q12-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q12',7)">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>\( \dfrac{n(n-1)}{2} = 21 \Rightarrow n(n-1) = 42 \Rightarrow n^2 - n - 42 = 0 \Rightarrow (n-7)(n+6)=0 \Rightarrow n = 7 \).</div></div>
+</div>
+
+<footer>MDM4U — Mathematics of Data Management, Grade 12 | A. Counting and Probability | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;const tol=Math.abs(c)<1?0.001:0.5;if(Math.abs(v-c)<tol){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Answer: '+c;}sl.classList.add('show');updateProgress();}
+</script>
+</body></html>

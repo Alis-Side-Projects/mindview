@@ -1,111 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 4: Equilibrium — Practice Quiz</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Equilibrium — Practice Quiz (AS)</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 <style>
-:root{--p:#7c3aed;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
+:root{--primary:#7c3aed;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.container{max-width:850px;margin:0 auto;padding:20px;}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px;}
+header h1{font-size:22px;}
+header .subtitle{font-size:14px;opacity:0.85;}
+header .badge{display:inline-block;background:rgba(255,255,255,0.2);padding:4px 10px;border-radius:20px;font-size:12px;margin-top:8px;}
+.info-box{background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px;}
+.topic-section{margin-bottom:32px;}
+.topic-header{font-size:18px;font-weight:700;color:var(--primary);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--primary);}
+.question-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;}
+.q-number{font-weight:700;color:var(--primary);margin-bottom:8px;}
+.q-text{margin-bottom:12px;}
+input[type="text"]{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:inherit;}
+.mc-options{list-style:none;margin-top:8px;}.mc-options li{margin-bottom:6px;}
+.mc-options label{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;}
+.mc-options label:hover{background:#f1f5f9;}
+.solution{margin-top:12px;padding:12px;background:#f8fafc;border:1px solid var(--border);border-radius:6px;font-size:14px;}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:13px;margin-top:32px;}
+details summary{cursor:pointer;font-weight:600;color:var(--primary);padding:6px 0;}
+table.ice{border-collapse:collapse;margin:8px 0;}
+table.ice td, table.ice th{border:1px solid #e2e8f0;padding:4px 10px;text-align:center;}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/sch4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav><div class="container">
+<header><h1>Unit 4: Chemical Systems and Equilibrium</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">Not graded</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check Kc, ICE tables, Le Chatelier, Ksp, pH/Ka/Kb, titration.</div>
 
-<header><h1>📝 Unit 4: Equilibrium — Practice Quiz</h1>
-<div class="sub">Assessment AS Learning — SCH4U</div><div class="badge">🔄 Not Graded</div></header>
-<div class="info"><strong>Purpose:</strong> Self-check your understanding. Instant feedback on every question.</div>
-<div class="formula-ref"><h3>📋 Key Formulas/Concepts</h3>\(K_{eq}\) | \(K_a\), \(K_b\) | \(K_{sp}\) | pH = \(-\log[H^+]\) | Le Chatelier's principle</div>
-<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 1 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
-<div class="qc" id="q1"><div class="qn">Q1</div>
-<div class="qt">Conceptual question for Equilibrium.</div>
-<ul class="mc">
-<li><label><input type="radio" name="q1" value="a"> Correct</label></li>
-<li><label><input type="radio" name="q1" value="b"> Wrong A</label></li>
-<li><label><input type="radio" name="q1" value="c"> Wrong B</label></li>
-<li><label><input type="radio" name="q1" value="d"> Wrong C</label></li>
-</ul>
-<button class="btn btn-p" onclick="chkMC('q1','a')">Check</button><button class="btn btn-s" onclick="showSol('q1')">Solution</button>
-<div class="fb" id="q1-fb"></div>
-<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>See unit notes.</div>
+<div class="topic-section"><div class="topic-header">Equilibrium Constant (Kc)</div>
+
+<div class="question-card"><div class="q-number">Q1</div>
+<div class="q-text">Write the K<sub>c</sub> expression for: \( \text{N}_2(g) + 3\text{H}_2(g) \rightleftharpoons 2\text{NH}_3(g) \)</div>
+<details><summary>Show solution</summary><div class="solution">$$K_c = \frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}$$</div></details></div>
+
+<div class="question-card"><div class="q-number">Q2</div>
+<div class="q-text">For H₂(g) + I₂(g) ⇌ 2HI(g), at equilibrium [H₂]=0.10, [I₂]=0.10, [HI]=0.74 M. Calculate Kc.</div>
+<details><summary>Show solution</summary><div class="solution">K<sub>c</sub> = (0.74)²/((0.10)(0.10)) = 0.548/0.010 = <strong>54.8</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q3</div>
+<div class="q-text">ICE: 0.500 mol N₂O₄ in 1.00 L flask; at eq 0.200 mol dissociates. N₂O₄ ⇌ 2NO₂. Find Kc.</div>
+<details><summary>Show solution</summary><div class="solution">[N₂O₄]<sub>eq</sub> = 0.300; [NO₂]<sub>eq</sub> = 0.400. K<sub>c</sub> = (0.400)²/0.300 = <strong>0.533</strong>.</div></details></div>
 </div>
 
+<div class="topic-section"><div class="topic-header">Le Chatelier's Principle</div>
 
-<footer>SPH4U — Physics, Grade 12 | Unit 4: Equilibrium | Ontario Curriculum 2008</footer>
+<div class="question-card"><div class="q-number">Q4</div>
+<div class="q-text">N₂(g) + 3H₂(g) ⇌ 2NH₃(g), ΔH = −92 kJ. Predict shift if T is increased.</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q4"> Forward (more NH₃)</label></li>
+<li><label><input type="radio" name="q4"> Reverse (less NH₃)</label></li>
+<li><label><input type="radio" name="q4"> No change</label></li></ul>
+<details><summary>Show solution</summary><div class="solution">Exo forward; ↑T favours endo direction → shifts <strong>reverse</strong> (less NH₃).</div></details></div>
+
+<div class="question-card"><div class="q-number">Q5</div>
+<div class="q-text">Same reaction: predict effect of decreasing volume.</div>
+<details><summary>Show solution</summary><div class="solution">↓V → ↑P → shifts toward fewer gas moles. Reactants 4 mol gas → products 2 mol → shifts <strong>forward</strong>.</div></details></div>
 </div>
 
-<script>
-let sc=0,ans=0,tot=1;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="topic-section"><div class="topic-header">Solubility (Ksp)</div>
+
+<div class="question-card"><div class="q-number">Q6</div>
+<div class="q-text">K<sub>sp</sub> of AgCl = 1.8×10⁻¹⁰. Find molar solubility in pure water.</div>
+<details><summary>Show solution</summary><div class="solution">[Ag⁺][Cl⁻] = s² = 1.8×10⁻¹⁰ → s = <strong>1.34×10⁻⁵ M</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q7</div>
+<div class="q-text">For PbI₂(s) ⇌ Pb²⁺ + 2 I⁻, write Ksp.</div>
+<details><summary>Show solution</summary><div class="solution">K<sub>sp</sub> = [Pb²⁺][I⁻]². If solubility s, then K<sub>sp</sub> = s·(2s)² = 4s³.</div></details></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">pH, Ka, Kb</div>
+
+<div class="question-card"><div class="q-number">Q8</div>
+<div class="q-text">pH of 0.0010 M HCl?</div>
+<input type="text" placeholder="pH">
+<details><summary>Show solution</summary><div class="solution">[H⁺] = 1.0×10⁻³ → pH = 3.00.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q9</div>
+<div class="q-text">For 0.10 M acetic acid (Ka = 1.8×10⁻⁵), find pH.</div>
+<details><summary>Show solution</summary><div class="solution">x² ≈ K<sub>a</sub>·C = 1.8×10⁻⁶ → x = 1.34×10⁻³ M. pH = −log(1.34×10⁻³) = <strong>2.87</strong>.</div></details></div>
+
+<div class="question-card"><div class="q-number">Q10</div>
+<div class="q-text">If Ka of HF = 6.6×10⁻⁴, find Kb of F⁻.</div>
+<details><summary>Show solution</summary><div class="solution">K<sub>b</sub> = K<sub>w</sub>/K<sub>a</sub> = 1.0×10⁻¹⁴/6.6×10⁻⁴ = <strong>1.5×10⁻¹¹</strong>.</div></details></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Titration</div>
+
+<div class="question-card"><div class="q-number">Q11</div>
+<div class="q-text">25.0 mL of 0.100 M HCl titrated with 0.100 M NaOH. Volume of NaOH at equivalence?</div>
+<details><summary>Show solution</summary><div class="solution">Equal molarity → equal volume → <strong>25.0 mL</strong>. pH at equivalence = 7 (strong–strong).</div></details></div>
+
+<div class="question-card"><div class="q-number">Q12</div>
+<div class="q-text">For weak acid + strong base titration, equivalence pH is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q12"> < 7</label></li>
+<li><label><input type="radio" name="q12"> = 7</label></li>
+<li><label><input type="radio" name="q12"> > 7</label></li></ul>
+<details><summary>Show solution</summary><div class="solution">> 7 — conjugate base hydrolyzes, raising pH (e.g., titrating acetic acid with NaOH gives ~8.7 at equivalence).</div></details></div>
+</div>
+
+<footer>SCH4U — Chemistry, Grade 12 | Ontario Curriculum 2008 | Strand E: Equilibrium | Assessment AS Learning</footer>
+</div></body></html>

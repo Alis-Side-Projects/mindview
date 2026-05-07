@@ -1,182 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 6: Intro to Vectors — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 6: Introduction to Vectors — Unit Test (OF Learning)</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
-:root{--p:#0891b2;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 6: Intro to Vectors — Unit Test</h1>
-<div class="sub">Assessment OF Learning — MCV4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+:root{--primary:#0891b2;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+.container{max-width:850px;margin:0 auto;padding:20px;}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px;}
+header h1{font-size:22px;}.sub{font-size:14px;opacity:.85;margin-top:4px;}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px;}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px;}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0;}
+.chart-item{text-align:center;padding:12px;border-radius:8px;}
+.chart-item .label{font-size:12px;font-weight:600;}.chart-item .value{font-size:24px;font-weight:800;}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;}
+.section-hdr.ku{background:#dbeafe;color:#1e40af;}.section-hdr.t{background:#fef3c7;color:#92400e;}
+.section-hdr.c{background:#d1fae5;color:#065f46;}.section-hdr.a{background:#ede9fe;color:#5b21b6;}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;}
+.qnum{font-weight:700;color:var(--primary);font-size:15px;}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600;}
+.qtxt{margin:8px 0 12px;}
+.mc{list-style:none;margin:8px 0;}.mc li{margin-bottom:6px;}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;}
+input[type="text"],textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:inherit;}
+textarea{min-height:90px;resize:vertical;}
+.rubric{margin-top:32px;}.rubric table{width:100%;border-collapse:collapse;font-size:14px;}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--border);text-align:left;}.rubric th{background:#f1f5f9;}
+details{background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 18px;margin-top:24px;}
+details summary{cursor:pointer;font-weight:700;color:#065f46;font-size:16px;}
+details .ans{margin-top:12px;font-size:14px;line-height:1.7;}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border);}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/mcv4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav><div class="container">
+<header><h1>📝 Unit 6: Introduction to Vectors — Unit Test</h1><div class="sub">R², R³, Operations, Magnitude</div><div class="badge">✅ Graded</div></header>
+<div class="warn"><strong>⏱️</strong> 75 min &nbsp;|&nbsp; <strong>Total:</strong> /60 marks</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>See unit notes for relevant formulas.</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
 </div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: K/U [15]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">1 <span class="qmarks">[2]</span></div><div class="qtxt">Find the magnitude of \(\vec u=(2,-3,6)\).</div><textarea></textarea></div>
+<div class="qcard"><div class="qnum">2 <span class="qmarks">[2]</span></div><div class="qtxt">Compute \(3\vec a-2\vec b\) where \(\vec a=(1,4,-2),\,\vec b=(3,0,5)\).</div><textarea></textarea></div>
+<div class="qcard"><div class="qnum">3 <span class="qmarks">[3]</span></div><div class="qtxt">Find the unit vector in the direction of \((4,-3)\).</div><textarea></textarea></div>
+<div class="qcard"><div class="qnum">4 <span class="qmarks">[3]</span></div><div class="qtxt">A vector \(\vec v\) has magnitude 20 and makes an angle of 150° with the positive x-axis. Find its Cartesian components.</div><textarea></textarea></div>
+<div class="qcard"><div class="qnum">5 <span class="qmarks">[2]</span></div><div class="qtxt">MC: Two vectors \((2,k,1)\) and \((4,-2,2)\) are parallel iff \(k=\)</div>
+<ul class="mc"><li><label><input type="radio" name="q5" value="a"> 1</label></li><li><label><input type="radio" name="q5" value="b"> -1</label></li>
+<li><label><input type="radio" name="q5" value="c"> 0</label></li><li><label><input type="radio" name="q5" value="d"> 2</label></li></ul></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">6 <span class="qmarks">[3]</span></div><div class="qtxt">Find vector \(\vec{AB}\) and \(|\vec{AB}|\) for \(A(1,2,3)\) and \(B(-2,5,7)\).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">K/U question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking [15]</div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Thinking problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">7 <span class="qmarks">[5]</span></div><div class="qtxt">Two forces of magnitudes 12 N and 16 N act on a body. The angle between them is 60°. Find the magnitude of the resultant and the angle the resultant makes with the 12 N force.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Thinking problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">8 <span class="qmarks">[5]</span></div><div class="qtxt">Find scalars \(s,t\) such that \(s(1,2)+t(3,-1)=(11,3)\).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Thinking problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9 <span class="qmarks">[5]</span></div><div class="qtxt">Show that \(\vec u=(2,-1,3)\), \(\vec v=(4,-2,6)\), and \(\vec w=(0,1,1)\) — determine if \(\vec u\) and \(\vec v\) are collinear, and whether \(\vec u\) and \(\vec w\) are coplanar (as position vectors from origin, three points + origin always coplanar with one vector — discuss with sketch).</div><textarea></textarea></div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Communication question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15]</div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Communication question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10 <span class="qmarks">[4]</span></div><div class="qtxt">Define and contrast: position vector, displacement vector, free vector. Use a diagram-description.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Communication question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">11 <span class="qmarks">[4]</span></div><div class="qtxt">Describe the parallelogram law and triangle law for vector addition. Give a real-world physics example for each.</div><textarea></textarea></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">Application problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">12 <span class="qmarks">[4]</span></div><div class="qtxt">Explain how to convert a polar form (magnitude, direction angle) to Cartesian form, and vice versa, in R². Include the formulas.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">Application problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">13 <span class="qmarks">[3]</span></div><div class="qtxt">Justify why \(|\vec u+\vec v|\le |\vec u|+|\vec v|\) (the triangle inequality). When is equality achieved?</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">Application problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr a">Part D: Application [15]</div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 6: Intro to Vectors — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="qcard"><div class="qnum">14 <span class="qmarks">[5]</span></div><div class="qtxt">An airplane flies on a bearing of N40°E with airspeed 500 km/h. The wind blows from the west (from 270°) at 80 km/h. Find the ground velocity (speed and bearing).</div><textarea></textarea></div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">15 <span class="qmarks">[5]</span></div><div class="qtxt">A 100 kg crate is suspended by two cables: one at 30° above horizontal (left) and one at 45° above horizontal (right). Find the tension in each cable. (Use \(g=9.8\) m/s²; resolve forces.)</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">16 <span class="qmarks">[5]</span></div><div class="qtxt">A river flows east at 3 m/s. A boat heads N30°E at 8 m/s relative to the water. Find the boat's actual ground velocity (magnitude and direction).</div><textarea></textarea></div>
+
+<div class="rubric"><h3>Evaluation Rubric</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough</td><td>80–100</td></tr><tr><td>3</td><td>Considerable</td><td>70–79</td></tr>
+<tr><td>2</td><td>Some</td><td>60–69</td></tr><tr><td>1</td><td>Limited</td><td>50–59</td></tr><tr><td>R</td><td>Insufficient</td><td>&lt;50</td></tr></table></div>
+
+<details><summary>📕 Answer Key</summary><div class="ans">
+<p><strong>1.</strong> \(\sqrt{4+9+36}=7\).</p>
+<p><strong>2.</strong> \((3,12,-6)-(6,0,10)=(-3,12,-16)\).</p>
+<p><strong>3.</strong> \(|\vec v|=5\); \(\hat v=(0.8,-0.6)\).</p>
+<p><strong>4.</strong> \(v_x=20\cos 150°=-10\sqrt 3\); \(v_y=20\sin 150°=10\); \(\vec v=(-10\sqrt 3,10)\).</p>
+<p><strong>5.</strong> Parallel iff scalar multiple. Ratios: \(4/2=2,\,2/1=2\), so middle: \(-2/k=2\) → \(k=-1\) → (b).</p>
+<p><strong>6.</strong> \(\vec{AB}=(-3,3,4)\); \(|\vec{AB}|=\sqrt{9+9+16}=\sqrt{34}\approx 5.83\).</p>
+<p><strong>7.</strong> \(|\vec R|^2=12^2+16^2+2(12)(16)\cos 60°=144+256+192=592\); \(|\vec R|\approx 24.33\) N. Angle with 12 N: \(\sin\alpha/16=\sin 60°/24.33\) → \(\alpha\approx 34.7°\).</p>
+<p><strong>8.</strong> System: \(s+3t=11,\ 2s-t=3\). From first: \(s=11-3t\); sub: \(22-6t-t=3\) → \(t=19/7\)? Re-check: actually \(2(11-3t)-t=3\) → \(22-6t-t=3\) → \(7t=19\) → \(t=19/7\approx 2.71\); \(s=11-3(19/7)=(77-57)/7=20/7\approx 2.86\).</p>
+<p><strong>9.</strong> \(\vec v=2\vec u\) → collinear. Three position vectors plus origin lie in 3-D; \(\vec u\) and \(\vec w\) span a plane through origin (always coplanar as 2 vectors).</p>
+<p><strong>10.</strong> Position: tail at origin. Displacement: tail at one point, head at another (specific). Free: equivalence class — same magnitude/direction regardless of location.</p>
+<p><strong>11.</strong> Parallelogram: place tails together; resultant = diagonal. Triangle: head-to-tail; resultant from first tail to last head. Examples: forces (parallelogram), successive displacements (triangle).</p>
+<p><strong>12.</strong> Polar → Cartesian: \((|\vec v|\cos\theta,|\vec v|\sin\theta)\). Cartesian → polar: \(|\vec v|=\sqrt{x^2+y^2}\), \(\theta=\arctan(y/x)\) with quadrant adjust.</p>
+<p><strong>13.</strong> Geometrically: shortest path between two points is the direct one (the third side of a triangle is at most the sum of the other two). Equality when \(\vec u,\vec v\) are parallel and same direction.</p>
+<p><strong>14.</strong> Plane velocity: \(500(\sin 40°,\cos 40°)\approx(321.4,383.0)\). Wind from west = blowing east: \((80,0)\). Ground = sum: \((401.4,383.0)\); \(|v|\approx \sqrt{161122+146689}\approx 555\) km/h. Bearing \(\arctan(401.4/383.0)\approx 46.4°\) → N46.4°E.</p>
+<p><strong>15.</strong> Weight = 980 N down. Equilibrium: \(T_1\cos 30°=T_2\cos 45°\) (horizontal); \(T_1\sin 30°+T_2\sin 45°=980\). From first: \(T_1=T_2\cos 45°/\cos 30°=T_2\sqrt{2/3}\). Sub: \(T_2\sqrt{2/3}(0.5)+T_2(0.707)=980\) → \(T_2(0.408+0.707)=980\) → \(T_2\approx 879\) N; \(T_1\approx 718\) N.</p>
+<p><strong>16.</strong> Boat: \(8(\sin 30°,\cos 30°)=(4,6.93)\) (E,N). + River \((3,0)\): \((7,6.93)\). Speed: \(\sqrt{49+48}\approx 9.85\) m/s. Bearing: \(\arctan(7/6.93)\approx 45.3°\) → N45.3°E.</p>
+</div></details>
+<footer>MCV4U — Calculus and Vectors, Grade 12 | Strand C | Assessment OF Learning</footer>
+</div></body></html>

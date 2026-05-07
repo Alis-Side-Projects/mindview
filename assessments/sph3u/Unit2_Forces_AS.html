@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2: Forces — Practice Quiz (SPH3U)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root{--p:#ea580c;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
+.ctr{max-width:860px;margin:0 auto;padding:20px}
+header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
+header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
+header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
+.info{background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
+.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
+.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
+.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px}
+.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
+.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
+.qt{margin:8px 0 12px}
+.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
+.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p)}
+input[type=text]{padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px}
+input:focus{border-color:var(--p);outline:none}
+.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
+.btn-p{background:var(--p);color:#fff}.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
+.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
+.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
+.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
+.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
+.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
+footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
+</style>
+</head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">&#127968; Home</a><a href="../../courses/sph3u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">&#8592; Back to SPH3U</a></nav>
+<div class="ctr">
+
+<header>
+<h1>⚙️ Unit 2: Forces — Practice Quiz</h1>
+<div class="sub">Assessment AS Learning — Self-Check (SPH3U)</div>
+<div class="badge">🔄 Not Graded — Unlimited Retakes</div>
+</header>
+
+<div class="info"><strong>Purpose:</strong> Test understanding of Newton's laws, FBDs, friction, inclined planes, and connected bodies. Instant feedback with worked solutions.</div>
+
+<div class="formula-ref"><strong>Formulae:</strong> \( \Sigma F = ma \) &nbsp;|&nbsp; \( F_g = mg \) &nbsp;|&nbsp; \( f_k = \mu_k N \) &nbsp;|&nbsp; \( f_s \le \mu_s N \) &nbsp;|&nbsp; on incline: \( F_\parallel = mg\sin\theta \), \( N = mg\cos\theta \) &nbsp;|&nbsp; \( g = 9.8 \) m/s²</div>
+
+<div class="score-bar">Score: <span class="sc" id="sc">0</span> / 10 <div class="pbar"><div class="pfill" id="pf"></div></div></div>
+
+<div class="qc" id="q1">
+<div class="qn">Q1 — Net force</div>
+<div class="qt">A \(5.0\)-kg object experiences forces of \(20\) N east and \(8\) N west. What is the magnitude and direction of acceleration?</div>
+<div>Answer: <input type="text" id="q1-in" style="width:140px"> m/s² east</div>
+<button class="btn btn-p" onclick="chkNum('q1',2.4,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q1')">Solution</button>
+<div class="fb" id="q1-fb"></div>
+<div class="sol" id="q1-sl"><div class="sol-l">Solution:</div>
+\( F_\text{net} = 20-8 = 12 \) N E; \( a = F/m = 12/5.0 = 2.4 \) m/s² east.
+</div></div>
+
+<div class="qc" id="q2">
+<div class="qn">Q2 — Weight on Mars</div>
+<div class="qt">An astronaut has mass \(70\) kg. On Mars, where \(g_\text{Mars} = 3.7\) m/s², what is the astronaut's weight?</div>
+<div>Answer: <input type="text" id="q2-in" style="width:140px"> N</div>
+<button class="btn btn-p" onclick="chkNum('q2',259,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q2')">Solution</button>
+<div class="fb" id="q2-fb"></div>
+<div class="sol" id="q2-sl"><div class="sol-l">Solution:</div>
+\( W = mg = 70 \times 3.7 = 259 \) N
+</div></div>
+
+<div class="qc" id="q3">
+<div class="qn">Q3 — Friction on level ground</div>
+<div class="qt">A \(15\)-kg crate is pushed horizontally with \(60\) N. Coefficient of kinetic friction \( \mu_k = 0.25 \). What is the acceleration?</div>
+<div>Answer: <input type="text" id="q3-in" style="width:140px"> m/s²</div>
+<button class="btn btn-p" onclick="chkNum('q3',1.55,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q3')">Solution</button>
+<div class="fb" id="q3-fb"></div>
+<div class="sol" id="q3-sl"><div class="sol-l">Solution:</div>
+\( N = mg = 15(9.8) = 147 \) N. \( f_k = \mu_k N = 0.25(147) = 36.75 \) N.<br>
+\( F_\text{net} = 60-36.75 = 23.25 \) N. \( a = 23.25/15 = 1.55 \) m/s²
+</div></div>
+
+<div class="qc" id="q4">
+<div class="qn">Q4 — Frictionless incline</div>
+<div class="qt">A block on a frictionless incline of \(25°\). What is the magnitude of acceleration down the incline?</div>
+<div>Answer: <input type="text" id="q4-in" style="width:140px"> m/s²</div>
+<button class="btn btn-p" onclick="chkNum('q4',4.14,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q4')">Solution</button>
+<div class="fb" id="q4-fb"></div>
+<div class="sol" id="q4-sl"><div class="sol-l">Solution:</div>
+\( a = g\sin\theta = 9.8 \sin(25°) = 9.8(0.4226) = 4.14 \) m/s²
+</div></div>
+
+<div class="qc" id="q5">
+<div class="qn">Q5 — Newton's 3rd law (concept)</div>
+<div class="qt">A horse pulls a cart forward. According to Newton's third law, the cart pulls the horse backward with equal force. Why does the horse-cart system still accelerate forward?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q5" value="a"> The horse is more massive than the cart.</label></li>
+<li><label><input type="radio" name="q5" value="b"> The action-reaction pair acts on different objects, so they don't cancel on either body. The horse also has the ground push it forward (friction).</label></li>
+<li><label><input type="radio" name="q5" value="c"> Newton's third law doesn't apply to living things.</label></li>
+<li><label><input type="radio" name="q5" value="d"> The forces are not actually equal.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q5','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q5')">Solution</button>
+<div class="fb" id="q5-fb"></div>
+<div class="sol" id="q5-sl"><div class="sol-l">Solution:</div>
+The horse-on-cart and cart-on-horse forces act on different bodies — they do not cancel on the system. Acceleration is determined by the net horizontal force on each body, which includes the friction the ground exerts on the horse.
+</div></div>
+
+<div class="qc" id="q6">
+<div class="qn">Q6 — Tension (elevator)</div>
+<div class="qt">A \(60\)-kg person stands on a scale in an elevator accelerating upward at \(2.0\) m/s². What is the scale reading (apparent weight)?</div>
+<div>Answer: <input type="text" id="q6-in" style="width:140px"> N</div>
+<button class="btn btn-p" onclick="chkNum('q6',708,0.02)">Check</button>
+<button class="btn btn-s" onclick="showSol('q6')">Solution</button>
+<div class="fb" id="q6-fb"></div>
+<div class="sol" id="q6-sl"><div class="sol-l">Solution:</div>
+\( N - mg = ma \) (upward positive). \( N = m(g+a) = 60(9.8+2.0) = 60(11.8) = 708 \) N
+</div></div>
+
+<div class="qc" id="q7">
+<div class="qn">Q7 — Friction on incline</div>
+<div class="qt">A \(10\)-kg block sits on a \(20°\) incline. The static friction coefficient is \(0.40\). Will it slide?</div>
+<ul class="mc">
+<li><label><input type="radio" name="q7" value="a"> Yes — \( mg\sin\theta > \mu_s mg\cos\theta \).</label></li>
+<li><label><input type="radio" name="q7" value="b"> No — \( mg\sin\theta < \mu_s mg\cos\theta \) (33.5 N &lt; 36.8 N).</label></li>
+<li><label><input type="radio" name="q7" value="c"> Need more information about the surface.</label></li>
+<li><label><input type="radio" name="q7" value="d"> Yes — gravity always wins on an incline.</label></li>
+</ul>
+<button class="btn btn-p" onclick="chkMC('q7','b')">Check</button>
+<button class="btn btn-s" onclick="showSol('q7')">Solution</button>
+<div class="fb" id="q7-fb"></div>
+<div class="sol" id="q7-sl"><div class="sol-l">Solution:</div>
+\( F_\parallel = mg\sin(20°) = 10(9.8)(0.342) = 33.5 \) N<br>
+\( f_s^\text{max} = \mu_s mg\cos(20°) = 0.40(10)(9.8)(0.940) = 36.8 \) N<br>
+Since \( 33.5 < 36.8 \), static friction is sufficient — the block <strong>does not slide</strong>.
+</div></div>
+
+<div class="qc" id="q8">
+<div class="qn">Q8 — Atwood machine</div>
+<div class="qt">Two masses, \(3.0\) kg and \(5.0\) kg, hang from a frictionless pulley. What is the acceleration of the system?</div>
+<div>Answer: <input type="text" id="q8-in" style="width:140px"> m/s²</div>
+<button class="btn btn-p" onclick="chkNum('q8',2.45,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q8')">Solution</button>
+<div class="fb" id="q8-fb"></div>
+<div class="sol" id="q8-sl"><div class="sol-l">Solution:</div>
+\( a = \frac{(m_2-m_1)g}{m_1+m_2} = \frac{(5-3)(9.8)}{8} = \frac{19.6}{8} = 2.45 \) m/s²
+</div></div>
+
+<div class="qc" id="q9">
+<div class="qn">Q9 — Force on incline + friction</div>
+<div class="qt">A \(6.0\)-kg sled slides down a \(30°\) snowy incline with \( \mu_k = 0.10 \). What is the acceleration?</div>
+<div>Answer: <input type="text" id="q9-in" style="width:140px"> m/s²</div>
+<button class="btn btn-p" onclick="chkNum('q9',4.05,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q9')">Solution</button>
+<div class="fb" id="q9-fb"></div>
+<div class="sol" id="q9-sl"><div class="sol-l">Solution:</div>
+\( a = g(\sin\theta - \mu_k\cos\theta) = 9.8(\sin30° - 0.10\cos30°) \)<br>
+\( = 9.8(0.500 - 0.0866) = 9.8(0.4134) = 4.05 \) m/s²
+</div></div>
+
+<div class="qc" id="q10">
+<div class="qn">Q10 — Connected blocks (frictionless)</div>
+<div class="qt">A 2.0-kg block and a 3.0-kg block are pushed together on a frictionless surface by a horizontal force of \(20\) N applied to the 2.0-kg block. What is the contact force between them?</div>
+<div>Answer: <input type="text" id="q10-in" style="width:140px"> N</div>
+<button class="btn btn-p" onclick="chkNum('q10',12,0.05)">Check</button>
+<button class="btn btn-s" onclick="showSol('q10')">Solution</button>
+<div class="fb" id="q10-fb"></div>
+<div class="sol" id="q10-sl"><div class="sol-l">Solution:</div>
+System: \( a = 20/(2+3) = 4.0 \) m/s²<br>
+Force on 3.0-kg block: \( F = m_2 a = 3.0(4.0) = 12 \) N
+</div></div>
+
+<footer>SPH3U — Physics, Grade 11 | Unit 2: Forces | Ontario Curriculum 2008</footer>
+</div>
+
+<script>
+let sc=0,ans=0,tot=10;
+function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
+function chkMC(q,c){const s=document.querySelector(`input[name="${q}"]:checked`);if(!s)return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ See solution.';}
+if(sl)sl.classList.add('show');up();}
+function chkNum(q,c,tol){const v=parseFloat(document.getElementById(q+'-in').value.trim());if(isNaN(v))return;
+const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
+if(cd.classList.contains('ok')||cd.classList.contains('no'))return;ans++;
+const tolerance=tol||0.1;
+if(Math.abs(v-c)<Math.abs(c*tolerance)+0.05){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
+else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected ≈ '+c.toFixed(2)+'. See solution.';}
+if(sl)sl.classList.add('show');up();}
+function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
+</script>
+</body></html>

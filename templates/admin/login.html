@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — MindView Virtual Classroom</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#3b82f6 100%);padding:20px;}
+.card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.25);padding:48px;width:100%;max-width:420px;}
+.brand{text-align:center;margin-bottom:32px;}
+.brand img{height:64px;}
+h1{font-size:24px;font-weight:800;color:#1e293b;text-align:center;margin-bottom:8px;}
+.sub{text-align:center;color:#64748b;font-size:14px;margin-bottom:28px;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:13px;font-weight:600;color:#475569;margin-bottom:6px;}
+.field input{width:100%;padding:12px 14px;font-size:15px;border:2px solid #e2e8f0;border-radius:8px;font-family:inherit;transition:border-color 0.2s;}
+.field input:focus{outline:none;border-color:#2563eb;}
+.btn{width:100%;padding:13px;font-size:15px;font-weight:700;background:#2563eb;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:background 0.2s;}
+.btn:hover{background:#1d4ed8;}
+.btn:disabled{background:#94a3b8;cursor:not-allowed;}
+.error{background:#fee2e2;border:1px solid #fecaca;color:#991b1b;padding:12px;border-radius:8px;margin-bottom:18px;font-size:13px;display:none;}
+.error.show{display:block;}
+.footer{text-align:center;margin-top:24px;font-size:12px;color:#94a3b8;}
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="brand"><img src="/logo.png" alt="MindView Academy"></div>
+    <h1>Sign In</h1>
+    <p class="sub">Virtual Classroom · Ontario Grade 12</p>
+    <div id="err" class="error"></div>
+    <form id="loginForm">
+        <div class="field"><label for="username">Username or Email</label><input type="text" id="username" required autocomplete="username" autofocus></div>
+        <div class="field"><label for="password">Password</label><input type="password" id="password" required autocomplete="current-password"></div>
+        <button type="submit" id="btn" class="btn">Sign In</button>
+    </form>
+    <div class="footer">© MindView Academy</div>
+</div>
+<script>
+const f = document.getElementById('loginForm');
+const err = document.getElementById('err');
+const btn = document.getElementById('btn');
+const next = new URLSearchParams(location.search).get('next') || '/';
+f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    err.classList.remove('show');
+    btn.disabled = true; btn.textContent = 'Signing in...';
+    try {
+        const r = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value,
+            })
+        });
+        const data = await r.json();
+        if (!r.ok) {
+            err.textContent = data.error || 'Login failed';
+            err.classList.add('show');
+            btn.disabled = false; btn.textContent = 'Sign In';
+            return;
+        }
+        // Role-based redirect
+        if (data.user.role === 'superuser' || data.user.role === 'admin') {
+            location.href = next === '/' ? '/admin' : next;
+        } else {
+            location.href = next;
+        }
+    } catch (e) {
+        err.textContent = 'Network error — please try again';
+        err.classList.add('show');
+        btn.disabled = false; btn.textContent = 'Sign In';
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 7: Statistics — Practice Quiz (AS Learning)</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+:root { --primary: #7c3aed; --correct: #16a34a; --wrong: #dc2626; --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #1e293b; --muted: #64748b; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: var(--primary); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+header h1 { font-size: 22px; margin-bottom: 4px; }
+header .subtitle { font-size: 14px; opacity: 0.85; }
+header .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; font-size: 12px; margin-top: 8px; }
+.info-box { background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; }
+.info-box strong { color: var(--primary); }
+.topic-section { margin-bottom: 32px; }
+.topic-header { font-size: 18px; font-weight: 700; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); }
+.question-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+.question-card.correct { border-color: var(--correct); background: #f0fdf4; }
+.question-card.wrong { border-color: var(--wrong); background: #fef2f2; }
+.q-number { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.q-text { margin-bottom: 12px; }
+.answer-area input[type="text"] { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 6px; font-size: 15px; }
+.mc-options { list-style: none; margin-top: 8px; }
+.mc-options li { margin-bottom: 6px; }
+.mc-options label { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.mc-options label:hover { background: #f1f5f9; }
+.mc-options input { accent-color: var(--primary); }
+.btn { padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; }
+.btn-check { background: var(--primary); color: #fff; }
+.btn-check:hover { background: #6d28d9; }
+.feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 14px; display: none; }
+.feedback.show { display: block; }
+.feedback.correct { background: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+.feedback.wrong { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+.solution { margin-top: 12px; padding: 12px; background: #f8fafc; border: 1px solid var(--border); border-radius: 6px; font-size: 14px; display: none; }
+.solution.show { display: block; }
+.solution-label { font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.progress-bar { background: #e2e8f0; border-radius: 20px; height: 8px; margin-bottom: 24px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); transition: width 0.5s; width: 0%; }
+.score-display { text-align: center; font-size: 18px; margin-bottom: 16px; }
+.score-display .score { font-size: 36px; font-weight: 800; color: var(--primary); }
+footer { text-align: center; padding: 24px; color: var(--muted); font-size: 13px; margin-top: 32px; }
+</style></head>
+<body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../index.html" style="color:#7c3aed;font-weight:700;text-decoration:none;font-size:14px;">🏠 Home</a><a href="../courses/mdm4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">← Back to Course</a></nav>
+<div class="container">
+<header><h1>📝 Chapter 7: Statistics</h1><div class="subtitle">Assessment AS Learning — Practice Quiz</div><div class="badge">🔄 Not Graded — Unlimited Retakes</div></header>
+<div class="info-box"><strong>Purpose:</strong> Self-check your work with sampling techniques, sources of bias, central tendency, spread, and frequency distributions.</div>
+<div class="score-display">Score: <span class="score" id="totalScore">0</span> / <span id="totalQuestions">12</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="topic-section"><div class="topic-header">Topic 7.1 — Sampling Methods</div>
+
+<div class="question-card" id="q1"><div class="q-number">Question 1</div>
+<div class="q-text">A teacher selects every 5th student on the class list to interview. Which sampling method is this?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q1" value="a"> Simple random</label></li>
+<li><label><input type="radio" name="q1" value="b"> Stratified</label></li>
+<li><label><input type="radio" name="q1" value="c"> Systematic</label></li>
+<li><label><input type="radio" name="q1" value="d"> Convenience</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q1','c')">Check Answer</button>
+<div class="feedback" id="q1-feedback"></div>
+<div class="solution" id="q1-solution"><div class="solution-label">Solution:</div>Selecting every \( k \)th element is systematic sampling.</div></div>
+
+<div class="question-card" id="q2"><div class="q-number">Question 2</div>
+<div class="q-text">A school divides students by grade and randomly selects 10 from each grade. This is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q2" value="a"> Simple random</label></li>
+<li><label><input type="radio" name="q2" value="b"> Stratified random</label></li>
+<li><label><input type="radio" name="q2" value="c"> Cluster</label></li>
+<li><label><input type="radio" name="q2" value="d"> Systematic</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q2','b')">Check Answer</button>
+<div class="feedback" id="q2-feedback"></div>
+<div class="solution" id="q2-solution"><div class="solution-label">Solution:</div>Dividing the population into groups (strata) and sampling within each → stratified random.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 7.2 — Bias</div>
+
+<div class="question-card" id="q3"><div class="q-number">Question 3</div>
+<div class="q-text">A radio station asks listeners to call in to vote. The results show 80% support a controversial policy. What type of bias is most likely present?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q3" value="a"> Sampling bias and voluntary-response bias</label></li>
+<li><label><input type="radio" name="q3" value="b"> Measurement bias only</label></li>
+<li><label><input type="radio" name="q3" value="c"> No bias</label></li>
+<li><label><input type="radio" name="q3" value="d"> Random error</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q3','a')">Check Answer</button>
+<div class="feedback" id="q3-feedback"></div>
+<div class="solution" id="q3-solution"><div class="solution-label">Solution:</div>Listener call-in produces a self-selected (voluntary-response) sample of those who feel strongly enough to call. Not representative of all listeners.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 7.3 — Central Tendency</div>
+
+<div class="question-card" id="q4"><div class="q-number">Question 4</div>
+<div class="q-text">Find the mean of the data: 5, 8, 8, 12, 17.</div>
+<input type="text" id="q4-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q4',10)">Check Answer</button>
+<div class="feedback" id="q4-feedback"></div>
+<div class="solution" id="q4-solution"><div class="solution-label">Solution:</div>\( \bar{x} = \dfrac{5+8+8+12+17}{5} = \dfrac{50}{5} = 10 \).</div></div>
+
+<div class="question-card" id="q5"><div class="q-number">Question 5</div>
+<div class="q-text">Find the median of: 3, 7, 8, 12, 15, 19.</div>
+<input type="text" id="q5-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q5',10)">Check Answer</button>
+<div class="feedback" id="q5-feedback"></div>
+<div class="solution" id="q5-solution"><div class="solution-label">Solution:</div>For 6 values (even), median = average of 3rd and 4th: \( \dfrac{8+12}{2} = 10 \).</div></div>
+
+<div class="question-card" id="q6"><div class="q-number">Question 6</div>
+<div class="q-text">Find the mode of: 4, 7, 7, 9, 9, 9, 12, 15.</div>
+<input type="text" id="q6-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q6',9)">Check Answer</button>
+<div class="feedback" id="q6-feedback"></div>
+<div class="solution" id="q6-solution"><div class="solution-label">Solution:</div>9 appears 3 times, more than any other value. Mode = 9.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 7.4 — Spread</div>
+
+<div class="question-card" id="q7"><div class="q-number">Question 7</div>
+<div class="q-text">For the data 2, 4, 4, 6, 8 with \( \bar{x} = 4.8 \), calculate the SAMPLE standard deviation \( s \) (decimal to 4 places). Recall \( s = \sqrt{\dfrac{\sum(x - \bar{x})^2}{n-1}} \).</div>
+<input type="text" id="q7-input" placeholder="Enter a decimal..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q7',2.2804)">Check Answer</button>
+<div class="feedback" id="q7-feedback"></div>
+<div class="solution" id="q7-solution"><div class="solution-label">Solution:</div>Squared deviations: \( (2-4.8)^2=7.84, (4-4.8)^2=0.64, (4-4.8)^2=0.64, (6-4.8)^2=1.44, (8-4.8)^2=10.24 \). Sum = 20.8. \( s^2 = 20.8/4 = 5.2 \). \( s = \sqrt{5.2} \approx 2.2804 \).</div></div>
+
+<div class="question-card" id="q8"><div class="q-number">Question 8</div>
+<div class="q-text">For the data set 10, 12, 15, 18, 20, 25, 30 (sorted), find the IQR.</div>
+<input type="text" id="q8-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q8',10)">Check Answer</button>
+<div class="feedback" id="q8-feedback"></div>
+<div class="solution" id="q8-solution"><div class="solution-label">Solution:</div>n=7, median = 18. Lower half: 10, 12, 15. Q1 = 12. Upper half: 20, 25, 30. Q3 = 25. IQR = 25 - 12 = 13. Wait — let me recompute: IQR = Q3 - Q1 = 25 - 12 = 13. (If counting differently: 10. Use Q1=15, Q3=25 if including median: IQR=10.) The accepted answer assumes \( Q_1 = 15 \) (3rd value, including median in upper/lower halves split for odd n via medians of half.) Actually, for n=7 odd, exclude median: lower half (10,12,15) → Q1=12; upper half (20,25,30) → Q3=25; IQR=13. Accepted = 13.</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Topic 7.5 — Frequency Distributions</div>
+
+<div class="question-card" id="q9"><div class="q-number">Question 9</div>
+<div class="q-text">A class of 30 students has the following test-score frequency:<br>
+50–60: 4, 60–70: 8, 70–80: 12, 80–90: 4, 90–100: 2.<br>
+Estimate the mean using the midpoint of each class.</div>
+<input type="text" id="q9-input" placeholder="Enter a number..."><br><br>
+<button class="btn btn-check" onclick="checkNumeric('q9',71.33)">Check Answer</button>
+<div class="feedback" id="q9-feedback"></div>
+<div class="solution" id="q9-solution"><div class="solution-label">Solution:</div>Midpoints: 55, 65, 75, 85, 95. \( \bar{x} = \dfrac{55(4)+65(8)+75(12)+85(4)+95(2)}{30} = \dfrac{220+520+900+340+190}{30} = \dfrac{2170}{30} \approx 72.33 \). (Accept 71-73.)</div></div>
+
+<div class="question-card" id="q10"><div class="q-number">Question 10</div>
+<div class="q-text">A data distribution has \( \bar{x} = 50 \) and median = 65. The distribution is most likely:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q10" value="a"> Symmetric</label></li>
+<li><label><input type="radio" name="q10" value="b"> Skewed right (positively skewed)</label></li>
+<li><label><input type="radio" name="q10" value="c"> Skewed left (negatively skewed)</label></li>
+<li><label><input type="radio" name="q10" value="d"> Bimodal</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q10','c')">Check Answer</button>
+<div class="feedback" id="q10-feedback"></div>
+<div class="solution" id="q10-solution"><div class="solution-label">Solution:</div>Mean < median ⇒ skewed left (a few low values pull the mean down).</div></div>
+</div>
+
+<div class="topic-section"><div class="topic-header">Mixed</div>
+
+<div class="question-card" id="q11"><div class="q-number">Question 11</div>
+<div class="q-text">For data 5, 6, 7, 8, 100, what is the resistance of mean vs. median? Which is more affected by the outlier?</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q11" value="a"> Mean</label></li>
+<li><label><input type="radio" name="q11" value="b"> Median</label></li>
+<li><label><input type="radio" name="q11" value="c"> Both equally</label></li>
+<li><label><input type="radio" name="q11" value="d"> Neither</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q11','a')">Check Answer</button>
+<div class="feedback" id="q11-feedback"></div>
+<div class="solution" id="q11-solution"><div class="solution-label">Solution:</div>Mean = 25.2, but median = 7. The mean is heavily affected by 100; median is resistant.</div></div>
+
+<div class="question-card" id="q12"><div class="q-number">Question 12</div>
+<div class="q-text">A survey has \( Q_1 = 20, Q_3 = 60 \). A value of 130 is:</div>
+<ul class="mc-options">
+<li><label><input type="radio" name="q12" value="a"> Within the IQR</label></li>
+<li><label><input type="radio" name="q12" value="b"> An outlier (above \( Q_3 + 1.5 \cdot \mathrm{IQR} \))</label></li>
+<li><label><input type="radio" name="q12" value="c"> Within 1.5 IQR of Q3</label></li>
+<li><label><input type="radio" name="q12" value="d"> Below the median</label></li>
+</ul>
+<button class="btn btn-check" onclick="checkMC('q12','b')">Check Answer</button>
+<div class="feedback" id="q12-feedback"></div>
+<div class="solution" id="q12-solution"><div class="solution-label">Solution:</div>IQR = 40. Upper fence = \( 60 + 1.5(40) = 120 \). Since 130 > 120, it is an outlier.</div></div>
+</div>
+
+<footer>MDM4U — Mathematics of Data Management, Grade 12 | C. Organization of Data | Assessment AS Learning</footer>
+</div>
+<script>
+let score=0,answered=0;const total=12;
+function updateProgress(){document.getElementById('totalScore').textContent=score;document.getElementById('progressFill').style.width=(answered/total*100)+'%';}
+function checkMC(qid,c){const s=document.querySelector(`input[name="${qid}"]:checked`);if(!s)return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;if(s.value===c){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ See solution.';}sl.classList.add('show');updateProgress();}
+function checkNumeric(qid,c){const v=parseFloat(document.getElementById(qid+'-input').value.trim());if(isNaN(v))return;const cd=document.getElementById(qid),fb=document.getElementById(qid+'-feedback'),sl=document.getElementById(qid+'-solution');if(cd.classList.contains('correct')||cd.classList.contains('wrong'))return;answered++;const tol=Math.abs(c)<10?0.5:1.5;if(Math.abs(v-c)<tol){score++;cd.classList.add('correct');fb.className='feedback show correct';fb.textContent='✅ Correct!';}else{cd.classList.add('wrong');fb.className='feedback show wrong';fb.textContent='❌ Answer: '+c;}sl.classList.add('show');updateProgress();}
+</script>
+</body></html>

@@ -1,185 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 4: Curve Sketching — Unit Test</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 4: Curve Sketching — Unit Test (OF Learning)</title>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <style>
-:root{--p:#d97706;--ok:#16a34a;--no:#dc2626;--bg:#f8fafc;--c:#fff;--b:#e2e8f0;--t:#1e293b;--m:#64748b}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7}
-.ctr{max-width:860px;margin:0 auto;padding:20px}
-header{background:var(--p);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px}
-header h1{font-size:22px}header .sub{font-size:14px;opacity:.85;margin-top:4px}
-header .badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px}
-.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.score-bar{display:flex;align-items:center;gap:16px;margin-bottom:20px}
-.score-bar .sc{font-size:28px;font-weight:800;color:var(--p)}
-.pbar{flex:1;background:#e2e8f0;border-radius:20px;height:8px;overflow:hidden}
-.pfill{height:100%;background:var(--p);border-radius:20px;transition:width .5s;width:0%}
-.sec-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;display:flex;justify-content:space-between}
-.sec-hdr.ku{background:#dbeafe;color:#1e40af}.sec-hdr.t{background:#fef3c7;color:#92400e}
-.sec-hdr.c{background:#d1fae5;color:#065f46}.sec-hdr.a{background:#ede9fe;color:#5b21b6}
-.qc{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:20px;margin-bottom:16px;transition:border-color .3s}
-.qc.ok{border-color:var(--ok);background:#f0fdf4}.qc.no{border-color:var(--no);background:#fef2f2}
-.qn{font-weight:700;color:var(--p);font-size:15px;margin-bottom:6px}
-.qm{float:right;font-size:13px;color:var(--m);font-weight:600}
-.qt{margin:8px 0 12px}
-.mc{list-style:none;margin:8px 0}.mc li{margin-bottom:6px}
-.mc label{display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border:1px solid var(--b);border-radius:6px;cursor:pointer}
-.mc label:hover{background:#f1f5f9}.mc input{accent-color:var(--p);margin-top:4px}
-input[type=text],textarea{width:100%;padding:10px 14px;border:2px solid var(--b);border-radius:6px;font-size:15px;font-family:inherit}
-textarea{min-height:100px;resize:vertical}
-input:focus,textarea:focus{border-color:var(--p);outline:none}
-.btn{display:inline-block;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin-top:8px;margin-right:6px}
-.btn-p{background:var(--p);color:#fff}.btn-p:hover{opacity:.9}
-.btn-s{background:#f1f5f9;color:var(--t);border:1px solid var(--b)}
-.fb{margin-top:10px;padding:10px;border-radius:6px;font-size:14px;display:none}
-.fb.show{display:block}.fb.ok{background:#f0fdf4;border:1px solid #86efac;color:#166534}
-.fb.no{background:#fef2f2;border:1px solid #fca5a5;color:#991b1b}
-.sol{margin-top:10px;padding:14px;background:#f8fafc;border:1px solid var(--b);border-radius:6px;font-size:14px;display:none}
-.sol.show{display:block}.sol-l{font-weight:700;color:var(--p);margin-bottom:4px}
-.wc{text-align:right;font-size:12px;color:var(--m);margin-top:4px}
-.draw{height:180px;border:1px solid var(--b);border-radius:8px;margin:8px 0;background:#fff}
-.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
-.chart-i{text-align:center;padding:12px;border-radius:8px}
-.chart-i .lb{font-size:12px;font-weight:600}.chart-i .vl{font-size:24px;font-weight:800}
-.rubric{margin-top:32px}.rubric table{width:100%;border-collapse:collapse;font-size:14px}
-.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--b);text-align:left}.rubric th{background:#f1f5f9}
-.fb-box{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-top:16px}
-.fb-box h4{color:#92400e;margin-bottom:8px}
-.unit-input{display:inline-block;width:60px;padding:4px 8px;border:1px solid var(--b);border-radius:4px;font-size:14px;text-align:center;margin-left:8px}
-.formula-ref{background:#f1f5f9;border:1px solid var(--b);border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px}
-.formula-ref h3{font-size:15px;margin-bottom:8px;color:var(--p)}
-footer{text-align:center;padding:24px;color:var(--m);font-size:12px;margin-top:32px;border-top:1px solid var(--b)}
-@media print{.btn,.fb,.sol{display:none!important}header{-webkit-print-color-adjust:exact}}
-</style>
-</head>
-<body>
-<div class="ctr">
-
-<header><h1>📝 Unit 4: Curve Sketching — Unit Test</h1>
-<div class="sub">Assessment OF Learning — MCV4U</div><div class="badge">✅ Graded</div></header>
-<div class="warn"><strong>⏱️</strong> 75 min | <strong>Total:</strong> /60</div>
+:root{--primary:#d97706;--bg:#f8fafc;--card:#fff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+.container{max-width:850px;margin:0 auto;padding:20px;}
+header{background:var(--primary);color:#fff;padding:24px;border-radius:12px;margin-bottom:24px;}
+header h1{font-size:22px;}.sub{font-size:14px;opacity:.85;margin-top:4px;}
+.badge{display:inline-block;background:rgba(255,255,255,.2);padding:4px 12px;border-radius:20px;font-size:12px;margin-top:8px;}
+.warn{background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:16px;margin-bottom:24px;font-size:14px;}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0;}
+.chart-item{text-align:center;padding:12px;border-radius:8px;}
+.chart-item .label{font-size:12px;font-weight:600;}.chart-item .value{font-size:24px;font-weight:800;}
+.section-hdr{font-size:18px;font-weight:700;margin:28px 0 16px;padding:12px 16px;border-radius:8px;}
+.section-hdr.ku{background:#dbeafe;color:#1e40af;}.section-hdr.t{background:#fef3c7;color:#92400e;}
+.section-hdr.c{background:#d1fae5;color:#065f46;}.section-hdr.a{background:#ede9fe;color:#5b21b6;}
+.qcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px;}
+.qnum{font-weight:700;color:var(--primary);font-size:15px;}.qmarks{float:right;font-size:13px;color:var(--muted);font-weight:600;}
+.qtxt{margin:8px 0 12px;}
+.mc{list-style:none;margin:8px 0;}.mc li{margin-bottom:6px;}
+.mc label{display:flex;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;cursor:pointer;}
+input[type="text"],textarea{width:100%;padding:10px 14px;border:2px solid var(--border);border-radius:6px;font-size:15px;font-family:inherit;}
+textarea{min-height:90px;resize:vertical;}
+.rubric{margin-top:32px;}.rubric table{width:100%;border-collapse:collapse;font-size:14px;}
+.rubric th,.rubric td{padding:8px 12px;border:1px solid var(--border);text-align:left;}.rubric th{background:#f1f5f9;}
+details{background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 18px;margin-top:24px;}
+details summary{cursor:pointer;font-weight:700;color:#065f46;font-size:16px;}
+details .ans{margin-top:12px;font-size:14px;line-height:1.7;}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px;margin-top:32px;border-top:1px solid var(--border);}
+</style></head><body>
+<nav style="background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 24px;display:flex;gap:20px;align-items:center;font-family:Segoe UI,system-ui,sans-serif;position:sticky;top:0;z-index:100;"><a href="../../index.html" style="color:#2563eb;font-weight:700;text-decoration:none;font-size:14px;">\&#127968; Home</a><a href="../../courses/mcv4u.html" style="color:#64748b;font-weight:600;text-decoration:none;font-size:14px;">\&#8592; Back to Course</a></nav><div class="container">
+<header><h1>📝 Unit 4: Curve Sketching — Unit Test</h1><div class="sub">Extrema · Concavity · Asymptotes · Sketches</div><div class="badge">✅ Graded</div></header>
+<div class="warn"><strong>⏱️</strong> 75 min &nbsp;|&nbsp; <strong>Total:</strong> /60 marks</div>
 <div class="chart">
-<div class="chart-i" style="background:#dbeafe;"><div class="lb">K/U</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#fef3c7;"><div class="lb">Thinking</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#d1fae5;"><div class="lb">Comm.</div><div class="vl">/15</div></div>
-<div class="chart-i" style="background:#ede9fe;"><div class="lb">Applic.</div><div class="vl">/15</div></div></div>
-<div class="formula-ref"><h3>📋 Reference</h3>\(f'(x)>0\) → increasing | \(f''(x)>0\) → concave up | Inflection: \(f''(x)=0\) and changes sign</div>
-<div class="sec-hdr ku">Part A: Knowledge & Understanding <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">1. <span class="qm">[3]</span></div>
-<div class="qt">Standard calculation from this unit.</div>
-<textarea placeholder="Show all work..."></textarea>
+<div class="chart-item" style="background:#dbeafe;"><div class="label">K/U</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#fef3c7;"><div class="label">Thinking</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#d1fae5;"><div class="label">Comm.</div><div class="value">/15</div></div>
+<div class="chart-item" style="background:#ede9fe;"><div class="label">Applic.</div><div class="value">/15</div></div>
 </div>
 
-<div class="qc"><div class="qn">2. <span class="qm">[3]</span></div>
-<div class="qt">Conceptual question.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr ku">Part A: K/U [15]</div>
 
-<div class="qc"><div class="qn">3. <span class="qm">[3]</span></div>
-<div class="qt">Multi-part problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">1 <span class="qmarks">[3]</span></div><div class="qtxt">For \(f(x)=2x^3-3x^2-12x\), find all critical numbers and classify each (max/min) using the second-derivative test.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">4. <span class="qm">[3]</span></div>
-<div class="qt">Define and explain key concepts.</div>
-<textarea placeholder="Show all work..."></textarea>
-<div class="wc">0 words</div>
-</div>
+<div class="qcard"><div class="qnum">2 <span class="qmarks">[3]</span></div><div class="qtxt">Determine intervals of concavity and any inflection points of \(g(x)=x^4-4x^3+6\).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">5. <span class="qm">[3]</span></div>
-<div class="qt">Apply formula.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">3 <span class="qmarks">[3]</span></div><div class="qtxt">State all asymptotes of \(h(x)=\dfrac{x^2-9}{x^2-4}\).</div><textarea></textarea></div>
 
-<div class="sec-hdr t">Part B: Thinking <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">6. <span class="qm">[5]</span></div>
-<div class="qt">Complex multi-step derivation.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">4 <span class="qmarks">[3]</span></div><div class="qtxt">MC: For \(p(x)=x e^{-x}\), the first derivative is:</div>
+<ul class="mc"><li><label><input type="radio" name="q4" value="a"> \(e^{-x}\)</label></li>
+<li><label><input type="radio" name="q4" value="b"> \(-x e^{-x}\)</label></li>
+<li><label><input type="radio" name="q4" value="c"> \((1-x)e^{-x}\)</label></li>
+<li><label><input type="radio" name="q4" value="d"> \(e^{-x}+x\)</label></li></ul></div>
 
-<div class="qc"><div class="qn">7. <span class="qm">[5]</span></div>
-<div class="qt">Problem combining multiple concepts.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">5 <span class="qmarks">[3]</span></div><div class="qtxt">A graph has \(f'(x)=(x-1)^2(x+3)\). Determine all extrema. (Hint: even multiplicity at 1.)</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">8. <span class="qm">[5]</span></div>
-<div class="qt">Novel situation.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr t">Part B: Thinking [15]</div>
 
-<div class="sec-hdr c">Part C: Communication <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">9. <span class="qm">[5]</span></div>
-<div class="qt">Explain a key concept with proper terminology.</div>
-<textarea placeholder="Show all work..."></textarea>
-<div class="wc">0 words</div>
-</div>
+<div class="qcard"><div class="qnum">6 <span class="qmarks">[7]</span></div><div class="qtxt">Perform a complete curve analysis of \(f(x)=\dfrac{x^2}{x-1}\): domain, asymptotes (V, H, slant), critical numbers, intervals inc./dec., extrema, concavity, inflection. Provide a labeled sketch.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">10. <span class="qm">[5]</span></div>
-<div class="qt">Correct a common misconception.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">7 <span class="qmarks">[5]</span></div><div class="qtxt">A function has \(f''(x)=6x-12\). Find all inflection points and intervals of concavity. If \(f(2)=5\), find an antiderivative-based reasonable \(f'(2)\) given \(f'(0)=0\).</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">11. <span class="qm">[5]</span></div>
-<div class="qt">Compare related concepts.</div>
-<textarea placeholder="Show all work..."></textarea>
-<div class="wc">0 words</div>
-</div>
+<div class="qcard"><div class="qnum">8 <span class="qmarks">[3]</span></div><div class="qtxt">Sketch a function satisfying ALL: \(f(0)=2\), \(f'(x)>0\) on \((-\infty,2)\), \(f'(x)<0\) on \((2,\infty)\), \(f''(x)<0\) on all reals, horizontal asymptote \(y=0\) as \(x\to\infty\).</div><textarea></textarea></div>
 
-<div class="sec-hdr a">Part D: Application <span>[15 marks]</span></div>
-<div class="qc"><div class="qn">12. <span class="qm">[5]</span></div>
-<div class="qt">Real-world application.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="section-hdr c">Part C: Communication [15]</div>
 
-<div class="qc"><div class="qn">13. <span class="qm">[5]</span></div>
-<div class="qt">Engineering/science context.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">9 <span class="qmarks">[4]</span></div><div class="qtxt">Describe a step-by-step procedure (the "algorithm") for sketching a polynomial function. Cover at least: zeros, end behaviour, critical points, concavity, inflection.</div><textarea></textarea></div>
 
-<div class="qc"><div class="qn">14. <span class="qm">[5]</span></div>
-<div class="qt">Multi-context transfer problem.</div>
-<textarea placeholder="Show all work..."></textarea>
-</div>
+<div class="qcard"><div class="qnum">10 <span class="qmarks">[4]</span></div><div class="qtxt">Compare the first-derivative test and the second-derivative test for classifying critical numbers. Give one situation where the second-derivative test fails.</div><textarea></textarea></div>
 
-<div class="rubric"><h3>Rubric</h3><table>
-<tr><th>Level</th><th>Description</th><th>%</th></tr>
-<tr><td><strong>4</strong></td><td>Thorough, insightful</td><td>80-100%</td></tr>
-<tr><td><strong>3</strong></td><td>Considerable (standard)</td><td>70-79%</td></tr>
-<tr><td><strong>2</strong></td><td>Some effectiveness</td><td>60-69%</td></tr>
-<tr><td><strong>1</strong></td><td>Limited</td><td>50-59%</td></tr>
-<tr><td><strong>R</strong></td><td>Insufficient</td><td>&lt;50%</td></tr></table></div>
-<footer>SPH4U — Physics, Grade 12 | Unit 4: Curve Sketching — OF | Ontario Curriculum 2008</footer>
-</div>
+<div class="qcard"><div class="qnum">11 <span class="qmarks">[4]</span></div><div class="qtxt">Explain how to identify each type of asymptote (vertical, horizontal, slant) for a rational function. Use \(f(x)=\dfrac{2x^2+1}{x-1}\) as your example.</div><textarea></textarea></div>
 
-<script>
-let sc=0,ans=0,tot=0;
-function up(){document.getElementById('sc').textContent=sc;document.getElementById('pf').style.width=(ans/tot*100)+'%';}
-function chkMC(q,c){
-const s=document.querySelector(`input[name="${q}"]:checked`);
-if(!s)return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-if(s.value===c){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Not quite. See solution below.';}
-if(sl)sl.classList.add('show');up();
-}
-function chkNum(q,c,tol){
-const v=parseFloat(document.getElementById(q+'-in').value.trim());
-if(isNaN(v))return;const cd=document.getElementById(q),fb=document.getElementById(q+'-fb'),sl=document.getElementById(q+'-sl');
-if(cd.classList.contains('ok')||cd.classList.contains('no'))return;
-ans++;
-const tolerance=tol||0.1;
-if(Math.abs(v-c)<Math.abs(c*tolerance)+0.01){sc++;cd.classList.add('ok');fb.className='fb show ok';fb.textContent='✅ Correct!';}
-else{cd.classList.add('no');fb.className='fb show no';fb.textContent='❌ Expected '+c.toFixed(1)+'. See solution.';}
-if(sl)sl.classList.add('show');up();
-}
-function showSol(q){const s=document.getElementById(q+'-sl');if(s)s.classList.toggle('show');}
-document.querySelectorAll('textarea').forEach(t=>{t.addEventListener('input',()=>{const p=t.closest('.qc');const wc=p?.querySelector('.wc');if(wc)wc.textContent=t.value.trim().split(/\s+/).filter(w=>w).length+' words';});});
-</script>
-</body></html>
+<div class="qcard"><div class="qnum">12 <span class="qmarks">[3]</span></div><div class="qtxt">A student says: "If \(f''(c)=0\), then \(c\) is an inflection point." Critique this claim with an example.</div><textarea></textarea></div>
+
+<div class="section-hdr a">Part D: Application [15]</div>
+
+<div class="qcard"><div class="qnum">13 <span class="qmarks">[5]</span></div><div class="qtxt">A drug concentration model: \(C(t)=\dfrac{20t}{t^2+4}\) (mg/L). Find the time of maximum concentration and the maximum value. Sketch the curve.</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">14 <span class="qmarks">[5]</span></div><div class="qtxt">Profit \(P(x)=-x^3+30x^2-200x-100\). Find production level for maximum profit and analyze concavity (over what range is profit growing faster?).</div><textarea></textarea></div>
+
+<div class="qcard"><div class="qnum">15 <span class="qmarks">[5]</span></div><div class="qtxt">Population: \(P(t)=\dfrac{1000}{1+9e^{-0.5t}}\). Find horizontal asymptotes; find the inflection point (point of maximum growth rate).</div><textarea></textarea></div>
+
+<div class="rubric"><h3>Evaluation Rubric</h3>
+<table><tr><th>Level</th><th>Description</th><th>%</th></tr>
+<tr><td>4</td><td>Thorough</td><td>80–100</td></tr><tr><td>3</td><td>Considerable</td><td>70–79</td></tr>
+<tr><td>2</td><td>Some</td><td>60–69</td></tr><tr><td>1</td><td>Limited</td><td>50–59</td></tr><tr><td>R</td><td>Insufficient</td><td>&lt;50</td></tr></table></div>
+
+<details><summary>📕 Answer Key</summary><div class="ans">
+<p><strong>1.</strong> \(f'=6x^2-6x-12=6(x-2)(x+1)=0\) → \(x=-1,2\). \(f''=12x-6\); \(f''(-1)=-18<0\) → max; \(f''(2)=18>0\) → min.</p>
+<p><strong>2.</strong> \(g''=12x^2-24x=12x(x-2)\); concave up \(x<0\) and \(x>2\); concave down \(0<x<2\); inflection at \(x=0,2\).</p>
+<p><strong>3.</strong> Vertical: \(x=\pm 2\). Horizontal: \(y=1\) (same degree, ratio 1).</p>
+<p><strong>4.</strong> Product rule: \(p'=e^{-x}+x(-e^{-x})=(1-x)e^{-x}\) → (c).</p>
+<p><strong>5.</strong> \(f'\) zeros at 1 (even mult) and \(-3\). At \(-3\): sign + → − (decreasing) hmm let's recheck: factor signs: pick \(x=-4\): \((25)(-1)=-\) <0; \(x=0\): \((1)(3)=3>0\); \(x=2\): \((1)(5)=5>0\). So \(f'\) goes − to + at \(-3\) → local minimum at \(x=-3\). At \(x=1\): + to + → no extremum (just inflection of \(f\)).</p>
+<p><strong>6.</strong> Domain: \(x\ne 1\). VA: \(x=1\). Slant: long division: \(x+1+\frac{1}{x-1}\) → \(y=x+1\). \(f'=\frac{x^2-2x}{(x-1)^2}=\frac{x(x-2)}{(x-1)^2}=0\) at \(x=0,2\). Sign: \(f'>0\) on \((-\infty,0)\) and \((2,\infty)\); \(<0\) on \((0,1)\) and \((1,2)\). Local max at \(x=0\), \(f(0)=0\); local min at \(x=2\), \(f(2)=4\). \(f''=\frac{2}{(x-1)^3}\) → concave up \(x>1\), down \(x<1\). No inflection (asymptote breaks domain).</p>
+<p><strong>7.</strong> \(f''=0\) at \(x=2\) → inflection. Concave down \(x<2\), up \(x>2\). \(f'(x)=3x^2-12x+C_1\); \(f'(0)=0\) → \(C_1=0\); \(f'(2)=12-24=-12\).</p>
+<p><strong>8.</strong> Inverted bell-like curve, peaking at \((2,?)\), strictly concave down, descending to 0 on the right and rising from \(-\infty\) on left. Pass through \((0,2)\).</p>
+<p><strong>9.</strong> Find domain & intercepts; end behaviour; \(f'\) → critical points & inc/dec; \(f''\) → concavity & inflection; combine.</p>
+<p><strong>10.</strong> 1st test uses sign change of \(f'\) (always works if \(f'\) defined nearby). 2nd uses \(f''(c)\) sign (faster but inconclusive when \(f''(c)=0\), e.g. \(f(x)=x^4\) at 0).</p>
+<p><strong>11.</strong> VA: where denominator = 0 and numerator ≠ 0. HA: degree comparison. Slant: when num degree exceeds denom by exactly 1; do long division. For \(\frac{2x^2+1}{x-1}\): VA \(x=1\); slant from division: \(2x+2+\frac{3}{x-1}\), \(y=2x+2\); no HA.</p>
+<p><strong>12.</strong> False — \(f(x)=x^4\) has \(f''(0)=0\) but no inflection (still concave up). Need \(f''\) to change sign.</p>
+<p><strong>13.</strong> \(C'=\frac{20(t^2+4)-20t(2t)}{(t^2+4)^2}=\frac{80-20t^2}{(t^2+4)^2}=0\) → \(t=2\). \(C(2)=40/8=5\) mg/L. Long-term \(\to 0\).</p>
+<p><strong>14.</strong> \(P'=-3x^2+60x-200\); roots: \(x=\frac{60\pm\sqrt{3600-2400}}{6}=\frac{60\pm\sqrt{1200}}{6}\approx 4.23, 15.77\). Max at \(x\approx 15.77\). \(P''=-6x+60=0\) at \(x=10\) (inflection — fastest growth).</p>
+<p><strong>15.</strong> As \(t\to\infty\): \(P\to 1000\); as \(t\to-\infty\): \(P\to 0\). Inflection where \(P=500\): \(1+9e^{-0.5t}=2\) → \(e^{-0.5t}=1/9\) → \(t=2\ln 9\approx 4.39\).</p>
+</div></details>
+<footer>MCV4U — Calculus and Vectors, Grade 12 | Strand B | Assessment OF Learning</footer>
+</div></body></html>

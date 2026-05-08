@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — MindView</title>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8fafc;color:#1e293b;line-height:1.5;}
+.topbar{background:#0f172a;color:#fff;padding:12px 24px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;}
+.topbar a{color:#fff;text-decoration:none;}
+.topbar .brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:16px;}
+.topbar .brand img{height:32px;}
+.topbar nav{display:flex;gap:20px;}
+.topbar nav a{font-size:14px;font-weight:600;color:#cbd5e1;}
+.topbar nav a:hover, .topbar nav a.active{color:#fff;}
+.user-chip{display:flex;align-items:center;gap:10px;font-size:13px;}
+.user-chip .role{padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;}
+.role.superuser{background:#dc2626;}.role.admin{background:#7c3aed;}.role.teacher{background:#059669;}.role.student{background:#2563eb;}
+.container{max-width:1200px;margin:0 auto;padding:32px 24px;}
+h1{font-size:28px;font-weight:800;margin-bottom:6px;}
+.sub{color:#64748b;margin-bottom:28px;}
+.role-pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;color:#fff;}
+.role-pill.superuser{background:#dc2626;}.role-pill.admin{background:#7c3aed;}.role-pill.teacher{background:#059669;}.role-pill.student{background:#2563eb;}
+.btn{display:inline-block;padding:9px 16px;background:#2563eb;color:#fff;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;}
+.btn:hover{background:#1d4ed8;}
+.btn.ghost{background:#fff;color:#475569;border:1px solid #e2e8f0;}.btn.ghost:hover{border-color:#94a3b8;}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:20px;}
+.muted{color:#94a3b8;font-size:13px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:16px;margin-bottom:28px;}
+.grid .card{text-align:center;}
+.stat-num{font-size:42px;font-weight:800;color:#2563eb;}
+.loading{padding:40px;text-align:center;color:#94a3b8;}
+</style>
+</head>
+<body>
+<div id="topbar" class="topbar" style="display:none;">
+    <div class="brand"><a href="/admin"><img src="/logo.png" alt="MindView"></a><span>MindView Admin</span></div>
+    <nav>
+        <a href="/admin" class="active">Dashboard</a>
+        <a href="/admin/users.html" id="nav-users">Users</a>
+        <a href="/">Courses →</a>
+    </nav>
+    <div class="user-chip">
+        <span id="user-name"></span>
+        <span id="user-role" class="role"></span>
+        <a href="#" onclick="netlifyIdentity.logout(); return false;" style="color:#94a3b8;">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div id="loading" class="loading">Loading…</div>
+    <div id="content" style="display:none;">
+        <h1 id="welcome">Welcome</h1>
+        <p class="sub">Role: <span id="role-pill" class="role-pill"></span></p>
+
+        <div id="admin-only" style="display:none;">
+            <div class="grid">
+                <div class="card"><div class="stat-num" id="stat-total">—</div><div class="muted">Total users</div></div>
+                <div class="card"><div class="stat-num" id="stat-superuser" style="color:#dc2626;">—</div><div class="muted">Super Users</div></div>
+                <div class="card"><div class="stat-num" id="stat-admin" style="color:#7c3aed;">—</div><div class="muted">Administrators</div></div>
+                <div class="card"><div class="stat-num" id="stat-teacher" style="color:#059669;">—</div><div class="muted">Teachers</div></div>
+                <div class="card"><div class="stat-num" id="stat-student" style="color:#2563eb;">—</div><div class="muted">Students</div></div>
+            </div>
+            <div style="display:flex;gap:10px;">
+                <a href="/admin/users.html" class="btn">Manage Users →</a>
+                <a href="/" class="btn ghost">Browse Courses</a>
+            </div>
+        </div>
+
+        <div id="user-only" style="display:none;">
+            <div class="card">
+                <h2 style="font-size:18px;margin-bottom:14px;">Your access</h2>
+                <p id="user-message"></p>
+                <div style="margin-top:16px;"><a href="/" class="btn">Browse Courses →</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
+const ROLE_RANK = {student:0, teacher:1, admin:2, superuser:3};
+
+function highestRole(roles) {
+    if (!roles || roles.length === 0) return 'student';
+    return roles.reduce((b, r) => (ROLE_RANK[r] ?? -1) > (ROLE_RANK[b] ?? -1) ? r : b, 'student');
+}
+
+netlifyIdentity.on('init', user => {
+    if (!user) {
+        location.href = '/login?next=/admin';
+        return;
+    }
+    render(user);
+});
+
+netlifyIdentity.on('logout', () => location.href = '/login');
+
+async function render(user) {
+    const role = highestRole(user.app_metadata && user.app_metadata.roles);
+    const fullName = (user.user_metadata && user.user_metadata.full_name) || user.email;
+
+    document.getElementById('topbar').style.display = 'flex';
+    document.getElementById('user-name').textContent = fullName;
+    const roleEl = document.getElementById('user-role');
+    roleEl.textContent = ROLE_LABELS[role];
+    roleEl.classList.add(role);
+
+    document.getElementById('welcome').textContent = `Welcome, ${fullName}`;
+    const pill = document.getElementById('role-pill');
+    pill.textContent = ROLE_LABELS[role];
+    pill.classList.add(role);
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('content').style.display = 'block';
+
+    if (role === 'admin' || role === 'superuser') {
+        document.getElementById('admin-only').style.display = 'block';
+        loadStats(user);
+    } else {
+        document.getElementById('nav-users').style.display = 'none';
+        document.getElementById('user-only').style.display = 'block';
+        document.getElementById('user-message').textContent =
+            role === 'teacher'
+                ? 'As a Teacher, you have access to all course content and assessments. Student management is available through your assigned classes.'
+                : 'As a Student, you have full access to all course materials, video lessons, and assessments.';
+    }
+}
+
+async function loadStats(user) {
+    try {
+        const token = await user.jwt(true);
+        const r = await fetch('/api/users', { headers: { Authorization: `Bearer ${token}` }});
+        if (!r.ok) return;
+        const data = await r.json();
+        const users = data.users || [];
+        document.getElementById('stat-total').textContent = users.length;
+        ['superuser','admin','teacher','student'].forEach(role => {
+            document.getElementById(`stat-${role}`).textContent = users.filter(u => u.role === role).length;
+        });
+    } catch (e) { console.error(e); }
+}
+</script>
+</body>
+</html>

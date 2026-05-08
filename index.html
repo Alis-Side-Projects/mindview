@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MindView — Virtual Classroom</title>
 <link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-top: 32px; }
 .course-card { display: block; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; transition: all 0.2s; color: #1e293b; text-decoration: none; }
@@ -30,42 +31,77 @@
             <a href="/" class="active">Home</a>
             <a href="#courses">Courses</a>
             <a href="#resources">Resources</a>
-            <a href="/admin/users" id="nav-manage-users" style="display:none;color:#dc2626;font-weight:700;">👥 Manage Users</a>
+            <a href="/admin/users.html" id="nav-manage-users" style="display:none;color:#dc2626;font-weight:700;">👥 Manage Users</a>
             <a href="/admin" id="nav-admin" style="display:none;">⚙️ Admin</a>
             <span id="user-chip" style="display:none;align-items:center;gap:10px;font-size:14px;color:#475569;">
                 <span id="user-name" style="font-weight:700;"></span>
                 <span id="user-role" style="background:#2563eb;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700;text-transform:uppercase;"></span>
-                <a href="/logout" style="color:#94a3b8;font-size:13px;">Logout</a>
+                <a href="#" onclick="netlifyIdentity.logout(); return false;" style="color:#94a3b8;font-size:13px;">Logout</a>
             </span>
-            <a href="/login" id="nav-login" style="display:none;background:#2563eb;color:#fff;padding:6px 14px;border-radius:6px;">Sign In</a>
+            <a href="#" onclick="netlifyIdentity.open('login'); return false;" id="nav-login" style="display:none;background:#2563eb;color:#fff;padding:6px 14px;border-radius:6px;">Sign In</a>
         </div>
     </div>
 </nav>
-<div id="dev-banner" style="display:none;background:linear-gradient(90deg,#f59e0b,#d97706);color:#fff;padding:8px 24px;text-align:center;font-size:13px;font-weight:600;letter-spacing:0.3px;">
-    🛠️ <strong>DEV MODE</strong> — auto-logged in as Super User on localhost · external visitors will still need credentials · disable with <code style="background:rgba(0,0,0,0.2);padding:1px 6px;border-radius:3px;">MINDVIEW_DEV=0</code>
-</div>
 <script>
-// Inject role-based nav items based on /api/me
-fetch('/api/me').then(r => r.json()).then(data => {
-    if (!data.authenticated) {
-        document.getElementById('nav-login').style.display = 'inline-block';
-        return;
-    }
-    if (data.dev_mode) {
-        document.getElementById('dev-banner').style.display = 'block';
-    }
-    const u = data.user;
-    document.getElementById('user-name').textContent = u.full_name;
+// Role-based UI driven by Netlify Identity (deployed) with /api/me fallback (local dev)
+const ROLE_LABELS = {superuser:'Super User', admin:'Administrator', teacher:'Teacher', student:'Student'};
+const ROLE_RANK = {student:0, teacher:1, admin:2, superuser:3};
+const ROLE_COLORS = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', student:'#2563eb'};
+
+function highestRole(roles) {
+    if (!roles || roles.length === 0) return 'student';
+    return roles.reduce((b, r) => (ROLE_RANK[r] ?? -1) > (ROLE_RANK[b] ?? -1) ? r : b, 'student');
+}
+
+function renderUser(fullName, role) {
+    document.getElementById('user-name').textContent = fullName;
     const roleEl = document.getElementById('user-role');
-    roleEl.textContent = u.role_label;
-    const roleColors = {superuser:'#dc2626', admin:'#7c3aed', teacher:'#059669', student:'#2563eb'};
-    roleEl.style.background = roleColors[u.role] || '#64748b';
+    roleEl.textContent = ROLE_LABELS[role] || role;
+    roleEl.style.background = ROLE_COLORS[role] || '#64748b';
     document.getElementById('user-chip').style.display = 'inline-flex';
-    if (u.can_manage_users) {
+    document.getElementById('nav-login').style.display = 'none';
+    if (role === 'admin' || role === 'superuser') {
         document.getElementById('nav-manage-users').style.display = 'inline-block';
         document.getElementById('nav-admin').style.display = 'inline-block';
+        const adminSection = document.getElementById('admin-tools-section');
+        if (adminSection) adminSection.style.display = 'block';
     }
-}).catch(() => {/* offline / not-running — leave nav as-is */});
+}
+
+function showLoggedOut() {
+    document.getElementById('nav-login').style.display = 'inline-block';
+}
+
+// Try Netlify Identity first (production)
+if (window.netlifyIdentity) {
+    netlifyIdentity.on('init', user => {
+        if (user) {
+            const role = highestRole(user.app_metadata && user.app_metadata.roles);
+            const fullName = (user.user_metadata && user.user_metadata.full_name) || user.email;
+            renderUser(fullName, role);
+        } else {
+            // No NI session — try local Flask /api/me as a fallback for dev
+            fetch('/api/me').then(r => r.ok ? r.json() : null).then(data => {
+                if (data && data.authenticated) {
+                    renderUser(data.user.full_name, data.user.role);
+                } else {
+                    showLoggedOut();
+                }
+            }).catch(() => showLoggedOut());
+        }
+    });
+    netlifyIdentity.on('login', () => location.reload());
+    netlifyIdentity.on('logout', () => location.reload());
+} else {
+    // Fallback: Netlify Identity widget unavailable, try local Flask
+    fetch('/api/me').then(r => r.ok ? r.json() : null).then(data => {
+        if (data && data.authenticated) {
+            renderUser(data.user.full_name, data.user.role);
+        } else {
+            showLoggedOut();
+        }
+    }).catch(() => showLoggedOut());
+}
 </script>
 
 <header class="hero">
@@ -141,26 +177,20 @@ fetch('/api/me').then(r => r.json()).then(data => {
             <h2 style="display:flex;align-items:center;gap:10px;">🔐 Administration <span style="font-size:13px;background:#fee2e2;color:#991b1b;padding:4px 12px;border-radius:12px;font-weight:700;letter-spacing:0.5px;">RESTRICTED</span></h2>
             <p class="section-sub">User management, audit trail, and system settings — visible only to administrators.</p>
             <div class="tools-grid">
-                <a href="/admin/users" class="tool-card" style="border-top:4px solid #dc2626;">
+                <a href="/admin/users.html" class="tool-card" style="border-top:4px solid #dc2626;">
                     <div class="tool-icon">👥</div><h3>Manage Users</h3><p>Create, edit, disable accounts (Super User &amp; Admin)</p>
                 </a>
-                <a href="/admin" class="tool-card" style="border-top:4px solid #7c3aed;">
+                <a href="/admin/dashboard.html" class="tool-card" style="border-top:4px solid #7c3aed;">
                     <div class="tool-icon">⚙️</div><h3>Admin Dashboard</h3><p>System overview, user counts, recent activity</p>
-                </a>
-                <a href="/admin/audit" class="tool-card" style="border-top:4px solid #2563eb;">
-                    <div class="tool-icon">📋</div><h3>Audit Log</h3><p>Authentication and user-management event history</p>
                 </a>
             </div>
         </div>
     </div>
 </section>
 <script>
-// Reveal admin tools section when /api/me confirms admin/superuser role
-fetch('/api/me').then(r => r.json()).then(data => {
-    if (data.authenticated && data.user && data.user.can_manage_users) {
-        document.getElementById('admin-tools-section').style.display = 'block';
-    }
-}).catch(() => {});
+// Note: Admin tools section is now revealed by the main role-handler at the top of the page.
+// This redundant block is kept as a no-op fallback for the Flask local-dev case where
+// the main script has already reveal logic. No additional fetch needed here.
 </script>
 
 <footer class="site-footer">

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — MindView Virtual Classroom</title>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#3b82f6 100%);padding:20px;}
+.card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.25);padding:48px;width:100%;max-width:440px;text-align:center;}
+.brand img{height:64px;}
+h1{font-size:24px;font-weight:800;color:#1e293b;margin:24px 0 8px;}
+.sub{color:#64748b;font-size:14px;margin-bottom:28px;}
+.btn{display:inline-block;background:#2563eb;color:#fff;padding:14px 36px;font-size:15px;font-weight:700;border:none;border-radius:8px;cursor:pointer;text-decoration:none;transition:background 0.2s;}
+.btn:hover{background:#1d4ed8;}
+.btn-secondary{background:#f1f5f9;color:#475569;margin-top:10px;}
+.btn-secondary:hover{background:#e2e8f0;}
+.status{margin-top:20px;font-size:13px;color:#64748b;}
+.footer{margin-top:32px;font-size:12px;color:#94a3b8;}
+</style>
+</head>
+<body>
+<div class="card">
+    <div class="brand"><img src="/logo.png" alt="MindView Academy"></div>
+    <h1>Sign In</h1>
+    <p class="sub">Virtual Classroom · Ontario Grade 11 &amp; 12</p>
+    <button class="btn" onclick="netlifyIdentity.open('login')">Sign In</button>
+    <div id="signup-section" style="display:none;">
+        <button class="btn btn-secondary" onclick="netlifyIdentity.open('signup')">Create Account</button>
+    </div>
+    <div id="status" class="status"></div>
+    <div class="footer">© MindView Academy</div>
+</div>
+<script>
+const params = new URLSearchParams(location.search);
+const next = params.get('next') || '/';
+const status = document.getElementById('status');
+
+netlifyIdentity.on('init', user => {
+    if (user) {
+        status.textContent = 'Already signed in. Redirecting...';
+        setTimeout(() => location.href = next, 600);
+    }
+});
+
+netlifyIdentity.on('login', user => {
+    netlifyIdentity.close();
+    status.textContent = 'Signed in. Redirecting...';
+    // Role-based redirect
+    const roles = (user.app_metadata && user.app_metadata.roles) || [];
+    const isAdmin = roles.includes('admin') || roles.includes('superuser');
+    setTimeout(() => location.href = (next === '/' && isAdmin) ? '/admin' : next, 400);
+});
+
+netlifyIdentity.on('logout', () => {
+    location.reload();
+});
+</script>
+</body>
+</html>
